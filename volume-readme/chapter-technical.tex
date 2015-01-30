@@ -1,0 +1,22 @@
+\chapter{Technical}
+
+This chapter describes some of the more technical parts of the CDR.
+
+\section{The \LaTeX CDR class}
+
+All of the \LaTeX configuration for the document that pertains to the general CDR style and not to the actual content is in the \texttt{cdr.cls} file.  The class takes some options that control high-level style:
+
+\begin{description}
+\item[\texttt{draft}] produce markup to assist in editing (line numbers, label tags)
+\item[\texttt{print}] print quality (remove watermark)
+\end{description}
+\section{Topic-specific \LaTeX files}
+
+There are three files which are specific to the topic of the CDR but generic to each volume that should be provided:
+
+\begin{description}
+\item[\texttt{common/preamble.tex}] placed before the document begins and should provide all macros to define common terms or units.
+\item[\texttt{common/init.tex}] placed immediately after the document starts and should provide things like title page, author list, toc/lof/lot, etc.
+\item[\texttt{common/final.tex}] placed immediately before the document ends and should provide the bibliography setup or any other common trailing matter.
+\end{description}
+

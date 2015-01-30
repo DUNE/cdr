@@ -1,10 +1,11 @@
 This is the Conceptual Design Report for the next long-baseline
 experiment at Fermilab.
 
-The definitive source for guidance is availble in the document:
+The definitive source for guidance for CDR authors is availble in the
+document:
 
-  volume-meta.pdf
+  volume-readme.pdf
+  volume-readme.tex
 
-This document is part of this reposiroty and is written using the same
-LaTeX style that the real CDR volumes should folow.
+It is also written following its own guidance so serves as an example.
 

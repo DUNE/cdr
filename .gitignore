@@ -1,0 +1,6 @@
+*~
+*.aux
+*.fls
+*.log
+*.fdb_latexmk
+volume-*.pdf
