@@ -9,6 +9,18 @@ document:
 
 It is also written following its own guidance so serves as an example.
 
+Each volume-*.tex is a stand-alone document and is intended to be
+compiled using "pdflatex":
+
+  pdflatex volume-readme.tex
+
+Substitute "readme" for other volume names.
+
+To get "push" access to this repository send your GitHub user name to
+the contacts below.  You may also clone/fork it and issue
+pull-requests.
+
+
 Contacts:
 Brett Viren bv@bnl.gov
 Anne Heavey aheavey@fnal.gov
