@@ -29,20 +29,10 @@
 \def\l@subsubsubsection{\@dottedtocline{4}{4.8em}
      {4.2em}}
 
-\newcounter{subsubsubsubsection}[subsubsubsection]
-\def\subsubsubsubsectionmark#1{}
-\def\thesubsubsubsubsection {\thesubsubsubsection
-     .\arabic{subsubsubsubsection}}
-\def\subsubsubsubsection{\@startsection
-     {subsubsubsubsection}{5} {\z@} {-3.25ex plus -1
-     ex minus -.2ex}{1.5ex plus .2ex}{\bf\normalsize\sffamily}}
-\def\l@subsubsubsubsection{\@dottedtocline{5}
-     {5.8em}{5.2em}}
-
 
 % List of other packages required, add as needed.
 % Some basic packages
-\RequirePackage{color}
+\RequirePackage{color,soul}
 \RequirePackage{graphicx}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{lmodern}
@@ -60,3 +50,8 @@
 \RequirePackage[pagewise]{lineno}
 \linenumbers
 
+%% todonotes for "fixmes"
+\RequirePackage[table]{xcolor}
+\RequirePackage{todonotes}
+\RequirePackage{menukeys}
+\newcommand{\hlfix}[2]{\texthl{#1}\todo{#2}}

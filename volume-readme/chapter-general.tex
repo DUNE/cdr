@@ -12,9 +12,7 @@ provide an example.
 The entire CDR consists of a number of volumes, some of which are written in \LaTeX{}. These instructions apply only to the \LaTeX{} volumes.  You will find the \LaTeX{} and figure content for a given volume arranged like:
 
 \begin{description}
-\item[\texttt{volume-VNAME.tex}] top level, nominal main file. It is a ``skeleton'' file pointing to the content for a volume.  It is in the parent directory of the directory 
-containing the volume's content; it must pick up information shared between volumes as well as the 
-volume-specific content.
+\item[\texttt{volume-VNAME.tex}] the main file and is found in the top-level directory. It generally has no content itself but includes content through other files, some shared among the volumes and the bulk that makes each volume unique. 
 \item[\texttt{figures/}] top-level subdirectory for any static figures shared by more than one volume
 \item[\texttt{volume-VNAME/}] subdirectory holding all content for the volume
 \item[\texttt{volume-VNAME/chapter-CNAME.tex}] holds the content for a chapter
@@ -96,7 +94,7 @@ It is possible (though unwise) to store inherently raster information in PDF or 
 \item Follow special guidance on annotation (see Section~\ref{sec:annotate}).
 \item Never convert any raster data (JPEG/PNG) to PDF.
 \item Never raster what is really vector data in to a JPEG/PNG.
-\item Never use MicroSoft PowerPoint for any figure.   BRETT, CAN WE SAY WHY?
+\item Never use MicroSoft PowerPoint for any figure as it tends to lead to poor quality and bloated files.
 \item Do save using native application formats for later modification or conversion by experts.
 \item Consider providing plots as ROOT, Python or other scripts.  (see Section~\ref{sec:plots})
 \end{itemize}
