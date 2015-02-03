@@ -2,15 +2,18 @@
 
 This chapter describes some of the more technical parts of the CDR.
 
-\section{The \LaTeX CDR class}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The \LaTeX{} CDR class}
 
-All of the \LaTeX configuration for the document that pertains to the general CDR style and not to the actual content is in the \texttt{cdr.cls} file.  The class takes some options that control high-level style:
+All of the \LaTeX{} configuration for the document that pertains to the general CDR style and not to the actual content is in the \texttt{cdr.cls} file.  The class takes some options that control high-level style:
 
 \begin{description}
-\item[\texttt{draft}] produce markup to assist in editing (line numbers, label tags)
-\item[\texttt{print}] print quality (remove watermark)
+\item[\texttt{draft}] produce markup to assist in editing (line numbers, draft water mark, label tags)
+\item[\texttt{print}] print quality (remove editing markup)
 \end{description}
-\section{Topic-specific \LaTeX files}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Topic-specific \LaTeX{} files}
 
 There are three files which are specific to the topic of the CDR but generic to each volume that should be provided:
 
@@ -20,3 +23,5 @@ There are three files which are specific to the topic of the CDR but generic to 
 \item[\texttt{common/final.tex}] placed immediately before the document ends and should provide the bibliography setup or any other common trailing matter.
 \end{description}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Maybe more to come...}

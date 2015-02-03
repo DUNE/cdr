@@ -3,7 +3,9 @@
 
 This is the start of a chapter and gives some introduction before its first section.  This chapter describes basic \LaTeX you need to know.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sectioning}
+\label{sec:sectioning}
 
 The following sectioning macros are available, ordered in descending
 importance:
@@ -14,7 +16,7 @@ importance:
 \subsection{A Sub Section}
 \subsubsection{A Sub Sub Section}
 \subsubsubsection{A Sub Sub Sub Section}
-\subsubsubsubsection{A Sub Sub Sub Sub Section}
+%\subsubsubsubsection{A Sub Sub Sub Sub Section}  Don't want anyone doing this!
 \end{verbatim}
 
 Starting from \verb|\subsection|, this produces the following:
@@ -22,10 +24,13 @@ Starting from \verb|\subsection|, this produces the following:
 \subsection{A Sub Section}
 \subsubsection{A Sub Sub Section}
 \subsubsubsection{A Sub Sub Sub Section}
-\subsubsubsubsection{A Sub Sub Sub Sub Section}
+%\subsubsubsubsection{A Sub Sub Sub Sub Section}
 
 Just after defining a chapter and any significant section a
-\verb|\label| should be added so it can be referenced.  For example:
+\verb|\label| should be added so it can be referenced. A label can be added later
+for a `'less significant'' section that turns out to need one. You can label them all. 
+
+For example:
 
 \begin{verbatim}
 \chapter{A Chapter}
@@ -35,24 +40,24 @@ Just after defining a chapter and any significant section a
 \label{sec:a-section}
 
 \subsection{A Sub Section}
-\label{subsec:an-important-sub-section}
+\label{subsec:a-subsection}
 \end{verbatim}
 
-See section~\ref{sec:refs} for more on how to reference sections.
+See Section~\ref{sec:refs} for how to reference labeled sections.
 
-
-\section{Figures}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Including Figures}
 \label{sec:figures}
 
-See Section~\ref{sec:figures} for guidelines on the graphics files themselves.
+See Section~\ref{sec:figure-format} for guidelines on the graphics files themselves.
 Any graphics element is included using this command:
 
 \begin{verbatim}
-\includegraphics[OPTIONS]{myfigurefile}
+\includegraphics[OPTIONS]{volume-VNAME/figures/myfigurefile}
 \end{verbatim}
 
 The file's extension may be optionally omitted.
-The file is located relative to the directories given in the guidance in Section~\ref{sec:files}.  If a path is given is should be relative to the top-level directory.
+The file is located relative to the top directory given in the guidance in Section~\ref{sec:files}, hence the (typically used) ``volume-VNAME/figures/'' preceding the filename.  This is because the tex file is pulled into \texttt{volume-VNAME.tex} and the figure is searched for relative to it.
 The \texttt{OPTIONS} most likely used will be to scale the graphic to
 a sensible size.  Examples:
 
@@ -65,17 +70,21 @@ Graphics should always be placed in \texttt{figure} environments and include ref
 section~\ref{sec:refs} for how to reference figures and tables) and a
 caption.  Captions will be printed in the ``List of Figures''.  A
 synopsis of a caption should be given in ``[]'' in order to make the
-entries in the List of Figures brief and readable.  
+entries in the List of Figures brief and readable.  The synopsis doesn't need to describe it fully, just identify it clearly. Captions are to be listed below the graphic itself.
 
-Here is an example of adding a figure:
+Here is an example of how to add a figure:
 %  http://www-visualmedia.fnal.gov/VMS_Site/gallery/stillphotos/2007/0300/07-0329-14D.jpg
+
+BRETT -- I WOULD MOVE THIS FIG INTO THE VOLUME'S FIGURES DIRECTORY AND USE THE PATH
+volume-VNAME/figures/fermilab-aerial.jpg
+
 \begin{verbatim}
 \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{fermilab-aerial.jpg}
-  \caption[Aerial Photo of Fermilab]{An aerial photograph of Fermilab
+  \caption[Aerial photo of Fermilab]{An aerial photograph of Fermilab
     showing Wilson Hall and surrounding accelerator rings (Fermilab
-    Visual Media Services).}
+    Visual Media Services). (Notice in the source file, caption is listed below includegraphics.)}
   \label{fig:fermilab-aerial}
 \end{figure}
 \end{verbatim}
@@ -89,14 +98,21 @@ Here is an example of adding a figure:
   \label{fig:fermilab-aerial}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tables}
 \label{sec:tables}
 
 Tables (actually ``tabular'' environments in a table floating environment) are defined like:
 
+WOULD IT MAKE SENSE TO USE THE SAME TABLE MACHINERY AS IN THE SCI OPP DOC? IT LOOKED NICE,
+MIGHT BE MORE WORK THAN I REALLY WANT...
+
 \begin{verbatim}
 \begin{table}[h]
   \centering
+  \caption[Table of things]{A table showing some things. (This caption is listed before the start of
+  the tabular environment.)}
+  \label{tab:things}
   \begin{tabular}[h]{|r|c|l|}
     \hline
     Column1 & Column2 & Column3 \\
@@ -117,21 +133,24 @@ Tables (actually ``tabular'' environments in a table floating environment) are d
     thing1 & thing2 & thing 3 \\
     \hline
   \end{tabular}
-  \caption[Table of things]{A table showing some things}
-  \label{tab:things}
 \end{table}
 
+Table captions should appear above the tables to which they refer -- opposite from figure captions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Referencing}
 \label{sec:refs}
-Note: if you see a ``\textbf{LABEL: ``sec:refs''}'' just above this
-line (or elsewhere in chapters, sections, figures, etc), it means this
-document was built in draft mode.  This is to help you know what label
-to use to reference things.
 
-After any chapter, section or important sub- (subsub-, etc) section or
-within any figure or table environment that may need to be referenced
-elsewhere in the text one should define a label (\verb|label{...}|).
-The defined label can then be used in a \verb|\ref{...}| in order to
+Note: if you see a greyed out ``\textbf{LABEL: ``sec:refs''}'' just above this
+line (or elsewhere in chapters, sections, figures, etc), it means this
+document was built in draft mode.  These artifacts show up to help you know what label
+was used to reference each particular thing.
+
+Assume that any chapter, section or important sub-, subsub-,  section or
+within any figure or table environment may need to be referenced
+elsewhere in the text. As described in Section~\ref{sec:sectioning}, define a label (\verb|label{...}|
+for these items.
+Use the defined label in a \verb|\ref{...}| in order to
 make reference to the chapter, section, figure, etc.  For example:
 
 \begin{verbatim}
@@ -143,11 +162,15 @@ make reference to the chapter, section, figure, etc.  For example:
 
 ...
 
-As described in chapter~\ref{ch:some-chapter} ...
+As described in Chapter~\ref{ch:some-chapter} ...
 
-As shown in Figure~\ref{fig:large-cavity} ...
+As shown in Figure~\ref{fig:fermilab-aerial} ...
 \end{verbatim}
+
+When you reference a chapter, section, subsection, figure, table, etc., capitalize the word ``Chapter'' or whatever it is, e.g., ``as shown in Section~\ref{sec:plots}.''  Use the word ``Section'' even if it's a subsection or subsubsection, and use the tilde sign to keep the number on the same line as the word that precedes it.
 
 Examples for figures and tables have been given above.  Here I
 reference this section:~\ref{sec:refs}.  
 
+
+CAN WE ADD THE FIXME BACK (OR EQUIVALENT?) AND TELL THEM ABOUT IT?
