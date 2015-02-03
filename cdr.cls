@@ -51,7 +51,66 @@
 \linenumbers
 
 %% todonotes for "fixmes"
-\RequirePackage[table]{xcolor}
+\RequirePackage[table,usenames,dvipsnames]{xcolor}
 \RequirePackage{todonotes}
 \RequirePackage{menukeys}
 \newcommand{\hlfix}[2]{\texthl{#1}\todo{#2}}
+
+
+% Fancier tables
+\RequirePackage{booktabs}
+% from http://tex.stackexchange.com/questions/4811/make-first-row-of-table-all-bold:
+\newcolumntype{$}{>{\global\let\currentrowstyle\relax}}
+%$
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+  #1\ignorespaces
+}
+
+\newcolumntype{L}{%
+  >{\raggedright
+    \bfseries
+    \boldmath
+  }l}%
+
+\newcommand{\rowtitlestyle}{
+  \rowcolor{Apricot}
+  \rowstyle{\bfseries \boldmath} 
+}
+
+\newcommand{\colhline}{
+  \arrayrulecolor{red}
+  \specialrule{0.5pt}{0pt}{1pt}
+  \arrayrulecolor{black}
+}
+
+\newcommand{\toprowrule}{
+  \arrayrulecolor{red}
+  \specialrule{1.2pt}{0pt}{1pt}
+  \arrayrulecolor{black}
+}
+
+%%% originals come from booktabs
+% \renewcommand{\toprule}{
+%   \arrayrulecolor{red}
+%   \specialrule{1.5pt}{2pt}{0pt}
+%   \arrayrulecolor{black}
+% }
+
+% \renewcommand{\midrule}{
+%   \arrayrulecolor{red}
+%   \specialrule{1pt}{1pt}{1pt}
+%   \arrayrulecolor{black}
+% }
+
+% \renewcommand{\bottomrule}{
+%   \arrayrulecolor{red}
+%   \specialrule{1.5pt}{0pt}{2pt}
+%   \arrayrulecolor{black}
+% }
+
+
+\newenvironment{cdrtable}{\begin{table}\begin{center}}{\end{center}\end{table}}
+
+\newenvironment{cdrtabu}{\begin{tabular}}{\end{tabular}}
+

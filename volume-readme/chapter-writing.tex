@@ -68,17 +68,17 @@ a sensible size.  Examples:
 \includegraphics[height=0.1\textheight]{...}
 \end{verbatim}
 
-Graphics should always be placed in \texttt{figure} environments and include reference label (see
-section~\ref{sec:refs} for how to reference figures and tables) and a
-caption.  Captions will be printed in the ``List of Figures''.  A
-synopsis of a caption should be given in ``[]'' in order to make the
-entries in the List of Figures brief and readable.  The synopsis doesn't need to describe it fully, just identify it clearly. Captions are to be listed below the graphic itself.
+Graphics should always be placed in \texttt{figure} environments and
+include reference label (see section~\ref{sec:refs} for how to
+reference figures and tables) and a caption.
+Captions will be printed in the ``List of Figures''.
+A synopsis of a caption should be given in ``[]'' in order to make the
+entries in the List of Figures brief and readable.
+The synopsis doesn't need to describe it fully, just identify it
+clearly. Captions are to be listed below the graphic itself.
 
 Here is an example of how to add a figure:
 %  http://www-visualmedia.fnal.gov/VMS_Site/gallery/stillphotos/2007/0300/07-0329-14D.jpg
-
-BRETT -- I WOULD MOVE THIS FIG INTO THE VOLUME'S FIGURES DIRECTORY AND USE THE PATH
-volume-VNAME/figures/fermilab-aerial.jpg
 
 \begin{verbatim}
 \begin{figure}[h]
@@ -104,10 +104,38 @@ volume-VNAME/figures/fermilab-aerial.jpg
 \section{Tables}
 \label{sec:tables}
 
-Tables (actually ``tabular'' environments in a table floating environment) are defined like:
+For tabular layout we use a customized environment \texttt{cdrtabular}
+and which always go inside a \texttt{cdrtable} environment
 
-WOULD IT MAKE SENSE TO USE THE SAME TABLE MACHINERY AS IN THE SCI OPP DOC? IT LOOKED NICE,
-MIGHT BE MORE WORK THAN I REALLY WANT...
+\begin{table}
+\begin{center}
+\begin{tabular}{$L^c^c^c^c} %$ 
+%\toprule
+\rowtitlestyle
+Decay Mode & \multicolumn{2}{^c}{Water Cherenkov} & 
+\multicolumn{2}{^c}{Liquid Argon TPC} \\
+\rowtitlestyle
+& Efficiency & Background & Efficiency & Background \\ \toprowrule
+$p \rightarrow K^+ \overline{\nu}$ & 19\% & 4 & 97\% & 1 \\ \colhline
+$p \rightarrow K^0 \mu^+$ & 10\% & 8 & 47\% & $<2 $ \\ \colhline
+$p \rightarrow K^+ \mu^- \pi^+$ & & & 97\% & 1 \\ \colhline
+$n \rightarrow K^+ e^- $ & 10\% & 3 & 96\% & $<2$ \\ \colhline
+$n \rightarrow e^+\pi^-$ & 19\% & 2 & 44\% & 0.8 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\caption{Test table}
+\label{tab:pdecay}
+\end{table}
+
+
+\begin{cdrtable}
+  \begin{cdrtabu}{|c|c|}
+    abc & 123 \\
+  \end{cdrtabu}
+  \label{tab:example}
+\end{cdrtable}
+
 
 \begin{verbatim}
 \begin{table}[h]
