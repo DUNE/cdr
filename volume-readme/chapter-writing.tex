@@ -48,71 +48,96 @@ For example:
 See Section~\ref{sec:refs} for how to reference labeled sections.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Including Figures}
+\section{Figures}
 \label{sec:figures}
 
 See Section~\ref{sec:figure-format} for guidelines on the graphics files themselves.
-Any graphics element is included using this command:
+Instead of using the usual \texttt{figure} environment a custom \texttt{cdrfigure}
+environment is used in order to provide for a consistent presentation.
+The environment is called with one optional and two required
+arguments:
 
-\begin{verbatim}
-\includegraphics[OPTIONS]{volume-VNAME/figures/myfigurefile}
-\end{verbatim}
+\begin{itemize}
+\item An initial, optional short caption for the List Of Figures.
+\item A label for referencing (it will have \texttt{fig:} prepended).
+\item The full table of contents.
+\end{itemize}
 
-The file's extension may be optionally omitted.
-The file is located relative to the top directory given in the guidance in Section~\ref{sec:files}, hence the (typically used) ``volume-VNAME/figures/'' preceding the filename.  This is because the tex file is pulled into \texttt{volume-VNAME.tex} and the figure is searched for relative to it.
-The \texttt{OPTIONS} most likely used will be to scale the graphic to
-a sensible size.  Examples:
-
-\begin{verbatim}
-\includegraphics[width=0.5\textwidth]{...}
-\includegraphics[height=0.1\textheight]{...}
-\end{verbatim}
-
-Graphics should always be placed in \texttt{figure} environments and
-include reference label (see section~\ref{sec:refs} for how to
-reference figures and tables) and a caption.
-Captions will be printed in the ``List of Figures''.
-A synopsis of a caption should be given in ``[]'' in order to make the
-entries in the List of Figures brief and readable.
-The synopsis doesn't need to describe it fully, just identify it
-clearly. Captions are to be listed below the graphic itself.
-
-Here is an example of how to add a figure:
-%  http://www-visualmedia.fnal.gov/VMS_Site/gallery/stillphotos/2007/0300/07-0329-14D.jpg
-
-\begin{verbatim}
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=\textwidth]{fermilab-aerial.jpg}
-  \caption[Aerial photo of Fermilab]{An aerial photograph of Fermilab
+\begin{cdrfigure}[Short ToF caption.]{aerial}{An aerial photograph of Fermilab
     showing Wilson Hall and surrounding accelerator rings (Fermilab
-    Visual Media Services). (Notice in the source file, caption is listed below includegraphics.)}
-  \label{fig:fermilab-aerial}
-\end{figure}
-\end{verbatim}
+    Visual Media Services)}
+  \includegraphics[width=0.8\textwidth]{fermilab-aerial.jpg}
+\end{cdrfigure}
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=\textwidth]{fermilab-aerial.jpg}
-  \caption[Aerial Photo of Fermilab]{An aerial photograph of Fermilab
+
+When the figure contains a graphic,  usual \texttt{includegraphics} is used.
+The file name is assumed relateive to a volume-specific \texttt{graphicspath} as
+described in Section~\ref{sec:files} and as such one typically should
+\textbf{not} specify any directory parts in its name.
+The file's extension may be omitted.
+An example can be seen in Figure~\ref{fig:aerial} which is created
+with the following \LaTeX shown in Figure~\ref{fig:aerial-latex}
+
+\begin{cdrfigure}{aerial-latex}{\LaTeX{} showing how to do include a figure.}
+\begin{verbatim}
+\begin{cdrfigure}[Short ToF caption.]{aerial}{An aerial photograph of Fermilab
     showing Wilson Hall and surrounding accelerator rings (Fermilab
-    Visual Media Services).}
-  \label{fig:fermilab-aerial}
-\end{figure}
-
+    Visual Media Services)}
+  \includegraphics[width=0.8\textwidth]{fermilab-aerial.jpg}
+\end{cdrfigure}
+\end{verbatim}
+\end{cdrfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tables}
 \label{sec:tables}
 
-For tabular layout we use a customized environment \texttt{cdrtabular}
-and which always go inside a \texttt{cdrtable} environment
+Like figures, we use a special environment, \texttt{cdrtable} for
+tables to achieve a degree of consistency.
+This is instead of the usual double \texttt{table} + \texttt{tabular} environments.
+The \texttt{cdrtable} environment takes one optional and three
+required arguments:
 
-\begin{table}
-\begin{center}
-\begin{tabular}{$L^c^c^c^c} %$ 
-%\toprule
-\rowtitlestyle
-Decay Mode & \multicolumn{2}{^c}{Water Cherenkov} & 
+\begin{itemize}
+\item An initial, optional short caption for the List of Tables.
+\item The tabular column specification.
+\item A label for referencing (it will have \texttt{tab:} appended)
+\item The full caption.
+\end{itemize}
+
+Inside the actual contents of the table you are required to provide a
+initial row containing the headings for the table's rows followed by a
+\texttt{toprowrule} macro.
+Following every regular row (except the last) you should include a
+\texttt{colline} macro.
+Both of these take the place of the usual \texttt{hline}.
+
+\begin{cdrtable}[The LoT caption]{cc}{example}{This is an example table.}
+  Rows & Counts \\ \toprowrule
+  Row 1 & First \\ \colhline
+  Row 2 & Second \\ \colhline
+  Row 3 & Third \\ 
+\end{cdrtable}
+
+\noindent Table~\ref{tab:example} is thus made like:
+
+\begin{verbatim}
+\begin{cdrtable}[The LoT caption]{cc}{example}{This is an example table.}
+  Rows & Counts \\ \toprowrule
+  Row 1 & First \\ \colhline
+  Row 2 & Second \\ \colhline
+  Row 3 & Third \\ 
+\end{cdrtable}
+\end{verbatim}
+
+Table~\ref{tab:pdcay} shows a more complex example.
+See the source for how it is written.
+Note that special column specifications are used.
+
+\begin{cdrtable}[Efficiencies and background rates for nucleon decay
+  modes]{$L^c^c^c^c}{pdecay}{Efficiencies and background rates for
+    nucleon decay channels of interest for a large underground LArTPC,
+    and comparison with water Cherenkov detector capabilities} %$
+  Decay Mode & \multicolumn{2}{^c}{Water Cherenkov} & 
 \multicolumn{2}{^c}{Liquid Argon TPC} \\
 \rowtitlestyle
 & Efficiency & Background & Efficiency & Background \\ \toprowrule
@@ -121,67 +146,27 @@ $p \rightarrow K^0 \mu^+$ & 10\% & 8 & 47\% & $<2 $ \\ \colhline
 $p \rightarrow K^+ \mu^- \pi^+$ & & & 97\% & 1 \\ \colhline
 $n \rightarrow K^+ e^- $ & 10\% & 3 & 96\% & $<2$ \\ \colhline
 $n \rightarrow e^+\pi^-$ & 19\% & 2 & 44\% & 0.8 \\
-\bottomrule
-\end{tabular}
-\end{center}
-\caption{Test table}
-\label{tab:pdecay}
-\end{table}
-
-
-\begin{cdrtable}
-  \begin{cdrtabu}{|c|c|}
-    abc & 123 \\
-  \end{cdrtabu}
-  \label{tab:example}
 \end{cdrtable}
 
-
-\begin{verbatim}
-\begin{table}[h]
-  \centering
-  \caption[Table of things]{A table showing some things. (This caption is listed before the start of
-  the tabular environment.)}
-  \label{tab:things}
-  \begin{tabular}[h]{|r|c|l|}
-    \hline
-    Column1 & Column2 & Column3 \\
-    \hline
-    thing1 & thing2 & thing 3 \\
-    \hline
-  \end{tabular}
-  \caption[Table of things]{A table showing some things}
-  \label{tab:things}
-\end{table}
-\end{verbatim}
-\begin{table}[h]
-  \centering
-  \begin{tabular}[h]{|r|c|l|}
-    \hline
-    Column1 & Column2 & Column3 \\
-    \hline
-    thing1 & thing2 & thing 3 \\
-    \hline
-  \end{tabular}
-\end{table}
-
-Table captions should appear above the tables to which they refer -- opposite from figure captions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Referencing}
 \label{sec:refs}
 
-Note: if you see a greyed out ``\textbf{LABEL: ``sec:refs''}'' just above this
-line (or elsewhere in chapters, sections, figures, etc), it means this
-document was built in draft mode.  These artifacts show up to help you know what label
-was used to reference each particular thing.
+Note: if you see a grey label blox containing \texttt{sec:refs}
+between this paragraph and the section heading (or in general
+elsewhere in chapters, sections, figures, etc), it means this document
+was built in draft mode.  
+These artifacts show up to help you know what label was used to
+reference each particular thing.
 
-Assume that any chapter, section or important sub-, subsub-,  section or
-within any figure or table environment may need to be referenced
-elsewhere in the text. As described in Section~\ref{sec:sectioning}, define a label (\verb|label{...}|
-for these items.
-Use the defined label in a \verb|\ref{...}| in order to
-make reference to the chapter, section, figure, etc.  For example:
+Assume that any chapter, section or important sub-, subsub-, section
+or within any figure or table environment may need to be referenced
+elsewhere in the text. As described in Section~\ref{sec:sectioning},
+define a label (\verb|\label{...}| for these items.
+Use the defined label in a \verb|\ref{...}| in order to make reference
+to the chapter, section, figure, etc.
+For example:
 
 \begin{verbatim}
 \chapter{Some Chapter}
@@ -197,7 +182,12 @@ As described in Chapter~\ref{ch:some-chapter} ...
 As shown in Figure~\ref{fig:fermilab-aerial} ...
 \end{verbatim}
 
-When you reference a chapter, section, subsection, figure, table, etc., capitalize the word ``Chapter'' or whatever it is, e.g., ``as shown in Section~\ref{sec:plots}.''  Use the word ``Section'' even if it's a subsection or subsubsection, and use the tilde sign to keep the number on the same line as the word that precedes it.
+When you reference a chapter, section, subsection, figure, table,
+etc., capitalize the word ``Chapter'' or whatever it is, e.g., ``as
+shown in Section~\ref{sec:plots}.''
+Use the word ``Section'' even if it's a subsection or subsubsection,
+and use the tilde sign to keep the number on the same line as the word
+that precedes it.
 
 Examples for figures and tables have been given above.  Here I
 reference this section:~\ref{sec:refs}.  

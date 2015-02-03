@@ -109,8 +109,68 @@
 %   \arrayrulecolor{black}
 % }
 
+% \newcommand{\cdrtablabel}{}
 
-\newenvironment{cdrtable}{\begin{table}\begin{center}}{\end{center}\end{table}}
+% \newenvironment{cdrtable}[2]{%
+%   \gdef{\cdrtablabel}{#1}%
+%   \begin{table}[hbtp]%
+%     \centering%
+%     \begin{tabular}{#2}%
+% }{%      
+%     \bottomrule%
+%     \end{tabular}%
+%     \caption{caption}%
+%     \label{\cdrtablabel}%
+%   \end{table}%
+% }
 
-\newenvironment{cdrtabu}{\begin{tabular}}{\end{tabular}}
+\newcommand{\cdrtablabel}{}% stores the label
+\newcommand{\cdrtabcaption}{}% stores the caption
+\newcommand{\cdrtabcaptionshort}{}% stores an optional short caption
+\newenvironment{cdrtable}[4][]
+{
+  \if\relax\detokenize{#1}\relax
+  \gdef\cdrtabcaptionshort{\relax}
+  \else
+  \gdef\cdrtabcaptionshort{#1}
+  \fi
 
+  \gdef\cdrtablabel{#3}
+  \gdef\cdrtabcaption{#4}
+
+  \begin{table}[hbtp]
+    \centering
+      \caption[\cdrtabcaptionshort]{\cdrtabcaption}
+      \begin{tabular}{#2}
+        \toprule
+        \rowtitlestyle
+}
+{
+        \bottomrule
+      \end{tabular}
+      \label{tab:\cdrtablabel}
+  \end{table}
+}
+
+\newcommand{\cdrfiglabel}{}% stores the label
+\newcommand{\cdrfigcaption}{}% stores the caption
+\newcommand{\cdrfigcaptionshort}{}% stores an optional short caption
+\newenvironment{cdrfigure}[3][]
+{
+  \if\relax\detokenize{#1}\relax
+  \gdef\cdrfigcaptionshort{\relax}
+  \else
+  \gdef\cdrfigcaptionshort{#1}
+  \fi
+
+  \gdef\cdrfiglabel{#2}
+  \gdef\cdrfigcaption{#3}
+
+  \begin{figure}[hbtp]
+    \centering
+}
+{
+      \caption[\cdrfigcaptionshort]{\cdrfigcaption}
+      \label{fig:\cdrfiglabel}
+  \end{figure}
+}
