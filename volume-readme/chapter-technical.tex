@@ -1,6 +1,17 @@
 \chapter{Technical}
 
-This chapter describes some of the more technical parts of the CDR.
+This chapter describes some of the more technical aspects of the CDR.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Getting the Files and Compiling after your Changes}
+
+Instructions for getting the files and compiling a volume are given on the home page of the repository, at
+\href{https://github.com/LBNE/lbn-cdr}{https://github.com/LBNE/lbn-cdr}. Scroll down to 
+``Guidance'' and ``Getting Started.''
+
+Note that any acronyms list that a volume has requires an extra step to be included; this step
+is not documented there.
+The technical editors will take care of it.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The \LaTeX{} CDR class}
@@ -13,18 +24,29 @@ All of the \LaTeX{} configuration for the document that pertains to the general 
 \end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Topic-specific \LaTeX{} files}
+\section{Volume-generic \LaTeX{} files}
 
-There are three files which are specific to the topic of the CDR but generic to each volume that should be provided:
+There are several files specific to the topic of the CDR but used for all the volumes, hence 
+they are in the \texttt{common} directory:
 
 \begin{description}
 \item[\texttt{common/preamble.tex}] placed before the document begins and should provide all macros to define common terms or units.
 \item[\texttt{common/init.tex}] placed immediately after the document starts and should provide things like title page, author list, toc/lof/lot, etc.
 \item[\texttt{common/final.tex}] placed immediately before the document ends and should provide the bibliography setup or any other common trailing matter.
+\item[\texttt{common/defs.tex}] (input to the preamble) contains macros for some commonly 
+used terms and expressions. Please review this file and use the definitions to help ensure consistency
+throughout the document.
 \end{description}
 
+Also in the \texttt{common} directory are two content-related files: \texttt{intro.tex} and 
+\texttt{supp-doc-list.tex}.  All volumes except the introductory volume will share the introduction
+contained in \texttt{intro.tex}.  The other is a list of supporting documents that this
+introduction file pulls in.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Volume main file}
+\section{The volume-(name).tex file}
+
+\hlfix{Contributors do not need to do this!} \\
 
 To start a new volume, copy the \texttt{volume-readme.tex} to a new
 name and edit as directed by the comments.  
