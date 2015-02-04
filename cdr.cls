@@ -55,11 +55,8 @@
 \RequirePackage{placeins}
 
 
-%%%FIXME: need to make this part respond to a class option
-% show \label and other keys in the margin to make it easier for
-% editors to add \ref and other references.
+%% fixme: this needs to be controlled by "draft"
 \RequirePackage[color]{showkeys}
-% show line numbers
 \RequirePackage[pagewise]{lineno}
 \linenumbers
 
@@ -69,8 +66,6 @@
 \RequirePackage{menukeys}
 \newcommand{\hlfix}[2]{\texthl{#1}\todo{#2}}
 
-
-% TikZ is needed for various packages for drawing.
 \RequirePackage{tikz}
 \usetikzlibrary{snakes}
 \usetikzlibrary{matrix}
@@ -81,12 +76,13 @@
 
 % Fancier headers
 \RequirePackage{fancyhdr}
+
+\newcommand{\titlepagecornerblock}{}  
 \fancypagestyle{empty}{
   \fancyhf{}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
 }
-\newcommand{\titlepagecornerblock}{}  
 \fancypagestyle{titlepage}{
   \fancyhf{}
   \renewcommand{\headrulewidth}{0pt}

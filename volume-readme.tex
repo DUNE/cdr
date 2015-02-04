@@ -1,23 +1,22 @@
-\documentclass[print]{cdr}
+\documentclass[draft]{cdr}
 \pdfoutput=1            % must be in first 5 lines so arXiv finds it
 
-% Put all figures specific to this volume under here:
+% Edit: set this line to match this volume's sub-directories holding figures
 \graphicspath{ {figures/}{volume-readme/figures/}{volume-readme/generated/} }
 
-% Include common things that don't fit in the class.
+% Leave as is.
+% This includes all common settings which are related to this
+% particular CDR's set of volumes.
 \input{common/preamble}
 
-% Used on the volume title page.
-\renewcommand\thevolumetitle{Conceptual Design Report \\ \explong}
+% Edit: set this to the subtitle specific to this volume
 \renewcommand\thevolumesubtitle{Volume: README}
 
-
 \begin{document}
-% Initial content common to all volumes, title, etc.
+% Leave as is. Initial content common to all volumes.
 \input{common/init}
 
-% the individual chapters are kept separate and added explicitly to
-% facilitate any top-level formatting.
+% Edit: input each chapter file in order
 
 \input{volume-readme/chapter-general}
 
@@ -27,5 +26,6 @@
 
 \input{volume-readme/chapter-technical}
 
+% Leave as is: Any final content common to all volumes.
 \input{common/final}
 \end{document}
