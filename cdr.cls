@@ -234,20 +234,8 @@
 
 
 
-% Hyperref typically needs to come at the end
+% Hyperref typically needs to come at the end of all \usepackages 
 \RequirePackage[pdftex,bookmarks]{hyperref}
-\hypersetup{
-    final=true,
-    colorlinks=false,
-    linktocpage=true,
-    linkbordercolor=blue,
-    citebordercolor=green,
-    urlbordercolor=magenta,
-    filecolor=black,
-    pdfpagemode=UseOutlines,
-    pdfborderstyle={/S/U},  
-}
-
 
 \DeclareOption{lineno}{
   \linenumbers

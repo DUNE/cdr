@@ -24,8 +24,18 @@ sectioning is required.
 Starting from \verb|\subsection|, this produces the following:
 
 \subsection{A Sub Section}
+
+This is a sub-section.
+
 \subsubsection{A Sub Sub Section}
+
+This is a sub-sub-section.
+
 \subsubsubsection{A Sub Sub Sub Section}
+
+This is a sub-sub-sub-section and is getting to be a bit too fine-grained.
+
+\subsection{Section Labels}
 
 Just after defining a chapter and any significant section a
 \verb|\label| should be added so it can be referenced.
@@ -219,8 +229,82 @@ However, manual care must be taken to avoid duplication.
 Before adding any entry to \texttt{citedb.bib} read/search through it
 to ascertain that the entry you wish to add is not already there.
 
+\section{Common Names}
 
+To enforce consistency, use a \LaTeX{} macro in place of any name or
+term which is frequently used.
+It is especially important to do this if the name or term is subject
+to multiple ``spellings''.
+The file \texttt{common/defs.tex} is where all such macros should be defined.
 
+Some examples:
 
+\begin{itemize}
+\item \dm{21} is written as \verb|\dm{21}|.
+\item \SURF is written as \verb|\SURF|.
+\end{itemize}
 
+\section{Numbers and Units}
+
+\textbf{All} numerical quantities expressed as literal number
+\textbf{must} have units unless they are inherently do not have a unit.
+In order to enforce consistency the \texttt{siunitx} package is used
+and a collection of common units are defined in
+\texttt{common/units.tex}.
+
+\subsection{Bare Numbers}
+
+To enforce consistent writing of numbers encase them in the
+\verb|\num{}| command:
+
+\begin{itemize}
+\item ``\num{100}'' is written as \verb|\num{100}|.
+\item ``\num{1000}'' is written as \verb|\num{1000}|.
+\item ``\num{123.456}'' is written as \verb|\num{123.456}|.
+\end{itemize}
+
+\subsection{Bare Units}
+
+If you need to write a bare unit, one with not associated number, use
+\verb|\si{}| (lower case ``si'')
+
+\begin{itemize}
+\item ``\si{m}'' is written \verb|\si{m}|.
+\item ``\si{pc}'' is written \verb|\si{pc}|.
+\end{itemize}
+
+\subsection{Numbers and Units}
+
+When a quantity has a unit write both the numerical part and the unit
+using the \verb|\SI{}{}| command like:
+
+\begin{itemize}
+\item ``\SI{120}{GeV}'' is written as \verb|\SI{120}{GeV}|.
+\item ``\SI{4850}{foot}'' is written as \verb|\SI{4850}{foot}|
+\end{itemize}
+
+\subsection{Adjective Quantities}
+
+Some language uses quantities as adjectives.
+These require proper outfitting with a dash which is easy to forget.
+To accommodate this a set of ``adjective quantities'' commands are defined.
+A generic \verb|\SIadj| is provided as are some commonly used ones.
+For example:
+
+\begin{itemize}
+\item ``The \SIadj{4850}{ft} level'' is written as \verb|The \SIadj{4850}{ft} level|.
+\item ``The \ftadj{4850} level'' is written as \verb|The \ftadj{4850} level|.
+\item ``A typical \GeVadj{2} event'' is written as \verb|A typical \GeVadj{2} event|.
+\item 
+\end{itemize}
+
+\subsection{Common compound units}
+
+There are some common units that rather long to type out each time
+especially when we require nice formatting.
+
+\begin{itemize}
+\item ``per \msr'' is written as \verb|per \msr|
+\item ``exposure in \ktmwyr{}s'' is written as \verb|exposure in \ktmwyr{}s|
+\end{itemize}
 
