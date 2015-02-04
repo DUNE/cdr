@@ -58,7 +58,6 @@
 %% fixme: this needs to be controlled by "draft"
 \RequirePackage[color]{showkeys}
 \RequirePackage[pagewise]{lineno}
-\linenumbers
 
 %% todonotes for "fixmes"
 \RequirePackage[table,usenames,dvipsnames]{xcolor}
@@ -248,3 +247,9 @@
     pdfpagemode=UseOutlines,
     pdfborderstyle={/S/U},  
 }
+
+
+\DeclareOption{lineno}{
+  \linenumbers
+}
+\ProcessOptions\relax
