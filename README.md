@@ -53,19 +53,20 @@ Brett (see contacts below)
 
 General git procedure:
 
-    git clone https://github.com/LBNE/lbn-cdr.git
     cd lbn-cdr
     (edit)
+    git pull
     git commit -a -m "Some commit message"
     git push
 
 If adding a new file:
 
     git add the-new-file.tex
+    git pull
     git commit -a -m "Some commit message"
     git push
 
-Sometimes upstream changes occur that can affect what you are doing. When your local changes do not conflict with the changes in the upstream, a simple git pull will let you move forward.
+Sometimes upstream changes occur that can affect what you are doing. Doing a `git pull` just before you commit is a good idea. When your local changes do not conflict with the changes in the upstream, a simple git pull will let you move forward.
 
 If your local changes do conflict with the upstream changes, and git pull refuses to overwrite your changes, you can stash your changes away, perform a pull, and then unstash, like this:
 
