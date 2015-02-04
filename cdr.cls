@@ -236,3 +236,19 @@
     \end{tcolorbox}
   \end{center}
 }
+
+
+
+% Hyperref typically needs to come at the end
+\RequirePackage[pdftex,bookmarks]{hyperref}
+\hypersetup{
+    final=true,
+    colorlinks=false,
+    linktocpage=true,
+    linkbordercolor=blue,
+    citebordercolor=green,
+    urlbordercolor=magenta,
+    filecolor=black,
+    pdfpagemode=UseOutlines,
+    pdfborderstyle={/S/U},  
+}
