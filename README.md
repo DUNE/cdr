@@ -40,31 +40,36 @@ it is usually sufficient for subsequent builds to run only:
 Repository
 ---
 
+It is strongly recommended that you use Git to make a clone of this
+repository, to commit your changes to your clone and to push those
+changes back to GitHub.  If you prefer to fork and make a pull
+requests that is also fine.
+
 To get "push" access to this repository send your GitHub user name to
 Brett (see contacts below)
 
-It is strongly recommended that you use Git to make a clone of the
-repository, to commit your changes to that clone and to push those
-changes back to GitHub (or fork/clone and make a pull request).
+## If you are unable to use Git
 
-If you are unable to use Git then you **must** make your changes
-according to these steps:
+If you are unable to use Git your contributions will still be accepted
+but will lead to additional effort for the technical editors.  To
+minimize that additional effort you **must** follow these steps:
 
 * Start editing from the most recent
   [tagged release](https://github.com/LBNE/lbn-cdr/releases) or the
   specific release you may be requested to use.
 * Unpack the release archive (.zip or .tar.gz) on your computer.
-* Make edits inside that directory/folder that is created.
-* When you have finished, remove any generated files (eg, `volume-*.pdf`) and repack the directory (as `.zip` or `.tar.gz`).
-* Send the archive to the contacts listed below.
+* Make your edits inside the directory/folder that is created.
+* When you have finished, remove any generated files (eg, `volume-*.pdf`).
+* Repack the directory (as `.zip` or `.tar.gz`).
+* Send this archive to the contacts listed below.
 
-Note: the release version must be included.  This should be part of
-the unpacked directory/folder.  If you have stripped that off, mention
-the release version when you submit.
+Note: the technical editors must know the release version that you
+started with.  This should be part of the unpacked directory/folder
+name so do not strip it out.
 
 Contacts
 ---
 
-* Anne Heavey aheavey@fnal.gov (technical editor)
+* Anne Heavey <aheavey@fnal.gov> (technical editor, content)
 
-* Brett Viren bv@bnl.gov (LaTeX machinery and repository)
+* Brett Viren <bv@bnl.gov> (technical editor, LaTeX machinery and repository)
