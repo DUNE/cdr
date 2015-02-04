@@ -10,3 +10,7 @@ tests/tables.pdf
 .DS_Store
 .svn
 
+*.lof
+*.lot
+*.nlo
+*.toc

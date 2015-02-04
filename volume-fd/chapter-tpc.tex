@@ -60,9 +60,10 @@ through two redundant LVDS (low-voltage differential signaling) output cables to
 
 One cable bundle is planned for each APA to connect to the outside of the cryostat. The bundle will consist of wires for low-voltage power, wire-bias voltages, data out, clock in, digital control IO and an analog monitoring output. Redundant cables will be provided for many of these functions. The 52 cable bundles will be connected through 26 feedthroughs distributed on the roof of the cryostat. Additional feedthroughs will be required for redundant high-voltage connections to the CPAs. 
 
-\notestart
-The wire angle shown in Figure~\ref{fig:tpc-wire-frame-xsect} is 45 degrees whereas as of Jan. 2015 it will be 36 degrees.
-\notestop
+
+\begin{editornote}
+The wire angle shown in Figure~\ref{fig:tpc-wire-frame-xsect} is 45 degrees whereas as of Jan. 2015 it will be 36 degrees. \end{editornote}
+
 
 \begin{figure}[htpb]
 \centering
@@ -136,9 +137,11 @@ onto printed circuit boards attached to the wire frame.
 
 %%%%%%%%%%%%%%%%
 \subsection{Wire Planes}
-\notestart
-Editor's Note: This section needs to be revised based on the 36-degree wire angle.
-\notestop
+
+\begin{editornote}
+Editor's Note: This section needs to be revised based on the 36-degree wire angle.  
+\end{editornote}
+
 Four planes of wires are installed on each side of an APA as shown in Figure~\ref{fig:tpc-wire-frame-xsect}.
 A nominal wire pitch of 4.5~mm is selected to meet the position resolution  and signal-to-noise ratio requirement. The distance between wire planes is set to 4.8~mm (3/16~in) to use standard printed circuit board thickness, while maintaining optimal signal formation.  These four planes (along the direction of electron drift) are labeled as: the {\em grid plane}, the {\em first induction plane} (U), the {\em second induction plane} (V), and the {\em collection plane} (X).
 The wires on the grid and the collection planes
@@ -318,9 +321,11 @@ replaced manually.
 
 %%%%%%%%%%%%%%%%
 \subsection{Alternative APA Construction}
-\notestart
-Editor's Note:  The APA size described in this section does not reflect the change from 2.5 m $\times$ 7~m  to 2.3 m $\times$ 6 m.
-\notestop
+
+\begin{editornote}
+  Editor's Note:  The APA size described in this section does not reflect the change from 2.5 m $\times$ 7~m  to 2.3 m $\times$ 6 m.
+\end{editornote}
+
 The APA design described above requires two customized machines capable of placing wires directly on the 2.5~m $\times$ 7~m APA frame with a precision of the order of 1~mm.  Cleaning the solder flux off the APA after wire bonding also poses a challenge on an object this size. An alternate APA design is under development to alleviate these difficulties.  In this design, the APA frame dimensions and the wire geometry remain  approximately the same, but the wires are attached to the APA frame in a two-step process.
 
 The first step is to bond a group of wires ($\sim$64) with epoxy and solder on two FR-4 boards to form a wire module.   The second step is to mount all the assembled wire modules onto an APA frame using a stretching table.  The wire lengths in each wire module are determined in such a way that when a module is mounted on the frame, all wires will reach a uniform tension of 5~N.  Jumper cables interconnect the corresponding U or V wire modules along the two long edges of an APA to complete the helical wire wrapping pattern electrically.
@@ -383,9 +388,11 @@ frame structure on the other side of the mesh, are covered with
 field-shaping electrodes biased at appropriate voltages. 
 Figure~\ref{fig:tpc-cathode-model} illustrates the concept of the 
 CPA. 
-\notestart
-Editor's Note: Figure~\ref{fig:tpc-cathode-model} shows the 2012 design. The design has evolved to a tubular member with stainless steel sheet.
-\notestop
+
+\begin{editornote}
+  Editor's Note: Figure~\ref{fig:tpc-cathode-model} shows the 2012 design. The design has evolved to a tubular member with stainless steel sheet.
+\end{editornote}
+
 
 \begin{figure}[htbp]
 \centering
@@ -461,9 +468,11 @@ is discussed in Chapter~\ref{ch:install}.
 \section{In-Vessel Front-End Electronics }
 \label{sec:v5-tpc-elec}
 
-\notestart
-Editor's Note:  This section has not been updated for the increased number of APAs or APA size change.  Therefore some values reported here will be incorrect for the design as of January 2015. 
-\notestop
+
+\begin{editornote}
+  Editor's Note:  This section has not been updated for the increased number of APAs or APA size change.  Therefore some values reported here will be incorrect for the design as of January 2015. 
+\end{editornote}
+
 The front-end electronics will operate at cryogenic temperatures. The system must provide 
 amplification, shaping, zero supression, digitization, buffering and multiplexing of the signals.  All functions of the readout chain will be programmable via a register on the ASICs. The APAs will need to be
 self-triggering since, unlike neutrino-oscillation measurements for which the pulsed beam 

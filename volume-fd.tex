@@ -1,12 +1,14 @@
+\documentclass[print]{cdr}
+\pdfoutput=1            % must be in first 5 lines so arXiv finds it
+\graphicspath{ {figures/}{volume-fd/figures/}{volume-fd/generated/} }
+
 \input{common/preamble}
-\graphicspath{ {volume-fd/figures/} }  
+
+% Used on the volume title page.
+\renewcommand\thevolumesubtitle{Volume: The Liquid Argon Detector at
+  the Far Site}
 
 \begin{document}
-\def\thevolumetitle{Volume (TBD): The Liquid Argon Detector at the Far Site}
-\def\titleextra{\includegraphics[width=0.7\textwidth]{LArFD_cover_2014.png}}
-
-
-
 \input{common/init}
 
 \input{volume-fd/chapter-intro}

@@ -42,6 +42,19 @@
 % Must use units properly and consistently
 \RequirePackage[detect-all=true,group-digits=true,group-separator={,},group-minimum-digits=4]{siunitx}
 
+% Long table is long
+\RequirePackage{longtable}
+
+% For abbrev/acronym lists
+\RequirePackage[intoc]{nomencl}
+\makenomenclature  % does this belong here or outside of the class?
+\renewcommand{\nomname}{Acronyms, Abbreviations and Units}
+\setlength{\nomlabelwidth}{0.2\textwidth}
+
+% Tighter control of floats.
+\RequirePackage{placeins}
+
+
 %%%FIXME: need to make this part respond to a class option
 % show \label and other keys in the margin to make it easier for
 % editors to add \ref and other references.
@@ -55,6 +68,43 @@
 \RequirePackage{todonotes}
 \RequirePackage{menukeys}
 \newcommand{\hlfix}[2]{\texthl{#1}\todo{#2}}
+
+
+% TikZ is needed for various packages for drawing.
+\RequirePackage{tikz}
+\usetikzlibrary{snakes}
+\usetikzlibrary{matrix}
+\usetikzlibrary{trees}
+\usetikzlibrary{positioning,arrows}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+
+% Fancier headers
+\RequirePackage{fancyhdr}
+\fancypagestyle{empty}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+\newcommand{\titlepagecornerblock}{}  
+\fancypagestyle{titlepage}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+  \fancyhead[RO]{\titlepagecornerblock}
+}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\bfseries \thepage} % except the center
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+\fancypagestyle{simple}{
+  \fancyhf{}
+  \fancyhead[RO,LE]{\textsf{\footnotesize \thechapter--\thepage}}
+  \fancyhead[LO,RE]{\textsf{\footnotesize \leftmark}}
+  \fancyfoot[CO,CE]{\textsf{\footnotesize \explong}}
+}
 
 
 % Fancier tables
@@ -91,38 +141,23 @@
 }
 
 %%% originals come from booktabs
+%%% maybe want to customize:
 % \renewcommand{\toprule}{
 %   \arrayrulecolor{red}
 %   \specialrule{1.5pt}{2pt}{0pt}
 %   \arrayrulecolor{black}
 % }
-
 % \renewcommand{\midrule}{
 %   \arrayrulecolor{red}
 %   \specialrule{1pt}{1pt}{1pt}
 %   \arrayrulecolor{black}
 % }
-
 % \renewcommand{\bottomrule}{
 %   \arrayrulecolor{red}
 %   \specialrule{1.5pt}{0pt}{2pt}
 %   \arrayrulecolor{black}
 % }
 
-% \newcommand{\cdrtablabel}{}
-
-% \newenvironment{cdrtable}[2]{%
-%   \gdef{\cdrtablabel}{#1}%
-%   \begin{table}[hbtp]%
-%     \centering%
-%     \begin{tabular}{#2}%
-% }{%      
-%     \bottomrule%
-%     \end{tabular}%
-%     \caption{caption}%
-%     \label{\cdrtablabel}%
-%   \end{table}%
-% }
 
 \newcommand{\cdrtablabel}{}% stores the label
 \newcommand{\cdrtabcaption}{}% stores the caption
@@ -173,4 +208,31 @@
       \caption[\cdrfigcaptionshort]{\cdrfigcaption}
       \label{fig:\cdrfiglabel}
   \end{figure}
+}
+
+
+%
+% Provide an "editors note" environment
+% 
+
+\RequirePackage{framed}
+\RequirePackage{wrapfig}
+\RequirePackage[skins,breakable]{tcolorbox}
+\definecolor{editornotecolor}{RGB}{255,255,153}
+\newenvironment{editornote}
+{
+  \tcbset{
+    width=0.9\textwidth,
+    colframe=editornotecolor!130,
+    colback=editornotecolor!20!white,
+    enhanced,  
+    breakable, 
+    }
+
+  \begin{center}
+    \begin{tcolorbox}
+}      
+{
+    \end{tcolorbox}
+  \end{center}
 }
