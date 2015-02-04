@@ -47,6 +47,7 @@ For example:
 
 See Section~\ref{sec:refs} for how to reference labeled sections.
 
+\FloatBarrier
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Figures}
 \label{sec:figures}
@@ -57,25 +58,27 @@ environment is used in order to provide for a consistent presentation.
 The environment is called with one optional and two required
 arguments:
 
-\begin{itemize}
-\item An initial, optional short caption for the List Of Figures.
-\item A label for referencing (it will have \texttt{fig:} prepended).
-\item The full table of contents.
-\end{itemize}
+\begin{enumerate}
+\item An initial, optional short caption for the List Of Figures, in square brackets.
+\item A label for referencing (it will have \texttt{fig:} prepended). Curly brackets.
+\item The full caption. Curly brackets, again.
+\end{enumerate}
 
-\begin{cdrfigure}[Short ToF caption.]{aerial}{An aerial photograph of Fermilab
+This is followed by including the graphic file.
+
+\begin{cdrfigure}[Short ToF caption]{aerial}{An aerial photograph of Fermilab
     showing Wilson Hall and surrounding accelerator rings (Fermilab
     Visual Media Services)}
   \includegraphics[width=0.8\textwidth]{fermilab-aerial.jpg}
 \end{cdrfigure}
 
 
-When the figure contains a graphic,  usual \texttt{includegraphics} is used.
-The file name is assumed relateive to a volume-specific \texttt{graphicspath} as
+When the figure contains a graphic,  usually \texttt{includegraphics} is used.
+The filename is assumed relative to a volume-specific \texttt{graphicspath} as
 described in Section~\ref{sec:files} and as such one typically should
 \textbf{not} specify any directory parts in its name.
 The file's extension may be omitted.
-An example can be seen in Figure~\ref{fig:aerial} which is created
+An example can be seen in Figure~\ref{fig:aerial}, which is created
 with the following \LaTeX shown in Figure~\ref{fig:aerial-latex}
 
 \begin{cdrfigure}{aerial-latex}{\LaTeX{} showing how to do include a figure.}
@@ -87,6 +90,8 @@ with the following \LaTeX shown in Figure~\ref{fig:aerial-latex}
 \end{cdrfigure}
 \end{verbatim}
 \end{cdrfigure}
+
+\FloatBarrier
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tables}
 \label{sec:tables}
@@ -97,12 +102,12 @@ This is instead of the usual double \texttt{table} + \texttt{tabular} environmen
 The \texttt{cdrtable} environment takes one optional and three
 required arguments:
 
-\begin{itemize}
-\item An initial, optional short caption for the List of Tables.
-\item The tabular column specification.
+\begin{enumerate}
+\item An initial, optional short caption for the List of Tables. Square brackets.
+\item The tabular column specification. Curly brackets for the last three.
 \item A label for referencing (it will have \texttt{tab:} appended)
 \item The full caption.
-\end{itemize}
+\end{enumerate}
 
 Inside the actual contents of the table you are required to provide a
 initial row containing the headings for the table's rows followed by a
@@ -111,17 +116,19 @@ Following every regular row (except the last) you should include a
 \texttt{colline} macro.
 Both of these take the place of the usual \texttt{hline}.
 
-\begin{cdrtable}[The LoT caption]{cc}{example}{This is an example table.}
+\begin{cdrtable}[The LoT caption]{cc}{example}
+{This is an example table. We will use better colors, don't worry.}
   Rows & Counts \\ \toprowrule
   Row 1 & First \\ \colhline
   Row 2 & Second \\ \colhline
   Row 3 & Third \\ 
 \end{cdrtable}
 
-\noindent Table~\ref{tab:example} is thus made like:
+\noindent Table~\ref{tab:example} is thus made like (arguments can span lines):
 
 \begin{verbatim}
-\begin{cdrtable}[The LoT caption]{cc}{example}{This is an example table.}
+\begin{cdrtable}[The LoT caption]{cc}{example}
+{This is an example table. We will use better colors, don't worry.}
   Rows & Counts \\ \toprowrule
   Row 1 & First \\ \colhline
   Row 2 & Second \\ \colhline
@@ -129,7 +136,7 @@ Both of these take the place of the usual \texttt{hline}.
 \end{cdrtable}
 \end{verbatim}
 
-Table~\ref{tab:pdcay} shows a more complex example.
+Table~\ref{tab:pdecay} shows a more complex example.
 See the source for how it is written.
 Note that special column specifications are used.
 
@@ -148,7 +155,7 @@ $n \rightarrow K^+ e^- $ & 10\% & 3 & 96\% & $<2$ \\ \colhline
 $n \rightarrow e^+\pi^-$ & 19\% & 2 & 44\% & 0.8 \\
 \end{cdrtable}
 
-
+\FloatBarrier
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Referencing}
 \label{sec:refs}
