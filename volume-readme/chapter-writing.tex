@@ -157,7 +157,7 @@ $n \rightarrow e^+\pi^-$ & 19\% & 2 & 44\% & 0.8 \\
 
 \FloatBarrier
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Referencing}
+\section{Referencing and Citations}
 \label{sec:refs}
 
 Note: if you see a grey label blox containing \texttt{sec:refs}
@@ -166,6 +166,9 @@ elsewhere in chapters, sections, figures, etc), it means this document
 was built in draft mode.  
 These artifacts show up to help you know what label was used to
 reference each particular thing.
+
+
+\subsection{Intra-document References}
 
 Assume that any chapter, section or important sub-, subsub-, section
 or within any figure or table environment may need to be referenced
@@ -198,6 +201,26 @@ that precedes it.
 
 Examples for figures and tables have been given above.  Here I
 reference this section:~\ref{sec:refs}.  
+
+
+\subsection{Citations}
+
+Referencing citations is done like \verb|\cite{strunk}| which gives \cite{strunk}.
+The key \texttt{strunk} matches an entry in the \texttt{citedb.bib}
+file in the top-level directory.
+
+
+The \texttt{citedb.bib} file is in BitTex format.
+This is \textbf{not} \LaTeX{} format and in particular does not
+indicate comments via \texttt{\%} characters.
+The content and order of entries in this file is not reflected in the
+generated Bibliography.
+However, manual care must be taken to avoid duplication.
+Before adding any entry to \texttt{citedb.bib} read/search through it
+to ascertain that the entry you wish to add is not already there.
+
+
+
 
 
 
