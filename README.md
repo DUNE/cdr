@@ -40,6 +40,13 @@ it is usually sufficient for subsequent builds to run only:
 
 You may need the second run to get the paging and numbering correct.
 
+The technical editors are responsible for producing a "official" final
+versions with all the editing guides removed.  To produce a "final"
+version yourself replace each `pdflatex` command with this one:
+
+    pdflatex "\def\isfinal{1} \input{volume-readme}"
+
+
 Repository
 ---
 

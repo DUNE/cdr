@@ -4,14 +4,9 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{cdr}[2015/02/02]
-\LoadClass[12pt,letterpaper,twoside]{report}
+\LoadClass[12pt,letterpaper]{report}
 
-% Set margins
-\setlength{\oddsidemargin}{0.25in}
-\setlength{\evensidemargin}{-0.25in}
-\setlength{\topmargin}{-2.0cm} 
-\setlength{\marginparwidth}{0in}
-\setlength{\marginparsep}{0in}
+\RequirePackage[letterpaper]{geometry}
 
 % Required values and their setters
 \newcommand\thevolumetitle{Conceptual Design Report}
@@ -59,12 +54,8 @@
 \RequirePackage[color]{showkeys}
 \RequirePackage[pagewise]{lineno}
 
-%% todonotes for "fixmes"
+
 \RequirePackage[table,usenames,dvipsnames]{xcolor}
-\RequirePackage{todonotes}
-\RequirePackage{menukeys}
-\newcommand{\hlfix}[2]{\texthl{#1}\todo{#2}}
-\newcommand{\fixme}[1]{\todo[inline]{#1}}
 
 \RequirePackage{tikz}
 \usetikzlibrary{snakes}
@@ -73,6 +64,11 @@
 \usetikzlibrary{positioning,arrows}
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{decorations.markings}
+
+% fixme's, must folow xcolor, tikz, ifthen
+\RequirePackage{todonotes}
+\RequirePackage{menukeys}
+\setlength{\marginparwidth}{2cm}
 
 % Fancier headers
 \RequirePackage{fancyhdr}
@@ -238,7 +234,28 @@
 % Hyperref typically needs to come at the end of all \usepackages 
 \RequirePackage[pdftex,bookmarks]{hyperref}
 
-\DeclareOption{lineno}{
-  \linenumbers
+
+% this seems overly tortured
+\newif\iffinal
+
+%\finalfalse
+\DeclareOption{final}{
+  \finaltrue
 }
 \ProcessOptions\relax
+
+\iffinal
+\presetkeys{todonotes}{disable}{}
+\newcommand{\hlfix}[2]{}
+\newcommand{\fixme}[1]{}
+
+\else
+% "draft"
+%Set default style for todonotes
+\presetkeys{todonotes}{fancyline}{}
+\newcommand{\hlfix}[2]{\texthl{#1}\todo{#2}}
+\newcommand{\fixme}[1]{\todo[inline]{#1}}
+\linenumbers
+\fi
+
+

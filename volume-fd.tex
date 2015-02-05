@@ -1,8 +1,4 @@
-\ifdefined\isfinal
-  \documentclass{cdr}
-\else
-  \documentclass[lineno]{cdr}
-\fi
+\ifdefined\isfinal\documentclass[final]{cdr}\else\documentclass{cdr}\fi
 \pdfoutput=1            % must be in first 5 lines so arXiv finds it
 \graphicspath{ {figures/}{volume-fd/figures/}{volume-fd/generated/} }
 
