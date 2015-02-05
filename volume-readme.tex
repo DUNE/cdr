@@ -1,4 +1,8 @@
-\documentclass[lineno]{cdr}
+\ifdefined\isfinal
+  \documentclass{cdr}
+\else
+  \documentclass[lineno]{cdr}
+\fi
 \pdfoutput=1            % must be in first 5 lines so arXiv finds it
 
 % Edit: set this line to match this volume's sub-directories holding figures
