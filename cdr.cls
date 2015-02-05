@@ -64,6 +64,7 @@
 \RequirePackage{todonotes}
 \RequirePackage{menukeys}
 \newcommand{\hlfix}[2]{\texthl{#1}\todo{#2}}
+\newcommand{\fixme}[1]{\todo[inline]{#1}}
 
 \RequirePackage{tikz}
 \usetikzlibrary{snakes}
