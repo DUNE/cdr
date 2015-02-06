@@ -1,10 +1,10 @@
-This is the Conceptual Design Report for the next long-baseline experiment at Fermilab.
+This repository holds the source for three volumes of the Conceptual Design Report for the next long-baseline experiment at Fermilab.
 ====
 
 Guidance
 ---
 
-The definitive source for guidance for CDR authors is availble in the
+The definitive source for guidance for CDR authors is available in the
 document:
 
   volume-readme.pdf
@@ -32,7 +32,7 @@ Taking `volume-readme` as an example:
     pdflatex volume-readme
     pdflatex volume-readme
 
-Substitute the actual volume name for "readme.”  Unless references change
+To build one of the CDR volumes, substitute the volume name for "readme.”  Unless references change,
 it is usually sufficient for subsequent builds to run only:
 
     pdflatex volume-readme
@@ -40,12 +40,15 @@ it is usually sufficient for subsequent builds to run only:
 
 You may need the second run to get the paging and numbering correct.
 
-The technical editors are responsible for producing a "official" final
-versions with all the editing guides removed.  To produce a "final"
-version yourself replace each `pdflatex` command with this one:
+The technical editors are responsible for producing a clean final
+version of each volume with all the editing markup removed.  To compare
+the “working” readme volume with its “clean” counterpart, first save the
+pdf to a new name (to avoid overwriting), then compile the source again, 
+replacing each `pdflatex volume-readme` command with this one:
 
     pdflatex "\def\isfinal{1} \input{volume-readme}"
 
+This command can be used to produce a clean compilation of any volume.
 
 Repository
 ---
@@ -56,7 +59,7 @@ changes back to GitHub.  If you prefer to fork and make pull
 requests that is also fine.
 
 To get "push" access to this repository send your GitHub user name to
-Brett (see contacts below)
+Brett (see contacts below).
 
 General git procedure:
 
@@ -86,7 +89,7 @@ Now you should be able to do a `git push`.
 
 ## If you are unable to use Git
 
-If you are unable to use Git your contributions will still be accepted
+If you are unable to use Git, your contributions will still be accepted
 but will lead to additional effort for the technical editors.  To
 minimize that additional effort we ask that you **please** follow these steps:
 
@@ -103,6 +106,8 @@ minimize that additional effort we ask that you **please** follow these steps:
 Note: the technical editors must know the release version that you
 started with.  This should be part of the unpacked directory/folder
 name so do not strip it out.
+
+If you are unable to edit in LaTeX, please talk to Anne (see contacts below).
 
 Contacts
 ---
