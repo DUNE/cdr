@@ -1,0 +1,22 @@
+\ifdefined\isfinal\documentclass[final]{cdr}\else\documentclass{cdr}\fi
+\pdfoutput=1            % must be in first 5 lines so arXiv finds it
+\graphicspath{ {figures/}{volume-cryo/figures/}{volume-cryo/generated/} }
+
+\input{common/preamble}
+
+% Used on the volume title page.
+\renewcommand\thevolumesubtitle{Volume: Cryogenic Systems}
+
+\begin{document}
+\input{common/init}
+
+\input{volume-cryo/chapter-intro}
+
+\cleardoublepage
+\input{volume-cryo/chapter-cryosys}
+
+
+\input{common/final}
+\end{document}
+
+
