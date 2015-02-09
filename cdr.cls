@@ -57,13 +57,18 @@
 
 \RequirePackage[table,usenames,dvipsnames]{xcolor}
 
+\RequirePackage{framed}
+\RequirePackage{wrapfig}
 \RequirePackage{tikz}
+\RequirePackage[skins]{tcolorbox}
+
 \usetikzlibrary{snakes}
 \usetikzlibrary{matrix}
 \usetikzlibrary{trees}
 \usetikzlibrary{positioning,arrows}
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{decorations.markings}
+\usetikzlibrary{shadings}% needed by tcolorbox
 
 % fixme's, must folow xcolor, tikz, ifthen
 \RequirePackage{todonotes}
@@ -207,22 +212,14 @@
 % Provide an "editors note" environment
 % 
 
-\RequirePackage{framed}
-\RequirePackage{wrapfig}
-\RequirePackage[skins,breakable]{tcolorbox}
 \definecolor{editornotecolor}{RGB}{255,255,153}
 \newenvironment{editornote}
 {
-  \tcbset{
-    width=0.9\textwidth,
-    colframe=editornotecolor!130,
-    colback=editornotecolor!20!white,
-    enhanced,  
-    breakable, 
-    }
-
   \begin{center}
-    \begin{tcolorbox}
+    \begin{tcolorbox}[width=0.9\textwidth,
+	colframe=editornotecolor!130,
+	colback=editornotecolor!20!white,
+	skin=enhanced]
 }      
 {
     \end{tcolorbox}
