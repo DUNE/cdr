@@ -13,6 +13,11 @@ document:
 This document is written following its own guidance so its source also
 serves as an example.
 
+Releases
+---
+
+Fixed releases, with built PDFs are available from the [release area](https://github.com/LBNE/lbn-cdr/releases) as zip or tar.gz archives.
+
 Getting started
 ---
 
