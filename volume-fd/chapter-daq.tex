@@ -115,7 +115,7 @@ for logging of conditions.
 % 1st row
   \node[boxa] (ce) {Cold\\Electronics};
  \&
- \& \node[boxa] (rce) {RCE\\digitization\\processors};
+ \& \node[boxa] (rce) {COB\\LArTPC data\\processors};
  \&
  \& \node[boxa] (trigfe) {Trigger\\frontend\\Computers};
  \& \node[boxa] (trigbe) {Trigger\\backend\\Computers}; \\
@@ -199,10 +199,11 @@ The DAQ subsystem reference design described in this chapter is shown
 in figure~\ref{fig:daq15_main} and consists of the following
 components:
 \begin{itemize}
-  \item custom `RCE digitisation processors' modules located in the
-    detector hall that receive serialised digital data from the LArTPC
-    and carry out data merging and data compression (see
-    section~\ref{sec:daq_rce})
+  \item custom "Cluster-on-Board" (COB) digitised data processing
+    modules, residing in ATCA crates located in the detector hall to
+    receive data from the LArTPC (transmitted via redundant high-speed
+    link) and to carry out data merging and data compression (see
+    section~\ref{sec:daq_cob})
   \item custom `SSP photon detector digitizers' which digitize and
     process the light signals (described in section~\ref{sec:pd_ssp}) 
   \item two local farms of commodity computers providing two separate
@@ -240,13 +241,13 @@ data from the LArTPC front-end electronics.  The sampling rate of
 2~MHz has been chosen so as to achieve the required position
 resolution along the ionization drift direction.
 
-The task of data transfer is facilitated by having an essentially
-synchronous flow of data from the front-end ASICs in the LAr cryostat
-to the RCE modules.  The data from 32 ADC channels is multiplexed onto
-one cable which, once outside the cryostat, is transmitted on optical
-fiber (to also provide ground isolation) to the RCE modules.  With
-these specifications, data compression/zero-suppresion, event building
-and triggering/filtering can be accomplished outside of the cryostat.
+The task of data transfer is facilitated by multiplexing and utilizing
+high-speed data lines (1Gbps) in front-end ASICs in the LAr, and by
+redundant data lines that provide connection to data-acquisition
+hardware located outside the cryostat.  The hardware receiving the raw
+TPC data then can perform zero-suppression and/or data compression, as
+desired, and forwarding the sparsified data to a backend processing
+farm for event building, reconstruction, and filtering.  
 The \LBNE beam-spill signal and data from the photon-detection system
 are considered part of the data stream, and can be used at this stage
 to select events for processing and storage as desired.
@@ -264,10 +265,6 @@ volume -- to contribute only negligibly to the DAQ bandwidth requirement.
 %Section~\ref{sec:v5-daq-assumptions}.  
 The requirements on the DAQ system are listed in the
 requirements documentation~\cite{lar-fd-req}.
-
-
-
-
 
 \subsection{Event Rates and Timing}
 \label{sec:v5-daq-assumptions}
@@ -334,7 +331,7 @@ detector materials (U/Th/Co/K), is estimated to provide a
 but less than $\sim 5\,$MeV, while 
 electronics noise (assuming 10:1 S/N for 1 MIP, and a threshold of 0.3 MIPs) 
 will contribute a relatively low rate per APA of singles.  
-Table~\ref{tbl:daq-signal-rates} provides a summary of these rate 
+Table~\ref{tab:daq-signal-rates} provides a summary of these rate 
 estimates.  Work is ongoing to further refine them.
 %
 \begin{cdrtable}[Rates and data sizes/rates for various processes.]
@@ -432,23 +429,78 @@ needed and for what sized detector.
   {DAQ subsystem component counts for one 20-kton module/cryostat.
     The total component count for the two-cryostat LAr-FD will be
     twice what is shown.}
-    {\bf Quantity} & {\bf Description} \cr \hline
-    54  & COB Modules equipped with 8 RCEs\cr \hline
-    2   & Ethernet Switches (Cisco 4948E or similar) \cr \hline
-    1   & Ethernet Switch Chassis (Cisco 6509E or similar), with \cr 
-    1   & 8-port input optical 10-GB ethernet interface module, and \cr
-    1   & 48-port output 1-GB ethernet interface module \cr \hline
-    48  & Data Farm compute nodes \cr \hline
-    1   & Readout Supervisor compute node (not shown in Figure)\cr \hline
-    1   & Routing Master compute node (not shown in Figure)\cr \hline
-    1   & Master timing unit + GPS receiver (not shown in Figure)\cr\hline
-    9   & Slave timing units (not shown in Figure)\cr\hline
-    1   & Run Control compute node (not shown in Figure)\cr \hline
-    1   & Slow Controls compute node\cr \hline
+    {\bf Quantity} & {\bf Description} \\
+   60  &  COBs (Cluster on Board) each with 8 RCEs\\
+   20  & 2-slot ATCA Shelves  \\
+   2   & Ethernet Switches   \\  
+   60  &  TPC Readout Compute Nodes \\
+   1   &  Master Timing Unit with GPS Receiver\\
+   10  &  Slave Timing Units  (assuming we build new, improved ones) \\
+   8   &  Event Builder Compute Nodes  (???) \\
+   8   &  Software Filter Compute Nodes (???) \\
+   1   &  Run Control Compute Node   \\
+   1   &  Slow Control Compute Node   \\
+   1   & DAQ Database  Compute Node   \\
 \end{cdrtable}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{COB - Cluster on board modules}
+\label{sec:daq_cob}
+
+The primary interface between the TPC front-end electronics (FE) and
+the DAQ subsystem consists of an ATCA-based system of RCEs
+(Reconfigurable Cluster Elements).  The RCE system receives the
+serialized raw data for the FE, performs zero-suppression on it, and
+packetizes and transmits the resulting sparsified data to a back-end
+data farm for event building and further processing.  Additionally,
+the RCE system transmits timing and control signals to the FE as well
+as forwarding configuration data to them at start-up.
+
+The RCE system consists the following components: a commercial ATCA
+shelf (2-, 6-, or 14-slot), a Cluster-On-Board (COB) which is the
+"front board" in ATCA terms, and a Rear-Transition-Module (RTM) which
+is the "rear board".  The COB is a custom board, developed by SLAC,
+which holds the processing power of the system.  The COB (see Figure
+\ref{fig:daq15_cob}) consists of 5 bays for holding daughter boards, an onboard
+10-GbE switch, and both 10- and 1-Gb ethernet connections for
+communications with the back-end system.  Four of the daughter-board
+bays are for Data Processing Modules (DPM), each of which can hold up
+to two RCEs.  The RCE is the core procession unit of the system; it is
+made up of a modern SoC (currently, the Xilinx Zynq-7045) with
+multiple high-speed I/O ports (up to 10-Gbps each) and external DRAM
+and flash memory controllers.  The other bay on the COB contains the
+Data Transmission Module (DTM) which is responsible for distributing
+timing and trigger information to and between the DPMs.
+
+While the COB hardware is application agnostic, the RTM is application
+specific. The RTM provides the mechanical interface between the
+front-end (or, in our case, the flange electronics) and the back-end,
+as well as other external sources such as the timing or trigger
+systems.  In the case of LBNE, we propose to use fiber optic
+connections between the flange and the TPC DAQ using QSFP+ connectors.
+Currently, each RTM can accommodate up to 16 QSFP+ connections.
+
+With the assumption that each cold FE board multiplexes it's 128 wire
+channels to 4 outputs at 1-Gbps each, the non-zero suppressed data for
+1 APA can be fed into a single COB (containing 8 RCEs).  Each RCE
+would receive data from 2 FE boards, perform zero-suppression, and
+send the result to the back-end.  There are some options regarding the
+physical distribution of the shelves.  One option is to have a smaller
+shelf at each flange port, each shelf collecting data from the 2- or
+4-APAs accommodated by that port.  Alternatively, the fibers from all
+APAs could be routed to a central location into a smaller number of
+large ATCA-shelves.
+
+\begin{figure}[hbt]
+  \includegraphics[scale=0.6]{daq15_COB-gen3.pdf}
+  \caption{\label{fig:daq15_cob} The COB (left) and RTM (right).  }
+\end{figure}
+\begin{figure}[hbt]
+  \includegraphics[scale=0.6]{daq15_acta-rtm.pdf}
+    \caption{A front view of the ATCA crate with a COB in the top slot. }
+\end{figure}
+
 \section{Data Concentrator Module}
 \label{sec:v5-trig-datatransfer}
 
@@ -478,12 +530,11 @@ functions.
 \label{fig:daq-dcm-photo}
 \end{figure}
 
-
 Assuming the Data Output Board is implemented in the cold volume with 
 20$\times$ muxing to provide a single output line per APA, only a handful 
 of NO$\nu$A-style DCMs would be required to read out the entire detector.  
 Considering typical data rates of order 20~Mbps per APA 
-(see Table~\ref{tbl:daq-signal-rates}), the 1~Gb (80 MB/s) 
+(see Table~\ref{tab:daq-signal-rates}), the 1~Gb (80 MB/s) 
 DCM output bandwidth 
 could comfortably accommodate more than a few APA's.
 More likely, the \LBNE DCMs would be designed for fewer input lines 
@@ -587,6 +638,39 @@ The event building and triggering function of the LAr-FD DAQ system
 will be performed by the data-farm computers.  Event data will be staged 
 locally before being transmitted in quasi real-time (nominally to Fermilab) 
 for archival to persistent storage. 
+
+\subsection{Artdaq}
+
+The data acquisition software for the 35-ton prototype detector is
+based on artdaq which is a toolkit for building DAQ systems.  It has
+been developed at Fermilab and is in use in several other experiments.
+Within artdaq, core DAQ functions are provided by the toolkit, and
+experimenters develop the modules that perform the functions that are
+specific to the experiment.  For the 35-ton detector, LBNE
+collaborators have developed modules that configure and read out the
+RCE and SSP boards that are connected to the TPC and photon system
+detectors, respectively.  Members of the experiment are also
+developing reconstruction and filtering software modules that will
+analyze the data as it is acquired.  The artdaq-based DAQ system for
+the 35-ton detector has been successfully used to acquire data in
+electronics and detector integration tests, and artdaq has been the
+default choice for the DAQ framework for the full LBNE detector for
+some time.  As part of this, a preliminary design has been developed
+for the full detector to use a two-stage artdaq system to stream
+zero-suppressed data into a farm of processes, run software modules to
+find events of interest, and use the results of this software trigger
+to initiate the readout of all of the data produced for the events of
+interest.
+
+In thinking about the data acquisition system for a reconfigured
+long-baseline neutrino experiment, it is recognized that using a
+toolkit such as artdaq has advantages in that it allows experimenters
+to leverage existing infrastructure and only develop the components
+that are necessary for their experiment.  In addition, there are
+advantages to using the same event analysis framework online and
+offline (artdaq uses art).  This allows experimenters to develop and
+substantially test their software in an offline environment and only
+include the full DAQ infrastructure for final testing.
 
 \subsection{Event Building}
 
