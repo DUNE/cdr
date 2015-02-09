@@ -5,7 +5,7 @@
 % One is for text, the other for images and figures 
 
 % Replace the following when the name of the experiment is decided
-\newcommand{\LBNE}{[Expt-name]}
+\newcommand{\LBNE}{[Expt-name] }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -25,30 +25,15 @@ Section 1 is OK.  Section 2 is mostly OK, but need a bit more careful
 time to make sure the numbers for channel counts are correct and
 include the correct rate calcuiations for the new APAs (and remove
 reference to zero suppression inside).  Section 3 is OK, but is so
-short(just a table) that it can perhaps go elsewhere?
-\end{editornote}
-
-\begin{editornote}
-%----------V--------%
-  \fixme {Can remove this text -- superseeded by the bit above} 
-Editor's Note: This chapter has not been updated since 2012, with the exception of this note.  Most of the
-text from 2012 is no longer valid. \\
-
-The data acquisition system has been evolving since the 2012 design. The design for the 35-ton prototype, the most recent,
- is based on artdaq, a toolkit for building DAQ systems that provides core DAQ functions. Experimenters leverage the infrastructure it provices and are able to focus on developing artdaq-compatible software modules to perform functions specific to the experiment. \\ 
-
-Artdaq has been developed at Fermilab and is in use in several other experiments.  It has been the default choice for the DAQ framework for the full \LBNE detector for some time. \\ 
-
-\LBNE collaborators have so far developed modules that configure and read out the RCE and SSP boards that are connected to the TPC and photon system detectors, respectively, for the 35-ton detector.  They are also developing reconstruction and filtering software modules that will analyze the data as it is acquired.  \\ 
-
-This artdaq-based DAQ system %for the 35-ton detector 
-has been successfully used to acquire data in electronics and detector integration tests for the 35-ton prototype.   As part of this, a preliminary design has been developed for the full detector. The design uses a two-stage artdaq system to stream zero-suppressed data into a farm of processes, run software modules to find events of interest, and use the results of this software trigger to initiate the readout of all of the data produced for the events of interest. \\ 
-
-Since artdaq uses art, the same event analysis framework can be used
-online and offline.  This allows experimenters to develop and
-substantially test their software in an offline environment and only
-include the full DAQ infrastructure for final testing.
-%----------^--------%
+short(just a table) that it can perhaps go elsewhere?  Section 4 and 5
+can be merged into one (COBs), the old text is still present and needs
+deleting once any nice sentences have been harvested from it.  The
+section on artdaq needs augmenting with a full description of the LBNE
+implementation with the dual trigger schemes.  The section on timing
+isn now too long, but many of the bits are very good and may need
+moving elsewhere.  There should be a section on global triggering (of
+detectors in several distinct detector halls, and a secion on
+supernova triggering.
 \end{editornote}
 
 \section{Introduction}
@@ -136,11 +121,6 @@ for logging of conditions.
  \& \node[boxa] (databe) {Data\\backend\\Computers}; \\
  };
 
-% Early attempts
-%\draw[data] (rce) -- (node cs:name=trigfe,anchor=west);
-%\draw[data] (rce) -- ($ (node cs:name=trigfe,anchor=south west)!0.7!(node cs:name=trigfe,anchor=north west) $);
-%\draw[data] (rce.east) -- ($ (trigfe.south west)+(0,1cm)$);
-
 \coordinate (fthruWL) at ($ (fthru.south west)!0.3!(fthru.north west) $);   % West Low edge of fthru 
 \coordinate (fthruWH) at ($ (fthru.south west)!0.7!(fthru.north west) $);   % West High edge of fthru 
 \coordinate (fthruEL) at ($ (fthru.south east)!0.3!(fthru.north east) $);   % East Low edge of fthru 
@@ -156,8 +136,6 @@ for logging of conditions.
 \coordinate (sspEL) at ($ (ssp.south east)!0.3!(ssp.north east) $);  % East low edge of SSP
 \coordinate (sspEH) at ($ (ssp.south east)!0.8!(ssp.north east) $);
 
-%\coordinate (rceSR) at ($ (rce.south west)!0.8!(rce.south east) $);  % South right edge of RCE 
-%\coordinate (sspNR) at ($ (ssp.north west)!0.8!(ssp.north east) $);  % North right edge of RCE 
 \coordinate (rceSR) at ($ (rce.south)+(0.7cm,0) $);  % South right edge of RCE 
 \coordinate (sspNR) at ($ (ssp.north)+(0.7cm,0) $);  % North right edge of RCE 
 \coordinate (scWL) at ($ (sc.south west)!0.3!(sc.north west) $);  % West low edge of SC 
@@ -168,18 +146,10 @@ for logging of conditions.
 \draw[data] (fthruEH) -- ($(fthruEH)+(0.1cm,0)$) |- (rce);
 \draw[data] (fthruEL) -- ($(fthruEL)+(0.1cm,0)$) |- (ssp);
 
-%\draw[data] (rce.east) -- ($ (rce.east)+(0.2cm,0) $) |- ($ (trigfe.south west)!0.7!(trigfe.north west) $); 
 \draw[data] (rceEH) -- ($ (rceEH)+(0.5cm,0) $) |- (trigfeWH); 
 \draw[data] (rceEL) -- ($ (rceEL)+(0.5cm,0) $) |- (datafeWH); 
 \draw[data] (sspEH) -- ($ (sspEH)+(0.55cm,0) $) |- (trigfeWL); 
 \draw[data] (sspEL) -- ($ (sspEL)+(0.55cm,0) $) |- (datafeWL); 
-
-%\draw[data] (rce) -- (datafe);
-
-%\draw[data] (pd) -- (fthru);
-%\draw[data] (fthru) -- (ssp);
-%\draw[data] (ssp) -- (trigfe);
-%\draw[data] (ssp) -- (datafe);
 
 \draw[data] (trigfe) -- (trigbe);
 \draw[data] (datafe) -- (databe);
@@ -190,8 +160,8 @@ for logging of conditions.
 \draw[data,dashed] (scWH) -| (rceSR);
 \draw[data,dashed] (scWL) -| (sspNR);
 
-\draw[data,dotted] (fthru.north) -- ($(fthru.north)+(0,2.5cm)$) node [left] {In cryostat} node [right] {Room temp.};
-\draw[data,dotted] (fthru.south) -- ($(fthru.south)-(0,2.5cm)$);
+\draw[data,dotted] (fthru.north) -- ($(fthru.north)+(0,2.7cm)$) node [left] {In cryostat} node [right] {Room temp.};
+\draw[data,dotted] (fthru.south) -- ($(fthru.south)-(0,2.7cm)$);
 
 \end{tikzpicture}
 \end{cdrfigure}
@@ -286,27 +256,10 @@ However, this rate is negligible with respect to noise sources.  The
 reference design proposed here would be capable of operation at
 shallower depths, up to about the 800L, without sgnificantly impacting
 the design.
-%This is not 
-%the case at other possible detector depths:  
-%at the alternate site identified at 800L, the total 
-%rate in the detector is estimated to be approximately 500~Hz, accounting 
-%for variations in overburden due to topography at the prospective cavern 
-%site, while 
-%the rate at the 300L is expected to be higher than this by a factor of 10.  
-%These estimates are in the process of being improved with more detailed 
-%calculations/simulations.  
-%For shallow depths, the frequency of muon incidence is 
-%comparable to the maximum duration (2.3~ms) of the signal from an event, 
-%and hence cosmic-ray muons would have an impact on 
-%the required bandwidth of the DAQ system:  while the system described 
-%here has sufficient bandwidth to operate at depths as shallow as the 
-%identified 800L site, going shallower still would impact the design.
 
 \fixme{Update these next two paragraphs, remove references to zero
   suppression in cold}
  As described earlier in this report
-%\fixme{reference actual section.  
-%JU response: doesn't the figure reference provides this?} 
 (see Figure~\ref{fig:tpc-elec-schematic}), 
 the cold electronics for a single Anode Plane Assembly 
 will consist of twenty 128-channel Front-End Readout 
@@ -319,9 +272,7 @@ scenarios (i.e., $>10\,$GeV EM showers contained within a single APA)
 indicate roughly a factor of ten reduction in the number of samples 
 read out with respect to the maximum (2304 wires $\times$ 4625 0.5-$\mu$s 
 samples per wire).  
-%For cosmic-ray muons, at $\sim 3.4\,$Hz per APA the 
-%highest-rate physics process, the rejection factor is estimated to be 
-%$\sim 200$.  
+
 For cosmic-ray muons, the rejection factor is estimated to be $\sim 200$.  
 The rejection factor is of course much higher in APAs 
 not containing any portion of a physics event.  Radioactive decay 
@@ -549,7 +500,7 @@ with two APA's per DCM.
 
 
 \subsection{Data Processing/Handling}
-%: demuxing, unpacking, additional zero suppresion} -- too long a title
+%: demuxing, unpacking, additional zero suppresion} -- too long a title 
 
 As currently imagined, buffers in the front-end electronics will constitute  
 a source of variable-length (i.e., zero-suppressed) time-ordered sequence 
@@ -559,43 +510,6 @@ suitable for transmission to the data farm, the DCM's task of generating
 ethernet packets also provides an opportunity for additional data processing.  
 If re-formatting or additional zero suppression is desired, 
 it could be done here.   
-
-
-%As described in Chapter~\ref{ch:tpc}, zero-suppressed digitized signals from 
-%a single APA will arrive on an LVDS lines and, for redundancy, 
-%on four 'primary' optical lines and four 'backup' optical lines.  
-%Thus, for example, each LVDS line will carry a serial stream of data 
-%with a common timestamp from 128 wires once every $0.5\,\mu s$, for a 
-%net rate of 384 Mbps. 
-%As is the case for MicroBooNE, analysis of the complex time structure 
-%of the ionization signature for a given induction or collection wire 
-%requires that data be `rotated' into a time-ordered data set, spanning 
-%a specified time frame.  In the case of MicroBooNE the nominal time frame 
-%is a $4\, ms$ interval; it remains to be determined what interval is 
-%appropriate for \LBNE.  The deserialization and rotation of the data 
-%can be accomplished in an FPGA as is the case in the MicroBooNE FEM.
-%It also remains to be determined whether (further) zero suppression 
-%can/is desired take place at this stage.  
-
-%\subsection{Output data}
-%
-%As described below in Section~\ref{sec:v5-trig-evtbuild}, the output of 
-%the Data Receiver system will be transfered to a disk farm 
-%(``Buffer Farm'') for event building and triggering.  NOvA achieves this 
-%with Gigabit Ethernet links, and a processor on the Data Concentrator 
-%that forms the packets.  The viability of a similar scheme for LAr20 
-%will depend on the degree of data reduction upstream of this step.  
-%({\bf Need some better numbers here!})  In a worst-case scenario 
-%- no zero-suppression and only the 8:1 lossless compression in the front-end 
-%ASIC - the LVDS output (30 channels) from a single APA would correspond to 
-%11.5 Gbps to be moved out to the Buffer Farm.  Only a small number 
-%of detector channels will have a real signal in a physics event of interest, 
-%and then only for a small fraction of the samples collected during a 
-%given time frame.  Thus even a very conservative zero suppression scheme 
-%realized in the front-ends and/or in the Data Receiver could reduce this 
-%to a manageable level.  A challenge will be how to fold in data from 
-%`large' events (e.g., from calibration/random noise sources) without 
-%introducing deadtime for the DAQ system.
 
 \subsection{Timing, Control and Configuration Signals}
 
@@ -648,7 +562,7 @@ Within artdaq, core DAQ functions are provided by the toolkit, and
 experimenters develop the modules that perform the functions that are
 specific to the experiment.  For the 35-ton detector, LBNE
 collaborators have developed modules that configure and read out the
-RCE and SSP boards that are connected to the TPC and photon system
+COB and SSP boards that are connected to the LArTPC and photon system
 detectors, respectively.  Members of the experiment are also
 developing reconstruction and filtering software modules that will
 analyze the data as it is acquired.  The artdaq-based DAQ system for
@@ -688,10 +602,7 @@ The main drawbacks are that (1) offline processing/analysis of these event
 records for physics events with activity spanning geographical 
 boundaries would become more cumbersome; (2) certain physics studies, such 
 as proton-decay searches, might benefit from 
-%find it useful if 
-simple access to data-registering activity in remote sections of the detector 
-%were provided
-; and (3) auxiliary data  
+simple access to data-registering activity in remote sections of the detector; and (3) auxiliary data  
 would either be unnecessarily duplicated or 
 would have to be stored in its own event record, again adding complexity 
 to the data-analysis process.  Evaluation of this alternative is ongoing.
@@ -721,23 +632,9 @@ for which the corresponding beam-spill signal is missing due to
 network failure or other malfunction, (2) atmospheric-neutrino interactions, 
 (3) supernova-neutrino bursts, (4) proton decay, and (5) magnetic-monopole 
 incidence.  
-%Additionally, what are the requirements for storage of cosmic-ray 
-%muon events, either for detector calibration or physics studies?
 
 \subsubsection{Rejection of Event Records}
 
-%For the reference DAQ system design described here, it is assumed that 
-%cosmic-ray muons will not be prescaled in the primary output-data stream.  
-%This assumption is key in two ways.  First, for a cosmic-ray muon rate of 
-%200~Hz over a full 20-kt detector module, 
-%a significant fraction of  $2.3\,ms$-long intervals 
-%will contain activity from a cosmic-ray muon in some portion of 
-%the detector.  Second, not having to identify and reject cosmic-ray muons 
-%suggests that simple trigger primitives can be 
-%generated and combined in such a way as to reject most of the 
-%remaining 
-%($85\%$ for the case of record time frames of $2.3\,ms$)  
-%`record time frames' hard to parse AH -- is it time frames that are recorded?
 Since the dominant rate is due to dispersed low-energy activity 
 associated with radionuclide decays, simple trigger primitives can be 
 generated and combined so as to reject event records failing well-defined 
@@ -762,7 +659,7 @@ the data farm depending on the processing requirements.  These are not
 known at this time.  However, with anticipated costs for commodity 
 computing systems, it is not expected that the overall cost of the 
 DAQ/online computing systems would increase significantly relative to 
-the currently budgeted system.%AH only read in cursory manner 10/20
+the currently budgeted system.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -782,6 +679,158 @@ design modifications.  For NO$\nu$A, each TDU is associated with 12 DCMs;
 for \LBNE a reasonable distribution could be achieved with 9 TDUs, 
 one for every 6 DCMs (i.e., spaced at intervals of 5~m along the 
 length of the detector).
+
+\subsection{Details of the timing system}
+
+The timing system for the detector is a dedicated high speed link that
+links together all the detector elements.  It is the only physical
+link other than the communications network.  Therefore, it must
+provide several functions.
+
+\begin{itemize}
+\item Provide a time stamp so that data can be associated with a
+  specific accelerator extraction cycle.
+\item Provide a common 64 MHz clock to all front end electronics
+  boards.
+\item Synchronize the data acquisition system so that all data from a
+  given time period is sent to the same event builder.
+\item Provide dynamic synchronization to the cold electronics so
+  glitches in the clock signal are detected promptly.
+\item Enable calibration and test pulses to be generated
+  simultaneously for multiple channels.
+\end{itemize}
+
+These features are covered in more detail in the sections below.
+
+\subsubsection{Time Stamps}
+
+The Fermilab accelerator complex is timed off the 60 Hz electric line
+frequency.  The time between accelerator cycles is a variable number
+of 60 Hz periods.  Thus, we need a method of linking the experiment
+clock system to the accelerator.  It is not feasible to have a direct
+link although it may be possible in the future to have a dedicated
+internet link.
+
+We have chosen to use a precision clock linked to the Global Position
+System.  This gives the same precise time at both the far detector and
+the accelerator.  Electronics at Fermilab records the GPS time of beam
+extraction and sends it over the internet to the far detector.  The
+far detector data is also time stamped with the GPS time so detector
+data can be easily linked to the beam extraction.
+
+We have chosen a 64 bit time stamp so that all detector and
+accelerator data will have a unique time for a 20 year run of the
+experiment.  This will allow correlation with non accelerator physics
+events such as super novas as well as such things as equipment
+failures.
+
+\subsubsection{Front end clock}
+
+This detector has very low noise front end amplifiers.  The APA system
+is connected to 7 meter long wires so noise pick up from the clock is
+a large concern.  One way to nearly eliminate this noise is to select
+a clock frequency that is well outside the bandwidth of the front end
+electronics.  This has proven to be a very effective in several other
+experiments.  We have chosen 64 MHz for this design.  The internal
+capacitance of the SiPMs in the photon system limits the useful
+frequency range to about 30 MHz.  Thus, we can place a double pole (6
+db/octave) filter in front of the digitizers. This reduces any noise
+from the clock system by 12 db.  The SiPM’s have large internal gain
+so 12 db coupled with careful cable design should be adequate to
+eliminate any possible clock noise.
+
+The wire chamber front end amplifiers digitize at 2 MHz.  The Nyqvist
+frequency is 1 MHz so a 4 MHz single pole filter is quite adequate.
+Any noise form the clock system is then suppressed by 48 db which
+should be adequate for this system.
+
+\subsubsection{Time stamping and synchronization}
+
+The data is time stamped by the front end digitizing electronics for
+the photon system and the warm receiver electronics for the APA
+system.  The location of these systems is flexible but the cost of
+cabling will likely constrain the location to be near the feed through
+port that contains the cables to the cold electronics.
+
+There will be a master clock system on the surface with will receive
+the GPS signals and send a 64 MHz clock over fiber optics to the warm
+front end electronics. There will also be two additional lines to each
+front end for synchronization and digital data.  Since there are many
+front ends, there will be several layers of intermediate drivers to
+fan out these signals.
+
+The clock system will operate in a manner similar to the one for the
+NOvA experiment.  The master will be loaded over the ethernet link
+with a time in the future.  The master will send this time over the
+digital link to all the front end systems.  The master will then wait
+until the down loaded time equals the GPS time.  When they are equal,
+it will send a synch pulse over the sync line to each front end.  The
+synch pulse causes each front end to load its time stamp register from
+the time load register.  The time stamp register then increments on
+each 64 MHz cycle.  This register is 64 bits wide and it is appended
+to each data packet.
+
+The accelerator system has a similar master and it can be loaded in
+the same way over the internet.  The accelerator start of extraction
+is time stamped in an identical manner to the data time stamp and sent
+over the internet to the far detector.
+
+The detector is nearly a mile underground so there is a significant
+delay between the detector master clock (which is the same as the
+accelerator master clock) and the front end electronics.  This delay
+is compensated for by measuring the time delay to each front end board
+and digitally delaying all the clock signals by the difference between
+the delay to a given front end and the longest delay in the system.
+The delay is determined automatically by each front end system as
+follows.  There is a loop back connector on the data and synch lines
+at each front end system.  There is a special mode where a pulse on
+the synch line is sent back over the data line.  The fanout that is
+driving a given front end can then measure the time between itself and
+the front end.  The same system can measure the time delay between
+each layer of fan out.  These delay times are then loaded into a
+digital delay registers at the fan outs and front ends so all front
+ends receive the synch pulse at the same physical time.  The time
+stamp registers that are loaded into the front ends are corrected for
+this delay so that the time stamps reflect true GPS time.
+
+The data rates at the far detector are low enough that a software
+trigger can be used instead of a dedicated hardware trigger.  This
+system operates by sending data to a special trigger farm.  This
+requires that all the data come from the same physical time period.
+The time stamp system easily provides this synchronization.  Each
+front end has a ``data enable'' bit that must be set before any data is
+recorded.  At initialization, this bit is turned off.  When the synch
+signal arrives to load the time stamp register, it also sets the ``data
+enable'' bit.  Since this occurs at the same physical time for the
+entire detector, it provides the necessary synchronization.  The data
+acquisition software need only monitor the ``data enable'' to know when
+data taking has started.  It can read the time load register to know
+the time that data taking started.
+
+\subsubsection{Dynamic Synchronization}
+
+This detector has several hundred thousand channels of cold digitizers
+that are driven by the 64 MHz clock.  All of this data arrives
+synchronously at the warm electronics.  It is possible that glitches
+on the clock line could put the data stream off by one or more bits
+resulting in lost data.  It might be possible to check the data in the
+warm electronics but it also possible to resynchronize the ADC’s via
+the clock line.  This is done by phase encoding the start of an ADC
+conversion cycle on the clock line.  For example, if there are 16
+channels on an ADC chip, the clock line would phase encode the start
+of a 16 channel conversion cycle.  If the front end was not internally
+at the start of a conversion cycle, it would reset its internal clock
+and send out an error message.  The warm electronics would also check
+the phase encoding to spot failures in the clock distribution system.
+
+\subsubsection{Calibration and test pulses}
+
+Calibration and test pulses need to be sent to the various front ends
+so that they all occur at the same physical time.  This can be done by
+phase encoding additional signals on the clock line.  The front ends
+that are to generate calibration or test pulses are enabled by the
+control system.  Then, when they see the test or calibration signal on
+the clock line, they generate the appropriate pulse.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Run Control }
@@ -818,7 +867,6 @@ system.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{DAQ Infrastructure }
 \label{sec:v5-trig-infrastructure}
-
 
 \subsection{Wide Area Network}
 
