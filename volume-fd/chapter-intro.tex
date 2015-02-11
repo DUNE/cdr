@@ -218,22 +218,27 @@ Each APA has three wire planes that are connected to readout electronics; two in
 \subsection{Electronics, Readout and Data Acquisition}
 \label{sec:det_electronics}
 
-Requirements for low noise and for extreme purity of the LAr motivate locating
-the front-end electronics in the LAr  (hence ``cold electronics'') close to the anode wires, which
-reduces the signal capacitance (thereby minimizing noise).  The use of CMOS electronics in this application is particularly attractive since the series noise of this process has a noise minimum at 89~K. The large number of readout channels required to instrument
-the LAr-FD TPCs motivates the use of CMOS ASICs.  
-Signal zero-suppression and multiplexing will be implemented in the ASIC, minimizing the number of cables
-and feedthroughs in the ullage gas, and therefore reducing contamination
-from cable outgassing. Figure~\ref{fig:tpc-elec-schematic-1} shows the conceptual architecture of a front-end electronics design that meets the requirements for LAr-FD. The entire
-electronics chain is immersed in the LAr.
-
-All signal feedthroughs will be placed at the top of the cryostat, where they are easily installed, are always accessible, are at low hydrostatic pressure and pose no risk of LAr leakage.  The cold electronic system will include digitization, buffering, and a high level of digital output multiplexing (ranging from 1/128 to 1/1024). Output data links will include redundancy to eliminate the effect of any single-point failure. 
+Requirements for low noise and extreme LAr purity motivate
+the front-end electronics in the LAr (henceforth ``cold electronics'') to be located close to the anode wires,
+which reduces noise by minimizing the signal capacitance.
+The use of CMOS electronics in this application is particularly attractive
+since the series noise of this process has a minimum at 89~K.
+The cold electronics, to be implemented in CMOS ASIC, will include digitization, buffering, and multiplexing.
+Multiplexing at a level of 1:16 will reduce the number of cables to what can easily be accomodated
+by the planned number of feedthroughs, though multiplexing at a level of 1:64 or even 1:128 cannot be ruled out at this time.
+Output data links will include two-fold redundancy to eliminate the effect of single-point failures.
+Except for part of the cables, the entire electronics chain is immersed in LAr.
+Multiplexing therefore also reduces contamination from cable outgassing by reducing the volume of cables in the ullage gas.
+Figure~\ref{fig:elect_schem} shows the conceptual architecture of a front-end electronics design
+that meets the requirements for LAr-FD.
+The signal feedthroughs are all located on top of the cryostat, where they are most accessible,
+are at low hydrostatic pressure, and pose no risk of LAr leakage.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{elect_schem.pdf}
 \caption{Conceptual front-end electronics architecture}
-\label{fig:tpc-elec-schematic-1}
+\label{fig:elect_schem}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
