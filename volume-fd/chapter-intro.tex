@@ -218,25 +218,27 @@ Each APA has three wire planes that are connected to readout electronics; two in
 \subsection{Electronics, Readout and Data Acquisition}
 \label{sec:det_electronics}
 
-Requirements for low noise and extreme LAr purity motivate
-the front-end electronics in the LAr (henceforth ``cold electronics'') to be located close to the anode wires,
-which reduces noise by minimizing the signal capacitance.
-The use of CMOS electronics in this application is particularly attractive
-since the series noise of this process has a minimum at 89~K.
-The cold electronics, to be implemented in CMOS ASIC, will include digitization, buffering, and multiplexing.
-Multiplexing at a level of 1:16 will reduce the number of cables to what can easily be accomodated
-by the planned number of feedthroughs, though multiplexing at a level of 1:64 or even 1:128 cannot be ruled out at this time.
-Except for part of the cables, the entire electronics chain is immersed in LAr.
-Multiplexing therefore also reduces contamination from cable outgassing by reducing the volume of cables in the ullage gas.
-Figure~\ref{fig:elect_schem} shows the conceptual architecture of a front-end electronics design
-that meets the requirements for LAr-FD.
+CMOS technology, with a noise minimum at 89~K,
+permits the front-end electronics to reside in the LAr (henceforth ``cold electronics''),
+as close to the anode wires as is practical.
+This minimizes capacitance and therefore signal noise,
+and benefits LAr purity by not residing in the ullage gas.
+Figure~\ref{fig:elect_schem} shows the cold electronics architecture,
+which comprises a front-end shaping/filtering stage (FE ASIC),
+an analog-to-digital conversion stage (ADC ASIC), and a communication/control stage (Digital ASIC).
 The signal feedthroughs are all located on top of the cryostat, where they are most accessible,
 are at low hydrostatic pressure, and pose no risk of LAr leakage.
+The cold electronics multiplex at 1:64,
+which lowers the cable-count to what can be accomodated by the planned number of feedthroughs,
+and mitigates contamination from cable outgassing
+by reducing the volume of cables in the ullage gas.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{elect_schem.pdf}
-\caption{Conceptual front-end electronics architecture}
+\caption{Front-end electronics architecture.
+         The ADCs and the serial link in the Digital ASICs each multiplex at 1:8, together giving 1:64.
+        }
 \label{fig:elect_schem}
 \end{figure}
 
