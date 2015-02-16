@@ -9,56 +9,50 @@ to finish removal of CE material that still may be present in the TPC chapter bu
 Also, this material has not been updated for the increased number of APAs or APA size change.
 \end{editornote}
 
-The scope of the Cold Electronics (CE) subsystem includes the design, procurement, fabrication, testing,
-delivery and installation of the in-vessel electronics chain involved in the readout of the TPC:
-\begin{itemize}
-\item Front-end cards, or Cold Mother Boards (CMB), installed on the TPC
-\item All electronics on the CMBs
-\item Signal feedthroughs (which includes low-voltage power and control lines)
-\item Low-voltage and TPC bias-voltage power supplies
-\item Signal and power cabling between the CMBs and feedthroughs
-\item Signal and power cabling between the feedthroughs and external power supplies and interface crates
-\end{itemize}
-This chapter describes the reference design for the CE that meets the required performance for the LBNE liquid argon detector,
-LAr-FD.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 \label{sec:ce-intro}
 
-The front-end electronics will operate at cryogenic temperatures. The system must provide 
-amplification, shaping, zero supression, digitization, buffering and multiplexing of the signals.  All functions of the readout chain will be programmable via a register on the ASICs. The APAs will need to be
-self-triggering since, unlike neutrino-oscillation measurements for which the pulsed beam 
-can provide a trigger for readout, most other measurements, such as proton decay
-and supernova bursts, will have no trigger.  
+The TPC read-out electronics are refered to as the ``Cold Electronics" (CE) because they will reside in LAr,
+mounted directly on the TPC front-end.
+This will minimize channel capacitance and noise by keeping the length of the connection between an anode wire
+and its corresponding electronics input to an absolute minimum.
+The CE will be implemented as ASIC chips using CMOS technology, which performs well at cryogenic temperatures,
+and will provide amplification, shaping, zero supression, digitization, buffering and multiplexing of the signals.
+The CE need to be self-triggering because no external trigger will be available for many important measurements,
+such as proton decay and supernova bursts,
+% since, unlike neutrino-oscillation measurements for which the pulsed beam 
+% can provide a trigger for readout, other important measurements, such as proton decay
+% and supernova bursts, will have no trigger.  
 
-The readout electronics are optimized for operation in the cryogenic environment.  
-The front-end ASIC chip utilizes a mixed-signal design.  
-It has 16 channels of preamp, a shaper and an analog-to-digital converter (ADC) in its analog section,  
-followed by a large, shared buffer and the digital IO interface.
-Each ADC has two parallel readout lines, each of which multiplexes eight channels, yielding a factor of 8:1.
-Eight such chips 
-are mounted on a single readout board, instrumenting 128 adjacent wires in one plane. 
-A digital-processing ASIC with an 8:1 multiplexer on this board further 
-increases the multiplexing factor to 64:1 with two parallel output channels.
-Data from each output channel will be transmitted through two redundant LVDS (low-voltage differential signaling)
-output cables to a signal feedthrough and from there to an external crate mounted near the feedthrough.
-
-One cable bundle is planned for each APA to connect to the outside of the cryostat.
-The bundle will consist of wires for low-voltage power, wire-bias voltages, data out, clock in,
-digital control IO and an analog monitoring output.
+\begin{editornote}
+  Is this still true, that there will be an ``analog-monitoring output''?
+\end{editornote}
+For each of the 80 APAs in a 10kt cryostat, one cable bundle is planned to connect to the outside of the cryostat.
+The bundle will consist of wires for low-voltage power, wire-bias voltages, data-out, clock-in,
+digital-control IO and an analog-monitoring output.
 Redundant cables will be provided for many of these functions.
-The 52 cable bundles will be connected through 26 feedthroughs distributed on the roof of the cryostat.
-Additional feedthroughs will be required for redundant high-voltage connections to the CPAs. 
+The 80 cable bundles will be connected through 40 feedthroughs distributed on the roof of the cryostat.
+
+The scope of the CE subsystem includes the design, procurement, fabrication, testing,
+delivery and installation of the CE:
+\begin{itemize}
+\item Front-end cards installed on the TPC
+\item All electronics on those cards
+\item Feedthroughs (a single type) which handle the signal, low-voltage power, TPC bias voltage, and control lines.
+\item Power supplies, inlcuding low-voltage supplies for the CE and bias-voltage supplies for the TPCs
+\item Signal, control, and power cabling between the front-end cards and the feedthroughs
+\item Signal, control, and power cabling between the feedthroughs and external power supplies and interface crates
+\end{itemize}
+This chapter describes the reference design for the CE that meets the required performance for the LBNE liquid argon detector,
+LAr-FD.
  
 \begin{figure}[htbp]
 \centering
-% \includegraphics[width=\linewidth]{v5c3-elec-schematic-C.pdf}
 \includegraphics[width=\linewidth]{elect_schem.pdf}
 \caption{Architecture of the front-end electronics operating in LAr}
 \label{fig:ce-elec-schematic}
 \end{figure}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Design Considerations} 
@@ -88,6 +82,19 @@ this is necessary to perform particle identification of stopping kaons from prot
 \subsection{Architecture}
 \label{subsec:fe-arch}
 
+Several functions of the readout chain will be programmable via a register on the ASICs,
+such as shaping constants.
+
+The front-end ASIC chip utilizes a mixed-signal design.  
+It has 16 channels of preamp, a shaper and an analog-to-digital converter (ADC) in its analog section,  
+followed by a large, shared buffer and the digital IO interface.
+Each ADC has two parallel readout lines, each of which multiplexes eight channels, yielding a factor of 8:1.
+Eight such chips are mounted on a single readout board, instrumenting 128 adjacent wires in one plane. 
+A digital-processing ASIC with an 8:1 multiplexer on this board further 
+increases the multiplexing factor to 64:1 with two parallel output channels.
+Data from each output channel will be transmitted through two redundant LVDS (low-voltage differential signaling)
+output cables to a signal feedthrough and from there to an external crate mounted near the feedthrough.
+
 The large number of readout channels (276,480) required to instrument
 each cryostat of the LAr-FD TPC dictates the use of CMOS ASICS for the electronics. 
 Requirements of low noise (less than 1000 rms electrons for a wire
@@ -103,9 +110,9 @@ TPC implementation that can be readily scaled to any detector size or
 geometry.
 
 Figure~\ref{fig:ce-elec-schematic} shows the architecture of a front-end electronics
-design that meets the requirements for the LAr-FD TPC. The entire
-electronics chain is immersed in the LAr and operates at
-89~K. It is composed of a 16-channel front end implemented as a
+design that meets the requirements for the LAr-FD TPC.
+The entire electronics chain is immersed in the LAr and operates at 89~K.
+It is composed of a 16-channel front end implemented as a
 mixed-signal ASIC providing amplification, shaping, digitization,
 buffering, a 16:1 multiplexing stage, a driver and voltage regulators.
 Eight front-end ASICs plus a single digital ASIC implementing an
