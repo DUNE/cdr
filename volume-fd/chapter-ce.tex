@@ -18,34 +18,40 @@ mounted directly on the TPC front-end.
 This will minimize channel capacitance and noise by keeping the length of the connection between an anode wire
 and its corresponding electronics input to an absolute minimum.
 The CE will be implemented as ASIC chips using CMOS technology, which performs well at cryogenic temperatures,
-and will provide amplification, shaping, zero supression, digitization, buffering and multiplexing of the signals.
+and will provide amplification, shaping, digitization, buffering and multiplexing of the signals.
 The CE need to be self-triggering because no external trigger will be available for many important measurements,
 such as proton decay and supernova bursts,
 % since, unlike neutrino-oscillation measurements for which the pulsed beam 
 % can provide a trigger for readout, other important measurements, such as proton decay
 % and supernova bursts, will have no trigger.  
 
-\begin{editornote}
-  Is this still true, that there will be an ``analog-monitoring output''?
-\end{editornote}
-For each of the 80 APAs in a 10kt cryostat, one cable bundle is planned to connect to the outside of the cryostat.
-The bundle will consist of wires for low-voltage power, wire-bias voltages, data-out, clock-in,
+For each of the 80 APAs in a ten-kton cryostat, one cable bundle will connect to the outside of the cryostat through
+a feedthrough, with one feedthrough servicing two APAs.
+The bundle consists of wires for low-voltage power, wire-bias voltages, data-out, clock-in,
 digital-control IO and an analog-monitoring output.
 Redundant cables will be provided for many of these functions.
-The 80 cable bundles will be connected through 40 feedthroughs distributed on the roof of the cryostat.
+\begin{editornote}
+  Is that still true, that there will be an ``analog-monitoring output''?
+\end{editornote}
 
 The scope of the CE subsystem includes the design, procurement, fabrication, testing,
 delivery and installation of the CE:
 \begin{itemize}
 \item Front-end cards installed on the TPC
 \item All electronics on those cards
-\item Feedthroughs (a single type) which handle the signal, low-voltage power, TPC bias voltage, and control lines.
+\item Feedthroughs (a single type, henceforth ``signal feedthroughs'') which handle the signal,
+low-voltage power, TPC bias voltage, and control lines.
 \item Power supplies, inlcuding low-voltage supplies for the CE and bias-voltage supplies for the TPCs
 \item Signal, control, and power cabling between the front-end cards and the feedthroughs
 \item Signal, control, and power cabling between the feedthroughs and external power supplies and interface crates
 \end{itemize}
 This chapter describes the reference design for the CE that meets the required performance for the LBNE liquid argon detector,
 LAr-FD.
+\begin{editornote}
+  The list above is probably not the best way to do this.  However, let's keep it there at least until the TPC chapter has been
+  updated to remove unecessary CE references and information.  Keeping the list (above) will make that a little easier, since the
+  list was taken from the old TPC chapter.
+\end{editornote}
  
 \begin{figure}[htbp]
 \centering
@@ -62,19 +68,26 @@ The requirements for the CE can be found in the requirements documentation \cite
 The most significant ones are the following:
 
 \begin{itemize}	
-\item Provide the means to detect charged particles in the detector and transmit the detector signals to the
-Data Acquisition System (DAQ)
-\item Provide redundancy in the discrimination of electrons from photon conversions and ensure long-term reliability
-over the life of the experiment
-\item Optimize the measurement of high-energy and low-energy tracks from accelerator-neutrino interactions
-\item Enable the detector to distinguish a Minimum Ionizing Particle (MIP) from noise with a signal-to-noise ratio $>$ 9:1
-\item Enable the detector to measure the ionization up to 15 times that of a MIP particle;
-this is necessary to perform particle identification of stopping kaons from proton decay
+\item Provide the means to read out the TPCs and transmit their data in a useful format to the Data Acquisition System (DAQ)
 \item Operate for the life of the facility without signifcant loss of function
 \item Record the wire-signal waveforms continuously without dead time
 \item Use only materials that are compatible with high-purity liquid argon
-
+\item Provide sufficient precision and range in the digitization to:
+\begin{itemize}
+\item Discriminate electrons from photon conversions
+\item Optimize for high- and low-energy tracks from accelerator-neutrino interactions
+\item Distinguish a Minimum Ionizing Particle (MIP) from noise with a signal-to-noise ratio $>$ 9:1
+\item Measure the ionization up to 15 times that of a MIP particle;
+this is necessary to identify stopping kaons from proton decay
 \end{itemize}
+\end{itemize}
+
+\begin{editornote}
+  Again, the list above is may not be the best way to do this.
+  However, let's keep it there at least until the TPC chapter has been
+  updated to remove unecessary CE references and information.
+  Keeping the list (above) will make that a little easier, since the list was taken from the old TPC chapter.
+\end{editornote}
 
 
 
@@ -82,69 +95,67 @@ this is necessary to perform particle identification of stopping kaons from prot
 \subsection{Architecture}
 \label{subsec:fe-arch}
 
-Several functions of the readout chain will be programmable via a register on the ASICs,
-such as shaping constants.
+% Junk, taken from elsewhere in the old TPC Chapter & merged with the old CE Section (also from the old TPC Chapter),
+% which is now the new CE Chapter:  (16feb15 -- RWH)
 
-The front-end ASIC chip utilizes a mixed-signal design.  
-It has 16 channels of preamp, a shaper and an analog-to-digital converter (ADC) in its analog section,  
-followed by a large, shared buffer and the digital IO interface.
-Each ADC has two parallel readout lines, each of which multiplexes eight channels, yielding a factor of 8:1.
-Eight such chips are mounted on a single readout board, instrumenting 128 adjacent wires in one plane. 
-A digital-processing ASIC with an 8:1 multiplexer on this board further 
-increases the multiplexing factor to 64:1 with two parallel output channels.
-Data from each output channel will be transmitted through two redundant LVDS (low-voltage differential signaling)
+% Several functions of the readout chain will be programmable via a register on the ASICs,
+% such as shaping constant (or peaking-time), gain, calibration mask (which controls pulse injection to individual channels),
+% AC/DC coupling mode (AC mode filters out low frequencies, useful if microphonics are observed), plus some diagnostics.
+
+% The front-end ASIC chip utilizes a mixed-signal design.  
+% It has 16 channels of preamp, a shaper and an analog-to-digital converter (ADC) in its analog section,  
+% followed by a large, shared buffer and the digital IO interface.
+% Each ADC has two parallel readout lines, each of which multiplexes eight channels, yielding a factor of 8:1.
+% Eight such chips are mounted on a single readout board, instrumenting 128 adjacent wires in one plane. 
+% A digital-processing ASIC with an 8:1 multiplexer on this board further 
+% increases the multiplexing factor to 64:1 with two parallel output channels.
+% Data from each output channel will be transmitted through two redundant LVDS (low-voltage differential signaling)
+% output cables to a signal feedthrough and from there to an external crate mounted near the feedthrough.
+
+% The large number of readout channels (204,800) required to instrument
+% each ten-kton cryostat of the LAr-FD TPC dictates the use of CMOS ASICS for the electronics. 
+% Requirements of low noise (less than 1000 rms electrons for a wire
+% capacitance of 220 pF) and for achieving extreme purity of the LAr dictate that
+% the front-end electronics be located at the signal wires in the LAr.
+% This reduces the signal capacitance and hence the noise.
+% Significant levels of signal multiplexing can then also be used, minimizing the number of cables
+% in the ullage gas and the attendant outgassing of electronegative impurities.
+% This electronics architecture, combined with the modular TPC elements, also leads to a
+% TPC implementation that can be readily scaled to any detector size or geometry.
+
+Figure~\ref{fig:ce-elec-schematic} shows the CE architecture that meets the requirements for the LAr-FD TPC.
+Except for the Digital ASIC, this has already been prototyped and tested,
+with a commercial FPGA performing the r\^ole of the Digital ASIC. 
+% The entire electronics chain is immersed in the LAr and operates at 89~K.
+The 16-channel front-end is implemented as a mixed-signal (analog and digital) ASIC
+providing amplification, shaping, digitization, buffering,
+an 8:1 multiplexing stage (with two parallel readout lines), a driver and voltage regulators.
+The Digital ASIC provides clock and communication protocol, including a further 8:1 multiplexing
+and a high-speed serial link which transmits the data on two parallel low-voltage differential signaling (LVDS)
 output cables to a signal feedthrough and from there to an external crate mounted near the feedthrough.
+Conversion to optical fiber prior to transmission to DAQ is done in those crates.
+Eight front-end ASICs plus a single Digital ASIC comprise a single 128-channel front-end readout board,
+refered to henceforth as a Cold Mother Board (CMB).
+Each APA is instrumented with 20 CMBs, for a total of 2,560 channels per APA.
+A two-fold redundancy will minimize the probability of loss of any one CMB and its 128 channels.
+The data rates per APA are not expected to be high enough to require the use of optical fibers in the cold,
+nor is there a need for zero-suppression or data compression.
 
-The large number of readout channels (276,480) required to instrument
-each cryostat of the LAr-FD TPC dictates the use of CMOS ASICS for the electronics. 
-Requirements of low noise (less than 1000 rms electrons for a wire
-capacitance of 220 pF) and for achieving extreme purity of the LAr dictate that
-the front-end electronics be located at the signal wires in the LAr.  This
-reduces the signal capacitance and hence the noise. Significant levels of 
-signal multiplexing can then also be used, minimizing the number of cables
-in the ullage gas and the attendant 
-outgassing of electronegative impurities.
-This electronics
-architecture, combined with the modular TPC elements, also leads to a
-TPC implementation that can be readily scaled to any detector size or
-geometry.
-
-Figure~\ref{fig:ce-elec-schematic} shows the architecture of a front-end electronics
-design that meets the requirements for the LAr-FD TPC.
-The entire electronics chain is immersed in the LAr and operates at 89~K.
-It is composed of a 16-channel front end implemented as a
-mixed-signal ASIC providing amplification, shaping, digitization,
-buffering, a 16:1 multiplexing stage, a driver and voltage regulators.
-Eight front-end ASICs plus a single digital ASIC implementing an
-8:1 multiplexer, clock and control circuitry comprise a 
-single 128-channel front-end readout board.  A third digital ASIC containing a
-multiplexing stage (20:1) and driver is used for each APA module to serialize all of the data
-from the 20 readout boards on a single APA (for a total of 2,560 channels per APA) and
-transmit it out of the cryostat on either a twisted copper pair or an
-optical fiber. The choice between twisted-pair copper and optical fiber will be
-postponed until further work is completed to evaluate the long-term reliability
-of optical drivers at LAr temperature. The data rates per APA
-are not expected to be high enough to require the use of optical fibers.
-For either choice, a two-fold redundancy per APA will be implemented
-to minimize the probability of the loss of an entire APA.
-
-
-Figure~\ref{fig:ce-elec-asic-layout} shows a block diagram of the proposed 16-channel front-end
-ASIC. Each channel includes a charge amplifier with a selectable of
-gain 4.7, 7.8, 14 and 25~mV/fC (full scale charge of 55, 100, 180 and
-300~fC), a high-order anti-aliasing filter with adjustable time
-constant (peaking time 0.5, 1, 2, and 3 $\mathrm{\mu}$s), an option to enable an AC
-coupling, baseline adjustment for operation with either the collecting
-or the non-collecting wires, a 12-bit 2 MS/s ADC and a zero-suppression/data
-compression stage. Shared among the 16 channels are the bias circuits,
-programming registers, a temperature monitor, the digital multiplexer (16:1), an
-analog buffer for signal monitoring, and the digital interface. A 600-kb 
-buffer will be included in this design, capable of storing a 1.5-ms 
-event sampled at 2~MS/s in each channel assuming no compression. Two or
-more events can be stored with compression. The layout size is on the
-order of 10 $\times$ 5~mm${^2}$, which would provide a
-yield in excess of 90\%. The estimated power dissipation is below 15~mW
-per channel at 1.8~V supply.
+Figure~\ref{fig:ce-elec-asic-layout} shows a block diagram of the proposed 16-channel front-end ASIC.
+Each channel includes a charge amplifier with a gain selectable from one of 4.7, 7.8, 14 and 25~mV/fC
+(full scale charge of 55, 100, 180 and 300~fC),
+a high-order anti-aliasing filter with adjustable time
+constant (peaking time 0.5, 1, 2, and 3 $\mathrm{\mu}$s),
+an option to enable AC coupling,
+baseline adjustment for operation with either the collecting or the non-collecting wires,
+and a 12-bit 2 MS/s ADC.
+Shared among the 16 channels are the bias circuits, programming registers,
+a temperature monitor, the digital multiplexer (8:1),
+an analog buffer for signal monitoring, and the digital interface.
+A 600-kb buffer will be included in this design, capable of storing a 1.5-ms 
+event sampled at 2~MS/s in each channel.
+The layout size is on the order of $10 \times 5$~mm${^2}$, which would provide a yield in excess of 90\%.
+The estimated power dissipation is below 15~mW per channel at 1.8~V supply.
 
 \begin{figure}[htbp]
 \centering
@@ -168,57 +179,68 @@ predominantly the naturally occurring Ar$^{39}$.  The cosmic-muon rate at the 48
 one drift time (4,625 samples) gives 142~Mb of data. At the cosmic-event rate,
 the net data rate is 0.3~Mb/s per APA.  For radioactive decay of Ar$^{39}$
 the rates are much higher: the specific activity is 1~Bq/kg which results in 183~kHz/APA.
-At this rate, the APA will be continuously read out, at a prohibitive data
-rate of 61~Gb/s; of course, since the ionization produced by these events is highly localized,
+At this rate, the APA will be continuously read out,
+% at a prohibitive data rate of 61~Gb/s;
+at a data rate of 1.5~Gb/s on each of its 40 parallel outputs;
+of course, since the ionization produced by these events is highly localized,
 most of the drift ``frame'' is empty.
 
 The mean range of the beta from Ar$^{39}$ decay is only 0.3~mm, so all
 of the signal is contained in a single over threshold sample of a single wire, for a true ``information''
-rate of 0.6~Mb/s. In order to
+rate of 0.6~Mb/s.
+In order to
 reduce the rate (and volume) of recorded data to tolerable values, 
-zero suppression and data buffering must be
-provided.  The simplest scheme is to do this at the APA level, deriving
+data buffering must be provided.
+The simplest scheme is to do this at the APA level, deriving
 a write-enable from the logic OR of discriminators on all the charge
 collecting (Y) wires in an APA, and then writing all data to a buffer
-while the write-enable is true.  Baseline samples could be recorded
-with reduced range (4 bits) and compacted into full words.  This mode
-would still record large volumes of data without useful
+while the write-enable is true.
+Baseline samples could be recorded
+with reduced range (four bits) and compacted into full words.
+This mode would still record large volumes of data without useful
 information, particularly for simple event topologies and from low-energy 
 events (radioactive decays) and noise. 
-
-A more effective
-zero-suppression can be implemented at the chip level with a dedicated buffer for each
-channel having a write-enable consisting of the OR of  that channel and
-its two nearest neighbors.  A few samples before and after the write-enable 
-will also be recorded to capture the below-threshold leading
-and trailing edges of the signal waveform.  This mode provides maximal
-zero-suppression that is insensitive to localized low-energy events
-and noise. This scheme would reduce the data rate per APA for Ar$^{39}$ decays to
-18~Mb/s. The rate for Kr$^{85}$ decays would be about four times lower.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=6in]{v5c3-cel-write-enable.pdf}
-\caption[Conceptual architecture of zero-suppression]{Conceptual architecture of zero-suppression using a write enable using separate analog shaping}
-\label{fig:ce-elec-write-enable}
-\end{figure}
+\begin{editornote}
+  Is this still true, about considering only saving four bits?
+\end{editornote}
 
 
-A conceptual diagram of this zero-suppression implementation is shown
-in Figure~\ref{fig:ce-elec-write-enable}. The write-enable for each channel is derived from a separate
-shaping amplifier with AC coupling to remove low-frequency, baseline
-fluctuations. Multiple programmable discriminators in the
-``write-enable'' logic are
-needed to sense both unipolar (collection wire) and bipolar (induction
-wire) waveforms.  The write-enable gate passes to, and is OR-ed with,
-channels of adjacent wires to record the below-threshold portion of
-charge shared with these wires. As individual channel buffers fill, they
-are transferred to a large output buffer shared with all 16
-channels for transmission off the chip.
+% A more effective
+% zero-suppression can be implemented at the chip level with a dedicated buffer for each
+% channel having a write-enable consisting of the OR of  that channel and
+% its two nearest neighbors.  A few samples before and after the write-enable 
+% will also be recorded to capture the below-threshold leading
+% and trailing edges of the signal waveform.  This mode provides maximal
+% zero-suppression that is insensitive to localized low-energy events
+% and noise. This scheme would reduce the data rate per APA for Ar$^{39}$ decays to
+% 18~Mb/s. The rate for Kr$^{85}$ decays would be about four times lower.
+
+% \begin{figure}[htbp]
+% \centering
+% \includegraphics[width=6in]{v5c3-cel-write-enable.pdf}
+% \caption[Conceptual architecture of zero-suppression]{Conceptual architecture of zero-suppression using a write enable using separate analog shaping}
+% \label{fig:ce-elec-write-enable}
+% \end{figure}
+
+
+% A conceptual diagram of this zero-suppression implementation is shown
+% in Figure~\ref{fig:ce-elec-write-enable}.
+% The write-enable for each channel is derived from a separate
+% shaping amplifier with AC coupling to remove low-frequency, baseline
+% fluctuations.
+% Multiple programmable discriminators in the ``write-enable'' logic are
+% needed to sense both unipolar (collection wire) and bipolar (induction wire) waveforms.
+% The write-enable gate passes to, and is OR-ed with,
+% channels of adjacent wires to record the below-threshold portion of charge shared with these wires.
+% As individual channel buffers fill, they
+% are transferred to a large output buffer shared with all 16 channels for transmission off the chip.
 
 %%%%%%%%%%%%%%%%
 \subsection{CMOS Circuit Design}
 
+\begin{editornote}
+  I think the ``CMOS 0.25~$\mu$m'' (etc.) needs to be updated.
+\end{editornote}
 To successfully design CMOS circuits that will operate at cryogenic 
 temperatures, two critical issues must be addressed and resolved. 
 The first is the requirement for realistic models at the operating temperature 
@@ -231,7 +253,8 @@ electronics for repair or replacement. Concerning the availability of realistic 
 our preliminary results from the cryogenic characterization (down to 40 K) of a complete 
 mixed-signal ASIC \cite{CMOS-Compton} in a commercial CMOS 0.25~$\mu$m technology, 
 originally developed for room-temperature applications, indicates that the models 
-are useful to first order. To refine these models, several 
+are useful to first order.
+To refine these models, several 
 single-transistor test structures were fabricated on the first prototype of the 0.18~$\mu$m device. 
 Measurements of the properties of these structures at cryogenic temperatures 
 have been used to refine the device models at 89~K. 
@@ -270,31 +293,30 @@ The development of the readout ASIC has begun by designing and fabricating in a 
 process (0.18~$\mu$m and 1.8V) a 16-channel
 ASIC implementing the complete analog front-end section of the scheme shown in Figure~\ref{fig:ce-elec-asic-layout}. 
 This process is expected to be available for at least another 10~years. 
-The charge
-amplifier input MOSFET is a p-channel biased at 2~mA with a L/W (channel length/width) ratio
-of 0.27~$\mu$m / 10~mm, followed by dual
-cascade stages. The charge amplification and shaping filter have
-digitally programmable gain and peaking time as described above. Each
-channel also implements a high-performance output driver which, in the
-final version, will be replaced with a sample-and-hold stage preceding
-the ADC. The ASIC integrates a band-gap reference (BGR)  to
-generate all the internal bias voltages and currents. This guarantees a
-high stability of the operating point over a wide range of
-temperatures, including cryogenic. The ASIC is packaged in a
-commercial, fully encapsulated plastic QFP 80 package.
+The charge amplifier input MOSFET is a p-channel biased at 2~mA with a L/W (channel length/width) ratio
+of 0.27~$\mu$m / 10~mm, followed by dual cascade stages.
+The charge amplification and shaping filter have
+digitally programmable gain and peaking time as described above.
+Each channel also implements a high-performance output driver which, in the
+final version, will be replaced with a sample-and-hold stage preceding the ADC.
+The ASIC integrates a band-gap reference (BGR)  to generate all the internal bias voltages and currents.
+This guarantees a high stability of the operating point over a wide range of
+temperatures, including cryogenic.
+The ASIC is packaged in a commercial, fully encapsulated plastic QFP 80 package.
 
-This ASIC has now been through three design/fabrication/testing revision cycles. Prototypes from each cycle have been evaluated and characterized at room (300~K) and liquid nitrogen
-(77~K) temperatures. During these tests the circuits have been cycled multiple times
-between the two temperatures and operated without any change in
-performance. Figure~\ref{fig:ce-elec-shaper-out} shows the measured pulse response, along with
+This ASIC has now been through four design/fabrication/testing revision cycles.
+Prototypes from each cycle have been evaluated and characterized at room (300~K) and liquid nitrogen (77~K) temperatures.
+During these tests the circuits have been cycled multiple times
+between the two temperatures and operated without any change in performance.
+Figure~\ref{fig:ce-elec-shaper-out} shows the measured pulse response, along with
 details on the adjustability of the gain, peaking time and baseline.
 These results are in close agreement with the simulations and indicate
 that both the analog and the digital circuits and interface operate as
-expected in a cryogenic environment. Simulations and experimental results
-show that the pole-zero cancellation needs to be optimized, which will
-be done in the next revision of the design. Also reported in Figure~\ref{fig:ce-elec-shaper-out}  are
-the outputs of the BGR and temperature sensor, which are in close
-agreement with the simulations as well.
+expected in a cryogenic environment.
+Simulations and experimental results show that the pole-zero cancellation needs to be optimized,
+which will be done in the next revision of the design.
+Also reported in Figure~\ref{fig:ce-elec-shaper-out} are the outputs of the BGR and temperature sensor,
+which are in close agreement with the simulations as well.
 
 \begin{figure}[htbp]
 \centering
@@ -363,6 +385,14 @@ must not introduce more than 10\% of the equivalent thermal noise from the front
 with a maximum specified leakage current in 1-atm argon gas, and must be able to deliver sufficient DC current.
 \end{itemize}
 
+\begin{editornote}
+  Again, the list above is may not be the best way to do this.
+  However, let's keep it there at least until the TPC chapter has been
+  updated to remove unecessary CE references and information.
+  Keeping the list (above) will make that a little easier, since the list was taken from the old TPC chapter.
+\end{editornote}
+
+
 %%%%%%%%%%%%%%%%
 \subsection{Reference Design} 
 \label{subsec:ce-feedthru-desc}
@@ -386,6 +416,12 @@ Therefore it may be desirable to connect all cables to feedthroughs below the li
 and then pass the cables out of the cryostat, through an evacuated volume that traverses the gas and cryostat insulation,
 to a matching set of feedthroughs to the outside. 
 
+\begin{editornote}
+  Have we given up on this scheme, of making connections below the liquid surface?
+  If so, some of the text above should be removed.
+\end{editornote}
+
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{v5c3-signal-FT.png}
@@ -398,9 +434,9 @@ to a matching set of feedthroughs to the outside.
 \label{subsec:ce-feedthru-wirebias}
 
 Each anode plane assembly requires three bias voltage connections 
-at $+$820V, $-$370V, and $-$665V.  The current on each of these 
-supplies is expected to be zero at normal operation.  However the ripple 
-voltage on the supply must be carefully controlled 
+at $+$820V, $-$370V, and $-$665V.
+The current on each of these supplies is expected to be zero at normal operation.
+However the ripple voltage on the supply must be carefully controlled 
 to avoid noise injection into the front-end electronics.  
 
 The power supplies for the wire bias will be similar to 
@@ -440,15 +476,28 @@ An optimum wire gauge can be chosen to minimize heat input to the cryostat.
 \subsection{Digital Data IO Feedthoughs}
 \label{subsec:ce-feedthru-digital}
 
-The TPC data rate per APA, using the zero-suppression and full event-buffer scheme described earlier, appears sufficiently low that it is within the capability of a single LVDS channel on copper. Optical fiber will be used if data must be transmitted at a much higher rate.  In this case, the number of optical fibers will be two per APA for redundancy, or 102 for each five-kton module. Commercial optical-fiber feedthroughs are available to meet this demand.
+\begin{editornote}
+  This needs to have the references to optical fiber removed.
+\end{editornote}
+
+The TPC data rate per APA, using the
+% zero-suppression and
+full event-buffer scheme described earlier,
+appears sufficiently low that it is within the capability of a single LVDS channel on copper.
+Optical fiber will be used if data must be transmitted at a much higher rate.
+In this case, the number of optical fibers will be two per APA for redundancy, or 160 for each ten-kton module.
+Commercial optical-fiber feedthroughs are available to meet this demand.
 
 In addition to the high-speed data-output channels,  LVDS connections will be made to each APA to 
-distribute a clock signal and control information.  These data 
-can be transmitted at a lower bit rate, clearly within the
-capabilities of LVDS. The number of channels for these signals 
+distribute a clock signal and control information.
+These data can be transmitted at a lower bit rate, clearly within the
+capabilities of LVDS.
+The number of channels for these signals 
 are on the order of thousands in the entire detector, easily covered by commercial multichannel feedthroughs. 
 
-A conceptual design of an APA signal/power feedthrough flange is shown in Figure~\ref{fig:tpc-signal-feedthrough}.  Based on a standard 8-in conflat flange with all commercial off-the-shelf components, each of these feedthroughs will serve the bias/power/digital IO needs of four APAs.  
+A conceptual design of an APA signal/power feedthrough flange is shown in Figure~\ref{fig:tpc-signal-feedthrough}.
+Based on a standard 8-in conflat flange with all commercial off-the-shelf components,
+each of these feedthroughs will serve the bias/power/digital IO needs of four APAs.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CE Prototyping, Test and  Checkout}
@@ -457,6 +506,10 @@ A conceptual design of an APA signal/power feedthrough flange is shown in Figure
 %%%%%%%%%%%%%%%%
 \subsection{CE Prototyping}
 \label{sec:ce-checkout-prototype}
+
+\begin{editornote}
+  This was taken from the TPC section and needs a lot of work.
+\end{editornote}
 
 Several prototype TPC modules will be constructed during the 
 design phase.  The initial prototypes will be fraction scale or 
@@ -476,7 +529,9 @@ boards are expected to be available at this stage.  This TPC will be assembled i
 
 A prototype that is proposed to go into the CERN neutrino beamline requires three full-size APAs with fully instrumented readout electronics, six full-size CPAs, and complete field-cage coverage.  The TPC will be constructed using identical APAs, CPAs and field-cage panels as designed for the LAr-FD.  Additional features will be installed to ensure proper TPC operation given the half-height cryostat configuration. The construction and assembly of all TPC mechanical components will use the same materials and techniques as designed for LAr-FD, with the exception of a reduced degree of automation that will be used to wire APAs for the LAr-FD.
 
-A complete set of cold electronics will be installed on the APAs.  The electronics components will closely resemble those designed for the LAr-FD. All key features of the LAr-FD electronics chain, including preamp, shaper, ADC, digital buffer, zero suppression and multiplexing will be implemented.  Some  electronics  may be in prototype or functional-equivalent form.
+A complete set of cold electronics will be installed on the APAs.  The electronics components will closely resemble those designed for the LAr-FD. All key features of the LAr-FD electronics chain, including preamp, shaper, ADC, digital buffer,
+% zero suppression
+and multiplexing will be implemented.  Some  electronics  may be in prototype or functional-equivalent form.
 
 %%%%%%%%%%%%%%%%
 \subsection{Assembly Testing}
