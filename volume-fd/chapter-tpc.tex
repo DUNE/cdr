@@ -1,4 +1,4 @@
-\chapter{Time Projection Chamber and Electronics }
+\chapter{Time Projection Chamber }
 \label{ch:tpc}
 
 \begin{editornote}
@@ -57,6 +57,9 @@ The wires on the outermost plane are oriented vertically, and are not connected 
 At a nominal wire pitch (center-to-center separation) of 4.8~mm,
 the total number of readout channels in an APA is 2560, for a total of 133,120 in each cryostat.
  
+\begin{editornote}
+  Editor's Note:  The next two paragraphs are now duplicated in the new CE chapter. They should be removed or greatly modified.
+\end{editornote}
 The readout electronics are optimized for operation in the cryogenic environment.  
 The front-end ASIC chip utilizes a mixed-signal design.  
 It has 16 channels of preamp, a shaper and an analog-to-digital converter (ADC) in its analog section,  
@@ -71,7 +74,8 @@ One cable bundle is planned for each APA to connect to the outside of the cryost
 
 
 \begin{editornote}
-The wire angle shown in Figure~\ref{fig:tpc-wire-frame-xsect} is 45 degrees whereas as of Jan. 2015 it will be 36 degrees. \end{editornote}
+The wire angle shown in Figure~\ref{fig:tpc-wire-frame-xsect} is 45 degrees whereas as of Jan. 2015 it will be 36 degrees.
+\end{editornote}
 
 
 \begin{figure}[htpb]
@@ -86,6 +90,10 @@ The wire angle shown in Figure~\ref{fig:tpc-wire-frame-xsect} is 45 degrees wher
 \label{sec:v5-tpc-reqs-n-specs}
 
 The requirements for the TPC can be found in the requirements documentation \cite{lar-fd-req}. The most significant ones are the following:
+\begin{editornote}
+  Editor's Note:  Some of these items now appear in the new CE chapter.
+  This list below needs to be compared with the corresponding list in CE and revised.
+\end{editornote}
 
 \begin{itemize}	
 \item Provide the means to detect charged particles in the detector and transmit the detector signals to the Data Acquisition System (DAQ)
@@ -236,7 +244,7 @@ Figure~\ref{fig:tpc-wire-board-x} shows both sides of the board for the x wires.
 The wires are wound on the top surface of the board (left) using a winding machine.  The wires are then glued down with a bead of epoxy at the leading edge of the board.  After the epoxy has cured, the wires are soldered onto the copper pads under each wire, and the wires are cut beyond the pads.  On the bottom of this board, the copper traces connect the wires to the bias voltage supply through an RC network.  The resistors in this network have values about 20 M$\Omega$, such that in the event that a wire from a different plane breaks and is shorted to these wires, the bias voltages on the rest of the wires will not be affected. The AC-coupled signals from the wires are connected to sockets that will mate with the front-end readout boards.
 
 Similar boards for the U \& V planes are aligned and stacked above the X boards.   An array of pins on the front-end readout boards is pushed through the stack of wire bonding boards, making electrical connection between the readout electronics and the matching wires. These readout boards, as described 
-in Section~\ref{sec:v5-tpc-elec}, process the analog signals from the wires and transmit 
+in Chapter~\ref{ch:ce}, process the analog signals from the wires and transmit 
 the digital information through feedthroughs to the DAQ system outside 
 the cryostat.  The electronics on the readout boards dissipate an estimated $\sim$60~W of heat per APA and may generate a small quantity of argon bubbles.
 Two stainless-steel covers are placed over the readout boards to contain 
@@ -476,6 +484,11 @@ is discussed in Chapter~\ref{ch:install}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{TPC Infrastructure}
 \label{sec:v5-tpc-feedthru}
+
+\begin{editornote}
+  Editor's Note:  Some of the material in this section and the following subsections is now duplicated in the new CE chapter.
+  This list below needs to be compared with the corresponding list in CE and revised.
+\end{editornote}
    
 The TPC infrastructure includes low-voltage and high-voltage supplies, all power cables and cable routing to the supplies, signal cables and cable routing to the DAQ, and all cryogenic feedthroughs.
 
@@ -623,6 +636,11 @@ A conceptual design of an APA signal/power feedthrough flange is shown in Figure
 %%%%%%%%%%%%%%%%
 \subsection{TPC Prototyping}
 \label{sec:v5-tpc-checkout-prototype}
+
+\begin{editornote}
+  Editor's Note:  Some of the material in this section and the following subsections is now duplicated in the new CE chapter.
+  This material needs to be compared with the corresponding material list in CE and revised.
+\end{editornote}
 
 Several prototype TPC modules will be constructed during the 
 design phase.  The initial prototypes will be fraction scale or 
