@@ -32,12 +32,31 @@ self-triggering since, unlike neutrino-oscillation measurements for which the pu
 can provide a trigger for readout, most other measurements, such as proton decay
 and supernova bursts, will have no trigger.  
 
+The readout electronics are optimized for operation in the cryogenic environment.  
+The front-end ASIC chip utilizes a mixed-signal design.  
+It has 16 channels of preamp, a shaper and an analog-to-digital converter (ADC) in its analog section,  
+followed by a large, shared buffer and the digital IO interface. Eight such chips 
+are mounted on a single readout board, instrumenting 128 adjacent wires in one plane. 
+A digital-processing ASIC with an 8:1 multiplexer on this board further 
+increases the multiplexing factor to 128:1, resulting in a single output channel.
+Data from this output channel will be transmitted through two redundant LVDS (low-voltage differential signaling)
+output cables to two APA-level multiplexing boards.
+Each of these boards connects to the 20 front-end readout boards on the APA, and provides a further 20:1 multiplexing.
+The output from each of these APA-level multiplexing boards are again duplicated for redundancy.
+
+One cable bundle is planned for each APA to connect to the outside of the cryostat.
+The bundle will consist of wires for low-voltage power, wire-bias voltages, data out, clock in,
+digital control IO and an analog monitoring output.
+Redundant cables will be provided for many of these functions.
+The 52 cable bundles will be connected through 26 feedthroughs distributed on the roof of the cryostat.
+Additional feedthroughs will be required for redundant high-voltage connections to the CPAs. 
  
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\linewidth]{v5c3-elec-schematic-C.pdf}
-\caption{Conceptual architecture of the front-end electronics operating in LAr}
-\label{fig:tpc-elec-schematic}
+% \includegraphics[width=\linewidth]{v5c3-elec-schematic-C.pdf}
+\includegraphics[width=\linewidth]{elect_schem.pdf}
+\caption{Architecture of the front-end electronics operating in LAr}
+\label{fig:ce-elec-schematic}
 \end{figure}
 
 
@@ -83,7 +102,7 @@ architecture, combined with the modular TPC elements, also leads to a
 TPC implementation that can be readily scaled to any detector size or
 geometry.
 
-Figure~\ref{fig:tpc-elec-schematic} shows the architecture of a front-end electronics
+Figure~\ref{fig:ce-elec-schematic} shows the architecture of a front-end electronics
 design that meets the requirements for the LAr-FD TPC. The entire
 electronics chain is immersed in the LAr and operates at
 89~K. It is composed of a 16-channel front end implemented as a
@@ -103,7 +122,7 @@ For either choice, a two-fold redundancy per APA will be implemented
 to minimize the probability of the loss of an entire APA.
 
 
-Figure~\ref{fig:tpc-elec-asic-layout} shows a block diagram of the proposed 16-channel front-end
+Figure~\ref{fig:ce-elec-asic-layout} shows a block diagram of the proposed 16-channel front-end
 ASIC. Each channel includes a charge amplifier with a selectable of
 gain 4.7, 7.8, 14 and 25~mV/fC (full scale charge of 55, 100, 180 and
 300~fC), a high-order anti-aliasing filter with adjustable time
@@ -124,7 +143,7 @@ per channel at 1.8~V supply.
 \centering
 \includegraphics[width=\linewidth]{v5c3-cel-ASIC-layout}
 \caption{Architecture and layout of the 16-channel front-end mixed-signal ASIC}
-\label{fig:tpc-elec-asic-layout}
+\label{fig:ce-elec-asic-layout}
 \end{figure}
 
 %%%%%%%%%%%%%%%%
@@ -174,12 +193,12 @@ and noise. This scheme would reduce the data rate per APA for Ar$^{39}$ decays t
 \centering
 \includegraphics[width=6in]{v5c3-cel-write-enable.pdf}
 \caption[Conceptual architecture of zero-suppression]{Conceptual architecture of zero-suppression using a write enable using separate analog shaping}
-\label{fig:tpc-elec-write-enable}
+\label{fig:ce-elec-write-enable}
 \end{figure}
 
 
 A conceptual diagram of this zero-suppression implementation is shown
-in Figure~\ref{fig:tpc-elec-write-enable}. The write-enable for each channel is derived from a separate
+in Figure~\ref{fig:ce-elec-write-enable}. The write-enable for each channel is derived from a separate
 shaping amplifier with AC coupling to remove low-frequency, baseline
 fluctuations. Multiple programmable discriminators in the
 ``write-enable'' logic are
@@ -242,7 +261,7 @@ prototype samples throughout the development process to verify the long-term rel
 
 The development of the readout ASIC has begun by designing and fabricating in a commercial CMOS
 process (0.18~$\mu$m and 1.8V) a 16-channel
-ASIC implementing the complete analog front-end section of the scheme shown in Figure~\ref{fig:tpc-elec-asic-layout}. 
+ASIC implementing the complete analog front-end section of the scheme shown in Figure~\ref{fig:ce-elec-asic-layout}. 
 This process is expected to be available for at least another 10~years. 
 The charge
 amplifier input MOSFET is a p-channel biased at 2~mA with a L/W (channel length/width) ratio
@@ -260,13 +279,13 @@ commercial, fully encapsulated plastic QFP 80 package.
 This ASIC has now been through three design/fabrication/testing revision cycles. Prototypes from each cycle have been evaluated and characterized at room (300~K) and liquid nitrogen
 (77~K) temperatures. During these tests the circuits have been cycled multiple times
 between the two temperatures and operated without any change in
-performance. Figure~\ref{fig:tpc-elec-shaper-out} shows the measured pulse response, along with
+performance. Figure~\ref{fig:ce-elec-shaper-out} shows the measured pulse response, along with
 details on the adjustability of the gain, peaking time and baseline.
 These results are in close agreement with the simulations and indicate
 that both the analog and the digital circuits and interface operate as
 expected in a cryogenic environment. Simulations and experimental results
 show that the pole-zero cancellation needs to be optimized, which will
-be done in the next revision of the design. Also reported in Figure~\ref{fig:tpc-elec-shaper-out}  are
+be done in the next revision of the design. Also reported in Figure~\ref{fig:ce-elec-shaper-out}  are
 the outputs of the BGR and temperature sensor, which are in close
 agreement with the simulations as well.
 
@@ -274,7 +293,7 @@ agreement with the simulations as well.
 \centering
 \includegraphics[width=\linewidth]{v5c3-cel-shaper-out.pdf}
 \caption[Measured pulse response with details]{Measured pulse response with details on gain, peaking time and baseline adjustments}
-\label{fig:tpc-elec-shaper-out}
+\label{fig:ce-elec-shaper-out}
 \end{figure}
 
 
@@ -282,16 +301,16 @@ agreement with the simulations as well.
 \centering
 \includegraphics[width=4in]{v5c3-cel-enc.pdf}
 \caption[Measured ENC vs filter time constant]{Measured ENC vs filter time constant from the first two versions of the analog front end ASICs}
-\label{fig:tpc-elec-enc}
+\label{fig:ce-elec-enc}
 \end{figure}
 
 
-Figure~\ref{fig:tpc-elec-enc} shows the measured ENC versus filter-time constant (peaking time).
+Figure~\ref{fig:ce-elec-enc} shows the measured ENC versus filter-time constant (peaking time).
 At 1~$\mu$s about 650 e$^{-}$ was measured,
 to be compared to the simulated value of 500 e$^{-}$. The difference is
 mainly due to the thermal noise from a $\sim$
 11-ohm parasitic resistance of the input
-line (shown in the detail of Figure~\ref{fig:tpc-elec-enc}), which contributes about 350
+line (shown in the detail of Figure~\ref{fig:ce-elec-enc}), which contributes about 350
 electrons at 77~K. The width of the line will be increased in a
 revision in order to make this contribution negligible. A second
 contribution, on the order of 100 e$^{-}$, was due to the dielectric
@@ -425,12 +444,12 @@ are on the order of thousands in the entire detector, easily covered by commerci
 A conceptual design of an APA signal/power feedthrough flange is shown in Figure~\ref{fig:tpc-signal-feedthrough}.  Based on a standard 8-in conflat flange with all commercial off-the-shelf components, each of these feedthroughs will serve the bias/power/digital IO needs of four APAs.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{TPC Prototyping, Test and  Checkout}
-\label{sec:v5-tpc-checkout}
+\section{CE Prototyping, Test and  Checkout}
+\label{sec:ce-checkout}
 
 %%%%%%%%%%%%%%%%
-\subsection{TPC Prototyping}
-\label{sec:v5-tpc-checkout-prototype}
+\subsection{CE Prototyping}
+\label{sec:ce-checkout-prototype}
 
 Several prototype TPC modules will be constructed during the 
 design phase.  The initial prototypes will be fraction scale or 
@@ -454,7 +473,7 @@ A complete set of cold electronics will be installed on the APAs.  The electroni
 
 %%%%%%%%%%%%%%%%
 \subsection{Assembly Testing}
-\label{sec:v5-tpc-checkout-test}
+\label{sec:ce-checkout-test}
 
 The front-end readout boards will be thoroughly tested.
 \begin{itemize}
@@ -497,7 +516,7 @@ strips should exceed 1 G$\Omega$, without the resistive divider.
 
 %%%%%%%%%%%%%%%%
 \subsection{Checkout } 
-\label{sec:v5-tpc-checkout-checkout}
+\label{sec:ce-checkout-checkout}
 
 After passing the tests at the assembly level, the APAs will be 
 put into storage, and later transported to the LBNE Far Site.  
