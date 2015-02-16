@@ -2,15 +2,15 @@
 \label{ch:ce}
 
 \begin{editornote}
-  Editor's Note:  This is a new chapter, created from the ``In-Vessel Front-End Electronics'' section formerlly in the TPC chapter.
-It has not been updated for the increased number of APAs or APA size change.
+  Editor's Note:  This is a new chapter, created from the ``In-Vessel Front-End Electronics'' section formerly in the TPC chapter.
 Therefore some values reported here will be incorrect for the design as of January 2015. 
 While the old section has been removed from the TPC chapter, some additional ``cleanup'' is still needed there,
 to finish removal of CE material that still may be present in the TPC chapter but perhaps no longer belongs there.
+Also, this material has not been updated for the increased number of APAs or APA size change.
 \end{editornote}
 
 The scope of the Cold Electronics (CE) subsystem includes the design, procurement, fabrication, testing,
-delivery and installation of in-vessel electronics chain involved in the readout of the TPC:
+delivery and installation of the in-vessel electronics chain involved in the readout of the TPC:
 \begin{itemize}
 \item Front-end cards, or Cold Mother Boards (CMB), installed on the TPC
 \item All electronics on the CMBs
@@ -35,14 +35,14 @@ and supernova bursts, will have no trigger.
 The readout electronics are optimized for operation in the cryogenic environment.  
 The front-end ASIC chip utilizes a mixed-signal design.  
 It has 16 channels of preamp, a shaper and an analog-to-digital converter (ADC) in its analog section,  
-followed by a large, shared buffer and the digital IO interface. Eight such chips 
+followed by a large, shared buffer and the digital IO interface.
+Each ADC has two parallel readout lines, each of which multiplexes eight channels, yielding a factor of 8:1.
+Eight such chips 
 are mounted on a single readout board, instrumenting 128 adjacent wires in one plane. 
 A digital-processing ASIC with an 8:1 multiplexer on this board further 
-increases the multiplexing factor to 128:1, resulting in a single output channel.
-Data from this output channel will be transmitted through two redundant LVDS (low-voltage differential signaling)
-output cables to two APA-level multiplexing boards.
-Each of these boards connects to the 20 front-end readout boards on the APA, and provides a further 20:1 multiplexing.
-The output from each of these APA-level multiplexing boards are again duplicated for redundancy.
+increases the multiplexing factor to 64:1 with two parallel output channels.
+Data from each output channel will be transmitted through two redundant LVDS (low-voltage differential signaling)
+output cables to a signal feedthrough and from there to an external crate mounted near the feedthrough.
 
 One cable bundle is planned for each APA to connect to the outside of the cryostat.
 The bundle will consist of wires for low-voltage power, wire-bias voltages, data out, clock in,
