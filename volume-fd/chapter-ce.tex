@@ -3,7 +3,6 @@
 
 \begin{editornote}
   Editor's Note:  This is a new chapter, created from the ``In-Vessel Front-End Electronics'' section formerly in the TPC chapter.
-Therefore some values reported here will be incorrect for the design as of January 2015. 
 While the old section has been removed from the TPC chapter, some additional ``cleanup'' is still needed there,
 to finish removal of CE material that still may be present in the TPC chapter but perhaps no longer belongs there.
 \end{editornote}
@@ -12,21 +11,21 @@ to finish removal of CE material that still may be present in the TPC chapter bu
 \section{Introduction}
 \label{sec:ce-intro}
 
-The TPC read-out electronics are refered to as the ``Cold Electronics" (CE) because they will reside in LAr,
+The TPC read-out electronics are referred to as the ``Cold Electronics" (CE) because they will reside in LAr,
 mounted directly on the TPC front-end.
 This will minimize channel capacitance and noise by keeping the length of the connection between an anode wire
 and its corresponding electronics input to an absolute minimum.
 The CE will be implemented as ASIC chips using CMOS technology, which performs well at cryogenic temperatures,
 and will provide amplification, shaping, digitization, buffering and multiplexing of the signals.
 The CE need to be self-triggering because no external trigger will be available for some important measurements,
-such as proton decay and supernova bursts,
+such as proton decay and supernova bursts.
 % since, unlike neutrino-oscillation measurements for which the pulsed beam 
 % can provide a trigger for readout, other important measurements, such as proton decay
 % and supernova bursts, will have no trigger.  
 
 For each of the 80 APAs in a ten-kton cryostat, one cable bundle will connect to the outside of the cryostat through
 a feedthrough, with one feedthrough servicing two APAs.
-The bundle consists of wires for low-voltage power, wire-bias voltages, data-out, clock-in,
+The bundle consists of wires for low-voltage power, TPC wire-bias voltages, data-out, clock-in,
 digital-control IO and an analog-monitoring output.
 
 The scope of the CE subsystem includes the design, procurement, fabrication, testing,
@@ -37,7 +36,7 @@ delivery and installation of the CE:
 \item Feedthroughs (a single type, henceforth ``signal feedthroughs'') which handle the signal,
 low-voltage power, TPC bias voltage, and control lines.
 \item External interface crates
-\item Power supplies, inlcuding low-voltage supplies for the CE and bias-voltage supplies for the TPCs
+\item Power supplies, including low-voltage supplies for the CE and bias-voltage supplies for the TPCs
 \item Signal, control, and power cabling between the front-end cards and the feedthroughs
 \item Signal, control, and power cabling between the feedthroughs and external power supplies and interface crates
 \end{itemize}
@@ -45,7 +44,7 @@ This chapter describes the reference design for the CE that meets the required p
 LAr-FD.
 \begin{editornote}
   The list above is probably not the best way to do this.  However, let's keep it there at least until the TPC chapter has been
-  updated to remove unecessary CE references and information.  Keeping the list (above) will make that a little easier, since the
+  updated to remove unnecessary CE references and information.  Keeping the list (above) will make that a little easier, since the
   list was taken from the old TPC chapter.
 \end{editornote}
 
@@ -59,7 +58,7 @@ The most significant ones are the following:
 
 \begin{itemize}	
 \item Provide the means to read out the TPCs and transmit their data in a useful format to the Data Acquisition System (DAQ)
-\item Operate for the life of the facility without signifcant loss of function
+\item Operate for the life of the facility without significant loss of function
 \item Record the wire-signal waveforms continuously without dead time
 \item Use only materials that are compatible with high-purity liquid argon
 \item Provide sufficient precision and range in the digitization to:
@@ -70,11 +69,14 @@ The most significant ones are the following:
 \item Measure the ionization up to 15 times that of a MIP particle;
 this is necessary to identify stopping kaons from proton decay
 \end{itemize}
-\item All power supplies must be able to be monitored and 
-controlled both locally and remotely through the DAQ system.  
-They must have over-current and over-voltage protection circuits.
+\item All power supplies:
+\begin{itemize}
+\item Will be monitored and controlled locally
+\item Will be monitored and controlled remotely through the DAQ system
+\item Will have over-current and over-voltage protection circuits
+\item Will have an output-voltage ripple less than 10\% of the equivalent thermal noise from the front-end electronics
+\end{itemize}
 \item The power supplies for the wire-plane bias voltages must provide sufficient current.
-\item The output-voltage ripple must not introduce more than 10\% of the equivalent thermal noise from the front-end electronics. 
 \item The low-voltage (signal) feedthroughs must be able to withstand twice their nominal operating voltages 
 with a maximum specified leakage current in 1-atm argon gas, and must be able to deliver sufficient DC current.
 \end{itemize}
@@ -82,7 +84,7 @@ with a maximum specified leakage current in 1-atm argon gas, and must be able to
 \begin{editornote}
   Again, the list above is may not be the best way to do this.
   However, let's keep it there at least until the TPC chapter has been
-  updated to remove unecessary CE references and information.
+  updated to remove unnecessary CE references and information.
   Keeping the list (above) will make that a little easier, since the list was taken from the old TPC chapter.
 \end{editornote}
 
@@ -90,13 +92,6 @@ with a maximum specified leakage current in 1-atm argon gas, and must be able to
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Architecture}
 \label{sec:fe-arch}
- 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\linewidth]{elect_schem.pdf}
-\caption{Architecture of the front-end electronics operating in LAr}
-\label{fig:ce-elec-schematic}
-\end{figure}
 
 Figure~\ref{fig:ce-elec-schematic} shows the CE architecture that meets the requirements for the LAr-FD TPC.
 Except for the Digital ASIC, this has already been prototyped and tested,
@@ -107,13 +102,18 @@ an 8:1 multiplexing stage (with two parallel readout lines), a driver and voltag
 The Digital ASIC provides clock and communication protocol, including a further 8:1 multiplexing
 and a high-speed serial link which transmits the data on two parallel low-voltage differential signaling (LVDS)
 output cables to a signal feedthrough and from there to an external crate mounted near the feedthrough.
-Conversion to optical fiber prior to transmission to DAQ is done in those crates.
+Under DAQ scope, further multiplexing and conversion to optical fiber prior to transmission to DAQ is done in those crates.
 Eight front-end ASICs plus a single Digital ASIC comprise a single 128-channel front-end readout board,
-refered to henceforth as a Cold Mother Board (CMB).
+referred to henceforth as a Cold Mother Board (CMB).
 Each APA is instrumented with 20 CMBs, for a total of 2,560 channels per APA.
 A two-fold redundancy will minimize the probability of loss of any one CMB and its 128 channels.
-The data rates per APA are not expected to be high enough to require the use of optical fibers in the cold,
+Because each CMB is read out separately and in parallel with all others,
+the data rates will not be high enough to require the use of optical fibers in the cold,
 nor is there a need for zero-suppression or data compression.
+\begin{editornote}
+  Is is correct that ``further multiplexing and conversion to optical fiber'' will be under DAQ scope?
+  It's not clearly costed in the latest CE schedule, though sufficient funds for this might be there.
+\end{editornote}
 
 Figure~\ref{fig:ce-elec-asic-layout} shows a block diagram of the proposed 16-channel front-end ASIC.
 Each channel includes a charge amplifier with a gain selectable from one of 4.7, 7.8, 14 and 25~mV/fC
@@ -130,7 +130,23 @@ A 600-kb buffer will be included in this design, capable of storing a 1.5-ms
 event sampled at 2~MS/s in each channel.
 The layout size is on the order of $10 \times 5$~mm${^2}$, which would provide a yield in excess of 90\%.
 The estimated power dissipation is below 15~mW per channel at 1.8~V supply.
+\begin{editornote}
+  The statement about ``layout size'' needs to be a little clearer.
+  Does that mean how the chips are laid out on the MOSIS wafer?
+  Why does that affect the yield?
+  Do we need to mention this at all?
+\end{editornote}
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{elect_schem.pdf}
+\caption{
+  The CE Architecture.
+  The basic unit is the 128-channel Front End Mother Board Assembly, also referred to as the Cold Mother Board (CMB).
+  Each APA has 20 CMBs installed on its front end for a total of 2,560 channels per APA.
+}
+\label{fig:ce-elec-schematic}
+\end{figure}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{v5c3-cel-ASIC-layout}
@@ -143,8 +159,8 @@ The estimated power dissipation is below 15~mW per channel at 1.8~V supply.
 \subsection{Data Rates}
 \label{subsec:fe-arch-rates}
 
-For neutrino-oscillation measurements the pulsed beam can provide a
-trigger for readout, but for most other measurements, such as proton decay
+For neutrino-oscillation measurements the pulsed beam could provide a
+trigger for readout, but for other measurements, such as proton decay
 and supernova bursts, there will be no trigger.  Therefore the APAs will be
 self triggering.  
 
@@ -161,7 +177,7 @@ of course, since the ionization produced by these events is highly localized,
 most of the drift ``frame'' is empty.
 
 The mean range of the beta from Ar$^{39}$ decay is only 0.3~mm, so all
-of the signal is contained in a single over threshold sample of a single wire, for a true ``information''
+of the signal is contained in a single over-threshold-sample of a single wire, for a true ``information''
 rate of 0.6~Mb/s.
 In order to
 reduce the rate (and volume) of recorded data to tolerable values, 
@@ -177,6 +193,7 @@ information, particularly for simple event topologies and from low-energy
 events (radioactive decays) and noise. 
 \begin{editornote}
   Is this still true, about considering only saving four bits?
+  Indeed, is this whole paragraph still relevant and true?
 \end{editornote}
 
 %
@@ -189,13 +206,13 @@ events (radioactive decays) and noise.
 \end{editornote}
 To successfully design CMOS circuits that will operate at cryogenic 
 temperatures, two critical issues must be addressed and resolved. 
-The first is the requirement for realistic models at the operating temperature 
-of active devices, interconnects and passive components (resistors and 
-capacitors) in order to reliably predict operating points, signal response 
-and noise during the design process. The second critical requirement is 
-that the design must ensure a long operational lifetime, since once the TPC is filled 
+The first issue is the need for realistic models at the operating temperature 
+of all active and passive components in order to reliably predict operating points,
+signal response, and noise during the design process.
+The second issue is that the design must ensure a long operational lifetime, since once the TPC is filled 
 with LAr the detector must operate for about 15~years without any access to the 
-electronics for repair or replacement. Concerning the availability of realistic models, 
+electronics for repair or replacement.
+Concerning the availability of realistic models, 
 our preliminary results from the cryogenic characterization (down to 40 K) of a complete 
 mixed-signal ASIC \cite{CMOS-Compton} in a commercial CMOS 0.25~$\mu$m technology, 
 originally developed for room-temperature applications, indicates that the models 
@@ -204,6 +221,10 @@ To refine these models, several
 single-transistor test structures were fabricated on the first prototype of the 0.18~$\mu$m device. 
 Measurements of the properties of these structures at cryogenic temperatures 
 have been used to refine the device models at 89~K. 
+\begin{editornote}
+  Should we spell out in some small detail our plan for developing models?
+  Or does that belong in the Digital ASIC section, along with our plan for developing libraries?
+\end{editornote}
 
 The lifetime of CMOS circuits is limited by several mechanisms which degrade 
 the performance over time, eventually causing the circuit to fail to perform as specified. 
@@ -312,9 +333,13 @@ confirm device models and design guidelines.
 \subsection{Cold Digital ASICs}
 \label{subsec:fe-CMOS-digital}
 
+\begin{editornote}
+  Terri will provide some text for this new section.
+\end{editornote}
+
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Signal Feedthoughs, Cabling, and Power}
+\section{Signal Feedthroughs, Cabling, and Power}
 \label{sec:ce-feedthrough}
 
 The TPC data rate per APA, using the full event-buffer scheme described earlier,
@@ -342,7 +367,7 @@ contain the support rods for the TPC planes.
 
 There are two types of low-voltage power supplies:
 TPC wire-bias voltages and low-voltage DC power to the readout electronics.
-A single type of feedthrough will handle the signals, supply volgages, and control lines.
+A single type of feedthrough will handle the signals, supply voltages, and control lines.
 All cables inside the cryostat will be copper.
 Optical fiber will be employed only external to the cryostat, and does not fall under the purview of the CE subsystem.
 
