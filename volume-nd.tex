@@ -1,0 +1,30 @@
+\ifdefined\isfinal\documentclass[final]{cdr}\else\documentclass{cdr}\fi
+\pdfoutput=1            % must be in first 5 lines so arXiv finds it
+\graphicspath{ {figures/}{volume-nd/figures/}{volume-nd/generated/} }
+
+\input{common/preamble}
+
+\renewcommand\thevolumesubtitle{Volume 3: Detectors at the Near Site}
+\begin{document}
+
+\input{common/init}
+
+\input{volume-nd/chapter-intro}
+\cleardoublepage
+
+\input{volume-nd/chapter-nnd}
+\cleardoublepage
+
+\input{volume-nd/chapter-blm}
+\cleardoublepage
+
+\input{volume-nd/chapter-gdaq}
+\cleardoublepage
+
+\input{volume-nd/chapter-external}
+\cleardoublepage
+
+\input{common/final}
+\end{document}
+
+
