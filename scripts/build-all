@@ -42,10 +42,19 @@ clean_all () {
     done
 }
 
-set -x
+
 
 log="$top/build-all.log"
-date > $log
-clean_all >> $log
-run git pull >> $log
-build_all >> $log
+
+run_if_updated () {
+    date >> $log
+    if [ -n "$(git pull|grep 'Already up-to-date.')" ] ; then
+	return
+    fi
+
+    clean_all >> $log
+    build_all >> $log
+}
+
+run_if_updated
+
