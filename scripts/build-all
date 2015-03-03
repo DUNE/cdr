@@ -1,0 +1,51 @@
+#!/bin/bash
+top=$(dirname $(dirname $(readlink -f $BASH_SOURCE)))
+cd $top
+
+run () {
+    $*
+    if [ "$?" == "0" ] ; then
+	return
+    fi
+    echo "Failed to run: \"$*\"" 
+    echo "Failed to run: \"$*\"" 1>&2
+    exit 1
+}
+
+build_one () {
+    local name=$1 ; shift
+    run pdflatex $name
+    run bibtex $name
+    run pdflatex $name
+    run pdflatex $name
+}
+    
+build_all () {
+    for maybe in *.tex
+    do
+	local name="$(basename $maybe .tex)"
+	if [ ! -d "$name" ] ; then
+	    continue
+	fi
+	build_one $name
+    done
+}
+
+clean_all () {
+    for maybe in *.tex
+    do
+	local name="$(basename $maybe .tex)"
+	if [ ! -d "$name" ] ; then
+	    continue
+	fi
+	rm ${name}.{aux,bbl,blg,fls,lof,log,lot,toc,nlo,out,pdf,tdo,fdb_latexmk}
+    done
+}
+
+set -x
+
+log="$top/build-all.log"
+date > $log
+clean_all >> $log
+run git pull >> $log
+build_all >> $log
