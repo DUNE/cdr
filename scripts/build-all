@@ -47,11 +47,11 @@ clean_all () {
 log="$top/build-all.log"
 
 run_if_updated () {
-    date >> $log
+    date >> $log		# append
     if [ -n "$(git pull|grep 'Already up-to-date.')" ] ; then
 	return
     fi
-
+    date > $log			# truncate
     clean_all >> $log
     build_all >> $log
 }
