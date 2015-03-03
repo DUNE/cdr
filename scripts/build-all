@@ -38,7 +38,7 @@ clean_all () {
 	if [ ! -d "$name" ] ; then
 	    continue
 	fi
-	rm ${name}.{aux,bbl,blg,fls,lof,log,lot,toc,nlo,out,pdf,tdo,fdb_latexmk}
+	rm ${name}.{aux,bbl,blg,fls,lof,lot,toc,nlo,out,pdf,tdo,fdb_latexmk}
     done
 }
 
@@ -47,10 +47,11 @@ clean_all () {
 log="$top/build-all.log"
 
 run_if_updated () {
-    date >> $log		# append
     if [ -n "$(git pull|grep 'Already up-to-date.')" ] ; then
+	date >> $log		# append
 	return
     fi
+
     date > $log			# truncate
     clean_all >> $log
     build_all >> $log
