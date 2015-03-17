@@ -29,11 +29,11 @@ slow-control systems) and offline computing for further development of the measu
 %\subsubsection{Requirements and Specifications}
 \subsubsection{Introduction} %header added by AH
 
-The Master Global DAQ (M-GDAQ) is generally controlled by the LBNE 
+The Master Global DAQ (M-GDAQ) is generally controlled by the DUNE 
 Central Run Control to start and stop runs.
 %\fixme{Where is this described? Add ref. AH; HGB: Actually, I don't know. Logically this should be described somewhere in the Neutrino Beamline volume, but I couldn't find any section dedicated to run control so far.}
 It also has its own run 
-control and event builder so that it can run independently of the LBNE 
+control and event builder so that it can run independently of the DUNE 
 Central Run Control, e.g. while the beam is off or for calibration or 
 test runs. It communicates with the Neutrino GDAQ and 
 Beamline GDAQ, and provides two-way trigger processing to and from 
@@ -62,17 +62,17 @@ The M-GDAQ will need to provide typical DAQ functions including triggering, even
 
 In addition, the M-GDAQ will need to allow standalone data-taking of individual detector DAQs for 
 debugging or calibration, and allow secure remote access, storage and monitoring 
-capability via firewall to LBNE collaboration member institutions.
+capability via firewall to DUNE collaboration member institutions.
 
 %provide triggers and clock-synchronization signals to the individual system GDAQs 
-%\item  Provide sustainable data-transfer and logging rates via Gigabit Ethernet consistent with the scientific demands of the LBNE experiment
+%\item  Provide sustainable data-transfer and logging rates via Gigabit Ethernet consistent with the scientific demands of the DUNE experiment
 %\item  Collect and sort data from the N-GDAQ and B-GDAQ, build global events, format the final event data and save to local storage
 %\item Allow inclusion or exclusion of individual detectors from data-taking on a run-by-run basis.
 %\item  Allow standalone data-taking of individual detector DAQs for debugging or calibration
-%\item  Provide a local run-control user interface to allow data-taking or debugging independently of LBNE central run control
+%\item  Provide a local run-control user interface to allow data-taking or debugging independently of DUNE central run control
 %\item  Include slow-control system with environmental monitoring, and sensor and front-end electronics monitoring
 %\item  Provide an interface for accessing and monitoring online processes and data on a (near) real-time basis for quality control
-%\item  Allow secure remote access, storage and monitoring capability via firewall to LBNE collaboration member institutions
+%\item  Allow secure remote access, storage and monitoring capability via firewall to DUNE collaboration member institutions
 
 \subsubsection{Reference Design}
 
@@ -89,55 +89,43 @@ for which the details have not yet been finalized.
 Using the T2K Near-Detector DAQ experience as a reference, 
 it is safe to assume that a Gigabit Ethernet structure is more than sufficient for the 
 data transmissions between %the ND and beamline detectors 
-the LBNE Near Detectors and the GDAQ.
+the DUNE Near Detectors and the GDAQ.
 % if T2K Near Detector DAQ experience can be used as a reference example.
 %\fixme{What is the distinction between the ND and the beamline detectors? I see the beamline detectors as being part of the ND, the other part being the nu detector.  I've changed it to the `beamline and neutrino detector systems'  above. AH; HGB: Thanks. Sounds better, yes.}
 
-\begin{figure}[htp]
-\begin{center}
-%\includegraphics[width=7in,angle=0]{MGDAQ_BlockDiagram}
-\caption[Near Detector Master Global DAQ (M-GDAQ) block diagram]{\label{fig:GDAQ_M_Block} Near 
+\begin{cdrfigure}[Near Detector Master Global DAQ (M-GDAQ) block diagram]{GDAQ_M_Block}{Near 
 Detector Master Global DAQ (M-GDAQ) block diagram. 
-%\fixme{The small text is too small. I'm widening from 6 to 7. Also, is the green the actual M-GDAQ, and the green+yellow the whole GDAQ? Please clarify either in caption or text. AH; HGB:  Thanks for widening the text. Yes, correct. See addition next.}
 The green and yellow blocks belong to the whole GDAQ.  Green blocks are
 part of the M-GDAQ only, while the yellow blocks summarize the N-GDAQ and B-GDAQ.  Other colored blocks are not
 part of the GDAQ, but shown here for presenting the connections between
-the GDAQ and other parts of the LBNE project.}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
+the GDAQ and other parts of the DUNE project.}
+%\includegraphics[width=7in,angle=0]{MGDAQ_BlockDiagram}
 \end{cdrfigure}
+
 Figure~\ref{fig:GDAQ_M_Block} shows the conceptual design of the M-GDAQ 
 based on a computer array connected with the N-GDAQ and B-GDAQ via 
 Gigabit Ethernet and other components for triggering and clock 
-synchronization. For starting and stopping runs the LBNE Central Run Control 
+synchronization. For starting and stopping runs the DUNE Central Run Control 
 connects to the M-GDAQ via optical fiber. A GPS subsystem is an 
 integral part of the M-GDAQ; it provides precision time stamps of each 
 global-trigger event.  As an option, the GPS timing data can be 
-transferred to the LBNE Far Detector via a private network (fiber) link 
-to allow real-time processing of LBNE beam data with Far Detector data -- 
+transferred to the DUNE Far Detector via a private network (fiber) link 
+to allow real-time processing of DUNE beam data with Far Detector data -- 
 as it is done at T2K with T2K's beamline (and near detector) and \superk
 as T2K's Far Detector. 
 % -- if desired.
 
-\begin{figure}[htp]
-\begin{center}
+\begin{cdrfigure}[DAQ back-end module designed for T2K ND280]{T2KBEB}{DAQ back-end module designed for T2K ND280, allowing four selectable functions via FPGA firmware}
 %\includegraphics[width=6in,angle=0]{T2K_BEB_Photo}
-\caption[DAQ back-end module designed for T2K ND280]{\label{fig:T2KBEB} DAQ back-end module designed for T2K ND280, allowing four selectable functions via FPGA firmware %\fixme{Does figure have lots of white space included in it? Please trim down. ; HGB: Are you using the pdf version? The gif and bmp versions are trimmed correctly.  I don't know a good software to convert from jpg/bmp/tif to pdf correctly.}
-}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
 \end{cdrfigure}
+
 A specially designed Global Trigger electronics module processes 
 beam-spill trigger(s) coming 
-both from the LBNE central run control and from the beamline and neutrino GDAQs,
+both from the DUNE central run control and from the beamline and neutrino GDAQs,
 then provides a global trigger for 
 the GPS system. 
 Then, 
-depending on settings either from the M-GDAQ local run control or LBNE 
+depending on settings either from the M-GDAQ local run control or DUNE 
 Central Run Control, it sends back trigger signals to the N-GDAQ and B-GDAQ.  
 The Master Clock module, another specially 
 designed electronics module, provides clock- and time-synchronization 
@@ -160,7 +148,7 @@ result to local storage, e.g., disk arrays.
 
 A local run-control option is added to the M-GDAQ %\fixme{the M-GDAQ? AH; HGB: Yes, fixed.}
 to allow independent 
-detector runs when the LBNE Central Run Control is not being used, e.g.,  
+detector runs when the DUNE Central Run Control is not being used, e.g.,  
 when the beam is off for maintenance or repair or when detector 
 calibration runs are scheduled. The local run-control system will consist of three or four 
 desktop workstations with monitors and keyboards that can also be used 
@@ -175,7 +163,7 @@ status of the DAQ electronics.
 Finally, a firewall between the M-GDAQ  %\fixme{the M-GDAQ? AH; HGB: Yes, fixed.}
 network and outside world allows 
 remote access, monitoring and offline data storage of the GDAQ online 
-system by LBNE collaboration institutes.
+system by DUNE collaboration institutes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Neutrino Global DAQ}
@@ -195,7 +183,7 @@ or higher levels to each detector system. The N-GDAQ will have its
 own run control to allow for calibration or other special runs without 
 requiring interaction with the %ND
 M-GDAQ  %\fixme{the M-GDAQ? AH; HGB: Yes, fixed.}
-or LBNE Central Run Control. It 
+or DUNE Central Run Control. It 
 will also have the capacity to build events using detectors %physically 
 located in the Near Detector Hall exclusively (i.e., the neutrino detectors).
 
@@ -213,16 +201,10 @@ should be able to handle approximately 3,000 channels for sustainable and
 continuous runs. Assuming a total of 180,000 channels for all %ND
 neutrino detectors combined, for example, 60 back-end computers  would be needed.
 
-\begin{figure}[htp]
-\begin{center}
+\begin{cdrfigure}[Neutrino Global DAQ (N-GDAQ) block 
+diagram]{GDAQ_N_Block}{Neutrino Global DAQ (N-GDAQ) block 
+diagram}
 %\includegraphics[width=7in,angle=0]{NGDAQ_BlockDiagram}
-\caption{\label{fig:GDAQ_N_Block} Neutrino Global DAQ (N-GDAQ) block 
-diagram.  %\fixme{The small text is too small. I'm widening from 6 to 7. AH; HGB: Good, thanks.}
-}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
 \end{cdrfigure}
 
 Trigger signals from each neutrino detector will be collected and 
@@ -240,11 +222,11 @@ from the M-GDAQ to all neutrino detectors.
 
 The N-GDAQ is usually controlled by the %ND
 M-GDAQ  %\fixme{M-GDAQ?; HGB: Yes, fixed.}
-or LBNE Central Run 
+or DUNE Central Run 
 Control.  But it will also have its own local run-control setup, 
 consisting of several desktop workstations with displays to allow 
 independent local runs 
-%without %NDM-GDAQ   %\fixme{M-GDAQ?; HGB: Yes, fixed.}or LBNE Central Control, 
+%without %NDM-GDAQ   %\fixme{M-GDAQ?; HGB: Yes, fixed.}or DUNE Central Control, 
 that include %ND
 neutrino  detectors exclusively. This is useful during detector commissioning, calibration 
 runs, standalone cosmic runs and other runs where the beam is stopped or 
@@ -271,16 +253,10 @@ information.
 The B-GDAQ has its own run control and event builder to allow for runs that 
 only include beamline detectors, and is illustrated in Figure~\ref{fig:GDAQ_B_Block}.
 
-\begin{figure}[htp]
-\begin{center}
+\begin{cdrfigure}[Beamline Global DAQ (B-GDAQ) block 
+diagram]{GDAQ_B_Block}{Beamline Global DAQ (B-GDAQ) block 
+diagram}
 %\includegraphics[width=7in,angle=0]{BGDAQ_BlockDiagram}
-\caption{\label{fig:GDAQ_B_Block} Beamline Global DAQ (B-GDAQ) block 
-diagram.  %\fixme{The small text is too small. I'm widening from 6 to 7. AH; HGB: Good, thanks}
-}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
 \end{cdrfigure}
 
 \subsubsection{Reference Design}
@@ -299,7 +275,7 @@ Again, a local run-control setup with its own event-building capability,
 data formatter, local storage and local event display and process-monitoring 
 allows disconnection of the B-GDAQ from the %NDC
 M-GDAQ  %\fixme{M-GDAQ?; HGB: Yes, fixed.}
-or LBNE 
+or DUNE 
 Central Run Control for standalone runs including beamline 
 detectors exclusively.
 
