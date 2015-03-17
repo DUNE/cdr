@@ -43,12 +43,12 @@ comparable to those made in the FD, whose target material is liquid argon (LAr).
 
 Finally, the neutrino detector must measure nuclear effects, including
 short-range correlations, twp-body currents, pion absorption, initial-state interactions, 
-and final-state interactions. These nuclear effects %affect  AH
+and final-state interactions. These nuclear effects 
 have an impact on neutrino cross sections and energy determinations, and differences
 between neutrinos and antineutrinos must be fully understood when searching
 for CP violation.
 
-The proposed detector will constrain the systematic uncertainties in the LBNF 
+The proposed detector will constrain the systematic uncertainties in the DUNE 
 oscillation measurements. Regardless of the process under study, the 
 systematic error should be less than the corresponding statistical error. 
 The design presented here is the subject of study within the LBNF Science 
@@ -60,14 +60,12 @@ evolve from what is described here.
 \section{Overview of FGT Design}
 
 A schematic drawing of the 
-FGT design is shown in Figure~\ref{STT_schematic}. 
+FGT design is shown in Figure~\ref{fig:STT_schematic}. 
 The fine-grained tracker 
 design will measure the neutrino-event rates and cross sections 
 on argon, water, and other nuclear 
 targets for both $\nu_e$ and $\nu_\mu$ charged current (CC) and
 neutral current (NC) scattering events. Our FGT design 
-%is based on CERN's Neutrino
-%Oscillation Magnetic Detector (NOMAD) and 
 consists of a STT, consisting of straw tubes, water targets, argon targets, 
 and radiator targets, and an electromagnetic calorimeter inside of a
 dipole magnet. In addition, muon detectors (MuID) consisting of resistive plate
@@ -80,9 +78,9 @@ or argon target.  The
 proposed $3.5\times3.5\times6.4$ m$^3$ STT will be positioned inside a 
 dipole magnet with magnetic field, $B = 0.4$~T, for particle tracking.
 The nominal active volume of the STT corresponds to 8~tonnes of mass.
-Table \ref{tab:comparison} summarizes the
+Table~\ref{tab:comparison} summarizes the
 performance for the FGT configuration, while
-Table \ref{tab:STT_specs} lists the requirements for the FGT.
+Table~\ref{tab:STT_specs} lists the requirements for the FGT.
 
 With a 120-GeV proton beam, the neutrino event rates in the detector
 will be $\sim~0.35\times 10^{-14}$ events/tonne/proton on target.
@@ -92,66 +90,42 @@ design.  Overlaps between interactions are expected to be
 manageable thanks to the nanosecond-level timing of the FGT relative to
 the $\sim 10 \mu$s beam spill length.
 
-\begin{figure}
-\begin{center}
-%\includegaphics[width=5in,angle=90]{FGT_Overview}
-\caption{\label{STT_schematic} A schematic drawing of the fine-grained
-tracker design.} 
-\end{center}
-\end{figure}
+\begin{cdrfigure}[A schematic drawing of the fine-grained
+tracker design]{STT_schematic}{A schematic drawing of the fine-grained
+tracker design}
+%\includegraphics[width=5in,angle=90]{FGT_Overview}
+\end{cdrfigure}
 
-\begin{table}
-\centering
-  \caption{\label{tab:comparison} A summary of the performance for 
-the FGT configuration.}
-  \begin{tabular}{| l | c |}
-    \hline
-Performance Metric&FGT \\
-    \hline
-Straw Tube Detector Volume & 3.5m x 3.5m x 6.4m \\
-Straw Tube Detector Mass&8 tonnes \\
-Vertex Resolution&0.1 mm \\
-Angular Resolution&2 mrad \\
-$E_e$ Resolution&5\% \\
-$E_\mu$ Resolution&5\% \\
-$\nu_\mu/\bar \nu_\mu$ ID&Yes \\
-$\nu_e/\bar \nu_e$ ID&Yes \\
-NC$\pi^0$/CCe Rejection&0.1\% \\
-NC$\gamma$/CCe Rejection&0.2\% \\
+
+
+\begin{cdrtable}[A summary of the performance for 
+the FGT configuration]{ll}{comparison}{A summary of the performance for 
+the FGT configuration}
+Performance Metric&FGT\\ \toprowrule
+Straw Tube Detector Volume & 3.5m x 3.5m x 6.4m \\ \colhline
+Straw Tube Detector Mass&8 tonnes\\ \colhline
+Vertex Resolution&0.1 mm \\ \colhline
+Angular Resolution&2 mrad \\ \colhline
+$E_e$ Resolution&5\% \\ \colhline
+$E_\mu$ Resolution&5\% \\ \colhline
+$\nu_\mu/\bar \nu_\mu$ ID&Yes \\ \colhline
+$\nu_e/\bar \nu_e$ ID&Yes \\ \colhline
+NC$\pi^0$/CCe Rejection&0.1\% \\ \colhline
+NC$\gamma$/CCe Rejection&0.2\% \\ \colhline
 CC$\mu$/CCe Rejection&0.01\% \\
-     \hline
-  \end{tabular}
-\end{table}
-\begin{cdrtable}[short]{cc}{label}{long}
-Header Column1 & Header Column 2 \\ \toprowrule
-Row 1 & First \\ \colhline
-Row 2 & Second \\ \colhline
-Row 3 & Third \\
 \end{cdrtable}
 
-\begin{table}
-\centering
-  \caption{\label{tab:STT_specs} Requirements for the FGT.}
-  \begin{tabular}{| l | l |}
-    \hline
-Item&Requirement \\
-    \hline
-Inner Magnetic Volume & 4.5m x 4.5m x 8.0m  \\
-Tracking Detector & 3.5m x 3.5m x 6.4m; 80 modules; 107,520 straws \\
-Targets & 1.27-cm thick argon, water, and other nuclear targets \\
-Transition Radiation Radiators & 3.6-cm thick radiators \\
-ECAL & $X_0$ = 10 barrel, 10 backward, \& 20 forward; 26,112 scintillator bars \\
-Dipole Magnet & 0.4T; 2.4 MW; 60 cm thick steel \\
-Magnetic Field Uniformity & $<2\%$ magnetic field variation over inner volume \\ 
-MuID & 432 RPC modules interspersed between 20-cm thick layers of steel \\ 
-     \hline
-  \end{tabular}
-\end{table}
-\begin{cdrtable}[short]{cc}{label}{long}
-Header Column1 & Header Column 2 \\ \toprowrule
-Row 1 & First \\ \colhline
-Row 2 & Second \\ \colhline
-Row 3 & Third \\
+
+\begin{cdrtable}[Requirements for the FGT]{lp{8cm}}{STT_specs}{Requirements for the FGT}
+Item&Requirement  \\ \toprowrule
+Inner Magnetic Volume & 4.5m x 4.5m x 8.0m  \\ \colhline
+Tracking Detector & 3.5m x 3.5m x 6.4m; 80 modules; 107,520 straws \\ \colhline
+Targets & 1.27-cm thick argon, water, and other nuclear targets \\ \colhline
+Transition Radiation Radiators & 3.6-cm thick radiators \\ \colhline
+ECAL & $X_0$ = 10 barrel, 10 backward, \& 20 forward; 26,112 scintillator bars \\ \colhline
+Dipole Magnet & 0.4T; 2.4 MW; 60 cm thick steel \\ \colhline
+Magnetic Field Uniformity & $<2\%$ magnetic field variation over inner volume \\ \colhline
+MuID & 432 RPC modules interspersed between 20-cm thick layers of steel \\  
 \end{cdrtable}
 
 \section{Straw Tube Tracking Detector}
@@ -187,21 +161,16 @@ at Fermilab, where each module will have a carbon composite frame around
 the perimeter of the module for support and will have an attached target or 
 radiator. Nominally, there will be 34 modules with targets and 46 modules 
 with radiators, still keeping the 
-average density of the STT at around 0.1 g/cm$^3$. Figure~\ref{STT_Detail}
+average density of the STT at around 0.1 g/cm$^3$. Figure~\ref{fig:STT_Detail}
 shows a schematic drawing of a STT module with four straw-tube planes and
 radiators.
 
-\begin{figure}
-\begin{center}
+
+\begin{cdrfigure}[A schematic drawing of a STT module]{STT_Detail}{A schematic drawing of a STT module with four straw-tube planes and
+radiators (dark blue shading)}
 %\includegraphics[width=4in,angle=90]{STT_Detail}
-\label{STT_Detail}
-\caption{A schematic drawing of a STT module with four straw-tube planes and
-radiators (dark blue shading).}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
 \end{cdrfigure}
+
 There are a total of 107,520 straws, corresponding to 336 straws per plane,
 1344 straws per module,
 and 80 modules. Both ends of the straw tubes will be read out, so that the total
@@ -209,52 +178,31 @@ number of electronics channels will be 215,040.
 The total mass of the STT, including targets and radiators, is approximately 8 
 tonnes, corresponding to an average density of 0.1. 
 The thickness of the entire 6.4-m-long STT is almost two 
-radiation lengths. Specifications for the Straw Tube Detector are shown in Table \ref{STT_details}.
+radiation lengths. Specifications for the Straw Tube Detector are shown in Table~\ref{tab:STT_details}.
 
-%\begin{figure}
-%\begin{center}
-%%\includegaphics[width=2in,angle=90]{STT_film}
-%\caption[Plane of straw tubes glued to carbon composite sheet]{\label{STT_film} A schematic drawing of a plane of straw tubes that is
-%glued to a carbon composite sheet.} 
-%\end{center}
-%\end{figure}
 
-\begin{table}
-\centering
-  \caption{\label{STT_details} Straw Tube Detector specifications.}
-  \begin{tabular}{| l | l |}
-    \hline
-Item&Specification \\
-    \hline
-Straw Tube Geometry & 1cm Diameter x 3.5m Long \\
-Number of Straw Tubes & 107,520 \\
-Number of Straw Tubes per Plane & 336 \\
-Number of Straw Tube Planes per Module & 4 \\
-Number of Straw Tube Sub-Modules per Module & 6 \\
-Number of Straw Tube Modules & 80 \\
-Number of Straw Tube Sub-Modules & 480 \\
-Length of Straw Tube Wire & 376.3 km \\
-%Volume of Carbon Composite Sheets & 10.78m$^3$ \\
-Number of Electronics Channels & 215,040 \\
-Number of Modules with Radiators & 46 \\
-Radiator Thickness per Module & 3.6cm \\
-Radiator Mass per Module & 108 kg \\
-Number of Modules with Target Planes & 34 \\
-%Number of H$_2$O Target Planes & 10 \\
-%Number of D$_2$O Target Planes & 10 \\
-Target Geometry & 1.27cm Diameter x 3.5m Long \\
-Number of Targets per Plane & 275 \\
-Ar Mass per Plane & 15.5 kg \\
-Water Mass per Plane & 95 kg \\
-     \hline
-  \end{tabular}
-\end{table}
-\begin{cdrtable}[short]{cc}{label}{long}
-Header Column1 & Header Column 2 \\ \toprowrule
-Row 1 & First \\ \colhline
-Row 2 & Second \\ \colhline
-Row 3 & Third \\
-\end{cdrtable}
+
+
+
+\begin{cdrtable}[Straw Tube Detector specifications]{ll}{STT_details}{Straw Tube Detector specifications}
+Item&Specification \\ \toprowrule
+Straw Tube Geometry & 1cm Diameter x 3.5m Long \\ \colhline
+Number of Straw Tubes & 107,520 \\ \colhline
+Number of Straw Tubes per Plane & 336 \\ \colhline
+Number of Straw Tube Planes per Module & 4 \\ \colhline
+Number of Straw Tube Sub-Modules per Module & 6 \\ \colhline
+Number of Straw Tube Modules & 80 \\ \colhline
+Number of Straw Tube Sub-Modules & 480 \\ \colhline
+Length of Straw Tube Wire & 376.3 km \\ \colhline
+Number of Electronics Channels & 215,040 \\ \colhline
+Number of Modules with Radiators & 46 \\ \colhline
+Radiator Thickness per Module & 3.6cm \\ \colhline
+Radiator Mass per Module & 108 kg \\ \colhline
+Number of Modules with Target Planes & 34 \\ \colhline
+Target Geometry & 1.27cm Diameter x 3.5m Long \\ \colhline
+Number of Targets per Plane & 275 \\ \colhline
+Ar Mass per Plane & 15.5 kg \\ \colhline
+Water Mass per Plane & 95 kg \\\end{cdrtable}
 
 \subsection{Radiator Targets}
 
@@ -288,7 +236,7 @@ proton targets can be obtained, through subtraction, from C and CH$_2$ targets.
 The targets will be 
 positioned directly upstream of individual modules without radiators. 
 The targets, shown in 
-Figure~\ref{STT_targets}, will consist of planes of 0.5-inch diameter, 3.5-m-long aluminum tubes filled
+Figure~\ref{fig:STT_targets}, will consist of planes of 0.5-inch diameter, 3.5-m-long aluminum tubes filled
 either with water (H$_2$O or D$_2$O) or with argon gas pressurized to 140 atm ($\rho = 0.233$). 
 %There will be a total of 44 modules 
 %with argon targets and 20 modules with water targets. 
@@ -305,13 +253,11 @@ Additional nuclear targets, such as Ca (same atomic weight as argon), C, stainle
 steel, and Pb, can also be used in
 the form of thin planes, to be positioned directly upstream of individual STT modules without radiators.
 
-\begin{figure}
-\begin{center}
-%\includegaphics[width=4in,angle=90]{Water_target}
-\caption[Schematic drawing of the water or pressurized-argon targets]{\label{STT_targets} Schematic drawing of the water or pressurized-argon targets, 
-made from 0.5-in diameter aluminum tubes.}
-\end{center}
-\end{figure}
+
+\begin{cdrfigure}[Schematic drawing of the water or pressurized-argon targets]{STT_targets}{lSchematic drawing of the water or pressurized-argon targets, 
+made from 0.5-in diameter aluminum tubes}
+%\includegraphics[width=4in,angle=90]{Water_target}
+\end{cdrfigure}
 
 \section{Electromagnetic Calorimeter}
 
@@ -323,7 +269,7 @@ consists of
 layers of either 1.75-mm-thick (for the forward ECAL) or 3.5-mm-thick 
 (for the barrel and backward ECAL) lead sheets and 2.5-cm-wide by 10-mm-thick 
 plastic scintillator bars,
-as shown in Figure~\ref{ECAL_detail}. The scintillator layers for the
+as shown in Figure~\ref{fig:ECAL_detail}. The scintillator layers for the
 Forward and Backward ECAL alternate as XYXYXY..., while the scintillator 
 layers for the Barrel ECAL are all horizontal along the axis of the magnet.
 The Forward ECAL will consist of 60 layers of scintillator bars, where each
@@ -351,54 +297,40 @@ readout channels twice the number of scintillator bars
 for a total of 52,224. The total mass of scintillator is 20.89 tonnes, 
 the total mass of Pb is 70.8 tonnes, and
 the total length of fiber is 83.6 km.
-Specifications for the ECAL are shown in Table \ref{ECAL_specs}.
+Specifications for the ECAL are shown in Table~\ref{tab:ECAL_specs}.
 
-\begin{figure}
-\begin{center}
-%\includegaphics[width=3.0in,angle=90]{ECAL_detail}
-\caption[Schematic drawing of the ECAL]{\label{ECAL_detail} Schematic drawing of the ECAL, which is made up of alternating planes
+
+\begin{cdrfigure}[Schematic drawing of the ECAL]{ECAL_detail}{Schematic drawing of the ECAL, which is made up of alternating planes
 of plastic scintillator and Pb sheets.}
-\end{center}
-\end{figure}
+%\includegraphics[width=3.0in,angle=90]{ECAL_detail}
+\end{cdrfigure}
 
-\begin{table}
-\centering
-  \caption{\label{ECAL_specs} ECAL specifications.}
-  \begin{tabular}{| l | l |}
-    \hline
-Item&Specification \\
-    \hline
-Scintillator Bar Geometry & 3.2m x 2.5cm x 1cm \\
-Number of Forward ECAL Scintillator Bars & 7680 \\
-Forward ECAL Pb thickness & 1.75mm \\
-Number of Forward ECAL Layers & 60 \\
-Number of Forward ECAL Radiation Lengths & 20 \\
-Dimensions of Forward ECAL Module & 3.2m x 3.2m x 81cm \\
-Number of Barrel ECAL Scintillator Bars & 16,384 \\
-Barrel ECAL Pb thickness & 3.5mm \\
-Number of Barrel ECAL Layers & 16 \\
-Number of Barrel ECAL Radiation Lengths & 10 \\
-Number of Barrel ECAL Modules & 8 \\
-Dimensions of Barrel ECAL Modules & 3.2m x 3.2m x 27.5cm \\
-Number of Backward ECAL Scintillator Bars & 2048 \\
-Backward ECAL Pb thickness & 3.5mm \\
-Number of Backward ECAL Layers & 16 \\
-Number of Backward ECAL Radiation Lengths & 10 \\
-Dimensions of Backward ECAL Module & 3.2m x 3.2m x 27.5cm \\
-Total Length of 0.7mm Diameter WLS Fiber & 83.6km \\
-Total Number of Scintillator Bars & 26,112 \\
-Total Number of Electronics Channels & 52,224 \\
-Total Mass of Scintillator & 20,890 kg \\
-Total Mass of Pb & 70,800kg \\
-     \hline
-  \end{tabular}
-\end{table}
-\begin{cdrtable}[short]{cc}{label}{long}
-Header Column1 & Header Column 2 \\ \toprowrule
-Row 1 & First \\ \colhline
-Row 2 & Second \\ \colhline
-Row 3 & Third \\
-\end{cdrtable}
+
+
+\begin{cdrtable}[ECAL specifications]{ll}{ECAL_specs}{ECAL specifications}
+Item&Specification \\ \toprowrule
+Scintillator Bar Geometry & 3.2m x 2.5cm x 1cm \\ \colhline
+Number of Forward ECAL Scintillator Bars & 7680 \\ \colhline
+Forward ECAL Pb thickness & 1.75mm \\ \colhline
+Number of Forward ECAL Layers & 60 \\ \colhline
+Number of Forward ECAL Radiation Lengths & 20\\ \colhline
+Dimensions of Forward ECAL Module & 3.2m x 3.2m x 81cm \\ \colhline
+Number of Barrel ECAL Scintillator Bars & 16,384 \\ \colhline
+Barrel ECAL Pb thickness & 3.5mm \\ \colhline
+Number of Barrel ECAL Layers & 16 \\ \colhline
+Number of Barrel ECAL Radiation Lengths & 10 \\ \colhline
+Number of Barrel ECAL Modules & 8 \\ \colhline
+Dimensions of Barrel ECAL Modules & 3.2m x 3.2m x 27.5cm \\ \colhline
+Number of Backward ECAL Scintillator Bars & 2048 \\ \colhline
+Backward ECAL Pb thickness & 3.5mm \\ \colhline
+Number of Backward ECAL Layers & 16 \\ \colhline
+Number of Backward ECAL Radiation Lengths & 10 \\ \colhline
+Dimensions of Backward ECAL Module & 3.2m x 3.2m x 27.5cm \\ \colhline
+Total Length of 0.7mm Diameter WLS Fiber & 83.6km \\ \colhline
+Total Number of Scintillator Bars & 26,112 \\ \colhline
+Total Number of Electronics Channels & 52,224\\ \colhline
+Total Mass of Scintillator & 20,890 kg \\ \colhline
+Total Mass of Pb & 70,800kg \\\end{cdrtable}
 
 \section{Dipole Magnet} 
 
@@ -412,45 +344,33 @@ magnet
 has four vertical Al coils, stacked horizontally, producing a horizontal magnetic 
 field. The return yoke will be divided into two halves along the 
 longitudinal center line to allow the magnet to be opened to service the
-detector inside, as shown in Figure~\ref{STT_schematic}. 
+detector inside, as shown in Figure~\ref{fig:STT_schematic}. 
 Each half yoke will be built
 from eight ``C'' sections, and the thickness of the 
 magnet steel will be 60~cm, consisting of 6
 $\times$ 10-cm-thick plates. The magnet power requirement with Al coils is $\sim 2.4$~MW,
 corresponding to 6~kA at 400~V. The water flow required for cooling is 20~l/s.
-The Dipole Magnet specifications are shown in Table \ref{Magnet_specs}.
+The Dipole Magnet specifications are shown in Table~\ref{tab:Magnet_specs}.
 
 The momentum resolution is dominated by multiple scattering in the STT. The momentum resolution is, therefore, given by 
 $\delta p/p = 0.053/\sqrt(LX_0)B$. For B = 0.4T, L = 3m, and $X_0 = 4$m, the
 expected momentum resolution is $\sim 3.8\%$. 
 
-\begin{table}
-\centering
-  \caption{\label{Magnet_specs} Dipole Magnet specifications.}
-  \begin{tabular}{| l | l |}
-    \hline
-Item&Specification \\
-    \hline
-Inner Dimensions & 4.5m x 4.5m x 8.0m \\
-Magnetic Field & 0.4 T \\
-Number of ``C'' Sections & 16 \\
-Thickness of Steel in the ``C'' Sections & 60cm \\
-Mass per ``C'' Section & 60 tonnes \\
-Number of Coils & 4 \\
-Mass per Coil & 40 tonnes \\
-Magnet Current & 6 kA \\
-Magnet Voltage & 400 V \\
-Magnet Power Requirements & 2.4 MW \\
-Water Flow for Cooling & 20 l/s \\
-     \hline
-  \end{tabular}
-\end{table}
-\begin{cdrtable}[short]{cc}{label}{long}
-Header Column1 & Header Column 2 \\ \toprowrule
-Row 1 & First \\ \colhline
-Row 2 & Second \\ \colhline
-Row 3 & Third \\
-\end{cdrtable}
+
+
+\begin{cdrtable}[Dipole Magnet specifications]{ll}{Magnet_specs}{Dipole Magnet specifications}
+Item&Specification \\ \toprowrule
+Inner Dimensions & 4.5m x 4.5m x 8.0m \\ \colhline
+Magnetic Field & 0.4 T \\ \colhline
+Number of ``C'' Sections & 16 \\ \colhline
+Thickness of Steel in the ``C'' Sections & 60cm \\ \colhline
+Mass per ``C'' Section & 60 tonnes \\ \colhline
+Number of Coils & 4 \\ \colhline
+Mass per Coil & 40 tonnes \\ \colhline
+Magnet Current & 6 kA \\ \colhline
+Magnet Voltage & 400 V \\ \colhline
+Magnet Power Requirements & 2.4 MW \\ \colhline
+Water Flow for Cooling & 20 l/s \\\end{cdrtable}
 
 \section{Muon Identifier}
 \label{sec:muid}
@@ -470,7 +390,7 @@ identification of the
 muon; the muon momentum %itself 
 will be measured by the STT inside the 
 magnetic field. A schematic drawing of the MuID 
-interspersed in the magnet steel is shown in Figure~\ref{FGT_MuID}.
+interspersed in the magnet steel is shown in Figure~\ref{fig:FGT_MuID}.
 
 The nominal dimensions of all RPC modules will be 1~m $\times$ 2~m with
 active areas of 196cm x 96cm. Each
@@ -498,62 +418,44 @@ planes (170.1 tonnes) of dimension 6 x 6 x 0.2 m$^3$ and 3 RPC planes. The barre
 of 15 mm and a gap width of 2 mm. One possible gas mixture would be composed, for example,
 of Ar (75\%), tetraflouroethane (20\%), isobutane (4\%),
 and sulphurhexaflouride (1\%). 
-A schematic drawing of an RPC is shown in Figure~\ref{FGT_RPC}, while
-Figure~\ref{RPC_Tray} shows a schematic drawing of an end-RPC tray,
-while Figure~\ref{FGT_RPC} shows a schematic drawing of an RPC module.
-MuID specifications are shown in Table \ref{MID_specs}.
+A schematic drawing of an RPC is shown in Figure~\ref{fig:FGT_RPC}, while
+Figure~\ref{fig:RPC_Tray} shows a schematic drawing of an end-RPC tray,
+while Figure~\ref{fig:FGT_RPC} shows a schematic drawing of an RPC module.
+MuID specifications are shown in Table~\ref{tab:MID_specs}.
 
-\begin{figure}[htp]
-\begin{center}
-%\includegaphics[width=5in,angle=90]{Magnet_Half_Assembly}
-\caption{\label{FGT_MuID} Schematic drawing of a magnet half-assembly, 
-showing the the MuID interspersed in the magnet steel.}
-\end{center}
-\end{figure}
+\begin{cdrfigure}[Schematic drawing of a magnet half-assembly]{FGT_MuID}{Schematic drawing of a magnet half-assembly, 
+showing the the MuID interspersed in the magnet steel}
+%\includegraphics[width=5in,angle=90]{Magnet_Half_Assembly}
+\end{cdrfigure}
 
-\begin{figure}[htp]
-\begin{center}
-%\includegaphics[width=3in,angle=90]{RPC_Tray}
-\caption{\label{RPC_Tray} Schematic drawing of an end-RPC tray,
-consisting of 6 RPC modules of dimension 1m x 2m.}
-\end{center}
-\end{figure}
 
-\begin{figure}[htp]
-\begin{center}
-%\includegaphics[width=3in,angle=90]{RPC_Detail}
-\caption{\label{FGT_RPC} Schematic drawing of an RPC.} 
-\end{center}
-\end{figure}
+\begin{cdrfigure}[Schematic drawing of an end-RPC tray]{RPC_Tray}{Schematic drawing of an end-RPC tray,
+consisting of 6 RPC modules of dimension 1m x 2m}
+%\includegraphics[width=3in,angle=90]{RPC_Tray}
+\end{cdrfigure}
 
-\begin{table}
-\centering
-  \caption{\label{MID_specs} MuID specifications.}
-  \begin{tabular}{| l | l |}
-    \hline
-Item&Specification \\
-    \hline
-Number of Barrel RPC Trays of Dimension 2.2m x 4m & 8 \\
-Number of Barrel RPC Trays of Dimension 2.5m x 4m & 16 \\
-Number of Barrel RPC Trays of Dimension 2.8m x 4m & 16 \\
-Number of Barrel RPC Trays of Dimension 3.1m x 4m & 8 \\
-Number of END RPC Trays of Dimension 2m x 6m & 24 \\
-Total Number of RPC Trays & 72 \\
-Total Number of RPC Modules & 432 \\
-Mass of Downstream Steel Planes & 283,500 kg \\
-Mass of Upstream Steel Planes & 170,100 kg \\
-RPC Thickness & 1.5cm \\
-Number of 7.65mm Pitch X Strips per Module & 256 \\
-Number of 7.5mm Pitch Y Strips per Module & 128 \\
+
+\begin{cdrfigure}[Schematic drawing of an RPC]{FGT_RPC}{Schematic drawing of an RPC}
+%\includegraphics[width=3in,angle=90]{RPC_Detail}
+\end{cdrfigure}
+
+
+
+\begin{cdrtable}[MuID specifications]{ll}{MID_specs}{MuID specifications}
+Item&Specification  \\ \toprowrule
+Number of Barrel RPC Trays of Dimension 2.2m x 4m & 8 \\ \colhline
+Number of Barrel RPC Trays of Dimension 2.5m x 4m & 16 \\ \colhline
+Number of Barrel RPC Trays of Dimension 2.8m x 4m & 16 \\ \colhline
+Number of Barrel RPC Trays of Dimension 3.1m x 4m & 8 \\ \colhline
+Number of END RPC Trays of Dimension 2m x 6m & 24 \\ \colhline
+Total Number of RPC Trays & 72 \\ \colhline
+Total Number of RPC Modules & 432 \\ \colhline
+Mass of Downstream Steel Planes & 283,500 kg \\ \colhline
+Mass of Upstream Steel Planes & 170,100 kg \\ \colhline
+RPC Thickness & 1.5cm \\ \colhline
+Number of 7.65mm Pitch X Strips per Module & 256 \\ \colhline
+Number of 7.5mm Pitch Y Strips per Module & 128 \\ \colhline
 Total Number of RPC Strips and Electronics & 165,888 \\
-     \hline
-  \end{tabular}
-\end{table}
-\begin{cdrtable}[short]{cc}{label}{long}
-Header Column1 & Header Column 2 \\ \toprowrule
-Row 1 & First \\ \colhline
-Row 2 & Second \\ \colhline
-Row 3 & Third \\
 \end{cdrtable}
 
 \section{Instrumentation}
@@ -567,28 +469,17 @@ given hit. The MuID RPCs are required to provide the position and time associate
 a traversing-track. Similarly, the slow control of the sub-detectors
 share many features. 
 A brief description of the sub-detector instrumentation is presented below, while
-Table \ref{elect_ch} summarizes the number of electronics channels for each of the
+Table~\ref{tab:elect_ch} summarizes the number of electronics channels for each of the
 three detector systems. 
 
-\begin{table}
-\centering
-  \caption{\label{elect_ch} The number of electronics channels for each of the
-three detector systems.}
-  \begin{tabular}{| c | c |}
-    \hline
-Detector&Number of Electronics Channels \\
-    \hline
-STT & 215,040 \\
-ECAL & 52,224 \\
+
+\begin{cdrtable}[Number of electronics channels for each of the
+three detector systems]{ll}{elect_ch}{The number of electronics channels for each of the
+three detector systems}
+Detector&Number of Electronics Channels\\ \toprowrule
+STT & 215,040 \\  \colhline
+ECAL & 52,224 \\  \colhline
 MuID & 165,888 \\
-     \hline
-  \end{tabular}
-\end{table}
-\begin{cdrtable}[short]{cc}{label}{long}
-Header Column1 & Header Column 2 \\ \toprowrule
-Row 1 & First \\ \colhline
-Row 2 & Second \\ \colhline
-Row 3 & Third \\
 \end{cdrtable}
 
 \subsection{Readout Electronics for the STT}
