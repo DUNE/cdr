@@ -5,7 +5,7 @@
 
 \section{Introduction}
 
-This chapter defines the LBNE strategy for measurements of secondary
+This chapter defines the DUNE strategy for measurements of secondary
 beam particles in the region behind the beam absorber. 
 Those measurements are designed to provide constraints 
 on the neutrino flux at the near and far
@@ -15,7 +15,7 @@ for monitoring the proton beam's interaction with the proton target
 can be found in Volume 2: The Beamline at the Near Site. 
 
 The measurements and apparatus described in this chapter fall into
-the catagory of equipment designed specifically for LBNE to
+the catagory of equipment designed specifically for DUNE to
 detect muons exiting the decay tunnel. 
 
 \section{Design Considerations}
@@ -24,7 +24,7 @@ detect muons exiting the decay tunnel.
 \subsection{General}
 The requirements for the beamline measurements, 
 as discussed in the NDC requirements documentation~\cite{nd_requirements_doc}, are intimately related to how well the neutrino flux must be known.
-Given that LBNE does not have the luxury to construct identical Near and Far Detectors, 
+Given that DUNE does not have the luxury to construct identical Near and Far Detectors, 
 a near-far comparison is more complicated than it was in
 the MINOS experiment~\cite{gnumi-validation}, for example.   
 While external hadron-production measurements can place strong constraints on the pion and kaon production in the target,
@@ -57,37 +57,23 @@ muon energy is 3.75 times that of the neutrino.
 Because muons and neutrinos come from the same parent pion and kaon
 decays, a measurement of the absolute muon flux in conjunction with the energy spectrum
 seen in the muon monitors can constrain the absolute neutrino flux.  The
-goal for the LBNE muon monitors is to determine the absolute muon flux
+goal for the DUNE muon monitors is to determine the absolute muon flux
 to an accuracy of 5\% above a muon energy of 6~GeV (which corresponds to
 a neutrino energy of 1.6~GeV) in the central part of the absorber.
 Figure~\ref{fig:nu_mumon_frac} shows the total simulated neutrino flux at the Far Detector overlaid with the flux from only neutrinos having pion or kaon parents that contribute to the signal
 seen in the muon monitor.  The simulation shows that between 3~GeV and 10~GeV, more than 90\% of 
 the neutrinos in the Far Detector come from this subset.
 
-\begin{figure}[htbp]
-\begin{center}
-%\includegraphics[width=5in,angle=0]{nu_muon_fraction.pdf}
-\caption[Simulated neutrino fluxes at Far Detector]{The total simulated neutrino flux at the Far Detector (black solid) overlaid with the neutrino flux, also at the Far Detector, coming from
+\begin{cdrfigure}[Simulated neutrino fluxes at Far Detector]{nu_mumon_frac}{The total simulated neutrino flux at the Far Detector (black solid) overlaid with the neutrino flux, also at the Far Detector, coming from
 neutrinos with pion or kaon parents that contribute to the muon-monitor signal (red dashed), averaged over the back of the absorber. As shown in \ref{fig:AbsorberDepthVsRadius}, the muon systems will probe down to 1.5 GeV in neutrino energy on the beam axis.}
-\label{fig:nu_mumon_frac}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
+%\includegraphics[width=5in,angle=0]{nu_muon_fraction.pdf}
 \end{cdrfigure}
 
-\begin{figure}[htbp]
-\begin{center}
-%\includegraphics[width=4in,angle=0]{fluxRatio.pdf}
-\caption[Ratio of the flux on-axis to the flux 0.4~mrad off-axis]
-{ Ratio of the neutrino flux on-axis to the flux 0.4 mrad off-axis at the Far
+\begin{cdrfigure}[Ratio of the flux on-axis to the flux 0.4~mrad off-axis]{fluxRatio}{Ratio of the neutrino flux on-axis to the flux 0.4 mrad off-axis at the Far
 Detector position.}
-\label{fig:fluxRatio}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
+%\includegraphics[width=4in,angle=0]{fluxRatio.pdf}
 \end{cdrfigure}
+
 It is essential to monitor the stability of the beam direction over
 time. Figure~\ref{fig:fluxRatio} shows the effect on the muon-neutrino
 flux in the Far Detectors when the beam is misaligned by 0.4~mrad.  
@@ -101,7 +87,7 @@ accuracy of approximately 5~cm.
 
 
 The rate of muons crossing the monitors will be quite high, with
-preliminary LBNE beam simulations suggesting approximately 50 million
+preliminary LBNF beam simulations suggesting approximately 50 million
 muons per cm$^{2}$ for a pulse of $10^{14}$ protons-on-target. The
 muon monitors must also be capable of operating in a high-radiation
 environment.  For example, the expected dose in the area downstream of
@@ -114,7 +100,7 @@ the NuMI absorber is as high as 100~MRad per year \cite{ref:NuMIBeamMonitors}.
 
 The muon measurements are carried out in the region immediately
 following the hadron absorber at the end of the decay tunnel, below
-the Absorber Service Building (LBNE 30).  An elevation view
+the Absorber Service Building (LBNF 30).  An elevation view
 of the absorber area and the muon alcove is shown in Figure~\ref{fig:AbsorberHallElevation}. 
 The axis of the decay pipe cuts across the muon alcove at an angle, and the size of the alcove
 is largely determined by the requirement that it contain the
@@ -132,46 +118,23 @@ steel ``blue blocks''.   The blue blocks are there to provide several
 depths at which to monitor the stopped muons as they range out in the
 material. A second ion-chamber array will also be placed farther downstream within the blue blocks.
 
-\begin{figure}[htbp]
-\begin{center}
-%\includegraphics[width=8in,angle=0]{ABSORBERHallLongSection.pdf}
-\caption[The Absorber Hall elevation view]{ The Absorber Hall elevation view. The Absorber Service Building (LBNE 30) is on the surface and allows for crane access 
-to the Absorber Hall. The muon alcove is directly behind the absorber. 
-%\fixme{AH widened from 5 to 6 to make labels easier to read}
-}
-\label{fig:AbsorberHallElevation}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
-\end{cdrfigure}
-% ADM added this back to this section, with an update figure.
 
-A perspective view of LBNE 30 is shown in Figure~\ref{fig:AbsorberServiceBuilding}, and a detail of the lower level of Absorber Hall
+\begin{cdrfigure}[The Absorber Hall elevation view]{AbsorberHallElevation}{The Absorber Hall elevation view. The Absorber Service Building (LBNF 30) is on the surface and allows for crane access 
+to the Absorber Hall. The muon alcove is directly behind the absorber. }
+%\includegraphics[width=8in,angle=0]{ABSORBERHallLongSection.pdf}
+\end{cdrfigure}
+
+A perspective view of LBNF 30 is shown in Figure~\ref{fig:AbsorberServiceBuilding}, and a detail of the lower level of Absorber Hall
 is given in Figure~\ref{fig:AbsorberFloorLevel}.  The HV, water systems and gas systems for the muon monitors will be located nearby on the lower level.
 The readout electronics will be located in racks close to the surface. 
 
-\begin{figure}[htbp]
-\begin{center}
+\begin{cdrfigure}[The Absorber Hall with LBNF 30]{AbsorberServiceBuilding}{A perspective view of the Absorber Hall and LBNF 30}
 %\includegraphics[width=8in,angle=0]{AbsorberServiceBuilding.pdf}
-\caption[The Absorber Hall with LBNE 30]{A perspective view of the Absorber Hall and LBNE 30.}
-\label{fig:AbsorberServiceBuilding}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
 \end{cdrfigure}
 
-\begin{figure}[htbp]
-\begin{center}
+\begin{cdrfigure}[The lower level of the Absorber Hall]{AbsorberFloorLevel}{A perspective view of the 
+Absorber Hall lower level}
 %\includegraphics[width=5in,angle=0]{AbsorberFloorLevel.pdf}
-\caption[The lower level of the Absorber Hall]{A perspective view of the 
-Absorber Hall lower level.}
-\label{fig:AbsorberFloorLevel}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
 \end{cdrfigure}
 
 It is important to have precise knowledge of the amount of material muons pass
@@ -187,34 +150,17 @@ complex geometry must be carefully understood and simulated in order
 to make the muon measurements effective. 
 
 
-\begin{figure}[htbp]
-\begin{center}
-\centering
-%\includegraphics[width=5in,angle=0]{AbsorberDetailElevation.pdf}
-\caption[Absorber conceptual design, elevation view]{ Absorber conceptual design. The figure shows
+\begin{cdrfigure}[Absorber conceptual design, elevation view]{AbsorberDetailElev}{Absorber conceptual design. The figure shows
 the elevation view of the absorber at the end of the decay tunnel. The beam direction is shown by
-the red arrow. The absorber is constructed of several different materials as shown: aluminum (dark blue), concrete (magenta), and steel (other colors). } 
-%\fixme{Figures not clear enough; need better labelling. AH}, noted
-\label{fig:AbsorberDetailElev}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
+the red arrow. The absorber is constructed of several different materials as shown: aluminum (dark blue), concrete (magenta), and steel (other colors).}
+%\includegraphics[width=5in,angle=0]{AbsorberDetailElevation.pdf}
 \end{cdrfigure}
 
-\begin{figure}[htbp]
-\begin{center}
-\centering
-%\includegraphics[width=4in,angle=0]{AbsorberDetailPlan.pdf}
-\caption[Absorber conceptual design, plan view]{Absorber conceptual design, 
+\begin{cdrfigure}[Absorber conceptual design, plan view]{AbsorberDetailPlan}{Absorber conceptual design, 
 similar to Figure~\ref{fig:AbsorberDetailElev}, that 
-shows the plan view of the absorber.} 
-%\fixme{Figures not clear enough; need better labelling. AH}, noted
-\label{fig:AbsorberDetailPlan}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
+shows the plan view of the absorber}
+%\includegraphics[width=4in,angle=0]{AbsorberDetailPlan.pdf}
+
 \end{cdrfigure}
 
 Figure~\ref{fig:AbsorberDepthVsRadius} shows the energy lost by a
@@ -231,18 +177,10 @@ aluminum in the front part of the absorber. Of course the first
 concerns must be the containment of the radiation field induced by the
 proton beam, and the integrity of the absorber itself. 
 
-\begin{figure}[htbp]
-\begin{center}
-\centering
-%\includegraphics[width=5in,angle=0]{AbsorberDepthVsRadius.pdf}
-\caption[Energy loss in absorber]{The absorber's approximate
+\begin{cdrfigure}[Energy loss in absorber]{AbsorberDepthVsRadius}{The absorber's approximate
 energy loss versus horizontal radius provides an indication of the variation in 
-the depth of the absorber. Muons lose between 6 and 10~GeV depending upon where they cross the absorber. }
-\label{fig:AbsorberDepthVsRadius}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
+the depth of the absorber. Muons lose between 6 and 10~GeV depending upon where they cross the absorber.}
+%\includegraphics[width=5in,angle=0]{AbsorberDepthVsRadius.pdf}
 \end{cdrfigure}
 
 \section{Muon-Ionization Measurements}
@@ -269,7 +207,7 @@ One disadvantage to ionization counters is that they
 measure the total ionization deposited from all particle species
 (including the delta-ray electrons produced by the muons), making it
 challenging to convert the ionization signal into an absolute
-muon flux. The LBNE NDC plans to use the ionization counters to monitor
+muon flux. The DUNE NDC plans to use the ionization counters to monitor
 the beam stability, direction and shape, 
 but not to determine the
 absolute flux of muons or to determine the muon-energy spectrum. Instead, the
@@ -280,12 +218,12 @@ spectrum of the muons.
 
 \subsection{Reference Design}
 
-The conceptual design for the LBNE muon-ionization chambers is similar
+The conceptual design for the DUNE muon-ionization chambers is similar
 to that used in NuMI, K2K and T2K.  Due to their high radiation
 tolerance, sealed ionization counters are the default technology.  For
 example, the CERN neutrino beam to Gran Sasso (CNGS) 
 system uses an array of Large Hadron Collider (LHC) 
- beam-loss monitors. For LBNE, it might be desirable to investigate solid-state devices
+ beam-loss monitors. For DUNE, it might be desirable to investigate solid-state devices
 besides silicon, such as diamond detectors (which are approximately an
 order of magnitude more radiation-tolerant than silicon counters
 \cite{ref:RD42A}\cite{ref:K2KMuDecayMon} ), to deploy as a cross-check of the gas
@@ -303,72 +241,39 @@ Radiation-hardened cables will be used to carry the signal to waveform
 digitizers, providing a complete spill-by-spill record of the
 muon beam.
 
-\begin{figure}[htbp]
-\begin{center}
-%\includegraphics[width=3in,angle=0]{IonChamberLayout.pdf}
-\caption[Model of ion chamber layout]
-{A model of the ion chamber layout on the back wall of the absorber
+\begin{cdrfigure}[Model of ion chamber layout]{IonChamberLayout}{A model of the ion chamber layout on the back wall of the absorber
 showing the $7\times 7$ grid configuration and supporting Unistrut rails.}
-\label{fig:IonChamberLayout}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
+%\includegraphics[width=3in,angle=0]{IonChamberLayout.pdf}
+
 \end{cdrfigure}
 
-\begin{figure}[htbp]
-\begin{center}
-\centering
+\begin{cdrfigure}[Model of ion chamber housing]{IonChamberHousing}{A model of the ion chamber housing and a section showing the commercial ion chamber inside the housing}
 %\includegraphics[width=3in,angle=0]{IonChamberHousing.pdf}
 %\includegraphics[width=3in,angle=0]{IonChamberSection.pdf}
-\caption[Model of ion chamber housing]
-{A model of the ion chamber housing and a section showing the commercial ion chamber inside the housing.}
-\label{fig:IonChamberHousing}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
-\end{cdrfigure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
 \end{cdrfigure}
 
-The reference design for LBNE includes two layers of ionization counters, one 
+The reference design for DUNE includes two layers of ionization counters, one 
 behind the absorber and a second one behind steel shielding blocks. The chambers
 will be mounted in a $7 \times 7$ grid (with some missing elements), approximately two meters by two meters. 
-LBNE wants to achieve a precision in the beam center of 0.2~milliradians
+DUNE wants to achieve a precision in the beam center of 0.2~milliradians
 (5~cm for a 250~m decay pipe). A quick study has 
 determined the optimal arrangement of 25 ionization counters for each layer. 
 For comparison, the NuMI monitor planes consist of a 
 9 $\times$ 9 array, and the T2K monitors use a 7 $\times$ 7 array of counters. 
-The decision to use 25 counters for LBNE was motivated by a desire to see if a 7x7 array with some of the diagonal counters removed could achieve the desired sensitivity, thus reducing the total number of needed counters.
+The decision to use 25 counters for DUNE was motivated by a desire to see if a 7x7 array with some of the diagonal counters removed could achieve the desired sensitivity, thus reducing the total number of needed counters.
 
-\begin{figure}[htb]
-\centering
-%\includegraphics[width=70mm]{grid.pdf}
-%\includegraphics[width=50mm]{gridlayout.pdf}
-\caption[Ion chamber performance for grid layout]
-{On the left: Precision as a function of detector width for a grid 
+\begin{cdrfigure}[Ion chamber performance for grid layout]{ion_grid}{On the left: Precision as a function of detector width for a grid 
 shaped detector with 5\% random calibration offsets. On the right: The 
 arrangement of ionization counters for the ``5 by 5 grid'' layout.}
-\label{fig:ion_grid}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
+%\includegraphics[width=70mm]{grid.pdf}
+%\includegraphics[width=50mm]{gridlayout.pdf}
 \end{cdrfigure}
 
-\begin{figure}[htb]
-\centering
-%\includegraphics[width=70mm]{cross.pdf}
-%\includegraphics[width=50mm]{crosslayout.pdf}
-\caption[Ion chamber performance for cross-with-corners layout]
-{On the left: Precision as a function of detector width for a cross-shaped detector 
+\begin{cdrfigure}[Ion chamber performance for cross-with-corners layout]{cross_grid}{On the left: Precision as a function of detector width for a cross-shaped detector 
 with 5\% random calibration offsets. On the right: The 
 arrangement of ionization counters for the ``cross with corners'' layout.}
-\label{fig:cross_grid}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
+%\includegraphics[width=70mm]{cross.pdf}
+%\includegraphics[width=50mm]{crosslayout.pdf}
 \end{cdrfigure}
 
 Several different designs for the counter arrangement were studied and the
@@ -394,7 +299,7 @@ simple model, but only by a small amount. Even for the layouts with
 10\% offsets and a width of 150~cm, the standard deviation on the beam
 center was less than our goal of 5~cm.
 
-The LBNE muon ionization chamber design consists of two arrays of 
+The DUNE muon ionization chamber design consists of two arrays of 
 ionization counters, which is motivated by the NuMI target experience.  As shown in Figure~\ref{fig:numi_target_decay}, over a period of several months, the number of events per proton on target gradually decreased over time, especially in the energy range from 2-4 GeV.  
 This reduction in neutrino flux is attributed to 
 target radiation damage.  Figure~\ref{fig:numi_mumon_ratio} shows the ratio of the signal seen  in the first muon alcove to the signal seen in the second muon alcove versus time.  This ratio decreased in a similar manner over time.  
@@ -402,32 +307,20 @@ The first alcove was immediately after the absorber, while the second alcove was
 This gradual decrease in the ratio of the signals seen in these arrays was an indication of the target degradation and the relative reduction in the 
 low-energy part of the neutrino and muon fluxes.  \footnote{Similar trends were seen in the ratios of the other muon alcove signals, but the first/second ratio saw the largest effect.}
 
-It will be necessary to be able to monitor this ratio in LBNE on a spill-by-spill basis to look for signs of target degradation or horn failure.  
+It will be necessary to be able to monitor this ratio in DUNE on a spill-by-spill basis to look for signs of target degradation or horn failure.  
 Therefore, a second ionization array, placed behind several layers of 
 shielding blocks, will be necessary.  In Figure~\ref{fig:MuonSystemsOverview}
 the second array is placed behind 4 m of steel shielding.  Since the density of steel is roughly 3 times larger than that of rock, this is comparable to the depth of the NuMI second muon alcove, which sits behind 12 m of rock.  More detailed studies will need to be performed to determine if this is the optimal location for sensitivity to changes in the target density.
 
-\begin{figure}[htb]
-\centering
+
+\begin{cdrfigure}[NuMI target experience]{numi_target_decay}{Shown here is the number of events observed in the MINOS near detector per proton on target.  The horizontal axis is divided into energy bins.  The gray line shows the average number of events in each energy slice over the whole time period.  Within each energy bin each cross indicates the value in roughly one month of running, with time increasing to the right.}
 %\includegraphics[width=5in]{NuMITargetExperience.pdf}
-\caption[NuMI target experience]
-{Shown here is the number of events observed in the MINOS near detector per proton on target.  The horizontal axis is divided into energy bins.  The gray line shows the average number of events in each energy slice over the whole time period.  Within each energy bin each cross indicates the value in roughly one month of running, with time increasing to the right.}
-\label{fig:numi_target_decay}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
 \end{cdrfigure}
 
-\begin{figure}[htbp]
-\centering
-%\includegraphics[width=5in]{numi_mm1mm2_ratio.pdf}
-\caption[NuMI muon monitor ratios]
-{Shown here is the ratio of the signal seen in 
+
+\begin{cdrfigure}[NuMI muon monitor ratios]{numi_mumon_ratio}{lShown here is the ratio of the signal seen in 
 the NuMI first muon alcove over the signal seen in the second muon alcove over time.  The step that occurs on approximately  December 31, 2006 is when the NuMI decay volume was changed from vacuum to helium, and this change is expected to attenuate the higher energy muon flux more than the lower energy flux.}
-\label{fig:numi_mumon_ratio}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
+%\includegraphics[width=5in]{numi_mm1mm2_ratio.pdf}
 \end{cdrfigure}
 
 \subsection{Prototype Design and Testing}
@@ -435,16 +328,16 @@ the NuMI first muon alcove over the signal seen in the second muon alcove over t
 For the gas ionization detectors, a small array of prototype
 counters will be built and operated in the existing NuMI
 alcoves to determine the optimal design and operating conditions for
-the LBNE monitors. This will be done during the long
+the DUNE monitors. This will be done during the long
 shutdown for the NOvA upgrade that will end in Spring 2013. 
-It will provide a good field test in roughly the same environment as expected during LBNE
+It will provide a good field test in roughly the same environment as expected during DUNE
 operations. It will also be cross-checked against the existing NuMI
 muon-monitoring system.  The goals of these tests are to understand the linearity of the response of these counters (by comparing the observed signal to variations in the beam intensity), their long-term stability and operational reliability.  
 
 \subsection{Installation}
 
 The system installation will begin following completion of the
-Absorber Hall and LBNE 30
+Absorber Hall and LBNF 30
 and the installation of the stopped-muon counter system
 (described in Section~\ref{v3ch3-stop-mu-det}).
 
@@ -476,16 +369,8 @@ of a
 single stopped-muon counter. 
 
 
-\begin{figure}[htbp]
-\begin{center}
+\begin{cdrfigure}[Michel-electron detector conceptualization]{MichelDecayOptions}{Conceptual design of a single Michel-electron detector (stopped-muon counter)}
 %\includegraphics[width=5in,angle=0]{StoppedMuonCounter.pdf}
-\caption[Michel-electron detector conceptualization]{Conceptual design of a single Michel-electron detector (stopped-muon counter). 
-}
-\label{fig:MichelDecayOptions}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
 \end{cdrfigure}
 
 The detectors will only operate in the lower-rate
@@ -540,18 +425,11 @@ by the presence of muons from stopped, positively charged pion decays
 due to nearby hadron showers.
 
 
-\begin{figure}[htbp]
-\begin{center}
-%\includegraphics[width=5in,angle=0]{StoppedMuonLayout.pdf}
-\caption[Arrangement of blue blocks and Michel-decay detectors]{A top view of the 
+\begin{cdrfigure}[Arrangement of blue blocks and Michel-decay detectors]{StoppedMuonLayout}{A top view of the 
 lower level of the Absorber Hall showing a possible arrangement of ``blue blocks'' 
 and Michel-decay detectors. In this case there is roughly 2~GeV of energy loss 
 per wall of blue blocks. The counters can be moved between layers and within a single layer.}
-\label{fig:StoppedMuonLayout}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
+%\includegraphics[width=5in,angle=0]{StoppedMuonLayout.pdf}
 \end{cdrfigure}
 
 Besides the Michel decays of stopped muons, the system will
@@ -600,7 +478,7 @@ similar system was developed in the 1990s for the Brookhaven Muon
 \subsection{Installation}
 
 The stopped-muon counters will be installed after completion of the 
-Absorber Hall and LBNE 30  
+Absorber Hall and LBNF 30  
 and installation of the absorber. 
 They will be placed into the spaces between the blue-block walls on
 support frames.   There will be access to the areas between the shield blocks 
@@ -629,7 +507,7 @@ particles, including delta-ray electrons and neutrons. This makes it
 difficult to determine the muon flux.  Furthermore, the ionization
 system is unable to measure the momentum distribution of the
 muons. To resolve this problem, a Cherenkov
-counter will be deployed downstream of the absorber.  A Cherenkov counter deployed by LBNE
+counter will be deployed downstream of the absorber.  A Cherenkov counter deployed by DUNE
 will not image individual Cherenkov rings, but rather will see the
 integrated signal from many muons due to the very large instantaneous flux. 
 In addition, by varying the radiator gas pressure, and hence the Cherenkov threshold, the system's index of refraction will vary, allowing it to map out the muon momentum distribution.
@@ -648,29 +526,17 @@ light will have less background contributions from
 electrons 
 and other isotropic background particles such as neutrons, than will an ionization system, for example. 
 
-\begin{figure}[htbp]
-\begin{center}
+\begin{cdrfigure}[Simulated electron and muon velocities upon exiting absorber]{MuonBeta}{Simulated electron and muon velocities exiting the absorber. This plot is based on a 
+simulation gnumi\cite{GNuMI} of the LBNF beamline.}
 %\includegraphics[width=4in,angle=0]{MuonBeta.pdf}
-\caption[Simulated electron and muon velocities upon exiting absorber]{Simulated electron and muon velocities 
-exiting the absorber.
-This plot is based on a 
-simulation gnumi\cite{GNuMI} of the LBNE beamline.}
-\label{fig:MuonBeta}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
 \end{cdrfigure}
 
-\begin{figure}[htbp]
-\begin{center}
-%\includegraphics[width=4in,angle=0]{MuonAngle.pdf}
-\caption[Simulated electron and muon angles upon exiting absorber]{Simulated plot of angle with respect to the beam for 
+
+\begin{cdrfigure}[Simulated electron and muon angles upon exiting absorber]{MuonAngle}{lSimulated plot of angle with respect to the beam for 
 electrons and muons exiting the absorber.
-This plot is based on a gnumi simulation of the LBNE beamline.}
-\label{fig:MuonAngle}
-\end{center}
-\end{figure}
+This plot is based on a gnumi simulation of the LBNF beamline.}
+%\includegraphics[width=4in,angle=0]{MuonAngle.pdf}
+\end{cdrfigure}
 
 
 \subsection{Reference Design}
@@ -696,34 +562,20 @@ or less.  A
 photosensor, located outside the direct radiation field of the muons, will
 view the primary mirror through a telescopic optical system.
 
-\begin{figure}[htbp]
-\begin{center}
-%\includegraphics[width=6in,angle=0]{CherenkovCounterDetail.pdf}
-\caption[Cherenkov counter design]{ The Cherenkov counter conceptual design. 
+\begin{cdrfigure}[[Cherenkov counter design]{CherenkovCounterDetail}{The Cherenkov counter conceptual design. 
 Muons at threshold momentum emit forward Cherenkov light which is
 reflected via two flat mirrors (one at 90 degrees) 
 to a PMT located outside of the muon
-radiation field. }
-\label{fig:CherenkovCounterDetail}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
+radiation field.}
+%\includegraphics[width=6in,angle=0]{CherenkovCounterDetail.pdf}
 \end{cdrfigure}
 
 The layout of the Cherenkov counter system is shown in
 Figure~\ref{fig:CherenkovCounterLayout}.
 
-\begin{figure}[htbp]
-\begin{center}
+\begin{cdrfigure}[Cherenkov counter layout]{CherenkovCounterLayout}{The layout of one of the muon 
+Cherenkov counters behind the rear of the absorber}
 %\includegraphics[width=3in,angle=0]{CherenkovCounterLayout.pdf}
-\caption[Cherenkov counter layout]{The layout of one of the muon 
-Cherenkov counters behind the rear of the absorber.}
-\label{fig:CherenkovCounterLayout}
-\end{center}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
 \end{cdrfigure}
 
 The preferred option is to use a gas Cherenkov system containing a
@@ -748,20 +600,14 @@ emitted from the mirror surfaces is at least two orders of
 magnitude lower than the Cherenkov light yield and thus does not introduce a
 significant background.
 
-\begin{figure}[htbp]
-\centering
+\begin{cdrfigure}[Cherenkov and Transition Radiation Yields]{LightYield}{The calculated light yields for Cherenkov radiation (left) and transition radiation for muons in argon gas}
 %\includegraphics[width=3.2in,angle=0]{CherenkovLightYield.pdf}
 %\includegraphics[width=3.2in,angle=0]{TransitionLightYield.pdf}
-\caption[Cherenkov and Transition Radiation Yields]{ The calculated light yields for Cherenkov radiation (left) and transition radiation for muons in argon gas.}
-\label{fig:LightYield}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
 \end{cdrfigure}
 
 A standalone Geant4~\cite{GEANT4:NIM}  
 simulation for a proposed gas Cherenkov detector
-for the LBNE muon monitors was developed to investigate various mirror
+for the DUNE muon monitors was developed to investigate various mirror
 shapes.  Based on this work, a conceptual design has been developed,
  shown in Figure~\ref{fig:mirrors}.  Here the muons enter on the
 right, Cherenkov photons are produced in a region of a dense
@@ -786,18 +632,10 @@ Several different mirror shapes were examined, including spherical and
 conical, but much simpler flat mirrors were found to be adequate. 
 
 
-\begin{figure}[htbp]
-\centering
-%\includegraphics[width=3.5in]{cherenkov_layout.pdf}
-\caption[Muon gas Cherenkov counter design]
-{Conceptual design for the muon gas Cherenkov detector for LBNE.  
+\begin{cdrfigure}[Muon gas Cherenkov counter design]{mirrors}{Conceptual design for the muon gas Cherenkov detector for DUNE.  
 Muons will travel through an L-shaped pipe filled with a dense gas,
-and mirrors will direct the optical photons to a photodetector. }
-
-\label{fig:mirrors}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
+and mirrors will direct the optical photons to a photodetector.}
+%\includegraphics[width=3.5in]{cherenkov_layout.pdf}
 \end{cdrfigure}
 
 Figure~\ref{fig:varyindex} shows a simulation of 
@@ -805,18 +643,11 @@ the number of photons collected at the photosensor versus muon energy for
 a range of indices of refraction.  Varying the gas density will allow sensitivity of 
 the photon measurements to different parts of the muon-energy spectrum.
 
-\begin{figure}[htbp]
-\centering
-%\includegraphics[width=6in]{many_indices.pdf}
-\caption[Cherenkov counter response to muons]
-{The number of photons detected in the photosensor vs. muon energy.  
+\begin{cdrfigure}[Cherenkov counter response to muons]{varyindex}{The number of photons detected in the photosensor vs. muon energy.  
 Here 10,000 muons have been simulated at each energy.  The gas density
 increases from 0.05~atm in the upper left to 12~atm in the lower
-right. }
-\label{fig:varyindex}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-  %\includegraphics[width=0.8\textwidth]{file}
+right.}
+%\includegraphics[width=6in]{many_indices.pdf}
 \end{cdrfigure}
 
 \subsection{Prototype Development and Testing}
