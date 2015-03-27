@@ -1,0 +1,42 @@
+\ifdefined\isfinal\documentclass[final]{cdr}\else\documentclass{cdr}\fi
+\pdfoutput=1            % must be in first 5 lines so arXiv finds it
+\graphicspath{ {figures/}{volume-dune/figures/}{volume-dune/generated/} }
+
+\input{common/preamble}
+
+\renewcommand\thevolumesubtitle{Volume 4: The Deep Underground Neutrino Experiment}
+\begin{document}
+
+\input{common/init}
+
+%\input{volume-dune/chapter-execsumm}
+\cleardoublepage
+
+%\input{volume-dune/chapter-impl}
+\cleardoublepage
+
+%\input{volume-dune/chapter-pm}
+\cleardoublepage
+
+\input{volume-dune/chapter-fd-ref}
+\cleardoublepage
+
+%\input{volume-dune/chapter-fd-alt}
+\cleardoublepage
+
+%\input{volume-dune/chapter-fd-sw-comp}
+\cleardoublepage
+
+\input{volume-dune/chapter-nd-ref}
+\cleardoublepage
+
+%\input{volume-dune/chapter-proto}
+\cleardoublepage
+
+%\input{volume-dune/chapter-summ}
+\cleardoublepage
+
+\input{common/final}
+\end{document}
+
+
