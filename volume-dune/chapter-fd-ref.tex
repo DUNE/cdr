@@ -69,47 +69,36 @@ The APAs are 2.3~m wide, 6.3~m long, and 12~cm thick. The length is chosen for f
 Each APA is constructed from a framework of light-weight, stainless-steel rectangular tubing, with four layers of wires wrapped over both sides of the frame. The front-end electronics boards are mounted on one end of the wire frame and protected by a metal enclosure.  
 
 %%%%%%%%%%%%%%%%
-\subsection{Wires}
+\subsubsection{Wires}
 \label{sec:sec:fd-ref-wires}
 
-The wires used in the TPC must provide:
+The wires used in the TPC, described in \fixme{the closeout doc}, must provide:
 \begin{itemize}
 \item High break load to withstand the applied tension 
 \item Good conductivity to minimize noise contribution to the front-end electronics
-\item Comparable thermal-expansion coefficient to that of the stainless-steel 
+\item A thermal-expansion coefficient comparable to that of the stainless-steel 
 frame to avoid tension change after cool-down
 \end{itemize}
 
 Both stainless-steel and copper-beryllium (CuBe) wires are potential candidates.  
-Stainless steel was the choice of ICARUS, while a copper-plated 
-stainless-steel wire was chosen by MicroBooNE  (to reduce resistance).  Both experiments use a wire-termination 
-technique that is labor-intensive and impractical for LAr-FD. Previous experience from FNAL \cite{FNAL-proto-APA} has shown that a CuBe wire under 
+Previous experience from FNAL \cite{FNAL-proto-APA} has shown that a CuBe wire under 
 tension can be reliably bonded to a copper-clad G10/FR4 (glass epoxy material) surface by a combination of  epoxy (mechanical bonding) 
 and solder (electrical connection).  This bonding technique greatly simplifies the electrical 
 connection to the readout electronics and it can be easily automated 
 with commercial equipment.  Therefore CuBe wire is 
 selected as the reference design wire of choice.
 
-At 150~$\mu$m diameter,  the breaking tension of a hardened CuBe wire is $\sim$30~N.  
-To ensure no wire breakage in the TPC, e.g. during cryostat cool-down, the nominal operating tension of the wire will be set at 5~N.  Periodic support structures on the wire frame will
-limit the unsupported wire length to less than 1.5~m, resulting in less than 0.2~mm deflection due to gravitational or electrostatic forces.  Wire ends will be glued and soldered (if electrical connection is needed) 
-onto printed circuit boards attached to the wire frame.
-
-\begin{cdrfigure}[Plot of electric potential distribution near the wire planes]{tpc-bias-voltages}{A surface plot of the electric potential distribution near the wire planes.  The voltages on the wire planes are biased to provide complete electron transparency through the first three planes, and complete collection on the fourth plane.}
-%\includegraphics[width=\linewidth]{v5c3-bias-voltages.png}
-\end{cdrfigure}
 
 
 %%%%%%%%%%%%%%%%  
-\subsection{Wire Planes}
+\subsubsection{Wire Planes}
 \label{sec:sec:fd-ref-wireplanes}
 
 
 Four planes of wires are installed on each side of an APA as shown in Figure~\ref{fig:tpc-wire-frame-xsect}.
-A nominal wire pitch of 4.7~mm is selected to meet the position resolution  and signal-to-noise ratio requirement. The distance between wire planes is set to 4.8~mm (3/16~in) to use standard printed circuit board thickness, while maintaining optimal signal formation.  These four planes (along the direction of electron drift) are labeled as: the {\em grid plane}, the {\em first induction plane} (U), the {\em second induction plane} (V), and the {\em collection plane} (X).
-The wires on the grid and the collection planes
-are vertically oriented, while the two induction planes are oriented 
-at $\sim\pm$35.71$^\circ$ to the vertical. This wire layout is shown to be very good for reconstructing beam-neutrino events \cite{wire-orientation}. The wires on the grid plane are not 
+A nominal wire pitch of 4.7~mm is selected to meet the position resolution  and signal-to-noise ratio requirement. The distance between wire planes is set to 4.8~mm (3/16~in) to use standard printed circuit board thickness, while maintaining optimal signal formation.  
+%
+The wire layout chosen \fixme{ref doc} is shown to be very good for reconstructing beam-neutrino events \cite{wire-orientation}. The wires on the grid plane are not 
 connected to the readout electronics; they shield the first induction wire plane from being influenced by distant arriving ionizations. The four wire planes 
 will be electrically biased so that electrons from an ionizing-particle
 track completely drift past the first three planes and are collected by the 
