@@ -1,0 +1,37 @@
+\ifdefined\isfinal\documentclass[final]{cdr}\else\documentclass{cdr}\fi
+\pdfoutput=1            % must be in first 5 lines so arXiv finds it
+\graphicspath{ {figures/}{volume-physics/figures/}{volume-physics/generated/} }
+
+\input{common/preamble}
+
+\renewcommand\thevolumesubtitle{Volume w: LBNF/DUNE Physics}
+\begin{document}
+
+\input{common/init}
+
+\input{volume-physics/chapter-overview}
+\cleardoublepage
+
+\input{volume-physics/chapter-goals}
+\cleardoublepage
+
+\input{volume-physics/chapter-lbnosc}
+\cleardoublepage
+
+\input{volume-physics/chapter-atmpdk}
+\cleardoublepage
+
+\input{volume-physics/chapter-snblowe}
+\cleardoublepage
+
+\input{volume-physics/chapter-near}
+\cleardoublepage
+
+\input{volume-physics/chapter-summary}
+\cleardoublepage
+
+
+\input{common/final}
+\end{document}
+
+
