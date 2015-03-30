@@ -1,0 +1,117 @@
+
+\chapter{Measurements at External Facilities}
+\label{ch:nd-external-meas}
+
+\fixme{Starting from the fall 2012 CDR content}
+
+The technical components that would be needed to implement the strategies 
+described in this chapter are outside the scope of the DUNE NDC conceptual 
+design. This information is included in the CDR because it complements the conceptual 
+design and expands the NDC capabilities to more closely meet the mission need without increasing the project cost.
+
+
+\section{External Neutrino-Beam Measurements}
+\label{sec:nd-external-beam}
+
+As discussed in Section~\ref{subsec:nu-meas-strat}, DUNE's strategy for neutrino-beam measurements includes making measurements of the Far Detector response to a known flux of neutrinos, and NuMI is the only appropriate beamline to use for the neutrino source.
+
+To implement this strategy, appropriate detectors will need to be built.  A plausible scenario would be a liquid argon TPC detector of 20-30 tons in the current location of the Minerva experiment, in front of the MINOS near detector. In that way, the MINOS near detector could be used to measure the charge of muons exiting the TPC. The TPC would be designed using the same readout techonology that is used in the DUNE Far Detector.  Once an optimal detector arrangement is determined, DUNE would use the same beam simulation and same muon measurements to apply that knowledge to the LBNF beam and Far Detector.
+
+\section{External Hadron-Production Measurements}
+\label{sec:nd-external-hadron}
+% \label{sec:hadron}
+
+Uncertainties on hadron production translate into uncertainties in the neutrino fluxes in the DUNE Far Detector, since the hadrons decay into neutrinos in the decay pipe.  
+Therefore, the accuracy to which the neutrino flux must be known at the Far Detector directly determines the required accuracy 
+of the hadron-production measurements, since the DUNE conceptual design does not include a near neutrino detector. This chapter outlines the DUNE strategy for augmenting the capabilities of the BLM with external measurements of secondary-beam particles.  
+
+\section{Background}
+A complete knowledge of the momenta and decay points of the kaons, pions and muons would be sufficient to completely predict the un-oscillated flux of neutrinos at the Near and Far Detector
+locations. This would require knowledge of:
+
+\begin{itemize}
+\item the phase-space distribution of the initial proton beam
+\item details of all materials present in the target, horn and decay pipe areas
+\item  the electromagnetic focusing characteristics of the magnetic horn
+\item the detailed development of the hadron cascade, spawned by the
+initial proton, that passes through the target/horn/decay pipe
+\item the meson-to-neutrino decay rates
+\end{itemize}
+
+With careful engineering design and careful control of the materials in the
+target area, all of these items can be simulated accurately except
+hadronic cascades in the target, horn and decay
+pipe. The simulation of the hadronic cascade requires accurate knowledge of the 
+hadron scattering cross sections, for which there are no first-principle
+calculations. These cross sections must therefore rely on models, which in
+turn require hadron-production measurements that span particle type,
+particle energy and the various materials found in the target, horn
+and decay pipe. 
+
+ At the present time, a sufficient body of hadron-production
+measurements does not exist to achieve DUNE's desired accuracy of 4-5\%, as determined by the irreducible 
+error on the statistical uncertainty for the appearance-measurement background, although this is expected to improve over time. 
+As the BLM system described in Chapter~\ref{ch:nd-blm} cannot meet this requirement alone, a near-far comparison will be more complicated than in certain other neutrino-oscillation experiments, e.g.,  MINOS experiment~\cite{gnumi-validation}. 
+
+\section{Strategy}
+
+The current approach is to rely on measurements made externally (outside the scope of DUNE) to calibrate detector response and flux simulations, and to relate 
+these measurements to DUNE. This would be done through the use of a common simulation code and through measurements of tertiary muons in both DUNE and the external facility, using nearly identical tertiary muon-measurement systems. 
+
+In order to keep the uncertainty in the near/far event-rate ratio from being
+limited by systematic uncertainties in the flux, the DUNE flux simulation 
+ must be accurate at the 4-5\% level.
+Efforts at this stage are intended to understand the effect of the uncertainties in hadron-production in the beamline on overall DUNE
+sensitivities, to determine what further measurements may be needed
+by DUNE and to estimate their potential cost to the Project.
+
+The measurements that DUNE would require from an external facility begin with the primary hadron-production cross
+sections in the proton-target material, followed by similar studies in
+thick targets, and finally hadron yields after passage through the complete target and
+focusing-horn system. In addition, hadron-interaction cross sections
+on materials in the decay pipe and absorber can be important in
+flux calculations.
+
+External hadron-production measurements are expected to play
+a critical role once the Far Detector has accumulated sufficient
+statistics toward the end of the running period to make systematic errors
+on the flux a dominant source of error in the oscillation measurement. 
+
+\section{Use of External Facilities for Measurements}
+
+Historically, a number of hadron-production experiments have
+contributed directly to the outcome of neutrino experiments
+by measuring meson production from the proton targets used
+by those experiments, and hence providing a constraint on their neutrino fluxes. 
+For example, the HARP data\cite{ref:HARP} contributed directly to
+MiniBooNE and the SPY\cite{ref:SPY} experiment contributed directly to
+NOMAD. Since their contributions were crucial to those neutrino experiments, 
+it is also expected that DUNE will require some dedicated hadron-production measurements.
+In the future, the MIPP experiment at Fermilab is planning to contribute its
+measurements to the NOvA experiment, and the NA61
+experiment\cite{Abgrall:2011ae} is contributing to the T2K
+experiment.
+
+
+The most suitable apparatus for DUNE's hadron-production measurements
+is the collection of equipment and detectors used by the MIPP experiment at Fermilab~
+\cite{Isenhower:2006zp}.   
+A full suite of DUNE-related
+hadron-production measurements would require the installation of the DUNE horn-focusing
+elements and associated power supplies in front of a future
+incarnation of MIPP in the meson area at Fermilab.
+This kind of effort could be within the scope of the DUNE Project and could be postponed
+until after DUNE construction or even after DUNE operations have
+stopped. 
+
+A proposal for using the NA61 experiment, see Figure~\ref{fig:NA61Scheme}, 
+is also being developed since it is currently operating
+in the H2 beamline at CERN. NA61 does not have the complete suite of particle identification that MIPP does, but it could provide very useful hadron-production data for predicting neutrino fluxes at DUNE.
+A pilot run of 120~GeV/c protons interacting on a thin 4\% graphite target 
+was taken by NA61 during July, 2012. That run is in the process of being analyzed and will explore the capabilities of the NA61 experiment for DUNE purposes. 
+
+\begin{cdrfigure}[A schematic drawing of the CERN NA61 detector]{NA61Scheme}{A schematic drawing of the CERN NA61 detector, a hadron production and heavy ion experiment 
+designed to measure hadrons over a large part of the relevant phase for 
+neutrino experiments. The TPCs, shown in blue, can separate pions from protons and kaons.}
+%\includegraphics[width=6in]{NA61Drawing.pdf}
+\end{cdrfigure}
