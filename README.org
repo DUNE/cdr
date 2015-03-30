@@ -1,0 +1,22 @@
+#+TITLE: DUNE Conceptual Design Report
+
+* Author Guidance
+
+For guidance on writing and editing and git gymnastics see the
+[[https://github.com/DUNE/document-guidance][guidance document]].  When
+following that guidance, replace the use of the label =guidance= with
+the name of the volume or annex in this repository.  For example =volume-physics=.
+
+* Releases
+
+Fixed releases, with built PDFs are available from the [[https://github.com/DUNE/lbn-cdr/releases][release area]] as
+zip or tar.gz archives.
+
+PDFs are generated from the most recent commits and they are available [[https://dune.bnl.gov/tmp/][here]]
+
+
+* Contacts
+
+- Anne Heavey <aheavey@fnal.gov> 630-840-8039 (technical editor, content)
+
+- Brett Viren <bv@bnl.gov> (technical editor, LaTeX machinery and repository)
