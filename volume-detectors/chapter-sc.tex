@@ -4,8 +4,76 @@
 \section{Computing Infrastructure}
 \label{sec:detectors-sc-infrastructure}
 
-\section{Event Reconstruction}
-\label{sec:detectors-sc-reco}
+\subsection{Data Rates}
+\label{sec:detectors-sc-infrastructure-data-rates}
+
+\subsection{Computing Model}
+\label{sec:detectors-sc-infrastructure-computing-model}
+
+\subsubsection{Distributed Computing}
+
+Given the projected volume of  data in DUNE and considerable complexity of the software needed to process it, it may not be optimal to reply on resources located at any single
+participating institution or research center. In general, we will take a fully distributed approach to computing, based on experience gained during the operation of the LHC experiments.
+This will allow the DUNE Collaboration to better leverage resources and expertise from many of its member institutions and improve the overall long-term scalability of its computing
+platform.
+
+DUNE will operate a highly distributed network of federated resources, for both CPU power and storage capability. This will allow for streamlined incorporation of computing facilities
+as they become available at member institutions, and thus is particularly amenable to accomodate staged construction and commissioning of the detector subsystems. We will reply
+on a modern Workload Management System deployed on top of Grid and Cloud resources to provide computing power to DUNE researchers.
+
+\subsubsection{Raw Data Transmission and Storage Strategy}
+FNAL will be the principal data storage center for the experiment. It will serve as a hub where the data from both the Facility (e.g. beam and target)
+and the various detector systems (such as the  Far and Near Detectors)  are collected, catalogued and committed to mass storage. This will obviously require transmission of
+data over considerable distances (certainly for the Far Detector). In addition, the DAQ systems of the Far Detector are being designed to be located  in the vicinity of
+the Far Detector (in the cavern), which results in an additional step of transmitting the data from 4850L to the surface.
+
+Raw data to be collected from the detectors in DUNE are considered ``precious'' due to high cost of operating the both the facility at FNAL
+and the detectors that are part of DUNE. This leads to three basic design elements in the data transmission and storage chain:
+\begin{itemize}
+\item Buffering:
+\begin{itemize}
+\item Adequate buffers will be provided for the DAQ systems  to mitigate possible downtime of the network connection between 4850L and the surface.
+\item Buffers will be provided at the surface facility to mitigate downtime of the network connection between the Far Site and FNAL.
+\end{itemize}
+\item Robust transmission: data transfer needs to be instrumented with redundant checks (such as checksum calculation), monitoring, error correction and retry logic.
+\item Redundant replicas: it is a common industry practice to have a total of three copies of ``precious'' data, which are geographically distributed. This provides protection against catastrophic events (such as natural disasters) at any given data center participating in this scheme, and facilitates rebuilding (``healing'')  lost data should such event does happen.
+\end{itemize}
+
+
+
+\subsubsection{Data Management}
+\label{sec:detectors-sc-infrastructure-computing-model-data-mgt}
+
+Data will be placed into mass storage at FNAL. Along the lines described abive, additional copies (replicas) will be distributed to other
+computing centers possessing sufficient resources.
+A single additional copy does not necessarily need to reside in its entirety on a single data center; the replicas can be ``striped'' across a few data centers if that becomes optimal
+at the time of implementation of the Computing Model. We are considering Brookhaven National Laboratory and NERSC as candidates for replica placement.
+
+There are a variety of approaches to data distribution and sharing. One example is a ``dataset subscription''  mechanism where requests are fulfilled asynchronously by an automated data movement system, which provides redundancy, recovery from common failures and accounting capability. Processing of the data becomes possible once a dataset arrives to the target computing facility and is deposited in a Storage Element local to that facility.
+On the other end of the spectrum is ``just-in-time'' approach that takes advantage of high-throughput network connectivity combined with an intelligent distributed data cache, forming a federated system which provides a 
+transparent access to most data using semantics similar to that of a conventional file system. One successful system based on this approach is XRootD,and preliminary estimates indicate that it may be a good candidate to provide distributed access to the data stored at a number of sites. Extensive experience with this mechanism of data sharing exists and continues to be accumulated in a number of R\&D projects such as FAX in ATLAS, where this approach is being tested at scale and already finds its way into the analysis activity. We will plan further evaluation, configuration, and monitoring of the XRootD data work for the needs of LBNE.
+
+\section{Physics Software}
+\label{sec:detectors-sc-physics-software}
+
+\subsection{Simulation}
+\label{sec:detectors-sc-physics-software-simulation}
+
+\subsubsection{Beam Simulation}
+\label{sec:detectors-sc-physics-software-simulation-beam}
+
+\subsubsection{Far Detector Simulation}
+\label{sec:detectors-sc-physics-software-simulation-fd}
+
+
+\subsubsection{Near Detector Simulation}
+\label{sec:detectors-sc-physics-software-simulation-nd}
+ 
+
+
+\subsection{Reconstruction}
+\label{sec:detectors-sc-physics-software-reco}
+
 
 \fixme{What about beam, physics and detector simulations?}
 

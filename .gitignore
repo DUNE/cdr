@@ -18,3 +18,4 @@ tests/tables.pdf
 *.brf
 *.tdo
 annex-*.pdf
+*.gz
