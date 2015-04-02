@@ -14,37 +14,49 @@ For purposes of this document we shall not address possible variations in the de
 the modules as there is no concrete information developed at this point to support this approach.
 \textit{Information presented below corresponds to the ``full detector'', i.e. is effectively normalized to th 40kt mass}.
 
+Where appropriate, we will round off decimal places in certain parameters.
+
 \subsubsection{DUNE Detector Subsystems}
 \begin{itemize}
-\item Far Detector LAr TPC
-\item Far Detector Photon Detector
-\item Near Detector Straw Tracker
-\item Near Detector Calorimeter
+\item Far Detector LAr TPC, Photon Detector(PD)
+\item Near Detector (ND) Straw Tracker (STT), Calorimeter(CAL), Muon Detector Resistive Plate Chambers (RPC)
 \end{itemize}
 
-\subsubsection{Far Detector Data Rates}
-Relevant parameters:
+In the following, we will itemize estimated data rates for these components and then present the combined estimate.
+
+\subsubsection{Far Detector LAr TPC}
+Relevant  LAr TPC parameters:
 \begin{itemize}
-\item LAr TPC readout channel count:
-\item TPC Drift Time:
-\item FGT ADC clock frequency and resolution (bits):
+\item Readout channel count: 1,536,000 (384,000 for each 10kt module)
+\item Drift Time: 2ms
+\item ADC clock frequency: 2MHz
+\item ADC resolution (bits): 12
 \end{itemize}
 \
 Factors affecting data rates:
 \begin{itemize}
 \item Zero Suppression (ZS)  in the Front-End electronics of the detector
 \item Radiolgical and Cosmological Backgrounds as functions of thresholds set for ZS, in different physics domains (cf. beam neutino physics vs Supernova Burst)
-\item ADC clock frequency:
 \end{itemize}
 
+\subsubsection{Far Detector Photon Detector (PD)}
+Relevant  PD parameters:
+\begin{itemize}
+\item Readout channel count: 
+\item ---
+\item ---
+\item ADC resolution (bits): 12
+\end{itemize}
+\
 
 \subsubsection{Near Detector Data Rates}
-Relevant parameters:
+Relevant parameters of the Fine-Grained Tracker (FGT):
 \begin{itemize}
-\item Fine-Grained Tracker (FGT) readout channel count:
-\item FGT Drift Time:
-\item FGT ADC clock frequency and resolution (bits):
-\item Granularity and estimated occupancy of the calorimeter:
+\item   Straw Tube Tracker (STT) readout channel count: 215,040
+\item STT Drift Time: 120ns
+\item ADC clock frequency and resolution (bits): 3ns intervals, 8 bit
+\item Calorimeter channel count: 52,224
+\item Muon Detector Resistive Plane Chambers (RPC) channel count: 165,888
 \end{itemize}
 \
 Factors affecting data rates:
@@ -94,11 +106,11 @@ and the detectors that are part of DUNE. This leads to three basic design elemen
 Data will be placed into mass storage at FNAL. Along the lines described above, additional copies (replicas) will be distributed to other
 computing centers possessing sufficient resources.
 A single additional copy does not necessarily need to reside in its entirety on a single data center; the replicas can be ``striped'' across a few data centers if that becomes optimal
-at the time of implementation of the Computing Model. We are considering Brookhaven National Laboratory and NERSC as candidates for replica placement.
+at the time of implementation of the Computing Model. We are considering both Brookhaven National Laboratory and NERSC as candidates for the placement of extra replicas.
 
-There are a variety of approaches to data distribution and sharing. One example is a ``dataset subscription''  mechanism where requests are fulfilled asynchronously by an automated data movement system, which provides redundancy, recovery from common failures and accounting capability. Processing of the data becomes possible once a dataset arrives to the target computing facility and is deposited in a Storage Element local to that facility.
-On the other end of the spectrum is ``just-in-time'' approach that takes advantage of high-throughput network connectivity combined with an intelligent distributed data cache, forming a federated system which provides a 
-transparent access to most data using semantics similar to that of a conventional file system. One successful system based on this approach is XRootD,and preliminary estimates indicate that it may be a good candidate to provide distributed access to the data stored at a number of sites. Extensive experience with this mechanism of data sharing exists and continues to be accumulated in a number of R\&D projects such as FAX in ATLAS, where this approach is being tested at scale and already finds its way into the analysis activity. We will plan further evaluation, configuration, and monitoring of the XRootD data work for the needs of LBNE.
+For data distribution, we will use a combination of managed data movement between sites (such as ``dataset subscription''), primarily for managed production, and a network of XRootD
+servers to cache processed data and for analysis.
+
 
 \section{Physics Software}
 \label{sec:detectors-sc-physics-software}
