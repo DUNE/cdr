@@ -7,6 +7,8 @@
 \subsection{Data Rates}
 \label{sec:detectors-sc-infrastructure-data-rates}
 \fixme{Under construction: to be completed before 4/13/2015}
+\fixme{SNB part of the discussion is explicitely ``left for later'' since it's a difficult subject and we may not have enough insight at this point.}
+
 
 \subsubsection{Raw Data Streams}
 DUNE is a multipurpose apparatus and the variety of physics goals to be pursued during its operation will
@@ -17,9 +19,9 @@ be characterzied by energies in the GeV range, allowing appropriate thresholds f
 set at the levels which greatly reduce the background component of the data. By comparison, the energy scale of
 the signals produced by SNB neutrino interactions in the active volume of the detector is estimated to be in the range of tens of MeV, resulting
 in much lower thresholds to be set for this type of measurement, and therefore in considerable (if not overwhelming) volume of SNB-specific data coming
-out of the LAr TPC in real time and being dominated by radiological backgrounds. Another differentiating feature is that multiple SNB neutrinos are expected
-to arrive and interact in the detector during the possible rare Supernova burst event within seconds, as opposed to a rare single vertex produced by a beam neutrino.
-To support SNB physics, massive and noisy data will need to be processed ``on the fly'' using approaches and
+out of the LAr TPC in real time and being dominated by radiological backgrounds. Another differentiating SNB feature is that multiple neutrinos are expected
+to arrive and interact in the detector during the possible rare Supernova burst event within seconds from each other, as opposed to a rare single vertex produced by a beam neutrino.
+To support SNB physics, a massive burst of noisy data will need to be processed ``on the fly'' using approaches and
 algorithms which are completely  different from those for the beam neutrino physics, which mostly relies on off-line processing.
 
 We are making this distinction here in order to define the scope of this section, which mostly deals with the data streams inherent in
@@ -30,12 +32,16 @@ infrastructure at large are discussed where necessary.
 \subsubsection{Assumptions}
 According to the present baseline design, the Far Detector (Liquid Argon TPC) in DUNE will consist of four identical modules of 10kt each.
 For purposes of this document we shall not address the issue of possible variations in the design and/or characteristics between
-these modules as there is no concrete information developed at this point to support this approach.
-\textit{Estimates presented below corresponds to the ``full detector'', i.e. is effectively normalized to th 40kt mass}.
-
-The intensity of the beam provided by LBNF will affect the data rates for a few detector systems in DUNE (cf. the Near Detector).
+these modules as there is no concrete information developed at this point to support this approach. A few basic assumptions:
+\begin{itemize}
+\item Estimates presented below corresponds to the ``full detector'', i.e. is effectively normalized to 40kt.
+\item Accelerator spill cycle is 1.2s
+\item The intensity of the beam provided by LBNF will affect the data rates for a few detector systems in DUNE (cf. the Near Detector).
 It is assumed that the beam has the characteristics suggested by LBNF Project at the time of writing.
-
+\item We are making an assumption that the front-end systems of the TPC and the Photon Detector combined with the logic in DAQ
+will provide triggering capability for the beam neutrino physics.
+\end{itemize}
+\
 Where appropriate, we will round off decimal places in certain parameters.
 
 \subsubsection{DUNE Detector Subsystems}
@@ -45,15 +51,14 @@ Where appropriate, we will round off decimal places in certain parameters.
 \end{itemize}
 
 In the following, we will itemize estimated data rates for these components and then present the combined estimate.
-
-% There will be cases where
+There will be cases where no reliable estimates exist at the moment due to continued R\&D, and this will be clearly stated where necessary.
 
 \subsubsection{Far Detector LAr TPC}
 Relevant  LAr TPC parameters:
 \begin{itemize}
-\item Readout channel count: 1,536,000 (384,000 for each 10kt module)
-\item Drift Time: 2ms
-\item ADC clock frequency: 2MHz
+\item Readout channel count: 1,536,000 (i.e. four times 384,000 which is the channel count for each 10kt module)
+\item Drift Time: approx. 2ms
+\item ADC clock frequency: approx. 2MHz
 \item ADC resolution (bits): 12
 \end{itemize}
 \
@@ -62,6 +67,19 @@ Factors affecting data rates:
 \item Zero Suppression (ZS)  in the Front-End electronics of the detector
 \item Radiolgical and Cosmological Backgrounds as functions of thresholds set for ZS, in different physics domains (cf. beam neutino physics vs Supernova Burst)
 \end{itemize}
+
+Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can be calulated as a product of the following numbers:
+\begin{itemize}
+\item Channel count
+\item Number of ADC ``clicks'' per total drift (collection) time
+\item ADC resolution
+\end{itemize}
+\
+This results in a total of 2.3GB worth of TPC data. Accorrding to current estimates, with thresholds optimized for beam neutrino physics, zero suppression
+gives us a reduction factor of \textasciitilde 10 in the event size, resulting in a 230MB ``digital picture'' of the TPC (discriminated against most background
+but still covering the complete volume of the TPC). Since neutrino interactions will result in a more local pattern of ionization signal being read out
+from the chamber, Monte Carlo studies done with realistic neutrino energy spectra give us further guidance of between 10and 20MB per neutral current event.
+
 
 \subsubsection{Far Detector Photon Detector (PD)}
 Relevant  PD parameters:
