@@ -30,12 +30,14 @@ neutrino events. Issues related to other classes of data are covered in DAQ and 
 infrastructure at large are discussed where necessary.
 
 \subsubsection{Assumptions}
+\label{sec:detectors-sc-infrastructure-assumptions}
 According to the present baseline design, the Far Detector (Liquid Argon TPC) in DUNE will consist of four identical modules of 10kt each.
 For purposes of this document we shall not address the issue of possible variations in the design and/or characteristics between
 these modules as there is no concrete information developed at this point to support this approach. A few basic assumptions:
 \begin{itemize}
 \item Estimates presented below corresponds to the ``full detector'', i.e. is effectively normalized to 40kt.
 \item Accelerator spill cycle is 1.2s
+\item Zero-Suppression thresholds will be set at levels corresponding to self-triggered data being read out every spill cycle.
 \item The intensity of the beam provided by LBNF will affect the data rates for a few detector systems in DUNE (cf. the Near Detector).
 It is assumed that the beam has the characteristics suggested by LBNF Project at the time of writing.
 \item We are making an assumption that the front-end systems of the TPC and the Photon Detector combined with the logic in DAQ
@@ -78,7 +80,9 @@ Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can 
 This results in a total of 2.3GB worth of TPC data. Accorrding to current estimates, with thresholds optimized for beam neutrino physics, zero suppression
 gives us a reduction factor of \textasciitilde 10 in the event size, resulting in a 230MB ``digital picture'' of the TPC (discriminated against most background
 but still covering the complete volume of the TPC). Since neutrino interactions will result in a more local pattern of ionization signal being read out
-from the chamber, Monte Carlo studies done with realistic neutrino energy spectra give us further guidance of between 10and 20MB per neutral current event.
+from the chamber, Monte Carlo studies done with realistic neutrino energy spectra give us further guidance of between 10 and 20MB per neutral current event.
+Following the threshold levels assumption in ~\ref{sec:detectors-sc-infrastructure-assumptions}, we arrive at the number of \textasciitilde 20MB/s for the data rate
+which only includes the beam neutrino type of events. This translates into 0.6PB/year.
 
 
 \subsubsection{Far Detector Photon Detector (PD)}
