@@ -8,11 +8,32 @@
 \label{sec:detectors-sc-infrastructure-data-rates}
 \fixme{Under construction: to be completed before 4/13/2015}
 
+\subsubsection{Data Streams and the Scope of this Chapter}
+DUNE is a multipurpose apparatus and the variety of physics goals to be pursued during its operation will
+be reflected in different characteristics of respective data streams processed and collected in real time and off-line.
+As one example, consider the difference between neutrino oscillations physics done with beam neutrinos on one hand,
+and the ambitious goal of detecting the rare Supernova bursts (SNB) on the other. Signals produced by ``beam events'' will
+be characterzied by energies in the GeV range, allowing appropriate thresholds for zero-suppression (ZS) to be
+set at the levels which greatly reduce the background component of the data. By comparison, the energy scale of
+the signals produced by SNB neutrino interactions in the active volume of the detector is estimated to be in the range of tens of MeV, resulting
+in much lower thresholds to be set for this type of measurement, and therefore in considerable (if not overwhelming) volume of SNB-specific data coming
+out of the LAr TPC in real time. Multiple SNB neutrinos are expected to arrive and interact in the detector suring the possible rare Supernova burst event,
+as opposed to a single vertex produced by a beam neutrino. To support SNB physics, data will need to be processed ``on the fly'' using approaches and
+algorithms which are completely  different from those for the beam neutrino physics, which mostly relies on off-line processing.
+
+We are making this distinction here in order to define the scope of this section, which mostly deals with the data streams inherent in
+oscillation physics studies, characterized by better discrimination against backgrounds and reliance on detailed reconstruction of single
+neutrino events. Issues related to other classes of data are covered in DAQ and other sections, and interfaces between DAQ and the computing
+infrastructure at large are discussed where necessary.
+
 \subsubsection{Assumptions}
-According to present baseline design, the Far Detector (Liquid Argon TPC) in DUNE will consist of four identical modules of 10kt each.
-For purposes of this document we shall not address possible variations in the design and/or characteristics between
-the modules as there is no concrete information developed at this point to support this approach.
-\textit{Information presented below corresponds to the ``full detector'', i.e. is effectively normalized to th 40kt mass}.
+According to the present baseline design, the Far Detector (Liquid Argon TPC) in DUNE will consist of four identical modules of 10kt each.
+For purposes of this document we shall not address the issue of possible variations in the design and/or characteristics between
+these modules as there is no concrete information developed at this point to support this approach.
+\textit{Estimates presented below corresponds to the ``full detector'', i.e. is effectively normalized to th 40kt mass}.
+
+The intensity of the beam provided by LBNF will affect the data rates for a few detector systems in DUNE (cf. the Near Detector).
+It is assumed that the beam has the characteristics suggested by LBNF Project at the time of writing.
 
 Where appropriate, we will round off decimal places in certain parameters.
 
@@ -109,7 +130,8 @@ A single additional copy does not necessarily need to reside in its entirety on 
 at the time of implementation of the Computing Model. We are considering both Brookhaven National Laboratory and NERSC as candidates for the placement of extra replicas.
 
 For data distribution, we will use a combination of managed data movement between sites (such as ``dataset subscription''), primarily for managed production, and a network of XRootD
-servers to cache processed data and for analysis.
+servers to cache processed data and for analysis. A file catalog and a Meta-Data system will be required for efficient data management at scale, and we will leverage experience of
+member institutions in this area, making an effort to reuse existing systems or design ideas where possible.
 
 
 \section{Physics Software}
