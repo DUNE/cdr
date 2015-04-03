@@ -8,7 +8,7 @@
 \label{sec:detectors-sc-infrastructure-data-rates}
 \fixme{Under construction: to be completed before 4/13/2015}
 
-\subsubsection{Data Streams and the Scope of this Chapter}
+\subsubsection{Raw Data Streams}
 DUNE is a multipurpose apparatus and the variety of physics goals to be pursued during its operation will
 be reflected in different characteristics of respective data streams processed and collected in real time and off-line.
 As one example, consider the difference between neutrino oscillations physics done with beam neutrinos on one hand,
@@ -17,8 +17,9 @@ be characterzied by energies in the GeV range, allowing appropriate thresholds f
 set at the levels which greatly reduce the background component of the data. By comparison, the energy scale of
 the signals produced by SNB neutrino interactions in the active volume of the detector is estimated to be in the range of tens of MeV, resulting
 in much lower thresholds to be set for this type of measurement, and therefore in considerable (if not overwhelming) volume of SNB-specific data coming
-out of the LAr TPC in real time. Multiple SNB neutrinos are expected to arrive and interact in the detector suring the possible rare Supernova burst event,
-as opposed to a single vertex produced by a beam neutrino. To support SNB physics, data will need to be processed ``on the fly'' using approaches and
+out of the LAr TPC in real time and being dominated by radiological backgrounds. Another differentiating feature is that multiple SNB neutrinos are expected
+to arrive and interact in the detector during the possible rare Supernova burst event within seconds, as opposed to a rare single vertex produced by a beam neutrino.
+To support SNB physics, massive and noisy data will need to be processed ``on the fly'' using approaches and
 algorithms which are completely  different from those for the beam neutrino physics, which mostly relies on off-line processing.
 
 We are making this distinction here in order to define the scope of this section, which mostly deals with the data streams inherent in
@@ -44,6 +45,8 @@ Where appropriate, we will round off decimal places in certain parameters.
 \end{itemize}
 
 In the following, we will itemize estimated data rates for these components and then present the combined estimate.
+
+% There will be cases where
 
 \subsubsection{Far Detector LAr TPC}
 Relevant  LAr TPC parameters:
