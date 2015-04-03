@@ -4,7 +4,7 @@
 \section{Computing Infrastructure}
 \label{sec:detectors-sc-infrastructure}
 
-\subsection{Data Rates}
+\subsection{Raw Data Rates}
 \label{sec:detectors-sc-infrastructure-data-rates}
 \fixme{Under construction: to be completed before 4/13/2015}
 \fixme{SNB part of the discussion is explicitely ``left for later'' since it's a difficult subject and we may not have enough insight at this point.}
@@ -82,7 +82,12 @@ gives us a reduction factor of \textasciitilde 10 in the event size, resulting i
 but still covering the complete volume of the TPC). Since neutrino interactions will result in a more local pattern of ionization signal being read out
 from the chamber, Monte Carlo studies done with realistic neutrino energy spectra give us further guidance of between 10 and 20MB per neutral current event.
 Following the threshold levels assumption in ~\ref{sec:detectors-sc-infrastructure-assumptions}, we arrive at the number of \textasciitilde 20MB/s for the data rate
-which only includes the beam neutrino type of events. This translates into 0.6PB/year.
+which only includes the beam neutrino type of events. This translates into \textasciitilde 0.6PB/year.
+
+%As discussed above, most of implications of the SNB signal and trigger are mostly relevant for the front-end and DAQ system, however it's worthwhile to
+%understand what needs to be provided to preserve such possible signal and commit data to mass storage. There are many uncertainties about signatures
+%and signal to noise ratio for the relevant reactions in the detector volume, but it's safe to assume that the thresholds for such events will need to be set
+%at very low levels and the data will be dominated by radiological backgrounds.
 
 
 \subsubsection{Far Detector Photon Detector (PD)}
@@ -106,21 +111,37 @@ Relevant parameters of the Fine-Grained Tracker (FGT):
 \item Average expected event rate per spill: \textasciitilde 1.5
 \end{itemize}
 \
-Based on these parameter, we estimate that the upper limit of the ND data rate will be 1.5MB/s. This translates into 45TB/year. 
+Based on these parameters, we estimate that the upper limit of the ND data rate will be 1.5MB/s. This translates into \textasciitilde 45TB/year. 
+
+\subsection{Processed Data}
+\label{sec:detectors-sc-infrastructure-processed-data}
+For the purposes of this document, processed data is defined as most data which is not considered ``raw'', i.e. it's data derived from raw (including possibly multiple stages
+of calibration and reconstruction) as well as data produced as a result of Monte Carlo studies.
+
+There are uncertainties in anticipated quantities of all of these types of data, but based on the estimated annual raw data volume of 0.6PB, and assuming that
+the data will undergo a few processing stages, we can expect the need to handle \textasciitilde 2PB of data annually for reconstruction and a lesser
+volume for final analysis purposes.
+
+For Monte Carlo, at the time of writing typical annual volume of data produced has been of the order of a few tend of terabytes. With Collaboration growing
+and more detailed studies (e.g. of systematics) are undertaken, our expectation is that DUNE will require 100TB annually for storage of its MC data.
 
 \subsection{Computing Model}
 \label{sec:detectors-sc-infrastructure-computing-model}
 
 \subsubsection{Distributed Computing}
 
-Given the projected volume of  data in DUNE and considerable complexity of the software needed to process it, it may not be optimal to reply on resources located at any single
-participating institution or research center. In general, we will take a fully distributed approach to computing, based on experience gained during the operation of the LHC experiments.
-This will allow the DUNE Collaboration to better leverage resources and expertise from many of its member institutions and improve the overall long-term scalability of its computing
-platform.
+%Given the projected volume of raw and processed data in DUNE, the fact the Collaboration is large and widely dispersed geographically,
+%and considerable complexity of the software needed to process it, it may not be optimal to reply on resources located at any single
+%participating institution or research center. In general, we will take a fully distributed approach to computing, based on experience gained during the operation of the LHC %experiments.
 
-DUNE will operate a highly distributed network of federated resources, for both CPU power and storage capability. This will allow for streamlined incorporation of computing facilities
-as they become available at member institutions, and thus is particularly amenable to accomodate staged construction and commissioning of the detector subsystems. We will reply
-on a modern Workload Management System deployed on top of Grid and Cloud resources to provide computing power to DUNE researchers.
+Given the fact the Collaboration is large and widely dispersed geographically, we will take a fully distributed approach to computing, based on experience
+gained during the operation of the LHC experiments. This will allow the DUNE Collaboration to better leverage resources and expertise from many of its
+member institutions and improve the overall long-term scalability of its computing platform.
+
+DUNE will operate a  distributed network of federated resources, for both CPU power and storage capability. This will allow for streamlined incorporation
+of computing facilities as they become available at member institutions, and thus is particularly amenable to accomodate staged construction and commissioning
+of the detector subsystems. We will reply on a modern Workload Management System deployed on top of Grid and Cloud resources to provide computing
+power to DUNE researchers.
 
 \subsubsection{Raw Data Transmission and Storage Strategy}
 FNAL will be the principal data storage center for the experiment. It will serve as a hub where the data from both the Facility (e.g. beam and target)
