@@ -1,287 +1,64 @@
-\chapter{Near Detector Global DAQ and Global Computing (WBS 130.03.06)}
+\chapter{Data Acquisition and Computing for the Near Detector System} % (NDS) DAQ and Computing}
 \label{ch:nd-gdaq}
-
-\fixme{This is from rev 4041 from the old repository at lbne.bnl.gov/svn/documents/cdr/volume-3-ND/chapter-06-gdaq.tex. I cannot find a date associated with it, but it looks right, at least at first glance. -- Anne}
 
 \section{Introduction}
 \label{sec:nd-gdaq-intro}
 
-The purpose of the Global Data Acquisition System (GDAQ) is to collect 
-raw data from each detector system in the Near Detector Complex (NDC), 
-issue global triggers, add timing data from a global position system 
-(GPS), and build events. Each NDC detector has its own data acquisition 
-system that connects to the GDAQ.  
+The Near Detector System Data Acquisition system (NDS-DAQ) collects raw data from each detector 
+in the Near Detector System (NDS), issues global \fixme{global in what sense here?} triggers, adds precision timing 
+data from a global positioning system (GPS), and builds events. Each NDS detector has its 
+own data acquisition system that connects to the NDS-DAQ.
+The NDS-DAQ is made up of two parts: NDS Master DAQ (NDS-MDAQ) and Beamline Measurements 
+DAQ (BLM-DAQ). A third component, the Near Neutrino Detector DAQ (NND-DAQ), is 
+connected to the NDS-MDAQ and is part of the Near Neutrino Detector system.
+Figure~\ref{fig:DAQ_Block} shows a block diagram for the DAQ.
 
-The GDAQ is made up of three parts: 
-Master Global DAQ (M-GDAQ), Neutrino Global DAQ (N-GDAQ), which connects to the neutrino-measurement detectors (ND), and Beamline 
-Global DAQ (B-GDAQ), which connects to the BLM.
+\begin{cdrfigure}[Near Detector System DAQ block diagram]{DAQ_Block}{Near Detector System DAQ block diagram: The NDS-DAQ consists 
+of two parts: NDS Master DAQ (green blocks) and Beamline Measurement DAQ (yellow summary 
+block). The NearSite Detectors DAQ (orange block) is described in a separate chapter. The 
+NDS-DAQ connects to other sections of the LBNE project, shown here in other colors (blue, 
+light red, tan).}
+\includegraphics[width=6in,angle=0]{DAQ_Block}
+\end{cdrfigure}
 
-%\fixme{Where the neutrino GDAQ goes with the detectors for neutrino measurements and the beamline GDAQ goes with the detectors that make beamline measurements, right? AH, HGB: Yes, see last sentence added above.}
-
-The computing system encompasses two major activities: online computing (the required
+The NDS computing system encompasses two major activities: online computing (the required
 slow-control systems) and offline computing for further development of the measurement strategy and for simulation work on technical systems.
 
-\section{Global DAQ}
-\label{sec:nd-gdaq-global-daq}
+\subsection{NDS Master DAQ and Computing}
+\label{sec:nd-master-daq}
 
-\subsection{Master Global DAQ}
-\label{subsec:M-GDAQ}
+The NDS-DAQ design consists of equipment designed to provide a high level user interface 
+for local run control and data taking and secure remote control and monitoring.   It will 
+serve as the primary interface to the slow control system, online data and DAQ performance 
+monitoring, raw data collection, building of events, and data storage between all Near 
+Neutrino Detector DAQs and Beamline Measurements DAQs.  This includes hardware triggering 
+for two-way trigger processing between the NDS-DAQ and all detectors, and GPS for precision 
+time stamping and global clock synchronization.  It is currently based on a channel count 
+estimate of approximately 430,000 channels of neutrino detectors, plus $<1000$ channels of 
+beamline detectors.  Custom electronics components for the NDS-DAQ are based on existing 
+custom designs from other experiments, e.g. T2K or ATLAS, and have all commercial 
+components:  Trigger modules, clock and timing synchronization, GPS, environmental 
+monitoring.
 
-%\subsubsection{Requirements and Specifications}
-\subsubsection{Introduction} %header added by AH
+The computing system encompasses two major activities: online computing with required 
+slow-control systems, and offline computing for further development of the measurement 
+strategy and for simulation work on technical systems. The computing components are based 
+on currently available commercial computing and gigabit networking technology, which is 
+likely to improve over the next years without driving costs up for the final design.  
 
-The Master Global DAQ (M-GDAQ) is generally controlled by the DUNE 
-Central Run Control to start and stop runs.
-%\fixme{Where is this described? Add ref. AH; HGB: Actually, I don't know. Logically this should be described somewhere in the Neutrino Beamline volume, but I couldn't find any section dedicated to run control so far.}
-It also has its own run 
-control and event builder so that it can run independently of the DUNE 
-Central Run Control, e.g. while the beam is off or for calibration or 
-test runs. It communicates with the Neutrino GDAQ and 
-Beamline GDAQ, and provides two-way trigger processing to and from 
-the Near Detectors and beamline. Based on the T2K Near Detector DAQ~\cite{ref:T2KNDDAQ},
-%\fixme{add ref. AH; HGB: Ref:T2KNDDAQ added, reference info at http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5750358 }
-the proposed system will use Gigabit Ethernet as the primary data-transfer 
-medium.
+\subsection{Beamline Measurements DAQ (BLM-DAQ)}
 
-%\fixme{I got rid of "Hall" on "Neutrino Hall GDAQ" above and in section title below; I don't want to introduce another term unnecessarily. Also check 'near detectors' above; it had said 'ND' but I don't think it's just for the neutrino detector.} 3/1/12
-
-
-The M-GDAQ incorporates a GPS system %for the NDC
- for precision 
-time-stamping of beam spills and/or detector events and to provide clock 
-and synchronization signals to the individual detector and beamline 
-DAQs.
-
-\subsubsection{Design Considerations} %header added by AH
-
-The detailed M-GDAQ
-%\fixme{the M-GDAQ? AH  HGB: Yes, fixed.}
-requirements will have to be developed and specified 
-over time once details of each Near Site subdetector have been 
-established.  
-The M-GDAQ will need to provide typical DAQ functions including triggering, event-building, data monitoring, transfer, storage, logging, and so on.   The general system requirements of the M-GDAQ can be found in the NDC requirements documentation~\cite{nd_requirements_doc}.
-
-In addition, the M-GDAQ will need to allow standalone data-taking of individual detector DAQs for 
-debugging or calibration, and allow secure remote access, storage and monitoring 
-capability via firewall to DUNE collaboration member institutions.
-
-%provide triggers and clock-synchronization signals to the individual system GDAQs 
-%\item  Provide sustainable data-transfer and logging rates via Gigabit Ethernet consistent with the scientific demands of the DUNE experiment
-%\item  Collect and sort data from the N-GDAQ and B-GDAQ, build global events, format the final event data and save to local storage
-%\item Allow inclusion or exclusion of individual detectors from data-taking on a run-by-run basis.
-%\item  Allow standalone data-taking of individual detector DAQs for debugging or calibration
-%\item  Provide a local run-control user interface to allow data-taking or debugging independently of DUNE central run control
-%\item  Include slow-control system with environmental monitoring, and sensor and front-end electronics monitoring
-%\item  Provide an interface for accessing and monitoring online processes and data on a (near) real-time basis for quality control
-%\item  Allow secure remote access, storage and monitoring capability via firewall to DUNE collaboration member institutions
-
-\subsubsection{Reference Design}
-
-The central component of the M-GDAQ is a computer array serving as the 
-back-end for the Near Detector Complex GDAQ. It will be a scalable and 
-flexible system that can be expanded or upgraded as needed and as 
-computer technology improves over time. The actual %amount 
-quantity of computers needed for this system and their
-specifications will depend on the %amount 
-number of channels and expected data rates of the individual %ND 
-neutrino
-and beamline detectors, %which have not been finalized in detail yet. 
-for which the details have not yet been finalized. 
-Using the T2K Near-Detector DAQ experience as a reference, 
-it is safe to assume that a Gigabit Ethernet structure is more than sufficient for the 
-data transmissions between %the ND and beamline detectors 
-the DUNE Near Detectors and the GDAQ.
-% if T2K Near Detector DAQ experience can be used as a reference example.
-%\fixme{What is the distinction between the ND and the beamline detectors? I see the beamline detectors as being part of the ND, the other part being the nu detector.  I've changed it to the `beamline and neutrino detector systems'  above. AH; HGB: Thanks. Sounds better, yes.}
-
-\begin{cdrfigure}[Near Detector Master Global DAQ (M-GDAQ) block diagram]{GDAQ_M_Block}{Near 
-Detector Master Global DAQ (M-GDAQ) block diagram. 
-The green and yellow blocks belong to the whole GDAQ.  Green blocks are
-part of the M-GDAQ only, while the yellow blocks summarize the N-GDAQ and B-GDAQ.  Other colored blocks are not
-part of the GDAQ, but shown here for presenting the connections between
-the GDAQ and other parts of the DUNE project.}
-%\includegraphics[width=7in,angle=0]{MGDAQ_BlockDiagram}
-\end{cdrfigure}
-
-Figure~\ref{fig:GDAQ_M_Block} shows the conceptual design of the M-GDAQ 
-based on a computer array connected with the N-GDAQ and B-GDAQ via 
-Gigabit Ethernet and other components for triggering and clock 
-synchronization. For starting and stopping runs the DUNE Central Run Control 
-connects to the M-GDAQ via optical fiber. A GPS subsystem is an 
-integral part of the M-GDAQ; it provides precision time stamps of each 
-global-trigger event.  As an option, the GPS timing data can be 
-transferred to the DUNE Far Detector via a private network (fiber) link 
-to allow real-time processing of DUNE beam data with Far Detector data -- 
-as it is done at T2K with T2K's beamline (and near detector) and \superk
-as T2K's Far Detector. 
-% -- if desired.
-
-\begin{cdrfigure}[DAQ back-end module designed for T2K ND280]{T2KBEB}{DAQ back-end module designed for T2K ND280, allowing four selectable functions via FPGA firmware}
-%\includegraphics[width=6in,angle=0]{T2K_BEB_Photo}
-\end{cdrfigure}
-
-A specially designed Global Trigger electronics module processes 
-beam-spill trigger(s) coming 
-both from the DUNE central run control and from the beamline and neutrino GDAQs,
-then provides a global trigger for 
-the GPS system. 
-Then, 
-depending on settings either from the M-GDAQ local run control or DUNE 
-Central Run Control, it sends back trigger signals to the N-GDAQ and B-GDAQ.  
-The Master Clock module, another specially 
-designed electronics module, provides clock- and time-synchronization 
-signals generated by the GPS system and forwards them to the N-GDAQ and 
-B-GDAQ systems.  These two special electronics modules can be made of 
-commercial components based on Field Programmable Gate Arrays (FPGA) 
-that can be programmed with high functional complexity and flexibility. 
-For example, the T2K UK group designed and built a universal back-end board for 
-the ND280 DAQ, shown in Figure~\ref{fig:T2KBEB}, that used a Xilinx Virtex-II 
-FPGA as its central smart-electronics component. The FPGA firmware was 
-written such that the back-end board could be configured for four 
-selectable functions: master clock, slave clock, global or cosmic 
-trigger, and readout merger.
-
-The M-GDAQ back-end computer array collects and sorts the detector data 
-coming from the N-GDAQ and B-GDAQ, then builds the event, includes 
-time stamps from the GPS, formats the event, then %finally 
-saves the 
-result to local storage, e.g., disk arrays.
-
-A local run-control option is added to the M-GDAQ %\fixme{the M-GDAQ? AH; HGB: Yes, fixed.}
-to allow independent 
-detector runs when the DUNE Central Run Control is not being used, e.g.,  
-when the beam is off for maintenance or repair or when detector 
-calibration runs are scheduled. The local run-control system will consist of three or four 
-desktop workstations with monitors and keyboards that can also be used 
-for (near) real-time event displays of several detector sections and 
-online data-processing and monitoring.
-
-Slow-control electronics is included in the M-GDAQ  %\fixme{the M-GDAQ? AH; HGB: Yes, fixed.}
-with environmental 
-sensors (temperature, humidity, etc.) to monitor the surroundings and 
-status of the DAQ electronics.
-
-Finally, a firewall between the M-GDAQ  %\fixme{the M-GDAQ? AH; HGB: Yes, fixed.}
-network and outside world allows 
-remote access, monitoring and offline data storage of the GDAQ online 
-system by DUNE collaboration institutes.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Neutrino Global DAQ}
-\label{subsec:N-GDAQ}
-
-%\subsubsection{Requirements and Specifications}
-\subsubsection{Introduction} %heading added by AH
-
-The Neutrino GDAQ (N-GDAQ) will communicate with the data-acquisition 
-systems of each neutrino-detector system in the Near Detector Hall %. The N-GDAQ will 
-and manage the local trigger information. % local to the Near Detector Hall. 
-It will 
-collect triggers from each of these detector systems and make some local-trigger 
-decisions. It will also pass on global-trigger information from the %ND (ND means neutrino not near) 
-M-GDAQ  %\fixme{the M-GDAQ? AH; HGB: Yes, fixed.}
-or higher levels to each detector system. The N-GDAQ will have its 
-own run control to allow for calibration or other special runs without 
-requiring interaction with the %ND
-M-GDAQ  %\fixme{the M-GDAQ? AH; HGB: Yes, fixed.}
-or DUNE Central Run Control. It 
-will also have the capacity to build events using detectors %physically 
-located in the Near Detector Hall exclusively (i.e., the neutrino detectors).
-
-\subsubsection{Reference Design}
-
-Similar to the M-GDAQ subsystem, the N-GDAQ will 
-mainly consist of a scalable back-end computer array, inter-connected to 
-the individual neutrino-detector DAQs via Gigabit Ethernet, plus electronics 
-modules for trigger-processing and clock synchronization, as shown in Figure~\ref{fig:GDAQ_N_Block}. The %amount
-quantity of 
-computers required for the back-end system is highly dependent on the 
-number of channels and expected data rates of the individual %ND 
-neutrino detectors. Based on the T2K Near Detector DAQ experience, one back-end computer 
-should be able to handle approximately 3,000 channels for sustainable and 
-continuous runs. Assuming a total of 180,000 channels for all %ND
-neutrino detectors combined, for example, 60 back-end computers  would be needed.
-
-\begin{cdrfigure}[Neutrino Global DAQ (N-GDAQ) block 
-diagram]{GDAQ_N_Block}{Neutrino Global DAQ (N-GDAQ) block 
-diagram}
-%\includegraphics[width=7in,angle=0]{NGDAQ_BlockDiagram}
-\end{cdrfigure}
-
-Trigger signals from each neutrino detector will be collected and 
-pre-processed by a trigger-electronics module, similar in design to the 
-global trigger or master-clock modules %shown in 
-of the M-GDAQ setup. Depending on the run mode, this module could feed 
-local-trigger decisions back to the detector DAQs for data collection, or 
-it could
-forward global triggers to the neutrino-detector DAQs from the M-GDAQ or 
-higher levels.
-
-A slave-clock electronics module, similar to the master-clock module in 
-the M-GDAQ setup, distributes clock- and time-synchronization signals 
-from the M-GDAQ to all neutrino detectors.
-
-The N-GDAQ is usually controlled by the %ND
-M-GDAQ  %\fixme{M-GDAQ?; HGB: Yes, fixed.}
-or DUNE Central Run 
-Control.  But it will also have its own local run-control setup, 
-consisting of several desktop workstations with displays to allow 
-independent local runs 
-%without %NDM-GDAQ   %\fixme{M-GDAQ?; HGB: Yes, fixed.}or DUNE Central Control, 
-that include %ND
-neutrino  detectors exclusively. This is useful during detector commissioning, calibration 
-runs, standalone cosmic runs and other runs where the beam is stopped or 
-not needed. %This 
-The N-GDAQ will include the capability for event building, 
-formatting, local data storage, and real-time event- and process-monitoring displays.
+Similar to the NDS Master DAQ, the BLM-DAQ will mainly consist of a scalable back-end 
+computer array, inter-connected to the individual beamline measurement detector DAQs via 
+Gigabit Ethernet and specialized electronics modules for trigger processing and clock 
+synchronization. It interfaces to the NDS Master DAQ (NDS-MDAQ) for run control and global 
+data collection. It will also have its own local run-control setup, consisting of a number 
+of desktop workstations to allow independent local runs that include beamline measurement 
+detectors only (useful during detector commissioning), calibration runs, stand-alone cosmic 
+runs or other runs where the beam is stopped or not needed.
 
 
-\subsection{Beamline Global DAQ}
-\label{subsec:B-GDAQ}
-
-%\subsubsection{Requirements and Specifications}
-\subsubsection{Introduction} %heading addded by AH
-Similar to the Neutrino GDAQ and neutrino detectors, the Beamline GDAQ (B-GDAQ) collects 
-information from all %beamline detector systems in purview of the NDC in the beamline region.
-the beamline-measurement detectors.
- It manages trigger information and has the capacity 
-to determine when to issue triggers local to the beamline-measurement system. It 
-also has two-way communication with the %NDC
-M-GDAQ %\fixme{M-GDAQ?; HGB: Yes, fixed.}
-regarding trigger 
-information.
-
-The B-GDAQ has its own run control and event builder to allow for runs that 
-only include beamline detectors, and is illustrated in Figure~\ref{fig:GDAQ_B_Block}.
-
-\begin{cdrfigure}[Beamline Global DAQ (B-GDAQ) block 
-diagram]{GDAQ_B_Block}{Beamline Global DAQ (B-GDAQ) block 
-diagram}
-%\includegraphics[width=7in,angle=0]{BGDAQ_BlockDiagram}
-\end{cdrfigure}
-
-\subsubsection{Reference Design}
-
-The reference design of the B-GDAQ is %proposed to be 
-identical to the 
-N-GDAQ design, except that it is connected to the beamline-detector DAQs. 
-As does the N-GDAQ, it 
-consists of a back-end computer array with Gigabit Ethernet layer, 
-and specialized electronics modules to process triggers from the 
-beamline detectors, send back global triggers from the %NDE
-M-GDAQ  %\fixme{M-GDAQ?; HGB: yes, fixed.}
-to the 
-beamline detectors, and distribute clock and synchronization signals. 
-Again, a local run-control setup with its own event-building capability, 
-data formatter, local storage and local event display and process-monitoring 
-allows disconnection of the B-GDAQ from the %NDC
-M-GDAQ  %\fixme{M-GDAQ?; HGB: Yes, fixed.}
-or DUNE 
-Central Run Control for standalone runs including beamline 
-detectors exclusively.
-
-
-\section{Global Computing}
+\section{NDS Computing}
 \label{sec:nd-gdaq-global-computing}
 
 The computing system encompasses two major activities: %The first is 

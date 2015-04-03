@@ -1,11 +1,11 @@
 
-\chapter{The Near Neutrino Detector}
+\chapter{The Near Neutrino Detector: A Fine-Grained Tracker}
 \label{ch:nd-nnd}
 
 \section{Introduction} 
 \label{sec:nd-nnd-intro}
 
-The DUNE Fine-Grained-Tracker (FGT) near detector consists of a straw-tube
+The DUNE Fine-Grained Tracker (FGT) near detector consists of a straw-tube
 tracking detector (STT) and electromagnetic calorimeter (ECAL) inside of a 0.4 T
 dipole magnet. In addition, Muon Identifiers (MuIDs) are located in the
 steel of the magnet, as well as upstream and downstream of the STT. The FGT
@@ -473,20 +473,22 @@ Number of 7.5mm Pitch Y Strips per Module & 128 \\ \colhline
 Total Number of RPC Strips and Electronics & 165,888 \\
 \end{cdrtable}
 
-\section{Instrumentation}
+\section{FGT Instrumentation}
 \label{sec:nd-nnd-intrumentation}
 
-The instrumentation includes readout-electronics for the sub-detectors
-and the slow-control of the sub-detector, involving monitoring the humidity, 
+The instrumentation includes readout electronics for the subdetectors
+and the slow control of the \fixme{which?} subdetector, involving monitoring the humidity, 
 temperature, gas pressure, etc.
-There is considerable synergy in the information gathered in the STT, ECAL and MuID.
-Both STT and ECAL are required to measure the total charge and time associated with a 
+There is considerable synergy in the information \fixme{of what type} gathered in the STT, ECAL and MuID.
+Both the STT and ECAL are required to measure the total charge and the time associated with a 
 given hit. The MuID RPCs are required to provide the position and time associated with 
-a traversing-track. Similarly, the slow control of the sub-detectors
+a traversing track. Similarly, the slow control of the subdetectors
 share many features. 
-A brief description of the sub-detector instrumentation is presented below, while
+A brief description of the subdetector instrumentation is presented below, while
 Table~\ref{tab:elect_ch} summarizes the number of electronics channels for each of the
-three detector systems. 
+three detector systems. \fixme{detector system = subdetector?}
+
+\fixme{add something here about the cooling water flow and voltage and current monitoring; you have no information in the sections, so they should be removed.}
 
 
 \begin{cdrtable}[Number of electronics channels for each of the
@@ -498,7 +500,7 @@ ECAL & 52,224 \\  \colhline
 MuID & 165,888 \\
 \end{cdrtable}
 
-\subsection{Readout Electronics for the FGT}
+\subsection{Readout Electronics} % for the FGT}
 
 The electronics for the three subsystems, STT, MuID, and ECAL, are all fast systems, 
 i.e. all of the signals are fast in the few to 10 nanosecond range.  The STT output has 
@@ -548,35 +550,37 @@ We will explore the VMM2 chip as our first option for the readout.
 \end{cdrfigure}
 
 
-\subsection{DAQ}
+\subsection{Data Acquisition} % Nearsite Neutrino Detector (NND) DAQ}
 
-The Nearsite Neutrino Detectors Data Acquisition system (NND-DAQ) collects raw data from 
-each near detector subsystem in the Near Neutrino Detector (NND) and connects to the Near 
-Detector System DAQ (NDS-DAQ) via Gigabit Ethernet. A block diagram of the NND-DAQ is
+The Nearsite Neutrino Detector Data Acquisition system (NND-DAQ) collects raw data from 
+each %near 
+detector subsystem in the Near Neutrino Detector (NND) and connects to the Near 
+Detector System DAQ (NDS-DAQ), described in Chapter~\ref{ch:nd-gdaq}, via Gigabit Ethernet. A block diagram of the NND-DAQ is
 shown in Figure~\ref{fig:DAQ_NND}.
-Similar to the NDS-DAQ, described in a separate chapter, the NND-DAQ will mainly consist 
+Similar to the NDS-DAQ, the NND-DAQ will mainly consist 
 of a scalable back-end computer array, inter-connected to the individual Near Neutrino 
 Detector DAQs via Gigabit Ethernet and specialized electronics modules for trigger 
-processing and clock synchronization. It interfaces to the NDS Master DAQ (NDS-MDAQ) for 
-run control and global data collection. It will also have its own local run-control setup, 
+processing and clock synchronization. It interfaces to the NDS Master DAQ (NDS-MDAQ),
+described in Section~\ref{sec:nd-master-daq}, for 
+run control and global \fixme{still want `global'?} data collection. It will also have its own local run-control setup, 
 consisting of a number of desktop workstations to allow independent local runs that include 
-nearsite neutrino detectors only, useful during detector commissioning, calibration runs, 
+nearsite neutrino detectors \fixme{`detectors' or `detector systems'?} only, useful during detector commissioning, calibration runs, 
 stand-alone cosmic runs or other runs where the beam is stopped or not needed.
 
 The quantity of computers required for the back-end system is highly dependent on the 
 number of channels and expected data rates of the individual neutrino detectors. Based on 
-T2K Near Detector DAQ experience, one back-end computer should be able to handle 
-approximately 3000 channels for sustainable and continuous runs. Assuming a total of 
-430,000 channels for all neutrino detectors combined, about 150 back-end computers would be 
+T2K Near Detector DAQ experience\fixme{ref?}, one back-end computer should be able to handle 
+approximately 3,000 channels for sustainable and continuous runs. Assuming a total of 
+430,000 channels for all neutrino detectors \fixme{?} combined, about 150 back-end computers would be 
 needed.
 
-Trigger signals from each Neutrino detector will be collected and pre-processed by a 
-trigger electronics module, similar in design to the global trigger or master clock modules 
+Trigger signals from each neutrino detector \fixme{?} will be collected and pre-processed by a 
+trigger electronics module, similar in design to the global \fixme{?}  trigger or master clock modules 
 of the NDS-DAQ design. Depending on the run mode, this module could feed local trigger 
-decisions to the detector DAQs for data collection, or it could forward global triggers 
-from the NDS-DAQ or higher levels to the neutrino detector DAQs.  A slave clock electronics 
-module, similar to the master clock module in the NDS-DAQ, distributes clock- and 
-time-synchronization signals from the NDS-DAQ to all neutrino detectors.
+decisions to the detector DAQs for data collection, or it could forward global  \fixme{?} triggers 
+from the NDS-DAQ or higher levels to the neutrino detector DAQs.  A slave-clock electronics 
+module, similar to the master-clock module in the NDS-DAQ, distributes clock- and 
+time-synchronization signals from the NDS-DAQ to all neutrino detectors  \fixme{?} .
 
 
 \begin{cdrfigure}[A block diagram of the Near Neutrino Detector DAQ]{DAQ_NND}{A block diagram of the Near Neutrino Detector DAQ (NND-DAQ)}
@@ -584,7 +588,7 @@ time-synchronization signals from the NDS-DAQ to all neutrino detectors.
 \end{cdrfigure}
 
 
-\subsection{Monitoring Humidity \& Temperature in the STT, ECAL, MuID, and Magnet}
+\subsection{Humidity and Temperature Monitoring } % in the STT, ECAL, MuID, and Magnet}
 
 Humidity is inimical to all sub-detectors in the FGT. To maintain a low-level of 
 humidity and to maintain a desired temperature, both STT and ECAL sub-detectors
@@ -594,84 +598,31 @@ while the magnet yokes are instrumented with RPCs. Thus, a continuous control of
 humidity in all these detectors is needed.
 Just as humidity, temperature must be continuously monitored in all of the sub-detectors.
 
-\subsection{Monitoring Gas Leaks in the STT and MuID}
+\subsection{Gas Leak Monitoring in the STT and MuID}
 
 Gas-leaks need to be monitored in the STT and MuID.
 The STT will employ Xe gas, which is expensive and, hence, will be recirculated. It is 
 most essential to ensure that Xe is not leaking. The requirement for leaks is less 
 stringent for the RPC. 
 
-\subsection{Monitoring Cooling-Water Flow in the Magnet}
+\subsection{Cooling-Water Flow Monitoring in the Magnet}
 
-The water flow (pressure gradient) must be continuously monitored.
+The water flow (pressure gradient) must be continuously monitored.  \fixme{Add more or remove section, I'd say and . AH}
 
 \subsection{Monitoring Voltage and Current}
 
 All power sources instrumenting the FGT and its readout need to be monitored for 
 appropriate voltage and current.
 
-\section{Liquid Argon TPC Alternative Design}
-\label{sec:nd-nnd-lar-tpc-alt}
+\fixme{Add more or remove section, I'd say and . AH}
 
-\section{Pressurized GAS TPC Alternative Design}
-\label{sec:nd-nnd-gas-tpc-alt}
+%\section{Liquid Argon TPC Alternative Design}
+%\label{sec:nd-nnd-lar-tpc-alt}
 
-\section{Beamline Measurements}
-\label{sec:nd-nnd-beamline-measurements}
-
-\section{NDS DAQ}
-\label{sec:nd-nnd-nds-daq}
-
-\subsection{Overview}
-
-The Near Detector System 
-Data Acquisition system (NDS-DAQ) collects raw data from each detector 
-system in the Near Detector System (NDS), issues global triggers, adds precision timing 
-data from a global positioning system (GPS), and builds events. Each NDS detector has its 
-own data acquisition system that connects to the NDS-DAQ.
-The NDS-DAQ is made up of two parts: NDS Master DAQ (NDS-MDAQ) and Beamline Measurements 
-DAQ (BLM-DAQ). A third component, the Near Neutrino Detector DAQ (NND-DAQ), is 
-connected to the NDS-MDAQ and is part of the Near Neutrino Detector system.
-Figure~\ref{fig:DAQ_Block} shows a block diagram for the DAQ.
-
-\begin{cdrfigure}[Near Detector System DAQ block diagram]{DAQ_Block}{Near Detector System DAQ block diagram: The NDS-DAQ consists 
-of two parts: NDS Master DAQ (green blocks) and Beamline Measurement DAQ (yellow summary 
-block). The NearSite Detectors DAQ (orange block) is described in a separate chapter. The 
-NDS-DAQ connects to other sections of the LBNE project, shown here in other colors (blue, 
-light red, tan).}
-\includegraphics[width=6in,angle=0]{DAQ_Block}
-\end{cdrfigure}
+%\section{Pressurized GAS TPC Alternative Design}
+%\label{sec:nd-nnd-gas-tpc-alt}
 
 
-\subsection{NDS Master DAQ and computing}
 
-The NDS-DAQ design consists of equipment designed to provide a high level user interface 
-for local run control and data taking and secure remote control and monitoring.   It will 
-serve as the primary interface to the slow control system, online data and DAQ performance 
-monitoring, raw data collection, building of events, and data storage between all Near 
-Neutrino Detector DAQs and Beamline Measurements DAQs.  This includes hardware triggering 
-for two-way trigger processing between the NDS-DAQ and all detectors, and GPS for precision 
-time stamping and global clock synchronization.  It is currently based on a channel count 
-estimate of approximately 430,000 channels of neutrino detectors, plus $<1000$ channels of 
-beamline detectors.  Custom electronics components for the NDS-DAQ are based on existing 
-custom designs from other experiments, e.g. T2K or ATLAS, and have all commercial 
-components:  Trigger modules, clock and timing synchronization, GPS, environmental 
-monitoring.
 
-The computing system encompasses two major activities: online computing with required 
-slow-control systems, and offline computing for further development of the measurement 
-strategy and for simulation work on technical systems. The computing components are based 
-on currently available commercial computing and gigabit networking technology, which is 
-likely to improve over the next years without driving costs up for the final design.  
-
-\subsection{Beamline Measurements DAQ (BLM-DAQ)}
-
-Similar to the NDS Master DAQ, the BLM-DAQ will mainly consist of a scalable back-end 
-computer array, inter-connected to the individual beamline measurement detector DAQs via 
-Gigabit Ethernet and specialized electronics modules for trigger processing and clock 
-synchronization. It interfaces to the NDS Master DAQ (NDS-MDAQ) for run control and global 
-data collection. It will also have its own local run-control setup, consisting of a number 
-of desktop workstations to allow independent local runs that include beamline measurement 
-detectors only (useful during detector commissioning), calibration runs, stand-alone cosmic 
-runs or other runs where the beam is stopped or not needed.
 
