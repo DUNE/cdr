@@ -88,29 +88,25 @@ which only includes the beam neutrino type of events. This translates into 0.6PB
 \subsubsection{Far Detector Photon Detector (PD)}
 Relevant  PD parameters:
 \begin{itemize}
-\item Readout channel count: 
-\item ---
-\item ---
+\item Readout channel count: 24,000 (i.e. four times 6,000 which is the channel count for each 10kt module)
+\item Trigger rate is uncertain at this point due to ongoing investigation, but in line with the approach used for the TPC we can assume 1 trigger per spill cycle
 \item ADC resolution (bits): 12
 \end{itemize}
 \
+This results in 36kB per spill cycle, and should be considered negligible from the point of view of requirement to data handling, compared to other data sources.
 
 \subsubsection{Near Detector Data Rates}
 Relevant parameters of the Fine-Grained Tracker (FGT):
 \begin{itemize}
 \item   Straw Tube Tracker (STT) readout channel count: 215,040
 \item STT Drift Time: 120ns
-\item ADC clock frequency and resolution (bits): 3ns intervals, 8 bit
-\item Calorimeter channel count: 52,224
+\item STT ADC clock frequency and resolution (bits): 3ns intervals, 10 bit
+\item ECAL channel count: 52,224
 \item Muon Detector Resistive Plane Chambers (RPC) channel count: 165,888
+\item Average expected event rate per spill: \textasciitilde 1.5
 \end{itemize}
 \
-Factors affecting data rates:
-\begin{itemize}
-\item Zero Suppression (ZS)  in the Front-End electronics of the detector
-\item Radiolgical and Cosmological Backgrounds as functions of thresholds set for ZS, in different physics domains (cf. beam neutino physics vs Supernova Burst)
-\item ADC clock frequency:
-\end{itemize}
+Based on these parameter, we estimate that the upper limit of the ND data rate will be 1.5MB/s. This translates into 45TB/year. 
 
 \subsection{Computing Model}
 \label{sec:detectors-sc-infrastructure-computing-model}
