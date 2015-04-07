@@ -78,7 +78,7 @@ Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can 
 \end{itemize}
 \
 This results in a total of 2.3GB worth of TPC data. Accorrding to current estimates, with thresholds optimized for beam neutrino physics, zero suppression
-gives us a reduction factor of \textasciitilde 10 in the event size, resulting in a 230MB ``digital picture'' of the TPC (discriminated against most background
+gives us a reduction factor of \textasciitilde 100 in the event size, resulting in a 23~MB ``digital picture'' of the TPC (discriminated against most background
 but still covering the complete volume of the TPC). Since neutrino interactions will result in a more local pattern of ionization signal being read out
 from the chamber, Monte Carlo studies done with realistic neutrino energy spectra give us further guidance of between 10 and 20MB per neutral current event.
 Following the threshold levels assumption in ~\ref{sec:detectors-sc-infrastructure-assumptions}, we arrive at the number of \textasciitilde 20MB/s for the data rate
@@ -122,7 +122,7 @@ There are uncertainties in anticipated quantities of all of these types of data,
 the data will undergo a few processing stages, we can expect the need to handle \textasciitilde 2PB of data annually for reconstruction and a lesser
 volume for final analysis purposes.
 
-For Monte Carlo, at the time of writing typical annual volume of data produced has been of the order of a few tend of terabytes. With Collaboration growing
+For Monte Carlo, at the time of writing typical annual volume of data produced has been of the order of a few tens of terabytes. With Collaboration growing
 and more detailed studies (e.g. of systematics) are undertaken, our expectation is that DUNE will require 100TB annually for storage of its MC data.
 
 \subsection{Computing Model}
@@ -286,7 +286,11 @@ current status of how these tasks are accomplished using the LArSoft
 framework.  A block diagram of the reconstruction chain is shown in
 Figure~\ref{fig:fdrecoblockdiag}.
 
-\fixme{draw reco block diag}
+\begin{cdrfigure}[Far detector reconstruction block diagram]{fdrecoblockdiag}
+{Block diagram showing the components of the far detector reconstruction chain}
+\includegraphics[width=0.7\textwidth]{fdrecoflowchart.pdf}
+\end{cdrfigure}
+
 
 \subsubsection{Signal Processing and Filtering}
 
