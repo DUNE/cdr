@@ -1,136 +1,49 @@
 \chapter{Introduction}  
-\label{ch:nd-intro}
+\label{ch:nd-annex-intro}
 
-\fixme{Starting from the fall 2012 CDR content}
+DUNE collaborators have prepared this detailed design document which describes the reference design for 
+the DUNE Near Detector Complex (NDC) and serves as an annex to the more abbreviated discussion in the DUNE 
+CDR.  The NDC design pulls heavily from both the LBNE near detector design of March 2012, before the LBNE reconfiguration effort eliminated this detector from the project scope, and from the design proposed by Indian collaborators in their DPR of late 2013.
 
-%\input{common/lbne-intro}
-\clearpage
-\section{Introduction to the DUNE Near Detectors (WBS 130.03)}
-\label{sec:nd-intro-vol-intro}
-
-%\fixme{Anne reworked this section 8/27}
-
-LBNE will measure neutrino oscillations through high-statistics 
-and high-precision measurements in the Far Detector. 
- In order to achieve the ultimate neutrino-oscillation sensitivity, DUNE must be able to accurately and 
-precisely predict signal and background events in the Far Detector.
-
-The role of the DUNE Near Detector Complex (NDC) L2 Project is to 
+The role of the DUNE Near Detector Complex (NDC) is to 
 minimize the systematic uncertainties on 
 the long-baseline oscillation program and to thus maximize the 
 oscillation-physics potential of the Far Detector. It is important that the
  Near Detectors not limit the sensitivity of the 
-DUNE long-baseline neutrino-oscillation measurements. 
-They should aid the analysis of electron-neutrino 
+DUNE long-baseline neutrino-oscillation measurements. \fixme{I've never liked this sentence, it sounds negative, like you'd expect the detectors to ruin the experiment. I changed the next sentence because I didn't like it either..}
+The enhanced sensitivity they provide will aid in the analysis of electron-neutrino 
 appearance, the primary oscillation channel, and muon-neutrino disappearance. 
 
-The NDC will be installed downstream of the LBNF beamline at Fermilab. The site is shown in Figure~\ref{fig:nscf_layout-v3}.
+The NDC is made up of the following components:
 
-\begin{cdrfigure}[LBNF Overall Project Layout at Fermilab]{nscf_layout-v3}{LBNF Overall Project Layout at Fermilab; NDC will be located near LBNF 30}
-  %\includegraphics[width=0.8\textwidth]{file}
-\end{cdrfigure}
+\begin{itemize}
+\item Fine-Grained Tracker (FGT) near neutrino detector
+\item Beamline Measurement System
+\item Near Detector System Data Acquisition system
+\item External Measurements
+\end{itemize}
 
-Ideally, the NDC design would comprise both a beamline measurement system to determine neutrino fluxes and spectra, as well as near neutrino detectors to characterize the LBNF neutrino beam and
-the response of the Far Detector to those neutrinos.  The characterization would be sufficient to reduce the systematic errors
-on the predicted Far-Detector event rate (a function of neutrino oscillation 
-parameters, e.g., $\theta_{13}$ and $\delta$) to a level below expected statistical uncertainties.
-This would impose certain requirements on
-the precision with which the neutrino flux must be known at the Far Detector, since
-oscillations manifiest themselves as changes in the relative fluxes of the three neutrino
-flavors.
+The DUNE Fine-Grained Tracker (FGT) near detector consists of a straw-tube
+tracking detector (STT) and electromagnetic calorimeter (ECAL) inside of a 0.4-T
+dipole magnet. In addition, Muon Identifiers (MuIDs) are located in the
+steel of the magnet, as well as upstream and downstream of the STT. The FGT
+is designed to make precision measurements of the neutrino fluxes, 
+cross sections, signal rates and background rates. 
 
-Due to financial constraints, this L2 Project has produced a conceptual design for only beamline measurement and data acquisition systems, discussed in Chapters~\ref{ch:blm} and~\ref{ch:global-daq}, respectively.  
-That said, the traditional strategy in neutrino-oscillation experiments has been to measure the un-oscillated events in a near neutrino detector and to calibrate the simulation of the neutrino flux
-and detector response on the basis of those measurements. 
-The current approach relies on measurements made outside the scope of DUNE to calibrate the detector response and flux simulations, and to relate those measurements to DUNE through the use of common simulation code and measurements of the tertiary muon flux in both locations with nearly identical
- measurement systems. 
-These additional elements of the measurement strategy are discussed in Chapter~\ref{ch:ext-meas}. 
-
-\subsection{Neutrino-Beam Measurement Strategy}
-\label{subsec:nu-meas-strat}
-
-The purpose of the DUNE Near Detector effort is to make a suite of measurements that
-characterize the LBNF neutrino beam and the response of the Far Detector to the neutrinos.
-
-The neutrino-beam measurement strategy will be two-pronged. It will entail measurements of the Far Detector response to a known flux of neutrinos, presumably a neutrino beam similar in nature to the LBNF beam. It will also entail the development of a detailed beamline simulation supported by direct measurements of critical aspects of the beam, 
-for example, a well-developed suite of hadron-production measurements. Validation of the simulation via measurements of the secondary 
-beam, such as measurements of tertiary muons, will be essential.
-
-It is also essential to maintain a direct connection between the neutrino measurements not performed in the LBNF beam and the LBNF beam simulation at all levels. 
-In other words, the simulation code, target material, detector configuration and supporting tertiary-beam measurements must be common and must be validated for both beams. 
-
-NuMI is the only beamline similar enough to the LBNF beamline design to be a candidate for use in the measurements. The NuMI beam has been calibrated by measuring the event rate in the MINOS near detector under a number of different beam configuations, i.e., several horn currents and target positions. The result has been a reasonably well understood neutrino flux. Those neutrino measurements were also supported by the NuMI muon-system measurements, as least for the high-energy part of the neutrino beam where the NuMI muon monitors were sensitive. 
-
-%moved pgraph to ch 4 per EM 8/30/12
-
-LBNF is planning to install a new set of muon-measurement devices into the 
-NuMI beam as part of its prototyping effort. 
-%\fixme{where do these come from? (Anne)} 
-These devices are designed to measure the spectrum of muons at lower energies, starting at 2~GeV, as they exit the absorber. This will enable sensitivity to pions, which produce neutrinos at energies above 2~GeV. The NuMI muon measurements will then be repeated at LBNF for a variety of beam configurations as was done in NuMI. The combined set of measurements, in addition to the NuMI neutrino measurements, should provide a sound basis for predicting event rates at the DUNE Far Detector.
-The prototype devices need to be tested in the NuMI muon alcoves prior to CD-2, as they represent the only measurement linking the NuMI beam, where the near-detector neutrino measurements are made, to the LBNF beam. Waiting until after CD-2 would introduce a risk associated with achieving the DUNE physics goals.  More details of the program are in Volume 1.
-
-\subsection{Reference Design Overview}  % No change to this section 8/28. Anne.
-
-The NDC reference design consists of a beamline-measurements system (BLM) and a Global Data Acquisition system (GDAQ).
-
-The BLM will be located in the region of the Absorber Complex at the downstream end 
-of the decay region to measure the muon fluxes from hadron decay, as shown in Figure~\ref{fig:schematic-nu-beamline-ndc}. The absorber itself is part of the Beamline L2 Project and is discussed in Volume 2 of this CDR. 
-
-\begin{cdrfigure}[Cartoon of the LBNF neutrino beamline components]{schematic-nu-beamline-ndc}{A cartoon of the LBNF neutrino beamline showing the major components of the neutrino beam. From left to right (the direction of the beam): the beam window, horn-protection baffle, target, the two toroidal focusing horns, decay pipe and absorber. The BLM system will be to the right of the absorber.}
-%\includegraphics[width=.9\textwidth]{../volume-2-beam/figures/Fig_C3_Intro_1}\end{cdrfigure}
-\end{cdrfigure}
-
-This BLM system is intended to determine the neutrino fluxes and spectra
+The Beamline Measurement System (BLM) will be located in the region of the Absorber Complex at 
+the downstream end of the decay region to measure the muon fluxes from hadron decay. The 
+absorber itself is part of the LBNF Beamline. 
+The BLM is intended to determine the neutrino fluxes and spectra
 and to monitor the beam profile on a spill-by-spill basis, and will operate for the life of the
 experiment. 
-Figure~\ref{fig:MuonSystemsOverview} shows the downstream side of the absorber and a conceptual 
-layout of the BLM muon systems.
-The first set 
-of muon measurement devices, from  left to right, are three
-variable-pressure, gas Cherenkov counters. Following these counters 
-is the 5 $\times$ 5 ion-chamber array that is
- mounted directly to the rear wall of the absorber. 
-Finally, there is a set of stopped-muon counters 
- interspersed between walls of steel ``blue blocks''. The blue blocks 
-provide several
- depths at which to monitor the muons as they range out and stop 
-in the material.
 
-\begin{cdrfigure}[Layout of muon monitors]{MuonSystemsOverview}{A model of the three muon monitor systems placed downstream of the absorber, in the muon alcove.}
-%\includegraphics[width=5in,angle=0]{Alcove_w_detectors.pdf}
-\end{cdrfigure}
+The Near Detector System Data Acquisition system (NDS-DAQ) collects raw data from each NDS detector's
+individual DAQ, issues global \fixme{global in what sense here?} triggers, adds precision timing 
+data from a global positioning system (GPS), and builds events. 
+The NDS-DAQ is made up of three parts: NDS Master DAQ (NDS-MDAQ), the Beamline Measurements 
+DAQ (BLM-DAQ) and the Near Neutrino Detector DAQ (NND-DAQ).
 
-The GDAQ will collect raw data from each
-detector system in the NDC, issue global triggers, add timing data
-from a global position system (GPS) and build events.
-
-
-\section{Participants}
-\label{sec:nd-intro-participants}
-
-The design for the DUNE Near Detector Complex (NDC) is being carried out by an DUNE L2 Project team, headed at Los Alamos National Laboratory (LANL) 
-with participants from universities, in conjunction with outside contractors.  
-The BLM are planned for construction at 
-Fermilab.
-
-The DUNE NDC is managed by the 
-Level 2 Manager for the Near Detector Complex L2 Project. The supporting team 
-includes a Level 3 
-Manager for each of the NDC's principal systems: Beamline Measurement System, Global Data Acquisition and Computing. The organization is illustrated to WBS Level 4 in Figure~\ref{fig:nd-org}.
-
-\begin{cdrfigure}[Organization chart for the NDC L2 Project to L4]{nd-org}{Organization chart for the NDC L2 Project (to WBS Level 4)}
-%\includegraphics[width=.9\textwidth]{ndc-org-no-names}
-\end{cdrfigure}
-
-The Conventional Facilities Level 3 Near Site Manager is the LBNF Project liaison with the NDC L2 Project 
-to ensure the L2 project civil requirements are met; 
-this person is responsible for all LBNF conventional facilities scope at the Near Site. 
-
-Interaction between Fermilab facility engineers, DUNE NDC design teams, and
-design consultants consists of 
-weekly telephone conferences, periodic design interface workshops, and
-electronic mail. An integration document resulting from these discussions will allow the NDC L2 Project team to coordinate activities and ensure that the design efforts remain on track to satisfy all requirements.
-
+\fixme{Add something about external measurements if needed.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Data for the Acro/Abbrev/Units list  %%%%%%%%%%%%%%%%%
 

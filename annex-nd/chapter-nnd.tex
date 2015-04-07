@@ -560,50 +560,7 @@ The VMM2 chip will be explored  as the first option for the NND readout.
 \includegraphics[width=\textwidth,angle=0]{VMM2}
 \end{cdrfigure}
 
-
-\subsection{NND Data Acquisition} % Nearsite Neutrino Detector (NND) DAQ}
-\label{sec:nd:nnd:daq}
-
-%\fixme{why isn't this called the FGT-DAQ?  It's hard to know whether to use FGT or NND. FGT is easier to keep straight in your mind from NDS, that's for sure!; WCL: we agreed with Hans to use NND-DAQ. Ok AH}
-
-As the Near Neutrino Detector (NND) is part of DUNE's Near Detector System (NDS), the Near Neutrino Detector Data Acquisition system (NND-DAQ) collects raw data from 
-each %near 
-NND subsystem and connects to the (overall) Near 
-Detector System DAQ (NDS-DAQ) via Gigabit Ethernet. This is described in 
-Chapter~\ref{ch:nd-gdaq}. A block diagram of the NND-DAQ is
-shown in Figure~\ref{fig:DAQ_NND}.
-Similar to the NDS-DAQ, the NND-DAQ will mainly consist 
-of a scalable back-end computer array, inter-connected to the individual NND 
-subdetector DAQs via Gigabit Ethernet and specialized electronics modules for trigger 
-processing and clock synchronization. It interfaces to the NDS Master DAQ (NDS-MDAQ),
-described in Section~\ref{sec:nd-master-daq}, for 
-run control and NDS  data collection. The NND-DAQ will also have its own local run-control setup, 
-consisting of a number of desktop workstations to allow independent local runs that include 
-NND subdetectors only, which is useful during detector commissioning, calibration runs, 
-stand-alone cosmic runs or other runs where the beam is stopped or not needed.
-
-The quantity of computers required for the back-end system is highly dependent on the 
-number of channels and expected data rates of the individual neutrino detectors. Based on 
-T2K Near Detector DAQ experience\fixme{ref? (not addressed)}, one back-end computer should be able to handle 
-approximately 3,000 channels for sustainable and continuous runs. Assuming a total of 
-430,000 channels for all NND subdetectors combined, about 150 back-end computers would be 
-needed.
-
-Trigger signals from each subdetector will be collected and pre-processed by a 
-trigger electronics module, similar in design to the NDS %\fixme{?} 
- trigger or master clock modules 
-of the NDS-DAQ design. Depending on the run mode, this module could feed local trigger 
-decisions to the detector DAQs for data collection, or it could forward NDS %\fixme{?} 
-triggers 
-from the NDS-DAQ or higher levels to the neutrino detector DAQs.  A slave-clock electronics 
-module, similar to the master-clock module in the NDS-DAQ, distributes clock- and 
-time-synchronization signals from the NDS-DAQ to all NND subdetectors.
-
-
-\begin{cdrfigure}[A block diagram of the Near Neutrino Detector DAQ]{DAQ_NND}{A block diagram of the Near Neutrino Detector DAQ (NND-DAQ)}
-\includegraphics[width=6in,angle=0]{DAQ_NND}
-\end{cdrfigure}
-
+%%%% Moved subsection on NND DAQ to overall DAQ chapter per Bill 4/7/15
 
 \subsection{Humidity and Temperature Monitoring } % in the STT, ECAL, MuID, and Magnet}
 
