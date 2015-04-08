@@ -2,19 +2,20 @@
 \label{ch:nd-annex-intro}
 
 DUNE collaborators have prepared this detailed design document which describes the reference design for 
-the DUNE Near Detector Complex (NDC) and serves as an annex to the more abbreviated discussion in the DUNE 
-CDR.  The NDC design pulls heavily from both the LBNE near detector design of March 2012, before the LBNE reconfiguration effort eliminated this detector from the project scope, and from the design proposed by Indian collaborators in their DPR of late 2013.
+the DUNE Near Detector Systems (NDS) and serves as an annex to the more abbreviated discussion in the DUNE 
+CDR.  The NDS design pulls heavily from both the LBNE near detector design of March 2012, before the LBNE reconfiguration effort eliminated this detector from the project scope, and from the design proposed by Indian collaborators in their DPR of late 2013.
 
-The role of the DUNE Near Detector Complex (NDC) is to 
-minimize the systematic uncertainties on 
+The role of the DUNE Near Detector Systems (NDS) is to 
+minimize the systematic uncertainties of 
 the long-baseline oscillation program and to thus maximize the 
 oscillation-physics potential of the Far Detector. It is important that the
- Near Detectors not limit the sensitivity of the 
-DUNE long-baseline neutrino-oscillation measurements. \fixme{I've never liked this sentence, it sounds negative, like you'd expect the detectors to ruin the experiment. I changed the next sentence because I didn't like it either..}
-The enhanced sensitivity they provide will aid in the analysis of electron-neutrino 
+ Near Detectors improve the sensitivity of the 
+DUNE long-baseline neutrino-oscillation measurements. 
+%\fixme{I've never liked this sentence, it sounds negative, like you'd expect the detectors to ruin the experiment. I changed the next sentence because I didn't like it either..}
+The enhanced sensitivity they provide will aid in both the analysis of electron-neutrino 
 appearance, the primary oscillation channel, and muon-neutrino disappearance. 
 
-The NDC is made up of the following components:
+The NDS is made up of the following components:
 
 \begin{itemize}
 \item Fine-Grained Tracker (FGT) near neutrino detector
@@ -38,12 +39,16 @@ and to monitor the beam profile on a spill-by-spill basis, and will operate for 
 experiment. 
 
 The Near Detector System Data Acquisition system (NDS-DAQ) collects raw data from each NDS detector's
-individual DAQ, issues global \fixme{global in what sense here?} triggers, adds precision timing 
+individual DAQ, issues 
+%\fixme{global in what sense here?} 
+triggers, adds precision timing 
 data from a global positioning system (GPS), and builds events. 
 The NDS-DAQ is made up of three parts: NDS Master DAQ (NDS-MDAQ), the Beamline Measurements 
 DAQ (BLM-DAQ) and the Near Neutrino Detector DAQ (NND-DAQ).
 
-\fixme{Add something about external measurements if needed.}
+In addition, external pion producion measurements will improve the simulation of
+neutrino fluxes.
+%\fixme{Add something about external measurements if needed.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Data for the Acro/Abbrev/Units list  %%%%%%%%%%%%%%%%%
 
@@ -90,7 +95,7 @@ DAQ (BLM-DAQ) and the Near Neutrino Detector DAQ (NND-DAQ).
 \nomenclature{MuID}{muon-identification detector}
 \nomenclature{NC}{neutral current (interaction)}
 \nomenclature{ND}{(Near Site) neutrino detector }
-\nomenclature{NDC}{Near Detector Complex; refers to the L2 Project under LBNE }
+\nomenclature{NDS}{Near Detector Systems; refers to the L2 Project under LBNE }
 \nomenclature{NOMAD}{Neutrino Oscillation Magnetic Detector, experiment at CERN}
 \nomenclature{NA61}{NA61/SHINE, experiment at CERN that studies hadron production in hadron-nucleus and nucleus-nucleus collisions}
 \nomenclature{N-GDAQ}{neutrino global data acquisition}
