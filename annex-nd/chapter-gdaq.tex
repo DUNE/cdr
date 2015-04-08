@@ -10,7 +10,7 @@ issues %\fixme{global in what sense here?}
 triggers, adds precision timing 
 data from a global positioning system (GPS), and builds events. %Each NDS detector has its own data acquisition system that connects to the NDS-DAQ.
 The NDS-DAQ is made up of three parts, as shown in the block diagram of 
-Figure~\ref{fig:DAQ_Block}.
+Figure~\ref{fig:DAQ_Block}, a master DAQ and one each for the near neutrino detector (NND, which is the FGT) and the BLM systems. The names for these are, respectively, NDS-MDAQ, NND-DAQ and BLM-DAQ.
 
 \begin{cdrfigure}[Near Detector System DAQ block diagram]{DAQ_Block}{Near Detector System DAQ block diagram: The NDS-DAQ consists 
 of the NDS Master DAQ (green blocks), the Beamline Measurement DAQ (yellow summary 
@@ -31,8 +31,6 @@ light red, tan).}
 
 \subsection{NDS Master DAQ} % and Computing}
 \label{sec:nd-master-daq}
-
-\fixme{please clarify in this section what is the overall NDS DAQ and what is the master DAQ.}
 
 The NDS Master DAQ (NDS-MDAQ) %design consists of equipment 
 is designed to provide a high-level user interface 
@@ -57,10 +55,11 @@ time-stamping and global
 %\fixme{global?} 
 clock synchronization.  %\fixme{The design?} 
 The design is currently based on a channel count 
-estimate of approximately 433,000 electronic channels from the near neutrino
-detector, plus $<1,000$ channels of 
-beamline detectors.  Custom electronic components for the NDS-DAQ are based on existing 
-custom designs from other experiments, e.g,. T2K and ATLAS, 
+estimate of approximately 433,000 %electronic channels 
+from the near neutrino
+detector, plus $<1,000$ %channels of 
+from the beamline detectors.  Custom electronic components for the NDS-DAQ are based on existing 
+custom designs from other experiments, e.g., T2K and ATLAS, 
 %\fixme{you can say ``they ARE based on X and Y'' or
 %``they WILL BE based on X or Y'' but not``they ARE based on X or Y'' } 
 and %have all commercial 
@@ -83,19 +82,19 @@ GPS and environmental monitoring.
 %\fixme{why isn't this called the FGT-DAQ?  It's hard to know whether to use FGT or NND. FGT is easier to keep straight in your mind from NDS, that's for sure!; WCL: we agreed with Hans to use NND-DAQ. Ok AH}
 
 The Near Neutrino Detector Data Acquisition system (NND-DAQ) collects raw data from 
-each %near 
-detector subsystem in the Near Neutrino Detector (NND) and connects to the (overall) Near 
-Detector System DAQ (NDS-DAQ) via Gigabit Ethernet. A block diagram of the NND-DAQ is
-shown in Figure~\ref{DAQ_NND}. The NND-DAQ will mainly consist 
-of a scalable back-end computer array, inter-connected to the individual Near Neutrino 
-Detector DAQs via Gigabit Ethernet, and specialized electronics modules for trigger 
+the DAQ in each %near detector 
+NND subdetector and connects to the %(overall) Near Detector System DAQ (NDS-DAQ) <---- No, to the MDAQ, it looks like
+NDS Master DAQ via Gigabit Ethernet. A block diagram of the NND-DAQ is
+shown in Figure~\ref{fig:DAQ_NND}. The NND-DAQ will mainly consist 
+of a scalable back-end computer array, interconnected to the individual %Near Neutrino Detector 
+subdetector DAQs via Gigabit Ethernet, and specialized electronics modules for trigger 
 processing and clock synchronization. It interfaces to the NDS-MDAQ for 
-run control and global data collection. The NND-DAQ will also have its own local run-control setup, 
+run control and global \fixme{global?} data collection. The NND-DAQ will also have its own local run-control setup, 
 consisting of a number of desktop workstations to allow independent local runs that include 
-nearsite neutrino detectors only, useful during detector commissioning, calibration runs, 
+NND subdetectors only; this is useful during detector commissioning, calibration runs, 
 stand-alone cosmic runs, or other runs where the beam is stopped or not needed.
 
-The quantity of computers required for the back-end system is highly dependent on the 
+The quantity of computers required for the NND-DAQ back-end system is highly dependent on the 
 number of channels and expected data rates of the individual neutrino detectors. 
 %\fixme{ref? (not addressed)}, 
 One back-end computer should be able to handle 
@@ -104,11 +103,11 @@ approximately 3,000 channels for sustainable and continuous runs. Assuming a tot
 needed.
 
 Trigger signals from each subdetector will be collected and pre-processed by a 
-trigger electronics module, similar in design to the NDS  trigger or master clock modules 
+trigger electronics module, similar in design to the NDS  trigger or master-clock modules 
 of the NDS-MDAQ design. Depending on the run mode, this module could feed local 
 trigger 
 decisions to the detector DAQs for data collection, or it could forward NDS triggers 
-from the NDS-MDAQ or higher levels to the neutrino detector DAQs.  A slave-clock electronics 
+from the NDS-MDAQ or higher levels to the NND subdetector DAQs.  A slave-clock electronics 
 module, similar to the master-clock module in the NDS-MDAQ, distributes clock- and 
 time-synchronization signals from the NDS-MDAQ to all NND subdetectors.
 
@@ -130,7 +129,7 @@ It interfaces to the NDS-MDAQ for run control and
 %\fixme{want to use `global'?}
 data collection. It will also have its own local run-control setup, consisting of a number 
 of desktop workstations to allow independent local runs that include beamline measurement 
-detectors only (useful during detector commissioning), calibration runs, stand-alone cosmic 
+detectors only; this is useful during detector commissioning, calibration runs, stand-alone cosmic 
 runs or other runs where the beam is stopped or not needed.
 
 
