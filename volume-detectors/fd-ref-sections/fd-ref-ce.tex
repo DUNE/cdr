@@ -2,13 +2,8 @@
 \section{The Cold Electronics (CE)} 
 \label{sec:detectors-fd-ref-ce}
 
-To minimize channel capacitance and noise,
-the TPC read-out electronics are mounted on the APA front-end (Figure~\ref{fig:elec_CMBonAPA})
-in LAr, and are therefore referred to as the ``Cold Electronics'' (CE).
-The CE are implemented as ASIC chips using CMOS technology,
-which performs well at LAr temperatures,
-and provides amplification, shaping, digitization, buffering and multiplexing (Mux) of the signals.
-
+The TPC read-out electronics are mounted on the APA front-end (Figure~\ref{fig:elec_CMBonAPA})
+in LAr in order to minimize channel capacitance and noise. These electronics are therefore referred to as the ``Cold Electronics'' (CE) subsystem. 
 The scope of the CE subsystem includes the design, procurement, fabrication, testing,
 delivery and installation of the CE, the principle components of which are:
 \begin{itemize}
@@ -24,10 +19,14 @@ The most significant requirements for the CE are to:
 \item Operate for the life of the facility without significant loss of function;
 % \item Use only materials that are compatible with high-purity liquid argon.
 \end{itemize}
-\begin{cdrfigure}[The front end electronics as mounted on an APA]{elec_CMBonAPA}{The front end electronics,
+\begin{cdrfigure}[The front-end electronics as mounted on an APA]{elec_CMBonAPA}{The front-end electronics,
 shown in the red circle, as mounted on an APA.}
 \includegraphics[width=0.70\linewidth]{elec_CMBonAPA_1.pdf}
 \end{cdrfigure}
+
+The CE are implemented as ASIC chips using CMOS technology,
+which performs well at LAr temperatures,
+and provides amplification, shaping, digitization, buffering and multiplexing (Mux) of the signals.
 
 The CE architecture is manifested in the Cold Mother Board (CMB),
 a 128-channel board which uses eight 16-channel FE ASICs and eight 16-channel ADC ASICs
@@ -36,9 +35,9 @@ The FE ASIC provides amplification and pulse shaping, while
 the ADC ASIC comprises a 12-bit digitizer
 and an 8:1 Mux stage with two pairs of serial readout lines in parallel.
 A Cold Digital Data (COLDATA) ASIC chip mounted on each CMB provides an additional Mux of 4:1 and
-is capable of driving the data at 1~Gb/s through 30~m of copper cable to the feedthrough and on to DAQ. 
+is capable of driving the data at 1~Gb/s through 30~m of copper cable to the feedthrough and on to the DAQ. 
 Tables \ref{tab:DeviceCounts} and \ref{tab:KeyParameters} list the CE device counts and key parameters.
-\begin{cdrfigure}[The CE Architecture]{elect_schem}{The CE Architecture. The basic unit is the 128-channel CMB}
+\begin{cdrfigure}[The CE Architecture]{elect_schem}{The CE Architecture. The basic unit is the 128-channel CMB.}
 \includegraphics[width=0.90\linewidth]{elect_schem.pdf}
 \end{cdrfigure}
 \begin{cdrfigure}[Functional Block Diagram of the Cold Digital Data (COLDATA) ASIC]{elec_COLDATAfig}
@@ -46,8 +45,8 @@ Tables \ref{tab:DeviceCounts} and \ref{tab:KeyParameters} list the CE device cou
 \includegraphics[width=0.80\linewidth]{elec_COLDATAfig.pdf}
 \end{cdrfigure}
 
-An important aspect of CMOS technology is that the lifetime at cryogenic temperatures is well-understood and can be
-well-controlled, {\em provided that close control is maintained over the implementation details}.
+An important aspect of CMOS technology is that the lifetime at cryogenic temperatures is well understood and can be
+well controlled, {\em provided that close control is maintained over the implementation details}.
 This precludes the use of commercial devices, which are not intended for use in LAr,
 and which are produced by proprietary processes over which we have no control.
 % This requirement of close control cannot be satisfied by any commercial device,
@@ -67,6 +66,7 @@ The 1~Gb/s data rate is not high enough to require the use of optical fibers in 
 nor is there a need for zero suppression or data compression.
 This greatly reduces the complexity of the COLDATA ASIC, with a corresponding decrease in overall risk,
 including risk of failure-to-implement (within a fixed schedule and budget).
+
 \begin{cdrtable}[Device Counts]{l|r|r|r}{DeviceCounts}{Device Counts}
  Parameter           & per CMB& per APA& per 10~kt Detector\\ \toprowrule
  Channels            & 128    & 2560   & 384,000           \\ \colhline
