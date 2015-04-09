@@ -5,7 +5,7 @@
 \section{Introduction} 
 \label{sec:nd-nnd-intro}
 
-The DUNE Fine-Grained Tracker (FGT) near detector consists of a straw-tube
+The DUNE Fine-Grained Tracker (FGT) near neutrino detector consists of a straw-tube
 tracking detector (STT) and electromagnetic calorimeter (ECAL) inside of a 0.4 T
 dipole magnet. In addition, Muon Identifiers (MuIDs) are located in the
 steel of the magnet, as well as upstream and downstream of the STT. The FGT
@@ -33,16 +33,16 @@ their interactions at the near site.
 In addition to the oscillation signal, it is 
 critical to identify and measure processes such as neutral current $\pi^0$ production,
 that can mimic oscillation signals 
-at the FD. Thus, the principal focus of the neutrino detector will be 
+at the FD. Thus, the principal focus of the near neutrino detector will be 
 on the neutrino-oscillation energy range of $E_\nu < 8$ GeV, as well as higher 
 neutrino energies that produce background to the oscillation signal. Furthermore, the
-$8<E_\nu < 20$ GeV energy range can be used as a ``control region'' %or
-i.e., a region in which 
+$8<E_\nu < 20$ GeV energy range can be used as a ``control region'', %or
+i.e. a region in which 
 to search for physics beyond the PMNS matrix. Clearly, 
 the measurements must be 
 comparable to those made in the FD, for which the target material is liquid argon (LAr). 
 
-Finally, the neutrino detector must measure nuclear effects, including
+Finally, the near neutrino detector must measure nuclear effects, including
 short-range correlations, two-body currents, pion absorption, initial-state interactions, 
 and final-state interactions. These nuclear effects 
 have an impact on neutrino cross sections and energy determinations, and differences
@@ -50,8 +50,8 @@ between neutrinos and antineutrinos must be fully understood when searching
 for CP violation.
 
 The proposed detector will constrain the systematic uncertainties in the DUNE 
-oscillation measurements. Regardless of the process under study, the 
-systematic error should be less than the corresponding statistical error. 
+oscillation measurements. Regardless of the process under study, the goal is
+to have the systematic error less than the corresponding statistical error. 
 The design presented here is the subject of study within the DUNE Science 
 Collaboration. As these studies 
 progress, the design of the DUNE near neutrino detector, 
@@ -79,7 +79,7 @@ its low-density ($\sim0.1$ g/cm$^2$) and high-precision STT. This high
 resolution is important for determining the neutrino
 vertex and determining whether the neutrino interaction occurs in the water
 or argon target.  The
-proposed $3.5\times3.5\times6.4$ m$^3$ STT's position inside the 
+proposed $3.5\times3.5\times6.4$ m$^3$ STT position inside the 
 dipole magnet with magnetic field $B = 0.4$~T will enable particle tracking. %\fixme{check edits}
 The nominal active volume of the STT corresponds to 8~tonnes (metric tons, t) of mass, 
 which is mostly due to the STT targets and radiators. 
@@ -87,7 +87,7 @@ Table~\ref{tab:comparison} summarizes the
 performance for the FGT configuration, and
 Table~\ref{tab:STT_specs} lists the specifications for the FGT. %\fixme{What's listed there is not a set of requirements; they're specs that we hope follow from requirements!}
 
-Given a 120-GeV proton beam, %\fixme{that leads to a neutrino flux of ...?; WCL: rate is expressed as events per tonne per proton. Ok AH}, 
+For a 120-GeV proton beam, %\fixme{that leads to a neutrino flux of ...?; WCL: rate is expressed as events per tonne per proton. Ok AH}, 
 the neutrino event rates in the detector
 will be $\sim0.35\times 10^{-14}$ events/tonne/proton on target.
 Assuming $0.5\times 10^{14}$ protons per beam spill, this corresponds
@@ -97,7 +97,7 @@ manageable thanks to the nanosecond-level timing of the FGT relative to
 the $\sim10$-$\mu$s beam-spill length.
 
 \begin{cdrfigure}[A schematic drawing of the fine-grained
-tracker design]{STT_schematic}{A schematic drawing of the fine-grained tracker design}
+tracker design]{STT_schematic}{A schematic drawing of the fine-grained tracker design.}
 \includegraphics[width=\textwidth]{FGT_Overview}
 \end{cdrfigure}
 
@@ -107,7 +107,7 @@ the FGT configuration]{ll}{comparison}{A summary of the performance for
 the FGT configuration}
 Performance Metric&FGT\\ \toprowrule
 Straw Tube Detector Volume & 3.5m x 3.5m x 6.4m \\ \colhline
-Straw Tube Detector Mass&8 tonnes\\ \colhline
+Straw Tube Detector Mass&8~t\\ \colhline
 Vertex Resolution&0.1 mm \\ \colhline
 Angular Resolution&2 mrad \\ \colhline
 $E_e$ Resolution&5\% \\ \colhline
@@ -149,9 +149,11 @@ Figure~\ref{fig:STT_Detail} shows a schematic drawing of an STT module with four
 radiators. 
 An alternative design has also been considered; it calls for two planes of straws
 per module, XX, YY, and so on. It will have approximately the same number of
-total straw tubes in the tracker but twice as many modules. \fixme{Is there a schematic of it?; WCL: not at present}
+total straw tubes in the tracker but twice as many modules. 
+%\fixme{Is there a schematic of it?; WCL: not at present}
 %; however, the number of modules will be doubled.
 %In what follows, 
+
 The performance and the cost of the STT are expected to be similar 
 in both the reference (4-Planes/Module) and alternative (2-Planes/Module) designs.
  The straw tubes will be filled with a
@@ -177,8 +179,8 @@ average density of the STT at around 0.1 g/cm$^3$.
 
 
 \begin{cdrfigure}[A schematic drawing of a STT module]{STT_Detail}{A schematic drawing of a STT module with four straw-tube planes and
-radiators (dark blue shading)}
-\includegraphics[width=4in,angle=90]{STT_Detail}
+radiators (dark blue shading).}
+\includegraphics[width=4in,angle=0]{STT_Detail}
 \end{cdrfigure}
 
 %There are 
@@ -186,8 +188,8 @@ The STT will have a total of 107,520 straws  --- corresponding to 336 straws per
 1344 straws per module ---
 and 80 modules. Both ends of the straw tubes will be read out, leading to a total
 number of electronics channels of 215,040. 
-The total mass of the STT, including targets and radiators, is approximately 8 
-tonnes, corresponding to an average density of 0.1. %\fixme{prev sentence already said}
+The total mass of the STT, including targets and radiators, is approximately 8~t, 
+corresponding to an average density of 0.1. %\fixme{prev sentence already said}
 The thickness of the entire 6.4-m-long STT is almost two 
 radiation lengths. Specifications for the Straw Tube Detector are shown in Table~\ref{tab:STT_details}.
 
@@ -212,8 +214,8 @@ Radiator Mass per Module & 108 kg \\ \colhline
 Number of Modules with Target Planes & 34 \\ \colhline
 Target Geometry & 1.27cm Diameter $\times$ 3.5m long \\ \colhline
 Number of Targets per Plane & 275 \\ \colhline
-Ar Mass per Plane & 15.5 kg \\ \colhline
-Water Mass per Plane & 95 kg \\
+Ar Mass per Target Plane & 15.5 kg \\ \colhline
+Water Mass per Target Plane & 95 kg \\
 \end{cdrtable}
 
 \subsection{Radiator Targets}
@@ -263,8 +265,8 @@ the form of thin planes, to be positioned directly upstream of individual STT mo
 
 
 \begin{cdrfigure}[Schematic drawing of the water or pressurized-argon targets]{STT_targets}{Schematic drawing of the water or pressurized-argon targets, 
-made from 0.5-in diameter aluminum tubes}
-\includegraphics[width=4in,angle=90]{Water_target}
+made from 0.5-in diameter aluminum tubes.}
+\includegraphics[width=4in,angle=0]{Water_target}
 \end{cdrfigure}
 
 \section{Electromagnetic Calorimeter}
@@ -315,7 +317,7 @@ magnet, where there is very little gap between the Barrel ECAL and the Forward E
 
 \begin{cdrfigure}[Schematic drawing of the ECAL]{ECAL_detail}{Schematic drawing of the ECAL, which is made up of alternating planes
 of plastic scintillator and Pb sheets.}
-\includegraphics[width=5.0in,angle=90]{ECAL_detail}
+\includegraphics[width=5.0in,angle=0]{ECAL_detail}
 \end{cdrfigure}
 
 
@@ -348,7 +350,7 @@ Total Mass of Pb & 70,800kg \\\end{cdrtable}
 \begin{cdrfigure}[Side view of the ECAL inside magnet]{ECAL_gaps}{A
 side view of the ECAL (red) inside the dipole magnet, where 
 there is very little gap between the Barrel ECAL and the Forward ECAL.}
-\includegraphics[width=4.0in,angle=90]{ECAL_gaps}
+\includegraphics[width=4.0in,angle=0]{ECAL_gaps}
 \end{cdrfigure}
 
 
@@ -385,9 +387,9 @@ Inner Dimensions & 4.5m x 4.5m x 8.0m \\ \colhline
 Magnetic Field & 0.4 T \\ \colhline
 Number of ``C'' Sections & 16 \\ \colhline
 Thickness of Steel in the ``C'' Sections & 60cm \\ \colhline
-Mass per ``C'' Section & 60 tonnes \\ \colhline
+Mass per ``C'' Section & 60~t \\ \colhline
 Number of Coils & 4 \\ \colhline
-Mass per Coil & 40 tonnes \\ \colhline
+Mass per Coil & 40~t \\ \colhline
 Magnet Current & 6 kA \\ \colhline
 Magnet Voltage & 400 V \\ \colhline
 Magnet Power Requirements & 2.4 MW \\ \colhline
@@ -402,7 +404,7 @@ The sides and ends of the dipole magnet will be instrumented
 with a muon identifier
 detector (MuID) that will distinguish muons from hadrons by the ability 
 of muons to penetrate the iron without showering or interacting.
-The MuID will consist of 432 RPC modules
+The MuID will consist of 432 resistive plate chamber (RPC) modules
 interspersed between two 10-cm-thick steel plates of the 
 dipole magnet and between 20-cm-thick steel plates at the upstream and
 downstream ends of the magnet. 
@@ -417,7 +419,7 @@ The nominal dimensions of all RPC modules will be 1~m $\times$ 2~m with
 active areas of 96~cm $\times$ 196~cm. Each
 module has 256 X strips
 at 7.65-mm pitch and 128 Y strips at 7.5-mm pitch. The modules
-will be grouped into trays each containing six modules, and the trays will
+will be grouped into trays, each containing six modules, and the trays will
 be sufficiently wide to allow overlapping modules. 
 The end RPC trays have dimensions of 2~m $\times$ 6~m, and there are three trays per plane.
 The downstream end has five planes, corresponding to 15 trays and 90 RPC modules.
@@ -427,7 +429,7 @@ The vertical barrel-RPC trays have dimensions of 2.5~m $\times$ 4~m, 2.8~m $\tim
 to 24 trays and 144 RPC modules. The horizontal
 barrel-RPC trays have dimensions of 2.2~m $\times$ 4~m, 2.5~m $\times$ 4~m, and
 2.8~m $\times$ 4~m for the inner, middle and outer planes, respectively, 
-corresponding to 24 trays and 144 RPC modules. Overall, there is a total of
+corresponding to 24 trays and 144 RPC modules. Overall, there are a total of
 72 trays, 432 RPC modules, and 165,888 strips and electronic channels. 
 
 The downstream MuID will contain five steel planes of 
@@ -439,24 +441,23 @@ planes (170.1~t) of dimensions 6 $\times$ 6 $\times$ 0.2~m$^3$ and three RPC pla
 of 15~mm and a gap width of 2~mm. One possible gas mixture could be %composed, for example,
 of Ar (75\%), tetraflouroethane (20\%), isobutane (4\%),
 and sulphurhexaflouride (1\%). 
-A schematic drawing of an RPC is shown in Figure~\ref{fig:FGT_RPC}, while
 Figure~\ref{fig:RPC_Tray} shows a schematic drawing of an end RPC tray,
-and Figure~\ref{fig:FGT_RPC} shows a schematic drawing of an RPC module.
+while Figure~\ref{fig:FGT_RPC} shows a schematic drawing of an RPC module.
 MuID specifications are shown in Table~\ref{tab:MID_specs}.
 
-\begin{cdrfigure}[Schematic drawing of a magnet half-assembly]{FGT_MuID}{Anne thinks this figure would be useful! Is it possible to update it? Schematic drawing of a magnet half-assembly, 
-showing the the MuID interspersed in the magnet steel}
-%\includegraphics[width=5in,angle=90]{Magnet_Half_Assembly}
+\begin{cdrfigure}[Schematic drawing of a magnet half-assembly]{FGT_MuID}
+{Schematic drawing of a magnet half-assembly, 
+showing the the MuID interspersed in the magnet steel.}
+\includegraphics[width=5in,angle=0]{FGT_half_assembly}
 \end{cdrfigure}
-
 
 \begin{cdrfigure}[Schematic drawing of an end-RPC tray]{RPC_Tray}{Schematic drawing of an end-RPC tray,
-consisting of six RPC modules of dimension 1m $\times$ 2m}
-\includegraphics[width=5in,angle=90]{RPC_Tray}
+consisting of six RPC modules of dimension 1m $\times$ 2m.}
+\includegraphics[width=5in,angle=0]{RPC_Tray}
 \end{cdrfigure}
 
 
-\begin{cdrfigure}[Schematic drawing of an RPC]{FGT_RPC}{Schematic drawing of an RPC}
+\begin{cdrfigure}[Schematic drawing of an RPC]{FGT_RPC}{Schematic drawing of an RPC.}
 \includegraphics[width=\textwidth]{RPC_Detail} % [width=5in,angle=90] <-- was too small
 \end{cdrfigure}
 
@@ -511,11 +512,11 @@ MuID & 165,888 \\
 The electronics for the three subsystems, STT, MuID, and ECAL, are all ``fast'' systems, 
 i.e., all of the signals are %fast 
 in the few-to-10 nanosecond range.  The STT output has 
-a roughly 10-nanosecond rise time with a total integrated charge of about of about 100 
+a roughly 10-nanosecond rise time with a total integrated charge of about 100 
 electrons per centimeter.  The gain of the STT drift tubes are typically $10^4$ to $10^6$, 
 so over a collection time interval of $\sim100$~ns
 the integrated charge is  $10^6$ to $10^8$ electrons. 
-The MuId system contains Resistive Plate Chambers (RPCs) that can operate 
+The MuID system contains RPCs that can operate 
 in either streamer mode or avalanche mode; the difference 
 being that streamer mode is not proportional to 
 the deposited charge, whereas the avalanche mode 
@@ -538,8 +539,9 @@ The total channel count is 433,152 channels; this is broken out into 215,000 for
 existing experiments don't quite meet these requirements or are too expensive to implement 
 for this channel count (\$50/channel has been allocated).  Recently, %we have been made aware of 
 an interesting new ASIC development for an upgrade to the ATLAS muon system at the LHC %.  The development 
-has come out of BNL. \fixme{add G. DeGeronimo at BNL ref} 
- A schematic of the newly developed chip (VMM2) is shown in 
+has come out of BNL (see talk given by Gianluigi De Geronimo at the ACES 2014 meeting at
+CERN in March 2014). %\fixme{add G. DeGeronimo at BNL ref} 
+A schematic of the newly developed chip (VMM2) is shown in 
 Figure~\ref{fig:VMM2}.  It handles 64 channels and produces both fast ADC and TDC outputs.
 It has been fabricated and tested and should be ready by 2017, long before it will be needed for DUNE. %our needs.  
 The VMM2 features are the following:
@@ -556,54 +558,11 @@ The VMM2 features are the following:
 The VMM2 chip will be explored  as the first option for the NND readout.  
 
 
-\begin{cdrfigure}[A schematic drawing of the VMM2 circuit]{VMM2}{A schematic drawing of the VMM2 circuit}
+\begin{cdrfigure}[A schematic drawing of the VMM2 circuit]{VMM2}{A schematic drawing of the VMM2 circuit.}
 \includegraphics[width=\textwidth,angle=0]{VMM2}
 \end{cdrfigure}
 
-
-\subsection{NND Data Acquisition} % Nearsite Neutrino Detector (NND) DAQ}
-\label{sec:nd:nnd:daq}
-
-%\fixme{why isn't this called the FGT-DAQ?  It's hard to know whether to use FGT or NND. FGT is easier to keep straight in your mind from NDS, that's for sure!; WCL: we agreed with Hans to use NND-DAQ. Ok AH}
-
-As the Near Neutrino Detector (NND) is part of DUNE's Near Detector System (NDS), the Near Neutrino Detector Data Acquisition system (NND-DAQ) collects raw data from 
-each %near 
-NND subsystem and connects to the (overall) Near 
-Detector System DAQ (NDS-DAQ) via Gigabit Ethernet. This is described in 
-Chapter~\ref{ch:nd-gdaq}. A block diagram of the NND-DAQ is
-shown in Figure~\ref{fig:DAQ_NND}.
-Similar to the NDS-DAQ, the NND-DAQ will mainly consist 
-of a scalable back-end computer array, inter-connected to the individual NND 
-subdetector DAQs via Gigabit Ethernet and specialized electronics modules for trigger 
-processing and clock synchronization. It interfaces to the NDS Master DAQ (NDS-MDAQ),
-described in Section~\ref{sec:nd-master-daq}, for 
-run control and NDS  data collection. The NND-DAQ will also have its own local run-control setup, 
-consisting of a number of desktop workstations to allow independent local runs that include 
-NND subdetectors only, which is useful during detector commissioning, calibration runs, 
-stand-alone cosmic runs or other runs where the beam is stopped or not needed.
-
-The quantity of computers required for the back-end system is highly dependent on the 
-number of channels and expected data rates of the individual neutrino detectors. Based on 
-T2K Near Detector DAQ experience\fixme{ref? (not addressed)}, one back-end computer should be able to handle 
-approximately 3,000 channels for sustainable and continuous runs. Assuming a total of 
-430,000 channels for all NND subdetectors combined, about 150 back-end computers would be 
-needed.
-
-Trigger signals from each subdetector will be collected and pre-processed by a 
-trigger electronics module, similar in design to the NDS %\fixme{?} 
- trigger or master clock modules 
-of the NDS-DAQ design. Depending on the run mode, this module could feed local trigger 
-decisions to the detector DAQs for data collection, or it could forward NDS %\fixme{?} 
-triggers 
-from the NDS-DAQ or higher levels to the neutrino detector DAQs.  A slave-clock electronics 
-module, similar to the master-clock module in the NDS-DAQ, distributes clock- and 
-time-synchronization signals from the NDS-DAQ to all NND subdetectors.
-
-
-\begin{cdrfigure}[A block diagram of the Near Neutrino Detector DAQ]{DAQ_NND}{A block diagram of the Near Neutrino Detector DAQ (NND-DAQ)}
-\includegraphics[width=6in,angle=0]{DAQ_NND}
-\end{cdrfigure}
-
+%%%% Moved subsection on NND DAQ to overall DAQ chapter per Bill 4/7/15
 
 \subsection{Humidity and Temperature Monitoring } % in the STT, ECAL, MuID, and Magnet}
 
