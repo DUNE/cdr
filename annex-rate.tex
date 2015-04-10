@@ -1,0 +1,18 @@
+\ifdefined\isfinal\documentclass[final]{cdr}\else\documentclass{cdr}\fi
+\pdfoutput=1            % must be in first 5 lines so arXiv finds it
+\graphicspath{ {figures/}{annex-rate/figures/}{annex-rate/generated/} }
+
+\input{common/preamble}
+
+\renewcommand\thevolumesubtitle{Rate Estimates}
+\begin{document}
+
+\input{common/init}
+
+\input{annex-rate/chapter-rate.tex}
+\cleardoublepage
+
+\input{common/final}
+\end{document}
+
+

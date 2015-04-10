@@ -1,0 +1,115 @@
+\chapter{Rate Estimates}
+\label{ch:annex-rate}
+
+\section{The tables}
+
+\fixme{This table needs input from many people in DUNE.}
+
+Table~\ref{tab:rate-summary} summarizes the understanding of the
+expected rates and annual data volumes for specific sources of activity
+in the detector independent of threshold (unless indicated).
+An entry in the table does not imply that this rate will be acquired.
+
+
+\begin{table}[htbf]
+  \centering
+  \begin{tabular}{|r|l|l|l|l|}
+    \hline
+    Source & rate & time & RO size & volume/year\\
+    \hline
+    \hline
+% 1,536,000 ch * 2e6 Hz * 1e-3s * 12 bit / 8  = 9.2GB
+    full stream & 1/2ms & 3e7sec &  9.2GB & 138 EB ($10^{18}B$) \\
+    \hline
+    ZS stream &  \multicolumn{3}{c|}{10 \% of full stream} & 13.8 EB ($10^{18}B$) \\
+    \hline
+    beam ($>$500 MeV)  & 10K/yr  & year  & 10MB & 100GB \\
+    \hline
+    atm$\nu$& \multicolumn{3}{c|}{similar to beam}  & 100GB \\
+    \hline
+    snb  & ZS stream & 60secs/year$\times$?? & 28 TB & 28 TB $\times$??? \\
+    \hline
+    noise            & ??? & ??? & ??? & ??? \\
+    \hline
+    rad              & ??? & ??? & ??? & ??? \\
+    \hline
+    cosmic $\mu$     & ??? & ??? & ??? & ??? \\
+    \hline
+    sol              & ??? & ??? & ??? & ??? \\
+    \hline
+    minbias & \multicolumn{3}{c|}{multiple, variable, threshold dependent} & ??? \\
+    \hline
+    beam minbias & \multicolumn{3}{c|}{multiple, variable, threshold dependent} & ??? \\
+    \hline
+    calib            & ??? & ??? & ??? & ??? \\
+    \hline
+  \end{tabular}
+  \caption{Rate estimations of hypothetically isolated sources of activity in
+    the DUNE far detector.
+  The ``???'' indicate input needed is still needed.}
+  \label{tab:rate-summary}
+\end{table}
+
+Table~\ref{tab:rate-summary} summarizes the understanding of important
+energy thresholds needed to study a particular study topic (physics,
+calibration, selection efficiency).
+The minimum threshold is that at which any lower threshold has no
+additional benefit to the analysis.
+The maximum threshold is that at which any higher will negatively
+impact the analysis.
+The threshold is understood to be interpreted as the amount of
+ionizing energy deposited in the active volume of the far detector
+and may span APAs.
+
+\begin{table}[htbf]
+  \centering
+  \begin{tabular}{|l||l|l|l|}
+    \hline
+    Topic & min thresh & max thresh & trigger \\
+    \hline
+    \hline
+    beam & 50 MeV & 500 MeV & spill \\
+    \hline
+    pdk & $\sim$few MeV & 100 MeV (see K) & self+see K+nuc. dexcite \\
+    \hline
+    atm$\nu$ & $\sim$few MeV & 50 MeV &
+    self+see Michele $e$ \\
+    atm$\nu$ & $\sim$100 MeV & 500 MeV &
+    self+no Michele $e$ \\
+    \hline
+    snb & $\sim$MeV & 5 MeV & self+ZS stream+dump \\
+    \hline
+    noise & full stream?&$\sim$MeV& min bias?\\
+    \hline
+    rad &$\sim 0$ & $\sim$MEV & self+minbias\\
+    \hline
+    calib & ??? & ??? & ??? \\
+    \hline
+  \end{tabular}
+  \caption{Summary thresholds required for different study topics
+    considering \textbf{signal only}.
+  Below the minimum threshold no further impact on the physics is
+  expected.
+  Above the maximum threshold the physics is negatively impacted.
+  The ``???'' indicate input is still needed.}
+  \label{tab:physrates}
+\end{table}
+
+\section{Other estimates}
+
+\fixme{rough list for now, these numbers need to be moved into their
+  proper subsection}
+\begin{itemize}
+\item 5 minutes reco CPU / cosmic muon (scale by energy dep to get
+  beam event reco CPU?)
+  (tj)
+\item Want 10-100$\times$ MC events as data for beam events.
+  (tj)
+  How frequent?
+  How long to retain?
+\item cosmic muons are about 1M events/year in 30kt (tj)
+Can scale in-beam rates by energy deposition to this assuming constant
+byte-per-MeV/cm deposited?
+\item Square all numbers with those in the science book  
+\end{itemize}
+
