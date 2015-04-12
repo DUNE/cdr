@@ -16,23 +16,115 @@ the systems and components that comprise it:
 The design presented here meets the required performance for light
 collection for the DUNE far detector. The most significant
 requirements include determination of t$_0$ of an event relative to
-the TPC, and sufficient light collection efficiency to allow
-triggering on SN neutrinos with energies as low as 20~MeV.  
+the TPC timing - resolution better than 30~ns, and sufficient light
+collection efficiency to allow triggering on SN neutrinos with
+energies as low as 20~MeV.
 
-Please include at least one figure (a schematic) that illustrates how this piece fits into the overall
-detector.
+Liquid argon is an excellent scintillating medium. With an average
+energy needed to produce a photon of 19.5~eV (at zero field) a typical
+particle depositing 1~MeV in liquid argon will generate 40,000~photons
+with wavelength of 128~nm. At higher fields this will be reduced but
+at 500~V/cm the yield is still about $\sim$20,000~photons per
+MeV. Roughly 1/3 of the photons are promptly emitted after about 6~ns
+while the rest are are emitted with a delay of 1100-1600~ns. LAr
+is highly transparent to the 128~VUV photons with a Rayleigh
+scattering length and absorption length of 95~cm and >200~cm
+respectively. The relatively large light yield makes the scintillation
+process an excellent candidate for determination of $t_{0}$ for
+non-beam related events. Detection of the scintillation light may also
+be helpful in background rejection and triggering on non-beam events.  
 
-Please include at least one figure that illustrates the overall PD system.
+Figure~\ref{PD_overview} shows the system layout for the photon
+detector system, which will be described in the following sections. 
 
-Here is a sample figure: 
-
-\begin{cdrfigure}[short]{label}{long}
-%\includegraphics[width=\linewidth]{file}
+\begin{cdrfigure}[PD Overview]{PD_overview}{Overview of the photon detector
+    system showing the a cartoon schematic (a) of a single PD module
+    in the LAr and the channel ganging scheme used to reduce the
+    number of readout channels. Panel (b) shows how each PD module
+    will be inserted into an APA frame. }
+\includegraphics[width=1.0\linewidth]{pd_schem.png}
 \end{cdrfigure}
 
-Here is a sample reference to a figure (Figure~\ref{fig:label}).  Notice: ``fig:'' is not present in the label as written in the figure code itself.
+\subsection{Reference System Design}
+
+The baseline design for mounting the PDs into the APA frames calls for
+ten PD modules, approximately 2.2m long, 83~mm wide, and 6~mm thick,
+equally spaced along the full length of the APA frame
+(Figure~\ref{PD_overview}~(b)). 
+
+The 128~nm scintillation photons from liquid argon interact with the
+wavelength shifter on the light guide surface and 430~nm light is
+re-emitted in the bar. The light guide channels the light to
+12 silicon photo-multipliers (SiPMs) mounted at one end of the bar.
+
+The wavelength shifter converts the scintillation photons striking the
+bar surface and directs them into the bar bulk with an efficiency of
+$\sim$50\%.  A fraction of the waveshifted optical photons are
+internally reflected to the bar's end where they are detected by SiPMs
+with quantum efficiency well matched to the wavelength-shifted
+photons. The light guides are made with a coating of TPB
+(1,1,4,4-tetraphenyl-1,3-butadiene). A testing program is currently
+underway to determine the absolute performance of the light-guides in
+in liquid argon.
+
+The SiPMs used in the reference design are SensL C-Series 6~mm$^2$
+(MicroFB-60035-SMT) devices. These SiPMs have detection efficiency of
+41\%~\footnote{The detector efficiency combines QE and effective areal
+  coverage due to dead space between pixels.} While the C-Series SensL
+SiPMs are not rated for operation below -40$^{\circ}{\rm C}$ their
+performance has been excellent for this application. At LAr
+temperature (88K) the dark rate is on order 50~Hz while after-pulsing
+has not been an issue. Extensive testing is underway to ensure that
+the SiPMs can reliably survive the stresses associated with thermal
+cycling in LAr and long term operation at LAr temperature.
+
+The SiPMs are read out using shielded twisted pair cable, one per SiPM
+but the expected final design will have 3 SiPMs ganged together and
+each readout cable with contain 4 individual channel cables to keep
+the cost and cable packing desity down.  
+
+The front-end electronics reside outside of the cryostat in
+instrumentation racks. A custom module for receiving SiPM signals has
+been designed and built. The module also performs signal processing in
+the front-end as preprocessing for trigger and DAQ.  The module is
+called the SiPM Signal Processor (SSP) and consists of 12 readout
+channels packaged in a self-contained 1U module.  Each channel
+contains a fully-differential voltage amplifier and a 14-bit, 150 MSPS
+analog-to-digital converter (ADC) that digitizes the waveforms
+received from the SiPMs. There is no shaping of the signal, since the
+SiPM response is slow enough relative to the speed of the digitization
+to obtain several digitized samples of the leading edge of the pulse
+for the determination of signal timing. Digitized data is processed by
+a Xilinx Artix-7 Field-Programmable Gate Array (FPGA).  The use of the
+FPGA processing allows for a significant amount of customization of
+the SSP operation. 
+
+\subsection{Alternative Designs} 
+
+
+
+\subsection{Technology Selection}
+
+\subsection{Production and Installation}
+
+
+These cables (120 of them in
+the original baseline design) are routed through the APA side tubes to
+a connector at the cold electronics readout end of the APA.  Initially
+it was decided that it would be too complicated to design the APA
+frames to allow PD module installation following APA wire-wrapping, so
+the PD modules were installed prior to this step in the installation
+process.  The Wavelength shifting elements in the light collectors of
+the PD modules are sensitive to heat, humidity and most critically to
+exposure to ambient light, which places significant requirements on
+the environment the APAs are assembled and stored in this way, but
+initially it was decided this was the best option.
+
+
+
 
 Here is a sample table:
+
 
 \begin{cdrtable}[short]{cc}{label}{long}  %The third argument (reads {cc}) can use c, l, r or p{some length} 
 % but please do not include lines like “|c|l|l|”. It CAN look like {cll} or {llp{3cm}}, for instance.
