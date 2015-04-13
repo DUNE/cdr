@@ -481,6 +481,39 @@ using a similar procedure to 3D track reconstruction.
 Finally, a neutrino event is formed by connecting together the 
 reconstructed tracks and showers at the interaction vertex.
 
+The PANDORA pattern recognition algorithms have been developed
+using simulated neutrino interactions in the energy range 100\,MeV\,$-$\,25\,GeV.
+Figure~\ref{fig:pandoraefficiency} shows the efficiency for reconstructing
+the leading final-state lepton in 5\,GeV $\nu_{e}$ CC and $\nu_{\mu}$ CC interactions,
+plotted as a function of momentum using the MicroBooNE detector geometry.
+In both samples, the reconstruction efficiency increases rapidly with momentum,
+rising above 90\% at 500\,MeV and reaching approxmately 100\% at 2\,GeV.
+Figure~\ref{fig:pandoravertexresolution} shows the spatial resolution for
+reconstructing the primary interaction vertex in 5\,GeV $\nu_{\mu}$ CC events,
+projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex 
+resolution is obtained by taking the 68\% quantile of 3D vertex residuals, 
+which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
+
+%%%% NOT SURE IF THE FOLLOWING WILL COMPILE...
+
+\begin{cdrfigure}[PANDORA reconstruction efficiency]{pandoraefficiency}
+{Reconstruction efficiency of Pandora pattern recognition algorithms
+ for the leading final-state lepton in 5\,GeV $\nu_{\mu}$ CC (left) and
+ $\nu_{e}$ CC (right) neutrino interactions, plotted as a function of
+ the lepton momentum. The reconstruction performance is evaluated
+ using the MicroBooNE detector geometry. }
+\includegraphics[width=0.49\textwidth]{pandora_uboone_efficiency_5GeV_numucc.pdf}
+\includegraphics[width=0.49\textwidth]{pandora_uboone_efficiency_5GeV_nuecc.pdf}
+\end{cdrfigure}
+
+\begin{cdrfigure}[PANDORA vertex resolution]{pandoravertexresolution}
+{Distribution of 2D residuals between reconstructed and simulated interaction
+ vertex for 5\,GeV $\nu_{\mu}$ CC interactions in the MicroBooNE detector.
+ The $x$ axis is oriented along the drift field, the $y$ axis runs parallel 
+ to the collection plane wires, and the $z$ axis points along the beam direction.}
+\includegraphics[width=\textwidth]{pandora_uboone_vertex_resolution.pdf}
+\end{cdrfigure}
+
 
 \subsubsection{Track Fitting}
 
