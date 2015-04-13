@@ -280,16 +280,38 @@ TBS
 \subsection{Far Detector Reconstruction}
 \label{sec:detectors-sc-physics-software-reconstruction-fd}
 
-The far detector's raw data must be processed into more useful forms
-in order for physics measurements to be carried out.  Hits, clusters,
-tracks, and showers must be formed from noisy ADC values, vertices
-found, and particles identified.  The momenta of the particles must be
-measured, and the efficiencies, resolutions, and misidentification
-probabilities need to be characterized precisely in order to meet the
-experimental requirements.  The following sections describe the
-current status of how these tasks are accomplished using the LArSoft
-framework.  A block diagram of the reconstruction chain is shown in
-Figure~\ref{fig:fdrecoblockdiag}.
+The reconstruction of particle interactions in Liquid Argon TPC
+detectors is an active area of research and development.
+A series of sophisticated reconstruction algorithms are required to
+address a broad range of complex event topologies, and to perform
+precise physics measurements that fully exploit the spatial and 
+calorimetric precision offered by Liquid Argon technology.
+Although the field is not yet mature, there has been considerable
+progress in recent years, including the first fully automated
+pattern recognition algorithms. 
+
+The LArSoft framework provides a complete chain of event reconstruction,
+as set out by the block diagram in Figure~\ref{fig:fdrecoblockdiag}.
+While each step of the reconstruction chain has been implemented,
+the algorithms have not yet been fully optimised.
+The first stage involves the processing of the noisy ADC wire signals,
+and creation of 2D `hits'. A series of pattern recognition algorithms
+are then used to group the hits into 2D and 3D clusters representing 
+individual particle tracks and showers. A set of high-level tools
+then reconstructs the vertex and 3D trajectory of each particle,
+provides particle identification, and reconstructs the four-momentum.
+The following sections describe the current status of each task.
+
+%The far detector's raw data must be processed into more useful forms
+%in order for physics measurements to be carried out.  Hits, clusters,
+%tracks, and showers must be formed from noisy ADC values, vertices
+%found, and particles identified.  The momenta of the particles must be
+%measured, and the efficiencies, resolutions, and misidentification
+%probabilities need to be characterized precisely in order to meet the
+%experimental requirements.  The following sections describe the
+%current status of how these tasks are accomplished using the LArSoft
+%framework.  A block diagram of the reconstruction chain is shown in
+%Figure~\ref{fig:fdrecoblockdiag}.
 
 \begin{cdrfigure}[Far detector reconstruction block diagram]{fdrecoblockdiag}
 {Block diagram showing the components of the far detector reconstruction chain}
@@ -388,17 +410,6 @@ disambiguated sample.  Figure~\ref{fig:disambig} shows the
 disambiguation performance for 6~GeV electrons and muons in the
 35.7$^\circ$ far detector geometry.
 
-\subsubsection{TPC Hit Clustering}
-
-% section taken from the LArSoft NIM article -- to rephrase
-
-After hit finding and disambiguation have completed, the hits in each plane are
-grouped togther in two-dimensional clusters, where the goal is to identify hits
-left by the interactions of individual particles with maximum efficiency and minimum overlap.
-``Fuzzy Cluster'' is a 2D clustering algorithm that proceeds in stages, making use of
-several algorithms developed outside of
-HEP.~\cite{flame}~\cite{ppht}~\cite{dbscan}. 
-
 \subsubsection{Optical Detector Signal Reconstruction}
 
 The optical detector signals are reconstructed in two steps.  First, a
@@ -422,7 +433,56 @@ association is clear, but if there are multiple overlapping tracks a
 likelihood-based method associates a TPC object with its best matching
 flash.
 
-\subsubsection{Track-Finding}
+\subsubsection{TPC Hit Clustering}
+
+%After hit finding and disambiguation have completed, the hits in each plane are
+%grouped togther in two-dimensional clusters, where the goal is to identify hits
+%left by the interactions of individual particles with maximum efficiency and minimum overlap.
+%``Fuzzy Cluster'' is a 2D clustering algorithm that proceeds in stages, making use of
+%several algorithms developed outside of
+%HEP.~\cite{flame}~\cite{ppht}~\cite{dbscan}. 
+
+After the hit-finding and disambiguation stages have completed, a series of 
+pattern recognition algorithms are applied to the 2D hits in order to identify 
+the tracks and showers produced by individual final-state particles in an event.
+In Liquid Argon TPC detectors, the pattern recognition stage must perform 
+two functions in order to reconstruct 3D particles from 2D hits:
+(a) identify the patterns of hits within each two-dimensional view
+that correspond to individual particles; (b) match up hits and trajectories
+between views in order to reconstruct particles as three-dimensional objects.
+The development of automated pattern recognition algorithms for Liquid Argon 
+TPC detectors is a relatively new field, but several 2D and 3D algorithms
+have been implemented in LArSoft, using a range of different techniques.
+For example, the ``Fuzzy Cluster'' package is a suite of algorithms that
+performs two-dimensional clustering of hits using several techniques developed 
+outside of HEP~\cite{flame}~\cite{ppht}~\cite{dbscan}.
+
+A promising suite of pattern recognition algorithms, that provides fully 
+automated reconstruction of 3D particle tracks and showers from 2D hits, 
+is the PANDORA software development kit [INSERT REFERENCE HERE].
+PANDORA implements a highly modular approach to pattern recognition,
+in which the final-state particles within an event are reconstructed using 
+a large chain of focused algorithms, each designed to identify and handle
+a specific event topology. The reconstruction chain begins with a 
+series of 2D pattern recognition algorithms that group together hits 
+into clusters based on their topology and spatial proximity.
+The next stage of the chain is 3D track reconstruction, 
+which uses a rank-three tensor to match up all possible combinations 
+of 2D clusters between the $U$, $V$, and $Z$views, and group together 
+the best-matched triplets or doublets of clusters. If necessary, 
+2D clusters are modified to improve the consistency of the 3D event. 
+Once the 3D track trajectories have been identified, 
+a series of vertex-finding algorithms are applied to the event,
+which reconstruct the neutrino interaction vertex by analysing 
+the 2D and 3D event topology. The remaining 2D clusters are then
+used to reconstruct electromagnetic and hadronic showers,
+first as extended 2D clusters, and then as 3D particles, 
+using a similar procedure to 3D track reconstruction.
+Finally, a neutrino event is formed by connecting together the 
+reconstructed tracks and showers at the interaction vertex.
+
+
+\subsubsection{Track Fitting}
 
 % section taken from the LArSoft NIM article -- to rephrase
 
@@ -430,7 +490,6 @@ The track reconstruction problem in a liquid argon TPC can be divided
 into several stages, including pattern recognition, identifying hits
 that belong to a track, trajectory reconstruction, and track parameter
 estimation.
-
 Hits are the input data for track reconstruction.  Hits represent a
 one-dimensional measurement of a track (the drift time) on a
 measurement surface defined by the charge drift direction and the
