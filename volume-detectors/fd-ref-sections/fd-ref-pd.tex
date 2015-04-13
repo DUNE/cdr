@@ -101,37 +101,55 @@ the SSP operation.
 
 \subsection{Alternative Designs} 
 
+Two alternative designs are currently being considered for the PD
+system. The first alternative design is based on a TPB-coated acrylic
+panel with an embedded S-shaped wavelength-shifting fiber. The LSU
+group has developed prototypes based on this design in an attempt to
+increase the geometric acceptance of the PD system and hence reduce
+overall system cost. 
 
+A single acrylic panel PD module has the same dimensions as the
+reference design and consists of a TPB coated acrylic panel with an
+embedded S-shaped wavelength shifting (Y11) fiber. The fiber is read
+out by two SiPMs, which are coupled to either end of the fiber and
+serves to transport the light over long distances with minimal
+attenuation. The double-ended fiber readout has the added benefit of
+providing some position dependence to the light generation along the
+panel by comparing relative signal sizes and arrival times in the two
+SiPMs. The WLS fiber converts the 430~nm light from the TPB to light
+with a peak intensity of about 480 - 500~nm which is well matched to
+the peak photon detection efficiency of typical SiPMs.
+
+A second alternative being explored by the CSU group utilizes
+blue-green (Y11) fibers that has not been treated with TPB. A thin TPB
+coated acrylic radiator located in front of a close packed array of
+WLS fibers. The motivation for this design was to address an issue
+with the reference design where the application of TPB to acrylic, or
+other base materials, causes a significant decrease in attenuation
+length (down to about 30~cm) of the light-guide. There is also a
+reduction in the number of SiPMs required per PD module. Three SiPMs
+are needed per PD module (again the same dimensions in length and
+width as the reference design). 
+
+The IU group has taken the radiator and fiber design to the next level
+by replacing the Y11 fiber with a reference design dimensioned cast
+bar doped (by Eljen Technology) with the same wavelegth shifter as the
+Y11 fiber. The TPB-coated acrylic radiator has also been replaced with
+a thin fused silica plate coated with TPB. This prototype has
+demonstrated an attenuation length greater than 2.5~m and early
+indications seem to indicate it could meet the SN neutrino energy
+requirement. It is the ``brightest'' prototpye tested so far. 
 
 \subsection{Technology Selection}
 
-\subsection{Production and Installation}
-
-
-These cables (120 of them in
-the original baseline design) are routed through the APA side tubes to
-a connector at the cold electronics readout end of the APA.  Initially
-it was decided that it would be too complicated to design the APA
-frames to allow PD module installation following APA wire-wrapping, so
-the PD modules were installed prior to this step in the installation
-process.  The Wavelength shifting elements in the light collectors of
-the PD modules are sensitive to heat, humidity and most critically to
-exposure to ambient light, which places significant requirements on
-the environment the APAs are assembled and stored in this way, but
-initially it was decided this was the best option.
-
-
-
-
-Here is a sample table:
-
-
-\begin{cdrtable}[short]{cc}{label}{long}  %The third argument (reads {cc}) can use c, l, r or p{some length} 
-% but please do not include lines like “|c|l|l|”. It CAN look like {cll} or {llp{3cm}}, for instance.
-Header Column1 & Header Column 2 \\ \toprowrule
-Row 1 & First \\ \colhline
-Row 2 & Second \\ \colhline
-Row 3 & Third \\
-\end{cdrtable}
-
-Here is a sample reference to a table Table~\ref{tab:label}).  Notice: ``tab:'' is not present in the label as written in the table code itself.
+The alternative designs have all demonstrated the ability to detect
+LAr scintillation light, and development work is continuing. In Fall
+2015 a decision will be made as to whether to proceed with the current
+reference design or move to one of the alternatives. A testing program
+is underway comparing the various alternatives against the baseline
+design. The Tallbo large dewar at FNAL and the cryogenic detector
+development facility at CSU are being used to compare the performance
+of full scale, and near full scale, prototypes in LAr utilizing alpha
+sources and cosmic muons. The DUNE technical board, or equivalent
+body, will review the designs using data from the comparison tests and
+recommend the design we will optimize for the first 10~kt LAr TPC.
