@@ -1,13 +1,55 @@
-\chapter{Rate Estimates}
+\chapter{Characterization of Data Rates and Volumes for specific sources of activity in DUNE Detectora}
 \label{ch:annex-rate}
 
 \section{The tables}
 
 \fixme{This table needs input from many people in DUNE.}
 
+The Liquid Argon TPC will produce a variety of signals due to various physics processes taking
+place in the detector, such as scattering of the beam neutrinos, cosmic ray muons,
+radiological backgrounds, electronics noise and others. For practical reasons, the signal
+processing systems will be incorporate threshold values which will determine which part of
+data is rejected and how the data stream needs to be treated at any given time (cf. search
+for Supernova Burst events or nucleon decay).
+
+Depending on the origin,
+these signals will be characterized by specific spectra, energy scale and topologies. In combination
+with the threshold settings and real-time algorithms this will result in different rates
+of occurrence and volume of data produced (either per nominal event or per unit time).
+
+It is important to account for this information for the following reasons:
+\begin{itemize}
+	\item An attempt must be made to understand, quantify and optimize
+systematic uncertainties for each class of measurements
+	\item There are considerable implications of real-time data processing
+	strategies and techniques of all of ``downstream'' data processing (e.g. offline),
+	and in particular to the required mass storage volume. This, in turn, will affect
+	the DUNE computing model and costs associated with the DUNE computing effort.
+\end{itemize}
+
+
+We recognize that not all the information exists at this point that is necessary for
+exhaustive characterization of the DUNE data. We will mark as such where appropriate.
+
+The following sources of signal are included and itemized here to facilitate reference in
+the rest of the text:
+\begin{itemize}
+	\item ``Full stream'' - effectively continuous stream of digitized voltages read out from the TPC,
+	not subject to thresholds. This can be likened to a video stream (although at a different scale).
+	\item ``ZS stream'' - the full stream subject to zero-suppression with a particular choice of threshold.
+	With threshold optimal for the oscillation physics with beam neutrinos, this results in an order of magnitude less data than in the full stream.
+	\item ``Beam'' - beam neutrino events
+	\item ``SNB'' - supernova burst
+	\item noise - signals due to various electronic-related noises
+	\item ``rad'' - radiological and cosmogenic backgrounds combined. By the latter we mean
+	radioactive decays and other signals caused by reaction of cosmic rays in the detector and
+	various materials surrounding it.
+	\item ``cosmic $\mu$ - cosmic muons passing through the detector experiencing normal energy loss
+\end{itemize}
+
 Table~\ref{tab:rate-summary} summarizes the understanding of the
-expected rates and annual data volumes for specific sources of activity
-in the detector independent of threshold (unless indicated).
+expected rates and annual data volumes for specific sources of activity in the detector
+listed above, independent of threshold (unless indicated).
 An entry in the table does not imply that this rate will be acquired.
 
 
@@ -19,15 +61,15 @@ An entry in the table does not imply that this rate will be acquired.
     \hline
     \hline
 % 1,536,000 ch * 2e6 Hz * 1e-3s * 12 bit / 8  = 9.2GB
-    full stream & 1/2ms & 3e7sec &  9.2GB & 138 EB ($10^{18}B$) \\
+    full stream & 1/2ms & $3*10^{7}$sec &  9.2GB & 138 EB ($10^{18}B$) \\
     \hline
     ZS stream &  \multicolumn{3}{c|}{10 \% of full stream} & 13.8 EB ($10^{18}B$) \\
     \hline
-    beam ($>$500 MeV)  & 10K/yr  & year  & 10MB & 100GB \\
+    beam ($>$500 MeV)  & $10^{3}$/yr.  & year  & 10MB & 100GB \\
     \hline
-    atm$\nu$& \multicolumn{3}{c|}{similar to beam}  & 100GB \\
+    $\nu_{atm}$& \multicolumn{3}{c|}{similar to beam}  & 100GB \\
     \hline
-    snb  & ZS stream & 60secs/year$\times$?? & 28 TB & 28 TB $\times$??? \\
+    SNB  & ZS stream & 60secs/year$\times$?? & 28 TB & 28 TB $\times$??? \\
     \hline
     noise            & ??? & ??? & ??? & ??? \\
     \hline
@@ -50,7 +92,7 @@ An entry in the table does not imply that this rate will be acquired.
   \label{tab:rate-summary}
 \end{table}
 
-Table~\ref{tab:rate-summary} summarizes the understanding of important
+Table~\ref{tab:physrates} summarizes the understanding of important
 energy thresholds needed to study a particular study topic (physics,
 calibration, selection efficiency).
 The minimum threshold is that at which any lower threshold has no
