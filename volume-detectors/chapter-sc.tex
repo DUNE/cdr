@@ -6,8 +6,9 @@
 
 \subsection{Raw Data Rates}
 \label{sec:detectors-sc-infrastructure-data-rates}
-\fixme{Under construction: to be completed before 4/13/2015}
-\fixme{SNB part of the discussion is explicitely ``left for later'' since it's a difficult subject and we may not have enough insight at this point.}
+\fixme{A special Annex document for data rates was updated on 4/13/2015. It covers most DUNE physics and background
+processes but the information is incomplete. Currently this S\&C section is being updated to include references to the Annex.}
+
 
 
 \subsubsection{Raw Data Streams}
@@ -24,7 +25,7 @@ to arrive and interact in the detector during the possible rare Supernova burst 
 To support SNB physics, a massive burst of noisy data will need to be processed ``on the fly'' using approaches and
 algorithms which are completely  different from those for the beam neutrino physics, which mostly relies on off-line processing.
 
-We are making this distinction here in order to define the scope of this section, which mostly deals with the data streams inherent in
+Distinctions such as this one are made here in order to define the scope of this section, which mostly deals with the data streams inherent in
 oscillation physics studies, characterized by better discrimination against backgrounds and reliance on detailed reconstruction of single
 neutrino events. Issues related to other classes of data are covered in DAQ and other sections, and interfaces between DAQ and the computing
 infrastructure at large are discussed where necessary.
@@ -32,19 +33,20 @@ infrastructure at large are discussed where necessary.
 \subsubsection{Assumptions}
 \label{sec:detectors-sc-infrastructure-assumptions}
 According to the present baseline design, the Far Detector (Liquid Argon TPC) in DUNE will consist of four identical modules of 10kt each.
-For purposes of this document we shall not address the issue of possible variations in the design and/or characteristics between
-these modules as there is no concrete information developed at this point to support this approach. A few basic assumptions:
+For purposes of this document the issue of possible variations in the design and/or characteristics between
+these modules shall not be addressed, as there is no concrete information developed at this point to support this approach. A few basic assumptions
+will need to be used:
 \begin{itemize}
-\item Estimates presented below corresponds to the ``full detector'', i.e. is effectively normalized to 40kt.
+\item Estimates presented below correspond to the ``full detector'', i.e. is effectively normalized to 40kt.
 \item Accelerator spill cycle is 1.2s
 \item Zero-Suppression thresholds will be set at levels corresponding to self-triggered data being read out every spill cycle.
 \item The intensity of the beam provided by LBNF will affect the data rates for a few detector systems in DUNE (cf. the Near Detector).
 It is assumed that the beam has the characteristics suggested by LBNF Project at the time of writing.
-\item We are making an assumption that the front-end systems of the TPC and the Photon Detector combined with the logic in DAQ
+\item It is assumed that the front-end systems of the TPC and the Photon Detector combined with the logic in DAQ
 will provide triggering capability for the beam neutrino physics.
 \end{itemize}
 \
-Where appropriate, we will round off decimal places in certain parameters.
+Certain parameters may be rounded off where appropriate.
 
 \subsubsection{DUNE Detector Subsystems}
 \begin{itemize}
@@ -52,7 +54,7 @@ Where appropriate, we will round off decimal places in certain parameters.
 \item Near Detector (ND) Straw Tracker (STT), Calorimeter(CAL), Muon Detector Resistive Plate Chambers (RPC)
 \end{itemize}
 
-In the following, we will itemize estimated data rates for these components and then present the combined estimate.
+In the following, estimated data rates for these components are itemized and then aggregated.
 There will be cases where no reliable estimates exist at the moment due to continued R\&D, and this will be clearly stated where necessary.
 
 \subsubsection{Far Detector LAr TPC}
@@ -81,7 +83,7 @@ This results in a total of 2.3GB worth of TPC data. Accorrding to current estima
 gives us a reduction factor of \textasciitilde 100 in the event size, resulting in a 23~MB ``digital picture'' of the TPC (discriminated against most background
 but still covering the complete volume of the TPC). Since neutrino interactions will result in a more local pattern of ionization signal being read out
 from the chamber, Monte Carlo studies done with realistic neutrino energy spectra give us further guidance of between 10 and 20MB per neutral current event.
-Following the threshold levels assumption in ~\ref{sec:detectors-sc-infrastructure-assumptions}, we arrive at the number of \textasciitilde 20MB/s for the data rate
+Following the threshold levels assumption in ~\ref{sec:detectors-sc-infrastructure-assumptions}, one arrives at the number of \textasciitilde 20MB/s for the data rate
 which only includes the beam neutrino type of events. This translates into \textasciitilde 0.6PB/year.
 
 %As discussed above, most of implications of the SNB signal and trigger are mostly relevant for the front-end and DAQ system, however it's worthwhile to
@@ -94,7 +96,7 @@ which only includes the beam neutrino type of events. This translates into \text
 Relevant  PD parameters:
 \begin{itemize}
 \item Readout channel count: 24,000 (i.e. four times 6,000 which is the channel count for each 10kt module)
-\item Trigger rate is uncertain at this point due to ongoing investigation, but in line with the approach used for the TPC we can assume 1 trigger per spill cycle
+\item Trigger rate is uncertain at this point due to ongoing investigation; one approach that exists assumes 1 trigger per spill cycle
 \item ADC resolution (bits): 12
 \end{itemize}
 \
@@ -111,7 +113,7 @@ Relevant parameters of the Fine-Grained Tracker (FGT):
 \item Average expected event rate per spill: \textasciitilde 1.5
 \end{itemize}
 \
-Based on these parameters, we estimate that the upper limit of the ND data rate will be 1.5MB/s. This translates into \textasciitilde 45TB/year. 
+Based on these parameters, the upper limit of the ND data rate can be estimated as 1.5MB/s. This translates into \textasciitilde 45TB/year. 
 
 \subsection{Processed Data}
 \label{sec:detectors-sc-infrastructure-processed-data}
@@ -119,7 +121,7 @@ For the purposes of this document, processed data is defined as most data which 
 of calibration and reconstruction) as well as data produced as a result of Monte Carlo studies.
 
 There are uncertainties in anticipated quantities of all of these types of data, but based on the estimated annual raw data volume of 0.6PB, and assuming that
-the data will undergo a few processing stages, we can expect the need to handle \textasciitilde 2PB of data annually for reconstruction and a lesser
+the data will undergo a few processing stages, one can expect the need to handle \textasciitilde 2PB of data annually for reconstruction and a lesser
 volume for final analysis purposes.
 
 For Monte Carlo, at the time of writing typical annual volume of data produced has been of the order of a few tens of terabytes. With Collaboration growing
@@ -130,17 +132,13 @@ and more detailed studies (e.g. of systematics) are undertaken, our expectation 
 
 \subsubsection{Distributed Computing}
 
-%Given the projected volume of raw and processed data in DUNE, the fact the Collaboration is large and widely dispersed geographically,
-%and considerable complexity of the software needed to process it, it may not be optimal to reply on resources located at any single
-%participating institution or research center. In general, we will take a fully distributed approach to computing, based on experience gained during the operation of the LHC %experiments.
-
-Given the fact the Collaboration is large and widely dispersed geographically, we will take a fully distributed approach to computing, based on experience
+Given the fact the Collaboration is large and widely dispersed geographically, a fully distributed approach to computing is recommended, based on experience
 gained during the operation of the LHC experiments. This will allow the DUNE Collaboration to better leverage resources and expertise from many of its
 member institutions and improve the overall long-term scalability of its computing platform.
 
 DUNE will operate a  distributed network of federated resources, for both CPU power and storage capability. This will allow for streamlined incorporation
 of computing facilities as they become available at member institutions, and thus is particularly amenable to accomodate staged construction and commissioning
-of the detector subsystems. We will reply on a modern Workload Management System deployed on top of Grid and Cloud resources to provide computing
+of the detector subsystems. A modern Workload Management System will be deployed on top of Grid and Cloud resources to provide computing
 power to DUNE researchers.
 
 \subsubsection{Raw Data Transmission and Storage Strategy}
@@ -168,11 +166,13 @@ and the detectors that are part of DUNE. This leads to three basic design elemen
 
 Data will be placed into mass storage at FNAL. Along the lines described above, additional copies (replicas) will be distributed to other
 computing centers possessing sufficient resources.
-A single additional copy does not necessarily need to reside in its entirety on a single data center; the replicas can be ``striped'' across a few data centers if that becomes optimal
-at the time of implementation of the Computing Model. We are considering both Brookhaven National Laboratory and NERSC as candidates for the placement of extra replicas.
+A single additional copy does not necessarily need to reside in its entirety on a single data center; the replicas can be ``striped'' across a few data centers if that
+becomes optimal at the time of implementation of the Computing Model. For example, consideration is given to both Brookhaven National Laboratory
+and NERSC as candidates for the placement of extra replicas.
 
-For data distribution, we will use a combination of managed data movement between sites (such as ``dataset subscription''), primarily for managed production, and a network of XRootD
-servers to cache processed data and for analysis. A file catalog and a Meta-Data system will be required for efficient data management at scale, and we will leverage experience of
+For data distribution, a combination of managed data movement between sites (such as ``dataset subscription'',
+primarily for managed production), and a network of XRootD servers to cache processed data and for analysis will be used.
+A file catalog and a Meta-Data system will be required for efficient data management at scale, and an effort will be made to leverage experience of
 member institutions in this area, making an effort to reuse existing systems or design ideas where possible.
 
 
