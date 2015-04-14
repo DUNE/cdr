@@ -181,6 +181,9 @@ member institutions in this area, making an effort to reuse existing systems or 
 \section{Physics Software}
 \label{sec:detectors-sc-physics-software}
 
+
+
+
 \subsection{Simulation}
 \label{sec:detectors-sc-physics-software-simulation}
 
@@ -193,34 +196,41 @@ member institutions in this area, making an effort to reuse existing systems or 
 \subsubsection{Far Detector Simulation}
 \label{sec:detectors-sc-physics-software-simulation-fd}
 
+\fixme{Where should we introduce ART, LArSoft, QSCAN etc.?}  
 
-In order to predict the performance of the far detector, and also to
-provide the needed signal and background predictions used to interpret
-the data, a detailed Monte Carlo simulation of the Far Detector is
-required.
+%
+%LArSoft~\cite{larsoft} is based upon the {\it art} framework, 
+%which is built on ROOT~\cite{root}. 
+%
+%LArSoft is supported by a team in Fermilab's Scientific Computing Division.  
+%
 
-The simulation of the interactions of particles with a liquid argon
-TPC detector is performed with custom GEANT4-based~\cite{geant4}
-programs built using tools from the LArSoft~\cite{larsoft}, which is
-based upon the {\it art} framework, which is built on 
-ROOT~\cite{root}.  LArSoft is supported by a team in Fermilab's
-Scientific Computing Division.  LArSoft enables experiments with
-similar detector technologies to share simulation and reconstruction
-software.  Confidence in the simulation capabilities is improved by
+An complete GEANT4-based~\cite{geant4} Monte Carlo simulation has been 
+developed for both the single-phase and dual-phase Far Detector designs.
+The simulation incorporates both the Liquid Argon TPC modules
+and the photon detection systems. The simulated data provide
+the basis for detailed studies of detector performance, 
+and enable the development of automated event reconstruction.
+%In order to predict the performance of the far detector, and also to
+%provide the needed signal and background predictions used to interpret
+%the data, a detailed Monte Carlo simulation of the Far Detector is
+%required.
+
+The single-phase detector simulation is implemented in LArSoft,
+which provides a common simulation framework for Liquid Argon TPC experiments.
+Confidence in the simulation capabilities is improved by
 the comparison of data from ArgoNeuT~\cite{argoneut} with LArSoft
 simulations.  Future data from LArIAT~\cite{lariat},
 MicroBooNE~\cite{microboone}, and the 35-ton prototype will allow
 further tuning of the LArSoft simulation as experience is gained.
+The dual-phase detector simulation is based on the QSCAN package,
+which has been developed over the past decade, and is currently
+being used to perform technical design and physics studies for
+the WA105 program.
 
-%%
-For the double phase liquid argon TPC technology based detectors, the 
-software package Qscan is used, 
-it benefits of a decade of developments in the $R\&D$ 
-preceding WA105 with many prototypes. 
-It fully simulates the ionization charge signal and it provides  reconstruction functionalities. 
-It has been recently integrated with a set of libraries for the simulation of the scintillation light production and detection.
-%%
-
+\fixme{Detailed descriptions of the single-phase and dual-phase simulations
+are given below. Needs to be much-reduced for five-page CDR section,
+with most details moved to annex. Need supporting figures for annex.}
 
 Events can be generated using the GENIE~\cite{genie} neutrino-nucleus
 simulation program, the CRY~\cite{cry} cosmic-ray generator, a
@@ -240,6 +250,7 @@ expected statistical anticorrelation between scintillation photons and
 drifting electrons, and which has been tuned to match available noble
 liquid detector data.
 
+\fixme{DETAILS OF SINGLE-PHASE SIMULATION ARE COLLECTED HERE...}
 
 The drifting electrons are propagated using dedicated code that
 numerically integrates over the diffusion probabilities, includes the
@@ -253,25 +264,6 @@ saved in memory and written to the simulation output file of where
 each parcel of charge on each wire originated, and what the GEANT
 particle ID was that generated that charge.
 
-%%%
-In a double phase liquid argon the TPC signal amplification 
-is based on the charge multiplication in argon vapour due to the Townsend effect, 
-i.e. drifting electrons gain enough energy in a strong electric field to further ionise argon atoms. 
-The readout system consists of an extraction grid, a Large Electron Multiplier (LEM) and two views anode.
-For such technology, additional processes contribute to the
-accumulation of space charge, hence to the actual electric field in the liquid active volume.
-In particular, in the charge multiplication process, there is a formation of positive argon ions, 
-that drift back towards the active volume. 
-A significant part is collected on the bottom electrode of the LEM and on the extraction grid. 
-The ions that enter into the liquid phase contribute to the positive charge distribution.
-The local value of the electric charge density and the three components of the electric field
-is computed using a three-dimensional Time-Dependent Finite Element Analysis calculation of the equilibrium 
-configuration of a physical system where the differential equations describing each charge production (e.g.: ionisation, amplification) and
-absorption (e.g.: ricombination, attachement) process are solved simultaneously. 
-A look-up table is then used in Qscan at simulation/reconstruction level in order to associate to a given point in the active
-detector volume the channels where the charge will be deposited on the readout plane as well as the drift time.
-%%
-
 Propagating photons are simulated using a lookup table that is filled
 with the probabilities for detecting a photon in a specific detector channel
 when it is emitted at a point in space, where the detector channels
@@ -279,11 +271,9 @@ and a binning of the point in space serve as indices to the lookup table.
 This table is filled using fully simulated photons propagated with GEANT4, including the effects
 of Rayleigh scattering, reflection, and absorption on the detector
 surfaces.  
-%%%
-Broadening of  photons arrival time (due due to multiple Rayleigh scatterings)
-is also parametrised and such information can be retrived at simulation time
+Broadening of  photons arrival time (due to multiple Rayleigh scatterings)
+is also parametrised and such information can be retrieved at simulation time
 to properly reproduce the features of time signal.
-%%%
 The detection probabilities for photons striking the
 sensitive materials of the photon detectors is separately
 parameterized.
@@ -304,7 +294,25 @@ edges in either space or time.  Zero suppression and Huffman coding of
 the data are applied as options.  The data are stored in ROOT files
 using the compression algorithms available in ROOT.
 
-%%%
+\fixme{DETAILS OF DUAL-PHASE SIMULATION ARE COLLECTED HERE...}
+
+In a double phase liquid argon the TPC signal amplification 
+is based on the charge multiplication in argon vapour due to the Townsend effect, 
+i.e. drifting electrons gain enough energy in a strong electric field to further ionise argon atoms. 
+The readout system consists of an extraction grid, a Large Electron Multiplier (LEM) and two views anode.
+For such technology, additional processes contribute to the
+accumulation of space charge, hence to the actual electric field in the liquid active volume.
+In particular, in the charge multiplication process, there is a formation of positive argon ions, 
+that drift back towards the active volume. 
+A significant part is collected on the bottom electrode of the LEM and on the extraction grid. 
+The ions that enter into the liquid phase contribute to the positive charge distribution.
+The local value of the electric charge density and the three components of the electric field
+is computed using a three-dimensional Time-Dependent Finite Element Analysis calculation of the equilibrium 
+configuration of a physical system where the differential equations describing each charge production (e.g.: ionisation, amplification) and
+absorption (e.g.: recombination, attachment) process are solved simultaneously. 
+A look-up table is then used in Qscan at simulation/reconstruction level in order to associate to a given point in the active
+detector volume the channels where the charge will be deposited on the readout plane as well as the drift time.
+
 Light readout system in the double phase liquid argon TPC consists of an array of cryogenic photomultipliers (PMT).
 The PMT components, both the reflecting surfaces and the sesitive elements., are simulated in GEANT4.
 Moreover, the PMT detector surface is coated with a layer of wavelength shifting (WLS) material which converts a
@@ -316,13 +324,12 @@ For each detected photon a voltage signal is simulated following the results of 
 measurements showing that a typical PMT response can be approximated with a log-normal distribution.
 Similarly, the charge integral of the produced signal is sampled from a distibution extracted form data obtained during calibration measurements
 performed on the specific PMT model.
-%%%
+
 For the complete treatment of the light production in a double phase TPC
 the secondary scintillation light must be taken into account as well.
 Secondary scintillation process refers to light produced in the gas phase of the detector when electrons, extracted form the liquid, are accelerated.
 Scintillation in argon gas is simulated through a parameterization to the existing measurements of secondary scintillation light yields.
 
-%%%
 Signal on the charge readout plane is simulated in Qscan through a waveform generation stage where the MC truth information
 is converted into a readout signal. 
 The finally recorded signal  is a convolution of the induced current and the response of the preamplifier.
@@ -334,7 +341,7 @@ as measured on small scale double phase liquid argon TPC setups.
 Noise of a given amplitude can be added on top of the signal waveforms.
 Besides the generation of white noise, it is also possible to use a specific frequency spectrum that has e.g. been extracted from real data. 
 The final step is the digitization of the generated waveforms.
-%%%
+
 
 %\subsection{Reconstruction}
 %\label{sec:detectors-sc-physics-software-reco}
@@ -359,16 +366,18 @@ Although the field is not yet mature, there has been considerable
 progress in recent years, including the first fully automated
 pattern recognition algorithms. 
 
-The LArSoft framework provides a complete chain of event reconstruction,
-as set out by the block diagram in Figure~\ref{fig:fdrecoblockdiag}.
-While each step of the reconstruction chain has been implemented,
-the algorithms have not yet been fully optimised.
+A fully automated event reconstruction will be developed for the
+DUNE Far Detector. The block diagram in Figure~\ref{fig:fdrecoblockdiag}
+illustrates the components of the Far reconstruction chain. 
 The first stage involves the processing of the noisy ADC wire signals,
 and creation of 2D `hits'. A series of pattern recognition algorithms
 are then used to group the hits into 2D and 3D clusters representing 
 individual particle tracks and showers. A set of high-level tools
 then reconstructs the vertex and 3D trajectory of each particle,
 provides particle identification, and reconstructs the four-momentum.
+While each step of the reconstruction chain has been implemented,
+the algorithms have not yet been fully optimised.
+\fixme{Not sure whether or not to mention LArSoft and Qscan explicitly here}
 The following sections describe the current status of each task.
 
 %The far detector's raw data must be processed into more useful forms
@@ -377,10 +386,7 @@ The following sections describe the current status of each task.
 %found, and particles identified.  The momenta of the particles must be
 %measured, and the efficiencies, resolutions, and misidentification
 %probabilities need to be characterized precisely in order to meet the
-%experimental requirements.  The following sections describe the
-%current status of how these tasks are accomplished using the LArSoft
-%framework.  A block diagram of the reconstruction chain is shown in
-%Figure~\ref{fig:fdrecoblockdiag}.
+%experimental requirements.  
 
 \begin{cdrfigure}[Far detector reconstruction block diagram]{fdrecoblockdiag}
 {Block diagram showing the components of the far detector reconstruction chain}
@@ -390,14 +396,22 @@ The following sections describe the current status of each task.
 
 \subsubsection{Signal Processing and Filtering}
 
-The TPC data are first uncompressed and put into local storage, one
-channel at a time.  In the case that the DAQ writes data records to persistent
-storage the correspond to inconveniently long time periods, the data may be split
-into smaller events at the readin stage.  At this stage, if an interaction is found
-to have taken place near the edge of the time corresponding to one record from the DAQ,
-the next one may be appended to make an offline event that corresponds more closely to
-what is required to analyze the interaction of interest.
+A series of signal processing algorithms have been developed to
+perform noise reduction and baseline subtraction on the digital
+waveforms read out by Liquid Argon TPC detectors. 
+These algorithms have been validated on data from 
+\fixme{say where...}.
 
+The TPC data are first uncompressed and put into local storage, one
+channel at a time.  
+%%%% MAYBE TOO MUCH DETAIL FOR CDR 
+%In the case that the DAQ writes data records to persistent
+%storage the correspond to inconveniently long time periods, the data may be split
+%into smaller events at the readin stage.  At this stage, if an interaction is found
+%to have taken place near the edge of the time corresponding to one record from the DAQ,
+%the next one may be appended to make an offline event that corresponds more closely to
+%what is required to analyze the interaction of interest.
+\fixme{Single-phase paragraph follows:}
 The detector response (bipolar vs. unipolar), and
 electronics response functions are deconvoluted using a Fast Fourier
 Transform (FFT) algorithm.  The FFT of the data are multiplied by the
@@ -414,11 +428,9 @@ blocks that exceed thresholds plus nearby neighbors in time so that
 the FFT only needs to see a fraction of the total ADC samples
 collected in each event.
 
-%%%
-Qscan provides a set of methods for signal processing which have been used to analyse
-liquid Argon TPC prototypes data both from  beam and cosmics runs. The implemented algorithms
-perform the following steps.
-The raw waveforms are processed: this involves noise reduction as well as the subtraction of the baseline.
+\fixme{Dual-phase paragraph follows - can it be merged with the single-phase material?}
+Qscan also provides a set of methods for signal processing. 
+The raw waveforms are first processed: this involves noise reduction as well as the subtraction of the baseline.
 Hits, defined as signals that are discriminated from the noise, are identified and reconstructed.
 In order to suppress noise without affecting the signal component too much, hence improving the signal to noise ratio, 
 two different algorithms are used: the Fast Fourier Transform (FFT) filter, and the coherent noise subtraction algorithm.
@@ -427,7 +439,7 @@ time domain.
 The coherent noise filter is implemented to remove identical noise patterns that are seen on larger sets of readout channels. 
 Unlike in the case of the FFT filter, which directly suppresses the frequencies of single channels and thus reducing the signal bandwidth, the coherent noise filter ideally subtracts only the noise while keeping the signals unchanged.
 After suppressing the noise, the (constant) pedestal of each waveform has to be computed and subtracted from each sample.
-%%%
+
 
 \subsubsection{TPC Hit Finding}
 
@@ -441,11 +453,11 @@ field.  Multiple particles may contribute charge to the same pulse,
 which is expected to be the case frequently in dense electromagnetic
 showers, but can also occur from different particles leaving charge on
 segments of the wire that are far apart, as the data from a wire do
-not tell where along the wire the charge was deposited, even though
-that information is preserved in Monte Carlo simulation files.  Due to
-the wrapping of the induction-plane wires, pulses can contain charge
+not tell where along the wire the charge was deposited.  
+Due to the wrapping of the induction-plane wires, pulses can contain charge
 from opposite sides of the APA, but not for collection-plane signals.
 
+\fixme{Single-phase paragraph follows:}
 Hits are reconstructed pulses on each TPC DAQ channel.  Regions of
 interest are identified in the stream of deconvoluted ADC samples, and
 sums of Gaussian functions are fitted to the data using
@@ -457,10 +469,8 @@ the entire region of interest, and then divided among the contributing
 hits proportional to their fit areas.  The efficiency of the hit
 finder is shown in Figure~\ref{fig:hitfinderefficiency}.
 
-%%%
-In Qscan the information that is attributed to a hit is the deposited charge $\Delta Q$, the three-dimensional 
-length $\Delta x$ of the track segment, the drift time, which is equivalent to the drift coordinate z, the readout view and the electrode strip number.
-Hits have to be extracted from the signal waveforms by means of a standard threshold discrimination. 
+\fixme{Dual-phase paragraph follows - can it be merged with the single-phase material?}
+In Qscan, hits have to be extracted from the signal waveforms by means of a standard threshold discrimination. 
 Due to changing noise conditions, the threshold is defined in relation to the measured RMS noise value, 
 which is measured for each event and readout strip, using the pre-trigger samples.
 In the general case there can be several close or overlapping tracks per event, producing a superposition of several signals/hits on a single readout strip. 
@@ -468,7 +478,7 @@ The shaping time constants of the preamplifiers are chosen such that double trac
 The hit finding algorithms therefore extract multiple hit information by fitting the vaweform function of the signal.
 The main parameters determined for the fitted hits are the hit time and the hit integral: 
 together with the location of the corresponding readout channel, the hit time directly provides the information of the hit location in the considered view (projection), whereas the hit integral is related to the produced ionization charge and therefore provides the calorimetric information.
-%%%
+
 
 \subsubsection{Disambiguation}
 
@@ -548,14 +558,14 @@ that correspond to individual particles; (b) match up hits and trajectories
 between views in order to reconstruct particles as three-dimensional objects.
 The development of automated pattern recognition algorithms for Liquid Argon 
 TPC detectors is a relatively new field, but several 2D and 3D algorithms
-have been implemented in LArSoft, using a range of different techniques.
+have been implemented, using a range of different techniques.
 For example, the ``Fuzzy Cluster'' package is a suite of algorithms that
 performs two-dimensional clustering of hits using several techniques developed 
 outside of HEP~\cite{flame}~\cite{ppht}~\cite{dbscan}.
 
 A promising suite of pattern recognition algorithms, that provides fully 
 automated reconstruction of 3D particle tracks and showers from 2D hits, 
-is the PANDORA software development kit [INSERT REFERENCE HERE].
+is the PANDORA software development kit \fixme{INSERT PANDORA REFERENCE HERE}.
 PANDORA implements a highly modular approach to pattern recognition,
 in which the final-state particles within an event are reconstructed using 
 a large chain of focused algorithms, each designed to identify and handle
@@ -590,7 +600,7 @@ projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex
 resolution is obtained by taking the 68\% quantile of 3D vertex residuals, 
 which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 
-%%%% NOT SURE IF THE FOLLOWING WILL COMPILE...
+\fixme{Make the vertex resolution figure narrower!}
 
 \begin{cdrfigure}[PANDORA reconstruction efficiency]{pandoraefficiency}
 {Reconstruction efficiency of Pandora pattern recognition algorithms
@@ -613,13 +623,11 @@ which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 
 \subsubsection{Track Fitting}
 
-% section taken from the LArSoft NIM article -- to rephrase
+%%%%% Section taken from the LArSoft NIM article -- to rephrase
 
-The track reconstruction problem in a liquid argon TPC can be divided
-into several stages, including pattern recognition, identifying hits
-that belong to a track, trajectory reconstruction, and track parameter
-estimation.
-Hits are the input data for track reconstruction.  Hits represent a
+The track reconstruction problem in a liquid argon TPC is divided
+into: trajectory reconstruction, and track parameter estimation.
+Hits are the input data for track reconstruction. Hits represent a
 one-dimensional measurement of a track (the drift time) on a
 measurement surface defined by the charge drift direction and the
 readout wire. Hits from multiple views may be combined into
@@ -635,7 +643,9 @@ measurements is much larger than the five parameters needed to specify
 a track on a surface.  The Kalman filter can be used for both pattern
 recognition and parameter estimation.
 
-% maybe a little too detailed for the CDR 
+\fixme{Can we say something about current status or performance?}
+
+%%%% MAYBE TOO MUCH DETAIL FOR CDR 
 
 %The measurement surfaces in liquid argon TPCs intersect, which
 %means there is no predetermined order in which the measurement
@@ -655,14 +665,14 @@ recognition and parameter estimation.
 %each measurement surface, the filter accepts either zero or one
 %hit. 
 
-If the Kalman filter assigns the wrong hit to a track, the track may follow
-the wrong road (e.g. a delta ray), or the track may otherwise end
-prematurely.  Fixing broken tracks relies on a track-stitching
-algorithm that runs after the initial Kalman filter reconstruction.
+%If the Kalman filter assigns the wrong hit to a track, the track may follow
+%the wrong road (e.g. a delta ray), or the track may otherwise end
+%prematurely.  Fixing broken tracks relies on a track-stitching
+%algorithm that runs after the initial Kalman filter reconstruction.
 
 \subsubsection{Shower Measurement}
 
-% section taken from the LArSoft NIM article -- to rephrase
+%%%%% Section taken from the LArSoft NIM article -- to rephrase
 
 The electromagnetic shower algorithms have two
 steps. The first is a post-clustering stage which examines the
@@ -676,9 +686,11 @@ These 3D parameters allow the calculation of the shower energies and charge
 depositions at the starts of the showers, which are used in particle
 identification. 
 
+\fixme{Can we say something about current status or performance?}
+
 \subsubsection{Calorimetry}
 
-% section taken from the LArSoft NIM article -- to rephrase
+%%%%% Section taken from the LArSoft NIM article -- to rephrase
 
 As charged particles traverse a volume liquid argon, they deposit
 energy through ionization and scintillation. It is important to
@@ -704,10 +716,11 @@ convert $dQ_{\rm{free}}/dx$ to $dE/dx$ based on the modified Box's model
 deposition from the track is obtained by summing the $dE/dx$ from each
 hit: $\sum\limits_{i}^{\rm{all\ hits}}(dE/dx)_{i}\cdot dx_{i}$.
 
+\fixme{Borrow performance plot from LBNE Science Opportunities document?}
 
 \subsubsection{Particle ID}
 
-% section taken from the LArSoft NIM article -- to rephrase
+%%%%% Section taken from the LArSoft NIM article -- to rephrase
 
 If the incident particle stops in the LArTPC active volume, the energy
 loss, $dE/dx$, as a function of the residual range ($R$), the path
@@ -723,6 +736,8 @@ which is defined to be the average of $A_{i} =
 (dE/dx)_{i}R_{i}^{0.42}$ over all track points where the residual
 range $R_{i}$ is less than 30 cm. The particle species can be
 determined by making a selection on the PIDA value.
+
+\fixme{Current results?}
 
 \subsubsection{Calibration}
 
