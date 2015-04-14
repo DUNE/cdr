@@ -25,10 +25,11 @@ to arrive and interact in the detector during the possible rare Supernova burst 
 To support SNB physics, a massive burst of noisy data will need to be processed ``on the fly'' using approaches and
 algorithms which are completely  different from those for the beam neutrino physics, which mostly relies on off-line processing.
 
-Distinctions such as this one are made here in order to define the scope of this section, which mostly deals with the data streams inherent in
-oscillation physics studies, characterized by better discrimination against backgrounds and reliance on detailed reconstruction of single
-neutrino events. Issues related to other classes of data are covered in DAQ and other sections, and interfaces between DAQ and the computing
-infrastructure at large are discussed where necessary.
+Distinctions such as this one are made here in order to define the scope of this section, which focuses on data streams present in
+oscillation physics studies, since these data will constitute the bulk of what's committed to mass storage, transmitted over networks,
+processed offline and in general have significant infrastructure and cost implications. Issues and parameters related to other classes of data are covered in
+the Annex to this document, titled ``Characterization of Data Rates and Volumes for specific sources of activity in DUNE Detectors'',
+and also in the DAQ and other sections.
 
 \subsubsection{Assumptions}
 \label{sec:detectors-sc-infrastructure-assumptions}
@@ -79,10 +80,11 @@ Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can 
 \item ADC resolution
 \end{itemize}
 \
-This results in a total of 2.3GB worth of TPC data. Accorrding to current estimates, with thresholds optimized for beam neutrino physics, zero suppression
-gives us a reduction factor of \textasciitilde 100 in the event size, resulting in a 23~MB ``digital picture'' of the TPC (discriminated against most background
-but still covering the complete volume of the TPC). Since neutrino interactions will result in a more local pattern of ionization signal being read out
-from the chamber, Monte Carlo studies done with realistic neutrino energy spectra give us further guidance of between 10 and 20MB per neutral current event.
+This results in a total of 9.2GB worth of TPC data. Accorrding to current estimates, with thresholds optimized for beam neutrino physics, zero suppression
+gives us a reduction factor of \textasciitilde 100 in the event size, resulting in a 92~MB ``digital picture'' of the beam neutrino event in the TPC
+(discriminated against most background but \textit{still covering the complete volume of the TPC}).
+Since neutrino interactions will result in a more local pattern of ionization signal being read out
+from the chamber, Monte Carlo studies done with realistic neutrino energy spectra suggest between 10 and 20MB per neutral current event.
 Following the threshold levels assumption in ~\ref{sec:detectors-sc-infrastructure-assumptions}, one arrives at the number of \textasciitilde 20MB/s for the data rate
 which only includes the beam neutrino type of events. This translates into \textasciitilde 0.6PB/year.
 
