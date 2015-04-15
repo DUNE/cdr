@@ -318,8 +318,16 @@ The PMT components, both the reflecting surfaces and the sesitive elements., are
 Moreover, the PMT detector surface is coated with a layer of wavelength shifting (WLS) material which converts a
 scintillation photon (optical UV photon) into a visible photon. The WLS behaviour if fully simulated in
 terms of absorption probability as well as emission spectrum.
-The dependency of the collection efficiency on the photon incident angle is alos taken into account on the base
+The dependency of the collection efficiency on the photon incident angle is also taken into account on the base
 of the existing measurements.  
+
+A look-up table is used to calculate the probability for a photon emitted in a
+given volume element to be detected by a specific PMT.
+Broadening of photons arrival time (due to multiple Rayleigh scatterings)
+is also parametrised and such information can be retrieved at simulation time
+to properly reproduce the features of time signal.
+
+
 For each detected photon a voltage signal is simulated following the results of dedicated 
 measurements showing that a typical PMT response can be approximated with a log-normal distribution.
 Similarly, the charge integral of the produced signal is sampled from a distibution extracted form data obtained during calibration measurements
