@@ -327,7 +327,6 @@ Broadening of photons arrival time (due to multiple Rayleigh scatterings)
 is also parametrised and such information can be retrieved at simulation time
 to properly reproduce the features of time signal.
 
-
 For each detected photon a voltage signal is simulated following the results of dedicated 
 measurements showing that a typical PMT response can be approximated with a log-normal distribution.
 Similarly, the charge integral of the produced signal is sampled from a distibution extracted form data obtained during calibration measurements
@@ -547,6 +546,8 @@ association is clear, but if there are multiple overlapping tracks a
 likelihood-based method associates a TPC object with its best matching
 flash.
 
+
+
 \subsubsection{TPC Hit Clustering}
 
 %After hit finding and disambiguation have completed, the hits in each plane are
@@ -607,6 +608,22 @@ reconstructing the primary interaction vertex in 5\,GeV $\nu_{\mu}$ CC events,
 projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex 
 resolution is obtained by taking the 68\% quantile of 3D vertex residuals, 
 which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
+
+
+\fixme{CLUSTERING/PANADORA FOR LBNO (TWO VIEWS), taken from LGUNA-LBNO deliverables51 }
+
+Algorithms specific for two views event reconstruction have been extensively developed as well. 
+A preliminary 2D clustering is carried on similarly to what described above.
+A first-pass hit clustering, using a nearest-neighbour algorithm and association algorithms is performed
+on each projetion. Then primary vertex is found based on presumed beam direction and cluster positions/directions
+(redundant information from all readout views is used to constrain the vertex location).
+Primary final-state particles (seed-clusters) are finally identified, based on cluster length and proximity to vertex,
+and each of the remanining non-seed cluster is associated with existing seed-clusters so that all energy deposits from a single final-state particle are grouped together.
+At the end of this process, clusters not directly related to the vertex (either by pointing or position) 
+will be associated with clusters coming from the vertex which are in close proximity, 
+as long as there is not another vertex-related cluster nearby. 
+Any remaining clusters far from the vertex will be removed, 
+since it is assumed that these are actually related to an original final state particle, but we have been unable to make the association.
 
 \fixme{Make the vertex resolution figure narrower!}
 
