@@ -27,11 +27,11 @@ for the DUNE far detector.
 
 To dramatically reduce the times when none of the parts of DUNE is
 collecting data (particularly important for supernova detection) and
-to allow the designs of the DAQ in the different 10kT sections to be
+to allow the designs of the DAQ in the different 10kt sections to be
 entirely different if desired, a less coupled design than has ever
 been used in data acquisition before is employed.  The
 synchronisation, triggering, data collection and run-state in the
-different 10kT sections are completely independent in real time and
+different 10kt sections are completely independent in real time and
 are only coupled by processes running asynchronously (in the same fashion
 of a batch queue) in the hour or so after data collection (see section
 4.11 of the LBNE-closeout document).  This allows one portion of the
@@ -44,13 +44,15 @@ most important events (deadtimeless detection of all those with energy
 deposition of 100\,MeV and above), while avoiding tricky communication
 to flag neighbouring channels to those that have large hits, a model
 in which the data are collected twice is used.  The first collection
-supplies a centralised software-based trigger farm continuously with zero-suppressed
-information.  The second pass reads the full data at the times and in
-the regions of interest that have been selected by the trigger. This
-is similar to the triggering in a collider experiment, but with only
-one level of triggering.  The software trigger farm also records the
-continuous stream of zero-suppressed hits in an archival ring buffer
-on disk to allow later analysis of supernova candidates.
+supplies a centralised software-based trigger farm continuously with
+zero-suppressed information (a threshold on each channel detects hits
+above the noise level, this causes a window of ADC samples which include the
+hit to be kept).  The second pass reads the full data at the times and
+in the regions of interest that have been selected by the
+trigger. This is similar to the triggering in a collider experiment,
+but with only one level of triggering.  The software trigger farm also
+records the continuous stream of zero-suppressed hits in an archival
+ring buffer on disk to allow later analysis of supernova candidates.
 
 \begin{cdrfigure}[DAQ subsystem block diagram]{fddaqblock}{Block diagram layout of the main
     components of the DAQ subsystem.}
@@ -238,19 +240,19 @@ cross-checks.
 
 \draw [pointline,->] (-7.8061,0.5) node [above,font=\footnotesize] {\rm 64MHz} -- (-7.8061,0.1);
 \draw [proline,|-|] (-7.8,1.7) -- node [above,font=\small] {\rm Form PD pulses} (-4,1.7);
-\draw [proline,|-|] (-4,1.3) -- node [below,font=\small] {\rm Form PD packets} (-3,1.3);
+\draw [proline,|-|] (-4,1.3) -- node [below,font=\small] {\rm Form PD packets} (-2.5,1.3);
 \draw [proline,|-|] (-3,1.7) -- node [above,font=\small] {\rm Ring buffer store} (2,1.7);
 
 \draw [driftline] (-6.3,5.4) -- node [above,font=\small] {\rm LArTPC drift time} (-2.3,5.4);
 
 \draw [pointline,->] (-6.3010,0.5) node [above,font=\footnotesize] {\rm 2MHz} -- (-6.3010,0.1);
 \draw [proline,|-,dotted] (-6.3010,4.4) -- (-5,4.4);
-\draw [proline,-|] (-5,4.4) -- node [above,pos=0.2,font=\small] {\rm ZS \& packetize} (-3,4.4);
+\draw [proline,-|] (-5,4.4) -- node [above,pos=0.2,font=\small] {\rm ZS \& packetize} (-2.5,4.4);
 \draw [proline,-|] (-5,3.7) -- node [below,pos=0.3,font=\small] {\rm Non-ZS ring buffer} (-0.6,3.7);
 \draw [proline,|-,dotted] (-6.3010,3.7) -- (-5,3.7);
 
-\draw [transline,<-] (-1.5,7.95) .. controls (-1.5,5.4) .. node [below,sloped,pos=0.35,font=\scriptsize] {} (-3,4.4);  
-\draw [transline,<-] (-1.5,7.95) .. controls (-1.5,2.3) .. node [below=-3pt,sloped,pos=0.18,font=\scriptsize] {\rm send to trigger} (-3,1.3);  
+\draw [transline,<-] (-1.5,7.95) .. controls (-1.5,5.4) .. node [below,sloped,pos=0.35,font=\scriptsize] {} (-2.5,4.4);  
+\draw [transline,<-] (-1.5,7.95) .. controls (-1.5,2.3) .. node [below=-3pt,sloped,pos=0.18,font=\scriptsize] {\rm send to trigger} (-2.5,1.3);  
 \draw [transline,->] (-2.5,7.4) node [anchor=east,align=right,font=\footnotesize] {{\rm Beam spill}\\{\rm time updated}}.. controls (-1.0,7.4) .. (-1.0,8.4);  
 \draw [proline,|-|] (-1.5,8.4) -- node [above,font=\small] {\rm Trigger} (-0.8,8.4);
 \draw [proline,|-|] (-1.5,8.1) -- node [below,font=\small] {\rm Offline archive of trigger hits} (7.4,8.1);
@@ -277,12 +279,34 @@ line.  This is long enough that in 99\% of the cases, a message will
 arrive from the Fermilab site to update the predicted time of a
 neutrino spill with the actual time in order that the detector can be
 triggered independently of any signals in the detector.  This
-operation has been used succesfully on MINOS for many years.  Prior to
-the trigger time and independently in each detector module, the
-detector readout assembles packets of data corresponding to fixed time
-intervals and sends them to the trigger event builders.
-\todo{DAQ1} Add text about the later part of the sequence, adjust text to
-  use the same terms as above and on diagram.
+operation has been used succesfully on MINOS for many years.  
+
+As shown on figure~\ref{fig:fddaqtime}, prior to the trigger time and
+independently in each detector module, the detector readout assembles
+packets of data corresponding to fixed time intervals and sends them
+to the trigger event builders.  Both the LArTPC readout and the SSP
+readout sends zero suppressed data, suitable for triggering to a set
+of event builder processes, which run in parallel, each accepting all
+the data from the entire 10kt module for a specific time interval and
+performing trigger algorithms on them.  All time intervals are
+processed so that the trigger has no dead time.  The LArTPC and SSP
+data also store data in ring buffers to await collection after an
+affirmative trigger decision --- in the case of the LArTPC, this data
+is non-zero suppressed.  The data are built into events in a `10kt-module
+file' which is written to disk.  About an hour later, an offline process merges
+the data from the separate 10kt module files and archives them at the host lab.
+
+To maximize data collection for a supernova the continuous
+zero-suppressed trigger data is kept in a large buffer area on disk.
+Ways to collect data which is cropped more gently than the zero
+suppressed data stream during the extended period of a supernova are
+under study: The non-zero suppressed ring buffers on the RCEs are
+sufficient for 0.4s of buffering and the trigger farm can manage its optimal
+usage during a supernova. Two possible extensions
+are (a) to extend the memory in the aTCA crate to buffer longer with
+local disk drives (b) use the powerful intercommunications between
+RCEs to cause neighbouring channels to be kept around the time of a
+potential supernova event candidate. 
 
 \todo{DAQ2} Add table of rates and describe it.
 
