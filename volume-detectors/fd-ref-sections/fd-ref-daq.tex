@@ -46,8 +46,9 @@ to flag neighbouring channels to those that have large hits, a model
 in which the data are collected twice is used.  The first collection
 supplies a centralised software-based trigger farm continuously with
 zero-suppressed information (a threshold on each channel detects hits
-above the noise level, this causes a window of ADC samples which include the
-hit to be kept).  The second pass reads the full data at the times and
+above the noise level, this causes the ADC samples to be kept in a
+time-window around the hit).  
+The second pass reads the full data at the times and
 in the regions of interest that have been selected by the
 trigger. This is similar to the triggering in a collider experiment,
 but with only one level of triggering.  The software trigger farm also
