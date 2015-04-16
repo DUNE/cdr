@@ -31,6 +31,7 @@
 \RequirePackage{graphicx}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{lmodern}
+\RequirePackage{rotating}
 
 % Smart end-of-macro spacing
 \RequirePackage{xspace}

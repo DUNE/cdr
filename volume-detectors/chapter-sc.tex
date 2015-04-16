@@ -205,16 +205,12 @@ member institutions in this area, making an effort to reuse existing systems or 
 %LArSoft is supported by a team in Fermilab's Scientific Computing Division.  
 %
 
-An complete GEANT4-based~\cite{geant4} Monte Carlo simulation has been 
-developed for both the single-phase and dual-phase Far Detector designs.
-The simulation incorporates both the Liquid Argon TPC modules
+Complete GEANT4-based~\cite{geant4} Monte Carlo simulations have been 
+developed for both the single-phase and dual-phase Far Detector designs,
+incorporating both the Liquid Argon TPC modules
 and the photon detection systems. The simulated data provide
 the basis for detailed studies of detector performance, 
 and enable the development of automated event reconstruction.
-%In order to predict the performance of the far detector, and also to
-%provide the needed signal and background predictions used to interpret
-%the data, a detailed Monte Carlo simulation of the Far Detector is
-%required.
 
 The single-phase detector simulation is implemented in LArSoft,
 which provides a common simulation framework for Liquid Argon TPC experiments.
@@ -232,7 +228,7 @@ the WA105 program.
 are given below. Needs to be much-reduced for five-page CDR section,
 with most details moved to annex. Need supporting figures for annex.}
 
-Events can be generated using the GENIE~\cite{genie} neutrino-nucleus
+Events are generated using the GENIE~\cite{genie} neutrino-nucleus
 simulation program, the CRY~\cite{cry} cosmic-ray generator, a
 radiological decay simulator, a particle gun, or one of several
 text-file-based particle input sources.  The interactions of particles
@@ -296,9 +292,9 @@ using the compression algorithms available in ROOT.
 
 \fixme{DETAILS OF DUAL-PHASE SIMULATION ARE COLLECTED HERE...}
 
-In a double phase liquid argon the TPC signal amplification 
-is based on the charge multiplication in argon vapour due to the Townsend effect, 
-i.e. drifting electrons gain enough energy in a strong electric field to further ionise argon atoms. 
+In a dual-phase liquid argon detector, the TPC signal amplification 
+is based on the charge multiplication in argon vapor due to the Townsend effect, 
+i.e. drifting electrons gain enough energy in a strong electric field to further ionize argon atoms. 
 The readout system consists of an extraction grid, a Large Electron Multiplier (LEM) and two views anode.
 For such technology, additional processes contribute to the
 accumulation of space charge, hence to the actual electric field in the liquid active volume.
@@ -307,21 +303,21 @@ that drift back towards the active volume.
 A significant part is collected on the bottom electrode of the LEM and on the extraction grid. 
 The ions that enter into the liquid phase contribute to the positive charge distribution.
 The local value of the electric charge density and the three components of the electric field
-is computed using a three-dimensional Time-Dependent Finite Element Analysis calculation of the equilibrium 
+are computed using a three-dimensional time-dependent finite element analysis calculation of the equilibrium 
 configuration of a physical system where the differential equations describing each charge production (e.g.: ionisation, amplification) and
 absorption (e.g.: recombination, attachment) process are solved simultaneously. 
-A look-up table is then used in Qscan at simulation/reconstruction level in order to associate to a given point in the active
+A lookup table is then used in Qscan at simulation/reconstruction level in order to associate to a given point in the active
 detector volume the channels where the charge will be deposited on the readout plane as well as the drift time.
 
-Light readout system in the double phase liquid argon TPC consists of an array of cryogenic photomultipliers (PMT).
+Light readout system in the dual-phase liquid argon TPC consists of an array of cryogenic photomultipliers (PMT).
 The PMT components, both the reflecting surfaces and the sesitive elements., are simulated in GEANT4.
 Moreover, the PMT detector surface is coated with a layer of wavelength shifting (WLS) material which converts a
 scintillation photon (optical UV photon) into a visible photon. The WLS behaviour if fully simulated in
 terms of absorption probability as well as emission spectrum.
-The dependency of the collection efficiency on the photon incident angle is also taken into account on the base
+The dependence of the collection efficiency on the photon incident angle is also taken into account on the base
 of the existing measurements.  
 
-A look-up table is used to calculate the probability for a photon emitted in a
+A lookup table is used to calculate the probability for a photon emitted in a
 given volume element to be detected by a specific PMT.
 Broadening of photons arrival time (due to multiple Rayleigh scatterings)
 is also parametrised and such information can be retrieved at simulation time
@@ -332,7 +328,7 @@ measurements showing that a typical PMT response can be approximated with a log-
 Similarly, the charge integral of the produced signal is sampled from a distibution extracted form data obtained during calibration measurements
 performed on the specific PMT model.
 
-For the complete treatment of the light production in a double phase TPC
+For the complete treatment of the light production in a dual-phase TPC
 the secondary scintillation light must be taken into account as well.
 Secondary scintillation process refers to light produced in the gas phase of the detector when electrons, extracted form the liquid, are accelerated.
 Scintillation in argon gas is simulated through a parameterization to the existing measurements of secondary scintillation light yields.
@@ -444,7 +440,8 @@ two different algorithms are used: the Fast Fourier Transform (FFT) filter, and 
 A smooth cut-off, implemented with a Fermi potential, efficiently suppresses the noise without introducing artefact in the
 time domain.
 The coherent noise filter is implemented to remove identical noise patterns that are seen on larger sets of readout channels. 
-Unlike in the case of the FFT filter, which directly suppresses the frequencies of single channels and thus reducing the signal bandwidth, the coherent noise filter ideally subtracts only the noise while keeping the signals unchanged.
+Unlike in the case of the FFT filter, which directly suppresses the frequencies of single 
+channels and thus reducing the signal bandwidth, the coherent noise filter ideally subtracts only the noise while keeping the signals unchanged.
 After suppressing the noise, the (constant) pedestal of each waveform has to be computed and subtracted from each sample.
 
 
@@ -737,11 +734,11 @@ energy and species. The algorithm for reconstructing the ionization
 energy in LArSoft is optimized for line-like tracks and is being
 extended to showers. 
 For each hit on a reconstructed track, the hit area or amplitude, in ADC counts, is
-converted to the charge $Q_{det}$, in fC units, on the wire using an
+converted to the charge $Q_{\rm{det}}$, in fC units, on the wire using an
 ADC to fC conversion factor that is determined by muons or test-stand
 measurements. To account for the charge loss along the drift due to
-impurities, a first correction is applied to $Q_{det}$ to get the free
-charge after recombination $Q_{free} = Q_{det}/e^{-t/\tau_{e}}$, where
+impurities, a first correction is applied to $Q_{\rm{det}}$ to get the free
+charge after recombination $Q_{\rm{free}} = Q_{\rm{det}}/e^{-t/\tau_{e}}$, where
 $t$ is the electron drift time for the hit and $\tau_{e}$ is the
 electron lifetime measured by the muons or purity monitors. The charge
 $Q_{\rm{free}}$ is divided by the track pitch $dx$, which is defined as the
@@ -787,8 +784,10 @@ determined by making a selection on the PIDA value.
 
 
 \fixme{LBNO}
-In Qscan a multivariate analysis was used to separate particle types based on the spatial characteristics of their clusters.
-First step performs a principal components analysis (PCA), transforming the axes to lie along the cluster direction and perpendicular to it. Several quantities are then calculated to characterise the cluster: the lateral spread, the mean charge-weighted inverse distance of hits to the primary cluster axis
+In Qscan, a multivariate analysis was used to separate particle types based on the spatial characteristics of their clusters.
+First step performs a principal components analysis (PCA), transforming the axes to lie along the 
+cluster direction and perpendicular to it. Several quantities are then calculated to 
+characterize the cluster: the lateral spread, the mean charge-weighted inverse distance of hits to the primary cluster axis
 (this is expected to distinguish effectively between showers and tracks), the $dE/dx$.
 These variables are then fed into Boosted Decision Trees analyses, 
 each calculating the signal and background likelihoods for a particular particle hypothesis
@@ -799,7 +798,8 @@ If a single lepton flavour is identified in the event, then the event is conside
 If neither or both lepton flavours are identified, the event is discarded.
 Numbers of events correctly reconstructed is above 90$\%$ for $\nu_{\mu}$-CCQE events.
 %For accepted events, the neutrino energy is estimated  assuming a CCQE event and using the two-body approximation, and also calorimetrically.
-%The calorimetric reconstruction takes account of the quenching factors for the different particles by assuming that all hits not associated with the lepton cluster are due to hadronic act%ivity.
+%The calorimetric reconstruction takes account of the quenching factors for the different particles by 
+assuming that all hits not associated with the lepton cluster are due to hadronic act%ivity.
 %It is seen that for high-energy muons, the measured energy saturates. This is due to the muon escaping the detector volume. 
 
 \fixme{Current results?}

@@ -482,6 +482,27 @@ NSI, include reference NSI plot in science document.  Sterile neutrinos.  No plo
 
 \section{Neutrino Beam Requirements}
 \label{sec:physics-lbnosc-beam-req}
+The LBNF neutrino facility, located at Fermilab, utilizes a conventional horn-focused neutrino beam produced 
+from pion decay-in-flight. It will aim the beam of neutrinos toward
+the DUNE far detector located 1,300 km away at the Sanford Underground
+Research Facility. The neutrino facility must be designed for $\ge 20$
+years of operation in order to provide the DUNE experiment with a
+large sample of neutrino interaction. During its lifetime, the
+facility must be able to accomodate various target and focusing
+configurations that enable tunability in the neutrino energy spectrum,
+and must be suitable for upgraded targets and horns as technology
+improves and the primary proton beam power will increase. Such
+flexibility is an essential requirement for a facility that will have
+to operate over multiple decades. The energy range of the neutrino
+beam must be adaptable, in order to address new questions in neutrino physics that may come up during such a long period.
+The LBNF facility:
+\begin{enumerate} 
+\item shall generate a high intensity, wide-band neutrino beam, selectable for muon neutrinos or muon antineutrinos, and with low contamination of the wrong-sign component.
+\item the neutrino beam shall fully cover the energy range of the first oscillation node at $\sim 2.4$ GeV for a distance of 1,300 km, thus extending in energy from $\sim 5$ down to $\sim 1$ GeV. It shall also provide a neutrino flux as high as reasonably achievable around the second oscillation node at $\sim 0.8$ GeV, possibly requiring a dedicated focusing system configuration. Such energy range, extending from 0.5 to 5 GeV, is necessary to provide the maximum sensitivity for CP violation searches and the determination of the ordering of the neutrino masses. Focusing configurations providing neutrino energies higher than 5 GeV may still be required for a full exploration of the three-neutrino paradigm and to address anomalies that may arise during a time period of at least two decades. 
+\item shall operate with $\geq 2$ MW primary proton beam at 120 GeV/c extracted from the Main Injector. It must be able to accept lower primary proton momenta down to 60 GeV/c, since this will provide some optimization in the tuning of the energy range of the neutrinos. More importantly, the capability to lower the energy of the protons is an effective way to reduce the wrong-sign component in the neutrino flux. A reduction of up to $\sim 15 \%$ in beam power is expected as the momentum of the primary protons decreases to 60 GeV/c, since the Main Injector cycle time does not scale linearly with the energy of the accelerated protons.
+\item shall be built to provide a realistic estimation and whenever possible a reduction of the systematic errors on the knowledge of the neutrino flux, e. g. by adequate requirements on the alignment tolerances of the beamline components. Dedicated hadroproduction measurements from 60-120 GeV/c protons will be needed to reduce the uncertainty on the neutrino flux components, both from pion and kaon decays. 
+\item shall be built to ensure the stability of the produced neutrino flux by minimizing the variations in targeting angle and position of the primary proton beam, short and long term displacement of the components of the focusing system, and variations in the current pulse to the horns.
+\end{enumerate}
 
 \subsection{Reference Design Focusing System}
 \label{subsec:reference-design-focusing-system}
@@ -525,8 +546,10 @@ energy spectra, as demonstrated in Figure~\ref{fig:beam_req_lemehe}.
       better drawing}}
   \includegraphics[width=0.75\textwidth]{horn1}
 \end{cdrfigure}
-There are several potential modifications to the reference beam design would improve the
-the experiment's sensitity to the CP violating phase and mass hierarchy.  
+
+There are also several potential modifications to the reference beam
+design that would improve the
+the experiment's sensitivity to the CP violating phase and mass hierarchy.  
 The option offering the largest gains in sensitivity is a redesign of 
 focusing system, including target, horns and target chase.  To identify optimal
 designs, a genetic algorithm was been implemented to search
@@ -537,46 +560,47 @@ parameters governing the primary proton energy, target dimensions, and
 horn current, positions and shapes.   The optimization parameters,
 their allowed ranges and the parameters chosen by the genetic
 algorithm, are shown in Table~\ref{tab:beam_req_opt_parameters}.
-\begin{cdrtable}[Parameters of focusing system optimization]{ccc}{beam_req_opt_parameters}
-{Parameters considered in focusing system optimization.  The first 
-  12 govern the shape of Horn 1 (see 
-  Figure~\ref{fig:beam_req_opthorn}).  The second focusing horn was 
-  constrained to be similar to the NuMI design, modified by radial and 
-  longitudinal scale factors and a radial offset.  The target design 
-  was also fixed to the NuMI design, with a variable length and 
-  width.} 
-Parameter &  Allowed Range & Preferred Value \\ \toprowrule  
-Horn 1 $r_1$ & 20 - 50 & 38 mm \\  
-Horn 1 $r_2$ & 35 - 200 & 162 mm \\  
-Horn 1 $r_3$ & 20 - 75 & 54 mm\\    
-Horn 1 $r_4$ & 20 - 200 & 167 mm\\  
-Horn 1 $r_{OC}$ & 200 - 800 & 670 mm\\  
-Horn 1 $l_{1}$ & 800 - 2500 & 1811 mm\\  
-Horn 1 $l_{2}$ & 50 - 1000 & 796 mm\\  
-Horn 1 $l_{3}$ & 50 - 1000 & 594 mm\\  
-Horn 1 $l_{4}$ & 50 - 1000 & 676 mm\\  
-Horn 1 $l_{5}$ & 50 - 1000 & 140 mm\\  
-Horn 1 $l_{6}$ & 50 - 1000 & 525 mm\\  
-Horn 1 $l_{7}$ & 50 - 1000 & 997 mm\\ 
-\colhline   
-Horn 2 Longitudinal Scale & 0.5 - 2 & 1.32\\   
-Horn 2 Radial Scale & 0.5 - 2 & 1.78\\    
-Horn 2 Radial Offset & -78 - 100 & 7.6 mm \\ 
-Horn 2 Longitudinal Position & 3000 - 15000 & 14400 mm \\
-\colhline  
-Target Length & 500 - 2500 & 2370 mm \\ 
-Target Width & 9 - 15 & 9.74 mm \\
-\colhline  
-Proton Energy & 40 - 130 & 66 GeV \\ 
-Horn Current & 150 - 300 & 297 kA \\
-\end{cdrtable} 
-There are several modifications to the reference focusing system that  
+%\begin{cdrtable}[Parameters of focusing system optimization]{ccc}{beam_req_opt_parameters}
+%{Parameters considered in focusing system optimization.  The first 
+ % 12 govern the shape of Horn 1 (see 
+ % Figure~\ref{fig:beam_req_opthorn}).  The second focusing horn was 
+ % constrained to be similar to the NuMI design, modified by radial and 
+  %longitudinal scale factors and a radial offset.  The target design 
+ % was also fixed to the NuMI design, with a variable length and 
+ % width.} 
+%Parameter &  Allowed Range & Preferred Value \\ \toprowrule  
+%Horn 1 $r_1$ & 20 - 50 & 38 mm \\  
+%Horn 1 $r_2$ & 35 - 200 & 162 mm \\  
+%Horn 1 $r_3$ & 20 - 75 & 54 mm\\    
+%Horn 1 $r_4$ & 20 - 200 & 167 mm\\  
+%Horn 1 $r_{OC}$ & 200 - 800 & 670 mm\\  
+%Horn 1 $l_{1}$ & 800 - 2500 & 1811 mm\\  
+%Horn 1 $l_{2}$ & 50 - 1000 & 796 mm\\  
+%Horn 1 $l_{3}$ & 50 - 1000 & 594 mm\\  
+%Horn 1 $l_{4}$ & 50 - 1000 & 676 mm\\  
+%Horn 1 $l_{5}$ & 50 - 1000 & 140 mm\\  
+%Horn 1 $l_{6}$ & 50 - 1000 & 525 mm\\  
+%Horn 1 $l_{7}$ & 50 - 1000 & 997 mm\\ 
+%\colhline   
+%Horn 2 Longitudinal Scale & 0.5 - 2 & 1.32\\   
+%Horn 2 Radial Scale & 0.5 - 2 & 1.78\\    
+%Horn 2 Radial Offset & -78 - 100 & 7.6 mm \\ 
+%Horn 2 Longitudinal Position & 3000 - 15000 & 14400 mm \\
+%\colhline  
+%Target Length & 500 - 2500 & 2370 mm \\ 
+%Target Width & 9 - 15 & 9.74 mm \\
+%\colhline  
+%Proton Energy & 40 - 130 & 66 GeV \\ 
+%Horn Current & 150 - 300 & 297 kA \\
+%\end{cdrtable} 
+
+There are also several smaller modifications to the reference design that  
 would increase sensitivity, albeit not as significantly as complete  
-redesign.  Lengthening the decay pipe, increasing the current in the  
-horns, decreasing the primary proton energy and using a cylindrical  
-Beryllium target all improve the neutrino flux in the region of
-interest to $\delta_{CP}$ and the mass hierarchy measurements.  A
-summary of the flux improvements are described in
+redesign.  These include lengthening the decay pipe, increasing the current in the  
+horns, decreasing the primary proton energy and using a shorter, cylindrical  
+Beryllium target.  A
+summary of the flux improvements associated with these modifications
+is available in
 Table~\ref{tab:beam_req_reference_options}.
 \begin{cdrtable}[Optional flux improvements]{ccc}{beam_req_reference_options}
 {Changes in muon neutrino flux (integrated over two energy regions) with several possible upgrades to the
@@ -596,7 +620,7 @@ version of the reference design.  The optimized focusing system substantially
 increases flux in the 0.5-4 GeV region while decreasing wrong sign
 contamination.  Assuming an exposure of 150 MW-yr-kton, the net increase in 75\% $\delta_{CP}$ coverage over the reference
 design is 27\% ({\bf{to be updated with the latest estimates}}).  Although a mass hierarchy measurement was not
-explitly optimized here, the optimized beam improves the minimum
+explicitly optimized here, the optimized beam improves the minimum
 sensitivity to the mass hierarchy by 38\% ({\bf likewise}).   It is
 important to note that the optimized beam configuration includes a
 second focusing horn that is 32\% longer and 9.8 meters further
