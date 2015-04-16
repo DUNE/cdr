@@ -2,9 +2,6 @@
 \section{Beam Line Measurements} 
 \label{sec:detectors-nd-ref-blm}
 
-\subsection{Introduction}
-\label{subsec:detectors-nd-blm-intro}
-
 This chapter outlines the DUNE strategy for measurements of secondary
 beam particles in the region behind the beam absorber. 
 Those measurements are designed to provide constraints 
@@ -21,7 +18,6 @@ detect muons exiting the decay tunnel.
 \subsection{Design Considerations}
 \label{subsec:detectors-nd-blm-design}
 
-\subsubsection{General}
 The requirements for the beamline measurements, 
 as discussed in the NDC requirements documentation~\cite{nd_requirements_doc}, \fixme{old LBNE reference}
 are intimately related to how well the neutrino flux must be known. 
@@ -38,9 +34,9 @@ In addition to the external measurements, covered in Section~\ref{sec:detectors-
 that confirm the simulation of the thick target, horn material, decay tunnel and
 absorber, it is desirable to constrain the flux by making independent
 measurements at the 4--5\% level of the muons that penetrate the absorber. It would not be practical to do this for all penetrating muons, but sufficient measurements at a few positions can be done in a  cost-effective way. 
-
-\subsubsection{Muon Measurements}
-\label{subsubsec:detectors-nd-blm-muon-meas}
+%
+%\subsubsection{Muon Measurements}
+%\label{subsubsec:detectors-nd-blm-muon-meas}
 
 The primary physics goal of DUNE is to measure the transmutation
 of $\nu_\mu$s to $\nu_e$s over the 1300km between Fermilab
@@ -131,25 +127,19 @@ thresholds if possible.
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Muon Cherenkov Detectors} % (WBS 130.03.03.04)}
+\subsection{Muon Cherenkov Detector Reference Design} % (WBS 130.03.03.04)}
 \label{sec:nd-blm-muon-cherenkov}
-
-\subsubsection{Introduction}
 
 A Cherenkov variable-pressure, gas Cherenkov counter, operated in differential mode
 will be deployed downstream of the absorber.  The counter will be mounted on a movable 
 stand that will allow the system to scan in a plane transverse to the beam axis. 
-The Cherenkov counter deployed by DUNE will not image individual Cherenkov rings, but rather will see the
-integrated signal from many muons due to the very large instantaneous flux. 
+The Cherenkov counter deployed by DUNE will not image individual Cherenkov rings, but rather will see the integrated signal from many muons due to the very large instantaneous flux. 
 In addition, by varying the radiator gas pressure, and hence the 
 Cherenkov threshold, the system's index of refraction will vary, 
 allowing it to map out the muon momentum distribution.
 A detector that takes advantage of the directional nature of Cherenkov
 light will have less background contributions from electrons and other isotropic 
 background particles such as neutrons, than will an ionization system, for example. 
-
-
-\subsubsection{Reference Design}
 
 The simple Cherenkov counter design
 employs a gas radiator contained in a pressurized tube. The very forward
@@ -177,9 +167,6 @@ reflected via one flat mirror 45 degrees) to a PMT located outside of the muon
 radiation field.}
 \includegraphics[width=4in,angle=0]{CherenkovCounterDetail}
 \end{cdrfigure}
-
-\subsection{Prototype Development and Testing}
-\label{subsec:nd-blm-muon-cherenkov-proto}
 
 A full description of the BLM prototyping plan may be found in Section~\ref{sec:proto-nd-blm}.
 A prototype Cherenkov counter, along with associated fully automated gas systems,
@@ -230,24 +217,8 @@ A second set of muon detectors, the final DUNE design, are being constructed at 
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Muon-Ionization Measurements}
+\subsection{Muon Ionization Detector Reference Design}
 \label{sec:detectors-nd-blm-muon-ionization}
-
-\subsubsection{Introduction}
-
-Post-absorber muon measurements in most of the recent neutrino-beam
-experiments have typically employed a planar array of ionization
-counters to measure the muon profile and intensity. The 
-NuMI beamline~\cite{ref:NuMIBeamMonitors} and the K2K~\cite{ref:K2K}~\cite{ref:Maruyama}
-and T2K~\cite{ref:T2KMuIon}~\cite{ref:T2KMuMon} experiments have all
-utilized parallel-plate ionization detectors. These counters have been
-shown to work in the high-radiation environment. 
-K2K and T2K have also deployed solid-state silicon detectors~\cite{ref:Maruyama}
-\cite{ref:RD42A}. The advantage of silicon is that it is less
-sensitive to changes in the air temperature and pressure. However, these %solid-state 
-sensors are not as radiation-tolerant as the parallel-plate ionization 
-chambers and will only be used in T2K for the initial
-beam operation. 
 
 DUNE is in the process of evaluating CVD diamond detectors
 as ionization measurement devices. Their advantage is two-fold, they are much more
@@ -261,36 +232,22 @@ and gas Cherenkov detector %(WBS 130.03.03.04)
 will be used, respectively, to determine the flux and energy
 spectrum of the muons. 
 
-\subsubsection{Reference Design}
-
 The reference conceptual design is to use CVD diamond ionization detectors arranged in two
 arrays. Each array will measure the centroid of the muon beam to insure a stable neutrino flux
 at the near and far detectors. The detectors are arranged in a diamond shaped arrays as shown in 
 Figure~\ref{fig:AbsorberPerspectiveOverview2} and Figure~\ref{fig:CherenkovStandView}.
 
 \begin{cdrfigure}[Model of ionization detector layout]{CherenkovStandView}{A model of the ionization detector layout behind the Cherenkov detector stand showing the 13 detectors in a grid configuration.}
-\includegraphics[width=3in,angle=0]{CherenkovStandView}
+\includegraphics[width=2.5in,angle=0]{CherenkovStandView}
 
 \end{cdrfigure}
 
-The reference design for DUNE includes two layers of ionization counters, one 
+The reference design for DUNE includes two arrays of ionization counters, one 
 behind the absorber and a second one behind steel shielding blocks. 
 DUNE wants to achieve a precision in the beam center of 0.2~milliradians
 (5~cm for a 250~m decay pipe). A quick study has 
 determined the sensitivity for various arrangements of the ionization counters for each layer and
 shows the typical precision such a system can achieve is of order 1cm.
-DUNE design was motivated by a desire to use a grid array with some of the 
-counters removed, and still achieve the desired sensitivity, 
-thus reducing the total number of needed counters.
-The results show that the width of the detector array affects the
-precision more than the layout of the detectors. Increasing the array
-size improves the precision greatly. 
-
-The DUNE muon ionization detector design consists of two arrays of 
-ionization counters, which is motivated by the NuMI target experience.  
-Over a period of several months, the number of events per proton on target 
-gradually decreased over time, especially in the energy range from 2-4 GeV.  
-This reduction in neutrino flux is attributed to target radiation damage.
 
 It will be necessary to be able to monitor this ratio in DUNE on a spill-by-spill 
 basis to look for signs of target degradation or horn failure.  
@@ -301,9 +258,6 @@ Since the density of steel is roughly 3 times larger than that of rock,
 this is comparable to the depth of the NuMI second muon alcove, which sits behind 12 m of rock.  
 More detailed studies will need to be performed to determine 
 if this is the optimal location for sensitivity to changes in the target density.
-
-
-\subsubsection{Prototype Design and Testing}
 
 The prototype testing of the diamond detectors is described in the 
 Section~\ref{sec:proto-nd-blm}. For the DUNE ionization detectors, a small array of prototype
@@ -319,10 +273,8 @@ of the response of these counters (by comparing the observed signal to variation
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Stopped-Muon Detector} % (WBS 130.03.03.02)}
+\subsection{Stopped Muon Detector Reference Design} % (WBS 130.03.03.02)}
 \label{subsec:detectors-nd-blm-stopped-mu}
-
-\subsubsection{Introduction}
 
 The second system under development is stopped-muon counters, also called
 Michel-electron detectors. This method will measure the muon flux without
@@ -340,8 +292,8 @@ shows the conceptual design of a single stopped-muon counter.
 \includegraphics[width=3in,angle=0]{StoppedMuonCounterDetail}
 \end{cdrfigure}
 
-The detectors will only operate in the lower-rate
-environment that is present many microseconds after the beam pulse is
+The stopped muon detectors will only operate in the lower-rate
+environment that is present several muon lifetimes (2.2 $\mu s$) after the beam pulse is
 over. There are two possible modes for this type of system. 
 The first is an integrating mode where the characteristic decay time of 
 2.2~$\mu s$ for muon decay and corresponding beta-decay lifetimes is used to
@@ -353,12 +305,16 @@ This will provide a more robust cross-check on the
 muon signal than will ionization detectors, which are sensitive to delta
 rays, photon conversions and other charged particles.
 
-Although this technique has never been tried on a large scale, a small
-demonstration project in K2K was able to see Michel decays with a
-$10^{3}$ signal/background ratio and to measure the absolute rate with
-30\% precision\cite{ref:K2KMuDecayMon}.
-
-\subsubsection{Reference Design}
+Besides the Michel decays of stopped muons, the system will
+independently measure both the $\mu ^{+}$ and $\mu ^{-}$ stopped
+rates as a function of depth. 
+While the 2.2~$\mu $s decay time of the $\mu^+$ is a reliable
+signature, in mineral oil roughly 8.5\% of the $\mu^{-}$ undergo capture
+on the $^{12}C$ nucleus, and 15\% of those leave behind a $^{12}B$
+ground state nucleus. That $^{12}B$ nucleus will undergo $\beta$ decay
+with a half-life of 20.20~ms and an electron spectrum with an endpoint
+of 13~MeV. This signal is expected to yield a reliable measurement of the rate of stopped
+$\mu^{-}$.
 
 The stopped-muon detector reference design
 is modular and based on a Cherenkov radiator of
@@ -381,33 +337,7 @@ neutrons. The Cherenkov light from Michel-decay electrons will exit the
 counter and be collected by either nearby PMTs or by a light guide which will
 guide the light to a remote optical sensor.  
 
-%\begin{cdrfigure}[Absorber conceptual design, elevation view]{AbsorberElevationView2}
-%{Stopped muon counter conceptual design. The figure shows the elevation view of the 
-%absorber at the end of the decay tunnel along with the locations of a subset of the
-%stopped muon counters, and showing a possible arrangement of ``blue blocks'' 
-%and stopped muon detectors. In this case there is roughly 2~GeV of energy loss 
-%per wall of blue blocks. The final arrangement is under investigation and will depend on the
-%final absorber design.}
-%\includegraphics[width=4in,angle=0]{AbsorberElevationView2}
-%\end{cdrfigure}
-
-Besides the Michel decays of stopped muons, the system will
-independently measure both the $\mu ^{+}$ and $\mu ^{-}$ stopped
-rates as a function of depth. 
-While the 2.2~$\mu $s decay time of the $\mu^+$ is a reliable
-signature, in mineral oil roughly 8.5\% of the $\mu^{-}$ undergo capture
-on the $^{12}C$ nucleus, and 15\% of those leave behind a $^{12}B$
-ground state nucleus. That $^{12}B$ nucleus will undergo $\beta$ decay
-with a half-life of 20.20~ms and an electron spectrum with an endpoint
-of 13~MeV. This signal is expected to yield a reliable measurement of the rate of stopped
-$\mu^{-}$.
-
-\subsubsection{Prototype Development and Testing}
-
-Prototype development activity for the stopped muon detectors will
-be divided into studies of the rate and radiation environment where
-the detectors will be located and development of the counters
-themselves. A full description can be found in Section~\ref{sec:proto-nd-blm}
+ A full description of the prototyping plan can be found in Section~\ref{sec:proto-nd-blm}.
 The prototypes will be installed into the alcoves in 2016 and 2017.
 Studies will be performed to determine if the photon sensors
 can survive the radiation environment at the location of the Michel
@@ -416,7 +346,6 @@ the Cherenkov medium; if not, optical guides will have to bring the
 light to a lower-radiation area to the side of the beam. Potential
 radiation damage to the Cherenkov radiator itself will also be
 studied.
-
 
 \subsection{Installation and Operation}
 
