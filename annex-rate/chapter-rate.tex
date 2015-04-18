@@ -61,110 +61,50 @@ facilitate reference in the rest of the text:
 
 \subsection{Event rate and sizes}
 
-Table~\ref{tab:rate-summary} summarizes the understanding of the
-expected rates and annual data volumes for specific sources of
-activity in the detector listed above, independent of threshold
-(unless indicated).
-An entry in the table does not imply that this rate will be acquired.
-The estimation of each row is described in the following sections.
+Table~\ref{tab:fundamental} summarizes the fundamental parameters
+which are used as input to the data rate estimates given in this
+section.
 
-\begin{table}[htbf]
+\begin{table}[htbp]
   \centering
-  % \begin{tabular}{|r|l|l|l|l|}
-  %   \hline
-  %   Source & volume & unit & volume/year & comment\\
-  %   \hline
-  %   \hline
-  %   full stream & \SI{24}{\gibi\byte} & readout & \SI{740}{\exbi\byte} & \SI{2.13}{\micro\second} readout\\
-  %   \hline
-  %   ZS stream &\multicolumn{3}{c|}{undefined, see text} \\
-  %   \hline
-  %   beam $\nu$-interaction & $10^{3}$/yr.  & year  & 10MB & 100GB \\
-  %   \hline
-  %   $\nu_{atm}$& \multicolumn{3}{c|}{similar to beam}  & 100GB \\
-  %   \hline
-  %   SNB  & ZS stream & 60secs/year$\times$?? & 28 TB & 28 TB $\times$??? \\
-  %   \hline
-  %   rad              & 65kHz/APA($300KeV<E<5MeV$ (0.3 MIPs)\cite{lbne-fd-closeout}) & year & ??? & ??? \\
-  %   \hline
-  %   cosmic $\mu$     & ??? & ??? & ??? & ??? \\
-  %   \hline
-  %   sol              & ??? & ??? & ??? & ??? \\
-  %   \hline
-  %   minbias & \multicolumn{3}{c|}{multiple, variable, threshold dependent} & ??? \\
-  %   \hline
-  %   beam minbias & \multicolumn{3}{c|}{multiple, variable, threshold dependent} & ??? \\
-  %   \hline
-  %   calib            & ??? & ??? & ??? & ??? \\
-  %   \hline
-  % \end{tabular}
-  \caption{Rate estimations of hypothetically isolated sources of activity in
-    the DUNE far detector.
-  The ``???'' indicate input needed is still needed.}
-  \label{tab:rate-summary}
+  \caption{Fundamental parameters of the TPC and detector that are used as input to the data rate estimates.}
+  \input{annex-rate/fundamental-table.tex}
+  \label{tab:fundamental}
 \end{table}
+
+One ``readout'' is a sampling of the data stream for a period of time
+equal to the configured number of drifts per readout as shown in
+table~\ref{tab:fundamental-values}.
+\fixme{Explain why 2.4 drifts in a readout.}
+This multiplier, the drift time over the drift distance and the sample
+rate determines the number of samples/readout.
+
 
 \subsubsection{Full Stream}
 
-The \textit{full stream} activity is simply reading out all channels
-at the digitizing sampling rate.
-One ``readout'' of is a sampling of this stream for a period of time
-equal to 2.4 drifts.
-The number of samples per readout of one channel is calculated to be
-10230 as shown in table~\ref{tab:full-stream}.
+The \textit{full stream} (FS) ``activity'' is simply the case where
+all channels are read out at the digitizing sampling rate.
+This can produce a prodigious amount of data.
+
 
 \begin{table}[htbp]
-  \caption{Relevant values for drift related parameters and
-    calculation of number of samples for one readout.}
   \centering
-\begin{tabular}[h]{l|r}
-\hline
-sample rate & \SI{2}{\MHz} \\
-drift distance & \SI{3.41}{\meter} \\
-drift velocity & \SI{1.6}{\milli\meter/\micro\second} \\
-\# drifts & \num{2.4} \\
-\hline
-readout time & \SI{2.13125}{\milli\second} \\
-samples/readout & \num{10230} \\
-\hline
-\end{tabular}
+  \caption{Calculation of \textit{full stream} data volume for
+    \SI{40}{\kton}.}
+  \input{annex-rate/full-stream-table.tex}
   \label{tab:full-stream}
 \end{table}
 
-\fixme{Explain why 2.4 drifts in a readout.}
+\subsubsection{Zero-suppressed Stream}
 
-The drift velocity of \driftvelocity is for a
-\SI{500}{\volt/\centi\meter} electric field.~\cite{docdb3383}.
-
-\begin{table}[htbp]
-  \caption{Calculation of \textit{full stream} data volume for a
-    \SI{2.13}{\milli\second} readout of the entire 4 detectors (\SI{40}{\kton}).}
-  \centering
-  \begin{tabular}[h]{l r}
-\hline
-bytes/sample & \num{12}/\num{8} \\
-samples/readout/channel  & \num{10230} \\
-channel/APA & \num{2560} \\
-APA/detector & \num{150} \\
-detectors & \num{4}\\
-\hline
-% 23.56992 TiB
-readout size & \SI{24}{\gibi\byte}\\
-1 second & \SI{11}{\tebi\byte}\\
-1 minute & \SI{0.7}{\pebi\byte}\\
-1 year & \SI{7.4e20}{\byte} (\SI{740}{\exbi\byte})\\
-\hline
-  \end{tabular}
-  \label{tab:full-stream-data-rate}
-\end{table}
-
-\subsubsection{ZS Stream}
-
-The \textit{ZS stream} (zero-suppressed stream) contains \textit{full
-  stream readouts} as described above but with all samples below some
-threshold removed and with an added encoding (number) to indicate
-where each run of above-threshold samples begins inside the
-readout.\fixme{Is this accurate enough of a description?}
+A threshold at a low ADC can be applied to the full-stream.
+This is in order to suppress noise but is given the term
+\textit{zero-suppression} (ZS).
+A ZS-stream contains \textit{full stream readouts} as described above
+but with all samples below the threshold removed with some added
+encoding (number) to indicate where each contiguous run of
+above-threshold samples begins inside the readout.\fixme{Is this
+  accurate enough of a description?}
 
 The intention of ZS is to remove electronics noise from what is
 ultimately read out in order to reduce data volume with no negative
