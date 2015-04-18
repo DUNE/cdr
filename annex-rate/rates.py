@@ -46,11 +46,12 @@ channels = channels_per_APA * APA_per_detector * number_detectors
 readout_size = bytes_per_sample * channels* samples_per_readout_per_channel
 readout_rate = readout_size / readout_time.to('second')
 
-print 'Channels = %s' % channels
-print 'Readout size = %s' % readout_size.to('gigabyte')
-print 'Readout rate = %s' % readout_rate.to('terabyte/second')
-print 'Readout rate = %s' % readout_rate.to('terabyte/minute')
-print 'Readout rate = %s' % readout_rate.to('exabyte/year')
+print 'Channels = %d (10kt)' % int(channels/4)
+print 'Channels = %d (40kt)' % channels
+print 'FS Readout size = %s' % readout_size.to('gigabyte')
+print 'FS Readout rate = %s' % readout_rate.to('terabyte/second')
+print 'FS Readout rate = %s' % readout_rate.to('terabyte/minute')
+print 'FS Readout rate = %s' % readout_rate.to('exabyte/year')
 
 
 beam_rep_rate = Q('1 Hz')
@@ -63,7 +64,7 @@ beam_high_data = beam_event_size * beam_number_high_events
 print 'High energy beam data = %s' % beam_high_data.to('gigabyte/year')
 
 beam_all_data = readout_size * beam_rep_rate * beam_run_fraction
-print 'Full-stream in-spill data = %s' % beam_all_data.to('petabyte/year')
+print 'FS in-spill data = %s' % beam_all_data.to('petabyte/year')
 
 # beta=Ar39 from lbne-fd-closeout
 rad_beta_rate_density = Q('63 kHz') / lbne_apa_volume
