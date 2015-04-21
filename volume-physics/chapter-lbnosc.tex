@@ -4,7 +4,7 @@
 \section{Context}
 \label{sec:physics-lbnosc-context}
 
-{\bf [Note: Copied from Section 2.2 of the LBNE Science Document.]}  
+% {\bf [Note: Copied from Section 2.2 of the LBNE Science Document.]}  
 The Standard Model of particle physics 
 presents a remarkably accurate
 description of the elementary particles and their
@@ -90,7 +90,7 @@ m^{2}_{21}$ is known, but not that of $\Delta m^{2}_{32}$, which
 is the crux of the 
 mass hierarchy ambiguity.
 The values of $\theta_{12}$ and $\theta_{23}$ are large, while 
-$\theta_{13}$ is smaller~\cite{An:2012bu}. The value of \deltacp is unknown.
+$\theta_{13}$ is smaller~\cite{An:2013zwz}. The value of \deltacp is unknown.
 The real values of the entries of the PMNS mixing matrix, which
 contains information on the strength of flavor-changing weak decays in
 the lepton sector, can be expressed in approximate form as
@@ -143,56 +143,17 @@ any theoretical principle that attempts to describe the fundamental
 symmetries implied by the observed organization of quark and neutrino
 mixing --- such as those proposed in unification models --- leads to
 testable predictions such as sum rules between CKM and PMNS
-parameters~\cite{deGouvea:2013onf,Mohapatra:2005wg,King:2014nza,Albright:2006cw}.
+parameters~\cite{King:2014nza,deGouvea:2013onf,Mohapatra:2005wg,Albright:2006cw}.
 Data on the patterns of neutrino mixing 
 are already proving crucial in the quest for a 
 relationship between quarks and leptons and their seemingly arbitrary generation
 structure.  
-%Table~\ref{tab:params} displays the comparison between quark and lepton mixing
-%in terms of the fundamental parameters 
-% and the precision to which they are known\footnote{A global fit~\cite{Fogli:2012ua} to 
-%  existing results from current
-%  experiments sensitive to neutrino oscillation effects is the source for the PMNS matrix values.}, 
-% highlighting the limited precision  of the neutrino-mixing parameter measurements.
-
-% \begin{table}[!htb]
-% \caption[Best-fit values of the neutrino mixing parameters in the PMNS
-%   matrix]{Best-fit values of the neutrino mixing parameters in the PMNS
-%   matrix (assumes normal hierarchy) from~\cite{Fogli:2012ua}, their $1\sigma$ uncertainties and comparison to 
-% the analogous values in the CKM
-%  matrix~\cite{Beringer:1900zz}. $\Delta M^2$ is defined as $m_3^2
-% - (m_1^2+m_2^2)/2$.}
-% \begin{center}
-% \begin{tabular}[!htb]{$L^c^c}
-% \toprule
-% \rowtitlestyle
-% Parameter  & Value (neutrino PMNS matrix) & Value (quark CKM matrix)\\
-% \toprowrule
-% \rowstyle{\normalfont}
-% 
-% $\theta_{12}$     & $34 \pm 1^{\circ}$ & $13.04 \pm 0.05^{\circ}$\\ 
-% \colhline
-% $\theta_{23}$     & $38 \pm 1^{\circ}$ & $2.38 \pm 0.06^{\circ}$\\ 
-% \colhline
-% $\theta_{13}$     & $8.9 \pm 0.5^{\circ}$  & $0.201 \pm 0.011^{\circ}$\\ 
-% \colhline
-% $\Delta m^2_{21}$  & $+(7.54 \pm 0.22) \times 10^{-5}$ eV$^2$ & \\ 
-% \colhline
-% $|\Delta M^2|$    & $(2.43^{+0.10}_{-0.06}) \times 10^{-3}$ eV$^2$ & $m_3 >> m_2$\\ 
-% \colhline
-% $\mdeltacp$  & $-170 \pm 54^{\circ}$ &  $67 \pm 5^{\circ}$\\
-% \bottomrule
-% \end{tabular}
-% \end{center}
-% \label{tab:params}
-% \end{table}
-%
 
 Clearly much work remains in order to complete the standard three-flavor 
 mixing picture, particularly 
 with regard to $\theta_{23}$ (is it less than, greater than, or equal
 to $45^\circ$?), mass hierarchy (normal or inverted?) 
-and \deltacp. %(the value is unconstrained at the $2\sigma$ level by the global fit).  SAID ON NEXT PAGE 
+and \deltacp.
 Additionally, there is 
 great value in obtaining a set of measurements for multiple parameters 
 \emph{from a single experiment}, so that correlations and systematic 
@@ -261,14 +222,14 @@ is also a critical component of the experiment.
 \end{figure}
 
 The experimental sensitivities presented here are estimated using 
-GLoBES\cite{globes1,globes2}. GLoBES takes flux simulation, cross-sections,
+GLoBES\cite{Huber:2004ka,Huber:2007ji}. GLoBES takes flux simulation, cross-sections,
 and detector-response parameterization as inputs. In this document we present
 a range of possible experimental performance that depends on the design of the neutrino beam.
-A conservative estimate of sensitivity is calculated using a flux simulation that is based on the reference design of the beam line as presented in {\bf [How to reference LBNF design?]}.  A flux simulation based on an optimized beam design is used to show the goal sensitivity.  There are a range of design options that produce sensitivities in between the sensitivity of the reference beam design and optimized beam design. The actual flux will depend upon details of the hadron production and focusing design; optimization of the beam design to maximize experimental sensitivity is a critical aspect of the experiment
+A conservative estimate of sensitivity is calculated using a flux simulation that is based on the reference design of the beam line as presented in \vollbnf.  A flux simulation based on an optimized beam design is used to show the goal sensitivity.  There are a range of design options that produce sensitivities in between the sensitivity of the reference beam design and optimized beam design. The actual flux will depend upon details of the hadron production and focusing design; optimization of the beam design to maximize experimental sensitivity is a critical aspect of the experiment
 design.  Section~\ref{sec:physics-lbnosc-beam-req} describes the flux simulations used for the sensitivity estimates and explores the possible improvements that could be achieved by variations in the reference beam design.
 
 
-The LAr TPC performance parameters that go into the GLoBES calculation are generated using a fast Monte Carlo (MC) simulation, described in detail in \cite{lbne_sciencebook}.  The MC uses flux simulations and the GENIE event generator \cite{Andreopoulos:2009rq} to generate neutrino interactions on argon.  Events can then be classified as $\nu_e$ CC-like or background-like based on event-level reconstructed quantities.   {\bf [Add more details of classification?]}
+The LAr TPC performance parameters that go into the GLoBES calculation are generated using a fast Monte Carlo (MC) simulation, described in detail in \cite{Adams:2013qkq}.  The MC uses flux simulations and the GENIE event generator \cite{Andreopoulos:2009rq} to generate neutrino interactions on argon.  Events can then be classified as $\nu_e$ CC-like or background-like based on event-level reconstructed quantities.   {\bf [Add more details of classification?]}
 % The detector response assumed in these calculations
 % is summarized in Table~\ref{tab:lar-nuosc-totaltable}. 
 The energy smearing, signal efficiency, and misidentification rates for background vary with energy. {\bf [How to succinctly summarize energy-dependent quantities? Efficiency and resolution at first osc max?]} The neutrino oscillation
