@@ -1,0 +1,21 @@
+\ifdefined\isfinal\documentclass[final]{cdr}\else\documentclass{cdr}\fi
+\pdfoutput=1            % must be in first 5 lines so arXiv finds it
+\graphicspath{ {figures/}{annex-reco/figures/}{annex-reco/generated/} }
+ 
+\input{common/preamble}
+
+% Used on the volume title page.
+\renewcommand\thevolumesubtitle{Annex: Far Detector Reconstruction}
+
+\begin{document}
+\input{common/init}
+
+\input{annex-reco/chapter-simulation}
+
+\input{annex-reco/chapter-reconstruction}
+
+
+\input{common/final}
+\end{document}
+
+
