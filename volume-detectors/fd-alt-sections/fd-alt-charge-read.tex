@@ -15,8 +15,8 @@ distance and the tolerances required to get a uniform gain within $\sim$ 5\%.
  \includegraphics[width=.6\textwidth]{double_phase_principle.pdf}  
 \end{cdrfigure}
 
-\begin{cdrtable}[Interstage distances and electric field settings of the double phase readout components.]{lcccc}{crp_dist}{Interstage distances and electric field settings of the double phase readout components.}  %The third argument (reads {cc}) can use c, l, r or p{some length} 
- & Distance [mm] & Tolerance [mm] & Electric field [kV/cm]  \\ \toprowrule
+\begin{cdrtable}[Interstage distances and electric field settings of the double phase readout components.]{lp{2cm}p{2cm}l}{crp_dist}{Interstage distances and electric field settings of the double phase readout components.}  %The third argument (reads {cc}) can use c, l, r or p{some length} 
+ Component & Distance [mm] & Tolerance [mm] & Electric field [kV/cm]  \\ \toprowrule
  Anode-LEM top electrode  & 2 & 0.1 & 5\\ \colhline
  LEM top-bottom electrode   & 1 & 0.01 & 30-35\\ \colhline
  LEM bottom electrode-grid        & 10 & 1 & 2 (in LAr) and 3 (in GAr)\\
@@ -32,10 +32,20 @@ The charge readout system of the LBNO 20 kton far detector was modularised in un
  \includegraphics[width=\textwidth]{4_4_CRP_top-side-view}  
 \end{cdrfigure}
 
-\begin{cdrtable}[Components of the 4$\times$4 m$^2$ CRP.]{lcccccc}{crp_para}{Components of the 4$\times$4 m$^2$ LBNO CRP.} 
-Component & $50\times50$ cm$^2$ anode & $50\times50$ cm$^2$ LEM & Signal  & Suspension  &readout strip &number of \\
-& panels & panels & feedthrough & feedthrough &length (m)& channels\\ \toprowrule
-4$\times$4 m$^2$ CRP   & 64 & 64 & 8 & 3 & 2 & 5120\\
+%\begin{cdrtable}[Components of the 4$\times$4 m$^2$ CRP.]{lp{2cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}{crp_para}{Components of the 4$\times$4 m$^2$ LBNO CRP.} 
+%Component & $50\times50$ cm$^2$ anode & $50\times50$ cm$^2$ LEM & Signal  & Suspension  &readout strip &number of \\
+%& panels & panels & feed through & feed through &length (m)& channels\\ \toprowrule
+%4$\times$4 m$^2$ CRP   & 64 & 64 & 8 & 3 & 2 & 5120\\
+%\end{cdrtable}
+
+\begin{cdrtable}[Numbers of components of the 4$\times$4 m$^2$ CRP]{lr}{crp_para}{Numbers of components of the 4$\times$4 m$^2$ LBNO CRP} 
+Component & Number \\ \toprowrule
+$50\times50$ cm$^2$ anode panels & 64\\ \colhline
+$50\times50$ cm$^2$ LEM  panels&  64\\ \colhline
+Signal  feedthroughs & 8\\ \colhline
+Suspension  feedthroughs & 3\\ \colhline
+Readout strip length (m)& 2\\ \colhline
+Number of channels & 5120\\
 \end{cdrtable}
 
  The entire area of the LEM and anode is active and each adjacent  module has an inter-space of only 0.5 mm. It is therefore important

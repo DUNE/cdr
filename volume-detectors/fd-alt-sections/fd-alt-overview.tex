@@ -3,9 +3,9 @@
 \label{sec:detectors-fd-ref-ov}
 
 
-The alternate detector design benefits of 13 years of R\&D activity and two programs funded by the European Union for a total budget of 17 Meur which resulted in the LAGUNA-LBNO design study concluded in August 2014. The LAGUNA-LBNO design study allowed to define, in collaboration with several industrial partners, an optimized configuration for a long baseline experiment  experiment with associated technological developments, innovative solutions and full costing. In particular, since the very beginning, these studies were focused on the underground implementation of a very large liquid argon detector (GLACIER) aiming at optimizing the construction and installation costs and making affordable the detector implementation and operation. This optimization concerned not only the double-phase readout concept but also many technical aspects in the underground design such as the tank, the field cage, the cathode  and the definition of the logistics and the detector assembly sequence. All these technical developments are documented in the deliverables to the EU \cite{LAGUNA-LBNO-deliv}.
+The alternate detector design benefits of 13 years of R\&D activity and two programs funded by the European Union for a total budget of 17 Meur which resulted in the LAGUNA-LBNO design study concluded in August 2014. The LAGUNA-LBNO design study allowed to define, in collaboration with several industrial partners, an optimized configuration for a long baseline experiment  experiment with associated technological developments, innovative solutions and full costing. In particular, since the very beginning, these studies were focused on the underground implementation of a very large liquid argon detector (GLACIER) aiming at optimizing the construction and installation costs and making affordable the detector implementation and operation. This optimization concerned not only the dual-phase readout concept but also many technical aspects in the underground design such as the tank, the field cage, the cathode  and the definition of the logistics and the detector assembly sequence. All these technical developments are documented in the deliverables to the EU \cite{LAGUNA-LBNO-deliv}.
 
-Following the GLACIER concept, the double-phase LAr TPC detector has the shape of a vertically standing volume, where electrons are drifted vertically towards the liquid-vapor interface, extracted from the liquid into the gas phase, amplified and collected at a segmented anode \cite{Badertscher:2013wm,Badertscher:2012dq,Badertscher:2010zg}. One of the novel features of the double-phase TPC is the electron amplification in the gas phase. This allows to obtain a robust and tunable signal to noise ratio. Gas amplification in extremely pure argon gas has been obtained using a new Micro Pattern Gas Detector call LEM (Large Electron Multiplier). The detector is configured as a liquid argon TPC with liquid-to-gas ionization electron extraction and multiplication before collection.
+Following the GLACIER concept, the dual-phase LAr TPC detector has the shape of a vertically standing volume, where electrons are drifted vertically towards the liquid-vapor interface, extracted from the liquid into the gas phase, amplified and collected at a segmented anode \cite{Badertscher:2013wm,Badertscher:2012dq,Badertscher:2010zg}. One of the novel features of the dual-phase TPC is the electron amplification in the gas phase. This allows to obtain a robust and tunable signal to noise ratio. Gas amplification in extremely pure argon gas has been obtained using a new Micro Pattern Gas Detector call LEM (Large Electron Multiplier). The detector is configured as a liquid argon TPC with liquid-to-gas ionization electron extraction and multiplication before collection.
 
 The transfer of electrons in excess from a condensed non-polar fluid to its saturated vapor using an electric field is a phenomenon investigated since the seventies~\cite{Dolgoshein1970}. In particular, in argon it is experimentally shown that the electrons are extracted in two stages. Near the triple point part of the charge is emitted on time scales that can be as high as 1~ms, strongly dependent on the electric field applied~\cite{Gushchin1982b, Borghesani1990}, while at larger temperatures the emission takes less than 100~ns. At high electric fields the slow extraction time reduces, and the fraction of the slowly extracted electrons becomes negligible (see Figure~\ref{fig:extractionVsElectricField}). This behavior can be understood in the framework of the Schottky model of electric field enhanced thermionic emission~\cite{Murphy1956}.For practical purpose the efficiency of the electron extraction saturates for voltage differences above a few kV/cm
 
@@ -14,7 +14,7 @@ The picture on the right~\cite{Gushchin1982b} shows the extraction efficiency fo
 \includegraphics[width=\linewidth]{extractionVsElectricField.pdf}
 \end{cdrfigure}
 
-In the double-phase LAr TPC, an electric field of the order of 2 kV/cm created by submersed grid at the liquid-gas interface allows for 100\% efficiency extraction of the electrons from the liquid to the gas phase. The ionization charge is then amplified by avalanches occurring in the gas in the micropattern structure of the LEM and collected in a 2-dimensional readout plane on the top of the volume, on readout units, combining both the amplification and collection functions, with an area of $0.5\times 0.5$~m$^2$ and finely segmented with a 3~mm strip pitch. The typical amplification achieved in this configuration is around a few tens and it allows to compensate for the charge losses due to the presence of electronegative impurities along very log drift paths achieving a S/N ratio exceeding 100 for a particle at the ionization minimum (m.i.p.).
+In the dual-phase LAr TPC, an electric field of the order of 2 kV/cm created by submersed grid at the liquid-gas interface allows for 100\% efficiency extraction of the electrons from the liquid to the gas phase. The ionization charge is then amplified by avalanches occurring in the gas in the micropattern structure of the LEM and collected in a 2-dimensional readout plane on the top of the volume, on readout units, combining both the amplification and collection functions, with an area of $0.5\times 0.5$~m$^2$ and finely segmented with a 3~mm strip pitch. The typical amplification achieved in this configuration is around a few tens and it allows to compensate for the charge losses due to the presence of electronegative impurities along very log drift paths achieving a S/N ratio exceeding 100 for a particle at the ionization minimum (m.i.p.).
 
 The full active volume  is under a drift electric field  $E{\simeq} 0.5-1.0$~kV/cm generated from a bottom cathode plane and kept uniform by a stack of field shaping electrodes, several equally-spaced stainless-steel tubes along a square path with round corners. All this system is held in place by insulating mechanical structures hung from the top cap of the vessel. These electrodes are polarized at linearly decreasing voltage from the cathode voltage to ground. 
 
@@ -25,17 +25,17 @@ The full active volume  is under a drift electric field  $E{\simeq} 0.5-1.0$~kV/
 
 The anode deck is also independently suspended with stainless-steel ropes linked to the top roof  which allow to adjust its distance and parallelism with respect to the liquid surface.  The bottom field is  closed by a transparent cathode and the top field by an anode, which also  serves as the charge readout: the Charge Readout Plane (CRP).  The cathode plane is gridded and it is transparent to light to allow the detection of the scintillation light by an array of photomultipliers uniformly distributed  at a distance of $1m$  below the cathode and mounted on the tank bottom surface. Ionization charge signals are sent to a set of signal feedthroughs located on the top face of the hosting LAr vessel and hosting the cold readout electronics. Other chimneys/feedthroughs are foreseen for HV, top readout plane suspension and level regulation, PMT high voltage and signal readout, monitoring instrumentation (level, temperatures, strain gauges, etc ...) The front-end electronics is based on analog preamplifiers implemented in CMOS ASIC circuits for high integration and large scale affordable production. The baseline design is to integrate this electronics on the feed-through flange terminating the chimneys on the roof of the tank, under the insulation layer in order to be cooled to a temperature near that of liquid argon.
 
-The double-phase readout scheme, based on the extraction of the electrons to the gas phase and their amplification and collection on the CRP, has been successfully demonstrated on several prototypes  by an R\&D activity which spans over more than 10 years.The design of very large (20 to 50 kton) underground detectors based on this concept has been developed in great detail in the context of the LAGUNA and LAGUNA-LBNO design studies.  The CERN WA105 experiment is intended to show a full scale implementation of this technique, as well as of other technologies developed in the framework of the LAGUNA-LBNO design study for the construction of large underground TPC detectors.  All the key subsystems have been designed taking into account their scalability to a large detector.  In 2018, this demonstrator will be tested and calibrated with a charged particle beam (pion, muons, electrons).
+The dual-phase readout scheme, based on the extraction of the electrons to the gas phase and their amplification and collection on the CRP, has been successfully demonstrated on several prototypes  by an R\&D activity which spans over more than 10 years.The design of very large (20 to 50 kton) underground detectors based on this concept has been developed in great detail in the context of the LAGUNA and LAGUNA-LBNO design studies.  The CERN WA105 experiment is intended to show a full scale implementation of this technique, as well as of other technologies developed in the framework of the LAGUNA-LBNO design study for the construction of large underground TPC detectors.  All the key subsystems have been designed taking into account their scalability to a large detector.  In 2018, this demonstrator will be tested and calibrated with a charged particle beam (pion, muons, electrons).
 
-One of the main features of the double phase concept is that it provides inside the TPC field cage a large homogeneous fiducial volume for neutrino interactions, purely constituted by liquid argon and with no passive material. The charge produced in this volume is read out on the top surface in a projective way, with practically no dead regions. The charge is readout in two collection views with no use of induction views, which is also an important asset in the case of complicated topologies. 
+One of the main features of the dual-phase concept is that it provides inside the TPC field cage a large homogeneous fiducial volume for neutrino interactions, purely constituted by liquid argon and with no passive material. The charge produced in this volume is read out on the top surface in a projective way, with practically no dead regions. The charge is readout in two collection views with no use of induction views, which is also an important asset in the case of complicated topologies. 
 
 Situated in the vapor phase on top of the LAr volume the CRP  provides an adjustable charge gain and two independent readout views, each with a canonical and optimal pitch of 3.125 mm.  With T0 time information provided by the LAr scintillation readout by the PMT array, they provide a real-time three-dimensional (3D) track imaging with dE/dx information. The S/R ratio is increased by at least one order of magnitude by the possibility of amplifying the charges with avalanches in the gas phase.  This significantly improves the event reconstruction quality with a lower energy deposition threshold and a better resolution per volumetric pixel (voxel) compared to a conventional single-phase LAr-TPC. 
 
-The double phase concept is well suited for giant detector size since the increased noise level when going into larger detector size would be compensated by improving the signal amplitude thanks to the charge amplification.  This arrangement simplifies the construction and optimally exploits the possibility of long drifts, limiting the number of read-out channels, increasing the detector size, limiting dead spaces and lowering costs.
+The dual-phase concept is well suited for giant detector size since the increased noise level when going into larger detector size would be compensated by improving the signal amplitude thanks to the charge amplification.  This arrangement simplifies the construction and optimally exploits the possibility of long drifts, limiting the number of read-out channels, increasing the detector size, limiting dead spaces and lowering costs.
 
-\subsection{LAr purity requirements}
+\subsection{LAr Purity Requirements}
 
-As discussed in the previous section, one of the main features of the double phase design is a long drift path. This requires an ultra-high level of purity in the medium, which is however not higher of the one required by the single-phase LAr TPC implementation with a drift path of a few meters.
+As discussed in the previous section, one of the main features of the dual-phase design is a long drift path. This requires an ultra-high level of purity in the medium, which is however not higher of the one required by the single-phase LAr TPC implementation with a drift path of a few meters.
 
 The expected ionization charge attenuation due to attachment to impurities as a function of the drift path for various oxygen-equivalent impurity levels and electric fields is shown in Figure~\ref{fig:larimpuritycomp}.
 
@@ -64,12 +64,12 @@ and impurities "frozen" at low temperature.}
 
 GAr flushing and purging were shown to be effective ways to remove air and impurities. Purging on 6~m$^3$ volume has been successfully demonstrated~\cite{Curioni:2010gd}. The piston effect was seen in gas and the impurities reached 3~ppm $O_2$ after several volumes exchange.
 
-Although the double phase TPC adopts a drift length which is significantly longer than the others such as ICARUS T600, MicroBOONE or LBNE as mentioned above, it should be noted that all experiments require in order to collect efficiently ionisation charges a liquid argon purity
+Although the dual-phase TPC adopts a drift length which is significantly longer than the others such as ICARUS T600, MicroBOONE or LBNE as mentioned above, it should be noted that all experiments require in order to collect efficiently ionisation charges a liquid argon purity
 in the range below 0.1~ppb = 100~ppt of oxygen equivalent (Figure~\ref{fig:larimpuritycomp}).  Hence, the challenge to reach the required level of purity starting from commercially available ppm-level bulk argon and a vessel which cannot be evacuated  is not mitigated by a shorter drift length in the meter range. It exists for all considered detectors.
 
-\subsection{ DUNE double-phase LAr detector configuration.}
+\subsection{DUNE Dual-Phase LAr Detector Configuration}
 
-The proposed detector module, based on the double-phase design, optimally exploits the inner space foreseen for the DUNE cryostats ($14 (w) \times 14.1 (h) \times 62  (l)~m^3$) with an active area of  ($12 \times 60 ~m^2$) and a drift length of 12 m corresponding to 12.096 kton of LAr (10.643 kton fiducial). The proposed design is based on the one for 20 kton LAr detector of the LAGUNA-LBNO design study with a size of CRP unit in order to match in an optimal way the dimensions on the active area. The DUNE cryostat dimensions could be easily extended to host 15m of drift. In that case a single detector would reach an active mass of 15.12 kton (13.444 kton fiducial).  Apart the shorter drift space with a shorter drift cage and the reduction of fiducial mass from 15.1 to 12.1 kton all the other detector characteristics, depending exclusively on the active area, are exactly the same for the the two detector configurations.
+The proposed detector module, based on the dual-phase design, optimally exploits the inner space foreseen for the DUNE cryostats ($14 (w) \times 14.1 (h) \times 62  (l)~m^3$) with an active area of  ($12 \times 60 ~m^2$) and a drift length of 12 m corresponding to 12.096 kton of LAr (10.643 kton fiducial). The proposed design is based on the one for 20 kton LAr detector of the LAGUNA-LBNO design study with a size of CRP unit in order to match in an optimal way the dimensions on the active area. The DUNE cryostat dimensions could be easily extended to host 15m of drift. In that case a single detector would reach an active mass of 15.12 kton (13.444 kton fiducial).  Apart the shorter drift space with a shorter drift cage and the reduction of fiducial mass from 15.1 to 12.1 kton all the other detector characteristics, depending exclusively on the active area, are exactly the same for the the two detector configurations.
 
 The detector is configured as LAr TPC with vertical, upward drift of the ionization electrons in the liquid phase, their extraction from liquid to vapor phase, via a horizontal extraction grid, towards a CRP (Charge Readout Plane). The CRP is composed by sandwiches of LEM (Large Electron Multiplier) for the charge amplification via avalanches occurring in a micro-pattern structure in pure gas argon and anode printed circuit boards (PCBs) for  the collection of the amplified charges on two independent orthogonal views with interleaved X and Y strips. Thicknesses and possible biasing voltages for the different layers are indicated, as example, in Figure~\ref{fig:CRP_struct}). 
 
@@ -79,11 +79,11 @@ The detector is configured as LAr TPC with vertical, upward drift of the ionizat
 
 The inner detector for the 13 kTon active mass is built as a single active volume 60m long, 12m wide and 13m high. The active volume (see Figure~\ref{fig:DP_det1} and Figure~\ref{fig:DP_det2}) is surrounded by a vertical field cage made by a set of 75 rectangular tubular rings (tube diameter 140mm, vertical spacing 200mm).
 
-\begin{cdrfigure}[Douple-phase detector 3D view]{DP_det1}{The DUNE double-phase detector with cathode, field cage, anode with chimneys and PMTs. X and Y coordinates are indicated, with Y along the direction of the LBL neutrino beam.}
+\begin{cdrfigure}[Douple-phase detector 3D view]{DP_det1}{The DUNE dual-phase detector with cathode, field cage, anode with chimneys and PMTs. X and Y coordinates are indicated, with Y along the direction of the LBL neutrino beam.}
 \includegraphics[width=\linewidth]{DP_det1.jpg}
 \end{cdrfigure}
 
-\begin{cdrfigure}[Douple-phase detector 3D view (partially open)]{DP_det2}{The DUNE double-phase detector (partially open) with cathode, field cage, anode with chimneys and PMTs. X and Y coordinates are indicated, with Y along the direction of the LBL neutrino beam.}
+\begin{cdrfigure}[Douple-phase detector 3D view (partially open)]{DP_det2}{The DUNE dual-phase detector (partially open) with cathode, field cage, anode with chimneys and PMTs. X and Y coordinates are indicated, with Y along the direction of the LBL neutrino beam.}
 \includegraphics[width=\linewidth]{DP_det2.jpg}
 \end{cdrfigure}
 
@@ -110,32 +110,37 @@ Wires, ~12m long in X and ~60m long in Y directions, have sags minimized to ~0.1
 \includegraphics[width=.6\linewidth]{Wires_comb.png}
 \end{cdrfigure}
 
-The numbers of components and the parameters for the 12kT (15kT) double-phase  LAr TPC are summarized in Table~\ref{tab:DP_params}.
+The numbers of components and the parameters for the 12kT (15kT) dual-phase  LArTPC are summarized in Tables~\ref{tab:DP_params} and~\ref{tab:DP_numbers}.
 
-\begin{cdrtable}[Components and parameters for the 12kT (15kT) double-phase LAr TPC]{clll}{DP_params}{Components and parameters for the 12kT (15kT) double-phase  LAr TPC}  
-Item & & &  \\ \toprowrule
-Active volume sizes & W = 12m &  L = 60m &   H = 12m (H=15m) \\ \colhline
-Active volume / LAr mass & 8640 (10800) $m^3$ &  12096 (15120) Ton \\ \colhline
-Number of field rings & 60  (75)  \\ \colhline
-Field ring vertical spacing & 200 mm  \\ \colhline
-Field ring tube diameter & 140mm \\ \colhline
-Anode deck size & W = 12m & L = 60m \\ \colhline
-CRP unit size & W =3m & L = 3m  \\ \colhline
-Number of CRP units & 4 x 20 = 80 \\ \colhline
-Number of LEM/Anode sadwiches per CRP unit & 36 \\ \colhline
-Total number of LEM/Anode sandwiches & 2880 \\ \colhline
-Number SFT chimneys /CRP unit & 3 \\ \colhline
-Total number of SFT chimneys & 240 \\ \colhline
-Number of read-out channels / SFT chimney & 640  \\ \colhline
-Total number of read-out channels & 153600 \\ \colhline
-Number of Suspension FT / CRP unit & 3  \\ \colhline
-Total number of Suspension FTs & 240  \\ \colhline
-Number of Slow Control FT / sub-anode & 1  \\ \colhline
-Total number of Slow Control FTs & 80 \\ \colhline
-Number of HV feedthrough & 1  \\ \colhline
-HV for vertical drift & 600 - 900 kV \\ \colhline
-Number of voltage degrader resistive chains & 4 \\ \colhline
-Resistor value & 100 MOhm \\ \colhline
-Total number of resistors & 240 (300)  \\ \colhline
-Total number of PMTs & 180 (1 / 4 $m^2$) \\ 
+%\begin{cdrtable}[Components and parameters for the 12kT (15kT) dual-phase LAr TPC]{clll}{DP_params}{Components and parameters for the 12kT (15kT) dual-phase  LAr TPC}  
+\begin{cdrtable}[Sizes and Dimensions for the 12kT (15kT) dual-phase LAr TPC]{lll}{DP_params}{Sizes and Dimensions for the 12kT (15kT) dual-phase  LAr TPC}  Item & Value(s) &  \\ \toprowrule
+Active volume width and length & W = 12m &  L = 60m \\ \colhline
+Active volume height &  H = 12~m (H = 15~m)  &  \\ \colhline
+Active volume / LAr mass & 8640 (10800)~m$^3$ &  12096 (15120) metric ton \\ \colhline
+Field ring vertical spacing & 200~mm  \\ \colhline
+Field ring tube diameter & 140~mm \\ \colhline
+Anode deck size & W = 12m & L = 60~m \\ \colhline
+CRP unit size & W =3m & L = 3~m  \\ \colhline
+HV for vertical drift & 600 - 900~kV \\ \colhline
+Resistor value & 100~M$\Omega$ \\ \colhline
+\end{cdrtable}
+
+%\begin{cdrtable}[Components and parameters for the 12kT (15kT) dual-phase LAr TPC]{clll}{DP_params}{Components and parameters for the 12kT (15kT) dual-phase  LAr TPC}  
+\begin{cdrtable}[Quantities of Items for the 12kT (15kT) dual-phase LArTPC]{ll}{DP_numbers}{Quantities of Items for the 12kT (15kT) dual-phase  LAr TPC}  Item & Number    \\ \toprowrule
+Field rings & 60  (75)  \\ \colhline
+CRP units & 4 $\times$ 20 = 80 \\ \colhline
+LEM/Anode sadwiches per CRP unit & 36 \\ \colhline
+LEM/Anode sandwiches (total) & 2880 \\ \colhline
+SFT chimneys / CRP unit & 3 \\ \colhline
+SFT chimneys (total) & 240 \\ \colhline
+Read-out channels / SFT chimney & 640  \\ \colhline
+Read-out channels (total) & 153600 \\ \colhline
+Suspension FT / CRP unit & 3  \\ \colhline
+Suspension FTs (total) & 240  \\ \colhline
+Slow Control FT / sub-anode & 1  \\ \colhline
+Slow Control FTs (total) & 80 \\ \colhline
+HV feedthrough & 1  \\ \colhline
+Voltage degrader resistive chains & 4 \\ \colhline
+Resistors (total) & 240 (300)  \\ \colhline
+PMTs (total) & 180 (1 / 4~m$^2$) \\ 
 \end{cdrtable}
