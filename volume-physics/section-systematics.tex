@@ -1,15 +1,47 @@
 As described in Section~\ref{sect:globes}, the effect of systematic uncertainty on
-experimental sensitivity is approximated using signal and background
-normalization uncertainties. In the sensitivities presented here, the
-normalization uncertainties on the \numu and \anumu samples are 5\%
-on signal and 10\% on background. In this section, we consider the effect of
-varying the size of the residual normalization uncertainties
-on the \nue and \anue samples, which are 100\% uncorrelated from each other and from the
-\numu and \anumu uncertainties.
-Figure \ref{fig:exp_systs} shows the
-DUNE sensitivity to neutrino mass hierarchy and discovery of CP violation
-as a function of exposure for several levels of this uncertainty.
+experimental sensitivity is approximated by allowing the neutrino oscillation
+parameters to vary within the uncertainty in the global fit to neutrino data
+\cite{Gonzalez-Garcia:2014bfa} and by allowing the  signal and background rates
+to vary based on normalization uncertainties. In the sensitivities presented there, the
+signal normalization uncertainties are 5\% on the \numu and \anumu samples and
+2\% on the \nue and \anue samples. These four signal normalization uncertainties
+are treated as 100\% uncorrelated so that the 2\% normalization uncertainty on the
+\nue sample represents a residual normalization uncertainty after constraints
+from the near detector, the \numu disappearance samples, and the \anue sample have been applied.
+The normalization uncertainties on background to these samples and the correlation among these
+uncertainties are presented in Table~\ref{tab:bgnormsys}. The result of the correlations
+presented in Table~\ref{tab:bgnormsys} is that there are five independent background
+normalization uncertainties: beam \nue, beam \anue, \numu/NC background to appearance mode,
+NC background to disappearance mode, and $\nu_\tau$.
 
+\begin{table}[!tb]
+  \begin{center}
+    \caption{Normalization uncertainties and correlations for background to the \nue, \anue, \numu, and \anumu data samples.}
+    \label{tab:bgnormsys}
+    \begin{tabular}{l|c|l} \hline\hline
+      Background & Normalization Uncertainty & Correlations \\ \hline
+      \multicolumn{3}{l}{For \nue/\anue appearance:} \\ 
+      Beam \nue & 5\% & Uncorrelated in \nue and \anue samples \\
+      NC      & 5\%  & Correlated in \nue and \anue samples \\
+      \numu CC & 5\% & Correlated to NC \\
+      $\nu_\tau$ CC & 20\% & Correlated in \nue and \anue samples \\ \hline
+      \multicolumn{3}{l}{For \numu/\anumu disappearance:} \\ 
+      NC & 5\% & Uncorrelated to \nue/\anue NC background \\
+      $\nu_\tau$ & 20\% & Correlated to \nue/\anue $\nu_\tau$ background \\
+    \end{tabular}
+  \end{center}
+  \end{table}
+
+In this section, we present a justification for the chosen values of the signal and background
+normalization uncertainties and we consider the effect of varying the size of the residual normalization
+uncertainties on the \nue and \anue samples, the effect of varying the normalization uncertainties
+on individual sources of background, and the effect of introducing an energy scale uncertainty.
+We also describe the ongoing effort to characterize and evaluate the effect of individual sources
+of uncertainty in the DUNE experiment.
+
+Figure \ref{fig:exp_systs} shows the
+change in DUNE sensitivity to neutrino mass hierarchy and discovery of CP violation
+as a function of exposure for several levels of this uncertainty.
 As seen in Fig.~\ref{fig:exp_systs}, for early phases of DUNE
 with exposures less than 100 kt-MW-years, the experiment
 will be statistically limited. In the full experiment, signal and
@@ -112,10 +144,7 @@ simulations and tools is a high priority of the collaboration and is in progress
 Detailed description of this effort is beyond the scope of this document; only
 a brief summary of preliminary results will be presented here. 
 
-As described in
-Section~\ref{sect:neardetector}, 
-{\bf Note:I assume this will be discussed in ND section}
-initial studies using a Fast Monte Carlo with a parameterized detector response
+Initial studies using a Fast Monte Carlo with a parameterized detector response
 predict 2-3\% statistical uncertainties on the absolute flux using fully 
 leptonic neutrino interactions for which high-precision cross-section predictions 
 exist. Specifically,
@@ -180,6 +209,5 @@ Efforts to improve modeling of nuclear interactions and to develop
 reconstruction and analysis tools for a full Monte Carlo simulation are also underway. 
 At the same time,
 a number of test-beam and prototype experiments, including the DUNE 35-t prototype,
-LARIAT, CAPTAIN, and the CERN neutrino platform experiments, 
-{(\bf More details here or less?)} are being designed and built to reduce these
+LARIAT, CAPTAIN, and the CERN neutrino platform experiments, are being designed and built to reduce these
 uncertainties with experimental data.
