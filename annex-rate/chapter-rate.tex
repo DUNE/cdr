@@ -1,6 +1,117 @@
 \chapter{Characterization of Data Rates}
 \label{ch:annex-rate}
 
+\section{Overview}
+
+The data rates estimations take as input a number of parameters from
+designs, requirements and studies.
+Derived parameters are generated based on these inputs and code
+captured in the \textit{dune-params} package\footnote{\url{https://github.com/DUNE/dune-params}}.
+As the inputs and estimations are refined the results presented in
+this annex are regenerated.
+
+Because the triggering and readout strategy of the DAQ and analyses
+are not yet fully understand, the data rate estimation makes some
+broad assumptions and leaves open some choices described in the
+following subsections.
+
+
+
+\section{Thresholds}
+
+There are three threshold considered for the purpose of the data rate estimates.
+The thresholds are assumed to be applied on per-wire and on the basis
+of their ADC value.
+The thresholds are assumed to affect the data rate coming out of the
+DAQ and do not intend to imply other thresholds used internally to the
+DAQ (for example in the anticipated ``trigger stream'').
+The thresholds are:
+
+\begin{description}
+\item[full-stream] The full-stream (FS) threshold is no threshold at all.
+FS data is data where every time bin on every channel is read out.
+\item[zero-suppressed] The zero-suppressed (ZS) threshold is applied
+  at $\approx 3\sigma$ above the mean electronics noise level.
+  Given the requirement on signal/noise ratio and the wire spacing,
+  this effectively places an energy threshold of
+  \SI{0.3}{\MeV}.\fixme{There is also \SI{0.5}{\MeV} floating around
+    and this should probably be added as a parameter.}
+\item[high-energy] The high-energy (HE) threshold is one that is
+  placed high enough to remove activity from radioactive decays but
+  low enough to not impact activity from beam neutrino interactions or
+  proton decay.
+  Study is needed to determine this threshold but it is taken to be
+  $\sim$\SI{5}{\MeV}.\fixme{Again, should this be a proper parameter?}
+\end{description}
+
+The design of the DAQ is expected to allow FS data acquisition.
+It is also expected to be flexible enough to allow for different
+thresholds to be applied based on indications from the data itself.
+
+\section{Sources of Data}
+
+Data is expected to be produced from a number of sources.
+Each source will produce a different rate and depending on the
+threshold applied.
+Their data rates are estimated individually for each source and threshold.
+This provides a means to evaluate different assumptions, designs and
+strategies.
+
+The sources of data that are considered are:
+
+\begin{description}
+\item[in-spill] Activity in the detector which
+  is coincident in time and space with the passage of neutrinos from
+  the beam through the detector.
+\item[cosmic-$\mu$] Activity due to the
+  passing of cosmic-ray muons through the detector.
+\item[radioactivity] Activity due to the decay of $^{39}$Ar,
+  U/Th and other radioactive isotopes.
+\item[atm-$\nu$] Activity which is not in-spill and which is
+  consistent with interactions from atmospheric neutrinos.
+\end{description}
+
+\section{Fundamental Parameters}
+
+This section provides the fundamental parameters taken as input to the
+data rate estimations.
+The parameters are summarized in
+table~\ref{tab:fundamental-parameters}
+
+\begin{table}[htbp]
+  \centering
+  \caption{The fundamental parameters serving as input to data rate estimations.}
+  \input{annex-rate/gen/fundamental-parameters-table}
+  \label{tab:fundamental-parameters}
+\end{table}
+
+\fixme{These aren't all.}
+
+\section{Full-stream Data}
+
+Full-stream (FS) data is acquired with no ADC threshold.
+It is obviously the most voluminous and also the most easy to estimate.
+The parameters which apply to this data are given in table~\ref{tab:full-stream-parameters}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Parameters pertaining to full-stream data rates.}
+  \input{annex-rate/gen/full-stream-parameters-table}
+  \label{tab:full-stream-parameters}
+\end{table}
+
+The expected data rates for different scenarios of FS data are given
+in table~\ref{tab:full-stream-volume}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Data volumes and rates for full-stream data
+    acquisition. FIXME: These numbers are currently wrong!}
+  \input{annex-rate/gen/full-stream-volume}
+  \label{tab:full-stream-volume}
+\end{table}
+
+
 \section{The tables}
 
 The Liquid Argon TPC will produce a variety of signals due to various
@@ -68,7 +179,7 @@ section.
 \begin{table}[htbp]
   \centering
   \caption{Fundamental parameters of the TPC and detector that are used as input to the data rate estimates.}
-  \input{annex-rate/fundamental-table.tex}
+%  \input{annex-rate/fundamental-table.tex}
   \label{tab:fundamental}
 \end{table}
 
@@ -91,7 +202,7 @@ This can produce a prodigious amount of data.
   \centering
   \caption{Calculation of \textit{full stream} data volume for
     \SI{40}{\kton}.}
-  \input{annex-rate/full-stream-table.tex}
+%  \input{annex-rate/full-stream-table.tex}
   \label{tab:full-stream}
 \end{table}
 
