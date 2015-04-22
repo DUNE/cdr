@@ -188,7 +188,7 @@ is simply the presence of electrons and absence of positrons in the Earth.
 The asymmetry from the matter effect increases with baseline as the neutrinos
 pass through more matter, so an experiment with a longer baseline will be
 more sensitive to the neutrino mass hierarchy. For baselines longer than 
-$\sim$1200~km {\bf [Note: Can we provide a reference?]}, the degeneracy between the asymmetries from matter
+$\sim$1200~km~\cite{}, the degeneracy between the asymmetries from matter
 and CP-violation effects can be resolved, so DUNE, with a baseline of 1300~km, 
 will be able to unambiguously
 determine the neutrino mass hierachy and measure the value of \deltacp in the same experiment.
@@ -210,61 +210,45 @@ changes to the value of \deltacp induce opposite changes to \nue and
 neutrino (forward horn current) and antineutrino (reverse horn current)
 is also a critical component of the experiment.
 
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=0.45\linewidth]{energy_nu_no.pdf}
-\includegraphics[width=0.45\linewidth]{energy_anu_no.pdf}
-\caption{$P(\nu_\mu \rightarrow \nu_e)$ at a baseline of 1300~km,
+\begin{cdrfigure}[Appearance probability for neutrinos and antineutrinos]{oscprob}{The appearance probability at a baseline of 1300~km,
   as a function of neutrino energy, for \deltacp = $-\pi/2$ (blue), 
   0 (red), and $\pi/2$ (green), for neutrinos (left) and antineutrinos
   (right), for normal hierarchy. The yellow line indicates the oscillation
   probability if $\theta_{13}$ were equal to zero.}
-\label{fig:oscprob}
-\end{figure}
+\includegraphics[width=0.45\linewidth]{energy_nu_no.pdf}
+\includegraphics[width=0.45\linewidth]{energy_anu_no.pdf}
+\end{cdrfigure}
 
 The experimental sensitivities presented here are estimated using 
-GLoBES\cite{Huber:2004ka,Huber:2007ji}. GLoBES takes flux simulation, cross-sections,
+GLoBES\cite{Huber:2004ka,Huber:2007ji}. GLoBES takes flux simulations, cross-sections,
 and detector-response parameterization as inputs. In this document we present
-a range of possible experimental performance that depends on the design of the neutrino beam.
+a range of possible physics sensitivity that depends on the design of the neutrino beam.
 A conservative estimate of sensitivity is calculated using a flux simulation that is based on the reference design of the beam line as presented in \vollbnf.  A flux simulation based on an optimized beam design is used to show the goal sensitivity.  There are a range of design options that produce sensitivities in between the sensitivity of the reference beam design and optimized beam design. The actual flux will depend upon details of the hadron production and focusing design; optimization of the beam design to maximize experimental sensitivity is a critical aspect of the experiment
-design.  Section~\ref{sec:physics-lbnosc-beam-req} describes the flux simulations used for the sensitivity estimates and explores the possible improvements that could be achieved by variations in the reference beam design.
+design.  Table~\ref{tab:beamparam} summarizes some of the properties of the two flux simulations used in the sensitivity studies.  Section~\ref{sec:physics-lbnosc-beam-req} describes the flux simulations in more detail and explores the potential improvements that could be achieved by variations in the reference beam design.
 
-The background to \nue appearance is composed of: i) intrinsic \nue and \anue 
-from the beam; ii) mis-identified \numu and \anumu CC events; 
+\begin{cdrtable}[Beam line parameters for CDR reference and optimized designs]{lcc}{beamparam}{[Still needs checked.] A comparison of the beam line parameters assumed for the CDR Reference Design flux and the Optimized Design flux used in the sensitivity calculations presented in this chapter.  Please see Section~\ref{sec:physics-lbnosc-beam-req} for the details.}
+Parameter & CDR Reference Design & Optimized Design\\
+\toprowrule
+ Proton Beam Energy & 80~GeV & 80~GeV \\ 
+ Proton Beam Power & 1.07 MW & 1.07 MW\\
+ Target & Graphite & Beryllium \\
+ Horn Current & 230~kA & 230~kA \\
+ Horn Design & NuMI-style & Genetic Optimization \\ 
+ Decay Pipe Length & 204~km & 250~km \\
+ Decay Pipe Diameter & 4~m & 4~m\\
+\end{cdrtable}
+
+
+The signal for \nue appearance is an excess of charged-current (CC) \nue and \anue interactions over the expected background in the far detector.  The background to \nue appearance is composed of: i) CC interactions of \nue and \anue intrinsic
+to the beam; ii) mis-identified \numu and \anumu CC events; 
 iii) neutral current (NC) backgrounds; iv) $\nu_\tau$ and $\bar{\nu}_\tau$ CC events 
 in which the $\tau$'s decay leptonically into electrons/positrons. NC and $\nu_\tau$ 
 backgrounds are due to interactions of higher energy neutrinos but they contribute to 
 backgrounds mainly at low energy, which is important for the sensitivity to CP violation. 
-The LAr TPC performance parameters that go into the GLoBES calculation are generated using a fast Monte Carlo (MC) simulation, described in detail in \cite{Adams:2013qkq}.  The MC uses flux simulations and the GENIE event generator \cite{Andreopoulos:2009rq} to generate neutrino interactions on argon.  Events can then be classified as $\nu_e$ CC-like or background-like based on event-level reconstructed quantities.   {\bf [Add more details of classification?]}
-% The detector response assumed in these calculations
-% is summarized in Table~\ref{tab:lar-nuosc-totaltable}. 
-The energy smearing, signal efficiency, and misidentification rates for background vary with energy. {\bf [Will add Fast MC plots]} The neutrino oscillation
+The LAr TPC performance parameters that go into the GLoBES calculation are generated using a fast Monte Carlo (MC) simulation, described in detail in \cite{Adams:2013qkq}.  The MC uses flux simulations and the GENIE event generator \cite{Andreopoulos:2009rq} to generate neutrino interactions on argon.  Events can then be classified as $\nu_e$ CC-like or background-like based on event-level reconstructed quantities.   {\bf [Add more details of classification?]} The energy smearing, signal efficiency, and misidentification rates for background vary with energy. {\bf [Will add Fast MC plots]} The neutrino oscillation
 parameters and the uncertainty on those parameters are taken from the 
 Nu-Fit\cite{Gonzalez-Garcia:2014bfa} global fit to neutrino data; the values are given in 
 Table~\ref{tab:oscpar_nufit}.  The cross-section inputs to GLoBES have been generated using GENIE 2.8.4~\cite{Andreopoulos:2009rq}.
-
-% \begin{table}[!hb]
-% \begin{center}
-% \caption{LArTPC detector performance parameters assumed in GLoBES sensitivity
-%   calculations. Signal efficiencies, background levels, and resolutions are 
-%   obtained from ICARUS results and LArSoft simulations. {\bf TO BE UPDATED}}
-% \label{tab:lar-nuosc-totaltable}
-% \begin{tabular}{l|c} \hline\hline
-% Parameter &    Value Used for  DUNE Sensitivities\\ \hline\hline
-% & For $\nu_e$ CC appearance studies: \\ 
-% $\nu_e$ CC efficiency          & 80\%   \\ 
-% $\nu_\mu$ NC mis-identification rate  & 1\%   \\ 
-% $\nu_\mu$ CC mis-identification rate  & 1\%   \\ \hline
-% & For $\nu_\mu$ CC disappearance studies: \\ 
-% $\nu_\mu$ CC efficiency          & 85\%   \\ 
-% $\nu_\mu$ NC mis-identification rate  & 1\%   \\ 
-% Other background                 & 0\% \\ \hline
-% & Neutrino energy resolutions: \\ 
-% $\nu_e$ CC energy resolution & $15\%/\sqrt{E(GeV)}$ \\ 
-% $\nu_\mu$ CC energy resolution & $15\%/\sqrt{E(GeV)}$ \\ 
-% \end{tabular}
-% \end{center}
-% \end{table}
 
 \begin{cdrtable}[Oscillation parameter values and relative uncertainties]{lcc}{oscpar_nufit}{Central value and relative uncertainty of neutrino oscillation parameters from a global fit to neutrino oscillation data, for normal hierarchy. The relative uncertainty is computed using 1/6 of the 3$\sigma$ allowed range from the fit.}
 Parameter &    Central Value & Relative Uncertainty \\
