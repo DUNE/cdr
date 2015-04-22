@@ -36,9 +36,9 @@
 
 % Smart end-of-macro spacing
 \RequirePackage{xspace}
-% Must use units properly and consistently
-\RequirePackage[detect-all=true,group-digits=true,group-separator={,},group-minimum-digits=4,binary-units=true]{siunitx}
-
+% Let's use units properly and consistently!
+\RequirePackage[detect-all=true,group-digits=true,group-separator={,},binary-units=true]{siunitx}
+% this option trips up some people (eg, tom junk): group-minimum-digits=4,
 
 % Long table is long
 \RequirePackage{longtable}
