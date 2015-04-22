@@ -20,3 +20,5 @@ tests/tables.pdf
 annex-*.pdf
 *.gz
 *.pyc
+.~lock.*
+junk

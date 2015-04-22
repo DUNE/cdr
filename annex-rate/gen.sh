@@ -15,6 +15,7 @@ xls=$mydir/parameters.xls
 for tmpl in templates/*.tex
 do
     fname="$gendir/$(basename $tmpl)"
-    dune-params render -f datarates.filter -t $tmpl -o $fname $xls
+    echo "generating $fname"
+    dune-params render -f datarates.filter -t $tmpl -o $fname $xls || exit 1
 done
 
