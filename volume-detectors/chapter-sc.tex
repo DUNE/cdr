@@ -70,17 +70,17 @@ Relevant  LAr TPC parameters:
 Factors affecting data rates:
 \begin{itemize}
 \item Zero Suppression (ZS)  in the Front-End electronics of the detector
-\item Radiolgical and Cosmological Backgrounds as functions of thresholds set for ZS, in different physics domains (cf. beam neutino physics vs Supernova Burst)
+\item Radiological and Cosmological Backgrounds as functions of thresholds set for ZS, in different physics domains (cf. beam neutino physics vs Supernova Burst)
 \end{itemize}
 
-Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can be calulated as a product of the following numbers:
+Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can be calculated as a product of the following numbers:
 \begin{itemize}
 \item Channel count
 \item Number of ADC ``clicks'' per total drift (collection) time
 \item ADC resolution
 \end{itemize}
 \
-This results in a total of 9.2GB worth of TPC data. Accorrding to current estimates, with thresholds optimized for beam neutrino physics, zero suppression
+This results in a total of 9.2GB worth of TPC data. According to current estimates, with thresholds optimized for beam neutrino physics, zero suppression
 gives us a reduction factor of \textasciitilde 100 in the event size, resulting in a 92~MB ``digital picture'' of the beam neutrino event in the TPC
 (discriminated against most background but \textit{still covering the complete volume of the TPC}).
 Since neutrino interactions will result in a more local pattern of ionization signal being read out
@@ -139,7 +139,7 @@ gained during the operation of the LHC experiments. This will allow the DUNE Col
 member institutions and improve the overall long-term scalability of its computing platform.
 
 DUNE will operate a  distributed network of federated resources, for both CPU power and storage capability. This will allow for streamlined incorporation
-of computing facilities as they become available at member institutions, and thus is particularly amenable to accomodate staged construction and commissioning
+of computing facilities as they become available at member institutions, and thus is particularly amenable to accommodate staged construction and commissioning
 of the detector subsystems. A modern Workload Management System will be deployed on top of Grid and Cloud resources to provide computing
 power to DUNE researchers.
 
@@ -222,7 +222,7 @@ of particles and to model their energy deposition.  Custom algorithms, described
 in more detail in Section~\ref{annex:detectors-sc-physics-software-simulation} propagate
 the drifting charge and scintillation photons to the wires and photon detectors, respectively.
 The response characteristics of the TPC wires, the electronics, and the photon detectors
-is also simulated with custom algorihtms.
+is also simulated with custom algorithms.
 
 %\subsection{Near Detector Reconstruction}
 %\label{sec:detectors-sc-physics-software-reconstruction-nd}
@@ -231,48 +231,73 @@ is also simulated with custom algorihtms.
 \label{sec:detectors-sc-physics-software-reconstruction-fd}
 
 The reconstruction of particle interactions in Liquid Argon TPC
-detectors is an active area of research and development.
-A fully automated event reconstruction will be developed for the
-DUNE Far Detector. The block diagram in Figure~\ref{fig:fdrecoblockdiag}
-illustrates the components of the Far reconstruction chain. 
-The first stage involves the processing of the noisy ADC wire signals,
-and creation of 2D `hits'. A series of pattern recognition algorithms
-are then used to group the hits into 2D and 3D clusters representing 
-individual particle tracks and showers. A set of high-level tools
-then reconstructs the vertex and 3D trajectory of each particle,
-provides particle identification, and reconstructs the four-momentum.
-While each step of the reconstruction chain has been implemented,
-the algorithms have not yet been fully optimised.
+detectors is an active area of research and development
+Although not a mature field, there has been considerable
+progress in recent years. In particular, the data from the
+ICARUS~\cite{REF1} and ArgoNEUT experiments~\cite{REF2}
+have enabled the development of a variety of reconstruction techniques,
+which have formed the basis for a range of precision
+neutrino physics measurements.
+With the advancement of both single-phase and dual-phase technologies,
+and expansion of the experimental program to include MicroBooNE~\cite{REF3},
+the 35-ton prototype and the CERN test experiments,
+the reconstruction software has continued to grow in volume and sophistication,
+supported by the powerful frameworks such as LArSoft and Qscan.
+
+A fully automated chain of event reconstruction algorithms
+will be developed for the DUNE Far Detector,
+as illustrated by the block diagram in Figure~\ref{fig:fdrecoblockdiag}.
+The first stage of reconstruction involves the processing of the
+noisy ADC wire signals, and the creation of 2D `hits'. 
+A series of pattern recognition algorithms are then used to group
+the hits into 2D and 3D clusters representing individual
+particle tracks and showers. These objects then provide the input
+for a set of high-level algorithms, which reconstruct the vertex
+and 3D trajectory of each particle, identify the type of particle,
+and fit the four-momentum.
+While each stage of the reconstruction chain has been implemented,
+the algorithms have not yet been fully optimised and remain under
+heavy development.
 
 \begin{cdrfigure}[Far detector reconstruction block diagram]{fdrecoblockdiag}
 {Block diagram showing the components of the far detector reconstruction chain}
 \includegraphics[width=0.7\textwidth]{fdrecoflowchart.pdf}
 \end{cdrfigure}
 
+
 \subsubsection{Signal Processing and Hit Finding}
 
-The data are first uncompressed, the noise is reduced by filtering, and a deconvolution
-of the expected detector and electronics response is applied.  The pulse-shape models
-used to deconvolute the response are predicted {\it a priori} at the moment, though
-data from the 35-ton prototype and MicroBooNE with provide data with similar detector
-configurations and electronics to what is to be used with DUNE.  The algorithms perform
-well in the ArgoNeuT analyses~\cite{Anderson:2012vc}.  Pedestals are measured and
-subtracted before pulses are fit to the deconvoluted data.  These pulses are called
-hits for later processing.  At this stage the data are still two-dimensional -- hits
-provide wire and time and charge information, but not information about where along a wire
-the charge was deposited.  Hits may also overlap if they are close together in time, 
+The data are first uncompressed, the noise is reduced by filtering,
+and a deconvolution of the detector and electronics response is applied.
+The pulse-shape models used to deconvolute the response are currently
+based on {\it a priori} predictions, but these will be tuned and
+validated using data from the 35-ton prototype and CERN test experiments.
+The algorithms are found to perform well in ArgoNeuT analyses~\cite{Anderson:2012vc}.
+After deconvolution and pedestal subtraction, pulses are identified in
+the waveforms, and parametric fits are applied to extract the size and
+shape of each pulse. The fitted pulses are called hits for later processing.
+At this stage, the data are still two-dimensional -- each hit provides
+a wire location and a measurement of time and total charge,
+but no indication of where along a wire the charge was deposited.
+Hits may also overlap if they are close together in time, 
 even if the charge was deposited on distant segments of the wire.
+
 
 \subsubsection{Disambiguation}
 
-Hits must be associated between views in order to break the discrete ambiguity
-introduced by the wrapping of the induction-plane wires in the single-phase APA design.
-The arrival time of the hits in the three views provides a key to the association.
-An algorithm, described in Section~\ref{annex:reco-disambiguation}, associates
-triplets of hits in the $U$, $V$, and collection views to identify hits that
-can only have one interpretation, and clusters nearby hits to make decisions for
-the rest of the hits.  This step constitutes a first pattern recognition stage for
-the single-phase far detector design.
+The wrapping of induction-plane wires in the single-phase Far Detector APA design
+introduces an additional discrete ambiguity by connecting multiple wire
+segments to each DAQ channel. A ``disambiguation'' algorithm,
+described in Section~\ref{annex:reco-disambiguation}, is used to break the
+ambiguity and determine which wire segment generated the charge on each hit.
+The algorithm forms associations between the collection view and induction views,
+identifying ``triplets'' of hits that have intersecting wire segments
+and consistent arrival times. For most events, the majority of hits are
+associated with a single wire segment, and are trivially disambiguated.
+The remaining hits are disambiguated by clustering together the trivial hits.
+This procedure constitutes the first pattern recognition stage in the
+single-phase detector.
+
 
 \subsubsection{Optical Detector Signal Reconstruction}
 
@@ -282,26 +307,32 @@ Hits are grouped together into clusters, called ``flashes'', for subsequent
 association with clusters in the TPC.  Each flash has a total integrated charge and a position
 estimate.
 
+
 \subsubsection{TPC Hit Clustering}
 
 After the hit-finding and disambiguation stages have completed, a series of 
 pattern recognition algorithms are applied to the 2D hits in order to identify 
-the tracks and showers produced by individual final-state particles in an event.
-Three-dimensional clusters may be reconstructed either by associating 2D clusters
-to each other, or by associating hits in the separate views and clustering the 3D hits.
+tracks and showers produced by individual final-state particles in an event.
+The reconstruction of 3D objects is accomplished either by forming 2D clusters
+and associating them between views, or by first associating 2D hits between views
+and then clustering the resulting 3D hits. The clustering of Liquid Argon TPC hits 
+is a challenging task, due to the variety and complexity of event topologies.
 The development of automated pattern recognition algorithms for Liquid Argon 
-TPC detectors is a relatively new field, but several 2D and 3D algorithms
-have been implemented, using a range of different techniques.
+TPC detectors remains a relatively new field, but several 2D and 3D algorithms
+have been implemented, using a range of techniques.
 
-The PANDORA software development kit~\cite{Marshall:2013bda,Marshall:2012hh} provides
-a highly modular approach to pattern recognition, in which a large chain of focused
-algorithms is applied, each designed to identify and handle
-a specific event topology.  A series of 2D pattern recognition algorithms clusters
-nearby hits, making use of the event topology.  The 3D track reconstruction step
-matches up all possible combinations 
-of 2D clusters between the $U$, $V$, and $Z$views, and groups together 
-the best-matched triplets or doublets of clusters.   Vertex-finding algorithms
-are then applied, and the neutrino event type is tested and the energy measured.
+The PANDORA software development kit~\cite{Marshall:2013bda,Marshall:2012hh}
+provides fully-automated pattern recognition for both single-phase and dual-phase
+detectors. PANDORA provides a highly modular approach to pattern recognition,
+in which events are reconstructed using a large chain of algorithms,
+each designed to identify a specific topology. 
+A series of 2D pattern recognition algorithms are first used to
+cluster together nearby hits, making use of the event topology.
+A 3D reconstruction stage then follows, which associates the 2D clusters
+between views, identifies the best-matched tracks and showers,
+and modifies the clustering to improve the 3D consistency of the event.
+vertex-finding algorithms are then applied, and a neutrino event
+is formed by connecting together the 3D particles.
 
 The PANDORA pattern recognition algorithms have been developed
 using simulated neutrino interactions in the energy range 100\,MeV\,$-$\,25\,GeV.
@@ -309,7 +340,7 @@ Figure~\ref{fig:pandoraefficiency} shows the efficiency for reconstructing
 the leading final-state lepton in 5\,GeV $\nu_{e}$ CC and $\nu_{\mu}$ CC interactions,
 plotted as a function of momentum using the MicroBooNE detector geometry.
 In both samples, the reconstruction efficiency increases rapidly with momentum,
-rising above 90\% at 500\,MeV and reaching approxmately 100\% at 2\,GeV.
+rising above 90\% at 500\,MeV and reaching approximately 100\% at 2\,GeV.
 Figure~\ref{fig:pandoravertexresolution} shows the spatial resolution for
 reconstructing the primary interaction vertex in 5\,GeV $\nu_{\mu}$ CC events,
 projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex 
@@ -361,7 +392,7 @@ can be applied to another, and the best algorithm chosen for a particular
 purpose.
 
 Tracks may be reconstructed also with a Kalman Filter algorithm~\cite{kalman}.
-In this algorihtm, hits are combined from multiple views for form three-dimensional
+In this algorithm, hits are combined from multiple views for form three-dimensional
 space points.  Three-dimensional track reconstruction can proceed from space points
 or directly from hits.
 
@@ -415,7 +446,7 @@ to understand its ability to distinguish $\nu_{e}$ and $\nu_{\mu}$ events.
 If a single lepton flavour is identified in the event, then the event is considered as a signal event of the observed lepton flavour. 
 If neither or both lepton flavours are identified, the event is discarded.
 Numbers of events correctly reconstructed is above 90$\%$ for $\nu_{\mu}$-CCQE events.
-assuming that all hits not associated with the lepton cluster are due to hadronic act%ivity.
+assuming that all hits not associated with the lepton cluster are due to hadronic activity.
 
 \fixme{Current results?}
 
@@ -429,7 +460,7 @@ under identical conditions as used for physics analyses are the most desirable.
 These include studying cosmic-ray events and non-fiducial interactions.  But not
 all performance measures can be calibrated in this way.  A laser calibration system
 will constrain the detector alignment as well as measure any residual space-charge effects
-(which are expected to be very small underground), as well as provide timing calibraiton
+(which are expected to be very small underground), as well as provide timing calibration
 and crosscheck the response to drifting charge.  The electronics will be outfitted with
 charge-injection calibration systems so that non-uniformities in the electronics response
 can be corrected in a time-dependent fashion.  The response to charged particles of known
