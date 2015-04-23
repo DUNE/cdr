@@ -310,58 +310,57 @@ estimate.
 
 After the hit-finding and disambiguation stages have completed, a series of 
 pattern recognition algorithms are applied to the 2D hits in order to identify 
-tracks and showers produced by individual final-state particles in an event.
-The reconstruction of 3D objects is accomplished either by forming 2D clusters
+the 3D tracks and showers produced by the final-state particles in an event.
+The reconstruction of 3D particles is accomplished either by forming 2D clusters
 and associating them between views, or by first associating 2D hits between views
-and then clustering the resulting 3D hits. The clustering of Liquid Argon TPC hits 
-is a challenging task, due to the variety and complexity of event topologies.
-The development of automated pattern recognition algorithms for Liquid Argon 
-TPC detectors remains a relatively new field, but several 2D and 3D algorithms
-have been implemented, using a range of techniques.
+and then clustering the resulting 3D hits. 
+The clustering of hits in Liquid Argon TPC detectors is a challenging task
+due to the variety and complexity of event topologies.
+However, several automated 2D and 3D pattern recognition algorithms have been 
+implemented using a range of techniques.
 
-The PANDORA software development kit~\cite{Marshall:2013bda,Marshall:2012hh}
-provides fully-automated pattern recognition for both single-phase and dual-phase
-detectors. PANDORA provides a highly modular approach to pattern recognition,
-in which events are reconstructed using a large chain of algorithms,
-each designed to identify a specific topology. 
-A series of 2D pattern recognition algorithms are first used to
-cluster together nearby hits, making use of the event topology.
-A 3D reconstruction stage then follows, which associates the 2D clusters
-between views, identifies the best-matched tracks and showers,
-and modifies the clustering to improve the 3D consistency of the event.
-vertex-finding algorithms are then applied, and a neutrino event
-is formed by connecting together the 3D particles.
+One promising suite of reconstruction tools is the 
+PANDORA software development kit~\cite{Marshall:2013bda,Marshall:2012hh}
+which provides fully-automated pattern recognition for both single-phase 
+and dual-phase technologies. 
+PANDORA implements a highly modular approach to pattern recognition,
+in which events are reconstructed using a large chain of algorithms. 
+A series of 2D pattern recognition algorithms are first applied,
+which cluster together nearby hits based on event topology.
+The resulting 2D clusters are then associated between views
+and built into 3D tracks and showers, modifying the 2D clustering 
+as needed to improve the 3D consistency of the event. 
+%In the single-phase reconstruction, 
+%the availability of three views provides strong constraints on 3D ambiguities.
+Vertex-finding algorithms are also applied,
+and neutrino events are reconstructed by associating the 
+3D particles to the primary interaction vertex.
 
-The PANDORA pattern recognition algorithms have been developed
-using simulated neutrino interactions in the energy range 100\,MeV\,$-$\,25\,GeV.
+For the single-phase technology, the PANDORA reconstruction chain
+has been applied to accelerator neutrinos in the energy range 
+100\,MeV\,$-$\,25\,GeV, using the MicroBooNE detector simulation.
 Figure~\ref{fig:pandoraefficiency} shows the efficiency for reconstructing
-the leading final-state lepton in 5\,GeV $\nu_{e}$ CC and $\nu_{\mu}$ CC interactions,
-plotted as a function of momentum using the MicroBooNE detector geometry.
+the leading final-state lepton as a function of its momentum
+for 5\,GeV $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions.
 In both samples, the reconstruction efficiency increases rapidly with momentum,
 rising above 90\% at 500\,MeV and reaching approximately 100\% at 2\,GeV.
 Figure~\ref{fig:pandoravertexresolution} shows the spatial resolution for
-reconstructing the primary interaction vertex in 5\,GeV $\nu_{\mu}$ CC events,
+reconstructing the primary interaction vertex in the 5\,GeV $\nu_{\mu}$ CC sample,
 projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex 
 resolution is obtained by taking the 68\% quantile of 3D vertex residuals, 
 which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 
-
-The PANDORA framework is also applied to event reconstruction in
-dual-phase detectors, where two views are available, with similar
-algorithms.  The performance has been tested in simulated neutrino scattering events
-by comparing Monte Carlo truth information for each 
-final state particle with up to one
-reconstructed cluster.  The quality of the reconstruction of each
-final state particle is then evaluated by calculating the
-``completeness'' and purity for each particle.  The former is defined
-as the proportion of the true particle energy deposit which is
-contained in the associated cluster, the latter as the proportion of
-the associated cluster energy which was actually deposited by the
-final state particle.  Both completeness and purity is above 90$\%$
-for particles energy above above 800 MeV, while it is seen that cases
-of poor reconstruction are largely due to lower-energy particles which
-are more difficult to identify.
-
+For the dual-phase event reconstruction, where only two views are available,
+the PANDORA reconstruction uses a similar set of 2D algorithms but
+a modified 3D approach. The quality of the neutrino event reconstruction 
+is evalulated by performing hit-by-hit comparisons of simulated and 
+reconstructed particles and calculating the following performance metrics: 
+``completeness'' is defined as the fraction of hits generated by 
+the true particle and contained in the reconstructed particle; 
+``purity'' is defined as the fraction of hits in the reconstructed 
+particle that were deposited by the true particle. 
+Both the completeness and purity are found to be above 90$\%$ for 
+final-state particles with energies above 800\,MeV.
 
 \begin{cdrfigure}[PANDORA reconstruction efficiency]{pandoraefficiency}
 {Reconstruction efficiency of Pandora pattern recognition algorithms
