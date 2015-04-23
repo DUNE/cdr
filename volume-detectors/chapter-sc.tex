@@ -194,10 +194,10 @@ member institutions in this area, making an effort to reuse existing systems or 
 \label{sec:detectors-sc-physics-software-simulation-fd}
 
 Detailed GEANT4-based~\cite{GEANT4:NIM,GEANT4} Monte Carlo simulations have been 
-developed for both the single-phase and dual-phase Far Detector designs,
+developed for the single-phase and dual-phase Far Detector designs,
 incorporating both the Liquid Argon TPC modules
 and the photon detection systems. The simulated data provide
-the basis for detailed studies of detector design and performance, 
+a basis for detailed studies of detector design and performance, 
 and enable the development of automated event reconstruction algorithms.
 
 The single-phase detector simulation is implemented in LArSoft~\cite{Church:2013hea},
@@ -312,6 +312,7 @@ The remaining hits are then disambiguated by clustering together the trivial hit
 The disambiguation procedure constitutes the first pattern recognition stage 
 in the single-phase detector.
 
+\fixme{Can we quantify the performance of the disambiguation?}
 
 \subsubsection{Optical Detector Signal Reconstruction}
 
@@ -346,13 +347,10 @@ which cluster together nearby hits based on event topology.
 The resulting 2D clusters are then associated between views
 and built into 3D tracks and showers, modifying the 2D clustering 
 as needed to improve the 3D consistency of the event. 
-%In the single-phase reconstruction, 
-%the availability of three views provides strong constraints on 3D ambiguities.
 Vertex-finding algorithms are also applied,
 and neutrino events are reconstructed by associating the 
 3D particles to the primary interaction vertex.
-
-The PANDORA reconstruction chain has been developed for accelerator neutrinos 
+The PANDORA algorithms have been developed using accelerator neutrinos 
 in the energy range 100\,MeV\,$-$\,25\,GeV.
 Figure~\ref{fig:pandoraefficiency} shows the efficiency for reconstructing
 the leading final-state lepton as a function of its momentum
@@ -360,11 +358,6 @@ for 5\,GeV $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions
 simulated in the MicroBooNE detector.
 In both samples, the reconstruction efficiency increases rapidly with momentum,
 rising above 90\% at 500\,MeV and reaching approximately 100\% at 2\,GeV.
-Figure~\ref{fig:pandoravertexresolution} shows the spatial resolution for
-reconstructing the primary interaction vertex in the 5\,GeV $\nu_{\mu}$ CC sample,
-projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex 
-resolution is obtained by taking the 68\% quantile of 3D vertex residuals, 
-which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 
 \begin{cdrfigure}[PANDORA reconstruction efficiency]{pandoraefficiency}
 {Reconstruction efficiency of Pandora pattern recognition algorithms
@@ -374,14 +367,6 @@ which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
  using the MicroBooNE detector geometry. }
 \includegraphics[width=0.49\textwidth]{pandora_uboone_efficiency_5GeV_numucc.pdf}
 \includegraphics[width=0.49\textwidth]{pandora_uboone_efficiency_5GeV_nuecc.pdf}
-\end{cdrfigure}
-
-\begin{cdrfigure}[PANDORA vertex resolution]{pandoravertexresolution}
-{Distribution of 2D residuals between reconstructed and simulated interaction
- vertex for 5\,GeV $\nu_{\mu}$ CC interactions in the MicroBooNE detector.
- The $x$ axis is oriented along the drift field, the $y$ axis runs parallel 
- to the collection plane wires, and the $z$ axis points along the beam direction.}
-\includegraphics[width=0.6\textwidth]{pandora_uboone_vertex_resolution.pdf}
 \end{cdrfigure}
 
 
@@ -397,6 +382,17 @@ In this algorithm, hits are combined from multiple views for form three-dimensio
 space points.  Three-dimensional track reconstruction can proceed from space points
 or directly from hits.
 
+\fixme{Talk about local principal curves here, and show vertex resolution plots}
+
+%Figure~\ref{fig:vertexresolution} Shows resolution [Citation: Eur. Phys. J. C (2014), 74 - 2832]
+%
+%\begin{cdrfigure}[Vertex resolution from local principal curves]{vertexresolution}
+%{CAPTION GOES HERE}
+%\includegraphics[width=0.33\textwidth]{barker_vertex_nueccqe_x.pdf}
+%\includegraphics[width=0.33\textwidth]{barker_vertex_nueccqe_y.pdf}
+%\includegraphics[width=0.33\textwidth]{barker_vertex_nueccqe_z.pdf}
+%\end{cdrfigure}
+
 The electromagnetic shower algorithms have two
 steps. The first is a post-clustering stage which examines the
 existing clusters in terms of their 2D parameters to determine whether
@@ -409,7 +405,7 @@ These 3D parameters allow the calculation of the shower energies and charge
 depositions at the starts of the showers, which are used in particle
 identification. 
 
-\fixme{Can we say something about current status or performance?}
+\fixme{Can we say something about current status or performance of the shower reconstruction?}
 
 \subsubsection{Calorimetry and Particle ID}
 
