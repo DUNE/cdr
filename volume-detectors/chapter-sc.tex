@@ -249,11 +249,12 @@ that decayed into two photons with separate conversion vertices.}
 The reconstruction of particle interactions in Liquid Argon TPC
 detectors is an active area of research and development and
 there has been considerable progress in recent years. 
-In particular, the data from the ICARUS~\cite{REF1} and ArgoNEUT experiments~\cite{REF2}
+In particular, the data from the ICARUS~\cite{Amerio:2004ze,icarus-url,ICARUS-pizero,Antonello:2012hu} 
+and ArgoNEUT experiments~\cite{Adamson:2013/02/28tla,argoneut-url,Acciarri:2013met}
 have enabled the development of a variety of new reconstruction techniques,
 forming the basis for precision measurements of neutrino physics.
 With the advancement of both single-phase and dual-phase technologies,
-and expansion of the experimental program to include MicroBooNE~\cite{REF3},
+and expansion of the experimental program to include MicroBooNE~\cite{Chen:2007ae,microboone-url},
 the 35-ton prototype and the CERN test experiments,
 reconstruction tools has continued to grow in both volume and sophistication,
 supported by the powerful software frameworks such as LArSoft and Qscan.
@@ -279,7 +280,7 @@ continuous improvement.
 \end{cdrfigure}
 
 
-\subsubsection{Signal Processing and Hit Finding}
+\subsubsection{Signal Processing, Hit Finding, and Disambiguation}
 
 The data are first uncompressed, the noise is reduced by filtering,
 and a deconvolution of the detector and electronics response is applied.
@@ -296,9 +297,6 @@ but no indication of where along a wire the charge was deposited.
 Hits may also overlap if they are close together in time, 
 even if the charge was deposited on distant segments of the wire.
 
-
-\subsubsection{Disambiguation}
-
 The wrapping of induction-plane wires in the single-phase Far Detector APA design
 introduces an additional discrete ambiguity in the data by connecting multiple wire
 segments to each DAQ channel. A ``disambiguation'' algorithm,
@@ -308,11 +306,10 @@ The algorithm forms associations between the collection view and induction views
 identifying ``triplets'' of hits that have intersecting wire segments
 and consistent arrival times. In most events, the majority of hits are
 associated with a single wire segment, and can be trivially disambiguated.
-The remaining hits are then disambiguated by clustering together the trivial hits.
+The remaining hits are then disambiguated by clustering them with trivially disambiguated hits.
 The disambiguation procedure constitutes the first pattern recognition stage 
-in the single-phase detector.
-
-\fixme{Can we quantify the performance of the disambiguation?}
+in the single-phase detector.  The performance of the disambiguation algorithm is
+discussed in the Annex~\cite{annex:disambiguation}.
 
 \subsubsection{Optical Detector Signal Reconstruction}
 
