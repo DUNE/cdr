@@ -197,8 +197,8 @@ Detailed GEANT4-based~\cite{GEANT4:NIM,GEANT4} Monte Carlo simulations have been
 developed for both the single-phase and dual-phase Far Detector designs,
 incorporating both the Liquid Argon TPC modules
 and the photon detection systems. The simulated data provide
-the basis for detailed studies of detector performance, 
-and enable the development of automated event reconstruction.
+the basis for detailed studies of detector design and performance, 
+and enable the development of automated event reconstruction algorithms.
 
 The single-phase detector simulation is implemented in LArSoft~\cite{Church:2013hea},
 which provides a common simulation framework for Liquid Argon TPC experiments.
@@ -214,15 +214,31 @@ which has been developed over the past decade, and is currently
 being used to perform technical design and physics studies for
 the \cerndualproto{} program.
 
-Events are generated using the GENIE~\cite{GENIE} neutrino-nucleus
-simulation program, the CRY~\cite{cry} cosmic-ray generator, a
-radiological decay simulator, a particle gun, or one of several
-text-file-based particle input sources.  GEANT4 is used to simulate the trajectories
-of particles and to model their energy deposition.  Custom algorithms, described
-in more detail in Section~\ref{annex:detectors-sc-physics-software-simulation} propagate
-the drifting charge and scintillation photons to the wires and photon detectors, respectively.
-The response characteristics of the TPC wires, the electronics, and the photon detectors
-is also simulated with custom algorithms.
+Section~\ref{annex:detectors-sc-physics-software-simulation} gives detailed
+descriptions of both the single-phase and dual-phase detector simulations.
+Events are generated using either the GENIE~\cite{GENIE} simulation of 
+neutrino-nucleus interactions, the CRY~\cite{cry} cosmic-ray generator, 
+a radiological decay simulator, a particle gun, or one of several
+text-file-based particle input sources. GEANT4 is then used to simulate the trajectories
+of particles and to model their energy deposition.  
+Custom algorithms have been developed to propagate the drifting charge
+and scintillation photons through the detector, and to simulate the
+response characteristics of the TPC wires, readout electronics, and photon detectors.
+Figure~\ref{fig:larsofteventdisplays} shows some examples of accelerator
+neutrino interactions simulated using the MicroBooNE detector geometry.
+
+\begin{cdrfigure}[Simulated neutrino interactions in MicroBooNE]{larsofteventdisplays}
+{Examples of accelerator neutrino interactions, simulated by LArSoft in the 
+MicroBooNE detector. The panels show 2D projections of different event types.
+The top panel shows a $\nu_{\mu}$ charged-current interaction with a stopped muon followed
+by a decay Michel electron; the middle panel shows a $\nu_{e}$ charged-current 
+quasi-elastic interaction with a single electon and proton in the final state;
+the bottom panel shows a neutral-current interaction with a $\pi^{0}$ in the final state
+that decayed into two photons with separate conversion vertices.}
+\includegraphics[width=\textwidth]{numuCC_annotated.pdf}
+\includegraphics[width=\textwidth]{nueQE_annotated.pdf}
+\includegraphics[width=\textwidth]{nc_pi0sep_annotated.pdf}
+\end{cdrfigure}
 
 %\subsection{Near Detector Reconstruction}
 %\label{sec:detectors-sc-physics-software-reconstruction-nd}
@@ -259,7 +275,7 @@ continuous improvement.
 
 \begin{cdrfigure}[Far detector reconstruction block diagram]{fdrecoblockdiag}
 {Block diagram showing the components of the far detector reconstruction chain}
-\includegraphics[width=0.7\textwidth]{fdrecoflowchart.pdf}
+\includegraphics[width=0.8\textwidth]{fdrecoflowchart.pdf}
 \end{cdrfigure}
 
 
@@ -336,12 +352,12 @@ Vertex-finding algorithms are also applied,
 and neutrino events are reconstructed by associating the 
 3D particles to the primary interaction vertex.
 
-For the single-phase technology, the PANDORA reconstruction chain
-has been applied to accelerator neutrinos in the energy range 
-100\,MeV\,$-$\,25\,GeV, using the MicroBooNE detector simulation.
+The PANDORA reconstruction chain has been developed for accelerator neutrinos 
+in the energy range 100\,MeV\,$-$\,25\,GeV.
 Figure~\ref{fig:pandoraefficiency} shows the efficiency for reconstructing
 the leading final-state lepton as a function of its momentum
-for 5\,GeV $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions.
+for 5\,GeV $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions
+simulated in the MicroBooNE detector.
 In both samples, the reconstruction efficiency increases rapidly with momentum,
 rising above 90\% at 500\,MeV and reaching approximately 100\% at 2\,GeV.
 Figure~\ref{fig:pandoravertexresolution} shows the spatial resolution for
@@ -349,18 +365,6 @@ reconstructing the primary interaction vertex in the 5\,GeV $\nu_{\mu}$ CC sampl
 projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex 
 resolution is obtained by taking the 68\% quantile of 3D vertex residuals, 
 which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
-
-For the dual-phase event reconstruction, where only two views are available,
-the PANDORA reconstruction uses a similar set of 2D algorithms but
-a modified 3D approach. The quality of the neutrino event reconstruction 
-is evalulated by performing hit-by-hit comparisons of simulated and 
-reconstructed particles and calculating the following performance metrics: 
-``completeness'' is defined as the fraction of hits generated by 
-the true particle and contained in the reconstructed particle; 
-``purity'' is defined as the fraction of hits in the reconstructed 
-particle that were deposited by the true particle. 
-Both the completeness and purity are found to be above 90$\%$ for 
-final-state particles with energies above 800\,MeV.
 
 \begin{cdrfigure}[PANDORA reconstruction efficiency]{pandoraefficiency}
 {Reconstruction efficiency of Pandora pattern recognition algorithms
@@ -447,19 +451,4 @@ assuming that all hits not associated with the lepton cluster are due to hadroni
 
 \fixme{Current results?}
 
-\subsubsection{Calibration}
 
-In order to meet the requirements of high detection efficiency, efficient and
-pure particle identification, excellent energy resolution, and small systematic
-uncertainties on these performance parameters, calibrations of the detector
-will be needed.  {\it In situ} calibration techniques using data collected by the FD
-under identical conditions as used for physics analyses are the most desirable.
-These include studying cosmic-ray events and non-fiducial interactions.  But not
-all performance measures can be calibrated in this way.  A laser calibration system
-will constrain the detector alignment as well as measure any residual space-charge effects
-(which are expected to be very small underground), as well as provide timing calibration
-and crosscheck the response to drifting charge.  The electronics will be outfitted with
-charge-injection calibration systems so that non-uniformities in the electronics response
-can be corrected in a time-dependent fashion.  The response to charged particles of known
-energy and particle type will rely on test-beam data from LArIAT and the CERN test
-experiments \cernsingleproto{} and \cerndualproto.
