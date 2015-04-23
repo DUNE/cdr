@@ -94,13 +94,11 @@ $\theta_{13}$ is smaller~\cite{An:2013zwz}. The value of \deltacp is unknown.
 The real values of the entries of the PMNS mixing matrix, which
 contains information on the strength of flavor-changing weak decays in
 the lepton sector, can be expressed in approximate form as
-
 \begin{equation}
-|U_{\rm PMNS}|\sim \left(\begin{array}{ccc} 0.8 & 0.5 & 0.2 \\ 0.5 & 0.6 & 0.6 \\ 0.2 & 0.6 & 0.8\end{array} \right).
+|U_{\rm PMNS}|\sim \left(\begin{array}{ccc} 0.8 & 0.5 & 0.1 \\ 0.5 & 0.6 & 0.7 \\ 0.3 & 0.6 & 0.7\end{array} \right).
 \label{eq:pmnsmatrix}
 \end{equation}
-
-%\fixme{math rep of comparison of nu to Q}
+using values for the mixing angles given in Table~\ref{tab:oscpar_nufit}.
 
 The three-flavor-mixing scenario for neutrinos is now well
 established. However, the mixing parameters are not known to the same precision 
@@ -188,8 +186,8 @@ is simply the presence of electrons and absence of positrons in the Earth.
 The asymmetry from the matter effect increases with baseline as the neutrinos
 pass through more matter, so an experiment with a longer baseline will be
 more sensitive to the neutrino mass hierarchy. For baselines longer than 
-$\sim$1200~km~\cite{}, the degeneracy between the asymmetries from matter
-and CP-violation effects can be resolved, so DUNE, with a baseline of 1300~km, 
+$\sim$1200~km, the degeneracy between the asymmetries from matter
+and CP-violation effects can be resolved~\cite{Bass:2013vcg}, so DUNE, with a baseline of 1300~km, 
 will be able to unambiguously
 determine the neutrino mass hierachy and measure the value of \deltacp in the same experiment.
 
@@ -245,12 +243,14 @@ iii) neutral current (NC) backgrounds; iv) $\nu_\tau$ and $\bar{\nu}_\tau$ CC ev
 in which the $\tau$'s decay leptonically into electrons/positrons. NC and $\nu_\tau$ 
 backgrounds are due to interactions of higher energy neutrinos but they contribute to 
 backgrounds mainly at low energy, which is important for the sensitivity to CP violation. 
-The LAr TPC performance parameters that go into the GLoBES calculation are generated using a fast Monte Carlo (MC) simulation, described in detail in \cite{Adams:2013qkq}.  The MC uses flux simulations and the GENIE event generator \cite{Andreopoulos:2009rq} to generate neutrino interactions on argon.  Events can then be classified as $\nu_e$ CC-like or background-like based on event-level reconstructed quantities.   {\bf [Add more details of classification?]} The energy smearing, signal efficiency, and misidentification rates for background vary with energy. {\bf [Will add Fast MC plots]} The neutrino oscillation
-parameters and the uncertainty on those parameters are taken from the 
-Nu-Fit\cite{Gonzalez-Garcia:2014bfa} global fit to neutrino data; the values are given in 
+
+The LAr TPC performance parameters that go into the GLoBES calculation are generated using a fast Monte Carlo (MC) simulation, described in detail in \cite{Adams:2013qkq}.  The fast MC combines the simulated flux, the GENIE neutrino interaction generator~\cite{Andreopoulos:2009rq}, and a parameterized detector response that is used to simulate the reconstructed energy and momentum of each final-state particle.  The simulated energy deposition of the particles in each interaction is then used to calculate reconstructed kinematic quantities (e.g., the neutrino energy) and classify the type of neutrino interaction, including backgrounds and misidentified interactions.  Events are classified as $\nu_e$ CC-like, $\nu_{\mu}$ CC-like, or NC-like.  To reduce the NC and $\nu_{\tau}$ CC backgrounds in the $\nu_e$ CC-like sample, an additional discriminant is formed using the transverse momentum and other variables as inputs to a k-Nearest-Neighbor (kNN) machine-learning algorithm.  Figures xx-xx show the reconstructed-to-true energy smearing matrices from the fast MC that are used as inputs to GLoBES.  Figures xx-xx show the efficiency for different event types used in GLoBES based on the fast MC.
+ 
+The neutrino oscillation parameters and the uncertainty on those parameters are taken from the 
+Nu-Fit~\cite{Gonzalez-Garcia:2014bfa} global fit to neutrino data; the values are given in 
 Table~\ref{tab:oscpar_nufit}.  The cross-section inputs to GLoBES have been generated using GENIE 2.8.4~\cite{Andreopoulos:2009rq}.
 
-\begin{cdrtable}[Oscillation parameter values and relative uncertainties]{lcc}{oscpar_nufit}{Central value and relative uncertainty of neutrino oscillation parameters from a global fit to neutrino oscillation data, for normal hierarchy. The relative uncertainty is computed using 1/6 of the 3$\sigma$ allowed range from the fit.}
+\begin{cdrtable}[Oscillation parameter values and relative uncertainties]{lcc}{oscpar_nufit}{Central value and relative uncertainty of neutrino oscillation parameters from a global fit~\cite{Gonzalez-Garcia:2014bfa} to neutrino oscillation data, for normal hierarchy. The relative uncertainty is computed using 1/6 of the 3$\sigma$ allowed range from the fit.}
 Parameter &    Central Value & Relative Uncertainty \\
 \toprowrule
 $\theta_{12}$ & 0.5843 & 2.3\% \\
@@ -264,11 +264,6 @@ Figures~\ref{fig:appspectra} and~\ref{fig:disspectra}
 show the expected event rate for \nue appearance and \numu disappearance, respectively, including
 expected flux, cross-section, and oscillation probabilities as a function 
 of neutrino energy for a 150~kt-MW-yr exposure of a LAr TPC at a baseline of 1300~km. The spectra for both neutrino and antineutrino beam mode are shown.  Tables~\ref{tab:apprates} and~\ref{tab:disrates} give the integrated rate between 0.5 and 8.0~GeV for the appearance and disappearance spectra, respectively.  The spectra and rates are shown for both the reference beam design and the optimized beam design.
-
-% As illustrated in Fig.~\ref{}, collection of
-% a large sample of \nue appearance and \numu disappearance 
-% events covering a broad range of energies with significant statistics at the energy
-% of the second oscillation maximum is possible.
 
 \begin{cdrfigure}[\nue and \anue appearance spectra]{appspectra}{\nue and \anue appearance spectra: Reconstructed energy distribution of selected $\nu_e$ CC-like events assuming a 150~kt-MW-yr exposure in the neutrino-beam mode (left) and antineutrino-beam mode (right).  The plots assume normal mass hierarchy and $\delta_{CP} = 0$.  The spectra are shown for both the CDR reference beam design and the optimized beam as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
  \includegraphics[width=0.49\textwidth]{NueApp_NH.pdf}
@@ -344,11 +339,7 @@ Sensitivity to determination of the neutrino mass hierarchy and discovery
 of CP violation are obtained by
 simultaneously fitting the $\nu_\mu \rightarrow \nu_\mu$,
 $\overline{\nu}_\mu \rightarrow \overline{\nu}_\mu$, $\nu_\mu \rightarrow \nu_e$, 
-and  $\overline{\nu}_\mu \rightarrow \overline{\nu}_e$ oscillated spectra.  We assume 50\% of the total exposure comes in neutrino beam mode and 50\% in antineutrino beam mode.  Small deviations from a 1:1 ratio of neutrino to antineutrino data have been shown to have a minimal effect on the sensitivity {\bf [Cite something?]}
-% As shown in \cite{::2013kaa}, $\nu_\tau$ interactions 
-% have a different energy-missing 
-% momentum distribution compared to the signal events and with appropriate cuts, which have
-% not yet been included in this analysis, this background can be significantly reduced. {\bf(More on reduction of tau background? plots?)}
+and  $\overline{\nu}_\mu \rightarrow \overline{\nu}_e$ oscillated spectra.  We assume 50\% of the total exposure comes in neutrino beam mode and 50\% in antineutrino beam mode.  A 50\%/50\% ratio of neutrino to antineutrino data has been shown to produce a nearly optimal sensitivity, and small deviations from this (e.g., 40\%/60\%, 60\%/40\%) produce negligible changes in the sensitivity.
 
 The neutrino oscillation parameters are all
 allowed to vary, constrained by a Gaussian prior with 1$\sigma$ width given
@@ -379,7 +370,7 @@ In this case, the predicted spectra and the true spectra are identical;
 for the example of CP violation, $\chi^2_{\delta_{CP}^{true}}$ 
 is identically zero and the $\Delta\chi^2_{CP}$ value for a typical experiment is given by 
 $\chi^2_{\delta_{CP}^{test}}$.
-{\bf [Add octant chi2, calculation of resolutions.]}
+%Add octant chi2, calculation of resolutions?
 
 \section{Mass Hierarchy}
 \label{sec:physics-lbnosc-mh}

@@ -194,11 +194,11 @@ member institutions in this area, making an effort to reuse existing systems or 
 \label{sec:detectors-sc-physics-software-simulation-fd}
 
 Detailed GEANT4-based~\cite{GEANT4:NIM,GEANT4} Monte Carlo simulations have been 
-developed for both the single-phase and dual-phase Far Detector designs,
+developed for the single-phase and dual-phase Far Detector designs,
 incorporating both the Liquid Argon TPC modules
 and the photon detection systems. The simulated data provide
-the basis for detailed studies of detector performance, 
-and enable the development of automated event reconstruction.
+a basis for detailed studies of detector design and performance, 
+and enable the development of automated event reconstruction algorithms.
 
 The single-phase detector simulation is implemented in LArSoft~\cite{Church:2013hea},
 which provides a common simulation framework for Liquid Argon TPC experiments.
@@ -214,15 +214,31 @@ which has been developed over the past decade, and is currently
 being used to perform technical design and physics studies for
 the \cerndualproto{} program.
 
-Events are generated using the GENIE~\cite{GENIE} neutrino-nucleus
-simulation program, the CRY~\cite{cry} cosmic-ray generator, a
-radiological decay simulator, a particle gun, or one of several
-text-file-based particle input sources.  GEANT4 is used to simulate the trajectories
-of particles and to model their energy deposition.  Custom algorithms, described
-in more detail in Section~\ref{annex:detectors-sc-physics-software-simulation} propagate
-the drifting charge and scintillation photons to the wires and photon detectors, respectively.
-The response characteristics of the TPC wires, the electronics, and the photon detectors
-is also simulated with custom algorithms.
+Section~\ref{annex:detectors-sc-physics-software-simulation} gives detailed
+descriptions of both the single-phase and dual-phase detector simulations.
+Events are generated using either the GENIE~\cite{GENIE} simulation of 
+neutrino-nucleus interactions, the CRY~\cite{cry} cosmic-ray generator, 
+a radiological decay simulator, a particle gun, or one of several
+text-file-based particle input sources. GEANT4 is then used to simulate the trajectories
+of particles and to model their energy deposition.  
+Custom algorithms have been developed to propagate the drifting charge
+and scintillation photons through the detector, and to simulate the
+response characteristics of the TPC wires, readout electronics, and photon detectors.
+Figure~\ref{fig:larsofteventdisplays} shows some examples of accelerator
+neutrino interactions simulated using the MicroBooNE detector geometry.
+
+\begin{cdrfigure}[Simulated neutrino interactions in MicroBooNE]{larsofteventdisplays}
+{Examples of accelerator neutrino interactions, simulated by LArSoft in the 
+MicroBooNE detector. The panels show 2D projections of different event types.
+The top panel shows a $\nu_{\mu}$ charged-current interaction with a stopped muon followed
+by a decay Michel electron; the middle panel shows a $\nu_{e}$ charged-current 
+quasi-elastic interaction with a single electon and proton in the final state;
+the bottom panel shows a neutral-current interaction with a $\pi^{0}$ in the final state
+that decayed into two photons with separate conversion vertices.}
+\includegraphics[width=\textwidth]{numuCC_annotated.pdf}
+\includegraphics[width=\textwidth]{nueQE_annotated.pdf}
+\includegraphics[width=\textwidth]{nc_pi0sep_annotated.pdf}
+\end{cdrfigure}
 
 %\subsection{Near Detector Reconstruction}
 %\label{sec:detectors-sc-physics-software-reconstruction-nd}
@@ -233,11 +249,12 @@ is also simulated with custom algorithms.
 The reconstruction of particle interactions in Liquid Argon TPC
 detectors is an active area of research and development and
 there has been considerable progress in recent years. 
-In particular, the data from the ICARUS~\cite{REF1} and ArgoNEUT experiments~\cite{REF2}
+In particular, the data from the ICARUS~\cite{Amerio:2004ze,icarus-url,ICARUS-pizero,Antonello:2012hu} 
+and ArgoNEUT experiments~\cite{Adamson:2013/02/28tla,argoneut-url,Acciarri:2013met}
 have enabled the development of a variety of new reconstruction techniques,
 forming the basis for precision measurements of neutrino physics.
 With the advancement of both single-phase and dual-phase technologies,
-and expansion of the experimental program to include MicroBooNE~\cite{REF3},
+and expansion of the experimental program to include MicroBooNE~\cite{Chen:2007ae,microboone-url},
 the 35-ton prototype and the CERN test experiments,
 reconstruction tools has continued to grow in both volume and sophistication,
 supported by the powerful software frameworks such as LArSoft and Qscan.
@@ -259,11 +276,11 @@ continuous improvement.
 
 \begin{cdrfigure}[Far detector reconstruction block diagram]{fdrecoblockdiag}
 {Block diagram showing the components of the far detector reconstruction chain}
-\includegraphics[width=0.7\textwidth]{fdrecoflowchart.pdf}
+\includegraphics[width=0.8\textwidth]{fdrecoflowchart.pdf}
 \end{cdrfigure}
 
 
-\subsubsection{Signal Processing and Hit Finding}
+\subsubsection{Signal Processing, Hit Finding, and Disambiguation}
 
 The data are first uncompressed, the noise is reduced by filtering,
 and a deconvolution of the detector and electronics response is applied.
@@ -280,9 +297,6 @@ but no indication of where along a wire the charge was deposited.
 Hits may also overlap if they are close together in time, 
 even if the charge was deposited on distant segments of the wire.
 
-
-\subsubsection{Disambiguation}
-
 The wrapping of induction-plane wires in the single-phase Far Detector APA design
 introduces an additional discrete ambiguity in the data by connecting multiple wire
 segments to each DAQ channel. A ``disambiguation'' algorithm,
@@ -292,10 +306,10 @@ The algorithm forms associations between the collection view and induction views
 identifying ``triplets'' of hits that have intersecting wire segments
 and consistent arrival times. In most events, the majority of hits are
 associated with a single wire segment, and can be trivially disambiguated.
-The remaining hits are then disambiguated by clustering together the trivial hits.
+The remaining hits are then disambiguated by clustering them with trivially disambiguated hits.
 The disambiguation procedure constitutes the first pattern recognition stage 
-in the single-phase detector.
-
+in the single-phase detector.  The performance of the disambiguation algorithm is
+discussed in the Annex~\cite{annex:disambiguation}.
 
 \subsubsection{Optical Detector Signal Reconstruction}
 
@@ -310,58 +324,37 @@ estimate.
 
 After the hit-finding and disambiguation stages have completed, a series of 
 pattern recognition algorithms are applied to the 2D hits in order to identify 
-tracks and showers produced by individual final-state particles in an event.
-The reconstruction of 3D objects is accomplished either by forming 2D clusters
+the 3D tracks and showers produced by the final-state particles in an event.
+The reconstruction of 3D particles is accomplished either by forming 2D clusters
 and associating them between views, or by first associating 2D hits between views
-and then clustering the resulting 3D hits. The clustering of Liquid Argon TPC hits 
-is a challenging task, due to the variety and complexity of event topologies.
-The development of automated pattern recognition algorithms for Liquid Argon 
-TPC detectors remains a relatively new field, but several 2D and 3D algorithms
-have been implemented, using a range of techniques.
+and then clustering the resulting 3D hits. 
+The clustering of hits in Liquid Argon TPC detectors is a challenging task
+due to the variety and complexity of event topologies.
+However, several automated 2D and 3D pattern recognition algorithms have been 
+implemented using a range of techniques.
 
-The PANDORA software development kit~\cite{Marshall:2013bda,Marshall:2012hh}
-provides fully-automated pattern recognition for both single-phase and dual-phase
-detectors. PANDORA provides a highly modular approach to pattern recognition,
-in which events are reconstructed using a large chain of algorithms,
-each designed to identify a specific topology. 
-A series of 2D pattern recognition algorithms are first used to
-cluster together nearby hits, making use of the event topology.
-A 3D reconstruction stage then follows, which associates the 2D clusters
-between views, identifies the best-matched tracks and showers,
-and modifies the clustering to improve the 3D consistency of the event.
-vertex-finding algorithms are then applied, and a neutrino event
-is formed by connecting together the 3D particles.
-
-The PANDORA pattern recognition algorithms have been developed
-using simulated neutrino interactions in the energy range 100\,MeV\,$-$\,25\,GeV.
+One promising suite of reconstruction tools is the 
+PANDORA software development kit~\cite{Marshall:2013bda,Marshall:2012hh}
+which provides fully-automated pattern recognition for both single-phase 
+and dual-phase technologies. 
+PANDORA implements a highly modular approach to pattern recognition,
+in which events are reconstructed using a large chain of algorithms. 
+A series of 2D pattern recognition algorithms are first applied,
+which cluster together nearby hits based on event topology.
+The resulting 2D clusters are then associated between views
+and built into 3D tracks and showers, modifying the 2D clustering 
+as needed to improve the 3D consistency of the event. 
+Vertex-finding algorithms are also applied,
+and neutrino events are reconstructed by associating the 
+3D particles to the primary interaction vertex.
+The PANDORA algorithms have been developed using accelerator neutrinos 
+in the energy range 100\,MeV\,$-$\,25\,GeV.
 Figure~\ref{fig:pandoraefficiency} shows the efficiency for reconstructing
-the leading final-state lepton in 5\,GeV $\nu_{e}$ CC and $\nu_{\mu}$ CC interactions,
-plotted as a function of momentum using the MicroBooNE detector geometry.
+the leading final-state lepton as a function of its momentum
+for 5\,GeV $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions
+simulated in the MicroBooNE detector.
 In both samples, the reconstruction efficiency increases rapidly with momentum,
 rising above 90\% at 500\,MeV and reaching approximately 100\% at 2\,GeV.
-Figure~\ref{fig:pandoravertexresolution} shows the spatial resolution for
-reconstructing the primary interaction vertex in 5\,GeV $\nu_{\mu}$ CC events,
-projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex 
-resolution is obtained by taking the 68\% quantile of 3D vertex residuals, 
-which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
-
-
-The PANDORA framework is also applied to event reconstruction in
-dual-phase detectors, where two views are available, with similar
-algorithms.  The performance has been tested in simulated neutrino scattering events
-by comparing Monte Carlo truth information for each 
-final state particle with up to one
-reconstructed cluster.  The quality of the reconstruction of each
-final state particle is then evaluated by calculating the
-``completeness'' and purity for each particle.  The former is defined
-as the proportion of the true particle energy deposit which is
-contained in the associated cluster, the latter as the proportion of
-the associated cluster energy which was actually deposited by the
-final state particle.  Both completeness and purity is above 90$\%$
-for particles energy above above 800 MeV, while it is seen that cases
-of poor reconstruction are largely due to lower-energy particles which
-are more difficult to identify.
-
 
 \begin{cdrfigure}[PANDORA reconstruction efficiency]{pandoraefficiency}
 {Reconstruction efficiency of Pandora pattern recognition algorithms
@@ -371,14 +364,6 @@ are more difficult to identify.
  using the MicroBooNE detector geometry. }
 \includegraphics[width=0.49\textwidth]{pandora_uboone_efficiency_5GeV_numucc.pdf}
 \includegraphics[width=0.49\textwidth]{pandora_uboone_efficiency_5GeV_nuecc.pdf}
-\end{cdrfigure}
-
-\begin{cdrfigure}[PANDORA vertex resolution]{pandoravertexresolution}
-{Distribution of 2D residuals between reconstructed and simulated interaction
- vertex for 5\,GeV $\nu_{\mu}$ CC interactions in the MicroBooNE detector.
- The $x$ axis is oriented along the drift field, the $y$ axis runs parallel 
- to the collection plane wires, and the $z$ axis points along the beam direction.}
-\includegraphics[width=0.6\textwidth]{pandora_uboone_vertex_resolution.pdf}
 \end{cdrfigure}
 
 
@@ -394,6 +379,17 @@ In this algorithm, hits are combined from multiple views for form three-dimensio
 space points.  Three-dimensional track reconstruction can proceed from space points
 or directly from hits.
 
+\fixme{Talk about local principal curves here, and show vertex resolution plots}
+
+%Figure~\ref{fig:vertexresolution} Shows resolution [Citation: Eur. Phys. J. C (2014), 74 - 2832]
+%
+%\begin{cdrfigure}[Vertex resolution from local principal curves]{vertexresolution}
+%{CAPTION GOES HERE}
+%\includegraphics[width=0.33\textwidth]{barker_vertex_nueccqe_x.pdf}
+%\includegraphics[width=0.33\textwidth]{barker_vertex_nueccqe_y.pdf}
+%\includegraphics[width=0.33\textwidth]{barker_vertex_nueccqe_z.pdf}
+%\end{cdrfigure}
+
 The electromagnetic shower algorithms have two
 steps. The first is a post-clustering stage which examines the
 existing clusters in terms of their 2D parameters to determine whether
@@ -406,7 +402,7 @@ These 3D parameters allow the calculation of the shower energies and charge
 depositions at the starts of the showers, which are used in particle
 identification. 
 
-\fixme{Can we say something about current status or performance?}
+\fixme{Can we say something about current status or performance of the shower reconstruction?}
 
 \subsubsection{Calorimetry and Particle ID}
 
@@ -448,19 +444,4 @@ assuming that all hits not associated with the lepton cluster are due to hadroni
 
 \fixme{Current results?}
 
-\subsubsection{Calibration}
 
-In order to meet the requirements of high detection efficiency, efficient and
-pure particle identification, excellent energy resolution, and small systematic
-uncertainties on these performance parameters, calibrations of the detector
-will be needed.  {\it In situ} calibration techniques using data collected by the FD
-under identical conditions as used for physics analyses are the most desirable.
-These include studying cosmic-ray events and non-fiducial interactions.  But not
-all performance measures can be calibrated in this way.  A laser calibration system
-will constrain the detector alignment as well as measure any residual space-charge effects
-(which are expected to be very small underground), as well as provide timing calibration
-and crosscheck the response to drifting charge.  The electronics will be outfitted with
-charge-injection calibration systems so that non-uniformities in the electronics response
-can be corrected in a time-dependent fashion.  The response to charged particles of known
-energy and particle type will rely on test-beam data from LArIAT and the CERN test
-experiments \cernsingleproto{} and \cerndualproto.
