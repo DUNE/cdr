@@ -231,33 +231,31 @@ is also simulated with custom algorithms.
 \label{sec:detectors-sc-physics-software-reconstruction-fd}
 
 The reconstruction of particle interactions in Liquid Argon TPC
-detectors is an active area of research and development
-Although not a mature field, there has been considerable
-progress in recent years. In particular, the data from the
-ICARUS~\cite{REF1} and ArgoNEUT experiments~\cite{REF2}
-have enabled the development of a variety of reconstruction techniques,
-which have formed the basis for a range of precision
-neutrino physics measurements.
+detectors is an active area of research and development and
+there has been considerable progress in recent years. 
+In particular, the data from the ICARUS~\cite{REF1} and ArgoNEUT experiments~\cite{REF2}
+have enabled the development of a variety of new reconstruction techniques,
+forming the basis for precision measurements of neutrino physics.
 With the advancement of both single-phase and dual-phase technologies,
 and expansion of the experimental program to include MicroBooNE~\cite{REF3},
 the 35-ton prototype and the CERN test experiments,
-the reconstruction software has continued to grow in volume and sophistication,
-supported by the powerful frameworks such as LArSoft and Qscan.
+reconstruction tools has continued to grow in both volume and sophistication,
+supported by the powerful software frameworks such as LArSoft and Qscan.
 
 A fully automated chain of event reconstruction algorithms
-will be developed for the DUNE Far Detector,
-as illustrated by the block diagram in Figure~\ref{fig:fdrecoblockdiag}.
+will be developed for the DUNE Far Detector.
+The block diagram in figure~\ref{fig:fdrecoblockdiag} illustrates 
+the components of this reconstruction chain.
 The first stage of reconstruction involves the processing of the
 noisy ADC wire signals, and the creation of 2D `hits'. 
-A series of pattern recognition algorithms are then used to group
-the hits into 2D and 3D clusters representing individual
-particle tracks and showers. These objects then provide the input
-for a set of high-level algorithms, which reconstruct the vertex
+These hits provide the input for a series of pattern recognition algorithms,
+which form 2D and 3D clusters, representing individual particle tracks and showers.
+A set of high-level algorithms are then used to reconstruct the vertex
 and 3D trajectory of each particle, identify the type of particle,
 and fit the four-momentum.
 While each stage of the reconstruction chain has been implemented,
-the algorithms have not yet been fully optimised and remain under
-heavy development.
+the algorithms are not yet fully optimised and are subject to
+continuous improvement.
 
 \begin{cdrfigure}[Far detector reconstruction block diagram]{fdrecoblockdiag}
 {Block diagram showing the components of the far detector reconstruction chain}
@@ -275,7 +273,7 @@ validated using data from the 35-ton prototype and CERN test experiments.
 The algorithms are found to perform well in ArgoNeuT analyses~\cite{Anderson:2012vc}.
 After deconvolution and pedestal subtraction, pulses are identified in
 the waveforms, and parametric fits are applied to extract the size and
-shape of each pulse. The fitted pulses are called hits for later processing.
+shape of each pulse. These pulses are called hits for later processing.
 At this stage, the data are still two-dimensional -- each hit provides
 a wire location and a measurement of time and total charge,
 but no indication of where along a wire the charge was deposited.
@@ -286,17 +284,17 @@ even if the charge was deposited on distant segments of the wire.
 \subsubsection{Disambiguation}
 
 The wrapping of induction-plane wires in the single-phase Far Detector APA design
-introduces an additional discrete ambiguity by connecting multiple wire
+introduces an additional discrete ambiguity in the data by connecting multiple wire
 segments to each DAQ channel. A ``disambiguation'' algorithm,
 described in Section~\ref{annex:reco-disambiguation}, is used to break the
 ambiguity and determine which wire segment generated the charge on each hit.
 The algorithm forms associations between the collection view and induction views,
 identifying ``triplets'' of hits that have intersecting wire segments
-and consistent arrival times. For most events, the majority of hits are
-associated with a single wire segment, and are trivially disambiguated.
-The remaining hits are disambiguated by clustering together the trivial hits.
-This procedure constitutes the first pattern recognition stage in the
-single-phase detector.
+and consistent arrival times. In most events, the majority of hits are
+associated with a single wire segment, and can be trivially disambiguated.
+The remaining hits are then disambiguated by clustering together the trivial hits.
+The disambiguation procedure constitutes the first pattern recognition stage 
+in the single-phase detector.
 
 
 \subsubsection{Optical Detector Signal Reconstruction}
