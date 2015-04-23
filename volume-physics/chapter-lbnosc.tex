@@ -263,7 +263,7 @@ $\Delta m^2_{31}$ & 2.457$\times10^{-3}$ eV$^2$ &  2.0\% \\
 Figures~\ref{fig:appspectra} and~\ref{fig:disspectra} 
 show the expected event rate for \nue appearance and \numu disappearance, respectively, including
 expected flux, cross-section, and oscillation probabilities as a function 
-of neutrino energy for a 150~kt-MW-yr exposure of a LAr TPC at a baseline of 1300~km. The spectra for both neutrino and antineutrino beam mode are shown.  Tables~\ref{tab:apprates} and~\ref{tab:disrates} give the integrated rate between 0.5 and 8.0~GeV for the appearance and disappearance spectra, respectively.  The spectra and rates are shown for both the reference beam design and the optimized beam design.
+of neutrino energy for a 150~kt-MW-yr exposure of a LAr TPC at a baseline of 1300~km. The spectra for both neutrino and antineutrino beam mode are shown.  The optimized beam design results in an increased signal rate in the lower energy region. Tables~\ref{tab:apprates} and~\ref{tab:disrates} give the integrated rate between 0.5 and 8.0~GeV for the appearance and disappearance spectra, respectively.  The spectra and rates are shown for both the reference beam design and the optimized beam design.
 
 \begin{cdrfigure}[\nue and \anue appearance spectra]{appspectra}{\nue and \anue appearance spectra: Reconstructed energy distribution of selected $\nu_e$ CC-like events assuming a 150~kt-MW-yr exposure in the neutrino-beam mode (left) and antineutrino-beam mode (right).  The plots assume normal mass hierarchy and $\delta_{CP} = 0$.  The spectra are shown for both the CDR reference beam design and the optimized beam as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
  \includegraphics[width=0.49\textwidth]{NueApp_NH.pdf}
@@ -375,7 +375,44 @@ $\chi^2_{\delta_{CP}^{test}}$.
 \section{Mass Hierarchy}
 \label{sec:physics-lbnosc-mh}
 
-Physics of MH (very brief).
+The 1300~km baseline establishes one of DUNE's key strengths: sensitivity to the matter
+effect. This effect leads to a large asymmetry in the
+$\nu_\mu\to \nu_e$ versus $\overline{\nu}_\mu \to \overline{\nu}_e$
+oscillation probabilities, the sign of which depends on the mass
+hierarchy (MH).  At 1300~km this asymmetry is approximately
+$\pm 40\%$ in the region of the peak flux; this is larger than the
+maximal possible CP-violating asymmetry associated with \deltacp,
+meaning that both the MH and \deltacp can be
+determined unambiguously with high confidence within the same
+experiment using the beam neutrinos.  Concurrent analysis of the corresponding atmospheric-neutrino samples will improve the precision with which the
+MH is resolved. 
+
+Figure~\ref{fig:mh_nominal} shows the significance with which the MH can be determined as a function of the value of \deltacp, for an exposure of 300~kt-MW-yr, which corresponds to seven years of data with a 40-kt detector and a 1.07-MW beam.  For this exposure, the MH is determined with a minimum significance of $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for 100\% of the \deltacp values for the optimized beam design and nearly 100\% of \deltacp values for the CDR reference beam design.  Figure~\ref{fig:mh_exposure} shows the significance at which the MH can be determined for 100\% of \deltacp values as a function of exposure.  Minimum exposures of 400~kt-MW-yr and 230~kt-MW-yr are required to determine the MH with a significance of $\sqrt{\overline{\Delta\chi^2}} = 5$ for 100\% of \deltacp values for the CDR reference beam design and the optimized beam design, respectively.
+
+% \begin{cdrfigure}[Mass hierarchy sensitivity for a 300~kt-MW-yr exposure]{mh_nominal}{The significance with which the mass hierarchy can be determined as a function of the value of \deltacp for an exposure of 300~kt-MW-yr.  The shaded region represents the range in sensitivity due to potential variations in the beam design.  This plot assumes normal mass hierarchy.}
+%  \includegraphics[]{}
+% \end{cdrfigure}
+
+% \begin{cdrfigure}[Mass hierarchy sensitivity as a function of exposure]{mh_exposure}{The minimum significance with which the mass hierarchy can be determined for all values of \deltacp as a function of exposure.  The shaded region represents the range in sensitivity due to potential variations in the beam design. This plot assumes normal mass hierarchy.}
+%  \includegraphics[]{}
+% \end{cdrfigure}
+
+Figures~\ref{fig:mh_theta23}, \ref{fig:mh_theta13}, and \ref{fig:mh_deltamsq} show the variation in the MH sensitivity due to different values of $\theta_{23}$, $\theta_{13}$, and \dm{31} within the allowed ranges.  The value of $\theta_{23}$ has the biggest impact on the sensitivity, and the least favorable scenario corresponds to a true value of \deltacp in which the MH asymmetry
+is maximally offset by the leptonic CP asymmetry, and where, independently, 
+$\sin^2{\theta_{23}}$ takes on a value at the low end of its 
+experimentally allowed range.
+
+% \begin{cdrfigure}[Variation in MH sensitivity due to $\theta_{23}$]{mh_theta23}{The variation in the MH sensitivity due to different values of $\theta_{23}$ within the allowed range.  The nominal value of $\sin^2\theta_{23} = 0.45$ provides a significance of at least $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for all values of \deltacp.  The significance decreases for all values of \deltacp as $\sin^2\theta_{23}$ gets smaller.}
+%  \includegraphics[]{}
+% \end{cdrfigure}
+
+% \begin{cdrfigure}[Variation in MH sensitivity due to $\theta_{13}$]{mh_theta13}{The variation in the MH sensitivity due to different values of $\theta_{13}$ within the allowed range.  The nominal value of $\sin^22\theta_{13} = 0.085$ provides a significance of at least $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for all values of \deltacp.}
+%  \includegraphics[]{}
+% \end{cdrfigure}
+
+% \begin{cdrfigure}[Variation in MH sensitivity due to $\Delta m^{2}_{31}$]{mh_deltamsq}{The variation in the MH sensitivity due to different values of \dm{31} within the allowed range.  The nominal value of \dm{31} = $2.46\times 10^{-3}$~eV$^2$ provides a significance of at least $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for all values of \deltacp.}
+%  \includegraphics[]{}
+% \end{cdrfigure}
 
 The value of the test statistic for a typical experiment,  
 $\overline{\Delta\chi^2}$, is
@@ -399,20 +436,14 @@ when the observed counts in the experiment are large enough,
 the distribution of $\Delta\chi^2$ used here approximately follows
 a Gaussian distribution with a
 mean and standard deviation of $\overline{\Delta\chi^2}$ and
-$2\sqrt{|\overline{\Delta\chi^2}|}$, respectively. Figure {\bf [Like Fig 4 of LOI]}
-shows the range of sensitivity to the neutrino mass hierarchy, 
-for the nominal exposure of 257 kt-MW-years,
-when statistical
-fluctuations are included and the statistical power as a function of exposure
-for 3$\sigma$ and 5$\sigma$ sensitivity. 
-% \begin{figure}[!htbp]
-% \centering
-% \includegraphics[width=0.45\linewidth]{figs/NHdeltacp.pdf}
-% \includegraphics[width=0.45\linewidth]{figs/NHpower.pdf}
-% \caption{Sensitivity to neutrino mass hierarchy including statistical fluctuations.
-%   Expected sensitivity of DUNE to determination of the neutrino mass
-%   hierarchy for a 40-kt fiducial mass LAr TPC and an 80-GeV, 1.07-MW beam from FNAL to SURF
-%   with three years of running in neutrino and three years in antineutrino mode. 
+$2\sqrt{|\overline{\Delta\chi^2}|}$, respectively. Figure~\ref{fig:mhstats} the
+demonstrates the possible variation in the significance of a MH determination when statistical
+fluctuations are included for a measurement that would yield a signifiance of $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for 100\% of \deltacp values in our standard treatment.
+% and the statistical power as a function of exposure
+% for 3$\sigma$ and 5$\sigma$ sensitivity. 
+
+% \begin{cdrfigure}[MH sensitivity including statistical fluctuations]{mhstats}{
+%   The variation in the MH sensitivity due to statistical fluctuations for a MH measurement with a minimum significance of $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for 100\% of the values of \deltacp. See Figure~\ref{fig:mh_exposure} for the possible range of exposures to achieve this level of significance.
 %   {\bf Left:} The 
 %   sensitivity, given by  $\sqrt{\Delta T}=\sqrt{\Delta\chi^2}$, for a typical experiment 
 %   (solid blue line) is compared to the bands within which
@@ -427,10 +458,16 @@ for 3$\sigma$ and 5$\sigma$ sensitivity.
 %   3$\sigma$ and 5$\sigma$ level, shown as a function of exposure in kt-MW-years. The width
 %   of the bands represent the range of \deltacp values.
 %   Sensitivities are for true normal hierarchy.}
-% \label{fig:mhstats}
-% \end{figure}
+%  \includegraphics[width=0.45\linewidth]{figs/NHdeltacp.pdf}
+%  \includegraphics[width=0.45\linewidth]{figs/NHpower.pdf}
+% \end{cdrfigure}
 
-MH results: nominal MH sensitivity, MH sensitivity vs exposure, MH sensitivity vs theta23, MH sensitivity vs theta13, MH sensitivity vs deltam2, MH vs real time (i.e. staging)???  Table: required exposure for 5sigma 100\% coverage for reference and optimized beams.
+The 40-kt DUNE detector will be built in 10-kt modules, which will come online over the course of several years (described in \voldune).  Additionally, the beam power is expected to be upgraded. Figure~\ref{fig:mh_staging} shows the MH sensitivity as a function of time considering this very preliminary staging plan. \fixme{Add specifics of staging when the plot is added.}
+
+% \begin{cdrfigure}[Mass hierarchy sensitivity over time]{mh_staging}{The MH sensitivity as a function of time, including expected increases in detector mass and beam power over time.  The beginning time is defined as the time when the first detector module records neutrinos from LBNF.}
+%  \includegraphics[]{}
+% \end{cdrfigure}
+
 
 \section{CP-symmetry Violation}
 \label{sec:physics-lbnosc-cpv}
@@ -438,6 +475,9 @@ MH results: nominal MH sensitivity, MH sensitivity vs exposure, MH sensitivity v
 Physics of CPV measurement (brief).
 
 CPV results: nominal CPV sensitivity, CPV sensitivity vs exposure, CPV sensitivity vs theta23, CPV sensitivity vs theta13, CPV sensitivity vs deltam2, CPV vs real time (i.e. staging)???. Table: required exposure for 3sigma 75\% coverage and 5sigma 50\% coverage for reference and optimized beams.
+
+% Table~\ref{tab:mh_requiredexposure} lists the minimum exposure required to determining the MH at a significance of $\sqrt{\bar{\chi^2}} = 5$ for 100\% of \deltacp values for both the CDR reference beam design and the optimized beam design.
+
 
 \section{Precision Oscillation Parameter Measurements}
 
