@@ -114,17 +114,18 @@ The final row  shows the total annual data volume that the DUNE DAQ is capable o
 
 \section{Zero-suppressed Data}
 
-There remains some options in choosing the exact zero-suppression (ZS) procedure.
-For these data rate estimates a very simple procedure is assumed: Each
-channel is processed to remove all digitized time bins which are below
-the given ADC threshold and a single number is added to the start of a
-run of above-threshold bins which gives its starting time bin.
+There are options in choosing the exact zero-suppression (ZS) procedure,
+and the final choice has not been made.
+For these data rate estimates a very simple procedure is assumed: in each
+channel all digitized time bins in which the ADC values are below
+the given threshold are removed. Timing information for the above-threshold bins can be included without
+adding much to the data volume.
 
 The ZS threshold is taken as the ADC equivalent to a
 \chargezsthreshold
-deposition near the CPA and localized such that it passes near one
+energy deposition near the CPA and localized in such a way that it passes near one
 induction wire and is collected on one collection wire.
-Given the requirement that the minimum signal to noise is
+Given the requirement that the minimum signal to noise ratio is
 \chargeminsignalnoiseratio this ZS threshold represents at least $3\sigma$
 noise exclusion.
 For the purpose of this estimate it is assumed that all noise is
@@ -140,8 +141,8 @@ detector volume still be observed in ZS data.
   \label{tab:zs-parameters-table}
 \end{table}
 
-Because, by construction, the ZS is assumed to remove electronics
-noise, ZS data rate depends simply on the size of a class of event and
+By construction, the ZS is assumed to remove electronics
+noise, hence the ZS data rate depends simply on the size of the class of the particular event and
 the rate at which it is expected to occur.
 This information is summarized in table~\ref{tab:zs-volume}.
 
@@ -154,23 +155,27 @@ This information is summarized in table~\ref{tab:zs-volume}.
   \label{tab:zs-volume}
 \end{table}
 
-The beam rate is averaged over full year assuming run fraction of
+The beam rate is averaged over one full year assuming run fraction of
 \beamrunfraction, a rep rate of \beamreprate and a beam spill occupancy
 of \beameventoccupancy.
 
-The Supernova Burst data is estimated assuming a false-positive SNB
+The Supernova Burst (SNB) data is estimated assuming a false-positive SNB
 rate of \snbrate and a readout time of \snbreadouttime.
-It should be noted that both these parameters are subject to
-modification and are used to provide benchmark examples.
-It is assumed that such candidates are made up of $^{39}Ar$ events.
-Actual SNB events will have neutrino energies as high as
+It should be emphasized that both these parameters are subject to
+modification and are used simply to provide benchmark examples.
+It is assumed that the bulk of the data in such candidate events will be due to signals produced by $^{39}$Ar decays.
+This is due to the following factors.
+Actual SNB events will have neutrino energies in tens of MeV and up to
 \SI{100}{\MeV}.
 Roughly speaking, 1000 events across DUNE are expected from a real SNB
-with the neutrino front lasting some \SI{10}{\second} giving nor more
-than interaction per APA readout with the rest of the readout time
-filled with radioactivity.
-Each neutrino is expected to contribute about 10\% of the data of the
-$\sim$\si{\GeV} beam events or about \SI{1}{\mega\byte}.
+with the neutrino front lasting some \SI{10}{\second}. This corresponds to less
+than a single neatrino interaction per APA readout on average, with the rest of the readout time
+filled with signals from radiological background.
+
+In terms of comparison with the beam neutrino data, 
+due to difference in energy scale each SNB neutrino is expected to contribute only
+about 10\% of the data of the
+\si{\GeV}-scale beam events or about \SI{1}{\mega\byte}.
 For the entire SNB this would then add about \SI{1}{\giga\byte} to the
 event and thus does not greatly impact the estimate.
 
@@ -183,10 +188,9 @@ kept for the SNB candidates.
 
 \section{High-energy Threshold}
 
-The final threshold that is considered is the one dubbed high-energy (HE).
-For the sake of these estimates the HE threshold is chosen to be above
-the background activity due to radioactive decay below \chargehethreshold.
-A more careful study is needed to determine what this threshold will be.
+For the purpose of these estimates the  high-energy (HE) threshold is chosen at the level above 
+the energy scale of the radiological backgrounds relevant for the LArTPC, and set at  \chargehethreshold.
+A more careful study is needed to determine a potentially more optimal value for this threshold.
 The data rates with the HE threshold applied are summarized in table~\ref{tab:he-volume}.
 
 \begin{table}[htbp]
@@ -197,12 +201,11 @@ The data rates with the HE threshold applied are summarized in table~\ref{tab:he
   \label{tab:he-volume}
 \end{table}
 
-Above the HE threshold, activity from the $^{39}$Ar events and any SNB
-candidates will be invisible.
-Actual SNB events, which have neutrino energies as high as
-\SI{100}{\MeV}, they will be visible above this threshold but applying
-such a high threshold to SNB candidates is not being considered and so
-their data rate is not calculated with this assumption.
+With the HE threshold in place, activity from the $^{39}$Ar events and any SNB
+candidates will not be visible (i.e. will be rejected in DAQ).
+Although actual SNB events may result in neutrino with energies as high as
+\SI{100}{\MeV} applying such a high threshold to SNB candidates won't be optimal and is not being considered at this point.
+For this reason, contribution from SNB to these data is not calculated for this threshold setting.
 
 
 
