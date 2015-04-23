@@ -3,74 +3,67 @@
 
 \section{Overview}
 
-The data rates estimations take as input a number of parameters from
-designs, requirements and studies.
-Derived parameters are generated based on these inputs and code
-captured in the \textit{dune-params} package\footnote{\url{https://github.com/DUNE/dune-params}}.
+A number of parameters from DUNE/LBNF requirements, design documents,  and studies are used  as input
+for estimations of the data rates in DUNE. In cases when derived parameters need to be generated based on these inputs
+this is accomplished using the software package \textit{dune-params}\footnote{\url{https://github.com/DUNE/dune-params}}
+developed specifically for this purpose.
 As the inputs and estimations are refined the results presented in
-this annex are regenerated.
+this annex can be regenerated at will.
 
-Because the triggering and readout strategy of the DAQ and analyses
-are not yet fully understand, the data rate estimation makes some
-broad assumptions and leaves open some choices described in the
-following subsections.
+Because the triggering and readout strategy and algorithms of the DAQ and
+analyses are under development and far from their final state of readiness,
+the data rate estimations involve some broad assumptions and leave open some choices.
+This is described in more detail in the following subsections.
 
 
 
-\section{Thresholds}
+\section{Thresholds for the LArTPC Data}
 
-There are three threshold considered for the purpose of the data rate estimates.
-The thresholds are assumed to be applied on per-wire and on the basis
-of their ADC value.
-The thresholds are assumed to affect the data rate coming out of the
-DAQ and do not intend to imply other thresholds used internally to the
-DAQ (for example in the anticipated ``trigger stream'').
-The thresholds are:
+There are three threshold levels considered for the purposes of characterizing the LArTPC data rates.
+These thresholds are assumed to be applied ``per-wire'' and on the basis of ADC values (which can be translated
+to units like MeV with proper calibration).
+Note that they are meant to reflect different energy scales of the physics phenomena being
+measured in the TPC and  must be considered separately from thresholds and other parameters used  in the
+DAQ for its internal real-time processing of the data (for example in the anticipated internal ``trigger stream'').
+
+In other words, each such threshold will translate into a corresponding rate of data coming out of DAQ. These are:
 
 \begin{description}
-\item[full-stream] The full-stream (FS) threshold is no threshold at all.
-FS data is data where every time bin on every channel is read out.
+\item[full-stream] The full-stream (FS) threshold means there is no threshold at all.
+FS data is data where every time bin (as defined by the ADC clock) on every channel is read out.
 \item[zero-suppressed] The zero-suppressed (ZS) threshold is applied
-  at $\approx 3\sigma$ above the mean electronics noise level.
-  Given the requirement on signal/noise ratio and the wire spacing,
-  this effectively places an energy threshold of
-  \chargezsthreshold.
+  at $\approx 3\sigma$ above the mean noise level of the front-end electronics.
+  Given the existing requirement on signal/noise ratio and the wire spacing,
+  this effectively places an energy threshold of  \chargezsthreshold.
 \item[high-energy] The high-energy (HE) threshold is one that is
-  placed high enough to remove activity from radioactive decays but
-  low enough to not impact activity from beam neutrino interactions or
-  proton decay.
-  Study is needed to determine this threshold but it is taken to be
+  placed high enough to largely suppress signals from radioactive decays but still
+  low enough to not impact activity from beam neutrino interactions or proton decay (if it exists).
+  Further studies are needed to determine this threshold but currently it is taken to be
   \chargehethreshold.
 \end{description}
 
-The design of the DAQ is expected to allow FS data acquisition.
+The design of the DAQ is expected to allow reading of the TPC data into the system memory at  FS rates.
 It is also expected to be flexible enough to allow for different
-thresholds to be applied based on indications from the data itself.
+thresholds to be applied to the data while it is still resident in its buffers, based on real-time calculations.
 
-\section{Sources of Data}
+\section{Sources of Data in the TPC}
 
-Data is expected to be produced from a number of sources.
-Each source will produce a different rate and depending on the
-threshold applied.
-Their data rates are estimated individually for each source and threshold.
-This provides a means to evaluate different assumptions, designs and
-strategies.
+Data is expected to be produced by a number of specific sources (cf. cosmic ray muons vs beam neutrinos).
+Each source will have a different rate depending on the threshold applied.
+In the following the corresponding data rates are estimated individually for each source and threshold.
+This provides a means to compare different assumptions, designs and strategies.
 
-The sources of data that are considered are:
+The sources of data being considered are:
 
 \begin{description}
-\item[in-spill] Activity in the detector which
-  is coincident in time and space with the passage of neutrinos from
-  the beam through the detector.
-\item[cosmic-$\mu$] Activity due to the
-  passing of cosmic-ray muons through the detector.
-\item[radioactivity] Activity due to the decay of $^{39}$Ar,
-  U/Th and other radioactive isotopes.
+\item[in-spill] Activity in the detector which is coincident with the passage of beam neutrinos through the detector.
+\item[cosmic-$\mu$] Activity due to the  passing of cosmic-ray muons through the detector.
+\item[radioactivity] Activity due to the decay of radioactive isotopes such as $^{39}$Ar,  U/Th and others.
 \item[atm-$\nu$] Activity which is not in-spill and which is
   consistent with interactions from atmospheric neutrinos.
 \end{description}
 
-\section{Fundamental Parameters}
+\section{Fundamental Parameters of the LArTPC}
 
 This section provides the fundamental parameters taken as input to the
 data rate estimations.
@@ -88,10 +81,10 @@ table~\ref{tab:fundamental-parameters}
 
 \section{Full-stream Data}
 
-Full-stream (FS) data is acquired with no ADC threshold.
-Estimating it's rate is an exact calculation and does not depend on
+Full-stream (FS) data corresponds to reading all data in every ADC channel without application of any threshold.
+Estimating its rate is an exact calculation based on known parameters as it does not depend on
 the activity in the detector or the noise level of the electronics.
-It is obviously the most voluminous.
+As its name implies, it is the most voluminous type of data that can be generated by the TPC.
 The parameters which apply to this data are given in table~\ref{tab:full-stream-parameters}.
 
 \begin{table}[htbp]
@@ -103,13 +96,12 @@ The parameters which apply to this data are given in table~\ref{tab:full-stream-
 
 The expected data rates for two scenarios of FS data are given
 in table~\ref{tab:full-stream-volume}.
-The first block gives the data size of one DAQ readout
-(\daqreadouttime).
+The first row gives the data size of one DAQ readout (\daqreadouttime).
 The second is appropriate for any strategy that intends to record FS
 data for each beam spill.
-The third gives data volume relevant to an strategy to record FS data
+The third contains two numbers that characterize data volume relevant to a strategy which aims to record FS data
 for Supernova Burst candidates.
-The final block shows what the DAQ is capable of producing on an annual basis.
+The final row  shows the total annual data volume that the DUNE DAQ is capable of producing (in theory).
 
 
 \begin{table}[htbp]
