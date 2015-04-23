@@ -1,0 +1,261 @@
+\chapter{Characterization of Data Rates}
+\label{ch:annex-rate}
+
+\section{The tables}
+
+The Liquid Argon TPC will produce a variety of signals due to various
+physics processes taking place in the detector, such as scattering of
+the beam neutrinos, cosmic ray muons, radiological backgrounds,
+electronics noise and others.
+For practical reasons, the signal processing systems will be
+incorporate threshold values which will determine which part of data
+is rejected and how the data stream needs to be treated at any given
+time (cf. search for Supernova Burst events or nucleon decay).
+
+Depending on the origin, these signals will be characterized by
+specific spectra, energy scale and topologies.
+In combination with the threshold settings and real-time algorithms
+this will result in different rates of occurrence and volume of data
+produced (either per nominal event or per unit time).
+
+It is important to account for this information for the following reasons:
+\begin{itemize}
+\item An attempt must be made to understand, quantify and optimize
+  systematic uncertainties for each class of measurements
+\item There are considerable implications of real-time data processing
+  strategies and techniques of all of ``downstream'' data processing
+  (e.g. offline), and in particular to the required mass storage
+  volume.
+  This, in turn, will affect the DUNE computing model and costs
+  associated with the DUNE computing effort.
+\end{itemize}
+
+
+We recognize that not all the information exists at this point that is
+necessary for exhaustive characterization of the DUNE data.
+We will mark as such where appropriate.
+
+
+The following sources of signal are included and itemized here to
+facilitate reference in the rest of the text:
+\begin{itemize}
+\item ``Full stream'' - effectively continuous stream of digitized
+  voltages read out from the TPC, not subject to thresholds.
+  This can be likened to a video stream (although at a different
+  scale).
+\item ``ZS stream'' - the full stream subject to zero-suppression with
+  a particular choice of threshold.
+  With threshold optimal for the oscillation physics with beam
+  neutrinos, this results in an order of magnitude less data than in
+  the full stream.
+\item ``Beam'' - beam neutrino events
+\item ``SNB'' - supernova burst
+\item noise - signals due to various electronic-related noises
+\item ``rad'' - radiological and cosmogenic backgrounds combined.
+  By the latter we mean radioactive decays and other signals caused by
+  reaction of cosmic rays in the detector and various materials
+  surrounding it.
+\item ``cosmic $\mu$ - cosmic muons passing through the detector
+  experiencing normal energy loss
+\end{itemize}
+
+\subsection{Event rate and sizes}
+
+Table~\ref{tab:fundamental} summarizes the fundamental parameters
+which are used as input to the data rate estimates given in this
+section.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Fundamental parameters of the TPC and detector that are used as input to the data rate estimates.}
+  \input{annex-rate/fundamental-table.tex}
+  \label{tab:fundamental}
+\end{table}
+
+One ``readout'' is a sampling of the data stream for a period of time
+equal to the configured number of drifts per readout as shown in
+table~\ref{tab:fundamental-values}.
+\fixme{Explain why 2.4 drifts in a readout.}
+This multiplier, the drift time over the drift distance and the sample
+rate determines the number of samples/readout.
+
+
+\subsubsection{Full Stream}
+
+The \textit{full stream} (FS) ``activity'' is simply the case where
+all channels are read out at the digitizing sampling rate.
+This can produce a prodigious amount of data.
+
+
+\begin{table}[htbp]
+  \centering
+  \caption{Calculation of \textit{full stream} data volume for
+    \SI{40}{\kton}.}
+  \input{annex-rate/full-stream-table.tex}
+  \label{tab:full-stream}
+\end{table}
+
+\subsubsection{Zero-suppressed Stream}
+
+A threshold at a low ADC can be applied to the full-stream.
+This is in order to suppress noise but is given the term
+\textit{zero-suppression} (ZS).
+A ZS-stream contains \textit{full stream readouts} as described above
+but with all samples below the threshold removed with some added
+encoding (number) to indicate where each contiguous run of
+above-threshold samples begins inside the readout.\fixme{Is this
+  accurate enough of a description?}
+
+The intention of ZS is to remove electronics noise from what is
+ultimately read out in order to reduce data volume with no negative
+impact on the physics capabilities.
+The requirement~\cite{docdb3383} on the electronic noise and
+indirectly on the LAr purity is that one minimum-ionizing particle
+(MIP) should produce an amount of charge that will result in a
+digitized signal on the wire which is at least $15\times$ greater than
+the noise.\fixme{The noise level is RMS?}.
+The ZS threshold is taken to be set a level equivalent to the 30\% of
+the ADC signal produce on a wire due to a MIP traversing the distance
+of one wire pitch.\fixme{Does this make sense?}
+
+The data rate for the \texttt{ZS stream} therefore depends on whatever
+particle interactions may have occurred during the readout time.
+It is not meaningful to speak about ``the data rate of the \textit{ZS
+  stream}'' unless one specifies some other criteria applied to select
+the readouts.
+The remaining categories then make the assumption that a ZS threshold
+of \num{0.3} MIP equivalent ADC is applied.
+
+\subsubsection{Beam Events}
+
+The data rate of events associated in time with spills of the proton
+beam on target depend on many things: the beam spill repetition rate,
+number of protons on target, annual running time, neutrino flux
+spectrum, horn/target configuration, and event selection criteria.
+In particular, the last case can be broken into two classes.
+The most important contains events with energies consistent with known
+and expected interactions by the beam neutrinos.
+These are take to be events with energy greater than \SI{100}{\MeV}
+and are called simply \textit{high energy beam events}.
+
+The readouts with less than this analysis threshold, still above ZS
+threshold and coincident with the beam spill may contain activity from
+various sources.
+A leading source of data rate is radioactive decay and described in
+section~\ref{sec:radrates}.
+Cosmic muons will usually be above the analysis threshold but will be
+calculated separately on the assumption that reconstruction techniques
+can reject them.
+They are described in section~\ref{sec:cosmicmurates}.
+For this section, both of these sources are estimated to contribute to
+the beam event data rate as they will fall accidental in coincidence
+with the beam spills.
+The parameters assumed and derived rate estimations are given in
+table~\ref{tab:beam-nu-rates}.
+
+A third class of activity may be found in coincidence with beam spills
+which is due to as yet unknown physics.
+Given that detectors of higher energy thresholds and coarser grained
+readout have not observed these events they are expected to occur at
+low energy, if at all.
+
+
+\begin{table}[htbp]
+  \caption{Assumed parameters and rate estimation for beam events.}
+  \centering
+  \begin{tabular}[h]{l r}
+\hline
+beam rep rate & \SI{1}{\Hz}\\
+beam run time & \SI{2e7}{\second/\year}\\
+average event size & \SI{10}{\mebi\byte}\\
+high energy events & \SI{1e4}{/\year}\\
+\hline
+high energy beam data & \SI{100}{\gibi\byte/\year}\\
+rad coincident beam data & (fixme)\\
+cosmic-$\mu$ coincident beam data & (fixme)\\
+full stream beam data & \SI{471}{\pebi\byte/\year}\\
+\hline
+  \end{tabular}
+  \label{tab:}
+\end{table}
+
+\fixme{After calculating the rates due to radioactive decays
+  independent of ``trigger'' criteria, fill in how much contributes to
+  the beam readouts.}
+
+\fixme{After calculating the rates due to cosmics, multiply by the
+  duty factor of the beam window and fill in above.}
+
+\subsubsection{Radioactivity}
+
+\subsubsection{Cosmic Muons}
+
+\subsubsection{Supernova Burst}
+
+
+\section{Characteristic Energy Thresholds}
+
+
+Table~\ref{tab:physrates} summarizes the understanding of important
+energy thresholds needed to study a particular study topic (physics,
+calibration, selection efficiency).
+The minimum threshold is that at which any lower threshold has no
+additional benefit to the analysis.
+The maximum threshold is that at which any higher will negatively
+impact the analysis.
+The threshold is understood to be interpreted as the amount of
+ionizing energy deposited in the active volume of the far detector
+and may span APAs.
+
+\begin{table}[htbf]
+  \centering
+  \begin{tabular}{|l||l|l|l|}
+    \hline
+    Topic & min thresh & max thresh & trigger \\
+    \hline
+    \hline
+    beam & 50 MeV & 500 MeV & spill \\
+    \hline
+    pdk & $\sim$few MeV & 100 MeV (see K) & self+see K+nuc. dexcite \\
+    \hline
+    atm$\nu$ & $\sim$few MeV & 50 MeV &
+    self+see Michele $e$ \\
+    atm$\nu$ & $\sim$100 MeV & 500 MeV &
+    self+no Michele $e$ \\
+    \hline
+    snb & $\sim$MeV & 5 MeV & self+ZS stream+dump \\
+    \hline
+    noise & full stream?&$\sim$MeV& min bias?\\
+    \hline
+    rad &$\sim 0$ & $\sim$MEV & self+minbias\\
+    \hline
+    calib & ??? & ??? & ??? \\
+    \hline
+  \end{tabular}
+  \caption{Summary thresholds required for different study topics
+    considering \textbf{signal only}.
+  Below the minimum threshold no further impact on the physics is
+  expected.
+  Above the maximum threshold the physics is negatively impacted.
+  The ``???'' indicate input is still needed.}
+  \label{tab:physrates}
+\end{table}
+
+\section{Other estimates}
+
+\fixme{rough list for now, these numbers need to be moved into their
+  proper subsection}
+\begin{itemize}
+\item 5 minutes reco CPU / cosmic muon (scale by energy dep to get
+  beam event reco CPU?)
+  (tj)
+\item Want 10-100$\times$ MC events as data for beam events.
+  (tj)
+  How frequent?
+  How long to retain?
+\item cosmic muons are about 1M events/year in 30kt (tj)
+Can scale in-beam rates by energy deposition to this assuming constant
+byte-per-MeV/cm deposited?
+\item Square all numbers with those in the science book  
+\end{itemize}
+
