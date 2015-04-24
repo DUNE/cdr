@@ -397,6 +397,7 @@ Figure~\ref{fig:mh_nominal} shows the significance with which the MH can be dete
 \begin{cdrfigure}[Mass hierarchy sensitivity as a function of exposure]{mh_exposure}{The minimum significance with which the mass hierarchy can be determined for all values of \deltacp as a function of exposure.  The shaded region represents the range in sensitivity due to potential variations in the beam design. This plot assumes normal mass hierarchy.}
  \includegraphics[width=0.7\textwidth]{mh_exp}
 \end{cdrfigure}
+\fixme{We are considering an update to Fig~\ref{fig:mh_exposure} where we show CP coverage at 5sigma as a function of exposure, instead of the significance for a fixed CP coverage of 100\% (which is the current version).}
 
 Figures~\ref{fig:mh_theta23}, \ref{fig:mh_theta13}, and \ref{fig:mh_deltamsq} show the variation in the MH sensitivity due to different values of $\theta_{23}$, $\theta_{13}$, and \dm{31} within the allowed ranges.  The value of $\theta_{23}$ has the biggest impact on the sensitivity, and the least favorable scenario corresponds to a true value of \deltacp in which the MH asymmetry
 is maximally offset by the leptonic CP asymmetry, and where, independently, 
@@ -526,6 +527,7 @@ Figure~\ref{fig:cpv_nominal} shows the significance with which the CP violation 
  \includegraphics[width=0.49\textwidth]{cpv50_exp}
  \includegraphics[width=0.49\textwidth]{cpv75_exp}
 \end{cdrfigure}
+\fixme{We are considering an update to Fig~\ref{fig:cpv_exposure} where we show CP coverage at 3sigma or 5sigma as a function of exposure, instead of the significance for a fixed CP coverage of 50\% and 75\% (which is the current version).}
 
 \fixme{Check required exposure values.}
 \begin{cdrtable}[Required exposure for a CP violation measurement]{lcc}{cpv_requiredexposure}{The minimum exposure required to determine CP violation with a significance of 3$\sigma$ for 75\% of \deltacp values or 5$\sigma$ for 50\% of \deltacp values for the CDR reference beam design and the optimized beam design.}
@@ -593,6 +595,22 @@ octant.  The $\Delta\chi^2$ metric is defined as:
 where the value of $\theta_{23}$ in the \emph{wrong} octant is constrained 
 only to have a value within the \emph{wrong} octant (i.e., it is not required
 to have the same value of $\sin^22\theta_{23}$ as the true value).
+Figure~\ref{fig:octant} shows the sensitivity to determining the octant as a function of $\theta_{23}$ for an exposure of 300~kt-MW-yr.  Figure~\ref{fig:res_th23} shows the resolution of $\sin^2\theta_{23}$ as a function of exposure, assuming the true value is $\sin^2\theta_{23} = 0.45$ from the current global fit.
+
+% \begin{cdrfigure}[Octant sensitivity]{octant}{The significance with which DUNE can resolve the $\theta_{23}$ octant for 300~kt-MW-yr. The shaded region represents the range in sensitivity due to potential variations in the beam design and in the true value of \deltacp. }
+%  \includegraphics[width=0.7\textwidth]{}
+% \end{cdrfigure}
+
+\begin{cdrfigure}[Resolution of $\sin^2\theta_{23}$ as a function of exposure]{res_th23}{The resolution of a measurement of $\sin^2\theta_{23}$ as a function of exposure assuming normal MH and $\sin^2\theta_{23} = 0.45$ from the current global fit. The shaded region represents the range in sensitivity due to potential variations in the beam design.  }
+ \includegraphics[width=0.7\textwidth]{res_th23_exp}
+\end{cdrfigure}
+
+
+As mentioned in Section~\ref{sec:physics-lbnosc-cpv}, DUNE will seek not only to demonstrate explict CP violation by observing a difference in the neutrino and antineutrino oscillation probabilities, but also to measure the value of the parameter \deltacp.  Figure~\ref{fig:res_cp} shows the resolution of \deltacp as a function of exposure for a CP-conserving value (\deltacp = 0) and the value that gives the maximum CP violation for normal MH (\deltacp = 90\mbox{$^{\circ}$}).
+
+\begin{cdrfigure}[Resolution of \deltacp as a function of exposure]{res_cp}{The resolution of a measurement of \deltacp as a function of exposure assuming normal MH.  The resolution is shown for a CP-conserving value (\deltacp = 0) and the value that gives the maximum CP violation for normal MH (\deltacp = 90\mbox{$^{\circ}$}). The shaded region represents the range in sensitivity due to potential variations in the beam design.  }
+ \includegraphics[width=0.7\textwidth]{res_dcp_exp}
+\end{cdrfigure}
 
 The rich oscillation structure that can be observed by DUNE and the
 excellent particle identification capability of the detector
@@ -616,15 +634,20 @@ precision expected from the reactor experiments.
 Whereas the reactor experiments measure $\theta_{13}$ using $\overline{\nu}_e$
 disappearance, DUNE will measure it through $\nu_e$ and
 $\overline{\nu}_e$ appearance, thus providing an independent constraint on
-the three-flavor mixing matrix. 
+the three-flavor mixing matrix.   Figure~\ref{fig:res_th13} shows the resolution of $\sin^22\theta_{13}$ as a function of exposure, assuming the true value is $\sin^22\theta_{13} = 0.085$ from the current global fit.
+
+\begin{cdrfigure}[Resolution of $\sin^22\theta_{13}$ as a function of exposure]{res_th13}{The resolution of a measurement of $\sin^22\theta_{13}$ as a function of exposure assuming normal MH and $\sin^22\theta_{13} = 0.085$ from the current global fit. The shaded region represents the range in sensitivity due to potential variations in the beam design.  }
+ \includegraphics[width=0.7\textwidth]{res_th13_exp}
+\end{cdrfigure}
 
 DUNE can also significantly improve the
-resolution on $\Delta m^2_{32}$ beyond the precision of current experiments.  The
-precision on $\Delta m^2_{32}$ will ultimately depend on tight control
-of energy-scale systematics.  Figure shows the expected 1$\sigma$ resolution
-on different three-flavor oscillation parameters as a function of exposure.
+resolution on $\Delta m^2_{31}$ beyond the precision of current experiments.  The
+precision on $\Delta m^2_{31}$ will ultimately depend on tight control
+of energy-scale systematics.  Figure~\ref{fig:res_dm2} shows the expected resolution of \dm{31} as a function of exposure, assuming the true value is \dm{31} = $2.457\times10^{-3}$~eV$^2$ from the current global fit.
 
-Octant sensitivity, resolution for delta, theta13, theta23, deltam2
+\begin{cdrfigure}[Resolution of \dm{31} as a function of exposure]{res_dm2}{The resolution of a measurement of \dm{31} as a function of exposure assuming the true value is \dm{31} = $2.457\times10^{-3}$~eV$^2$ from the current global fit. The shaded region represents the range in sensitivity due to potential variations in the beam design.  }
+ \includegraphics[width=0.7\textwidth]{res_dm_exp}
+\end{cdrfigure}
 
 \section{Testing the 3-flavor Paradigm and the Standard Model}
 \label{sec:physics-lbnosc-3nutests}
