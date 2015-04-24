@@ -2,7 +2,7 @@ Formatted according to: http://en.wikipedia.org/wiki/Bibtex (BV, AH Aug 2010)
                   
 CONVENTIONS:
 
-Please follow these:
+5235, Please follow these:
 
   List DocDB notes like:
 
@@ -3713,16 +3713,16 @@ note={"S. C. Di Lorenzo  {\it et al.}, 2009,0912.1269"}
       SLACcitation   = "%%CITATION = ARXIV:1205.6747;%%",
 }
 
-@article{Adamson:2013/02/28tla,
+@unpublished{Adamson:2013/02/28tla,
       author         = "Adamson, Phil and others",
       title          = "{LArIAT: Liquid Argon TPC in a Test Beam}",
       collaboration  = "LArIAT",
       year           = "2013",
-      reportNumber   = "FERMILAB-PROPOSAL-1034",
+      note           = "FERMILAB-PROPOSAL-1034",
       SLACcitation   = "%%CITATION = FERMILAB-PROPOSAL-1034 ETC.;%%",
 }
 
-@article{Cavanna:2014iqa,
+@unpublished{Cavanna:2014iqa,
       author         = "Cavanna, F. and Kordosky, M. and Raaf, J. and Rebel, B.",
       title          = "{LArIAT: Liquid Argon In A Testbeam}",
       collaboration  = "LArIAT",
@@ -3732,15 +3732,16 @@ note={"S. C. Di Lorenzo  {\it et al.}, 2009,0912.1269"}
       primaryClass   = "physics.ins-det",
       reportNumber   = "FERMILAB-PUB-14-268-E",
       SLACcitation   = "%%CITATION = ARXIV:1406.5560;%%",
+      note           = "arXiv:1406.5560",
 }
 
-@article{Chen:2007ae,
+@unpublished{Chen:2007ae,
       author         = "Chen, H. and others",
       title          = "{Proposal for a New Experiment Using the Booster and NuMI
                         Neutrino Beamlines: MicroBooNE}",
       collaboration  = "MicroBooNE",
       year           = "2007",
-      reportNumber   = "FERMILAB-PROPOSAL-0974",
+      note           = "FERMILAB-PROPOSAL-0974",
       SLACcitation   = "%%CITATION = FERMILAB-PROPOSAL-0974 ETC.;%%",
 }
 
@@ -3759,7 +3760,7 @@ note={"S. C. Di Lorenzo  {\it et al.}, 2009,0912.1269"}
       SLACcitation   = "%%CITATION = ARXIV:1110.1678;%%",
 }
 
-@article{Marshall:2013bda,
+@INPROCEEDINGS{Marshall:2013bda,
       author         = "Marshall, J.S. and Thomson, M.A.",
       title          = "{Pandora Particle Flow Algorithm}",
       pages          = "305-315",
@@ -3767,6 +3768,8 @@ note={"S. C. Di Lorenzo  {\it et al.}, 2009,0912.1269"}
       eprint         = "1308.4537",
       archivePrefix  = "arXiv",
       primaryClass   = "physics.ins-det",
+      booktitle      = "{Proceedings, International Conference on Calorimetry for
+                        the High Energy Frontier (CHEF 2013)}",
       SLACcitation   = "%%CITATION = ARXIV:1308.4537;%%",
 }
 
@@ -4305,10 +4308,12 @@ author = "{C. Hagmann, D. Lange, J. Verbeke, and D. Wright}",
 note={\url{http://nuclear.llnl.gov/simulation/main.html}}
 }
 
-@article{Birks:1964zz,
+@BOOK{Birks:1964zz,
       author         = "Birks, John B.",
       title          = "{The Theory and practice of scintillation counting}",
       year           = "1964",
+      publisher      = "Pergamon Press",
+      doi            = "10.1016/B978-0-08-010472-0.50001-X",
       SLACcitation   = "%%CITATION = INSPIRE-48340;%%",
 }
 
@@ -4366,4 +4371,69 @@ note={\url{http://nuclear.llnl.gov/simulation/main.html}}
       doi            = "10.1103/PhysRevA.36.614",
       year           = "1987",
       SLACcitation   = "%%CITATION = PHRVA,A36,614;%%",
+}
+
+@unpublished{James:1994vla,
+      author         = "James, F.",
+      title          = "{MINUIT Function Minimization and Error Analysis: 
+                        Reference Manual Version 94.1}",
+      year           = "1994",
+      note           = "CERN-D-506, CERN-D506",
+      SLACcitation   = "%%CITATION = CERN-D-506 ETC.;%%",
+}
+
+
+@INPROCEEDINGS{Ester96adensity-based,
+    author = {Martin Ester and Hans-peter Kriegel and J\"org S and Xiaowei Xu},
+    title = {A density-based algorithm for discovering clusters in large spatial databases with noise},
+    year = {1996},
+    booktitle = "{Proceedings of the Second International Conference on Knowledge Discovery and Data Mining (KDD-96)}",
+    pages = {226--231},
+    publisher = {AAAI Press}
+}
+
+@article{flameclustering,
+      author         = "Fu, L. and Medico, E.",
+      title          = "{FLAME, a novel fuzzy clustering method for the analysis of DNA microarray data}",
+      year           = "2007",
+      journal        = "BMC Bioinformatics",
+      volume         = "8",
+      pages          = "3",
+      doi            = "10.1186/1471-2105-8-3",
+}
+
+@article{pphtclustering,
+      author         = "Matas, J. and others",
+      title          = "{Robust Detection of Lines Using the Progressive Probabilistic Hough Transform}",
+      year           = "2000",
+      journal        = "Computer Vision and Image Understanding",
+      volume         = "78",
+      pages          = "119-137",
+      doi            = "10.1006/cviu.1999.0831",
+}
+
+@article{gdml,
+      author         = "Chytracek, R. and McCormick, J. and Pokorski, W. and Santin, G.",
+      title          = "{Geometry Description Markup Language for Physics Simulation and Analysis Applications}",
+      year           = "2006",
+      journal        = "IEEE Trans. Nuycl. Sci.",
+      volume         = "53",
+      pages          = "2892-2896",
+}
+
+@article{kalman,
+      author         = "Kalman, R.",
+      title          = "{A New Approach to Linear Filtering and Prediction Problems}",
+      year           = "1960",
+      journal        = "J. Fluids Eng.",
+      volume         = "82",
+      pages          = "35-45",
+}
+
+@unpublished{lbnecdr,
+author = {{LBNE Collaboration}},
+collaboration = {LBNE},
+title =  "{The LBNE Conceptual Design Report}",
+year = {2012},
+note = {LBNE DocDB 5235, 4317, 4724, 4892, 4623, 5017},
 }
