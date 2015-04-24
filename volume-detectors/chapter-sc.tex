@@ -507,7 +507,9 @@ track, with predictions for different particle species.  Various techniques,
 from $\chi^2$ comparisons to neural networks to the PIDA variable described
 in Section~\ref{annex:reco-pid}~\cite{Acciarri:2013met}.
  
-\fixme{Do we have any calorimetry plots? (LBNO PID and Energy follows:)}
+\fixme{Do we have any calorimetry plots?}
+
+\subsection{Neutrino Event Reconstruction}
 
 In Qscan, a multivariate analysis was used to separate particle types based on the spatial characteristics of their clusters.
 Several quantities are calculated to 
@@ -523,6 +525,17 @@ If neither or both lepton flavours are identified, the event is discarded.
 Numbers of events correctly reconstructed is above 90$\%$ for $\nu_{\mu}$-CCQE events.
 assuming that all hits not associated with the lepton cluster are due to hadronic activity.
 
-\fixme{Show LBNO reco vs true energy plot}
+\fixme{Refer to the LAGUNA-LBNO Energy plots}
+
+Figure~\ref{fig:recoenergynue} shows reconstructed energy versus true energy
+
+\begin{cdrfigure}[Reconstruction of electron neutrino energy]{recoenergynue}
+{CAPTION GOES HERE}
+\includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccqe.pdf}
+\includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccres.pdf}
+\end{cdrfigure}
+
+\fixme{Be sure to properly reference LAGUNA-LBNO design study}
+
 
 
