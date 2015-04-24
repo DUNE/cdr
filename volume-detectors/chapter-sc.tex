@@ -375,7 +375,7 @@ association with clusters in the TPC.  Each flash has a total integrated charge 
 estimate.
 
 
-\subsubsection{TPC Hit Clustering}
+\subsubsection{TPC Pattern Recognition}
 
 After the hit-finding and disambiguation stages have completed, a series of 
 pattern recognition algorithms are applied to the 2D hits in order to identify 
@@ -439,33 +439,54 @@ which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 
 \subsubsection{Track Fitting and Shower Measurement}
 
-The reconstruction of LArTPC events benefits greatly from multiple algorithms
-performing similar reconstruction tasks, as ideas from one development line
-can be applied to another, and the best algorithm chosen for a particular 
-purpose.
+\fixme{Fix references here}
 
-Tracks may be reconstructed also with a Kalman Filter algorithm~\cite{kalman}.
-In this algorithm, hits are combined from multiple views for form three-dimensional
-space points.  Three-dimensional track reconstruction can proceed from space points
-or directly from hits.
+%%%% Ref1: ICARUS (Ankowski:2006ts) -- A. Ankowski et al, Eur. Phys. J. C 48, 667 (2006)
+%%%% Ref2: ArgoNEUT -- Can't find the words Kalman Filter in their papers!
+%%%%   Statements comes from MicroBooNE TDR...
+%%%% Ref3: ICARUS -- Same as Ref1 ?
+%%%% Ref4: LBNO-LAGUNA Report? The full reference is:
+%%%%   Final report of the LAGUNA-LBNO design of a pan-European infrastructure
+%%%%   for large apparatus studying Grand Unification, Neutrino Astrophysics
+%%%%   and Long Baseline Neutrino Oscillations. Funded by European Commission FP7
+%%%%   Research Infrastructures, grant agreement number: 284518.
+%%%% Ref5: Warwick -- J. J. Back et al, Eur. Phys. J. C 74, 2832 (2014)
 
-\fixme{Talk about local principal curves and improved vertex resolution}
+The 2D and 3D clusters identified at the pattern recognition stage
+are passed to a series of high-level reconstruction algorithms,
+which fit the trajectories of particle tracks and measure the
+spatial and calorimetric properties of electromagnetic and hadronic showers.
+A range of different high-level techniques have been demonstrated 
+using both real and simulated data.
 
-The electromagnetic shower algorithms have two
-steps. The first is a post-clustering stage which examines the
-existing clusters in terms of their 2D parameters to determine whether
-the clusters are shower-like or track-like. 
-The selected shower-like clusters are examined to assign starting points,
-directions and angles in the wire-time plane. The second step is 
-3D shower reconstruction, which
-matches the 2D clusters between views in order to obtain 3D shower axes and start points.
-These 3D parameters allow the calculation of the shower energies and charge
-depositions at the starts of the showers, which are used in particle
-identification. 
+%The three-dimensional reconstruction of tracks can proceed either 
+%directly from 2D hits or via 3D space points, 
+%calculated by matching 2D clusters between views.
+The well-established Kalman filter technique~\cite{kalman} has been applied
+to 3D track reconstruction by both ICARUS~\cite{REF1} and ArgoNeuT~\cite{REF2}.
+This technique incorporates the effects of multiple Coulomb scattering,
+enabling a scattering-based estimate of the track momentum,
+which is shown by ICARUS to be as good as $\Delta p/p \approx 10\%$, 
+depending mainly on the track length~\cite{REF3}.
+The data from ICARUS have also been used to develop a precise
+track reconstruction, which builds a 3D trajectory for each track by simultaneously
+optimising its 2D projections to match the observed data~\cite{Antonello:2012hu}.
+Another promising technique, based on the local principal curve algorithm, 
+has been implemented in conjunction with the development of the 
+dual-phase detector concept~\cite{REF4}, and is shown to provide 
+a precise reconstruction of two-particle event topologies~\cite{REF5}. 
 
-\fixme{Can we say something about status or performance of shower reconstruction?}
+A full 3D reconstruction of electromagnetic showers is currently in development,
+but a working model exists. The first stage is an examination of clusters 
+in terms of their 2D parameters, and a selection of shower-like clusters 
+for further analysis. The 3D start position and principal axes of the shower 
+are then reconstructed by matching up its 2D hits between views.
+These 3D parameters allow the calculation of the ionization energy deposition
+in the initial part of the shower, which is used in particle identification. 
 
-\subsubsection{Calorimetry and Particle ID}
+\fixme{Should include a sentence on pi0 reconstruction here}
+
+\subsubsection{Calorimetry and Particle Identification}
 
 The measurement of the ionization density $dE/dx$ is important
 for particle identification and energy measurement.
