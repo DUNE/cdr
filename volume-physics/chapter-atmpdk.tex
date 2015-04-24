@@ -728,7 +728,7 @@ Reconstruction pathologies & $dE/dx$ profiles vs track length & Negligible \\
 %the degree to which this possibility poses a potential background.  
 %Naively, the $dE/dx$ profile of the proton as a function of residual range 
 %will not match the time-reversed version of this for a kaon, 
-%and distributions of kinematic quantities will be 
+%and distributions of kinematic qutntities will be 
 %distinct.  Additionally, such a background will only affect 
 %the portion of the $p\to K^+\overline{\nu}$ analysis focused 
 %on $K^+\to \mu^+\nu$; other $K^+$ decays will be immune to this 
@@ -935,13 +935,11 @@ shaded band indicating the size of the statistical uncertainty.}
 \includegraphics[width=0.45\linewidth]{atm_spectrum_LoverE_2.pdf}
 \end{cdrfigure}
 
-\subsection{Sensitivity to Mass Hierarchy}
-
 When neutrinos travel through the Earth, the MSW resonance influences 
 electron neutrinos in the few-GeV energy range. More precisely, the resonance 
-occurs for $\nu_e$ in the case of normal mass hierarchy (NH, $\Delta m^2_{23} >0$), and for 
-anti-νe in the case of inverted mass hierarchy (IH, $\Delta m^2_{23} <0$). This is 
-illustrated in Figure~\ref{atm_e_zenith}. 
+occurs for $\nu_e$ in the case of normal mass hierarchy (NH, $\Delta m^2_{23} > 0$), and for 
+$\overline{\nu}_e$ in the case of inverted mass hierarchy (IH, $\Delta m^2_{23} < 0$). This is 
+illustrated in Figure~\ref{fig:atm_e_zenith}. 
 
 \begin{figure}[!htb]
 \centering
@@ -976,20 +974,22 @@ Figure~\ref{fig:atm_mh} shows the MH sensitivity as a function of the fiducial e
 Over this range of fiducial exposures, the sensitivity goes essentially as the square 
 root of the exposure, indicating that the measurement is not systematics-limited. 
 Unlike for beam measurements, he sensitivity to MH with atmospheric neutrinos is 
-nearly independent of the CP violating phase.
+nearly independent of the CP violating phase.  The sensitivity comes from both 
+electron neutrino appearance as well as muon neutrino disappearance, and is strongly 
+dependent on the true value of $\theta_{23}$, as shown in Figure~\ref{fig:atm_mh}.  Despite the
+much smaller mass, DUNE would have comparable sensitivity to Hyper-Kamiokande atmospheric 
+neutrino analyses~\cite{Kearns:2013lea} due to the higher detector resolution.    
 
 \begin{cdrfigure}[MH Sensitivity vs. Exposure for Atmospheric Neutrinos]{atm_mh}
 {Sensitivity to mass hierarchy using atmospheric neutrinos as a function of fiducial 
 exposure in a liquid argon detector (left), and as a function of the true value of 
-$\theta_{23}$ (right).  For comparison, Hyper-K sensitivities are also shown \cite{}.}  
+$\theta_{23}$ (right).  For comparison, Hyper-K sensitivities are also shown \cite{Kearns:2013lea}.}  
 \includegraphics[width=0.42\linewidth]{atm_mh_vs_exposure.pdf}
 \includegraphics[width=0.48\linewidth]{combined_sensitivity_hierarchy_lbne_vs_hyperk.pdf}
 \end{cdrfigure}
 
-\subsection{Sensitivity to the $\theta_{23}$ octant}
-
 In the two-flavour approximation, neutrino oscillation probabilities depend on 
-$\sin^2(2θ)$, which is invariant when changing $\theta$ to $\pi/2-\theta$. The octant 
+$\sin^2(2\theta)$, which is invariant when changing $\theta$ to $\pi/2-\theta$. The octant 
 degeneracy remains for $\theta_{23}$ in the leading order terms of the full 
 three-flavor oscillation probability, making it impossible to determine whether $\theta_{23}< \pi/4$ or 
 $\theta_{23}> \pi/4$. Accessing full three-flavor oscillation with atmospheric neutrinos 
@@ -1016,9 +1016,11 @@ help to lift degeneracies that can be present in beam analyses, for instance, th
 MH sensitivity is essentially independent of $\delta_{CP}$.   Atmospheric neutrino data will be acquired 
 even in the absence of the beam, and will provide a useful sample for the development of 
 reconstruction software and analysis methodologies.  
-Atmospheric neutrino analyses have placed limits
-on CPT violation, non-standard interactions, mass-varying neutrinos, sterile neutrinos \cite{Abe:2014gda}, and
-Lorentz invarance violation.
+Atmospheric neutrinos provide a window into a range of new physics scenarios, and can place limits
+on CPT violation~\cite{Kostelecky:2003cr}, 
+non-standard interactions~\cite{Chatterjee:2014gxa}, mass-varying neutrinos~\cite{Abe:2008zza}, 
+sterile neutrinos~\cite{Abe:2014gda}, and
+Lorentz invarance violation~\cite{Kostelecky:2011gq}.
 
 \section{Indirect Search for WIMPs at the DUNE Far Detector}
 
