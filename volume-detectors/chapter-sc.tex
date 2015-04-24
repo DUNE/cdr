@@ -4,11 +4,15 @@
 \section{Computing Infrastructure}
 \label{sec:detectors-sc-infrastructure}
 
+\subsection{Single Phase Design and the Alternate design}
+The bulk of this section describes characteristics of data in the context of
+the single-phase LAr detector. Implications of the alternate design (see~\ref{sec:detectors-fd-ref-ov})
+are outlined in~\ref{sec:detectors-sc-alternate}.
+
 \subsection{Raw Data Rates}
 \label{sec:detectors-sc-infrastructure-data-rates}
 %\fixme{A special Annex document for data rates was updated on 4/13/2015. It covers most DUNE physics and %background
 %processes but the information is incomplete. Currently this S\&C section is being updated to include %references to the Annex.}
-
 
 
 \subsubsection{Types of Raw Data}
@@ -48,8 +52,8 @@ For purposes of this document the issue of possible variations in the design and
 between these modules shall not be addressed, as there is no concrete information developed at
 this point to support this approach. A few basic assumptions will need to be used:
 \begin{itemize}
-\item Estimates presented below correspond to the ``full detector'', i.e. is effectively normalized
-to 40kt.
+\item Estimates presented below correspond to the ``full detector'', i.e. is effectively
+normalized to 40kt.
 \item Accelerator spill cycle is 1.2s
 \item Zero-Suppression thresholds will be set at levels that preserve signals from minimum-ionizing particles.
 \item The intensity of the beam provided by LBNF will affect the data rates for a few detector
@@ -71,14 +75,16 @@ Certain parameters may be rounded off where appropriate.
 
 In the following, estimated data rates for these components are itemized and then aggregated.
 There will be cases where no reliable estimates exist at the moment due to continued R\&D, and this will
-be clearly stated where necessary. Once again, the Annex ``Expected Data Rates for the DUNE Far Detector''
-provides a useful reference, and estimated presented below are derived from the parameters listed there.
+be clearly stated where necessary.
 
 \subsubsection{Far Detector LAr TPC}
-Relevant  LAr TPC parameters:
+Once again, the Annex ``Expected Data Rates for the DUNE Far Detector''
+provides a useful reference, and estimated presented below are derived from
+the parameters listed there. Consider the following LAr TPC parameters:
 \begin{itemize}
 \item Readout channel count: 1,536,000 (i.e. four times 384,000 which is the channel count for each 10kt module)
 \item Drift Time: approx. 2ms
+\item Number of drift time windows in one DAQ readout cycle: 2.4
 \item ADC clock frequency: approx. 2MHz
 \item ADC resolution (bits): 12
 \end{itemize}
@@ -86,25 +92,38 @@ Relevant  LAr TPC parameters:
 Factors affecting data rates and volumes:
 \begin{itemize}
 \item Zero Suppression (ZS)  in the Front-End electronics of the detector
-\item Radiological and Cosmological Backgrounds as functions of thresholds set for ZS,
-in different physics domains (cf. beam neutrino physics vs Supernova Burst)
+\item Radiological and Cosmological Backgrounds as functions of thresholds set for ZS
+and DAQ trigger configuration (cf. the case of low-energy events)
 \end{itemize}
 
 Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can be calculated as a product of the following numbers:
 \begin{itemize}
 \item Channel count
-\item Number of ADC ``clicks'' per total drift (collection) time
+\item Number of ADC samples per total drift (collection) time
+\item Drift time windows in one DAQ cycle
 \item ADC resolution
 \end{itemize}
 \
-This results in a total of 9.2GB worth of TPC data. According to current estimates, with thresholds optimized for beam neutrino physics, zero suppression
-gives us a reduction factor of \textasciitilde 100 in the event size, resulting in a 92~MB ``digital picture'' of the beam neutrino event in the TPC
-(discriminated against most background but \textit{still covering the complete volume of the TPC}).
-Since neutrino interactions will result in a more local pattern of ionization signal being read out
-from the chamber, Monte Carlo studies done with realistic neutrino energy spectra suggest between 10 and 20MB per neutral current event.
-Following the threshold levels assumption in ~\ref{sec:detectors-sc-infrastructure-assumptions}, one arrives at the number of \textasciitilde 20MB/s for the data rate
-which only includes the beam neutrino type of events. This translates into \textasciitilde 0.6PB/year.
+This results in a total of 23.6GB worth of TPC data. The effect of zero suppression on
+the beam neutrino event size is dramatic and Monte Carlo studies done with realistic neutrino
+energy spectra suggest that it will be $\sim$10MB. However, one of the possibilities that is
+now actively explored by the DUNE DAQ team is to record beam event candidates (e.g. events with signals
+above the ``high threshold'' as detailed in the Annex) at very low or no threshold, corresponding
+to virtually full data stream. In that case, one can estimate the total size of the TPC data
+to be collected annually by multiplying the predicted number of beam neutrino interactions
+per year (which is 10,500) by the full uncompressed event size quoted above (23.6GB). Thus one
+arrives to an estimate of roughly 250TB of this type of data per year.
 
+%According to current estimates,
+%with thresholds optimized for beam neutrino physics, zero suppression
+%gives us a reduction factor of \textasciitilde 100 in the event size, resulting
+%in a 92~MB ``digital picture'' of the beam neutrino event in the TPC
+%(discriminated against most background but \textit{still covering the complete volume of the TPC}).
+%Since neutrino interactions will result in a more local pattern of ionization signal being read out
+%from the chamber,
+%per neutral current event. Charged current will tend to have a larger data volume due to
+%a long muon track. For estimation purposes, and following the threshold levels
+%assumption in ~\ref{sec:detectors-sc-infrastructure-assumptions}, one arrives at the number of %\textasciitilde 20MB/s for the data rate which only includes the beam neutrino type of events.
 %As discussed above, most of implications of the SNB signal and trigger are mostly relevant for the front-end and DAQ system, however it's worthwhile to
 %understand what needs to be provided to preserve such possible signal and commit data to mass storage. There are many uncertainties about signatures
 %and signal to noise ratio for the relevant reactions in the detector volume, but it's safe to assume that the thresholds for such events will need to be set
@@ -112,7 +131,10 @@ which only includes the beam neutrino type of events. This translates into \text
 
 
 \subsubsection{Far Detector Photon Detector (PD)}
-Relevant  PD parameters:
+There are variations in the basic parameters of the Photon Detector currently in the R\&D stage,
+so the numbers presented below need to be considered as ballpark values to be made more precise
+at a later time:
+
 \begin{itemize}
 \item Readout channel count: 24,000 (i.e. four times 6,000 which is the channel count for each 10kt module)
 \item Trigger rate is uncertain at this point due to ongoing investigation; one approach that exists assumes 1 trigger per spill cycle
@@ -122,7 +144,9 @@ Relevant  PD parameters:
 This results in 36kB per spill cycle, and should be considered negligible from the point of view of requirement to data handling, compared to other data sources.
 
 \subsubsection{Near Detector Data Rates}
-Relevant parameters of the Fine-Grained Tracker (FGT):
+Once again, the Near Detector is subject to an intense R\&D effort and its
+parameters are being optimized and not fixed at this point. The most relevant parameters
+of the Fine-Grained Tracker (FGT):
 \begin{itemize}
 \item   Straw Tube Tracker (STT) readout channel count: 215,040
 \item STT Drift Time: 120ns
@@ -194,7 +218,21 @@ primarily for managed production), and a network of XRootD servers to cache proc
 A file catalog and a Meta-Data system will be required for efficient data management at scale, and an effort will be made to leverage experience of
 member institutions in this area, making an effort to reuse existing systems or design ideas where possible.
 
-
+\subsection{Computing Implications of the Alternate Design}
+\label{sec:detectors-sc-alternate}
+The dual-phase LAr TPC is expected to have the following parameters:
+\begin{itemize}
+	\item Readout channel count: 614,400 (i.e. four times 153,600 which is the channel count
+	for each 10kt module)
+	\item Drift Time: 7.5ms
+\end{itemize}
+\
+For the Photon Detector in the dual-phase design:
+\begin{itemize}
+	\item Readout channel count: 720 (i.e. four times 180 which is the channel count
+	for each 10kt module)
+\end{itemize}
+\
 \section{Far Detector Physics Software}
 \label{sec:detectors-sc-physics-software}
 
