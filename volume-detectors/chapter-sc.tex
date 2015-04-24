@@ -6,45 +6,59 @@
 
 \subsection{Raw Data Rates}
 \label{sec:detectors-sc-infrastructure-data-rates}
-\fixme{A special Annex document for data rates was updated on 4/13/2015. It covers most DUNE physics and background
-processes but the information is incomplete. Currently this S\&C section is being updated to include references to the Annex.}
+%\fixme{A special Annex document for data rates was updated on 4/13/2015. It covers most DUNE physics and %background
+%processes but the information is incomplete. Currently this S\&C section is being updated to include %references to the Annex.}
 
 
 
-\subsubsection{Raw Data Streams}
-DUNE is a multipurpose apparatus and the variety of physics goals to be pursued during its operation will
-be reflected in different characteristics of respective data streams processed and collected in real time and off-line.
-As one example, consider the difference between neutrino oscillations physics done with beam neutrinos on one hand,
-and the ambitious goal of detecting the rare Supernova bursts (SNB) on the other. Signals produced by ``beam events'' will
-be characterzied by energies in the GeV range, allowing appropriate thresholds for zero-suppression (ZS) to be
-set at the levels which greatly reduce the background component of the data. By comparison, the energy scale of
-the signals produced by SNB neutrino interactions in the active volume of the detector is estimated to be in the range of tens of MeV, resulting
-in much lower thresholds to be set for this type of measurement, and therefore in considerable (if not overwhelming) volume of SNB-specific data coming
-out of the LAr TPC in real time and being dominated by radiological backgrounds. Another differentiating SNB feature is that multiple neutrinos are expected
-to arrive and interact in the detector during the possible rare Supernova burst event within seconds from each other, as opposed to a rare single vertex produced by a beam neutrino.
-To support SNB physics, a massive burst of noisy data will need to be processed ``on the fly'' using approaches and
-algorithms which are completely  different from those for the beam neutrino physics, which mostly relies on off-line processing.
+\subsubsection{Types of Raw Data}
+DUNE is a multipurpose apparatus and the variety of physics goals to be pursued during its operation
+will be reflected in different characteristics of respective data streams processed and collected in real time and off-line.
+As one example, consider the difference between neutrino oscillations physics done with beam neutrinos
+on one hand, and the ambitious goal of detecting the rare Supernova bursts (SNB) on the other.
+Signals produced by ``beam events'' will be characterized by total energy in the GeV range, allowing
+appropriate thresholds for zero-suppression (ZS) to be set at the levels appropriate for
+minimum-ionizing particles, which greatly reduces the
+background component of the data. By comparison, the energy scale of the signals produced by
+SNB neutrino interactions in the active volume of the detector is estimated to be in the range of tens
+of MeV, resulting in much lower thresholds to be set for this type of measurement, and therefore
+in considerable (if not overwhelming) volume of SNB-specific data coming
+out of the LAr TPC in real time and being dominated by radiological backgrounds.
+Another differentiating SNB feature is that multiple neutrinos are expected
+to arrive and interact in the detector during the possible rare Supernova burst event within seconds
+from each other, as opposed to a single vertex produced by a beam neutrino.
+To support SNB physics, a massive sample of data due to multiple low-energy
+depositions will need to be processed ``on the fly''
+using approaches and algorithms which are completely  different from those for the
+beam neutrino physics, which mostly relies on off-line processing.
 
-Distinctions such as this one are made here in order to define the scope of this section, which focuses on data streams present in
-oscillation physics studies, since these data will constitute the bulk of what's committed to mass storage, transmitted over networks,
-processed offline and in general have significant infrastructure and cost implications. Issues and parameters related to other classes of data are covered in
-the Annex to this document, titled ``Characterization of Data Rates and Volumes for specific sources of activity in DUNE Detectors'',
+Distinctions such as this one are made here in order to define the scope of this section,
+which focuses on data streams present in
+oscillation physics studies, since these data will constitute the bulk of what's committed
+to mass storage, transmitted over networks, processed offline and in general have significant
+infrastructure and cost implications. Issues and parameters related to other classes of data
+are covered in the Annex to this document, titled ``Expected Data Rates for the DUNE Far Detector'',
 and also in the DAQ and other sections.
 
 \subsubsection{Assumptions}
 \label{sec:detectors-sc-infrastructure-assumptions}
-According to the present baseline design, the Far Detector (Liquid Argon TPC) in DUNE will consist of four identical modules of 10kt each.
-For purposes of this document the issue of possible variations in the design and/or characteristics between
-these modules shall not be addressed, as there is no concrete information developed at this point to support this approach. A few basic assumptions
-will need to be used:
+According to the present baseline design, the Far Detector (Liquid Argon TPC) in DUNE will consist
+of four identical modules of 10kt each.
+For purposes of this document the issue of possible variations in the design and/or characteristics
+between these modules shall not be addressed, as there is no concrete information developed at
+this point to support this approach. A few basic assumptions will need to be used:
 \begin{itemize}
-\item Estimates presented below correspond to the ``full detector'', i.e. is effectively normalized to 40kt.
+\item Estimates presented below correspond to the ``full detector'', i.e. is effectively normalized
+to 40kt.
 \item Accelerator spill cycle is 1.2s
-\item Zero-Suppression thresholds will be set at levels corresponding to self-triggered data being read out every spill cycle.
-\item The intensity of the beam provided by LBNF will affect the data rates for a few detector systems in DUNE (cf. the Near Detector).
+\item Zero-Suppression thresholds will be set at levels that preserve signals from minimum-ionizing particles.
+\item The intensity of the beam provided by LBNF will affect the data rates for a few detector
+systems in DUNE (cf. the Near Detecor).
 It is assumed that the beam has the characteristics suggested by LBNF Project at the time of writing.
-\item It is assumed that the front-end systems of the TPC and the Photon Detector combined with the logic in DAQ
-will provide triggering capability for the beam neutrino physics.
+\item It is assumed that the front-end systems of the TPC and the Photon Detector combined
+with the logic in DAQ will provide triggering capability for the beam neutrino physics, while
+triggering outside of the beam spills will be provided by DAQ utilizing continuously digitized
+data from the light readout system.
 \end{itemize}
 \
 Certain parameters may be rounded off where appropriate.
@@ -56,7 +70,9 @@ Certain parameters may be rounded off where appropriate.
 \end{itemize}
 
 In the following, estimated data rates for these components are itemized and then aggregated.
-There will be cases where no reliable estimates exist at the moment due to continued R\&D, and this will be clearly stated where necessary.
+There will be cases where no reliable estimates exist at the moment due to continued R\&D, and this will
+be clearly stated where necessary. Once again, the Annex ``Expected Data Rates for the DUNE Far Detector''
+provides a useful reference, and estimated presented below are derived from the parameters listed there.
 
 \subsubsection{Far Detector LAr TPC}
 Relevant  LAr TPC parameters:
@@ -67,10 +83,11 @@ Relevant  LAr TPC parameters:
 \item ADC resolution (bits): 12
 \end{itemize}
 \
-Factors affecting data rates:
+Factors affecting data rates and volumes:
 \begin{itemize}
 \item Zero Suppression (ZS)  in the Front-End electronics of the detector
-\item Radiological and Cosmological Backgrounds as functions of thresholds set for ZS, in different physics domains (cf. beam neutino physics vs Supernova Burst)
+\item Radiological and Cosmological Backgrounds as functions of thresholds set for ZS,
+in different physics domains (cf. beam neutrino physics vs Supernova Burst)
 \end{itemize}
 
 Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can be calculated as a product of the following numbers:
