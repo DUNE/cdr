@@ -28,18 +28,12 @@ def filter(ps):
     # Global DUNE
     ps.add(Param('dune_number_apas', ps.tpc_apa_per_detector * ps.dune_number_detectors,
                  name='Total number of APAs'))
-    
-    # print ps.daq_channels_per_detector
-    # print ps.dune_number_detectors
-    # print ps.daq_channels_per_detector * ps.dune_number_detectors
+    ps.add(Param('dune_detector_mass', ps.tpc_detector_mass * ps.dune_number_detectors,
+                 'kilotonne', name='Total fiducial mass', precision=0))
 
     ps.add(Param('dune_number_channels', ps.daq_channels_per_detector * ps.dune_number_detectors,
                  '', 'Total channels in DUNE', precision=0))
 
-    # print ps.daq_bytes_per_sample
-    # print ps.dune_number_channels
-    # print ps.daq_readout_channel_samples
-    # print ps.daq_bytes_per_sample * ps.dune_number_channels * ps.daq_readout_channel_samples
 
     ps.add(Param('dune_fs_readout_size', (ps.daq_bytes_per_sample * ps.dune_number_channels * ps.daq_readout_channel_samples).to('gigabyte'),
                  'gigabyte', 'Full-stream readout size', precision=1))
@@ -54,10 +48,18 @@ def filter(ps):
                  'exabyte', 'Full-stream 1 year data volume', precision=1))
 
     # Beam related
+    ps.add(Param('beam_rep_rate', 1.0/ps.beam_spill_cycle,
+                 'hertz', 'Beam spill repetition rate', precision=2))
     ps.add(Param('beam_rate', ps.beam_event_occupancy * ps.beam_rep_rate * ps.beam_run_fraction,
                  '1/year', 'Beam neutrino interaction rate', precision=0))
+
+    ps.add(Param('beam_data_rate_fs', ps.beam_rate * ps.dune_fs_readout_size, 
+                 'megabyte/second', 'FS readout rate for events with beam interactions', precision=0))
+    ps.add(Param('beam_data_year_fs', ps.beam_data_rate_fs * Q('year'),
+                 'terabyte', 'Annual FS readout volume for events with beam interactions', precision=0))
+
     ps.add(Param('beam_high_data_rate', ps.beam_event_size * ps.beam_rate,
-                 'kilobyte/second', 'Data rate for beam neutrino interactions'))
+                 'kilobyte/second', 'Data rate for beam neutrino interactions', precision=2))
     ps.add(Param('beam_high_data_year', ps.beam_high_data_rate * Q('year'),
                  'gigabyte', 'Annual beam neutrino data volume', precision=0))
     ps.add(Param('beam_fs_data_rate', ps.dune_fs_readout_size * ps.beam_rep_rate * ps.beam_run_fraction,
