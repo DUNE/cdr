@@ -926,16 +926,14 @@ first two oscillation nodes, even when taking into account the expected statisti
 In performing oscillation fits, the data in each flavor/containment category are 
 binned in energy and zenith angle. 
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=0.6\textwidth]{atm_spectrum_LoverE.pdf}
-\caption[Reconstructed L/E Distribution of `High Resolution' Atmospheric Neutrinos]
+\begin{cdrfigure}[Reconstructed L/E Distribution of `High Resolution' Atmospheric Neutrinos]{lovere}
 {Reconstructed L/E Distribution of `High Resolution'
 $\mu$-like atmospheric neutrino events in a \SI{350}{\ktyr} exposure with and
-without oscillations (top), and the ratio of the two (bottom), with the
+without oscillations (left), and the ratio of the two (right), with the
 shaded band indicating the size of the statistical uncertainty.}
-\label{fig:lovere}
-\end{figure}
+\includegraphics[width=0.45\linewidth]{atm_spectrum_LoverE.pdf}
+\includegraphics[width=0.45\linewidth]{atm_spectrum_LoverE_2.pdf}
+\end{cdrfigure}
 
 \subsection{Sensitivity to Mass Hierarchy}
 
@@ -980,14 +978,13 @@ root of the exposure, indicating that the measurement is not systematics-limited
 Unlike for beam measurements, he sensitivity to MH with atmospheric neutrinos is 
 nearly independent of the CP violating phase.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=0.40\textwidth]{atm_mh_vs_exposure.pdf}
-\caption[MH Sensitivity vs. Exposure for Atmospheric Neutrinos]
+\begin{cdrfigure}[MH Sensitivity vs. Exposure for Atmospheric Neutrinos]{atm_mh}
 {Sensitivity to mass hierarchy using atmospheric neutrinos as a function of fiducial 
-exposure in a liquid argon detector.}
-\label{fig:atm_mh}
-\end{figure}
+exposure in a liquid argon detector (left), and as a function of the true value of 
+$\theta_{23}$ (right).  For comparison, Hyper-K sensitivities are also shown \cite{}.}  
+\includegraphics[width=0.42\linewidth]{atm_mh_vs_exposure.pdf}
+\includegraphics[width=0.48\linewidth]{combined_sensitivity_hierarchy_lbne_vs_hyperk.pdf}
+\end{cdrfigure}
 
 \subsection{Sensitivity to the $\theta_{23}$ octant}
 
@@ -1019,6 +1016,9 @@ help to lift degeneracies that can be present in beam analyses, for instance, th
 MH sensitivity is essentially independent of $\delta_{CP}$.   Atmospheric neutrino data will be acquired 
 even in the absence of the beam, and will provide a useful sample for the development of 
 reconstruction software and analysis methodologies.  
+Atmospheric neutrino analyses have placed limits
+on CPT violation, non-standard interactions, mass-varying neutrinos, sterile neutrinos \cite{Abe:2014gda}, and
+Lorentz invarance violation.
 
 \section{Indirect Search for WIMPs at the DUNE Far Detector}
 
