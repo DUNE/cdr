@@ -47,14 +47,14 @@ and also in the DAQ and other sections.
 \subsubsection{Assumptions}
 \label{sec:detectors-sc-infrastructure-assumptions}
 According to the present baseline design, the Far Detector (Liquid Argon TPC) in DUNE will consist
-of four identical modules of 10kt each.
+of four identical modules of \tpcdetectormass each.
 For purposes of this document the issue of possible variations in the design and/or characteristics
 between these modules shall not be addressed, as there is no concrete information developed at
 this point to support this approach. A few basic assumptions will need to be used:
 \begin{itemize}
 \item Estimates presented below correspond to the ``full detector'', i.e. is effectively
-normalized to 40kt.
-\item Accelerator spill cycle is 1.2s
+normalized to \dunedetectormass.
+\item Accelerator spill cycle is \beamspillcycle
 \item Zero-Suppression thresholds will be set at levels that preserve signals from minimum-ionizing particles.
 \item The intensity of the beam provided by LBNF will affect the data rates for a few detector
 systems in DUNE (cf. the Near Detecor).
@@ -82,10 +82,11 @@ Once again, the Annex ``Expected Data Rates for the DUNE Far Detector''
 provides a useful reference, and estimated presented below are derived from
 the parameters listed there. Consider the following LAr TPC parameters:
 \begin{itemize}
-\item Readout channel count: 1,536,000 (i.e. four times 384,000 which is the channel count for each 10kt module)
-\item Drift Time: approx. 2ms
-\item Number of drift time windows in one DAQ readout cycle: 2.4
-\item ADC clock frequency: approx. 2MHz
+\item TPC channel count: \dunenumberchannels (i.e. four times
+  \daqchannelsperdetector which is the channel count for each \tpcdetectormass module)
+\item Maximum drift Time: \tpcdrifttime
+\item Number of drift time windows in one DAQ readout cycle: \daqdriftsperreadout
+\item ADC clock frequency: approx. \daqsamplerate
 \item ADC resolution (bits): 12
 \end{itemize}
 \
@@ -104,30 +105,33 @@ Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can 
 \item ADC resolution
 \end{itemize}
 \
-This results in a total of 23.6GB worth of TPC data. The effect of zero suppression on
+This results in a total of \dunefsreadoutsize worth of TPC data in one
+readout.
+The effect of zero suppression on
 the beam neutrino event size is dramatic and Monte Carlo studies done with realistic neutrino
-energy spectra suggest that it will be $\sim$10MB. However, one of the possibilities that is
+energy spectra suggest that it will be $\sim$\beameventsize.
+However, one of the possibilities that is
 now actively explored by the DUNE DAQ team is to record beam event candidates (e.g. events with signals
 above the ``high threshold'' as detailed in the Annex) at very low or no threshold, corresponding
-to virtually full data stream. In that case, one can estimate the total size of the TPC data
+to virtually full data stream.
+In that case, one can estimate the total size of the TPC data
 to be collected annually by multiplying the predicted number of beam neutrino interactions
-per year (which is 10,500) by the full uncompressed event size quoted above (23.6GB). Thus one
-arrives to an estimate of roughly 250TB of this type of data per year.
+per year (estimated here to be \beamrate) by the full uncompressed event size quoted above (\dunefsreadoutsize). 
+Thus one arrives to an estimate of \beamdatayearfs for each year of this type of
+data.
 
-%According to current estimates,
-%with thresholds optimized for beam neutrino physics, zero suppression
-%gives us a reduction factor of \textasciitilde 100 in the event size, resulting
-%in a 92~MB ``digital picture'' of the beam neutrino event in the TPC
-%(discriminated against most background but \textit{still covering the complete volume of the TPC}).
-%Since neutrino interactions will result in a more local pattern of ionization signal being read out
-%from the chamber,
-%per neutral current event. Charged current will tend to have a larger data volume due to
-%a long muon track. For estimation purposes, and following the threshold levels
-%assumption in ~\ref{sec:detectors-sc-infrastructure-assumptions}, one arrives at the number of %\textasciitilde 20MB/s for the data rate which only includes the beam neutrino type of events.
-%As discussed above, most of implications of the SNB signal and trigger are mostly relevant for the front-end and DAQ system, however it's worthwhile to
-%understand what needs to be provided to preserve such possible signal and commit data to mass storage. There are many uncertainties about signatures
-%and signal to noise ratio for the relevant reactions in the detector volume, but it's safe to assume that the thresholds for such events will need to be set
-%at very low levels and the data will be dominated by radiological backgrounds.
+Some of the driving zero-suppressed (ZS) and full-scale (FS) annual
+data volumes are summarized in table~\ref{tab:sc-zs-summary}.
+\fixme{The $^{39}$Ar data rate is probably not correct as depending on
+  the ZS level much of its spectrum is below threshold.
+This still needs further work from physics and DAQ groups.}
+\begin{table}[htbp]
+  \centering
+  \caption{Annual data volume estimations for zero-suppressed (ZS) data from various sources.
+  An additional full-stream (FS) data estimation is given for supernova burst (SNB).}
+  \input{generated/annex-rate-zs-volume-summary}
+  \label{tab:sc-zs-summary}
+\end{table}
 
 
 \subsubsection{Far Detector Photon Detector (PD)}
@@ -163,12 +167,20 @@ Based on these parameters, the upper limit of the ND data rate can be estimated 
 For the purposes of this document, processed data is defined as most data which is not considered ``raw'', i.e. it's data derived from raw (including possibly multiple stages
 of calibration and reconstruction) as well as data produced as a result of Monte Carlo studies.
 
-There are uncertainties in anticipated quantities of all of these types of data, but based on the estimated annual raw data volume of 0.6PB, and assuming that
-the data will undergo a few processing stages, one can expect the need to handle \textasciitilde 2PB of data annually for reconstruction and a lesser
+There are uncertainties in anticipated quantities of all of these types of data.
+Depending on the optimum readout strategy, an annual raw data volume of
+\SI{1}{\tera\byte} to \SI{1}{\peta\byte} may be collected.
+Assuming that
+the data will undergo a few processing stages, one can expect the need
+to handle as much as \textasciitilde \SI{2}{\peta\byte} of data annually for reconstruction and a lesser
 volume for final analysis purposes.
 
-For Monte Carlo, at the time of writing typical annual volume of data produced has been of the order of a few tens of terabytes. With Collaboration growing
-and more detailed studies (e.g. of systematics) are undertaken, our expectation is that DUNE will require 100TB annually for storage of its MC data.
+For Monte Carlo, at the time of writing typical annual volume of data produced has been of the order of a few tens of terabytes.
+Initial expectations are that the MC sample size for beam events will
+need to be $10$ -- $100\times$ that of the data.
+With Collaboration growing
+and more detailed studies (e.g. of systematics) are undertaken, our
+expectation is that this estimate will increase.
 
 \subsection{Computing Model}
 \label{sec:detectors-sc-infrastructure-computing-model}
@@ -375,7 +387,7 @@ association with clusters in the TPC.  Each flash has a total integrated charge 
 estimate.
 
 
-\subsubsection{TPC Hit Clustering}
+\subsubsection{TPC Pattern Recognition}
 
 After the hit-finding and disambiguation stages have completed, a series of 
 pattern recognition algorithms are applied to the 2D hits in order to identify 
@@ -439,33 +451,54 @@ which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 
 \subsubsection{Track Fitting and Shower Measurement}
 
-The reconstruction of LArTPC events benefits greatly from multiple algorithms
-performing similar reconstruction tasks, as ideas from one development line
-can be applied to another, and the best algorithm chosen for a particular 
-purpose.
+\fixme{Fix references here}
 
-Tracks may be reconstructed also with a Kalman Filter algorithm~\cite{kalman}.
-In this algorithm, hits are combined from multiple views for form three-dimensional
-space points.  Three-dimensional track reconstruction can proceed from space points
-or directly from hits.
+%%%% Ref1: ICARUS (Ankowski:2006ts) -- A. Ankowski et al, Eur. Phys. J. C 48, 667 (2006)
+%%%% Ref2: ArgoNEUT -- Can't find the words Kalman Filter in their papers!
+%%%%   Statements comes from MicroBooNE TDR...
+%%%% Ref3: ICARUS -- Same as Ref1 ?
+%%%% Ref4: LBNO-LAGUNA Report? The full reference is:
+%%%%   Final report of the LAGUNA-LBNO design of a pan-European infrastructure
+%%%%   for large apparatus studying Grand Unification, Neutrino Astrophysics
+%%%%   and Long Baseline Neutrino Oscillations. Funded by European Commission FP7
+%%%%   Research Infrastructures, grant agreement number: 284518.
+%%%% Ref5: Warwick -- J. J. Back et al, Eur. Phys. J. C 74, 2832 (2014)
 
-\fixme{Talk about local principal curves and improved vertex resolution}
+The 2D and 3D clusters identified at the pattern recognition stage
+are passed to a series of high-level reconstruction algorithms,
+which fit the trajectories of particle tracks and measure the
+spatial and calorimetric properties of electromagnetic and hadronic showers.
+A range of different high-level techniques have been demonstrated 
+using both real and simulated data.
 
-The electromagnetic shower algorithms have two
-steps. The first is a post-clustering stage which examines the
-existing clusters in terms of their 2D parameters to determine whether
-the clusters are shower-like or track-like. 
-The selected shower-like clusters are examined to assign starting points,
-directions and angles in the wire-time plane. The second step is 
-3D shower reconstruction, which
-matches the 2D clusters between views in order to obtain 3D shower axes and start points.
-These 3D parameters allow the calculation of the shower energies and charge
-depositions at the starts of the showers, which are used in particle
-identification. 
+%The three-dimensional reconstruction of tracks can proceed either 
+%directly from 2D hits or via 3D space points, 
+%calculated by matching 2D clusters between views.
+The well-established Kalman filter technique~\cite{kalman} has been applied
+to 3D track reconstruction by both ICARUS~\cite{REF1} and ArgoNeuT~\cite{REF2}.
+This technique incorporates the effects of multiple Coulomb scattering,
+enabling a scattering-based estimate of the track momentum,
+which is shown by ICARUS to be as good as $\Delta p/p \approx 10\%$, 
+depending mainly on the track length~\cite{REF3}.
+The data from ICARUS have also been used to develop a precise
+track reconstruction, which builds a 3D trajectory for each track by simultaneously
+optimising its 2D projections to match the observed data~\cite{Antonello:2012hu}.
+Another promising technique, based on the local principal curve algorithm, 
+has been implemented in conjunction with the development of the 
+dual-phase detector concept~\cite{REF4}, and is shown to provide 
+a precise reconstruction of two-particle event topologies~\cite{REF5}. 
 
-\fixme{Can we say something about status or performance of shower reconstruction?}
+A full 3D reconstruction of electromagnetic showers is currently in development,
+but a working model exists. The first stage is an examination of clusters 
+in terms of their 2D parameters, and a selection of shower-like clusters 
+for further analysis. The 3D start position and principal axes of the shower 
+are then reconstructed by matching up its 2D hits between views.
+These 3D parameters allow the calculation of the ionization energy deposition
+in the initial part of the shower, which is used in particle identification. 
 
-\subsubsection{Calorimetry and Particle ID}
+\fixme{Should include a sentence on pi0 reconstruction here}
+
+\subsubsection{Calorimetry and Particle Identification}
 
 The measurement of the ionization density $dE/dx$ is important
 for particle identification and energy measurement.
@@ -486,7 +519,9 @@ track, with predictions for different particle species.  Various techniques,
 from $\chi^2$ comparisons to neural networks to the PIDA variable described
 in Section~\ref{annex:reco-pid}~\cite{Acciarri:2013met}.
  
-\fixme{Do we have any calorimetry plots? (LBNO PID and Energy follows:)}
+\fixme{Do we have any calorimetry plots?}
+
+\subsubsection{Neutrino Event Reconstruction}
 
 In Qscan, a multivariate analysis was used to separate particle types based on the spatial characteristics of their clusters.
 Several quantities are calculated to 
@@ -502,6 +537,17 @@ If neither or both lepton flavours are identified, the event is discarded.
 Numbers of events correctly reconstructed is above 90$\%$ for $\nu_{\mu}$-CCQE events.
 assuming that all hits not associated with the lepton cluster are due to hadronic activity.
 
-\fixme{Show LBNO reco vs true energy plot}
+\fixme{Refer to the LAGUNA-LBNO Energy plots}
+
+Figure~\ref{fig:recoenergynue} shows reconstructed energy versus true energy
+
+\begin{cdrfigure}[Reconstruction of electron neutrino energy]{recoenergynue}
+{CAPTION GOES HERE}
+\includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccqe.pdf}
+\includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccres.pdf}
+\end{cdrfigure}
+
+\fixme{Be sure to properly reference LAGUNA-LBNO design study}
+
 
 

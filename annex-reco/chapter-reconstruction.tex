@@ -380,6 +380,27 @@ measurements is much larger than the five parameters needed to specify
 a track on a surface.  The Kalman filter can be used for both pattern
 recognition and parameter estimation.
 
+
+\fixme{Some text from the main CDR section...}
+
+The three-dimensional reconstruction of tracks can proceed either 
+directly from 2D hits or via 3D space points, 
+calculated by matching 2D clusters between views.
+
+The well-established Kalman filter technique~\cite{kalman} has been applied
+to 3D track reconstruction by both ICARUS~\cite{REF1} and ArgoNeuT~\cite{REF2}.
+This technique incorporates the effects of multiple Coulomb scattering,
+enabling a scattering-based estimate of the track momentum,
+which is shown by ICARUS to be as good as $\Delta p/p \approx 10\%$, 
+depending mainly on the track length~\cite{REF3}.
+The data from ICARUS have also been used to develop a precise
+track reconstruction, which builds a 3D trajectory for each track by simultaneously
+optimising its 2D projections to match the observed data~\cite{Antonello:2012hu}.
+Another promising technique, based on the local principal curve algorithm, 
+has been implemented in conjunction with the development of the 
+dual-phase detector concept~\cite{REF4}, and is shown to provide 
+a precise reconstruction of two-particle event topologies~\cite{REF5}. 
+
 \fixme{Can we say something about current status or performance?}
 
 %%%% MAYBE TOO MUCH DETAIL FOR CDR 
@@ -463,9 +484,7 @@ hit: $\sum\limits_{i}^{\rm{all\ hits}}(dE/dx)_{i}\cdot dx_{i}$.
 %This approach motivated by the fact that energy deposition profiles vary between particle types, the quenching factor, and therefore the energy scale, will be different depending on the c%luster. In principle, the quenching scale should also depend on the particle energy, but this dependence is seen to be small.
 
 
-\fixme{Borrow performance plot from LBNE Science Opportunities document?}
-
-\subsection{Particle ID}
+\subsection{Particle Identification}
 
 %%%%% Section taken from the LArSoft NIM article -- to rephrase
 
@@ -484,8 +503,12 @@ which is defined to be the average of $A_{i} =
 range $R_{i}$ is less than 30 cm. The particle species can be
 determined by making a selection on the PIDA value.
 
+\fixme{Talk about e-gamma separation here}
 
-\fixme{LBNO}
+\subsection{Neutrino Event Reconstruction}
+
+\fixme{Talk about event classification here:}
+
 In Qscan, a multivariate analysis was used to separate particle types based on the spatial characteristics of their clusters.
 First step performs a principal components analysis (PCA), transforming the axes to lie along the 
 cluster direction and perpendicular to it. Several quantities are then calculated to 
@@ -499,12 +522,44 @@ to understand its ability to distinguish $\nu_{e}$ and $\nu_{\mu}$ events.
 If a single lepton flavor is identified in the event, then the event is considered as a signal event of the observed lepton flavor. 
 If neither or both lepton flavors are identified, the event is discarded.
 Numbers of events correctly reconstructed is above 90$\%$ for $\nu_{\mu}$-CCQE events.
-%For accepted events, the neutrino energy is estimated  assuming a CCQE event and using the two-body approximation, and also calorimetrically.
-%The calorimetric reconstruction takes account of the quenching factors for the different particles by 
-assuming that all hits not associated with the lepton cluster are due to hadronic act%ivity.
-%It is seen that for high-energy muons, the measured energy saturates. This is due to the muon escaping the detector volume. 
 
-\fixme{Current results?}
+\fixme{Refer to the LAGUNA-LBNO PID plots}
+
+Figure~\ref{fig:recoannexeventclassification} shows multivariate some event classification plots ...
+
+\begin{cdrfigure}[LAGNUA-LBNO event classification]{recoannexeventclassification}
+{CAPTION GOES HERE}
+\includegraphics[width=0.49\textwidth]{laguna_lbno_pid_muons.pdf}
+\includegraphics[width=0.49\textwidth]{laguna_lbno_pid_electrons.pdf}
+\end{cdrfigure}
+
+\fixme{Talk about energy reconstruction here:}
+
+For accepted events, the neutrino energy is estimated  assuming a CCQE event and using the two-body approximation, and also calorimetrically.
+The calorimetric reconstruction takes account of the quenching factors for the different particles by 
+assuming that all hits not associated with the lepton cluster are due to hadronic activity.
+
+It is seen that for high-energy muons, the measured energy saturates. This is due to the muon escaping the detector volume. 
+
+
+\fixme{Refer to the LAGUNA-LBNO Energy plots}
+
+Figure~\ref{fig:recoannexrecoenergynue} shows reconstructed energy versus true energy...
+Figure~\ref{fig:recoannexrecoenergynumu} shows reconstructed energy versus true energy...
+
+\begin{cdrfigure}[LAGNUA-LBNO electron neutrino energy measurement]{recoannexrecoenergynue}
+{CAPTION GOES HERE}
+\includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccqe_annex.pdf}
+\includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccres_annex.pdf}
+\end{cdrfigure}
+
+\begin{cdrfigure}[LAGNUA-LBNO muon neutrino energy measurement]{recoannexrecoenergynumu}
+{CAPTION GOES HERE}
+\includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_numu_ccqe_annex.pdf}
+\includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_numu_ccres_annex.pdf}
+\end{cdrfigure}
+
+\fixme{Be sure to properly reference LAGUNA-LBNO design study}
 
 \subsection{Calibration}
 

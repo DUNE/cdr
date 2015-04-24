@@ -397,6 +397,7 @@ Figure~\ref{fig:mh_nominal} shows the significance with which the MH can be dete
 \begin{cdrfigure}[Mass hierarchy sensitivity as a function of exposure]{mh_exposure}{The minimum significance with which the mass hierarchy can be determined for all values of \deltacp as a function of exposure.  The shaded region represents the range in sensitivity due to potential variations in the beam design. This plot assumes normal mass hierarchy.}
  \includegraphics[width=0.7\textwidth]{mh_exp}
 \end{cdrfigure}
+\fixme{We are considering an update to Fig~\ref{fig:mh_exposure} where we show CP coverage at 5sigma as a function of exposure, instead of the significance for a fixed CP coverage of 100\% (which is the current version).}
 
 Figures~\ref{fig:mh_theta23}, \ref{fig:mh_theta13}, and \ref{fig:mh_deltamsq} show the variation in the MH sensitivity due to different values of $\theta_{23}$, $\theta_{13}$, and \dm{31} within the allowed ranges.  The value of $\theta_{23}$ has the biggest impact on the sensitivity, and the least favorable scenario corresponds to a true value of \deltacp in which the MH asymmetry
 is maximally offset by the leptonic CP asymmetry, and where, independently, 
@@ -526,6 +527,7 @@ Figure~\ref{fig:cpv_nominal} shows the significance with which the CP violation 
  \includegraphics[width=0.49\textwidth]{cpv50_exp}
  \includegraphics[width=0.49\textwidth]{cpv75_exp}
 \end{cdrfigure}
+\fixme{We are considering an update to Fig~\ref{fig:cpv_exposure} where we show CP coverage at 3sigma or 5sigma as a function of exposure, instead of the significance for a fixed CP coverage of 50\% and 75\% (which is the current version).}
 
 \fixme{Check required exposure values.}
 \begin{cdrtable}[Required exposure for a CP violation measurement]{lcc}{cpv_requiredexposure}{The minimum exposure required to determine CP violation with a significance of 3$\sigma$ for 75\% of \deltacp values or 5$\sigma$ for 50\% of \deltacp values for the CDR reference beam design and the optimized beam design.}
@@ -593,6 +595,22 @@ octant.  The $\Delta\chi^2$ metric is defined as:
 where the value of $\theta_{23}$ in the \emph{wrong} octant is constrained 
 only to have a value within the \emph{wrong} octant (i.e., it is not required
 to have the same value of $\sin^22\theta_{23}$ as the true value).
+Figure~\ref{fig:octant} shows the sensitivity to determining the octant as a function of $\theta_{23}$ for an exposure of 300~kt-MW-yr.  Figure~\ref{fig:res_th23} shows the resolution of $\sin^2\theta_{23}$ as a function of exposure, assuming the true value is $\sin^2\theta_{23} = 0.45$ from the current global fit.
+
+% \begin{cdrfigure}[Octant sensitivity]{octant}{The significance with which DUNE can resolve the $\theta_{23}$ octant for 300~kt-MW-yr. The shaded region represents the range in sensitivity due to potential variations in the beam design and in the true value of \deltacp. }
+%  \includegraphics[width=0.7\textwidth]{}
+% \end{cdrfigure}
+
+\begin{cdrfigure}[Resolution of $\sin^2\theta_{23}$ as a function of exposure]{res_th23}{The resolution of a measurement of $\sin^2\theta_{23}$ as a function of exposure assuming normal MH and $\sin^2\theta_{23} = 0.45$ from the current global fit. The shaded region represents the range in sensitivity due to potential variations in the beam design.  }
+ \includegraphics[width=0.7\textwidth]{res_th23_exp}
+\end{cdrfigure}
+
+
+As mentioned in Section~\ref{sec:physics-lbnosc-cpv}, DUNE will seek not only to demonstrate explict CP violation by observing a difference in the neutrino and antineutrino oscillation probabilities, but also to measure the value of the parameter \deltacp.  Figure~\ref{fig:res_cp} shows the resolution of \deltacp as a function of exposure for a CP-conserving value (\deltacp = 0) and the value that gives the maximum CP violation for normal MH (\deltacp = 90\mbox{$^{\circ}$}).
+
+\begin{cdrfigure}[Resolution of \deltacp as a function of exposure]{res_cp}{The resolution of a measurement of \deltacp as a function of exposure assuming normal MH.  The resolution is shown for a CP-conserving value (\deltacp = 0) and the value that gives the maximum CP violation for normal MH (\deltacp = 90\mbox{$^{\circ}$}). The shaded region represents the range in sensitivity due to potential variations in the beam design.  }
+ \includegraphics[width=0.7\textwidth]{res_dcp_exp}
+\end{cdrfigure}
 
 The rich oscillation structure that can be observed by DUNE and the
 excellent particle identification capability of the detector
@@ -616,20 +634,158 @@ precision expected from the reactor experiments.
 Whereas the reactor experiments measure $\theta_{13}$ using $\overline{\nu}_e$
 disappearance, DUNE will measure it through $\nu_e$ and
 $\overline{\nu}_e$ appearance, thus providing an independent constraint on
-the three-flavor mixing matrix. 
+the three-flavor mixing matrix.   Figure~\ref{fig:res_th13} shows the resolution of $\sin^22\theta_{13}$ as a function of exposure, assuming the true value is $\sin^22\theta_{13} = 0.085$ from the current global fit.
+
+\begin{cdrfigure}[Resolution of $\sin^22\theta_{13}$ as a function of exposure]{res_th13}{The resolution of a measurement of $\sin^22\theta_{13}$ as a function of exposure assuming normal MH and $\sin^22\theta_{13} = 0.085$ from the current global fit. The shaded region represents the range in sensitivity due to potential variations in the beam design.  }
+ \includegraphics[width=0.7\textwidth]{res_th13_exp}
+\end{cdrfigure}
 
 DUNE can also significantly improve the
-resolution on $\Delta m^2_{32}$ beyond the precision of current experiments.  The
-precision on $\Delta m^2_{32}$ will ultimately depend on tight control
-of energy-scale systematics.  Figure shows the expected 1$\sigma$ resolution
-on different three-flavor oscillation parameters as a function of exposure.
+resolution on $\Delta m^2_{31}$ beyond the precision of current experiments.  The
+precision on $\Delta m^2_{31}$ will ultimately depend on tight control
+of energy-scale systematics.  Figure~\ref{fig:res_dm2} shows the expected resolution of \dm{31} as a function of exposure, assuming the true value is \dm{31} = $2.457\times10^{-3}$~eV$^2$ from the current global fit.
 
-Octant sensitivity, resolution for delta, theta13, theta23, deltam2
+\begin{cdrfigure}[Resolution of \dm{31} as a function of exposure]{res_dm2}{The resolution of a measurement of \dm{31} as a function of exposure assuming the true value is \dm{31} = $2.457\times10^{-3}$~eV$^2$ from the current global fit. The shaded region represents the range in sensitivity due to potential variations in the beam design.  }
+ \includegraphics[width=0.7\textwidth]{res_dm_exp}
+\end{cdrfigure}
 
-\section{Testing the 3-flavour Paradigm}
+\section{Testing the 3-flavor Paradigm and the Standard Model}
 \label{sec:physics-lbnosc-3nutests}
 
-NSI, include reference NSI plot in science document.  Sterile neutrinos.  No plots.
+Due to the very small masses and large mixing of neutrinos, their oscillations over a long distance
+  act as an exquisitely precise interferometer with high sensitivity to very small perturbations caused by 
+  new physics phenomena, such as:
+  \begin{itemize}
+  \item nonstandard interactions in matter that manifest in
+    long-baseline oscillations as deviations from the three-flavor mixing model
+  \item new long-distance potentials arising from discrete symmetries
+    that manifest as small perturbations on neutrino and antineutrino
+    oscillations over a long baseline
+  \item sterile neutrino states that mix with the three known active neutrino states
+  \item large compactified extra dimensions from String Theory models that manifest through mixing
+    between the Kaluza-Klein states and the three active neutrino
+    states
+   \item Lorentz and CPT violation due to an underlying Planck-scale theory that manifest through sidereal dependence on the neutrino oscillation probabilty
+  \end{itemize}
+  Full exploitation of DUNE's sensitivity to such new phenomena
+  will require high-precision predictions of the unoscillated
+  neutrino flux at the far detector and large exposures. Studies will be conducted to understand the
+limits that DUNE could impose relative to current limits and those expected from other experiments.
+  
+\subsection{Search for Nonstandard Interactions}
+
+For $\nu_{\mu,e} \rightarrow \nu_{e,\mu}$ 
+oscillations that occur as the neutrinos propagate through matter,  
+the coherent forward scattering of $\nu_e$'s on electrons in matter 
+modifies the energy and path-length dependence of the vacuum oscillation 
+probability in a way that depends on the magnitude \emph{and} sign of $\Delta m^2_{32}$. 
+This is  the Mikheyev-Smirnov-Wolfenstein (MSW) effect~\cite{Mikheev:1986gs,Wolfenstein:1977ue}.
+NC nonstandard interactions (NSI) can be understood as nonstandard
+matter effects that are visible only in a far detector at a
+sufficiently long baseline. 
+They can be parameterized as new contributions
+to the MSW matrix in the neutrino-propagation Hamiltonian:
+
+\begin{equation}
+  H = U \left( \begin{array}{ccc}
+           0 &                    & \\
+             & \Delta m_{21}^2/2E & \\
+             &                    & \Delta m_{31}^2/2E
+         \end{array} \right) U^\dag + \tilde{V}_{\rm MSW} \,,
+\end{equation}
+with
+\begin{equation}
+  \tilde{V}_{\rm MSW} = \sqrt{2} G_F N_e
+\left(
+  \begin{array}{ccc}
+    1 + \epsilon^m_{ee}       & \epsilon^m_{e\mu}       & \epsilon^m_{e\tau}  \\
+        \epsilon^{m*}_{e\mu}  & \epsilon^m_{\mu\mu}     & \epsilon^m_{\mu\tau} \\
+        \epsilon^{m*}_{e\tau} & \epsilon^{m*}_{\mu\tau} & \epsilon^m_{\tau\tau}
+  \end{array} 
+\right)
+\end{equation}
+
+Here, $U$ is the leptonic mixing matrix, and the $\epsilon$-parameters give the
+magnitude of the NSI relative to standard weak interactions.  For new physics
+scales of a few hundred GeV,  a value of $|\epsilon| \leq 0.01$ is
+expected~\cite{Davidson:2003ha,GonzalezGarcia:2007ib,Biggio:2009nt}.
+DUNE's 1300-km baseline provides an advantage in the detection of NSI relative
+to existing beam-based experiments with shorter baselines.
+Only atmospheric-neutrino experiments have longer baselines, but the sensitivity
+of these experiments to NSI is limited by systematic effects. See \cite{Adams:2013qkq}
+for potential sensitivities to these parameters at a 1300-km baseline.
+
+\subsection{Search for Long-Range Interactions}
+
+The small scale of neutrino-mass differences implies that minute
+differences in the interactions of neutrinos and antineutrinos with
+currently unknown particles or forces may be detected through 
+perturbations to the time evolution of the flavor eigenstates.  
+The longer the experimental
+baseline, the higher the sensitivity to a new long-distance potential
+acting on neutrinos. For example, some of the models for such
+long-range interactions (LRI) as described in~\cite{Davoudiasl:2011sz} could contain discrete symmetries that
+stabilize the proton and give rise to a dark-matter candidate particle,
+thus providing new
+connections between neutrino, proton decay and dark matter
+experiments. The longer baseline of DUNE improves the sensitivity to
+LRI beyond that possible with the current generation of long-baseline
+neutrino experiments. The sensitivity will be determined by the amount
+of $\nu_\mu/\overline{\nu}_\mu$-CC statistics accumulated and the accuracy
+with which the unoscillated and oscillated $\nu_\mu$ spectra can be
+determined.
+
+\subsection{Search for Mixing between Active and Sterile Neutrinos}
+
+Searches for evidence of active-sterile neutrino mixing at DUNE can be
+conducted by examining the NC event rate at the far detector and
+comparing it to a precise estimate of the expected rate extrapolated
+from $\nu_\mu$ flux measurements from the  
+near detector and from 
+beam and detector simulations. Observed deficits in the NC rate could be evidence for mixing between the
+active neutrino states and unknown sterile neutrino states. The most recent such search
+in a long-baseline experiment was conducted by the MINOS
+experiment~\cite{Adamson:2011ku,Sousa:2015bxa}.  DUNE will provide a unique
+opportunity to revisit this search over a large
+range of neutrino energies and a longer baseline. The large detector mass and high beam power will
+allow a high-statistics sample of NC interactions to be collected.
+The high-resolution LArTPC far detector
+will enable a coarse measurement of the incoming neutrino
+energy in a NC interaction by using the event topology and correcting
+for the missing energy of the invisible neutrino.  Both the
+energy spectrum and the rate of NC interactions will be measured
+with high precision at both near and far detectors.
+
+\subsection{Search for Large Extra Dimensions}
+
+Several theoretical models propose that right-handed neutrinos
+propagate in large compactified extra dimensions, whereas the standard
+left-handed neutrinos are confined to the four-dimensional 
+brane~\cite{Machado:2011wx}. Mixing between the right-handed \emph{Kaluza-Klein} 
+modes and the standard
+neutrinos would change the mixing patterns predicted by
+the three-flavor model. The effects could manifest, for example, as distortions in the
+disappearance spectrum of $\nu_\mu$.  The rich oscillation
+structure visible in DUNE, measured with
+its high-resolution detector
+using both beam and atmospheric oscillations,
+could provide further opportunities to probe for
+this type of new physics.
+
+\subsection{Search for Lorentz and CPT Violation}
+
+Lorentz invariance and its associated CPT symmetry
+are foundational aspects of the Standard Model. However, the Standard Model is thought to be a low-energy limit of a more fundamental theory that unifies quantum physics with gravity at the Planck
+scale. As a result, an underlying theory can induce violations of Lorentz invariance and
+violations of CPT symmetry that can generate experimentally observable signals of Planck-scale physics.
+The Standard-Model Extension (SME)~\cite{Colladay:1996iz,Colladay:1998fq,Kostelecky:2003fs} is an effective field theory that contains the Standard Model, general relativity, and all possible operators that break Lorentz symmetry. (Since CPT violation implies Lorentz violation, the SME necessarily includes operators that break CPT symmetry.)  Within the SME framework, the probability for neutrino oscillations depends on the direction of neutrino propagation within a Sun-centered inertial frame~\cite{Kostelecky:2003cr,Kostelecky:2011gq}.  For a long-baseline experiment with both the neutrino beam source and detector fixed to the surface of the Earth, the Earth's rotation causes the direction of neutrino propagation to change with sidereal time.  The SME theory thus predicts a sidereal dependence of the observed beam neutrino rate.  DUNE has the potential to perform studies that explore regimes never previously investigated and to improve existing
+sensitivities obtained in other neutrino experiments.
+For example, the baseline of 1300~km offers an advantage because the sensitivity to 
+% the coefficients for
+Lorentz and CPT violation grows linearly with the baseline.   The
+beam orientation for DUNE is different from other experiments such as MINOS or T2K, so
+the combinations of coefficients for Lorentz and CPT violation appearing in the DUNE mixing probabilities are
+distinct. Additionally, the wide range of energy for the beam neutrinos and the ability to investigate both neutrino and antineutrino channels are advantageous.
 
 \section{Neutrino Beam Requirements}
 \label{sec:physics-lbnosc-beam-req}
