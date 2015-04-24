@@ -434,7 +434,7 @@ $K^+$ production  & Depth, fiducialization & Negligible \\ \colhline
 External cosmogenic  & & \\
 $K^0$ production & & \\
 +internal charge-exchange  & & \\
-to $K^+$ & Cuts on other secondaries &   2  \\ \colhline
+to $K^+$ & Cuts on other secondaries &   < 1  \\ \colhline
 Atmospheric $\nu$ & & \\ 
 $\Delta S=0$ processes & Cut on associated strange baryon & Negligible   \\ \colhline
 Atmospheric $\nu$ & Cabibo-suppressed, & \\ 
@@ -728,7 +728,7 @@ Reconstruction pathologies & $dE/dx$ profiles vs track length & Negligible \\
 %the degree to which this possibility poses a potential background.  
 %Naively, the $dE/dx$ profile of the proton as a function of residual range 
 %will not match the time-reversed version of this for a kaon, 
-%and distributions of kinematic quantities will be 
+%and distributions of kinematic qutntities will be 
 %distinct.  Additionally, such a background will only affect 
 %the portion of the $p\to K^+\overline{\nu}$ analysis focused 
 %on $K^+\to \mu^+\nu$; other $K^+$ decays will be immune to this 
@@ -870,6 +870,162 @@ comparison to others]{Proton decay
 
 \section{Atmospheric Neutrinos}
 \label{sec:physics-atmpdk-atmnu}
+
+Atmospheric neutrinos are a unique tool to study neutrino oscillations: they 
+contain all flavors of neutrinos and anti-neutrinos, are very sensitive to 
+matter effects and to both $\Delta m^2$, and cover a wide range of L/E. In principle, 
+all oscillation parameters could be measured, with high complementarity to 
+measurements performed with a neutrino beam. In addition, atmospheric 
+neutrinos are available all the time, in particular before the beam becomes 
+operational. Atmospheric neutrinos also provide a laboratory in which to search 
+for exotic phenomena where the dependence of the flavor-transition and survival 
+probabilities on energy and path length can be defined. The DUNE far detector, 
+with its large mass and the overburden to protect it from backgrounds, is an 
+ideal tool for these studies. In the following, we will focus on the 
+measurement of the oscillation parameters where the role of atmospheric neutrinos is 
+most important. 
+
+The sensitivity to oscillation parameters has been evaluated with a 
+dedicated simulation, reconstruction and analysis chain. 
+% HG:  We need references here
+The fluxes, after 
+oscillation, of each neutrino species at the far detector location were 
+computed. Interactions in the LAr medium were simulated with the GENIE event 
+generator. Detection thresholds and energy resolutions based on full 
+simulations were applied to the outgoing particles, to take into account 
+detector effects. Events were classified as Fully Contained (FC) or 
+Partially Contained (PC) by placing the vertex at a random position inside the 
+detector and tracking the lepton until its edges. The number of events expected 
+for each flavor and category is summarized in Table~\ref{tab:atmos_rates}.
+
+%
+\begin{table}[!htbp]
+\caption[Atmospheric-neutrino event rates]
+        {
+         Atmospheric-neutrino event rates including oscillations in \SI{350}{\ktyr} 
+         with a LArTPC, fully or partially contained in the detector fiducial volume. 
+        }
+\begin{center}
+\begin{tabular}{$L^c} %$ 
+\toprule
+\rowtitlestyle
+Sample   &  Event Rate \\ \toprowrule
+fully contained electron-like sample   &14,053 \\ \colhline
+fully contained muon-like sample       &20,853 \\ \colhline
+partially contained muon-like sample   & 6,871 \\ \colhline
+\bottomrule
+\end{tabular}
+\end{center}
+\label{tab:atmos_rates}
+\end{table}
+%
+
+Figure shows the expected L/E distribution for high-resolution muon-like 
+events from a \SI{350}{\ktyr} exposure. The data provide excellent resolution of the 
+first two oscillation nodes, even when taking into account the expected statistical uncertainty.
+In performing oscillation fits, the data in each flavor/containment category are 
+binned in energy and zenith angle. 
+
+\begin{cdrfigure}[Reconstructed L/E Distribution of `High Resolution' Atmospheric Neutrinos]{lovere}
+{Reconstructed L/E Distribution of `High Resolution'
+$\mu$-like atmospheric neutrino events in a \SI{350}{\ktyr} exposure with and
+without oscillations (left), and the ratio of the two (right), with the
+shaded band indicating the size of the statistical uncertainty.}
+\includegraphics[width=0.45\linewidth]{atm_spectrum_LoverE.pdf}
+\includegraphics[width=0.45\linewidth]{atm_spectrum_LoverE_2.pdf}
+\end{cdrfigure}
+
+When neutrinos travel through the Earth, the MSW resonance influences 
+electron neutrinos in the few-GeV energy range. More precisely, the resonance 
+occurs for $\nu_e$ in the case of normal mass hierarchy (NH, $\Delta m^2_{23} > 0$), and for 
+$\overline{\nu}_e$ in the case of inverted mass hierarchy (IH, $\Delta m^2_{23} < 0$). This is 
+illustrated in Figure~\ref{fig:atm_e_zenith}. 
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.95\textwidth]{atm_e_zenith.png}
+\caption[Zenith Angle vs. Energy For Atmospheric Neutrinos]
+{Statistical significance of the difference in expected event rates for NH and IH for 
+muon-type events (left) and electron-type events (right), as a function of neutrino
+energy and zenith angle.}
+\label{fig:atm_e_zenith}
+\end{figure}
+
+The MH sensitivity can be greatly enhanced if neutrino and antineutrino events can be 
+separated. The DUNE detector will not be magnetized; however, its high-resolution 
+imaging offers possibilities for tagging features of events that provide statistical 
+discrimination between neutrinos and antineutrinos. For the sensitivity calculations 
+that follow, two such tags were included: a proton tag and a decay electron tag. 
+%The 
+%reconstructed zenith angle distribution for different event categories is shown in Figure~\ref{fig:atmzenith}.
+
+%\begin{figure}[!htb]
+%\centering
+%\includegraphics[width=0.95\textwidth]{atm_event_spectra_zenth_6to10gev.pdf}
+%\caption[Reconstructed Zenith Angle Distributions for Atmospheric Neutrinos]
+%{Reconstructed zenith angle distributions for 6 to 10-GeV events in the different FC and 
+%PC samples. Top plots show the expected distributions for no oscillations (black), oscillations with 
+%normal (blue), and inverted (red) hierarchy. Bottom plots show the ratio of the normal and inverted 
+%expectations to the no-oscillation distributions for each category.}
+%\label{fig:atmzenith}
+%\end{figure}
+
+Figure~\ref{fig:atm_mh} shows the MH sensitivity as a function of the fiducial exposure. 
+Over this range of fiducial exposures, the sensitivity goes essentially as the square 
+root of the exposure, indicating that the measurement is not systematics-limited. 
+Unlike for beam measurements, he sensitivity to MH with atmospheric neutrinos is 
+nearly independent of the CP violating phase.  The sensitivity comes from both 
+electron neutrino appearance as well as muon neutrino disappearance, and is strongly 
+dependent on the true value of $\theta_{23}$, as shown in Figure~\ref{fig:atm_mh}.  Despite the
+much smaller mass, DUNE would have comparable sensitivity to Hyper-Kamiokande atmospheric 
+neutrino analyses~\cite{Kearns:2013lea} due to the higher detector resolution.    
+
+\begin{cdrfigure}[MH Sensitivity vs. Exposure for Atmospheric Neutrinos]{atm_mh}
+{Sensitivity to mass hierarchy using atmospheric neutrinos as a function of fiducial 
+exposure in a liquid argon detector (left), and as a function of the true value of 
+$\theta_{23}$ (right).  For comparison, Hyper-K sensitivities are also shown \cite{Kearns:2013lea}.}  
+\includegraphics[width=0.42\linewidth]{atm_mh_vs_exposure.pdf}
+\includegraphics[width=0.48\linewidth]{combined_sensitivity_hierarchy_lbne_vs_hyperk.pdf}
+\end{cdrfigure}
+
+In the two-flavour approximation, neutrino oscillation probabilities depend on 
+$\sin^2(2\theta)$, which is invariant when changing $\theta$ to $\pi/2-\theta$. The octant 
+degeneracy remains for $\theta_{23}$ in the leading order terms of the full 
+three-flavor oscillation probability, making it impossible to determine whether $\theta_{23}< \pi/4$ or 
+$\theta_{23}> \pi/4$. Accessing full three-flavor oscillation with atmospheric neutrinos 
+will give a handle to solve the ambiguity.
+
+%The sensitivity to the $\theta_{23}$ octant is shown in Figure~\ref{fig:atm_octant}. 
+With the nominal exposure of \SI{340}{\ktyr}, DUNE will be able to distinguish between 
+octants at 3$\sigma$ significance, based on atmospheric data alone, for true values of [quantify], 
+for any value of $\delta_{CP}$.
+
+%\begin{figure}[!htb]
+%\centering
+%\includegraphics[width=0.60\textwidth]{atm_octant_sens.pdf}
+%\caption[Octant Sensitivity for Atmospheric Neutrinos]
+%{Sensitivity to $\theta_{23}$ octant for atmospheric neutrinos.}
+%\label{fig:atm_octant}
+%\end{figure}
+
+%The sensitivity of atmospheric neutrinos to CPV is quite limited and will not reach 
+%$3\sigma$ with the nominal exposure, as shown in Fig. 4.27.
+
+These analyses will provide a complementary approach to beam neutrinos.   Atmospheric neutrinos can 
+help to lift degeneracies that can be present in beam analyses, for instance, through the fact that the 
+MH sensitivity is essentially independent of $\delta_{CP}$.   Atmospheric neutrino data will be acquired 
+even in the absence of the beam, and will provide a useful sample for the development of 
+reconstruction software and analysis methodologies.  
+Atmospheric neutrinos provide a window into a range of new physics scenarios, and can place limits
+on CPT violation~\cite{Kostelecky:2003cr}, 
+non-standard interactions~\cite{Chatterjee:2014gxa}, mass-varying neutrinos~\cite{Abe:2008zza}, 
+sterile neutrinos~\cite{Abe:2014gda}, and
+Lorentz invarance violation~\cite{Kostelecky:2011gq}.
+
+\section{Indirect Search for WIMPs at the DUNE Far Detector}
+
+If the true nature of DM does indeed involve a weakly-interacting particle with a mass in the 100's of GeV range, one of the main search strategies involves looking for anomalous signals in astrophysical data from its annihilation (or decay) into SM particles, like neutrinos. Signals of DM via neutrinos can come from such distant objects as the galactic center, the center of the Sun or even the Earth. As our solar system moves through the DM halo, WIMPs interact with the nuclei of celestial bodies and become trapped in the body's gravitational well.  Over time, the WIMPs accumulate near the core of the body, enhancing the possibility of annihilation. The high-energy neutrinos ($E\sim m_{WIMP}$) from these annihilations can free-stream through the astrophysical body and emerge roughly unaffected (although oscillation and matter effects can slightly alter the energy spectrum).  For the Sun, the background of neutrinos are produced at much lower energies via the nuclear fusion process. Thus, the detection of high-energy neutrinos pointing to the Sun and detected in the DUNE far detector would be clear evidence of DM annihilation (see~\cite{Cirelli:2005gh}).  Since the DUNE far detector has relatively large mass of the order tens of kilotons, it can act as a ``neutrino telescope'' and be used to search for signals of DM annihilations coming from the Sun and/or the core of the Earth. IceCube~\cite{Aartsen:2012kia} and Super-Kamiokande~\cite{Choi:2015ara} have searched for DM through this method but have not observed a signal of DM annihilation into neutrinos.  These indirect-detection experiments  are limited by atmospheric neutrino background.  Compared to these experiments, which are based on Cerenkov light detection using large PMTs, the DUNE LArTPC can provide much better angular resolution. This would substantially reduce the background in the direction of the  expected WIMP-induced neutrino signal, and could potentially provide competitive limits in the low-WIMP-mass range.  Studies are needed to investigate the sensitivity of DUNE for indirect WIMP detection.
+%The mass of the IceCube's $1~km^{3}$ ice volume is of the order $\sim2.6 \times 10^{4}$ times that of the 34-kt DUNE far detector. This requires the DUNE far detector to perform $\sim2.6 \times 10^{4}$ better than IceCube. While this factor seems quite daunting, if not out right impossible, more thorough studies are needed to investigate possible improvements in various performance factors to accomplish this level of enhancement. \fixme{Kate will address this}
 
 \section{Detector Requirements}
 \label{sec:physics-atmpdk-detector-requirements}

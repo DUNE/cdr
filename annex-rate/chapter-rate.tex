@@ -1,157 +1,212 @@
-\chapter{Characterization of Data Rates and Volumes for specific sources of activity in DUNE Detectora}
+\chapter{Characterization of Data Rates}
 \label{ch:annex-rate}
 
-\section{The tables}
+\section{Overview}
 
-\fixme{This table needs input from many people in DUNE.}
+A number of parameters from DUNE/LBNF requirements, design documents,  and studies are used  as input
+for estimations of the data rates in DUNE. In cases when derived parameters need to be generated based on these inputs
+this is accomplished using the software package \textit{dune-params}\footnote{\url{https://github.com/DUNE/dune-params}}
+developed specifically for this purpose.
+As the inputs and estimations are refined the results presented in
+this annex can be regenerated at will.
 
-The Liquid Argon TPC will produce a variety of signals due to various physics processes taking
-place in the detector, such as scattering of the beam neutrinos, cosmic ray muons,
-radiological backgrounds, electronics noise and others. For practical reasons, the signal
-processing systems will be incorporate threshold values which will determine which part of
-data is rejected and how the data stream needs to be treated at any given time (cf. search
-for Supernova Burst events or nucleon decay).
-
-Depending on the origin,
-these signals will be characterized by specific spectra, energy scale and topologies. In combination
-with the threshold settings and real-time algorithms this will result in different rates
-of occurrence and volume of data produced (either per nominal event or per unit time).
-
-It is important to account for this information for the following reasons:
-\begin{itemize}
-	\item An attempt must be made to understand, quantify and optimize
-systematic uncertainties for each class of measurements
-	\item There are considerable implications of real-time data processing
-	strategies and techniques of all of ``downstream'' data processing (e.g. offline),
-	and in particular to the required mass storage volume. This, in turn, will affect
-	the DUNE computing model and costs associated with the DUNE computing effort.
-\end{itemize}
+Because the triggering and readout strategy and algorithms of the DAQ and
+analyses are under development and far from their final state of readiness,
+the data rate estimations involve some broad assumptions and leave open some choices.
+This is described in more detail in the following subsections.
 
 
-We recognize that not all the information exists at this point that is necessary for
-exhaustive characterization of the DUNE data. We will mark as such where appropriate.
 
-The following sources of signal are included and itemized here to facilitate reference in
-the rest of the text:
-\begin{itemize}
-	\item ``Full stream'' - effectively continuous stream of digitized voltages read out from the TPC,
-	not subject to thresholds. This can be likened to a video stream (although at a different scale).
-	\item ``ZS stream'' - the full stream subject to zero-suppression with a particular choice of threshold.
-	With threshold optimal for the oscillation physics with beam neutrinos, this results in an order of magnitude less data than in the full stream.
-	\item ``Beam'' - beam neutrino events
-	\item ``SNB'' - supernova burst
-	\item noise - signals due to various electronic-related noises
-	\item ``rad'' - radiological and cosmogenic backgrounds combined. By the latter we mean
-	radioactive decays and other signals caused by reaction of cosmic rays in the detector and
-	various materials surrounding it.
-	\item ``cosmic $\mu$ - cosmic muons passing through the detector experiencing normal energy loss
-\end{itemize}
+\section{Thresholds for the LArTPC Data}
 
-Table~\ref{tab:rate-summary} summarizes the understanding of the
-expected rates and annual data volumes for specific sources of activity in the detector
-listed above, independent of threshold (unless indicated).
-An entry in the table does not imply that this rate will be acquired.
+There are three threshold levels considered for the purposes of characterizing the LArTPC data rates.
+These thresholds are assumed to be applied ``per-wire'' and on the basis of ADC values (which can be translated
+to units like MeV with proper calibration).
+Note that they are meant to reflect different energy scales of the physics phenomena being
+measured in the TPC and  must be considered separately from thresholds and other parameters used  in the
+DAQ for its internal real-time processing of the data (for example in the anticipated internal ``trigger stream'').
 
+In other words, each such threshold will translate into a corresponding rate of data coming out of DAQ. These are:
 
-\begin{table}[htbf]
+\begin{description}
+\item[full-stream] The full-stream (FS) threshold means there is no threshold at all.
+FS data is data where every time bin (as defined by the ADC clock) on every channel is read out.
+\item[zero-suppressed] The zero-suppressed (ZS) threshold is applied
+  at $\approx 3\sigma$ above the mean noise level of the front-end electronics.
+  Given the existing requirement on signal/noise ratio and the wire spacing,
+  this effectively places an energy threshold of  \chargezsthreshold.
+\item[high-energy] The high-energy (HE) threshold is one that is
+  placed high enough to largely suppress signals from radioactive decays but still
+  low enough to not impact activity from beam neutrino interactions or proton decay (if it exists).
+  Further studies are needed to determine this threshold but currently it is taken to be
+  \chargehethreshold.
+\end{description}
+
+The design of the DAQ is expected to allow reading of the TPC data into the system memory at  FS rates.
+It is also expected to be flexible enough to allow for different
+thresholds to be applied to the data while it is still resident in its buffers, based on real-time calculations.
+
+\section{Sources of Data in the TPC}
+
+Data is expected to be produced by a number of specific sources (cf. cosmic ray muons vs beam neutrinos).
+Each source will have a different rate depending on the threshold applied.
+In the following the corresponding data rates are estimated individually for each source and threshold.
+This provides a means to compare different assumptions, designs and strategies.
+
+The sources of data being considered are:
+
+\begin{description}
+\item[in-spill] Activity in the detector which is coincident with the passage of beam neutrinos through the detector.
+\item[cosmic-$\mu$] Activity due to the  passing of cosmic-ray muons through the detector.
+\item[radioactivity] Activity due to the decay of radioactive isotopes such as $^{39}$Ar,  U/Th and others.
+\item[atm-$\nu$] Activity which is not in-spill and which is
+  consistent with interactions from atmospheric neutrinos.
+\end{description}
+
+\section{Fundamental Parameters of the LArTPC}
+
+This section provides the fundamental parameters taken as input to the
+data rate estimations.
+The parameters are summarized in
+table~\ref{tab:fundamental-parameters}
+
+\begin{table}[htbp]
   \centering
-  \begin{tabular}{|r|l|l|l|l|}
-    \hline
-    Source & rate & time & RO size & volume/year\\
-    \hline
-    \hline
-% 1,536,000 ch * 2e6 Hz * 1e-3s * 12 bit / 8  = 9.2GB
-    full stream & 1/2ms & $3*10^{7}$sec &  9.2GB & 138 EB ($10^{18}B$) \\
-    \hline
-    ZS stream &  \multicolumn{3}{c|}{10 \% of full stream} & 13.8 EB ($10^{18}B$) \\
-    \hline
-    beam ($>$500 MeV)  & $10^{3}$/yr.  & year  & 10MB & 100GB \\
-    \hline
-    $\nu_{atm}$& \multicolumn{3}{c|}{similar to beam}  & 100GB \\
-    \hline
-    SNB  & ZS stream & 60secs/year$\times$?? & 28 TB & 28 TB $\times$??? \\
-    \hline
-    noise            & ??? & ??? & ??? & ??? \\
-    \hline
-    rad              & ??? & ??? & ??? & ??? \\
-    \hline
-    cosmic $\mu$     & ??? & ??? & ??? & ??? \\
-    \hline
-    sol              & ??? & ??? & ??? & ??? \\
-    \hline
-    minbias & \multicolumn{3}{c|}{multiple, variable, threshold dependent} & ??? \\
-    \hline
-    beam minbias & \multicolumn{3}{c|}{multiple, variable, threshold dependent} & ??? \\
-    \hline
-    calib            & ??? & ??? & ??? & ??? \\
-    \hline
-  \end{tabular}
-  \caption{Rate estimations of hypothetically isolated sources of activity in
-    the DUNE far detector.
-  The ``???'' indicate input needed is still needed.}
-  \label{tab:rate-summary}
+  \caption{The fundamental parameters serving as input to data rate estimations.}
+  \input{annex-rate/gen/fundamental-parameters-table}
+  \label{tab:fundamental-parameters}
 \end{table}
 
-Table~\ref{tab:physrates} summarizes the understanding of important
-energy thresholds needed to study a particular study topic (physics,
-calibration, selection efficiency).
-The minimum threshold is that at which any lower threshold has no
-additional benefit to the analysis.
-The maximum threshold is that at which any higher will negatively
-impact the analysis.
-The threshold is understood to be interpreted as the amount of
-ionizing energy deposited in the active volume of the far detector
-and may span APAs.
+\fixme{These aren't all.}
 
-\begin{table}[htbf]
+\section{Full-stream Data}
+
+Full-stream (FS) data corresponds to reading all data in every ADC channel without application of any threshold.
+Estimating its rate is an exact calculation based on known parameters as it does not depend on
+the activity in the detector or the noise level of the electronics.
+As its name implies, it is the most voluminous type of data that can be generated by the TPC.
+The parameters which apply to this data are given in table~\ref{tab:full-stream-parameters}.
+
+\begin{table}[htbp]
   \centering
-  \begin{tabular}{|l||l|l|l|}
-    \hline
-    Topic & min thresh & max thresh & trigger \\
-    \hline
-    \hline
-    beam & 50 MeV & 500 MeV & spill \\
-    \hline
-    pdk & $\sim$few MeV & 100 MeV (see K) & self+see K+nuc. dexcite \\
-    \hline
-    atm$\nu$ & $\sim$few MeV & 50 MeV &
-    self+see Michele $e$ \\
-    atm$\nu$ & $\sim$100 MeV & 500 MeV &
-    self+no Michele $e$ \\
-    \hline
-    snb & $\sim$MeV & 5 MeV & self+ZS stream+dump \\
-    \hline
-    noise & full stream?&$\sim$MeV& min bias?\\
-    \hline
-    rad &$\sim 0$ & $\sim$MEV & self+minbias\\
-    \hline
-    calib & ??? & ??? & ??? \\
-    \hline
-  \end{tabular}
-  \caption{Summary thresholds required for different study topics
-    considering \textbf{signal only}.
-  Below the minimum threshold no further impact on the physics is
-  expected.
-  Above the maximum threshold the physics is negatively impacted.
-  The ``???'' indicate input is still needed.}
-  \label{tab:physrates}
+  \caption{Parameters pertaining to full-stream data rates.}
+  \input{annex-rate/gen/full-stream-parameters-table}
+  \label{tab:full-stream-parameters}
 \end{table}
 
-\section{Other estimates}
+The expected data rates for two scenarios of FS data are given
+in table~\ref{tab:full-stream-volume}.
+The first row gives the data size of one DAQ readout (\daqreadouttime).
+The second is appropriate for any strategy that intends to record FS
+data for each beam spill.
+The third contains two numbers that characterize data volume relevant to a strategy which aims to record FS data
+for Supernova Burst candidates.
+The final row  shows the total annual data volume that the DUNE DAQ is capable of producing (in theory).
 
-\fixme{rough list for now, these numbers need to be moved into their
-  proper subsection}
-\begin{itemize}
-\item 5 minutes reco CPU / cosmic muon (scale by energy dep to get
-  beam event reco CPU?)
-  (tj)
-\item Want 10-100$\times$ MC events as data for beam events.
-  (tj)
-  How frequent?
-  How long to retain?
-\item cosmic muons are about 1M events/year in 30kt (tj)
-Can scale in-beam rates by energy deposition to this assuming constant
-byte-per-MeV/cm deposited?
-\item Square all numbers with those in the science book  
-\end{itemize}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Data volumes and rates for full-stream data
+    acquisition.}
+  \input{annex-rate/gen/full-stream-volume}
+  \label{tab:full-stream-volume}
+\end{table}
+
+\section{Zero-suppressed Data}
+
+There are options in choosing the exact zero-suppression (ZS) procedure,
+and the final choice has not been made.
+For these data rate estimates a very simple procedure is assumed: in each
+channel all digitized time bins in which the ADC values are below
+the given threshold are removed. Timing information for the above-threshold bins can be included without
+adding much to the data volume.
+
+The ZS threshold is taken as the ADC equivalent to a
+\chargezsthreshold
+energy deposition near the CPA and localized in such a way that it passes near one
+induction wire and is collected on one collection wire.
+Given the requirement that the minimum signal to noise ratio is
+\chargeminsignalnoiseratio this ZS threshold represents at least $3\sigma$
+noise exclusion.
+For the purpose of this estimate it is assumed that all noise is
+removed.
+The threshold is low enough that most pertinent activity in the
+detector volume still be observed in ZS data.
+
+
+\begin{table}[htbp]
+  \centering
+  \caption{Parameters pertaining to zero-suppressed data.}
+  \input{annex-rate/gen/zs-parameters-table}
+  \label{tab:zs-parameters-table}
+\end{table}
+
+By construction, the ZS is assumed to remove electronics
+noise, hence the ZS data rate depends simply on the size of the class of the particular event and
+the rate at which it is expected to occur.
+This information is summarized in table~\ref{tab:zs-volume}.
+
+
+\begin{table}[htbp]
+  \centering
+  \caption{Data rate estimations for ZS data from various sources.
+  An additional FS data estimation is given for supernova burst (SNB).}
+  \input{annex-rate/gen/zs-volume-table}
+  \label{tab:zs-volume}
+\end{table}
+
+The beam rate is averaged over one full year assuming run fraction of
+\beamrunfraction, a rep rate of \beamreprate and a beam spill occupancy
+of \beameventoccupancy.
+
+The Supernova Burst (SNB) data is estimated assuming a false-positive SNB
+rate of \snbrate and a readout time of \snbreadouttime.
+It should be emphasized that both these parameters are subject to
+modification and are used simply to provide benchmark examples.
+It is assumed that the bulk of the data in such candidate events will be due to signals produced by $^{39}$Ar decays.
+This is due to the following factors.
+Actual SNB events will have neutrino energies in tens of MeV and up to
+\SI{100}{\MeV}.
+Roughly speaking, 1000 events across DUNE are expected from a real SNB
+with the neutrino front lasting some \SI{10}{\second}. This corresponds to less
+than a single neatrino interaction per APA readout on average, with the rest of the readout time
+filled with signals from radiological background.
+
+In terms of comparison with the beam neutrino data, 
+due to difference in energy scale each SNB neutrino is expected to contribute only
+about 10\% of the data of the
+\si{\GeV}-scale beam events or about \SI{1}{\mega\byte}.
+For the entire SNB this would then add about \SI{1}{\giga\byte} to the
+event and thus does not greatly impact the estimate.
+
+The SNB event size is what must be acquired promptly through that
+readout time and the data rate is averaged over the year.
+The annual data volume is what would be saved to disk if all false
+positive events are kept.
+The table also includes the an estimation assuming full-stream data is
+kept for the SNB candidates.
+
+\section{High-energy Threshold}
+
+For the purpose of these estimates the  high-energy (HE) threshold is chosen at the level above 
+the energy scale of the radiological backgrounds relevant for the LArTPC, and set at  \chargehethreshold.
+A more careful study is needed to determine a potentially more optimal value for this threshold.
+The data rates with the HE threshold applied are summarized in table~\ref{tab:he-volume}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Data rate estimations for data from activity above the
+    high-energy (HE) threshold from various sources.}
+  \input{annex-rate/gen/he-volume-table}
+  \label{tab:he-volume}
+\end{table}
+
+With the HE threshold in place, activity from the $^{39}$Ar events and any SNB
+candidates will not be visible (i.e. will be rejected in DAQ).
+Although actual SNB events may result in neutrino with energies as high as
+\SI{100}{\MeV} applying such a high threshold to SNB candidates won't be optimal and is not being considered at this point.
+For this reason, contribution from SNB to these data is not calculated for this threshold setting.
+
+
+
 

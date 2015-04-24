@@ -27,17 +27,17 @@ shown in the red circle, as mounted on an APA.}
 The CE are implemented as ASIC chips using CMOS technology,
 which performs well at LAr temperatures,
 and provides amplification, shaping, digitization, buffering and multiplexing (Mux) of the signals.
-The CE architecture is manifested in the Cold Mother Board (CMB),
+The CE architecture is manifested in the Front End Mother Board (FEMB),
 a 128-channel board which uses eight 16-channel FE ASICs and eight 16-channel ADC ASICs
 (Figure~\ref{fig:elect_schem}).
 The FE ASIC provides amplification and pulse shaping, while
 the ADC ASIC comprises a 12-bit digitizer
 and an 8:1 Mux stage with two pairs of serial readout lines in parallel.
-A Cold Digital Data (COLDATA) ASIC chip mounted on each CMB provides an additional Mux of 4:1 and
+A Cold Digital Data (COLDATA) ASIC chip mounted on each FEMB provides an additional Mux of 4:1 and
 is capable of driving the data at 1~Gb/s through 30~m of copper cable to the feedthrough and on to the DAQ. 
 Tables \ref{tab:DeviceCounts} and \ref{tab:KeyParameters} list the CE device counts and key parameters.
 \vskip -10pt % This prevents the last table from appearing in the PD section by pulling the figure up, which is easily accomodated.
-\begin{cdrfigure}[The CE Architecture]{elect_schem}{The CE Architecture. The basic unit is the 128-channel CMB.}
+\begin{cdrfigure}[The CE Architecture]{elect_schem}{The CE Architecture. The basic unit is the 128-channel FEMB.}
 \includegraphics[width=0.90\linewidth]{elect_schem.pdf}
 \end{cdrfigure}
 \begin{cdrfigure}[Functional Block Diagram of the Cold Digital Data (COLDATA) ASIC]{elec_COLDATAfig}
@@ -59,7 +59,7 @@ and which are produced by proprietary processes over which we have no control.
 % over which we have no control, nor necessarily any knowledge.
 % It is because of this serious concern that we are undertaking the development and fabrication of our own devices, 
 % so that tight control of the process can be maintained.
-It is worth noting that the CMB, together with the FE and ADC ASIC chips, has already been prototyped and tested,
+It is worth noting that the FEMB, together with the FE and ADC ASIC chips, has already been prototyped and tested,
 using a commercial FPGA to perform the role of the COLDATA ASIC,
 which is currently under development.
 The 1~Gb/s data rate is not high enough to require the use of optical fibers in the cold,
@@ -68,11 +68,11 @@ This greatly reduces the complexity of the COLDATA ASIC, with a corresponding de
 including risk of failure-to-implement (within a fixed schedule and budget).
 
 \begin{cdrtable}[Device Counts]{l|r|r|r}{DeviceCounts}{Device Counts}
- Parameter           & per CMB& per APA& per 10~kt Detector\\ \toprowrule
+ Parameter           & per FEMB& per APA& per 10~kt Detector\\ \toprowrule
  Channels            & 128    & 2560   & 384,000           \\ \colhline
  FE \& ADC ASIC Chips&   8    &  160   &  24,000           \\ \colhline
  COLDATA ASIC Chips  &   1    &   20   &   3,000           \\ \colhline
- CMB                 &   1    &   20   &   3,000           \\ \colhline
+ FEMB                &   1    &   20   &   3,000           \\ \colhline
  Signals-Out         &   4    &   80   &  12,000           \\ \colhline
  APA                 & ---    &    1   &     150           \\
 \end{cdrtable}

@@ -1,0 +1,73 @@
+% This should be \input first thing after \begin{document}
+
+
+\pagestyle{empty}
+
+\begin{center}
+%  {\Huge  \thevolumetitle}
+  {\Huge  \thedoctitle}
+
+  \vspace{10mm}
+
+%  {\LARGE \thevolumetitle}
+ {\LARGE \thedocsubtitle}
+
+  \vspace{15mm}
+
+% {\Large \thevolumetitle}
+ 
+%  \vspace{15mm}
+\titleextra
+
+  \vspace{10mm}
+  \today
+\end{center}
+
+
+\cleardoublepage
+
+\pagestyle{plain} 
+
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\thepage}{\roman{page}}
+\setcounter{page}{1}
+\cleardoublepage
+
+\setcounter{tocdepth}{3}
+\textsf{\tableofcontents}
+\cleardoublepage
+
+%For acronym list to appear just after TOC
+\printnomenclature
+\cleardoublepage
+
+\textsf{\listoffigures}
+\cleardoublepage
+
+\textsf{\listoftables}
+\clearpage
+
+\iffinal\else
+\textsf{\listoftodos}
+\clearpage
+\fi
+
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
+
+\pagestyle{fancy}
+
+% Set how header/footers look
+\renewcommand{\chaptermark}[1]{%
+\markboth{Chapter \thechapter:\ #1}{}}
+\fancyhead{}
+\fancyhead[RO,LE]{\textsf{\footnotesize \thechapter--\thepage}}
+\fancyhead[LO,RE]{\textsf{\footnotesize \leftmark}}
+
+\fancyfoot{}
+\fancyfoot[RO]{\textsf{\footnotesize LBNF/DUNE Conceptual Design Report}}
+\fancyfoot[LE]{\textsf{\footnotesize \thevolumetitle}}
+\fancypagestyle{plain}{}
+
+\renewcommand{\headrule}{\vspace{-4mm}\color[gray]{0.5}{\rule{\headwidth}{0.5pt}}}
+

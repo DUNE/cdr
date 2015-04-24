@@ -9,9 +9,11 @@
 \RequirePackage[letterpaper]{geometry}
 
 % Required values and their setters
-\newcommand\thevolumetitle{Conceptual Design Report}
-\newcommand\thevolumesubtitle{}
-
+\newcommand\thedoctitle{DRAFT Conceptual Design Report}
+\newcommand\thedocsubtitle{Deep Underground Neutrino Experiment (DUNE) and Long-Baseline Neutrino Facility (LBNF)}
+\newcommand\thevolumetitle{TBR} 
+\newcommand\thevolumesubtitle{not used but needed here} 
+\def\titleextra{ }
 
 % Provide finer-grained sectioning.
 \newcounter{subsubsubsection}[subsubsection]
@@ -34,8 +36,9 @@
 
 % Smart end-of-macro spacing
 \RequirePackage{xspace}
-% Must use units properly and consistently
-\RequirePackage[detect-all=true,group-digits=true,group-separator={,},group-minimum-digits=4]{siunitx}
+% Let's use units properly and consistently!
+\RequirePackage[detect-all=true,group-digits=true,group-separator={,},binary-units=true]{siunitx}
+% this option trips up some people (eg, tom junk): group-minimum-digits=4,
 
 % Long table is long
 \RequirePackage{longtable}
@@ -120,19 +123,20 @@
     \boldmath
   }l}%
 
+\definecolor{lightblue}{RGB}{212,236,244}
 \newcommand{\rowtitlestyle}{
-  \rowcolor{Apricot}
+  \rowcolor{lightblue}
   \rowstyle{\bfseries \boldmath} 
 }
 
 \newcommand{\colhline}{
-  \arrayrulecolor{red}
+  \arrayrulecolor{gray}
   \specialrule{0.5pt}{0pt}{1pt}
   \arrayrulecolor{black}
 }
 
 \newcommand{\toprowrule}{
-  \arrayrulecolor{red}
+  \arrayrulecolor{gray}
   \specialrule{1.2pt}{0pt}{1pt}
   \arrayrulecolor{black}
 }

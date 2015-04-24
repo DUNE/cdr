@@ -13,22 +13,21 @@ design and expands the NDS capabilities to more closely meet the mission need wi
 \section{External Neutrino-Beam Measurements}
 \label{sec:nd-external-beam}
 
-As discussed in Section~\ref{subsec:nu-meas-strat}, DUNE's strategy for neutrino-beam measurements includes making measurements of the Far Detector response to a known flux of neutrinos, and NuMI is the only appropriate beamline to use for the neutrino source.
+As discussed in Section~\ref{subsec:nu-meas-strat}, DUNE's strategy for neutrino-beam measurements includes making measurements of the Far Detector response to a known flux of neutrinos, and NuMI is the only appropriate beam line to use for the neutrino source.
 
-To implement this strategy, appropriate detectors will need to be built.  A plausible scenario would be a liquid argon TPC detector of 20-30 tons in the current location of the Minerva experiment, in front of the MINOS near detector. In that way, the MINOS near detector could be used to measure the charge of muons exiting the TPC. The TPC would be designed using the same readout techonology that is used in the DUNE Far Detector.  Once an optimal detector arrangement is determined, DUNE would use the same beam simulation and same muon measurements to apply that knowledge to the LBNF beam and Far Detector.
+To implement this strategy, appropriate detectors will need to be built.  A plausible scenario would be a liquid argon TPC detector of 20-30 tons in the current location of the Minerva experiment, in front of the MINOS near detector. In that way, the MINOS near detector could be used to measure the charge of muons exiting the TPC. The TPC would be designed using the same readout technology that is used in the DUNE Far Detector.  Once an optimal detector arrangement is determined, DUNE would use the same beam simulation and same muon measurements to apply that knowledge to the LBNF beam and Far Detector.
 
 \section{External Hadron-Production Measurements}
 \label{sec:nd-external-hadron}
 
 Uncertainties on hadron production will translate into uncertainties in the neutrino fluxes
-in the DUNE Far Detector, since the neutrinos are produced by hadrons decaying in the decay pipe.
-Precise calculations of neutrino fluxes in high-energy accelerator beams are limited
+in the DUNE Far Detector, since the neutrinos are produced by hadrons decaying in the decay pipe. Precise calculations of neutrino fluxes in high-energy accelerator beams are limited
 at present by our knowledge of hadron production cross-sections in hadron-nucleus collisions. 
 The modeling of strong-interaction cascades and hadronic yields from ``thick'' targets
 (up to a couple of interaction lengths) relies on detailed knowledge of underlying physics
 and cross-sections, which must be provided as a starting point to simulations. The resulting 
 prediction of the flux of neutrinos, produced from decays of pions, kaons, and muons
-emerging from a hadronic shower and beamline re-interactions, is an essential part
+emerging from a hadronic shower and beam line re-interactions, is an essential part
 of simulations of most neutrino experiments. 
 
 Two-detector neutrino oscillation experiments 
@@ -37,14 +36,14 @@ appropriately scaled) by event energy spectra measured in the near detector. How
 these experiments must rely on the beam simulations since the decay pipe (where most beam
 neutrinos are created) provides different angular acceptance for the two detectors. In addition, 
 experiments using near and far detectors based on different detection technologies further complicate the extrapolation. This chapter outlines the DUNE strategy for augmenting the capabilities of the BLM with
-external measurements of secondary-beam particles. \fixme{This was originally written when we just had 
-the BLM and no NND; no change needed here? Second point: This sentence should be in the intro paragraph of this chapter.}
+external measurements of secondary-beam particles. 
+%\fixme{This was originally written when we just had 
+%the BLM and no NND; no change needed here? Second point: This sentence should be in the intro paragraph of this chapter.}
 
-
-\section{Background}
+\subsection{Background}
 
 A complete knowledge of the momenta and decay points of the kaons, pions and
-muons would be sufficient to completely predict the unoscillated flux of neutrinos
+muons would be sufficient to completely predict the un-oscillated flux of neutrinos
 at the Near and Far Detector locations. This would require knowledge of:
 
 \begin{itemize}
@@ -70,7 +69,7 @@ will be more complicated than in certain other neutrino-oscillation experiments,
 MINOS experiment~\cite{gnumi-validation}.
 
 
-\section{Strategy}
+\subsection{Strategy}
 \label{subsec:nu-meas-strat}
 
 The current approach is to rely on measurements made externally (outside the scope
@@ -98,7 +97,7 @@ a critical role once the Far Detector has accumulated sufficient
 statistics toward the end of the running period to make systematic errors
 on the flux a dominant source of error in the oscillation measurement. 
 
-\section{Use of External Facilities for Measurements}
+\subsection{Use of External Facilities for Measurements}
 
 Historically, a number of hadron-production experiments have
 contributed directly to the outcome of neutrino experiments
@@ -123,21 +122,22 @@ This kind of effort could be within the scope of the DUNE Project and could be p
 until after DUNE construction or even after DUNE operations have
 stopped. 
 
-In the meantime, a proposal(US-NA61)~\cite{NA61:2014fnalbeams} for using the NA61 experiment, see Figure~\ref{fig:NA61Scheme}, has been developed
-that is currently operating in the H2 beamline at CERN. NA61 will provide useful 
-hadron-production data for predicting neutrino fluxes at DUNE, and proposed improvements 
-to the tracking in the forward region of the NA61 spectrometer will improve the needed 
-hadro-production phase space coverage specific to DUNE. In October 2014 US-NA61 was granted approximately
-five weeks of beamtime in the Fall 2015 CERN SPS run by the CERN SPSC. The approved
-runs include collecting thin-target data using different materials (C, Al, Be) with 
-ranges of beam energies and types \fixme{of components?} that are expected in the DUNE target and horn-focusing elements. 
-Future runs will be requested that include a wider range of beam energies and targets including a DUNE
-replica thick target. \fixme{a replica of a thick DUNE target?}
+\section{The US-NA61/SHINE Program}
+\label{sec:nd-external-usna61}
 
+A proposal to make measurements for the Fermilab neutron program with the NA61/SHINE experiment has been funded by DOE/HEP \cite{ref:NA61Proposal,ref:NA61Addendum} , US-NA61, and recommended by the CERN SPSC. NA61/SHINE is situated in the North Area of CERN on the H2 beam line. 
 
-\begin{cdrfigure}[A schematic drawing of the CERN NA61 detector]{NA61Scheme}{A schematic drawing of the CERN NA61 detector, a hadron production and heavy ion experiment 
-designed to measure hadrons over a large part of the relevant phase for 
-neutrino experiments. The TPCs, shown in blue, can separate pions from protons and kaons.}
-%\includegraphics[width=6in]{NA61Drawing.pdf}
+The detector, schematically shown in Figure~\ref{fig:NA61Scheme} is comprised of two large air gap, Helmholtz-coil superconducting magnets with a total bending power of 9 T-m. The detector is instrumented with gas TPC tracking, time-of-flight counters, and a hadron calorimeter (at very forward angles). The US-NA61 measurements will provide hadron-production data sufficient for predicting neutrino fluxes at DUNE. A pilot run of 120~GeV/c protons interacting on a thin 4\% graphite target was taken by NA61 during July, 2012. A 4-week dedicated physics run is scheduled for October, 2015.
+
+The run plan for the 2015 data is shown in the table in Figure~\ref{fig:NA61RunPlan}. The initial run will focus on proton and pion data at 120 GeV/c and 60 GeV/c energies. This will constrain well extrapolations from higher and lower energies that are currently under use in neutrino beam simulations.
+
+\begin{cdrfigure}[A schematic drawing of the CERN NA61 detector]{NA61Scheme}{A schematic drawing of the CERN NA61 detector, a hadron production and heavy ion experiment designed to measure hadrons over a large part of the relevant phase for neutrino experiments. The TPCs, shown in blue, can separate pions from protons and kaons.}
+\includegraphics[width=6in]{NA61-PlanView}
 \end{cdrfigure}
-\fixme{Need NA61Drawing.pdf}
+
+\begin{cdrfigure}[The 2015 run plan for US-NA61.]{NA61RunPlan}{A table that shows the proposed run plan for 
+the US-NA61 data run in the fall of 2015.}
+\includegraphics[width=6in]{NA61RunPlan}
+
+\end{cdrfigure}
+

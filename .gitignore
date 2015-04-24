@@ -19,3 +19,6 @@ tests/tables.pdf
 *.tdo
 annex-*.pdf
 *.gz
+*.pyc
+.~lock.*
+junk
