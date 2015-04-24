@@ -47,14 +47,14 @@ and also in the DAQ and other sections.
 \subsubsection{Assumptions}
 \label{sec:detectors-sc-infrastructure-assumptions}
 According to the present baseline design, the Far Detector (Liquid Argon TPC) in DUNE will consist
-of four identical modules of 10kt each.
+of four identical modules of \tpcdetectormass each.
 For purposes of this document the issue of possible variations in the design and/or characteristics
 between these modules shall not be addressed, as there is no concrete information developed at
 this point to support this approach. A few basic assumptions will need to be used:
 \begin{itemize}
 \item Estimates presented below correspond to the ``full detector'', i.e. is effectively
-normalized to 40kt.
-\item Accelerator spill cycle is 1.2s
+normalized to \dunedetectormass.
+\item Accelerator spill cycle is \beamspillcycle
 \item Zero-Suppression thresholds will be set at levels that preserve signals from minimum-ionizing particles.
 \item The intensity of the beam provided by LBNF will affect the data rates for a few detector
 systems in DUNE (cf. the Near Detecor).
@@ -82,10 +82,11 @@ Once again, the Annex ``Expected Data Rates for the DUNE Far Detector''
 provides a useful reference, and estimated presented below are derived from
 the parameters listed there. Consider the following LAr TPC parameters:
 \begin{itemize}
-\item Readout channel count: 1,536,000 (i.e. four times 384,000 which is the channel count for each 10kt module)
-\item Drift Time: approx. 2ms
-\item Number of drift time windows in one DAQ readout cycle: 2.4
-\item ADC clock frequency: approx. 2MHz
+\item TPC channel count: \dunenumberchannels (i.e. four times
+  \daqchannelsperdetector which is the channel count for each \tpcdetectormass module)
+\item Maximum drift Time: \tpcdrifttime
+\item Number of drift time windows in one DAQ readout cycle: \daqdriftsperreadout
+\item ADC clock frequency: approx. \daqsamplerate
 \item ADC resolution (bits): 12
 \end{itemize}
 \
@@ -104,30 +105,33 @@ Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can 
 \item ADC resolution
 \end{itemize}
 \
-This results in a total of 23.6GB worth of TPC data. The effect of zero suppression on
+This results in a total of \dunefsreadoutsize worth of TPC data in one
+readout.
+The effect of zero suppression on
 the beam neutrino event size is dramatic and Monte Carlo studies done with realistic neutrino
-energy spectra suggest that it will be $\sim$10MB. However, one of the possibilities that is
+energy spectra suggest that it will be $\sim$\beameventsize.
+However, one of the possibilities that is
 now actively explored by the DUNE DAQ team is to record beam event candidates (e.g. events with signals
 above the ``high threshold'' as detailed in the Annex) at very low or no threshold, corresponding
-to virtually full data stream. In that case, one can estimate the total size of the TPC data
+to virtually full data stream.
+In that case, one can estimate the total size of the TPC data
 to be collected annually by multiplying the predicted number of beam neutrino interactions
-per year (which is 10,500) by the full uncompressed event size quoted above (23.6GB). Thus one
-arrives to an estimate of roughly 250TB of this type of data per year.
+per year (estimated here to be \beamrate) by the full uncompressed event size quoted above (\dunefsreadoutsize). 
+Thus one arrives to an estimate of \beamdatayearfs for each year of this type of
+data.
 
-%According to current estimates,
-%with thresholds optimized for beam neutrino physics, zero suppression
-%gives us a reduction factor of \textasciitilde 100 in the event size, resulting
-%in a 92~MB ``digital picture'' of the beam neutrino event in the TPC
-%(discriminated against most background but \textit{still covering the complete volume of the TPC}).
-%Since neutrino interactions will result in a more local pattern of ionization signal being read out
-%from the chamber,
-%per neutral current event. Charged current will tend to have a larger data volume due to
-%a long muon track. For estimation purposes, and following the threshold levels
-%assumption in ~\ref{sec:detectors-sc-infrastructure-assumptions}, one arrives at the number of %\textasciitilde 20MB/s for the data rate which only includes the beam neutrino type of events.
-%As discussed above, most of implications of the SNB signal and trigger are mostly relevant for the front-end and DAQ system, however it's worthwhile to
-%understand what needs to be provided to preserve such possible signal and commit data to mass storage. There are many uncertainties about signatures
-%and signal to noise ratio for the relevant reactions in the detector volume, but it's safe to assume that the thresholds for such events will need to be set
-%at very low levels and the data will be dominated by radiological backgrounds.
+Some of the driving zero-suppressed (ZS) and full-scale (FS) annual
+data volumes are summarized in table~\ref{tab:sc-zs-summary}.
+\fixme{The $^{39}$Ar data rate is probably not correct as depending on
+  the ZS level much of its spectrum is below threshold.
+This still needs further work from physics and DAQ groups.}
+\begin{table}[htbp]
+  \centering
+  \caption{Annual data volume estimations for zero-suppressed (ZS) data from various sources.
+  An additional full-stream (FS) data estimation is given for supernova burst (SNB).}
+  \input{generated/annex-rate-zs-volume-summary}
+  \label{tab:sc-zs-summary}
+\end{table}
 
 
 \subsubsection{Far Detector Photon Detector (PD)}
@@ -163,12 +167,20 @@ Based on these parameters, the upper limit of the ND data rate can be estimated 
 For the purposes of this document, processed data is defined as most data which is not considered ``raw'', i.e. it's data derived from raw (including possibly multiple stages
 of calibration and reconstruction) as well as data produced as a result of Monte Carlo studies.
 
-There are uncertainties in anticipated quantities of all of these types of data, but based on the estimated annual raw data volume of 0.6PB, and assuming that
-the data will undergo a few processing stages, one can expect the need to handle \textasciitilde 2PB of data annually for reconstruction and a lesser
+There are uncertainties in anticipated quantities of all of these types of data.
+Depending on the optimum readout strategy, an annual raw data volume of
+\SI{1}{\tera\byte} to \SI{1}{\peta\byte} may be collected.
+Assuming that
+the data will undergo a few processing stages, one can expect the need
+to handle as much as \textasciitilde \SI{2}{\peta\byte} of data annually for reconstruction and a lesser
 volume for final analysis purposes.
 
-For Monte Carlo, at the time of writing typical annual volume of data produced has been of the order of a few tens of terabytes. With Collaboration growing
-and more detailed studies (e.g. of systematics) are undertaken, our expectation is that DUNE will require 100TB annually for storage of its MC data.
+For Monte Carlo, at the time of writing typical annual volume of data produced has been of the order of a few tens of terabytes.
+Initial expectations are that the MC sample size for beam events will
+need to be $10$ -- $100\times$ that of the data.
+With Collaboration growing
+and more detailed studies (e.g. of systematics) are undertaken, our
+expectation is that this estimate will increase.
 
 \subsection{Computing Model}
 \label{sec:detectors-sc-infrastructure-computing-model}
