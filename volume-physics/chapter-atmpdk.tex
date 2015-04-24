@@ -728,7 +728,7 @@ Reconstruction pathologies & $dE/dx$ profiles vs track length & Negligible \\
 %the degree to which this possibility poses a potential background.  
 %Naively, the $dE/dx$ profile of the proton as a function of residual range 
 %will not match the time-reversed version of this for a kaon, 
-%and distributions of kinematic quantities will be 
+%and distributions of kinematic qutntities will be 
 %distinct.  Additionally, such a background will only affect 
 %the portion of the $p\to K^+\overline{\nu}$ analysis focused 
 %on $K^+\to \mu^+\nu$; other $K^+$ decays will be immune to this 
@@ -926,24 +926,20 @@ first two oscillation nodes, even when taking into account the expected statisti
 In performing oscillation fits, the data in each flavor/containment category are 
 binned in energy and zenith angle. 
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=0.6\textwidth]{atm_spectrum_LoverE.pdf}
-\caption[Reconstructed L/E Distribution of `High Resolution' Atmospheric Neutrinos]
+\begin{cdrfigure}[Reconstructed L/E Distribution of `High Resolution' Atmospheric Neutrinos]{lovere}
 {Reconstructed L/E Distribution of `High Resolution'
 $\mu$-like atmospheric neutrino events in a \SI{350}{\ktyr} exposure with and
-without oscillations (top), and the ratio of the two (bottom), with the
+without oscillations (left), and the ratio of the two (right), with the
 shaded band indicating the size of the statistical uncertainty.}
-\label{fig:lovere}
-\end{figure}
-
-\subsection{Sensitivity to Mass Hierarchy}
+\includegraphics[width=0.45\linewidth]{atm_spectrum_LoverE.pdf}
+\includegraphics[width=0.45\linewidth]{atm_spectrum_LoverE_2.pdf}
+\end{cdrfigure}
 
 When neutrinos travel through the Earth, the MSW resonance influences 
 electron neutrinos in the few-GeV energy range. More precisely, the resonance 
-occurs for $\nu_e$ in the case of normal mass hierarchy (NH, $\Delta m^2_{23} >0$), and for 
-anti-νe in the case of inverted mass hierarchy (IH, $\Delta m^2_{23} <0$). This is 
-illustrated in Figure~\ref{atm_e_zenith}. 
+occurs for $\nu_e$ in the case of normal mass hierarchy (NH, $\Delta m^2_{23} > 0$), and for 
+$\overline{\nu}_e$ in the case of inverted mass hierarchy (IH, $\Delta m^2_{23} < 0$). This is 
+illustrated in Figure~\ref{fig:atm_e_zenith}. 
 
 \begin{figure}[!htb]
 \centering
@@ -978,21 +974,22 @@ Figure~\ref{fig:atm_mh} shows the MH sensitivity as a function of the fiducial e
 Over this range of fiducial exposures, the sensitivity goes essentially as the square 
 root of the exposure, indicating that the measurement is not systematics-limited. 
 Unlike for beam measurements, he sensitivity to MH with atmospheric neutrinos is 
-nearly independent of the CP violating phase.
+nearly independent of the CP violating phase.  The sensitivity comes from both 
+electron neutrino appearance as well as muon neutrino disappearance, and is strongly 
+dependent on the true value of $\theta_{23}$, as shown in Figure~\ref{fig:atm_mh}.  Despite the
+much smaller mass, DUNE would have comparable sensitivity to Hyper-Kamiokande atmospheric 
+neutrino analyses~\cite{Kearns:2013lea} due to the higher detector resolution.    
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=0.40\textwidth]{atm_mh_vs_exposure.pdf}
-\caption[MH Sensitivity vs. Exposure for Atmospheric Neutrinos]
+\begin{cdrfigure}[MH Sensitivity vs. Exposure for Atmospheric Neutrinos]{atm_mh}
 {Sensitivity to mass hierarchy using atmospheric neutrinos as a function of fiducial 
-exposure in a liquid argon detector.}
-\label{fig:atm_mh}
-\end{figure}
-
-\subsection{Sensitivity to the $\theta_{23}$ octant}
+exposure in a liquid argon detector (left), and as a function of the true value of 
+$\theta_{23}$ (right).  For comparison, Hyper-K sensitivities are also shown \cite{Kearns:2013lea}.}  
+\includegraphics[width=0.42\linewidth]{atm_mh_vs_exposure.pdf}
+\includegraphics[width=0.48\linewidth]{combined_sensitivity_hierarchy_lbne_vs_hyperk.pdf}
+\end{cdrfigure}
 
 In the two-flavour approximation, neutrino oscillation probabilities depend on 
-$\sin^2(2θ)$, which is invariant when changing $\theta$ to $\pi/2-\theta$. The octant 
+$\sin^2(2\theta)$, which is invariant when changing $\theta$ to $\pi/2-\theta$. The octant 
 degeneracy remains for $\theta_{23}$ in the leading order terms of the full 
 three-flavor oscillation probability, making it impossible to determine whether $\theta_{23}< \pi/4$ or 
 $\theta_{23}> \pi/4$. Accessing full three-flavor oscillation with atmospheric neutrinos 
@@ -1019,6 +1016,16 @@ help to lift degeneracies that can be present in beam analyses, for instance, th
 MH sensitivity is essentially independent of $\delta_{CP}$.   Atmospheric neutrino data will be acquired 
 even in the absence of the beam, and will provide a useful sample for the development of 
 reconstruction software and analysis methodologies.  
+Atmospheric neutrinos provide a window into a range of new physics scenarios, and can place limits
+on CPT violation~\cite{Kostelecky:2003cr}, 
+non-standard interactions~\cite{Chatterjee:2014gxa}, mass-varying neutrinos~\cite{Abe:2008zza}, 
+sterile neutrinos~\cite{Abe:2014gda}, and
+Lorentz invarance violation~\cite{Kostelecky:2011gq}.
+
+\section{Indirect Search for WIMPs at the DUNE Far Detector}
+
+If the true nature of DM does indeed involve a weakly-interacting particle with a mass in the 100's of GeV range, one of the main search strategies involves looking for anomalous signals in astrophysical data from its annihilation (or decay) into SM particles, like neutrinos. Signals of DM via neutrinos can come from such distant objects as the galactic center, the center of the Sun or even the Earth. As our solar system moves through the DM halo, WIMPs interact with the nuclei of celestial bodies and become trapped in the body's gravitational well.  Over time, the WIMPs accumulate near the core of the body, enhancing the possibility of annihilation. The high-energy neutrinos ($E\sim m_{WIMP}$) from these annihilations can free-stream through the astrophysical body and emerge roughly unaffected (although oscillation and matter effects can slightly alter the energy spectrum).  For the Sun, the background of neutrinos are produced at much lower energies via the nuclear fusion process. Thus, the detection of high-energy neutrinos pointing to the Sun and detected in the DUNE far detector would be clear evidence of DM annihilation (see~\cite{Cirelli:2005gh}).  Since the DUNE far detector has relatively large mass of the order tens of kilotons, it can act as a ``neutrino telescope'' and be used to search for signals of DM annihilations coming from the Sun and/or the core of the Earth. IceCube~\cite{Aartsen:2012kia} and Super-Kamiokande~\cite{Choi:2015ara} have searched for DM through this method but have not observed a signal of DM annihilation into neutrinos.  These indirect-detection experiments  are limited by atmospheric neutrino background.  Compared to these experiments, which are based on Cerenkov light detection using large PMTs, the DUNE LArTPC can provide much better angular resolution. This would substantially reduce the background in the direction of the  expected WIMP-induced neutrino signal, and could potentially provide competitive limits in the low-WIMP-mass range.  Studies are needed to investigate the sensitivity of DUNE for indirect WIMP detection.
+%The mass of the IceCube's $1~km^{3}$ ice volume is of the order $\sim2.6 \times 10^{4}$ times that of the 34-kt DUNE far detector. This requires the DUNE far detector to perform $\sim2.6 \times 10^{4}$ better than IceCube. While this factor seems quite daunting, if not out right impossible, more thorough studies are needed to investigate possible improvements in various performance factors to accomplish this level of enhancement. \fixme{Kate will address this}
 
 \section{Detector Requirements}
 \label{sec:physics-atmpdk-detector-requirements}

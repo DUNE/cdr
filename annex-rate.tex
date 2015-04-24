@@ -4,10 +4,17 @@
 
 \input{common/preamble}
 
-\renewcommand\thevolumesubtitle{Rate Estimates}
+%\sisetup{detect-all=true,group-digits=true,group-separator={,},group-minimum-digits=4,binary-units=true}
+
+\input{annex-rate/gen/rate-defs}
+
+\renewcommand\thedoctitle{\anxrates}
+\renewcommand\thedocsubtitle{Annex to the\\LBNF/DUNE Conceptual Design Report}
+\def\titleextra{\includegraphics[width=0.75\textwidth]{DAQ_NND}}
+
 \begin{document}
 
-\input{common/init}
+\input{common/init-annex}
 
 \input{annex-rate/chapter-rate.tex}
 \cleardoublepage
