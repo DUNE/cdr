@@ -323,11 +323,10 @@ With the advancement of both single-phase and dual-phase technologies,
 and expansion of the experimental program to include MicroBooNE~\cite{Chen:2007ae,microboone-url},
 the 35-ton prototype and the CERN test experiments,
 the reconstruction software has continued to grow in both volume and sophistication,
-supported by powerful multi-purpose and shared frameworks 
-such as LArSoft and Qscan.
+supported by multi-purpose and shared frameworks such as LArSoft and Qscan.
 
-%Say that DUNE programme will require reconstruction of accelerator
-%neutrinos, supernova bursts, atmospheric neutrinos and proton decay ...
+%Probably need to say that DUNE will require reconstruction supernova bursts, 
+%atmospheric neutrinos and proton decay, not just accelerator neutrinos
 
 A fully automated chain of event reconstruction algorithms
 will be developed for the DUNE Far Detector.
@@ -429,6 +428,18 @@ Vertex-finding algorithms are also applied,
 and neutrino events are reconstructed by associating the 
 3D particles to the primary interaction vertex.
 
+Figure~\ref{fig:pandoraefficiency} shows the current efficiency for reconstructing
+the leading final-state lepton as a function of its momentum
+for 5\,GeV $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions
+simulated in the MicroBooNE detector.
+In both samples, the reconstruction efficiency increases rapidly with momentum,
+rising above 90\% at 500\,MeV and reaching approximately 100\% at 2\,GeV.
+Figure~\ref{fig:recoannexpandoravertexresolution} shows the spatial resolution for
+reconstructing the primary interaction vertex in these 5\,GeV event samples,
+projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex 
+resolution is obtained by taking the 68\% quantile of 3D vertex residuals, 
+which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
+
 \begin{cdrfigure}[PANDORA reconstruction efficiency]{pandoraefficiency}
 {Reconstruction efficiency of Pandora pattern recognition algorithms
  for the leading final-state lepton in 5\,GeV $\nu_{\mu}$ CC (left) and
@@ -447,19 +458,6 @@ and neutrino events are reconstructed by associating the
 \includegraphics[width=0.49\textwidth]{pandora_uboone_vertex_resolution_numucc.pdf}
 \includegraphics[width=0.49\textwidth]{pandora_uboone_vertex_resolution_nuecc.pdf}
 \end{cdrfigure}
-
-Figure~\ref{fig:pandoraefficiency} shows the current efficiency for reconstructing
-the leading final-state lepton as a function of its momentum
-for 5\,GeV $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions
-simulated in the MicroBooNE detector.
-In both samples, the reconstruction efficiency increases rapidly with momentum,
-rising above 90\% at 500\,MeV and reaching approximately 100\% at 2\,GeV.
-Figure~\ref{fig:recoannexpandoravertexresolution} shows the spatial resolution for
-reconstructing the primary interaction vertex in these 5\,GeV event samples,
-projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex 
-resolution is obtained by taking the 68\% quantile of 3D vertex residuals, 
-which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
-
 
 \subsubsection{Track Fitting and Shower Measurement}
 
@@ -523,38 +521,36 @@ are corrected using a modified Box model~\cite{Thomas:1987zz}
 or Birks' Law`\cite{Birks:1964zz}.
 The identity of a particle track which ranges out in the active detector volume
 may be ascertained by analysing the ionization density $dE/dx$ as a function of 
-the residual range from the end point of the track.
-Various analysis techniques have been developed
-As described in Section~\ref{annex:reco-pid}, various analysis techniques
-have been developed for comparing the $dE/dx$ information to the predictions
-for different particle species.
+the range from the end of the track, and comparing with the predictions
+for different particle species. Various analysis techniques have been developed,
+as described in Section~\ref{annex:reco-pid}.
  
 \fixme{Do we have any calorimetry plots?}
 
 \subsubsection{Neutrino Event Reconstruction and Classification}
 
-Once all the final-state particles from a neutrino interaction have been 
-individually reconstructed, the combined information is used to 
-reconstruct and classify the neutrino event.
+%%%%
+%%%% Cite the Warwick paper ...
+%%%%
 
-In Qscan, a multivariate analysis (MVA) was used to separate particle types based on the spatial characteristics of their clusters
-\cite{WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI}.
-Several quantities are calculated to 
-characterize the cluster: the lateral spread, the mean charge-weighted inverse distance of hits to the primary cluster axis
-(this is expected to distinguish effectively between showers and tracks), the $dE/dx$.
-These variables are then fed into Boosted Decision Trees analyses, 
-each calculating the signal and background likelihoods for a particular particle hypothesis.
+Once all the final-state particles in an event have been reconstructed individually, 
+the combined information is used to reconstruct and classify the overall neutrino event.
+The identification of neutrino event types is based on a multivariate analysis\cite{WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI},
+which constructs a number of characteristic topological and calorimetric variables,
+based on the reconstructed final-state particles, and uses a Boosted Decision Tree 
+algorithm to calculate signal and background likelihoods for particular event hypotheses.
+The current performance of the full reconstruction, from pattern recognition to event classification, 
+has been evaluated using $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions with two-body final states,
+simulated in the dual-phase Far Detector. The correct hypothesis is chosen for 
+92\% (79\%) of $\nu_{\mu}$ ($\nu_{e}$) quasi-elastic interactions with a 
+lepton and proton in the final state, and 79\% (71\%) of $\nu_{\mu}$ ($\nu_{e}$) 
+resonance interactions with a lepton and charged pion in the final state.
 
-The overall performance of the reconstruction chain (from clustering to PID) has been estimated with a simple binned lepton flavour analysis, 
-to understand its ability to distinguish $\nu_{e}$ and $\nu_{\mu}$ events.
-If a single lepton flavour is identified in the event, then the event is considered as a signal event of the observed lepton flavour. 
-If neither or both lepton flavours are identified, the event is discarded.
-Numbers of events correctly reconstructed is above 90$\%$ for $\nu_{\mu}$-CCQE events.
-assuming that all hits not associated with the lepton cluster are due to hadronic activity.
-For accepted events, the neutrino energy is estimated  assuming a CCQE event and using the two-body approximation, and also calorimetrically.
-The calorimetric reconstruction takes account of the quenching factors for the different particles by 
-assuming that all hits not associated with the lepton cluster are due to hadronic activity.
-Figure~\ref{fig:recoenergynue} shows the results of the kinematic energy reconstruction for $\nu_e$ CCQE and CC1$\pi^{+}$ events.
+For selected events, the neutrino energy is estimated kinematically for quasi-elastic events,
+using a two-body approximation, or otherwise calorimetrically.
+The calorimetric reconstruction takes into account the quenching factors of the different particles, 
+assuming that all hits not associated with the primary lepton are due to hadronic activity.
+Figure~\ref{fig:recoenergynue} shows the results of the energy reconstruction for $\nu_e$ CCQE and CC1$\pi^{+}$ events.
 
 \begin{cdrfigure}[Reconstruction of electron neutrino energy]{recoenergynue}
 {Dual-phase LArTPC neutrino energy measurement. Distributions of reconstructed neutrino energy versus true neutrino energy: assuming two-body kinematics,  $\nu_{e}$ CCQE events, (a) 
