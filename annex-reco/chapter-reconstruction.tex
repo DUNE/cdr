@@ -50,10 +50,11 @@ The following sections describe the current status of each task.
 
 \begin{cdrfigure}[Far detector reconstruction block diagram]{fdrecoblockdiag}
 {Block diagram showing the components of the far detector reconstruction chain}
-\includegraphics[width=0.8\textwidth]{fdrecoflowchart_annex.pdf}
+\includegraphics[width=\textwidth]{fdrecoflowchart_annex.pdf}
 \end{cdrfigure}
 
 \subsection{Signal Processing and Filtering}
+\label{annex:reconstruction-signal-proc}
 
 A series of signal processing algorithms have been developed to
 perform noise reduction and baseline subtraction on the digital
@@ -100,6 +101,7 @@ channels and thus reducing the signal bandwidth, the coherent noise filter ideal
 After suppressing the noise, the (constant) pedestal of each waveform has to be computed and subtracted from each sample.
 
 \subsection{TPC Hit Finding}
+\label{annex:reconstruction-single-phase-hit-find}
 
 Once deconvoluted, raw ADC values trace out pulses, which are the best
 estimates of when charge arrived on a particular electronics channel.
@@ -280,7 +282,7 @@ resolution is obtained by taking the 68\% quantile of 3D vertex residuals,
 which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 
 
-\fixme{CLUSTERING/PANADORA FOR LBNO (TWO VIEWS), taken from LGUNA-LBNO deliverables51 }
+\fixme{CLUSTERING/PANDORA FOR LBNO (TWO VIEWS), taken from LGUNA-LBNO deliverables document}
 
 Algorithms specific for two views event reconstruction have been extensively developed as well. 
 A preliminary 2D clustering is carried on similarly to what described above.
@@ -379,20 +381,30 @@ measurements is much larger than the five parameters needed to specify
 a track on a surface.  The Kalman filter can be used for both pattern
 recognition and parameter estimation.
 The Kalman filter technique has been applied
-to 3D track reconstruction by both ICARUS~\cite{REF1} and ArgoNeuT~\cite{REF2}.
+to 3D track reconstruction by both ICARUS~\cite{Ankowski:2006ts} and ArgoNeuT~\cite{REF}.
 This technique incorporates the effects of multiple Coulomb scattering,
 enabling a scattering-based estimate of the track momentum,
 which is shown by ICARUS to be as good as $\Delta p/p \approx 10\%$, 
-depending mainly on the track length~\cite{REF3}.
+depending mainly on the track length~\cite{Ankowski:2006ts}.
 The data from ICARUS have also been used to develop a precise
 track reconstruction, which builds a 3D trajectory for each track by simultaneously
 optimising its 2D projections to match the observed data~\cite{Antonello:2012hu}.
 Another promising technique, based on the local principal curve algorithm, 
 has been implemented in conjunction with the development of the 
-dual-phase detector concept~\cite{REF4}, and is shown to provide 
-a precise reconstruction of two-particle event topologies~\cite{REF5}. 
+dual-phase detector concept, and is shown to provide 
+a precise reconstruction of two-particle event topologies~\cite{Back:2013cva,LAGUNA-LBNO-deliv},
+including precise vertex reconstruction.
+Figure~\ref{recoannexlpcvertexresolution} shows all the vertex resolution plots ...
 
-\fixme{Can we say something about current status or performance?}
+\begin{cdrfigure}[Vertex reconstruction using local principal curves]{recoannexlpcvertexresolution}
+{CAPTION GOES HERE}
+\includegraphics[width=0.33\textwidth]{barker_vertex_numuccqe_x_annex.pdf}
+\includegraphics[width=0.33\textwidth]{barker_vertex_nueccqe_x_annex.pdf}
+\includegraphics[width=0.33\textwidth]{barker_vertex_numuccqe_y_annex.pdf}
+\includegraphics[width=0.33\textwidth]{barker_vertex_nueccqe_y_annex.pdf}
+\includegraphics[width=0.33\textwidth]{barker_vertex_numuccqe_z_annex.pdf}
+\includegraphics[width=0.33\textwidth]{barker_vertex_nueccqe_z_annex.pdf}
+\end{cdrfigure}
 
 %%%% MAYBE TOO MUCH DETAIL FOR CDR 
 
