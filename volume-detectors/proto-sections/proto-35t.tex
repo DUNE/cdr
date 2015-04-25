@@ -14,7 +14,7 @@ Later it was decided to extend its scope, and to install and operate a small-sca
 The membrane cryostat demonstration, completed in 2014, is referred to as ``Phase 1'' and the operation of the TPC is called ``Phase 2.''
 Phase 2 is currently under construction and it is planned to take data in summer 2015.
 
-\subsection{Phase 1 - Cryostat Construction and Performance}
+\subsection{35-ton Phase 1: Cryostat Construction}
 
 The construction of the 35t cryostat addressed a number of issues.
 First were project-related issues, such as gaining detailed construction experience, 
@@ -68,6 +68,7 @@ Vapor barrier	Normal	  &    1.2 mm thick carbon steel\\ \colhline
 Steel reinforced concrete	    &  0.3 m thick layer\\ 
 \end{cdrtable}
 
+\subsection{35-ton Phase 1: Operation and Performance}
 Once construction was completed, the Argon filling of the cryostat commenced. 
 In the first stage, gaseous Ar was used to purge the cryostat and begin the removal
 of impurities.
@@ -79,8 +80,17 @@ monitors that sample the gas in the cryostat.
   \includegraphics[width=0.8\textwidth]{35TPurgeAndRecirc}
 \end{cdrfigure}
 
-Figure~\ref{fig:35TElectronLifetime} shows the electron lifetime from the start of the LAr Pump operation until the end of the Phase 1 run. In general, the electron lifetime improved as a function of pump 
-on-time, but there were several incidents that spoiled the lifetime. \fixme{revisit this sentence} These will be discussed in the next section.
+Once room-temperature gas phase stage is now longer improving purity, the cooldown and LAr fill stage begins. 
+A gas/liquid spray method is used to cool down the cryostat. 
+This generates a turbulent mixing of cold gas in the cryostat and cools the entire surface.
+The cooldown rate was maintained below than the maximum specified by the manufacturer.
+Once the cooldown was complete, the LAr was transferred into the cryostat and recirculating 
+purification begun.
+At this point, the purity monitors can be used to measure electron lifetime. 
+Figure~\ref{fig:35TElectronLifetime} shows the electron lifetime from the start of the
+LAr Pump operation until the end of the Phase 1 run. 
+In general, the electron lifetime improved as a function of pump 
+on-time, but there were several incidents that spoiled the lifetime. 
 
 \begin{cdrfigure}[35t Electron Lifetime]{35TElectronLifetime}{LAr electron lifetmes as measured by 
 Cryostat Purity Monitors. Significant events are annotated on the plot. Major divisions on horizontal axis 
@@ -88,19 +98,27 @@ are one week periods. Equivalent purity levels are shown as dashed horizontal li
   \includegraphics[width=0.7\textwidth]{35TElectronLifetime.png}
 \end{cdrfigure}
 
-\subsection{Phase 2 - Installation of Active Detectors}
+\subsection{35-ton Phase 1: Conclusions}
+The 35t Phase 1 run has shown that the membrane cryostat technology has no innate difficulties with 
+achieving the stated goals of the LBNE Conceptual Design Far Detector. 
+There were some operational issues, for example, the loss of purity when pumps are switched.
+However, these are likely unique to the 35t. 
+It also seems likely that in a future 
+design, the pumps will be externally located, to avoid coupling 
+acoustical vibrations into the Far Detector 
+cryostat and to facilitate maintenance and repair.
+
+\subsection{35-ton Phase 2: Installation of Active Detectors}
 Phase 2 of the the 35t prototype involves installing a fully operational TPC and photon detector into 
 the previously built cryostat.
 The prototype will be filled with liquid argon and operated for a several-month-long cosmic ray run. 
 External plastic scintillator paddles placed around the cryostat will be used to produce
 trigger signals as well as rough position measurements of the incoming cosmic rays.
-Installation of the TPC into the cryostat is expected in April 2015 and 
-commissioning is expected to begin in June 2015.
+Installation of the TPC into the cryostat is expected in May 2015 and 
+commissioning is expected to begin in July 2015.
 %Figure~\ref{fig:tpc-35ton-trial} shows the trial assembly of the TPC outside of the cryostat. 
 Figure~\ref{fig:35TTPC} shows a model of the TPC inside the cryostat and a trial assembly of
 the TPC done outside of the cyrostat. 
-
-\subsection{35t Phase 2 TPC Design}
 
 \begin{cdrfigure}[35t with TPC]{35TTPC}{(left) 35t Cryostat with TPC and photon detectors installed. 
 Note separate drift regions on ``near'' and ``far'' sides.
@@ -121,26 +139,24 @@ aspects are collected in Table~\ref{tab:35TDesign}.
 
 \begin{cdrtable}[35t Design Elements]{lcl}{35TDesign}{35t Design Elements}
  Design Aspect& Section & How Tested\\ \toprowrule
-Modular APAs with wrapped wires & \ref{subsec:v5-tpc-chamber-apa}&Build small-scale APA Modules with FD design\\
+Modular APAs with wrapped wires & \ref{subsec:fd-ref-apa}&Build small-scale APA Modules with FD design\\
 \colhline
-Vertical Gaps between APAs &\ref{subsec:v5-tpc-chamber-apa}& Assemble APAs side-by-side.\\
+Vertical Gaps between APAs &\ref{sec:detectors-fd-ref-tpc}& Assemble APAs side-by-side.\\
 &&Study reco'd tracks that cross the gaps.\\
 \colhline
-Horizontal Gaps between APAs &\ref{subsec:v5-tpc-chamber-apa}& Build two shorter APAs and stack vertically\\
+Horizontal Gaps between APAs &\ref{sec:detectors-fd-ref-tpc}& Build two shorter APAs and stack vertically\\
 &&Study reco'd tracks that cross the gaps\\
 \colhline
-APAs immersed in active volume &\ref{subsec:v5-tpc-chamber-apa}& Study reco'd tracks that cross APAs\\
+APAs immersed in active volume &\ref{sec:detectors-fd-ref-tpc}& Study reco'd tracks that cross APAs\\
 \colhline
-Cold Digital Electronics & \ref{subsec:fe_CMOS_digital} & Measure noise performance etc. {\it in situ}\\
+Cold Digital Electronics & \ref{sec:detectors-fd-ref-ce} & Measure noise performance etc. {\it in situ}\\
 \colhline
-Waveguide-style Photon Detector& \ref{subsec:fe_CMOS_digital}&Install in APAs. Measure lightyield\\
+Waveguide-style Photon Detector& \ref{sec:detectors-fd-ref-pd}&Install in APAs. Measure lightyield\\
 \colhline
-Triggerless-capable DAQ & \ref{sec:daq_intro} & Take data using multiple DAQ modes\\ 
+Triggerless-capable DAQ & \ref{sec:detectors-fd-ref-daq} & Take data using multiple DAQ modes\\ 
 \end{cdrtable}
 
-\fixme{the xrefs in this table need to be fixed}
-
-\subsection{Phase 2 Simulation, Reconstruction and Analysis}
+\subsection{35-ton Phase 2: Simulation, Reconstruction and Analysis}
 As can be seen from Table~\ref{tab:35TDesign}, successful tests of many of the new 
 design features requires simulation, reconstruction and analysis of 35t data. 
 This will be done with the help of the LarSoft package, which is also used to simulate and 
