@@ -1,8 +1,21 @@
 \chapter{Simulation}
 \label{annex:detectors-sc-physics-software-simulation}
 
+Simulated data samples provide the basis for detailed studies of detector performance, inform
+detector design choices,  and enable the development of automated event reconstruction.
+Detailed Monte Carlo predictions of expected data distributions will also be needed
+in order to extract physics results from the DUNE experiment.   Several important sources
+of systematic uncertainty come from detector modeling, and varying the assumptions incorporated
+in the simulations provides the mechanism by which these systematic uncertainties can be estimated.
+Simulations are needed in order
+to extrapolate from auxiliary data samples, such testbeam measurements or {\it in situ} measurements
+using events not passing signal event selection requirements, to the signal selection samples.
+The following sections describe the simulation of the Near and Far Detectors.
+
 \section{Near Detector Simulation}
 \label{annex:detectors-sc-physics-software-simulation-nd}
+
+\fixme{To be supplied, even if short}
 
 \section{Far Detector Simulation}
 \label{annex:detectors-sc-physics-software-simulation-fd}
@@ -12,41 +25,26 @@
 \includegraphics[width=0.7\textwidth]{fdsimflowchart_annex.pdf}
 \end{cdrfigure}
 
-\fixme{Where should we introduce ART, LArSoft, QSCAN etc.?}  
-
-%
-%LArSoft~\cite{larsoft} is based upon the {\it art} framework, 
-%which is built on ROOT~\cite{root}. 
-%
-%LArSoft is supported by a team in Fermilab's Scientific Computing Division.  
-%
-
-Complete GEANT4-based~\cite{geant4} Monte Carlo simulations have been 
-developed for both the single-phase and dual-phase Far Detector designs,
-incorporating both the Liquid Argon TPC modules
-and the photon detection systems. The simulated data provide
-the basis for detailed studies of detector performance, 
-and enable the development of automated event reconstruction.
+Monte-Carlo simulations of liquid-argon TPC detectors have reached a level of maturity
+in the last decade.  Detailed GEANT4-based~\cite{GEANT4:NIM,GEANT4} simulation
+programs have been developed  for both the single-phase and dual-phase Far Detector designs,
+incorporating both the Liquid Argon TPC modules and the photon detection systems.   
 
 The single-phase detector simulation is implemented in LArSoft,
 which provides a common simulation framework for Liquid Argon TPC experiments.
 Confidence in the simulation capabilities is improved by
-the comparison of data from ArgoNeuT~\cite{argoneut} with LArSoft
-simulations.  Future data from LArIAT~\cite{lariat},
-MicroBooNE~\cite{microboone}, and the 35-ton prototype will allow
+the comparison of data from ArgoNeuT~\cite{Adamson:2013/02/28tla,argoneut-url,Acciarri:2013met} with LArSoft
+simulations.  Future data from LArIAT~\cite{Adamson:2013/02/28tla,Cavanna:2014iqa},
+MicroBooNE~\cite{Chen:2007ae,Jones:2011ci,microboonecdr}, and the 35-ton prototype will allow
 further tuning of the LArSoft simulation as experience is gained.
 The dual-phase detector simulation is based on the Qscan package,
 which has been developed over the past decade, and is currently
 being used to perform technical design and physics studies for
 the WA105 program.
 
-\fixme{Detailed descriptions of the single-phase and dual-phase simulations
-are given below. Needs to be much-reduced for five-page CDR section,
-with most details moved to annex. Need supporting figures for annex.}
-
-Events are generated using the GENIE~\cite{genie} neutrino-nucleus
-simulation program, the CRY~\cite{cry} cosmic-ray generator, a
-radiological decay simulator, a particle gun, or one of several
+Events are generated using the GENIE~\cite{GENIE} neutrino-nucleus
+simulation program, the CRY~\cite{Cosmic-CRY,Cosmic-CRY-protons,CRY-url} 
+cosmic-ray generator, a custom radiological decay simulator, a particle gun, or one of several
 text-file-based particle input sources.  The interactions of particles
 with the liquid argon and other detector materials is simulated with
 GEANT4.  A flexible geometry description interface is provided using
@@ -56,13 +54,13 @@ each particle, and custom routines have been written to translate
 these into numbers of ionization electrons and scintillation photons
 produced in the liquid argon.  Two ionization models are available: a
 simple parameterization that scales electrons and photons with energy
-using a modified Birks recombination model~\cite{birks}, and
-NEST~\cite{nest}, a more detailed simulation that incorporates the
+using a modified Birks recombination model~\cite{Birks:1964zz,Doke:1988dp}, and
+NEST~\cite{Szydagis:2013sih,Szydagis:2011tk}, a more detailed simulation that incorporates the
 expected statistical anticorrelation between scintillation photons and
 drifting electrons, and which has been tuned to match available noble
 liquid detector data.
 
-\fixme{DETAILS OF SINGLE-PHASE SIMULATION ARE COLLECTED HERE...}
+\subsection{Single-Phase Detector Modeling}
 
 The drifting electrons are propagated using dedicated code that
 numerically integrates over the diffusion probabilities, includes the
@@ -71,7 +69,7 @@ deposit the charge.  A parameterization of the distortions expected
 from average values of space charge accumulations is also modeled,
 though the main impact of this will be seen in the 35-ton prototype
 and liquid argon TPC detectors on the surface, such as
-MicroBooNE~\cite{microboone} and LArIAT~\cite{lariat}.  Information is
+MicroBooNE and LArIAT.  Information is
 saved in memory and written to the simulation output file of where
 each parcel of charge on each wire originated, and what the GEANT
 particle ID was that generated that charge.
@@ -106,7 +104,7 @@ edges in either space or time.  Zero suppression and Huffman coding of
 the data are applied as options.  The data are stored in ROOT files
 using the compression algorithms available in ROOT.
 
-\fixme{DETAILS OF DUAL-PHASE SIMULATION ARE COLLECTED HERE...}
+\subsection{Dual-Phase Detector Modeling}
 
 In a dual-phase liquid argon detector, the TPC signal amplification 
 is based on the charge multiplication in argon vapor due to the Townsend effect, 

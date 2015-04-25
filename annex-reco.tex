@@ -5,10 +5,12 @@
 \input{common/preamble}
 
 % Used on the volume title page.
-\renewcommand\thevolumesubtitle{Annex: Far Detector Reconstruction}
+\renewcommand\thedoctitle{\anxreco}
+\renewcommand\thedocsubtitle{Annex to the\\LBNF/DUNE Conceptual Design Report}
+\def\titleextra{\includegraphics[width=0.75\textwidth]{pandora_uboone_vertex_resolution_nuecc_annex.pdf}}
 
 \begin{document}
-\input{common/init}
+\input{common/init-annex}
 
 \input{annex-reco/chapter-simulation}
 

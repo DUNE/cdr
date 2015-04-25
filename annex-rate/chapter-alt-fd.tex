@@ -1,0 +1,40 @@
+\chapter{Alternative Far Detector Design}
+\label{ch:alt-annex-rate}
+
+\section{Data rates tables for the alternate Far Detector Design}
+
+In the following the summary tables for the rates and data volumes, corresponding to the alternate Far Detector design, are reported.
+Given the amplification factor of the ionization electrons provided in the gas phase by the LEM detectors the signal to noise ratio is 100:1
+for a particle at the ionization minimum. The noise level, given the strips pitch of 3.125 mm, corresponds to about 20 keV. 
+A zero-suppressed (ZS) threshold at $\approx 3\sigma$ above the mean noise level of the front-end electronics can be computed similarly to the 
+one reported for the reference design, this would correspond to 60 keV.Each 10 kton detector is read out by
+80 CRP anode units of $3 \times 3$ m$^2$ with two perpendicular collection views segmented in strips of 3m length and 3.125 mm pitch. 
+There are 1920 readout channels per CRP and 153600 channels per detector. Given the drift path of 12m the drift time amounts to 7.5 ms.  The ADC sampling frequency is 2.5 MHz and its resolution is 12 bits. The number of ADC samples per drift window is then 18750.
+
+These fundamental parameters serving as input for the data rate estimations are summarized in table~\ref{tab:ad-fundamental-parameters}
+
+\begin{table}[htbp]
+  \centering
+  \caption{The fundamental parameters serving as input to data rate estimations.}
+  \input{annex-rate/ad-fundamental-parameters-table}
+  \label{tab:ad-fundamental-parameters}
+\end{table}
+
+The parameters which apply to the full-stream data rates are given in table~\ref{tab:ad-full-stream-parameters}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Parameters pertaining to full-stream data rates.}
+  \input{annex-rate/ad-full-stream-parameters-table}
+  \label{tab:ad-full-stream-parameters}
+\end{table}
+
+The expected data rates for two scenarios of FS data are given in table~\ref{tab:ad-full-stream-volume}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Data volumes and rates for full-stream data
+    acquisition.}
+  \input{annex-rate/ad-full-stream-volume}
+  \label{tab:ad-full-stream-volume}
+\end{table}
