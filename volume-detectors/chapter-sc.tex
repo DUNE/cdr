@@ -297,7 +297,7 @@ Custom algorithms have been developed to propagate the drifting charge
 and scintillation photons through the detector, and to simulate the
 response characteristics of the TPC wires, readout electronics, and photon detectors.
 Figure~\ref{fig:larsofteventdisplays} shows some examples of simulated 
-accelerator neutrino interactions using the MicroBooNE detector.
+accelerator neutrino interactions in the MicroBooNE detector.
 
 \begin{cdrfigure}[Simulated neutrino interactions in MicroBooNE]{larsofteventdisplays}
 {Examples of accelerator neutrino interactions, simulated by LArSoft in the 
@@ -325,11 +325,11 @@ forming the basis for precision neutrino physics measurements.
 With the advancement of both single-phase and dual-phase technologies,
 and expansion of the experimental program to include MicroBooNE~\cite{Chen:2007ae,microboone-url},
 the 35-ton prototype and the CERN test experiments,
-the reconstruction software has continued to grow in both volume and sophistication,
-supported by powerful shared frameworks such as LArSoft and Qscan.
+the reconstruction tools have continued to grow in both volume and sophistication,
+supported by powerful software frameworks such as LArSoft and Qscan.
 
-%Probably need to say that DUNE will require reconstruction supernova bursts, 
-%atmospheric neutrinos and proton decay, not just accelerator neutrinos
+%Probably need to say around here that DUNE will require reconstruction of
+%supernova bursts, atmospheric neutrinos and proton decay, not just beam neutrinos
 
 A fully automated chain of event reconstruction algorithms
 is being developed for the DUNE Far Detector.
@@ -367,7 +367,8 @@ The secondary particles produced in the two interactions are distinguished with 
 \subsubsection{Signal Processing, Hit Finding, and Disambiguation}
 
 Separate chains of dedicated signal-processing and hit-finding 
-algorithms have been developed for the single-phase and dual-phase detectors.
+algorithms have been developed for the single-phase and dual-phase detectors,
+as described in Sections~\ref{annex:reconstruction-signal-proc} and \ref{annex:reconstruction-single-phase-hit-find}.
 The single-phase hit reconstruction proceeds by filtering noise
 from the uncompressed data, and then deconvoluting the 
 detector and electronics response.
@@ -385,19 +386,17 @@ Hits may also overlap if they are close together in time,
 even if the charge was deposited on distant segments of the wire.
 
 %\fixme{3L dual-phase proto hit reco}
-In the dual-phase detector, the raw waveforms also undergo an initial processing stage, 
+In the dual-phase detector, the raw waveforms also undergo initial processing, 
 ensuring effective noise reduction and subtraction of the baseline.
 Hits, defined as signals that are discriminated from the noise, are then identified and reconstructed.
 The hit-finding algorithms extract multiple hit information by fitting the waveform function of the signal.
-The main parameters determined by the fits are the hit time and the hit charge integral.
-The procedure has been successfully tested during several phases of R$\&$D and prototyping on small-scale double phase LAr-LEM-TPC setups \cite{Badertscher:2008rf,Badertscher:2012dq}.
+The main parameters determined by the fits are the hit time and the integrated hit charge.
+The full hit-reconstruction procedure has been successfully tested during several phases 
+of R$\&$D and prototyping on small-scale double phase LAr-LEM-TPC setups \cite{Badertscher:2008rf,Badertscher:2012dq}.
 Figure~\ref{fig:lbnoeventdisplay} shows example event displays of the reconstructed hits 
 in both real and simulated data. 
-A detailed description of the signal-processing and hit-finding procedures
-implemented for the single-phase and dual-phase techologies is given in
-Sections~\ref{annex:reconstruction-signal-proc} and \ref{annex:reconstruction-single-phase-hit-find}.
 
-In the single-phase APA design, the wrapping of induction-plane wires
+The wrapping of induction-plane wires in the single-phase APA design
 introduces an additional discrete ambiguity in the data by connecting multiple wire
 segments to each DAQ channel. A ``disambiguation'' algorithm,
 described in Section~\ref{annex:reco-disambiguation}, is used to break the
@@ -483,17 +482,8 @@ which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 
 \subsubsection{Track Fitting and Shower Measurement}
 
-%\fixme{Fix references here}
-%%%% Ref1: ICARUS (Ankowski:2006ts) -- A. Ankowski et al, Eur. Phys. J. C 48, 667 (2006)
-%%%% Ref2: ArgoNEUT -- Can't find the words Kalman Filter in their papers!
-%%%%   Statements comes from MicroBooNE TDR...
-%%%% Ref3: ICARUS -- Same as Ref1 ?
-%%%% Ref4: LBNO-LAGUNA Report? The full reference is:
-%%%%   Final report of the LAGUNA-LBNO design of a pan-European infrastructure
-%%%%   for large apparatus studying Grand Unification, Neutrino Astrophysics
-%%%%   and Long Baseline Neutrino Oscillations. Funded by European Commission FP7
-%%%%   Research Infrastructures, grant agreement number: 284518.
-%%%% Ref5: Warwick -- J. J. Back et al, Eur. Phys. J. C 74, 2832 (2014)
+%%%% TODO: Fix the ArgoNeuT reference: Can't find the words Kalman Filter 
+%%%%       in any of their papers. Statement comes from MicroBooNE TDR.
 
 After the pattern recognition stage, a series of high-level reconstruction
 algorithms are applied to the 2D and 3D clusters,
@@ -503,18 +493,18 @@ A range of different high-level techniques have been demonstrated
 for use in Liquid Argon TPC detectors using both real and simulated data.
 
 The Kalman filter technique~\cite{kalman} is well-established in high energy physics,
-and has been applied to 3D track reconstruction by both ICARUS~\cite{REF1} and ArgoNEUT~\cite{REF2}.
+and has been applied to 3D track reconstruction by both ICARUS~\cite{Ankowski:2006ts} and ArgoNEUT~\cite{REF}.
 The technique incorporates the effects of multiple Coulomb scattering,
 enabling a scattering-based measurement of the track momentum,
 which is shown by ICARUS to have a resolution as good as $\Delta p/p \approx 10\%$ 
-for the most favourable track lengths~\cite{REF3}.
+for the most favourable track lengths~\cite{Ankowski:2006ts}.
 The data from ICARUS have also been used to develop a precise
 track reconstruction algorithm, which builds a 3D trajectory for each track by simultaneously
 optimising its 2D projections to match the observed data~\cite{Antonello:2012hu}.
 Another promising track reconstruction technique, based on the local principal curve algorithm,
 has been implemented in conjunction with the development of the 
-dual-phase detector concept~\cite{LAGUNA-LBNO-deliv}, and is shown to provide 
-a precise reconstruction of two-particle event topologies~\cite{REF5}. 
+dual-phase detector concept, and is shown to provide 
+a precise reconstruction of two-body final states~\cite{Back:2013cva,LAGUNA-LBNO-deliv}. 
 
 A full 3D reconstruction of electromagnetic showers is currently in development.
 In the present scheme, the first stage is an examination of clusters 
@@ -535,7 +525,7 @@ The measurement of the ionization density $dE/dx$ is important
 for particle identification and energy measurement.
 In order to reconstruct this information, the measured charge on each hit 
 is first obtained from fits to the pulse shapes.
-The charge loss due to the finite electron lifetime is then corrected
+The charge loss due to the finite electron lifetime is corrected
 based on the time of the event, and the path length corresponding
 to each hit is calculated based on the event trajectory.
 The effects of recombination, known as ``charge quenching''
@@ -544,37 +534,34 @@ or Birks' Law`\cite{Birks:1964zz}.
 The identity of a particle track which ranges out in the active detector volume
 may be ascertained by analysing the ionization density $dE/dx$ as a function of 
 the range from the end of the track, and comparing with the predictions
-for different particle species. Various analysis techniques have been developed,
-as described in Section~\ref{annex:reco-pid}.
+for different particle species. Various analysis techniques have been developed
+for this purpose, as described in Section~\ref{annex:reco-pid}.
  
 %\fixme{Do we have any calorimetry plots?}
 
 \subsubsection{Neutrino Event Reconstruction and Classification}
 
-%%%% Be sure to cite the Warwick paper here:
-%%%% J. J. Back et al, Eur. Phys. C 2013, 73, 2369.
-
 Once all the final-state particles in an event have been reconstructed individually, 
-the combined information is used to reconstruct and classify the overall neutrino event.
-The identification of neutrino event types is based on a multivariate analysis~\cite{REF, WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI},
+the combined information is used to reconstruct and classify the overall event.
+The identification of neutrino event types is based on a 
+multivariate analysis~\cite{Back:2013cva,WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI},
 which constructs a number of characteristic topological and calorimetric variables,
-based on the reconstructed final-state particles, and uses a Boosted Decision Tree 
-algorithm to calculate signal and background likelihoods for particular event hypotheses.
-The current performance of the full reconstruction of pattern recognition and event classification 
-has been evaluated using $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions with two-body final states,
-simulated in the dual-phase Far Detector. The correct hypothesis is chosen for 
-92\% (79\%) of $\nu_{\mu}$ ($\nu_{e}$) quasi-elastic interactions with a 
-lepton and proton in the final state, and 79\% (71\%) of $\nu_{\mu}$ ($\nu_{e}$) 
-resonance interactions with a lepton and charged pion in the final state~\cite{LAGUNA-LBNO-deliv}.
-The neutrino energy is estimated kinematically for selected quasi-elastic events,
-using a two-body approximation, or otherwise a calorimetric energy measurement is implemented.
+based on the reconstructed final-state particles. In the present scheme,
+a Boosted Decision Tree algorithm is used to calculate signal and background likelihoods 
+for particular event hypotheses. The current performance has been evaluated using fully reconstructed
+$\nu_{e}$ and $\nu_{\mu}$ charged-current interactions with two-body final states,
+simulated in the dual-phase Far Detector~\cite{LAGUNA-LBNO-deliv}. 
+The correct hypothesis is chosen for 92\% (79\%) of $\nu_{\mu}$ ($\nu_{e}$) quasi-elastic interactions 
+with a lepton and proton in the final state, and 79\% (71\%) of $\nu_{\mu}$ ($\nu_{e}$) 
+resonance interactions with a lepton and charged pion in the final state.
+For selected events, the neutrino energy is estimated kinematically for quasi-elastic interactions
+using a two-body approximation, or otherwise a calorimetric energy measurement is applied.
 The calorimetric reconstruction takes into account the quenching factors of the different particles, 
 assuming that all hits not associated with the primary lepton are due to hadronic activity.
-Figure~\ref{fig:recoenergynue} shows the results of the energy reconstruction for $\nu_e$ CCQE and CC1$\pi^{+}$ events.
+Figure~\ref{fig:recoenergynue} shows the resulting energy reconstruction for $\nu_e$ CCQE and CC1$\pi^{+}$ events.
 
 \begin{cdrfigure}[Reconstruction of electron neutrino energy]{recoenergynue}
-{
-Performance of neutrino energy measurement, evaluated using the dual-phase far detector simulation. 
+{Performance of neutrino energy measurement, evaluated using the dual-phase far detector simulation. 
 Distributions of reconstructed versus true neutrino are shown for $\nu_{e}$ CCQE events (left),
 assuming two-body kinematics, and $\nu_{e}$  CC1$\pi^{+}$ events (right),
 using a calorimetric energy estimation.}
@@ -582,4 +569,5 @@ using a calorimetric energy estimation.}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccres.pdf}
 \end{cdrfigure}
 
+%%%% Do we need a summary?
 
