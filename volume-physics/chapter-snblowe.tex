@@ -304,15 +304,272 @@ Triggering, DAQ, Data Rate
 \section{Additional Astrophysical Neutrinos}
 \label{sec:physics-snblowe-other}
 
-\subsection{Other Transient Neutrino Sources}
-
-GRB, accretion disks...
-
-\subsection{Diffuse Background Neutrinos}
-
 \subsection{Solar Neutrinos}
 
-\subsection{Dark Matter-Induced Neutrinos}
+Intriguing questions in solar neutrino physics remain,
+even after data
+from the Super-K and SNO~\cite{Fukuda:2001nj,Ahmad:2001an}
+experiments explained the long-standing mystery of missing solar
+neutrinos~\cite{Cleveland:1998nv} as due to flavor
+transformations. 
+Some unknowns, such as the fraction of energy production via the CNO
+cycle in the Sun, flux variation due to helio-seismological modes that
+reach the solar core, or long-term stability of the solar core
+temperature, are astrophysical in nature. Others directly impact
+particle physics. Can the MSW model explain the amount of flavor
+transformation as a function of energy, or are non-standard neutrino
+interactions required?  Do solar neutrinos and reactor antineutrinos
+oscillate with the same parameters? 
+% Experimental data expected in the
+%immediate future (e.g., further data from
+%Borexino~\cite{Borexino7be:2011} and Super-K as well as 
+%SNO+~\cite{Kraus:2006qp}) will address some questions, but the
+%high-statistics measurements necessary to further constrain
+%alternatives to the standard oscillation scenario may need to wait fo
 
-Might be more appropriate for atmnu-pdk... but boosted dark matter,
-some other possibilities
+Detection of solar and other low-energy neutrinos is challenging in
+a LArTPC because of high intrinsic detection energy thresholds for
+the charged-current interaction on argon ($>$\SI{5}{\MeV}). To be
+competitive, this physics requires either a very low visible energy
+threshold ($\sim$\SI{1}{\MeV}) or a very large mass (\SI{50}{\kt}).
+However, compared with other technologies, a LArTPC offers a large
+cross section and unique signatures from de-excitation
+photons. Aggressive R\&D efforts in low-energy triggering and
+control of background from radioactive elements may make detection
+in DUNE possible, and a large detector mass would make the pursuit
+of these measurements worthwhile.
+
+Signatures of solar neutrinos in DUNE
+are elastic scattering on electrons as well as CC absorption of $\nu_e$ on $^{40}$Ar, which has a 4.5-MeV energy threshold.
+In Table~\ref{tab:solarnu} the solar neutrino event rate in a
+\ktadj{34} LArTPC is shown, assuming a \MeVadj{4.5} neutrino energy
+threshold and 31\% $\nu_e$.
+%
+\begin{table}[!htb]
+\caption[Solar neutrino rates in a LArTPC]{Solar neutrino event rates in a \ktadj{34} LArTPC assuming 
+a \MeVadj{4.5} neutrino energy threshold and 31\% $\nu_e$}
+\label{tab:solarnu}
+\begin{tabular}{$L^c}%$
+\toprule
+\rowtitlestyle
+Transition & Rate (evts/day) \\ \toprowrule
+Fermi  & 31 \\ \colhline
+Gamow-Teller & 88 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+
+The solar neutrino physics potential of a large LArTPC depends
+primarily on its energy threshold, which will 
+be determined by the ability to pick up a low-energy electron, light collection of the photon-triggering system,
+and background suppression. 
+In any
+detector of this kind, the decay of the naturally occurring $^{39}$Ar
+produces $\beta$'s with a \keVadj{567} endpoint and an expected rate
+of \SI{10}{\MHz} per \SI{10}{\kt} of liquid argon. This limits the
+fundamental reach of DUNE to neutrino interactions with visible
+energies above \SI{1}{\MeV}. 
+Cosmic-muon and fast-neutrino
+interactions with the $^{40}$Ar nucleus (which are rather complex
+compared to interactions on $^{16}$O or $^{12}$C) are likely to
+generate many long-lived spallation products that could limit the
+detection threshold for low-energy neutrinos.
+Studies of the spallation background in the DUNE LArTPC are
+underway. 
+
+% The production rate of $^{40}$Cl, a beta emitter with an
+% endpoint of \SI{7.48}{\MeV} that is a dominant source of background at
+% energies above \SI{5}{\MeV}, is shown in Figure~\ref{fig:cl40bkgd} as
+% a function of depth.
+% %
+% \begin{figure}[!htb]
+% \centering\includegraphics[width=0.7\textwidth]{figures/cosmicbkgd_40clrate.pdf}
+% \caption[$^{40}$Cl production rates produced by (n,p) reaction per depth, \SI{10}{\kt}]{$^{40}$Cl production rates in a \ktadj{10} detector produced by (n,p) reaction as a function of depth.}
+% \label{fig:cl40bkgd}
+% \end{figure}
+% %
+% The cosmogenic background rates as a function of
+% beta kinetic energy from several other beta emitters at the \SIadj{4850}{\ft} 
+% level of Sanford Underground Research Facility are shown in Figure~\ref{fig:cosmicbkg}.
+% %
+% \begin{figure}[!htb]
+% \centering
+% \includegraphics[width=0.7\textwidth]{smyfig/solarmsw.pdf}
+% \caption[Measurements of the solar MSW transition]{Measurements of the solar MSW transition. The red band combines
+% SK and SNO $^8$B data~\cite{Aharmim:2011vm}, the green measurements
+% of $^7$Be and pep are from Borexino~\cite{Borexino7be:2011,Borexinopep:2011} and the
+% red error bar is Borexino's $^8$B measurement~\cite{Borexino8b:2008}. The 
+% blue $pp$ point and the yellow error bar (CNO) combine all solar data. MSW resonance
+% curves for three different parameters are overlaid.}
+% \label{fig:solmsw}
+% \end{figure}
+
+
+The ICARUS collaboration has reported a \MeVadj{10}
+threshold~\cite{Guglielmi:2012}. Assuming the %DUNE far 
+detector itself
+has low enough radioactivity levels, this threshold level would enable
+a large enough detector to measure the electron flavor component of
+the solar $^8$B neutrino flux with high statistical accuracy. It could % and
+thereby further test the MSW flavor transformation curve with higher statistical precision and
+potentially better energy resolution. 
+In addition to these solar
+matter effects, solar 
+neutrinos also probe terrestrial matter effects
+with the variation of the $\nu_e$ flavor observed with solar zenith
+angle while the Sun is below the horizon --- the day/night effect (reported recently in ~\cite{Renshaw:2013dzu}). 
+
+% A
+% sizable effect is predicted only for the highest solar-neutrino
+% energies, so while the comparatively high energy threshold is a
+% handicap for testing the solar MSW resonance curve, it has a smaller
+% impact on the high-statistics test of terrestrial matter
+% effects. Recently, indication of the existence of the terrestrial
+% matter effects were reported~\cite{Renshaw:2013}. Measurements of this
+% effect currently give the best constraints on the solar mass ($\Delta
+% m_{21}^2$) splitting 
+% %(see Figure~\ref{fig:daynight}) 
+% using neutrinos
+% rather than antineutrinos~\cite{Gando:2013}.
+%
+% \begin{figure}[!htb]
+% \centering\includegraphics[width=0.8\textwidth]{figures/sk_dn_vs_dm21.png}
+% \caption[Solar neutrino day/night effect and dependence on $\Delta
+% m^2_{21}$]{Dependence of the measured day/night asymmetry (fitted
+%   day/night amplitude times the expected day/night asymmetry in red) on
+%   $\Delta m^2_{21}$, for $\sin^2 \theta_{12}=0.314$ and $\sin^2
+%   \theta_{13}=0.025$.  The 1$\sigma$ statistical uncertainties from
+%   the recent measurements by \superk{} are given by the light
+%   grey band. The additional dark grey width to the band shows the
+%   inclusion of the systematic uncertainties. Overlaid are the 1$\sigma$ 
+% allowed ranges from the solar global fit (solid green) and
+%   the KamLAND experiment (dashed blue). Figure is courtesy of~\cite{Renshaw:2013}}
+% \label{fig:daynight}
+% \end{figure}
+
+The comparison
+of neutrino disappearance to antineutrino disappearance tests CPT
+invariance. For good sensitivity to either solar-neutrino measurement,
+a liquid argon far detector of at least \SI{34}{\kt} is required.
+
+
+\subsection{Diffuse Supernova Background Neutrinos}
+
+Galactic supernovae are relatively rare, occurring somewhere between
+once and four times a century. In the Universe
+at large, however, thousands of neutrino-producing explosions occur
+every hour.  The resulting neutrinos --- in fact most of the neutrinos
+%which have ever been 
+emitted by all the supernovae since the onset of stellar formation ---
+suffuse the Universe.  Known both as \emph{supernova relic neutrinos
+  (SRN)} and as the \emph{diffuse supernova neutrino background
+  (DSNB)}, their energies are in the few-to-\MeVadj{30} range.  SRN
+have not yet been observed, but an observation would greatly enhance
+our understanding of supernova-neutrino emission and the overall
+core-collapse rate.
+
+
+A liquid argon detector such as DUNE''s far detector is sensitive to
+the $\nu_e$ component of the diffuse relic supernova neutrino flux,
+whereas water Cherenkov and scintillator detectors are sensitive to
+the antineutrino component.  However, backgrounds in liquid argon are as
+yet unknown, and a huge exposure ($>$\SI{500}{\ktyr}s)
+would likely be required for observation.  Given a detector of the
+scale required to achieve these exposures (\SIrange{50}{100}{\kt})
+together with tight control of
+backgrounds, %with the appropriate technology,
+DUNE --- in the long term --- could %eventually (Anne removed; redundant )
+lay a unique and
+  complementary role in the physics of relic neutrinos.
+
+%
+In the current DUNE design, the irreducible background from solar
+neutrinos will limit the search for these relic neutrinos to an energy
+threshold greater than \SI{18}{MeV}.  Similarly, a search for relic
+antineutrinos is limited by the reactor antineutrino background to a
+threshold greater than $\sim$\SI{10}{MeV}. The lower threshold and the
+smaller average $\nu_e$ energy relative to that for antineutrinos
+%\ (see
+%Figure~\ref{fig:pred_srnspec}) 
+leads to the need for a larger detector
+mass.
+
+A small but dedicated industry devotes itself to trying to predict the
+flux of these relic supernova neutrinos here on
+Earth~\cite{Totani:1995dw,Sato:1997sc,Hartmann:1997qe,Malaney:1996ar,Kaplinghat:1999xi,Ando:2005ka,Lunardini:2006pd,Fukugita:2002qw}. 
+% Examples
+% of two different predicted SRN spectra are shown in
+% Figure~\ref{fig:pred_srnspec}, along with some of the key physics
+% backgrounds from other neutrino sources.
+% %
+% \begin{figure}[!htb]
+%      \centering\includegraphics[width=.8\textwidth]{smyfig/relicplot.pdf}
+%      \caption[Relic supernova spectra and key neutrino
+%      backgrounds]{Predicted relic supernova $\nu_e$ spectra from two
+%        different models (red and blue) and some key neutrino
+%        backgrounds: $^8$B solar $\nu_e$ (green), hep solar $\nu_e$
+%        (cyan) and atmospheric $\nu_e$ (magenta).}
+%      \label{fig:pred_srnspec}
+% \end{figure}
+
+In the DUNE LArTPC, relic supernova electron neutrinos would be
+detected primarily via the charged current process as described by
+Equation~\ref{eqn:srninteract}. The electron track should be
+accompanied by evidence of ionization from the de-excitation of the
+potassium, e.g., shorter tracks sharing a common vertex; this is
+expected to help reduce backgrounds, but a detailed study has not yet
+been undertaken.  In water Cherenkov and scintillator detectors, it is
+the electron-antineutrino SRN flux that is detected through the
+process of inverse-beta decay.  Unlike inverse-beta decay, for which
+the cross section is known to the several-percent level in the energy
+range of interest~\cite{Vogel:1999zy,Strumia:2003zx}, the cross
+section for neutrino interactions on argon is uncertain at the 20\%
+level~\cite{Ormand:1994js,Kolbe:2003ys,SajjadAthar:2004yf}. Another
+limitation is that the solar {\em hep} neutrinos which have an                
+endpoint at \SI{18.8}{\MeV}, will determine the lower bound of the SRN
+search window ($\sim$ \SI{16}{\MeV}).  The upper bound is determined
+by the atmospheric ${\nu}_{e}$ flux 
+%as shown in
+%Figure~\ref{fig:pred_srnspec} and 
+is around \SI{40}{MeV}.
+%While the LArTPC provides a unique sensitivity
+%to the electron-neutrino component of the SRN flux, early studies
+%indicate that the lower bound on the neutrino energy imposed by solar
+%neutrinos implies that a huge mass of LAr --- \SI{100}{\kt} --- is
+%required to get more than 4$\sigma$ evidence for the diffuse supernova
+%flux in five years~\cite{Cocco:2004ac}. 
+Although the LArTPC provides a unique sensitivity to the
+electron-neutrino component of the SRN flux, early studies indicate
+that due to this lower bound of $\sim$ \SI{16}{\MeV} DUNE would need a huge
+mass of liquid argon --- of order \SI{100}{\kt} --- to get more than 4$\sigma$
+evidence for the diffuse supernova flux in five
+years~\cite{Cocco:2004ac}.
+%
+The expected number of relic
+supernova neutrinos, $N_{\rm SRN}$, that could be observed in a
+\SIadj{100}{\kt} LArTPC detector in five years~\cite{Cocco:2004ac}
+assuming normal hierarchy is:
+\begin{equation}
+N_{\rm SRN} = 57 \pm 12  \ \ \ 16 \, {\rm MeV} \leq E_e \leq 40 \, {\rm MeV}
+\label{eqn:srnrate}
+\end{equation}
+where $E_e$ is the energy of the electron from the CC interaction as
+shown in Equation~\ref{eqn:srninteract}. The estimate of the SRN rate
+shown in Equation~\ref{eqn:srnrate} has a weak dependence on the value
+of $\sin ^2 \theta_{13}$. The above calculation is valid for values of
+$\sin ^2 \theta_{13} > 10^{-3}$.  The main challenge for detection of such
+a low rate of relic neutrinos in a LArTPC is understanding how much of
+the large spallation background from cosmic-ray interactions with the
+heavy argon nucleus (some of which are shown in Figure~\ref{fig:cosmicbkg}) leaks into the SRN search window. 
+%the rate is higher given that $\sin^2 \theta_{13}$ is an order of
+%magnitude larger than originally estimated.
+
+\subsection{Other Low-Energy Neutrino Sources}
+
+We note some other potential sources of signals in the tens-of-MeV range which may be observable in DUNE.  These include:
+\begin{itemize}
+\item Neutrinos from accretion disks~\cite{Caballero:2011dw}, black-hole/neutron star mergers~\cite{Caballero:2009ww}.  These will create spectra not unlike those from core-collapse events, and with potentially large fluxes but are even rarer.
+\item ``Boosted'' dark matter
+
+\end{itemize}
+
