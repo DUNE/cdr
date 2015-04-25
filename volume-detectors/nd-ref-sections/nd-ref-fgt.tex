@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{The Fine-Grained Tracker} 
-\label{cdrsec:detectors-nd-ref-fgt}
+\label{cdrsec:detectors-nd-ref}
 
 The scope of the DUNE Fine-Grained Tracker (FGT) near neutrino detector includes the design, procurement, fabrication, testing, delivery and installation of all the systems and components that comprise it:
 
@@ -18,7 +18,7 @@ The scope of the DUNE Fine-Grained Tracker (FGT) near neutrino detector includes
 
 \begin{cdrfigure}[A schematic drawing of the fine-grained
 tracker design]{STT_schematic}{A schematic drawing of the fine-grained tracker design.}
-\includegraphics[width=\textwidth]{FGT_Overview}
+\includegraphics[width=1.1\textwidth]{FGT_Overview}
 \end{cdrfigure}
 
 A schematic drawing of the FGT design is shown in Figure~\ref{fig:STT_schematic}. 
@@ -28,22 +28,34 @@ The DUNE ND must fulfill the physics program described in Section~\ref{ch:physic
 as in Ref.~\cite{DPR}. The most significant requirements~\cite{ND-REQ1,ND-REQ2} for the FGT include:  
 
 \begin{itemize}
-\item low density $\rho \sim 0.1$ g/cm$^3$, similar to that of liquid hydrogen
+\item muon energy scale uncertainty better than 0.2\% and hadronic energy scale uncertainty 
+better than 0.5\% for the low-$\nu$ flux measurements 
 
-\item dipole magnetic field of $B=0.4$ T with high detector granularity 
+\item 
+magnetized detector capable to separate $\mu^+$ from $\mu^-$, as well as $h^+$ from $h^-$ 
+
+\item 
+capability to to separate $e^+$ from $e^-$ for absolute and relative flux measurements
+
+%\item low density $\rho \sim 0.1$ g/cm$^3$, similar to that of liquid hydrogen
+
+%\item dipole magnetic field of $B=0.4$ T with high detector granularity 
 
 \item excellent momentum and angular resolutions for $\mu^{\pm}$, $e^{\pm}$, 
 $\pi^{\pm}$ and $proton$, and $\pi^0$/$\gamma$ via decay/conversion, 
- and $K^0_S$/$\Lambda$ produced in $\nu$-induced interactions
+ and $K^0_S$/$\Lambda$ produced in $\nu$-induced interactions. 
 
 \item 4$\pi$ ECAL coverage to ensure an  
  accurate determination of the momentum vector of the hadronic shower
 
 \item 4$\pi$ MuID coverage to identify muons with a wide range of energies and angles  
 
-\item excellent electron/positron identification through the use of transition radiation (TR) 
+\item continuous electron/positron identification through the use of transition radiation (TR) 
 
-\item $\pi/K/p$ identification by dE/dx 
+\item continuous $\pi/K/p$ identification by dE/dx 
+
+\item 
+identification of $\pi^0$ and $\gamma$ that can mimic oscillation signals at the FD 
 
 \item use of a variety of nuclear targets, (C$_3$H$_6$)$_n$, Ar, Ca, C, Fe, etc., to quantitate the impact of nuclear 
 effects in $\nu$($\bar \nu$)-nucleus cross sections  
@@ -55,9 +67,10 @@ effects in $\nu$($\bar \nu$)-nucleus cross sections
 %\item measurement of nuclear effects, including short-range correlations, two-body currents, pion absorption, initial-state interactions, 
 %and final-state interactions
 \end{itemize}
+The requirements listed above imply the use of a low density, $\rho \sim 0.1$ g/cm$^3$, high-resolution magnetic spectrometer. 
+A summary of the performance requirements is given in Table~\ref{tab:comparison}
 Regardless of the process under study, the goal is
-to have the systematic error less than the corresponding statistical error. A summary of the performance
-requirements is given in Table~\ref{tab:comparison}
+to have the systematic error less than the corresponding statistical error. 
 
 %The FGT will measure the neutrino event rates and cross sections 
 %on argon, water, and other nuclear 
@@ -73,8 +86,10 @@ requirements is given in Table~\ref{tab:comparison}
 the FGT configuration]{ll}{comparison}{A summary of the performance for 
 the FGT configuration}
 Performance Metric&FGT\\ \toprowrule
-Straw Tube Detector Volume & 3.5m x 3.5m x 6.4m \\ \colhline
-Straw Tube Detector Mass&8~t ($\rho \sim 0.1$ g/cm$^3$)\\ \colhline
+Dipole magnetic field & 0.4 T \\ \colhline 
+Average target/tracker density & $\rho \sim 0.1$ g/cm$^3$ \\ \colhline 
+Target/tracker Volume & 3.5m x 3.5m x 6.4m \\ \colhline
+Target/tracker Mass&8~t \\ \colhline
 Vertex Resolution&0.1 mm \\ \colhline
 Angular Resolution&2 mrad \\ \colhline
 $E_e$ Resolution&5\% \\ \colhline
@@ -89,9 +104,11 @@ CC$\mu$/CCe Rejection&0.01\% \\
 
 %%%%%%%%%%%%%%%%% 
 \subsection{Straw-Tube Tracking Detector}
-\label{cdrsec:detectors-nd-ref-fgt-stt}
+\label{cdrsec:detectors-nd-ref-fgt}
+
 
 \subsubsection{Straw Tubes} 
+\label{cdrsec:detectors-nd-ref-fgt-stt}
 
 The Straw-Tube Tracking Detector (STT) at the center of the FGT 
 will be composed of straw tubes with an outer diameter of 1~cm, as well as 
@@ -106,8 +123,13 @@ radiators.
 
 \begin{cdrfigure}[A schematic drawing of the fine-grained
 tracker design]{STT_Detail}{A schematic drawing of the fine-grained tracker design.}
-\includegraphics[width=0.5\textwidth]{STT_Detail}
+\includegraphics[width=0.75\textwidth]{STT_Detail}
 \end{cdrfigure}
+
+
+%---Roberto! we MUST show the Particle-ID using dE/dx. The theme to ID the particles 
+% runs through the CDR. I had it in the text -- it should be put soon after the schematic.
+
 
 The straw tubes will be filled with a
 gas mixture of either 70\% Ar plus 30\% CO$_2$ (for modules with targets) or
