@@ -283,22 +283,92 @@ core-collapse supernovae.
 
 % r-process
 
-\section{Detector Requirements}
+\section{Detector Capabilities and Requirements}
 \label{sec:physics-snblowe-detector-requirements}
 
-This may need more than the 1 page allocated.
+For sensitivity to SNB physics, the detector must be sensitive to energy depositions of 5 MeV or less.  It should also be capable of collecting information for a 10-kpc supernova, which would mean some tens of thousands of events within 10 seconds.    The experiment should be able to self-trigger on the burst, which may require sufficiently good photon detection.  Reconstruction of the leptons in the neutrino interaction events should enable pointing back to the supernova limited by event statistics.
+Energy and event time resolution must be sufficient to resolve interesting physics features of the burst.  Preliminary studies suggest that Icarus resolution for low-energy events~\cite{Amoruso:2003sw} should be adequate, and that approximately millisecond event time resolution should be sufficient to resolve features such as the neutronization burst and the initial notch due to neutrino trapping in the $\nu_e$ spectrum (see Fig.~\ref{fig:garching}), given adequate statistics.   Preliminary background studies (see Fig.~\ref{bg}) show that cosmogenic and radioactive contaminants should be subdominant for a Galactic burst; however backgrounds still need to be better understood for solar and DSNB signals.
 
-Energy Resolution
 
-Time Resolution
+Work is currently underway using the LArSoft simulation package
+to characterize low-energy
+response for realistic DUNE detector configurations.
+%Figure~\ref{fig:evdisplays} shows a sample \MeVadj{20} event in the DUNE
+%\SIadj{35}{t} prototype
+%\ktadj{10} 
+%geometry simulated with LArSoft. 
+So far,
+most studies have been done with the MicroBooNE geometry, with the
+results expected to be %largely
+generally applicable to the larger DUNE detectors.  For a preliminary
+understanding of achievable energy resolution, isotropic and uniform
+monoenergetic electrons with energies of 5-50~MeV (which should
+approximate the $\nu_e$-CC electron products) were simulated and
+reconstructed with the LArSoft
+package. 
+The charge of reconstructed hits on the collection plane was used to
+reconstruct the energy of the primary electrons. (Induction-plane charge
+as well as track-length-based reconstruction were also considered, but
+with inferior results). Figure~\ref{fig:lowe_res} shows the results.
+A correction to compensate for loss of electrons during drift,
+$Q_{collection}=Q_{production}\times e^{-T_{\rm drift} / T_{\rm
+    electron}}$ (where $T_{drift}$ is the drift time of the ionization
+electrons, and $T_{electron}$ is the electron lifetime), using Monte
+Carlo truth to evaluate $T_{\rm drift}$, improved resolution
+significantly.  This study indicated that photon time information will
+be valuable for low-energy event reconstruction.  Some of the
+resolution was determined to be due to imperfect hit-finding by the
+nominal reconstruction software.  A tuned hit-finding algorithm did
+somewhat better (Figure~\ref{fig:lowe_res}), and further
+improvements for reconstruction algorithms optimized for low-energy
+events are expected.
+%
+% \begin{figure}[!htb]
+% \begin{centering}
+% %\includegraphics[height=2.5in]{snfig/15MeV_fixedvertexdir.pdf}
+% %\includegraphics[width=0.9\textwidth]{snfig/elect20mev35tunzoom_mod.pdf}
+% %\includegraphics[width=0.4\textwidth,bb=0 -200 600 1000]{snfig/lbne_zoom.pdf}
+% %\includegraphics[width=0.84\textwidth]{snfig/elect20mev35tzoomcropped.pdf}
+% \caption[Typical \MeVadj{20} event in the DUNE
+%   \SIadj{35}{t} prototype geometry]{Raw event display of a simulated \MeVadj{20} event in the DUNE
+%   \SIadj{35}{t} prototype; the top panel shows the collection plane, and the
+%   lower two panels show the induction planes (with multiple images due
+%   to wire wrapping). The bottom panel shows a zoom of the collection plane image.
+%  }
+% \label{fig:evdisplays}
+% \end{centering}
+% \end{figure}
+%
+\begin{figure}[!htb] %  figure placement: here, top, bottom, or page
+ \centering
+% \includegraphics[width=0.45\textwidth]{snfig/correction.pdf} 
+% \includegraphics[width=0.45\textwidth]{snfig/hitfinder.pdf} 
+ \caption[Comparisons of energy resolution]{Left: Comparison of energy
+   resolution (defined as $\sigma/E$, where $\sigma$ is the spread of
+   the collection-plane-charge-based event energy $E$ for a
+   monoenergetic electron), with and without electron-lifetime
+   correction, as a function of electron energy. The blue curve is the
+   energy resolution of isotropic and uniform electrons without
+   electron-lifetime correction. The red curve is the energy
+   resolution with electron-lifetime correction based on MC truth.
+   Right: Comparison of energy resolution before and after tuning the
+   reconstruction algorithm (for fixed position/direction electron
+   events).}\label{fig:lowe_res}
+\end{figure}
 
-Angular Resolution
 
-Particle ID, tagging
+%Preliminary
+%results show that energy resolutions 
+%for baseline detector parameters
+%will not differ too significantly from those in~\cite{Amoruso:2003sw}.
+Also under study is the potential for tagging $\nu_e$-CC absorption
+events ($\nu_e +{}^{40}{\rm Ar} \rightarrow e^- +{}^{40}{\rm
+  K^*}$) using the cascade of de-excitation $\gamma$ rays, which should
+serve the dual purposes of rejecting background and isolating the CC
+component of the signal.  
 
-Backgrounds
 
-Triggering, DAQ, Data Rate
+
 
 
 \section{Additional Astrophysical Neutrinos}
