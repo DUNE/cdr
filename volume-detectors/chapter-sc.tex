@@ -523,12 +523,13 @@ in Section~\ref{annex:reco-pid}~\cite{Acciarri:2013met}.
 
 \subsubsection{Neutrino Event Reconstruction}
 
-In Qscan, a multivariate analysis was used to separate particle types based on the spatial characteristics of their clusters.
+In Qscan, a multivariate analysis (MVA) was used to separate particle types based on the spatial characteristics of their clusters
+\cite{WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI}.
 Several quantities are calculated to 
 characterize the cluster: the lateral spread, the mean charge-weighted inverse distance of hits to the primary cluster axis
 (this is expected to distinguish effectively between showers and tracks), the $dE/dx$.
 These variables are then fed into Boosted Decision Trees analyses, 
-each calculating the signal and background likelihoods for a particular particle hypothesis
+each calculating the signal and background likelihoods for a particular particle hypothesis.
 
 The overall performance of the reconstruction chain (from clustering to PID) has been estimated with a simple binned lepton flavour analysis, 
 to understand its ability to distinguish $\nu_{e}$ and $\nu_{\mu}$ events.
@@ -536,18 +537,21 @@ If a single lepton flavour is identified in the event, then the event is conside
 If neither or both lepton flavours are identified, the event is discarded.
 Numbers of events correctly reconstructed is above 90$\%$ for $\nu_{\mu}$-CCQE events.
 assuming that all hits not associated with the lepton cluster are due to hadronic activity.
-
-\fixme{Refer to the LAGUNA-LBNO Energy plots}
-
-Figure~\ref{fig:recoenergynue} shows reconstructed energy versus true energy
+For accepted events, the neutrino energy is estimated  assuming a CCQE event and using the two-body approximation, and also calorimetrically.
+The calorimetric reconstruction takes account of the quenching factors for the different particles by 
+assuming that all hits not associated with the lepton cluster are due to hadronic activity.
+Figure~\ref{fig:recoenergynue} shows the results of the kinematic energy reconstruction for $\nu_e$ CCQE and CC1$\pi^{+}$ events.
 
 \begin{cdrfigure}[Reconstruction of electron neutrino energy]{recoenergynue}
-{CAPTION GOES HERE}
+{Dual-phase LArTPC neutrino energy measurement. Distributions of reconstructed neutrino energy versus true neutrino energy: assuming two-body kinematics,  $\nu_{e}$ CCQE events, (a) 
+and using calorimetric energy estimation, $\nu_{e}$  CC1$\pi^{+}$ events (b).}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccqe.pdf}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccres.pdf}
 \end{cdrfigure}
 
-\fixme{Be sure to properly reference LAGUNA-LBNO design study}
+
+%\fixme{Be sure to properly reference LAGUNA-LBNO design study: }
+%\cite{WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI}
 
 
 

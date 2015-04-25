@@ -509,7 +509,8 @@ determined by making a selection on the PIDA value.
 
 \fixme{Talk about event classification here:}
 
-In Qscan, a multivariate analysis (MVA) was used to separate particle types based on the spatial characteristics of their clusters.
+In Qscan, a multivariate analysis (MVA) was used to separate particle types based on the spatial characteristics of their clusters
+\cite{WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI}.
 First step performs a principal components analysis (PCA), transforming the axes to lie along the 
 cluster direction and perpendicular to it. Several quantities are then calculated to 
 characterize the cluster: the lateral spread, the mean charge-weighted inverse distance of hits to the primary cluster axis
@@ -541,30 +542,32 @@ Background consists of all particles not corresponding to the relevant signal ty
 For accepted events, the neutrino energy is estimated  assuming a CCQE event and using the two-body approximation, and also calorimetrically.
 The calorimetric reconstruction takes account of the quenching factors for the different particles by 
 assuming that all hits not associated with the lepton cluster are due to hadronic activity.
-
+Figure~\ref{fig:recoannexrecoenergynue} shows the results of the kinematic energy reconstruction for CCQE events, and  Figure~\ref{fig:recoannexrecoenergynumu} the results of the calorimetric energy reconstruction.
 It is seen that for high-energy muons, the measured energy saturates. This is due to the muon escaping the detector volume. 
 
 
 %\fixme{Refer to the LAGUNA-LBNO Energy plots}
 
-Figure~\ref{fig:recoannexrecoenergynue} shows reconstructed energy versus true energy...
-Figure~\ref{fig:recoannexrecoenergynumu} shows reconstructed energy versus true energy...
 
 \begin{cdrfigure}[LAGNUA-LBNO electron neutrino energy measurement]{recoannexrecoenergynue}
-{Distributions of reconstructed neutrino energy versus true neutrino energy, assuming two-body kinematics. 
+{Dual-phase LArTPC neutrino energy measurement. Distributions of reconstructed neutrino energy versus true neutrino energy, assuming two-body kinematics. 
 Plots shown are for $\nu_{e}$ CCQE (a) and $\nu_{\mu}$ CCQE (b).}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccqe_annex.pdf}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccres_annex.pdf}
 \end{cdrfigure}
 
 \begin{cdrfigure}[LAGNUA-LBNO muon neutrino energy measurement]{recoannexrecoenergynumu}
-{Distributions of reconstructed neutrino energy versus true neutrino energy, using calorimetric energy estimation. 
+{Dual-phase LArTPC neutrino energy measurement. Distributions of reconstructed neutrino energy versus true neutrino energy, using calorimetric energy estimation. 
 Plots shown are for  $\nu_{e}$  CC1$\pi^{+}$ (a) and $\nu_{\mu}$  CC1$\pi^{+}$ (b).}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_numu_ccqe_annex.pdf}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_numu_ccres_annex.pdf}
 \end{cdrfigure}
 
-%\fixme{Be sure to properly reference LAGUNA-LBNO design study}
+%\fixme{Be sure to properly reference LAGUNA-LBNO design study: }
+%\cite{WA105_TDR}
+%\cite{LAGUNA-LBNO-deliv}
+%\cite{LAGUNA-LBNO-EOI}
+
 
 \subsection{Calibration}
 
