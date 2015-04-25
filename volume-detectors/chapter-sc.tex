@@ -265,7 +265,7 @@ For the Photon Detector in the dual-phase design:
 Detailed GEANT4-based~\cite{GEANT4:NIM,GEANT4} Monte Carlo simulations have been 
 developed for the single-phase and dual-phase Far Detector designs,
 incorporating both the Liquid Argon TPC modules
-and the photon detection systems. The simulatiosn provide
+and the photon detection systems. These simulations provide
 a basis for detailed studies of detector design and performance, 
 and also enable the development of automated event reconstruction algorithms.
 
@@ -323,13 +323,13 @@ With the advancement of both single-phase and dual-phase technologies,
 and expansion of the experimental program to include MicroBooNE~\cite{Chen:2007ae,microboone-url},
 the 35-ton prototype and the CERN test experiments,
 the reconstruction software has continued to grow in both volume and sophistication,
-supported by multi-purpose and shared frameworks such as LArSoft and Qscan.
+supported by powerful shared frameworks such as LArSoft and Qscan.
 
 %Probably need to say that DUNE will require reconstruction supernova bursts, 
 %atmospheric neutrinos and proton decay, not just accelerator neutrinos
 
 A fully automated chain of event reconstruction algorithms
-will be developed for the DUNE Far Detector.
+is being developed for the DUNE Far Detector.
 The block diagram in figure~\ref{fig:fdrecoblockdiag} illustrates 
 the components of this reconstruction chain.
 The first stage of reconstruction involves the processing of the
@@ -363,12 +363,15 @@ The secondary particles produced in the two interactions are distinguished with 
 
 \subsubsection{Signal Processing, Hit Finding, and Disambiguation}
 
-After first uncompressing the data, the noise is reduced by filtering,
-and a deconvolution of the detector and electronics response is applied.
+Separate chains of dedicated signal-processing and hit-finding 
+algorithms have been developed for the single-phase and dual-phase detectors.
+The single-phase hit reconstruction proceeds by filtering noise
+from the uncompressed data, and then deconvoluting the 
+detector and electronics response.
 The pulse-shape models used to deconvolute the response are currently
 based on {\it a priori} predictions, but these will be tuned and
-validated using data from the 35-ton prototype and CERN test experiments.
-The algorithms are found to perform well in ArgoNeuT analyses~\cite{Anderson:2012vc}.
+validated using data from the 35-ton prototype and CERN test experiment.
+The current algorithms are found to perform well in ArgoNeuT analyses~\cite{Anderson:2012vc}.
 After deconvolution and pedestal subtraction, pulses are identified in
 the waveforms, and parametric fits are applied to extract the size and
 shape of each pulse. These pulses are called hits for later processing.
@@ -378,7 +381,20 @@ but no indication of where along a wire the charge was deposited.
 Hits may also overlap if they are close together in time, 
 even if the charge was deposited on distant segments of the wire.
 
-The wrapping of induction-plane wires in the single-phase Far Detector APA design
+%\fixme{3L dual-phase proto hit reco}
+In the dual-phase detector, the raw waveforms also undergo an initial processing stage, 
+ensuring effective noise reduction and subtraction of the baseline.
+Hits, defined as signals that are discriminated from the noise, are then identified and reconstructed.
+The hit-finding algorithms extract multiple hit information by fitting the waveform function of the signal.
+The main parameters determined by the fits are the hit time and the hit charge integral.
+The procedure has been successfully tested during several phases of R$\&$D and prototyping on small-scale double phase LAr-LEM-TPC setups \cite{Badertscher:2008rf,Badertscher:2012dq}.
+Figure~\ref{fig:lbnoeventdisplay} shows example event displays of the reconstructed hits 
+in both real and simulated data. 
+A detailed description of the signal-processing and hit-finding procedures
+implemented for the single-phase and dual-phase techologies is given in
+Sections~\ref{annex:reconstruction-signal-proc} and \ref{annex:reconstruction-single-phase-hit-find}.
+
+In the single-phase APA design, the wrapping of induction-plane wires
 introduces an additional discrete ambiguity in the data by connecting multiple wire
 segments to each DAQ channel. A ``disambiguation'' algorithm,
 described in Section~\ref{annex:reco-disambiguation}, is used to break the
@@ -390,15 +406,7 @@ associated with a single wire segment, and can be trivially disambiguated.
 The remaining hits are then disambiguated by clustering them with trivially disambiguated hits.
 The performance of the disambiguation algorithm is discussed in the Section~\cite{annex:disambiguation}.
 
-\fixme{3L dual-phase proto hit reco}
-Specific hit finding algorithms have been developed for Dual-phase LAr-TPC charge signals.
-Raw waveforms are processed in order to assure effective noise reduction and subtraction of the baseline.
-Hits, defined as signals that are discriminated from the noise, are then identified and reconstructed.
-The hit finding algorithms extract multiple hit information by fitting the waveform function of the signal.
-The main parameters determined for the fitted hits are the hit time and the hit integral.
-The procedure has been successfully tested during several phases of R$\&$D and prototyping on small-scale double phase LAr-LEM-TPC setups \cite{Badertscher:2008rf,Badertscher:2012dq}.
-Figure~\ref{fig:lbnoeventdisplay} shows events display from reconstructed hits for both data and MC events.
-Detailed description of the signal processing and hit finding for the dual-phase charge readout can be found in the Sections~\cite{annex:dual-phase-signal-proc} and \cite{annex:dual-phase-hit-find}.
+
 
 
 
@@ -536,46 +544,39 @@ the range from the end of the track, and comparing with the predictions
 for different particle species. Various analysis techniques have been developed,
 as described in Section~\ref{annex:reco-pid}.
  
-\fixme{Do we have any calorimetry plots?}
+%\fixme{Do we have any calorimetry plots?}
 
 \subsubsection{Neutrino Event Reconstruction and Classification}
 
-%%%%
-%%%% Cite the Warwick paper ...
-%%%%
+%%%% Be sure to cite the Warwick paper here:
+%%%% J. J. Back et al, Eur. Phys. C 2013, 73, 2369.
 
 Once all the final-state particles in an event have been reconstructed individually, 
 the combined information is used to reconstruct and classify the overall neutrino event.
-The identification of neutrino event types is based on a multivariate analysis\cite{WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI},
+The identification of neutrino event types is based on a multivariate analysis~\cite{REF, WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI},
 which constructs a number of characteristic topological and calorimetric variables,
 based on the reconstructed final-state particles, and uses a Boosted Decision Tree 
 algorithm to calculate signal and background likelihoods for particular event hypotheses.
-The current performance of the full reconstruction, from pattern recognition to event classification, 
+The current performance of the full reconstruction of pattern recognition and event classification 
 has been evaluated using $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions with two-body final states,
 simulated in the dual-phase Far Detector. The correct hypothesis is chosen for 
 92\% (79\%) of $\nu_{\mu}$ ($\nu_{e}$) quasi-elastic interactions with a 
 lepton and proton in the final state, and 79\% (71\%) of $\nu_{\mu}$ ($\nu_{e}$) 
-resonance interactions with a lepton and charged pion in the final state.
-
-For selected events, the neutrino energy is estimated kinematically for quasi-elastic events,
-using a two-body approximation, or otherwise calorimetrically.
+resonance interactions with a lepton and charged pion in the final state~\cite{LAGUNA-LBNO-deliv}.
+The neutrino energy is estimated kinematically for selected quasi-elastic events,
+using a two-body approximation, or otherwise a calorimetric energy measurement is implemented.
 The calorimetric reconstruction takes into account the quenching factors of the different particles, 
 assuming that all hits not associated with the primary lepton are due to hadronic activity.
 Figure~\ref{fig:recoenergynue} shows the results of the energy reconstruction for $\nu_e$ CCQE and CC1$\pi^{+}$ events.
 
 \begin{cdrfigure}[Reconstruction of electron neutrino energy]{recoenergynue}
-{Dual-phase LArTPC neutrino energy measurement. Distributions of reconstructed neutrino energy versus true neutrino energy: assuming two-body kinematics,  $\nu_{e}$ CCQE events, (a) 
-and using calorimetric energy estimation, $\nu_{e}$  CC1$\pi^{+}$ events (b).}
+{
+Performance of neutrino energy measurement, evaluated using the dual-phase far detector simulation. 
+Distributions of reconstructed versus true neutrino are shown for $\nu_{e}$ CCQE events (left),
+assuming two-body kinematics, and $\nu_{e}$  CC1$\pi^{+}$ events (right),
+using a calorimetric energy estimation.}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccqe.pdf}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccres.pdf}
 \end{cdrfigure}
-
-
-
-
-
-%\fixme{Be sure to properly reference LAGUNA-LBNO design study: }
-%\cite{WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI}
-
 
 
