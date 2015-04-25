@@ -283,45 +283,24 @@ core-collapse supernovae.
 
 % r-process
 
-\section{Detector Requirements}
+\section{Detector Capabilities and Requirements}
 \label{sec:physics-snblowe-detector-requirements}
 
-
-Energy Resolution
-
-Time Resolution
-
-Angular Resolution
-
-Particle ID, tagging
-
-Backgrounds
-
-Triggering, DAQ, Data Rate
-
-\begin{table}[!htb]
-\caption[Nominal requirements for SNB]{}
-\label{tab:requirements}
-\begin{tabular}{$L^c}%$
-\toprule
-\rowtitlestyle
- &  \\ \toprowrule
- &  \\ \colhline
-\end{tabular}
-\end{table}
-
+For sensitivity to SNB physics, the detector must be sensitive to energy depositions of 5 MeV or less.  It should also be capable of collecting information for a 10-kpc supernova, which would mean some tens of thousands of events within 10 seconds.    The experiment should be able to self-trigger on the burst, which may require sufficiently good photon detection.  Reconstruction of the leptons in the neutrino interaction events should enable pointing back to the supernova limited by event statistics.
+Energy and event time resolution must be sufficient to resolve interesting physics features of the burst.  Preliminary studies suggest that Icarus resolution for low-energy events~\cite{Amoruso:2003sw} should be adequate, and that approximately millisecond event time resolution should be sufficient to resolve features such as the neutronization burst and the initial notch due to neutrino trapping in the $\nu_e$ spectrum (see Fig.~\ref{fig:garching}), given adequate statistics.   Preliminary background studies (see Fig.~\ref{bg}) show that cosmogenic and radioactive contaminants should be subdominant for a Galactic burst; however backgrounds still need to be better understood for solar and DSNB signals.
 
 
 Work is currently underway using the LArSoft simulation package
 to characterize low-energy
-response for realistic LBNE detector configurations.
-Figure~\ref{fig:evdisplays} shows a sample \MeVadj{20} event in the LBNE
-\SIadj{35}{t} prototype
+response for realistic DUNE detector configurations.
+%Figure~\ref{fig:evdisplays} shows a sample \MeVadj{20} event in the DUNE
+%\SIadj{35}{t} prototype
 %\ktadj{10} 
-geometry simulated with LArSoft.  So far,
+%geometry simulated with LArSoft. 
+So far,
 most studies have been done with the MicroBooNE geometry, with the
 results expected to be %largely
-generally applicable to the larger LBNE detector.  For a preliminary
+generally applicable to the larger DUNE detectors.  For a preliminary
 understanding of achievable energy resolution, isotropic and uniform
 monoenergetic electrons with energies of 5-50~MeV (which should
 approximate the $\nu_e$-CC electron products) were simulated and
@@ -344,21 +323,21 @@ somewhat better (Figure~\ref{fig:lowe_res}), and further
 improvements for reconstruction algorithms optimized for low-energy
 events are expected.
 %
-\begin{figure}[!htb]
-\begin{centering}
-%\includegraphics[height=2.5in]{snfig/15MeV_fixedvertexdir.pdf}
-%\includegraphics[width=0.9\textwidth]{snfig/elect20mev35tunzoom_mod.pdf}
-%\includegraphics[width=0.4\textwidth,bb=0 -200 600 1000]{snfig/lbne_zoom.pdf}
-%\includegraphics[width=0.84\textwidth]{snfig/elect20mev35tzoomcropped.pdf}
-\caption[Typical \MeVadj{20} event in the LBNE
-  \SIadj{35}{t} prototype geometry]{Raw event display of a simulated \MeVadj{20} event in the LBNE
-  \SIadj{35}{t} prototype; the top panel shows the collection plane, and the
-  lower two panels show the induction planes (with multiple images due
-  to wire wrapping). The bottom panel shows a zoom of the collection plane image.
- }
-\label{fig:evdisplays}
-\end{centering}
-\end{figure}
+% \begin{figure}[!htb]
+% \begin{centering}
+% %\includegraphics[height=2.5in]{snfig/15MeV_fixedvertexdir.pdf}
+% %\includegraphics[width=0.9\textwidth]{snfig/elect20mev35tunzoom_mod.pdf}
+% %\includegraphics[width=0.4\textwidth,bb=0 -200 600 1000]{snfig/lbne_zoom.pdf}
+% %\includegraphics[width=0.84\textwidth]{snfig/elect20mev35tzoomcropped.pdf}
+% \caption[Typical \MeVadj{20} event in the DUNE
+%   \SIadj{35}{t} prototype geometry]{Raw event display of a simulated \MeVadj{20} event in the DUNE
+%   \SIadj{35}{t} prototype; the top panel shows the collection plane, and the
+%   lower two panels show the induction planes (with multiple images due
+%   to wire wrapping). The bottom panel shows a zoom of the collection plane image.
+%  }
+% \label{fig:evdisplays}
+% \end{centering}
+% \end{figure}
 %
 \begin{figure}[!htb] %  figure placement: here, top, bottom, or page
  \centering
