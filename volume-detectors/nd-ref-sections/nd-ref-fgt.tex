@@ -127,8 +127,27 @@ tracker design]{STT_Detail}{A schematic drawing of the fine-grained tracker desi
 \end{cdrfigure}
 
 
-%---Roberto! we MUST show the Particle-ID using dE/dx. The theme to ID the particles 
-% runs through the CDR. I had it in the text -- it should be put soon after the schematic.
+\begin{cdrtable}[Straw Tube Detector specifications]{ll}{STT_details}{Straw Tube Detector specifications}
+Item&Specification \\ \toprowrule
+Straw Tube Geometry & 1cm Diameter x 3.5m Long \\ \colhline
+Number of Straw Tubes & 107,520 \\ \colhline
+Number of Straw Tubes per Plane & 336 \\ \colhline
+Number of Straw Tube Planes per Module & 4 \\ \colhline
+Number of Straw Tube Sub-Modules per Module & 4 \\ \colhline
+Number of Straw Tube Modules & 80 \\ \colhline
+Number of Straw Tube Sub-Modules & 320 \\ \colhline
+Length of Straw Tube Wire & 376.3 km \\ \colhline
+Number of Electronics Channels & 215,040 \\ \colhline
+%Number of Modules with Radiators & 46 \\ \colhline
+Radiator Thickness per Module & 3.6cm \\ \colhline
+Radiator Mass per Module & 69.1 kg \\ \colhline
+%Number of Modules with Target Planes & 34 \\ \colhline
+Target Geometry & 1.27cm Diameter $\times$ 3.5m long \\ \colhline
+Number of Targets per Plane & 275 \\ \colhline
+Ar Mass per Target Plane & 15.5 kg \\  
+%Ar Mass per Target Plane & 15.5 kg \\ \colhline
+%Water Mass per Target Plane & 95 kg \\
+\end{cdrtable}
 
 
 The straw tubes will be filled with a
@@ -258,6 +277,32 @@ The total mass of scintillator is 20.9~t,
 the total mass of Pb is 70.8~t, and
 the total number of readout channels is 52,224. 
 
+\begin{cdrtable}[ECAL specifications]{ll}{ECAL_specs}{ECAL specifications}
+Item&Specification \\ \toprowrule
+Scintillator Bar Geometry & 3.2m $\times$ 2.5cm $\times$ 1cm \\ \colhline
+Number of Forward ECAL Scintillator Bars & 7680 \\ \colhline
+Forward ECAL Pb thickness & 1.75mm \\ \colhline
+Number of Forward ECAL Layers & 60 \\ \colhline
+Number of Forward ECAL Radiation Lengths & 20\\ \colhline
+Dimensions of Forward ECAL Module & 3.2m $\times$ 3.2m $\times$ 81cm \\ \colhline
+Number of Barrel ECAL Scintillator Bars & 16,384 \\ \colhline
+Barrel ECAL Pb thickness & 3.5mm \\ \colhline
+Number of Barrel ECAL Layers & 16 \\ \colhline
+Number of Barrel ECAL Radiation Lengths & 10 \\ \colhline
+Number of Barrel ECAL Modules & 8 \\ \colhline
+Dimensions of Barrel ECAL Modules & 3.2m $\times$ 3.2m $\times$ 27.5cm \\ \colhline
+Number of Backward ECAL Scintillator Bars & 2048 \\ \colhline
+Backward ECAL Pb thickness & 3.5mm \\ \colhline
+Number of Backward ECAL Layers & 16 \\ \colhline
+Number of Backward ECAL Radiation Lengths & 10 \\ \colhline
+Dimensions of Backward ECAL Module & 3.2m $\times$ 3.2m $\times$ 27.5cm \\ \colhline
+Total Length of 0.7mm Diameter WLS Fiber & 83.6km \\ \colhline
+Total Number of Scintillator Bars & 26,112 \\ \colhline
+Total Number of Electronics Channels & 52,224\\ \colhline
+Total Mass of Scintillator & 20,890 kg \\ \colhline
+Total Mass of Pb & 70,800kg \\\end{cdrtable}
+
+
 \begin{cdrfigure}[Schematic drawing of the ECAL]{ECAL_detail}{Schematic drawing of the ECAL, which is made up of alternating planes
 of plastic scintillator and Pb sheets.}
 \includegraphics[width=0.5\textwidth,angle=0]{ECAL_detail}
@@ -281,6 +326,20 @@ from eight ``C'' (C-shaped) sections, and the thickness of the
 magnet steel will be 60~cm, consisting of 6
 $\times$ 10-cm-thick plates. The magnet power requirement with Al coils is $\sim 2.4$~MW,
 corresponding to 6~kA at 400~V. The water flow required for cooling is 20~l/s.
+
+\begin{cdrtable}[Dipole Magnet specifications]{ll}{Magnet_specs}{Dipole Magnet specifications}
+Item&Specification \\ \toprowrule
+Inner Dimensions & 4.5m x 4.5m x 8.0m \\ \colhline
+Magnetic Field & 0.4 T \\ \colhline
+Number of ``C'' Sections & 16 \\ \colhline
+Thickness of Steel in the ``C'' Sections & 60cm \\ \colhline
+Mass per ``C'' Section & 60~t \\ \colhline
+Number of Coils & 4 \\ \colhline
+Mass per Coil & 40~t \\ \colhline
+Magnet Current & 6 kA \\ \colhline
+Magnet Voltage & 400 V \\ \colhline
+Magnet Power Requirements & 2.4 MW \\ \colhline
+Water Flow for Cooling & 20 l/s \\\end{cdrtable}
 
 \begin{cdrfigure}[Magnetic field maps]{Magnet_Bfield}{Design of the dipole magnet and simulation of the 
 corresponding magnetic field at the Bhabha Atomic Research Center (BARC) in India.}  
@@ -308,6 +367,23 @@ identification of the
 muon; the muon momentum %itself 
 will be measured by the STT inside the 
 magnetic field.
+
+\begin{cdrtable}[MuID specifications]{ll}{MID_specs}{MuID specifications}
+Item&Specification  \\ \toprowrule
+Number of Barrel RPC Trays of Dimension 2.2m $\times$ 4m & 8 \\ \colhline
+Number of Barrel RPC Trays of Dimension 2.5m $\times$ 4m & 16 \\ \colhline
+Number of Barrel RPC Trays of Dimension 2.8m $\times$ 4m & 16 \\ \colhline
+Number of Barrel RPC Trays of Dimension 3.1m $\times$ 4m & 8 \\ \colhline
+Number of END RPC Trays of Dimension 2m $\times$ 6m & 24 \\ \colhline
+Total Number of RPC Trays & 72 \\ \colhline
+Total Number of RPC Modules & 432 \\ \colhline
+Mass of Downstream Steel Planes & 283,500 kg \\ \colhline
+Mass of Upstream Steel Planes & 170,100 kg \\ \colhline
+RPC Thickness & 1.5cm \\ \colhline
+Number of 7.65mm Pitch X Strips per Module & 256 \\ \colhline
+Number of 7.5mm Pitch Y Strips per Module & 128 \\ \colhline
+Total Number of RPC Strips and Electronics & 165,888 \\
+\end{cdrtable}
 
 %\begin{cdrfigure}[Schematic drawing of an RPC]{FGT_RPC}{Schematic drawing of an RPC.}
 \begin{cdrfigure}[Fabrication and test of RPC prototype]{FGT_RPC}{Fabrication of a large (2.4 m $\times$ 1.2 m) RPC prototype at 
