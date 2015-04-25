@@ -348,8 +348,10 @@ continuous improvement.
 \includegraphics[width=0.8\textwidth]{fdrecoflowchart.pdf}
 \end{cdrfigure}
 
+
 \begin{cdrfigure}[Dual-phase LArTPC reconstructed events for data and MC]{lbnoeventsdisplay}
 {
+%Badertscher:2012dq
 Dual-phase LArTPC reconstructed events for data and MC.
 Top: Cosmic ray event displays for an hadronic shower candidate.
 Bottom: Reconstructed hits for a MC simulation of a 5 GeV $\nu_{\mu}$ interaction.
@@ -388,6 +390,15 @@ associated with a single wire segment, and can be trivially disambiguated.
 The remaining hits are then disambiguated by clustering them with trivially disambiguated hits.
 The performance of the disambiguation algorithm is discussed in the Section~\cite{annex:disambiguation}.
 
+\fixme{3L dual-phase proto hit reco}
+Specific hit finding algorithms have been developed for Dual-phase LAr-TPC charge signals.
+Raw waveforms are processed in order to assure effective noise reduction and subtraction of the baseline.
+Hits, defined as signals that are discriminated from the noise, are then identified and reconstructed.
+The hit finding algorithms extract multiple hit information by fitting the waveform function of the signal.
+The main parameters determined for the fitted hits are the hit time and the hit integral.
+The procedure has been successfully tested during several phases of R$\&$D and prototyping on small-scale double phase LAr-LEM-TPC setups \cite{Badertscher:2008rf,Badertscher:2012dq}.
+Figure~\ref{fig:lbnoeventdisplay} shows events display from reconstructed hits for both data and MC events.
+Detailed description of the signal processing and hit finding for the dual-phase charge readout can be found in the Sections~\cite{annex:dual-phase-signal-proc} and \cite{annex:dual-phase-hit-find}.
 
 
 
