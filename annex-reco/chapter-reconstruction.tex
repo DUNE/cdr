@@ -58,8 +58,6 @@ The following sections describe the current status of each task.
 A series of signal processing algorithms have been developed to
 perform noise reduction and baseline subtraction on the digital
 waveforms read out by Liquid Argon TPC detectors. 
-These algorithms have been validated on data from 
-\fixme{say where...}.
 
 The TPC data are first uncompressed and put into local storage, one channel at a time.  
 In the case that the DAQ writes data records to persistent
@@ -159,6 +157,8 @@ together to form a DAQ channel all contribute charge on that DAQ
 channel, and it is not known from the wire's signal which of those
 segments generated the charge.  This discrete ambiguity must be broken
 before downstream reconstruction programs can do their work.
+The disambiguation procedure constitutes the first pattern recognition stage 
+in the single-phase detector.  
 
 The detector geometry is chosen so that no induction-plane wire
 crosses any collection-plane wire more than once, necessitating a
@@ -265,10 +265,9 @@ reconstructed tracks and showers at the interaction vertex.
 \fixme{In the single-phase reconstruction, the availability of 
 three views provides strong constraints on 3D ambiguities}
 
-Figure~\ref{fig:recoannexpandoraeventdisplays} shows some event displays....
-
 The PANDORA pattern recognition algorithms have been developed
 using simulated neutrino interactions in the energy range 100\,MeV\,$-$\,25\,GeV.
+Figure~\ref{fig:recoannexpandoraeventdisplays} shows some example events.
 Figure~\ref{fig:recoannexpandoraefficiency} shows the efficiency for reconstructing
 the leading final-state lepton in 5\,GeV $\nu_{e}$ CC and $\nu_{\mu}$ CC interactions,
 plotted as a function of momentum using the MicroBooNE detector geometry.
@@ -379,15 +378,7 @@ hits or space points, especially in cases where the number of
 measurements is much larger than the five parameters needed to specify
 a track on a surface.  The Kalman filter can be used for both pattern
 recognition and parameter estimation.
-
-
-\fixme{Some text from the main CDR section...}
-
-The three-dimensional reconstruction of tracks can proceed either 
-directly from 2D hits or via 3D space points, 
-calculated by matching 2D clusters between views.
-
-The well-established Kalman filter technique~\cite{kalman} has been applied
+The Kalman filter technique has been applied
 to 3D track reconstruction by both ICARUS~\cite{REF1} and ArgoNeuT~\cite{REF2}.
 This technique incorporates the effects of multiple Coulomb scattering,
 enabling a scattering-based estimate of the track momentum,
@@ -505,7 +496,7 @@ determined by making a selection on the PIDA value.
 
 \fixme{Talk about e-gamma separation here}
 
-\subsection{Neutrino Event Reconstruction}
+\subsection{Neutrino Event Reconstruction and Classification}
 
 \fixme{Talk about event classification here:}
 
