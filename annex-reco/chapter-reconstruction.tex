@@ -50,16 +50,15 @@ The following sections describe the current status of each task.
 
 \begin{cdrfigure}[Far detector reconstruction block diagram]{fdrecoblockdiag}
 {Block diagram showing the components of the far detector reconstruction chain}
-\includegraphics[width=0.8\textwidth]{fdrecoflowchart_annex.pdf}
+\includegraphics[width=\textwidth]{fdrecoflowchart_annex.pdf}
 \end{cdrfigure}
 
 \subsection{Signal Processing and Filtering}
+\label{annex:reconstruction-signal-proc}
 
 A series of signal processing algorithms have been developed to
 perform noise reduction and baseline subtraction on the digital
 waveforms read out by Liquid Argon TPC detectors. 
-These algorithms have been validated on data from 
-\fixme{say where...}.
 
 The TPC data are first uncompressed and put into local storage, one channel at a time.  
 In the case that the DAQ writes data records to persistent
@@ -102,6 +101,7 @@ channels and thus reducing the signal bandwidth, the coherent noise filter ideal
 After suppressing the noise, the (constant) pedestal of each waveform has to be computed and subtracted from each sample.
 
 \subsection{TPC Hit Finding}
+\label{annex:reconstruction-single-phase-hit-find}
 
 Once deconvoluted, raw ADC values trace out pulses, which are the best
 estimates of when charge arrived on a particular electronics channel.
@@ -159,6 +159,8 @@ together to form a DAQ channel all contribute charge on that DAQ
 channel, and it is not known from the wire's signal which of those
 segments generated the charge.  This discrete ambiguity must be broken
 before downstream reconstruction programs can do their work.
+The disambiguation procedure constitutes the first pattern recognition stage 
+in the single-phase detector.  
 
 The detector geometry is chosen so that no induction-plane wire
 crosses any collection-plane wire more than once, necessitating a
@@ -265,10 +267,9 @@ reconstructed tracks and showers at the interaction vertex.
 \fixme{In the single-phase reconstruction, the availability of 
 three views provides strong constraints on 3D ambiguities}
 
-Figure~\ref{fig:recoannexpandoraeventdisplays} shows some event displays....
-
 The PANDORA pattern recognition algorithms have been developed
 using simulated neutrino interactions in the energy range 100\,MeV\,$-$\,25\,GeV.
+Figure~\ref{fig:recoannexpandoraeventdisplays} shows some example events.
 Figure~\ref{fig:recoannexpandoraefficiency} shows the efficiency for reconstructing
 the leading final-state lepton in 5\,GeV $\nu_{e}$ CC and $\nu_{\mu}$ CC interactions,
 plotted as a function of momentum using the MicroBooNE detector geometry.
@@ -281,7 +282,7 @@ resolution is obtained by taking the 68\% quantile of 3D vertex residuals,
 which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 
 
-\fixme{CLUSTERING/PANADORA FOR LBNO (TWO VIEWS), taken from LGUNA-LBNO deliverables51 }
+\fixme{CLUSTERING/PANDORA FOR LBNO (TWO VIEWS), taken from LGUNA-LBNO deliverables document}
 
 Algorithms specific for two views event reconstruction have been extensively developed as well. 
 A preliminary 2D clustering is carried on similarly to what described above.
@@ -379,29 +380,31 @@ hits or space points, especially in cases where the number of
 measurements is much larger than the five parameters needed to specify
 a track on a surface.  The Kalman filter can be used for both pattern
 recognition and parameter estimation.
-
-
-\fixme{Some text from the main CDR section...}
-
-The three-dimensional reconstruction of tracks can proceed either 
-directly from 2D hits or via 3D space points, 
-calculated by matching 2D clusters between views.
-
-The well-established Kalman filter technique~\cite{kalman} has been applied
-to 3D track reconstruction by both ICARUS~\cite{REF1} and ArgoNeuT~\cite{REF2}.
+The Kalman filter technique has been applied
+to 3D track reconstruction by both ICARUS~\cite{Ankowski:2006ts} and ArgoNeuT~\cite{REF}.
 This technique incorporates the effects of multiple Coulomb scattering,
 enabling a scattering-based estimate of the track momentum,
 which is shown by ICARUS to be as good as $\Delta p/p \approx 10\%$, 
-depending mainly on the track length~\cite{REF3}.
+depending mainly on the track length~\cite{Ankowski:2006ts}.
 The data from ICARUS have also been used to develop a precise
 track reconstruction, which builds a 3D trajectory for each track by simultaneously
 optimising its 2D projections to match the observed data~\cite{Antonello:2012hu}.
 Another promising technique, based on the local principal curve algorithm, 
 has been implemented in conjunction with the development of the 
-dual-phase detector concept~\cite{REF4}, and is shown to provide 
-a precise reconstruction of two-particle event topologies~\cite{REF5}. 
+dual-phase detector concept, and is shown to provide 
+a precise reconstruction of two-particle event topologies~\cite{Back:2013cva,LAGUNA-LBNO-deliv},
+including precise vertex reconstruction.
+Figure~\ref{recoannexlpcvertexresolution} shows all the vertex resolution plots ...
 
-\fixme{Can we say something about current status or performance?}
+\begin{cdrfigure}[Vertex reconstruction using local principal curves]{recoannexlpcvertexresolution}
+{CAPTION GOES HERE}
+\includegraphics[width=0.33\textwidth]{barker_vertex_numuccqe_x_annex.pdf}
+\includegraphics[width=0.33\textwidth]{barker_vertex_nueccqe_x_annex.pdf}
+\includegraphics[width=0.33\textwidth]{barker_vertex_numuccqe_y_annex.pdf}
+\includegraphics[width=0.33\textwidth]{barker_vertex_nueccqe_y_annex.pdf}
+\includegraphics[width=0.33\textwidth]{barker_vertex_numuccqe_z_annex.pdf}
+\includegraphics[width=0.33\textwidth]{barker_vertex_nueccqe_z_annex.pdf}
+\end{cdrfigure}
 
 %%%% MAYBE TOO MUCH DETAIL FOR CDR 
 
@@ -505,17 +508,21 @@ determined by making a selection on the PIDA value.
 
 \fixme{Talk about e-gamma separation here}
 
-\subsection{Neutrino Event Reconstruction}
+\subsection{Neutrino Event Reconstruction and Classification}
 
 \fixme{Talk about event classification here:}
 
-In Qscan, a multivariate analysis was used to separate particle types based on the spatial characteristics of their clusters.
+In Qscan, a multivariate analysis (MVA) was used to separate particle types based on the spatial characteristics of their clusters
+\cite{WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI}.
 First step performs a principal components analysis (PCA), transforming the axes to lie along the 
 cluster direction and perpendicular to it. Several quantities are then calculated to 
 characterize the cluster: the lateral spread, the mean charge-weighted inverse distance of hits to the primary cluster axis
 (this is expected to distinguish effectively between showers and tracks), the $dE/dx$.
 These variables are then fed into Boosted Decision Trees analyses, 
-each calculating the signal and background likelihoods for a particular particle hypothesis
+each calculating the signal and background likelihoods for a particular particle hypothesis.
+Currently muon, electron, proton and charged pion hypotheses are considered. It is anticipated that these likelihoods will be used in various ways by downstream analysis code, depending on the needs of the specific analysis.
+In the present analysis, the BDT results for muon and electron hypotheses are used to identify lepton clusters and classify events. The signal and background distributions for these hypotheses are shown in 
+Figure~\ref{fig:recoannexeventclassification}.
 
 The overall performance of the reconstruction chain (from clustering to PID) has been estimated with a simple binned lepton flavor analysis, 
 to understand its ability to distinguish $\nu_{e}$ and $\nu_{\mu}$ events.
@@ -523,43 +530,47 @@ If a single lepton flavor is identified in the event, then the event is consider
 If neither or both lepton flavors are identified, the event is discarded.
 Numbers of events correctly reconstructed is above 90$\%$ for $\nu_{\mu}$-CCQE events.
 
-\fixme{Refer to the LAGUNA-LBNO PID plots}
+%\fixme{Refer to the LAGUNA-LBNO PID plots}
 
-Figure~\ref{fig:recoannexeventclassification} shows multivariate some event classification plots ...
 
 \begin{cdrfigure}[LAGNUA-LBNO event classification]{recoannexeventclassification}
-{CAPTION GOES HERE}
+{Plots showing signal and background distributions for electron (a) and muon (b) MVA hypotheses. 
+Background consists of all particles not corresponding to the relevant signal type.}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_pid_muons.pdf}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_pid_electrons.pdf}
 \end{cdrfigure}
 
-\fixme{Talk about energy reconstruction here:}
+%\fixme{Talk about energy reconstruction here:}
 
 For accepted events, the neutrino energy is estimated  assuming a CCQE event and using the two-body approximation, and also calorimetrically.
 The calorimetric reconstruction takes account of the quenching factors for the different particles by 
 assuming that all hits not associated with the lepton cluster are due to hadronic activity.
-
+Figure~\ref{fig:recoannexrecoenergynue} shows the results of the kinematic energy reconstruction for CCQE events, and  Figure~\ref{fig:recoannexrecoenergynumu} the results of the calorimetric energy reconstruction.
 It is seen that for high-energy muons, the measured energy saturates. This is due to the muon escaping the detector volume. 
 
 
-\fixme{Refer to the LAGUNA-LBNO Energy plots}
+%\fixme{Refer to the LAGUNA-LBNO Energy plots}
 
-Figure~\ref{fig:recoannexrecoenergynue} shows reconstructed energy versus true energy...
-Figure~\ref{fig:recoannexrecoenergynumu} shows reconstructed energy versus true energy...
 
 \begin{cdrfigure}[LAGNUA-LBNO electron neutrino energy measurement]{recoannexrecoenergynue}
-{CAPTION GOES HERE}
+{Dual-phase LArTPC neutrino energy measurement. Distributions of reconstructed neutrino energy versus true neutrino energy, assuming two-body kinematics. 
+Plots shown are for $\nu_{e}$ CCQE (a) and $\nu_{\mu}$ CCQE (b).}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccqe_annex.pdf}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccres_annex.pdf}
 \end{cdrfigure}
 
 \begin{cdrfigure}[LAGNUA-LBNO muon neutrino energy measurement]{recoannexrecoenergynumu}
-{CAPTION GOES HERE}
+{Dual-phase LArTPC neutrino energy measurement. Distributions of reconstructed neutrino energy versus true neutrino energy, using calorimetric energy estimation. 
+Plots shown are for  $\nu_{e}$  CC1$\pi^{+}$ (a) and $\nu_{\mu}$  CC1$\pi^{+}$ (b).}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_numu_ccqe_annex.pdf}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_numu_ccres_annex.pdf}
 \end{cdrfigure}
 
-\fixme{Be sure to properly reference LAGUNA-LBNO design study}
+%\fixme{Be sure to properly reference LAGUNA-LBNO design study: }
+%\cite{WA105_TDR}
+%\cite{LAGUNA-LBNO-deliv}
+%\cite{LAGUNA-LBNO-EOI}
+
 
 \subsection{Calibration}
 
