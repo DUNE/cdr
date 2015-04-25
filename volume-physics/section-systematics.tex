@@ -524,16 +524,75 @@ simulations to project reasonable hadron production uncertainties to ND and FD a
 
 Each cross section model has uncertainties. In most cases these come from the hadron tensor part of the
 calculation. These sources of uncertainty will be discussed in the context of nuclear models later in this
-section. Primary interaction uncertainties are specific to each model.
+section. Primary interaction uncertainties are specific to each model, and each of the three major cross 
+section models (QE, resonance production, and DIS) contribute rouhgly equally to the \nue/\anue appearance signal samples.
 
-  Coherent scattering: 
+  \emph{Coherent scattering}: Coherent models built upon PCAC theory relate the neutrino scattering 
+  cross section to pion-nucleon or pion-nucleus scattering data. The choice and characterization
+  if that data can have large effects on the calculated cross section. Alternate 'microscopic model' 
+  formulations are only valid over limited kinmatic ranges and are not adequate to describe this process 
+  for DUNE. Both models suffer from limited data constraints over a range of neutrino energy and nuclear targets.
+  However, the low hadron thresholds and good angular resolution of the proposed ND should be able
+  to produce World leading measurements, and provide adequate constraints for this interaction channel and 
+  its relatively small contribution to the overall cross section.
 
-  Quasi-elastic processes: these interactions are defined by low 4-momentum transfer and no excitation,
-    or breakup of the struck nucleon
+  \emph{Quasi-elastic processes (QE)}: These interactions are defined by low 4-momentum transfer and no excitation,
+  or breakup of the struck nucleon. Form factors in the cross section models are well constrained by 
+  electron scattering data, with the exception of the axial-vector contribution. The influence of this 
+  parameter is itself well constrined by \nu-hydrogena and \nu-deuterium scattering data. Recent QE
+  scattering data off nuclei have seen the constraints on the axial form factor degrade as the free
+  parameter, $M_{A}^{QE}$, was expanded to an effective parameter to cover nuclear effects. 
+  Improved nuclear models, which will be discussed further below, have more detailed predictions
+  of the nuclear initial state nucleon momentum distribution, and targets that reflect the dynamic
+  nature of the nucleus. Ongoing studies are aimed at determineing if the current large uncertainty 
+  on $M_{A}^{QE}$ adaquately reproduces the effects of more complex nuclear models.
 
-  Resonance production:
+  \emph{Resonance production}: Resonance interactions accoun for roughly 1/3rd of the \nue appearance
+  signal, and major components of the backgrounds due to mis-IDed pions. The free cross section model
+  parameters in the model are again related to form factors that cannot be constrined by electron
+  scattering data. Namely the resonance axial mass, and $C^{5}_{A}$. 
+  There are major disagreements between various data sets, and between data and models, of the 
+  kinmatics of the outgoing pions. These diagreements persists even when FSI and realted uncertainties
+  are considered. Data from the INP and the DUNE ND should provide good constraints for DUNE
+  oscillation analyses, but model improvements will be required to help propagate these constraints
+  to the FD signal and background predictions. Model improvements are sought for the principal interaction
+  model, so-called 'background' interactions where the pion is produced at the interaction vertex, 
+  rather than through an intermediate delta (or higher resonance), the interference between the two
+  models, and the contributions to single pion production from low multiplicity DIS.
 
-  Deep inelastic scattering:
+  \emph{Deep inelastic scattering (DIS)}: The inclusive DIS cross section has been very well constrained by 
+  data, however, individual final states have not. The uncertainty comes from the model that determines the
+  content and kinematics of the hadronic system as a fucntion of the invarianct mass, $W$. The result is that
+  the uncertainty on DIS contribtuon to the signal samples is relatively small, but the DIS contribution to the
+  backgrounds via pion production is quite large. Current studies are focused on building parameterized reweighting 
+  functions for the hadronization model based on GENIE samples generated with 1 \sigma changes to each relavent 
+  model parameter.
 
-The model of the initial nuclear state and final-state interactions have large effects on the
-expected observables ...
+Nuclear models enter into the simulation of neutrino interactions both through modeling of initial-state interactions,
+i.e., interactions between the initial state of the nucleons and virtual particles within the nucleus with the neutrino, and
+modeling of final-state interactions (FSI), i.e., interactions of the particles exiting the primary interaction vertex with
+the nuclear medium. Uncertainties in initial-state interactions due to naive modeling of the environment of the nucleus
+have thus far been taken into account through inflation of the uncertainties on the free nucleon or quark interaction
+model, such as $M_{A}^{QE}$. New models are being added to generators and will soon be incorporated into the Fast MC
+production to study how the effects of intriducing these models compare with the current model uncertaintites.
+Data from nuetrino interactions in LAr TPCs from the INP will provide detailed information on nucleon production
+rates and kinematics, which will help to distinguish which of the new models best describes the data.
+
+Final-state interactions can alter event reconstruction in two distinct ways. The first is a smearing
+of the total energy available to be deposited in the detector. The second is the misidentification of event topologies used
+to classify the neutrino flavor and interaction mode. Uncertainties in selection efficiencies and event-sample migrations
+due to intranuclear rescattering can be studied with the Fast MC and have been implemented in VALOR. The predictions and
+unceratainties on the GENIE hA intranuke model are also being tested against the detailed FSI model in the GiBUU event
+generator.
+
+Something about detector effects %from Elizabeth :^)
+
+
+
+
+
+
+
+
+
+
