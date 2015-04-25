@@ -33,12 +33,26 @@ The single-phase design has the advantage that the charge is collected directly,
 The expected performance of the DUNE far detector is based on the measured performance of the ICARUS detector, scanned Monte Carlo data, and newer studies with automated reconstruction. The requirements and projected performance is summarized in Table~\ref{tab:TPC-metric}. It is expected that as the software tools improve and as measurements from MicroBooNE and other dedicated test-beam programs become available, the precision of the projected performance will steadily improve.
 
 
-\begin{cdrtable}[DUNE Far Detector Performance Expectations]{lll}{TPC-metric}{Summary of the most important performance parameters of the DUNE reference far detector. Included are the parameters, previous detector performance, and projected performance with references to relevant studies.} 
-%The third argument (reads {cc}) can use c, l, r or p{some length}  e.g. {cll} or {llp{3cm}}, for instance.
-Parameter & Requirement & Expected Performance \\ \toprowrule
-Row 1 & First & xyz\\ \colhline
-Row 2 & Second & xyz\\ \colhline
-Row 3 & Third & xyz \\
+\begin{cdrtable}[DUNE Far Detector Performance Expectations]{llll}{TPC-metric}{Summary of the most important performance parameters of the DUNE reference far detector. Included are the parameters, previous detector performance, and projected performance with references to relevant studies.} 
+%The third argument (reads {cc}) can use c, l, r or p{some length}  e.g. {clll} or {llp{3cm}}, for instance.
+Parameter & Requirement & Achieved Elsewhere & Expected Performance \\ \toprowrule
+Signal/Noise Ratio\footnote{For a MIP at the CPA, minimum in all three views, for any track angle} & 9:1 & 15:1~\cite{Antonello:2015zea,Antonello:2014eha} & 9:1 \\ \colhline
+Electron Lifetime & 1.5~ms & $>15$~ms~\cite{Antonello:2014eha} & $>1.5$~ms \\ \colhline
+Uncertainty on Charge & & & \\
+Loss due to Lifetime  &   $<1\%$  & $<1\%$~\cite{Antonello:2014eha} & $<1\%$ \\ \colhline
+Two-Hit Resolution & 2~mm & & 2~mm \\ \colhline
+Track-Finding Efficiency\footnote{For tracks with $L>5$~cm} & $>98\%$ & & $>98\%$ \\ \colhline
+Vertex Position Resolution & (0.5,0.8,0.2)~cm & & (0.5,0.8,0.2)~cm \\ \colhline
+$e-\gamma$ separation $\epsilon_e$ & 0.9 & & 0.9 \\ \colhline
+$e-\gamma$ separation $\gamma$ rejection & 0.99 & & 0.99 \\ \colhline
+Multiple Scattering Resolution & & & \\
+on muon momentum\footnote{For a sample of stopping muons} & 18\% & 18\%~\cite{gibinmuon} & 18\% \\ \colhline
+Electron Energy Scale & & & From LArIAT \\
+Uncertainty & 1\% & 2.2\%\cite{ICARUS-pizero} &  and CERN Prototype \\ \colhline
+Electron Energy Resolution & $0.15/\sqrt{E{\rm (MeV)}}$ &$0.33/\sqrt{E{\rm (MeV)}}$  \cite{ICARUS-pizero} & From LArIAT \\
+ & $\oplus 1\%$ & $\oplus 1\%$ & and CERN Prototype \\ \colhline
+Energy Resolution for & & & \\
+Stopping Hadrons & 1-3\% & & 1-3\% \\ \colhline
+Stub-Finding Efficiency\footnote{For electron stubs with $E>5$~MeV} & 90\% & & \\ \colhline
+Stub Arrival Time Resolution & 0.1~ms & & \\
 \end{cdrtable}
-
-
