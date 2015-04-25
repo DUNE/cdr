@@ -509,13 +509,16 @@ determined by making a selection on the PIDA value.
 
 \fixme{Talk about event classification here:}
 
-In Qscan, a multivariate analysis was used to separate particle types based on the spatial characteristics of their clusters.
+In Qscan, a multivariate analysis (MVA) was used to separate particle types based on the spatial characteristics of their clusters.
 First step performs a principal components analysis (PCA), transforming the axes to lie along the 
 cluster direction and perpendicular to it. Several quantities are then calculated to 
 characterize the cluster: the lateral spread, the mean charge-weighted inverse distance of hits to the primary cluster axis
 (this is expected to distinguish effectively between showers and tracks), the $dE/dx$.
 These variables are then fed into Boosted Decision Trees analyses, 
-each calculating the signal and background likelihoods for a particular particle hypothesis
+each calculating the signal and background likelihoods for a particular particle hypothesis.
+Currently muon, electron, proton and charged pion hypotheses are considered. It is anticipated that these likelihoods will be used in various ways by downstream analysis code, depending on the needs of the specific analysis.
+In the present analysis, the BDT results for muon and electron hypotheses are used to identify lepton clusters and classify events. The signal and background distributions for these hypotheses are shown in 
+Figure~\ref{fig:recoannexeventclassification}.
 
 The overall performance of the reconstruction chain (from clustering to PID) has been estimated with a simple binned lepton flavor analysis, 
 to understand its ability to distinguish $\nu_{e}$ and $\nu_{\mu}$ events.
@@ -523,17 +526,17 @@ If a single lepton flavor is identified in the event, then the event is consider
 If neither or both lepton flavors are identified, the event is discarded.
 Numbers of events correctly reconstructed is above 90$\%$ for $\nu_{\mu}$-CCQE events.
 
-\fixme{Refer to the LAGUNA-LBNO PID plots}
+%\fixme{Refer to the LAGUNA-LBNO PID plots}
 
-Figure~\ref{fig:recoannexeventclassification} shows multivariate some event classification plots ...
 
 \begin{cdrfigure}[LAGNUA-LBNO event classification]{recoannexeventclassification}
-{CAPTION GOES HERE}
+{Plots showing signal and background distributions for electron (a) and muon (b) MVA hypotheses. 
+Background consists of all particles not corresponding to the relevant signal type.}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_pid_muons.pdf}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_pid_electrons.pdf}
 \end{cdrfigure}
 
-\fixme{Talk about energy reconstruction here:}
+%\fixme{Talk about energy reconstruction here:}
 
 For accepted events, the neutrino energy is estimated  assuming a CCQE event and using the two-body approximation, and also calorimetrically.
 The calorimetric reconstruction takes account of the quenching factors for the different particles by 
@@ -542,24 +545,26 @@ assuming that all hits not associated with the lepton cluster are due to hadroni
 It is seen that for high-energy muons, the measured energy saturates. This is due to the muon escaping the detector volume. 
 
 
-\fixme{Refer to the LAGUNA-LBNO Energy plots}
+%\fixme{Refer to the LAGUNA-LBNO Energy plots}
 
 Figure~\ref{fig:recoannexrecoenergynue} shows reconstructed energy versus true energy...
 Figure~\ref{fig:recoannexrecoenergynumu} shows reconstructed energy versus true energy...
 
 \begin{cdrfigure}[LAGNUA-LBNO electron neutrino energy measurement]{recoannexrecoenergynue}
-{CAPTION GOES HERE}
+{Distributions of reconstructed neutrino energy versus true neutrino energy, assuming two-body kinematics. 
+Plots shown are for $\nu_{e}$ CCQE (a) and $\nu_{\mu}$ CCQE (b).}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccqe_annex.pdf}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccres_annex.pdf}
 \end{cdrfigure}
 
 \begin{cdrfigure}[LAGNUA-LBNO muon neutrino energy measurement]{recoannexrecoenergynumu}
-{CAPTION GOES HERE}
+{Distributions of reconstructed neutrino energy versus true neutrino energy, using calorimetric energy estimation. 
+Plots shown are for  $\nu_{e}$  CC1$\pi^{+}$ (a) and $\nu_{\mu}$  CC1$\pi^{+}$ (b).}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_numu_ccqe_annex.pdf}
 \includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_numu_ccres_annex.pdf}
 \end{cdrfigure}
 
-\fixme{Be sure to properly reference LAGUNA-LBNO design study}
+%\fixme{Be sure to properly reference LAGUNA-LBNO design study}
 
 \subsection{Calibration}
 
