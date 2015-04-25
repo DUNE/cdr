@@ -47,14 +47,14 @@ and also in the DAQ and other sections.
 \subsubsection{Assumptions}
 \label{sec:detectors-sc-infrastructure-assumptions}
 According to the present baseline design, the Far Detector (Liquid Argon TPC) in DUNE will consist
-of four identical modules of 10kt each.
+of four identical modules of \tpcdetectormass each.
 For purposes of this document the issue of possible variations in the design and/or characteristics
 between these modules shall not be addressed, as there is no concrete information developed at
 this point to support this approach. A few basic assumptions will need to be used:
 \begin{itemize}
 \item Estimates presented below correspond to the ``full detector'', i.e. is effectively
-normalized to 40kt.
-\item Accelerator spill cycle is 1.2s
+normalized to \dunedetectormass.
+\item Accelerator spill cycle is \beamspillcycle
 \item Zero-Suppression thresholds will be set at levels that preserve signals from minimum-ionizing particles.
 \item The intensity of the beam provided by LBNF will affect the data rates for a few detector
 systems in DUNE (cf. the Near Detecor).
@@ -82,10 +82,11 @@ Once again, the Annex ``Expected Data Rates for the DUNE Far Detector''
 provides a useful reference, and estimated presented below are derived from
 the parameters listed there. Consider the following LAr TPC parameters:
 \begin{itemize}
-\item Readout channel count: 1,536,000 (i.e. four times 384,000 which is the channel count for each 10kt module)
-\item Drift Time: approx. 2ms
-\item Number of drift time windows in one DAQ readout cycle: 2.4
-\item ADC clock frequency: approx. 2MHz
+\item TPC channel count: \dunenumberchannels (i.e. four times
+  \daqchannelsperdetector which is the channel count for each \tpcdetectormass module)
+\item Maximum drift Time: \tpcdrifttime
+\item Number of drift time windows in one DAQ readout cycle: \daqdriftsperreadout
+\item ADC clock frequency: approx. \daqsamplerate
 \item ADC resolution (bits): 12
 \end{itemize}
 \
@@ -104,30 +105,33 @@ Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can 
 \item ADC resolution
 \end{itemize}
 \
-This results in a total of 23.6GB worth of TPC data. The effect of zero suppression on
+This results in a total of \dunefsreadoutsize worth of TPC data in one
+readout.
+The effect of zero suppression on
 the beam neutrino event size is dramatic and Monte Carlo studies done with realistic neutrino
-energy spectra suggest that it will be $\sim$10MB. However, one of the possibilities that is
+energy spectra suggest that it will be $\sim$\beameventsize.
+However, one of the possibilities that is
 now actively explored by the DUNE DAQ team is to record beam event candidates (e.g. events with signals
 above the ``high threshold'' as detailed in the Annex) at very low or no threshold, corresponding
-to virtually full data stream. In that case, one can estimate the total size of the TPC data
+to virtually full data stream.
+In that case, one can estimate the total size of the TPC data
 to be collected annually by multiplying the predicted number of beam neutrino interactions
-per year (which is 10,500) by the full uncompressed event size quoted above (23.6GB). Thus one
-arrives to an estimate of roughly 250TB of this type of data per year.
+per year (estimated here to be \beamrate) by the full uncompressed event size quoted above (\dunefsreadoutsize). 
+Thus one arrives to an estimate of \beamdatayearfs for each year of this type of
+data.
 
-%According to current estimates,
-%with thresholds optimized for beam neutrino physics, zero suppression
-%gives us a reduction factor of \textasciitilde 100 in the event size, resulting
-%in a 92~MB ``digital picture'' of the beam neutrino event in the TPC
-%(discriminated against most background but \textit{still covering the complete volume of the TPC}).
-%Since neutrino interactions will result in a more local pattern of ionization signal being read out
-%from the chamber,
-%per neutral current event. Charged current will tend to have a larger data volume due to
-%a long muon track. For estimation purposes, and following the threshold levels
-%assumption in ~\ref{sec:detectors-sc-infrastructure-assumptions}, one arrives at the number of %\textasciitilde 20MB/s for the data rate which only includes the beam neutrino type of events.
-%As discussed above, most of implications of the SNB signal and trigger are mostly relevant for the front-end and DAQ system, however it's worthwhile to
-%understand what needs to be provided to preserve such possible signal and commit data to mass storage. There are many uncertainties about signatures
-%and signal to noise ratio for the relevant reactions in the detector volume, but it's safe to assume that the thresholds for such events will need to be set
-%at very low levels and the data will be dominated by radiological backgrounds.
+Some of the driving zero-suppressed (ZS) and full-scale (FS) annual
+data volumes are summarized in table~\ref{tab:sc-zs-summary}.
+\fixme{The $^{39}$Ar data rate is probably not correct as depending on
+  the ZS level much of its spectrum is below threshold.
+This still needs further work from physics and DAQ groups.}
+\begin{table}[htbp]
+  \centering
+  \caption{Annual data volume estimations for zero-suppressed (ZS) data from various sources.
+  An additional full-stream (FS) data estimation is given for supernova burst (SNB).}
+  \input{generated/annex-rate-zs-volume-summary}
+  \label{tab:sc-zs-summary}
+\end{table}
 
 
 \subsubsection{Far Detector Photon Detector (PD)}
@@ -163,12 +167,20 @@ Based on these parameters, the upper limit of the ND data rate can be estimated 
 For the purposes of this document, processed data is defined as most data which is not considered ``raw'', i.e. it's data derived from raw (including possibly multiple stages
 of calibration and reconstruction) as well as data produced as a result of Monte Carlo studies.
 
-There are uncertainties in anticipated quantities of all of these types of data, but based on the estimated annual raw data volume of 0.6PB, and assuming that
-the data will undergo a few processing stages, one can expect the need to handle \textasciitilde 2PB of data annually for reconstruction and a lesser
+There are uncertainties in anticipated quantities of all of these types of data.
+Depending on the optimum readout strategy, an annual raw data volume of
+\SI{1}{\tera\byte} to \SI{1}{\peta\byte} may be collected.
+Assuming that
+the data will undergo a few processing stages, one can expect the need
+to handle as much as \textasciitilde \SI{2}{\peta\byte} of data annually for reconstruction and a lesser
 volume for final analysis purposes.
 
-For Monte Carlo, at the time of writing typical annual volume of data produced has been of the order of a few tens of terabytes. With Collaboration growing
-and more detailed studies (e.g. of systematics) are undertaken, our expectation is that DUNE will require 100TB annually for storage of its MC data.
+For Monte Carlo, at the time of writing typical annual volume of data produced has been of the order of a few tens of terabytes.
+Initial expectations are that the MC sample size for beam events will
+need to be $10$ -- $100\times$ that of the data.
+With Collaboration growing
+and more detailed studies (e.g. of systematics) are undertaken, our
+expectation is that this estimate will increase.
 
 \subsection{Computing Model}
 \label{sec:detectors-sc-infrastructure-computing-model}
@@ -241,7 +253,9 @@ For the Photon Detector in the dual-phase design:
 % Beam simulation in the Beam Requirements chapter
 %\subsubsection{Beam Simulation}
 %\label{sec:detectors-sc-physics-software-simulation-beam}
-% ND simulation to be dealt with in the ND chapter
+% ND simulation and reconstruction in the ND chapter
+%\subsection{Near Detector Reconstruction}
+%\label{sec:detectors-sc-physics-software-reconstruction-nd}
 %\subsubsection{Near Detector Simulation}
 %\label{sec:detectors-sc-physics-software-simulation-nd}
 
@@ -251,9 +265,9 @@ For the Photon Detector in the dual-phase design:
 Detailed GEANT4-based~\cite{GEANT4:NIM,GEANT4} Monte Carlo simulations have been 
 developed for the single-phase and dual-phase Far Detector designs,
 incorporating both the Liquid Argon TPC modules
-and the photon detection systems. The simulated data provide
+and the photon detection systems. The simulatiosn provide
 a basis for detailed studies of detector design and performance, 
-and enable the development of automated event reconstruction algorithms.
+and also enable the development of automated event reconstruction algorithms.
 
 The single-phase detector simulation is implemented in LArSoft~\cite{Church:2013hea},
 which provides a common simulation framework for Liquid Argon TPC experiments.
@@ -279,8 +293,8 @@ of particles and to model their energy deposition.
 Custom algorithms have been developed to propagate the drifting charge
 and scintillation photons through the detector, and to simulate the
 response characteristics of the TPC wires, readout electronics, and photon detectors.
-Figure~\ref{fig:larsofteventdisplays} shows some examples of accelerator
-neutrino interactions simulated using the MicroBooNE detector geometry.
+Figure~\ref{fig:larsofteventdisplays} shows some examples of simulated 
+accelerator neutrino interactions using the MicroBooNE detector.
 
 \begin{cdrfigure}[Simulated neutrino interactions in MicroBooNE]{larsofteventdisplays}
 {Examples of accelerator neutrino interactions, simulated by LArSoft in the 
@@ -295,24 +309,25 @@ that decayed into two photons with separate conversion vertices.}
 \includegraphics[width=\textwidth]{nc_pi0sep_annotated.pdf}
 \end{cdrfigure}
 
-%\subsection{Near Detector Reconstruction}
-%\label{sec:detectors-sc-physics-software-reconstruction-nd}
-
 \subsection{Far Detector Reconstruction}
 \label{sec:detectors-sc-physics-software-reconstruction-fd}
 
 The reconstruction of particle interactions in Liquid Argon TPC
-detectors is an active area of research and development and
-there has been considerable progress in recent years. 
+detectors is an active area of research and development,
+which has advanced significantly in recent years.
 In particular, the data from the ICARUS~\cite{Amerio:2004ze,icarus-url,ICARUS-pizero,Antonello:2012hu} 
 and ArgoNEUT experiments~\cite{Adamson:2013/02/28tla,argoneut-url,Acciarri:2013met}
 have enabled the development of a variety of new reconstruction techniques,
-forming the basis for precision measurements of neutrino physics.
+forming the basis for precision neutrino physics measurements.
 With the advancement of both single-phase and dual-phase technologies,
 and expansion of the experimental program to include MicroBooNE~\cite{Chen:2007ae,microboone-url},
 the 35-ton prototype and the CERN test experiments,
-reconstruction tools has continued to grow in both volume and sophistication,
-supported by the powerful software frameworks such as LArSoft and Qscan.
+the reconstruction software has continued to grow in both volume and sophistication,
+supported by powerful multi-purpose and shared frameworks 
+such as LArSoft and Qscan.
+
+%Say that DUNE programme will require reconstruction of accelerator
+%neutrinos, supernova bursts, atmospheric neutrinos and proton decay ...
 
 A fully automated chain of event reconstruction algorithms
 will be developed for the DUNE Far Detector.
@@ -322,9 +337,9 @@ The first stage of reconstruction involves the processing of the
 noisy ADC wire signals, and the creation of 2D `hits'. 
 These hits provide the input for a series of pattern recognition algorithms,
 which form 2D and 3D clusters, representing individual particle tracks and showers.
-A set of high-level algorithms are then used to reconstruct the vertex
-and 3D trajectory of each particle, identify the type of particle,
-and fit the four-momentum.
+A set of high-level algorithms are then used to reconstruct the 
+3D vertex and trajectory of each particle, identify the type of particle,
+and determine the four-momentum.
 While each stage of the reconstruction chain has been implemented,
 the algorithms are not yet fully optimised and are subject to
 continuous improvement.
@@ -335,9 +350,21 @@ continuous improvement.
 \end{cdrfigure}
 
 
+\begin{cdrfigure}[Dual-phase LArTPC reconstructed events for data and MC]{lbnoeventsdisplay}
+{
+%Badertscher:2012dq
+Dual-phase LArTPC reconstructed events for data and MC.
+Top: Cosmic ray event displays for an hadronic shower candidate.
+Bottom: Reconstructed hits for a MC simulation of a 5 GeV $\nu_{\mu}$ interaction.
+The secondary particles produced in the two interactions are distinguished with different colors based on the MC truth information (blue=muon, green=electron, red=proton, cyan=pion).
+}
+\includegraphics[width=0.99\textwidth]{LArTPC-3L-LEM-cosmics.png}
+\includegraphics[width=0.99\textwidth]{LBNO-MC-nu_mu_event.png}
+\end{cdrfigure}
+
 \subsubsection{Signal Processing, Hit Finding, and Disambiguation}
 
-The data are first uncompressed, the noise is reduced by filtering,
+After first uncompressing the data, the noise is reduced by filtering,
 and a deconvolution of the detector and electronics response is applied.
 The pulse-shape models used to deconvolute the response are currently
 based on {\it a priori} predictions, but these will be tuned and
@@ -362,9 +389,19 @@ identifying ``triplets'' of hits that have intersecting wire segments
 and consistent arrival times. In most events, the majority of hits are
 associated with a single wire segment, and can be trivially disambiguated.
 The remaining hits are then disambiguated by clustering them with trivially disambiguated hits.
-The disambiguation procedure constitutes the first pattern recognition stage 
-in the single-phase detector.  The performance of the disambiguation algorithm is
-discussed in the Annex~\cite{annex:disambiguation}.
+The performance of the disambiguation algorithm is discussed in the Section~\cite{annex:disambiguation}.
+
+\fixme{3L dual-phase proto hit reco}
+Specific hit finding algorithms have been developed for Dual-phase LAr-TPC charge signals.
+Raw waveforms are processed in order to assure effective noise reduction and subtraction of the baseline.
+Hits, defined as signals that are discriminated from the noise, are then identified and reconstructed.
+The hit finding algorithms extract multiple hit information by fitting the waveform function of the signal.
+The main parameters determined for the fitted hits are the hit time and the hit integral.
+The procedure has been successfully tested during several phases of R$\&$D and prototyping on small-scale double phase LAr-LEM-TPC setups \cite{Badertscher:2008rf,Badertscher:2012dq}.
+Figure~\ref{fig:lbnoeventdisplay} shows events display from reconstructed hits for both data and MC events.
+Detailed description of the signal processing and hit finding for the dual-phase charge readout can be found in the Sections~\cite{annex:dual-phase-signal-proc} and \cite{annex:dual-phase-hit-find}.
+
+
 
 \subsubsection{Optical Detector Signal Reconstruction}
 
@@ -379,8 +416,8 @@ estimate.
 
 After the hit-finding and disambiguation stages have completed, a series of 
 pattern recognition algorithms are applied to the 2D hits in order to identify 
-the 3D tracks and showers produced by the final-state particles in an event.
-The reconstruction of 3D particles is accomplished either by forming 2D clusters
+the 3D tracks and showers produced by individual final-state particles in an event.
+The reconstruction of 3D particles can be accomplished either by forming 2D clusters
 and associating them between views, or by first associating 2D hits between views
 and then clustering the resulting 3D hits. 
 The clustering of hits in Liquid Argon TPC detectors is a challenging task
@@ -403,20 +440,6 @@ Vertex-finding algorithms are also applied,
 and neutrino events are reconstructed by associating the 
 3D particles to the primary interaction vertex.
 
-The PANDORA reconstruction chain has been developed using accelerator neutrinos 
-in the energy range 100\,MeV\,$-$\,25\,GeV.
-Figure~\ref{fig:pandoraefficiency} shows the efficiency for reconstructing
-the leading final-state lepton as a function of its momentum
-for 5\,GeV $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions
-simulated in the MicroBooNE detector.
-In both samples, the reconstruction efficiency increases rapidly with momentum,
-rising above 90\% at 500\,MeV and reaching approximately 100\% at 2\,GeV.
-Figure~\ref{fig:recoannexpandoravertexresolution} shows the spatial resolution for
-reconstructing the primary interaction vertex in these 5\,GeV event samples,
-projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex 
-resolution is obtained by taking the 68\% quantile of 3D vertex residuals, 
-which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
-
 \begin{cdrfigure}[PANDORA reconstruction efficiency]{pandoraefficiency}
 {Reconstruction efficiency of Pandora pattern recognition algorithms
  for the leading final-state lepton in 5\,GeV $\nu_{\mu}$ CC (left) and
@@ -436,11 +459,22 @@ which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 \includegraphics[width=0.49\textwidth]{pandora_uboone_vertex_resolution_nuecc.pdf}
 \end{cdrfigure}
 
+Figure~\ref{fig:pandoraefficiency} shows the current efficiency for reconstructing
+the leading final-state lepton as a function of its momentum
+for 5\,GeV $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions
+simulated in the MicroBooNE detector.
+In both samples, the reconstruction efficiency increases rapidly with momentum,
+rising above 90\% at 500\,MeV and reaching approximately 100\% at 2\,GeV.
+Figure~\ref{fig:recoannexpandoravertexresolution} shows the spatial resolution for
+reconstructing the primary interaction vertex in these 5\,GeV event samples,
+projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex 
+resolution is obtained by taking the 68\% quantile of 3D vertex residuals, 
+which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
+
 
 \subsubsection{Track Fitting and Shower Measurement}
 
-\fixme{Fix references here}
-
+%\fixme{Fix references here}
 %%%% Ref1: ICARUS (Ankowski:2006ts) -- A. Ankowski et al, Eur. Phys. J. C 48, 667 (2006)
 %%%% Ref2: ArgoNEUT -- Can't find the words Kalman Filter in their papers!
 %%%%   Statements comes from MicroBooNE TDR...
@@ -452,69 +486,75 @@ which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 %%%%   Research Infrastructures, grant agreement number: 284518.
 %%%% Ref5: Warwick -- J. J. Back et al, Eur. Phys. J. C 74, 2832 (2014)
 
-The 2D and 3D clusters identified at the pattern recognition stage
-are passed to a series of high-level reconstruction algorithms,
+After the pattern recognition stage, a series of high-level reconstruction
+algorithms are applied to the 2D and 3D clusters,
 which fit the trajectories of particle tracks and measure the
 spatial and calorimetric properties of electromagnetic and hadronic showers.
 A range of different high-level techniques have been demonstrated 
-using both real and simulated data.
+for use in Liquid Argon TPC detectors using both real and simulated data.
 
-%The three-dimensional reconstruction of tracks can proceed either 
-%directly from 2D hits or via 3D space points, 
-%calculated by matching 2D clusters between views.
-The well-established Kalman filter technique~\cite{kalman} has been applied
-to 3D track reconstruction by both ICARUS~\cite{REF1} and ArgoNeuT~\cite{REF2}.
-This technique incorporates the effects of multiple Coulomb scattering,
-enabling a scattering-based estimate of the track momentum,
-which is shown by ICARUS to be as good as $\Delta p/p \approx 10\%$, 
-depending mainly on the track length~\cite{REF3}.
+The Kalman filter technique~\cite{kalman} is well-established in high energy physics,
+and has been applied to 3D track reconstruction by both ICARUS~\cite{REF1} and ArgoNEUT~\cite{REF2}.
+The technique incorporates the effects of multiple Coulomb scattering,
+enabling a scattering-based measurement of the track momentum,
+which is shown by ICARUS to have a resolution as good as $\Delta p/p \approx 10\%$ 
+for the most favourable track lengths~\cite{REF3}.
 The data from ICARUS have also been used to develop a precise
-track reconstruction, which builds a 3D trajectory for each track by simultaneously
+track reconstruction algorithm, which builds a 3D trajectory for each track by simultaneously
 optimising its 2D projections to match the observed data~\cite{Antonello:2012hu}.
-Another promising technique, based on the local principal curve algorithm, 
+Another promising track reconstruction technique, based on the local principal curve algorithm,
 has been implemented in conjunction with the development of the 
-dual-phase detector concept~\cite{REF4}, and is shown to provide 
+dual-phase detector concept~\cite{LAGUNA-LBNO-deliv}, and is shown to provide 
 a precise reconstruction of two-particle event topologies~\cite{REF5}. 
 
-A full 3D reconstruction of electromagnetic showers is currently in development,
-but a working model exists. The first stage is an examination of clusters 
+A full 3D reconstruction of electromagnetic showers is currently in development.
+In the present scheme, the first stage is an examination of clusters 
 in terms of their 2D parameters, and a selection of shower-like clusters 
-for further analysis. The 3D start position and principal axes of the shower 
-are then reconstructed by matching up its 2D hits between views.
-These 3D parameters allow the calculation of the ionization energy deposition
-in the initial part of the shower, which is used in particle identification. 
+for further analysis. The 3D start position, principal axis,
+and shower shape variables are then reconstructed by matching up 2D hits between views.
+These 3D parameters, combined with calorimetric information, enable a measurement
+of the total shower energy, as well discrimination between electrons
+and converted photons based on the ionization energy in the initial part of
+the shower. The kinematic reconstruction of final-state neutral pions from their
+$\pi^{0} \rightarrow \gamma\gamma$ decays can be performed by 
+combining together associated pairs of photons.
 
-\fixme{Should include a sentence on pi0 reconstruction here}
 
 \subsubsection{Calorimetry and Particle Identification}
 
 The measurement of the ionization density $dE/dx$ is important
 for particle identification and energy measurement.
-The algorithm for reconstructing the ionization
-energy in LArSoft is optimized for line-like tracks and is being
-extended to showers.  The measured charge on each hit is obtained from
-fits to the pulse shapes in ADC counts vs. time, and calibrated to units
-of fC.  The charge loss due to the finite electron lifetime is corrected for
-using the time of the event.  Geometrical effects from the track angle are
-included as the amount of path length corresponding to each hit depends on the
-track and wire angles.  The effects of recombination, known as ``charge quenching''
-are corrected using a modified Box model~\cite{Thomas:1987zz} or Birks' Law`\cite{Birks:1964zz}.
-
-The identity of charged particles which range out in the LArTPC active
-volume may be ascertained by comparing the ionization density $dE/dx$ as a function
-of residual range, the distance from a point along the track to the end of the
-track, with predictions for different particle species.  Various techniques,
-from $\chi^2$ comparisons to neural networks to the PIDA variable described
-in Section~\ref{annex:reco-pid}~\cite{Acciarri:2013met}.
+In order to reconstruct this information, the measured charge on each hit 
+is first obtained from fits to the pulse shapes.
+The charge loss due to the finite electron lifetime is then corrected
+based on the time of the event, and the path length corresponding
+to each hit is calculated based on the event trajectory.
+The effects of recombination, known as ``charge quenching''
+are corrected using a modified Box model~\cite{Thomas:1987zz} 
+or Birks' Law`\cite{Birks:1964zz}.
+The identity of a particle track which ranges out in the active detector volume
+may be ascertained by analysing the ionization density $dE/dx$ as a function of 
+the residual range from the end point of the track.
+Various analysis techniques have been developed
+As described in Section~\ref{annex:reco-pid}, various analysis techniques
+have been developed for comparing the $dE/dx$ information to the predictions
+for different particle species.
  
-\fixme{Do we have any calorimetry plots? (LBNO PID and Energy follows:)}
+\fixme{Do we have any calorimetry plots?}
 
-In Qscan, a multivariate analysis was used to separate particle types based on the spatial characteristics of their clusters.
+\subsubsection{Neutrino Event Reconstruction and Classification}
+
+Once all the final-state particles from a neutrino interaction have been 
+individually reconstructed, the combined information is used to 
+reconstruct and classify the neutrino event.
+
+In Qscan, a multivariate analysis (MVA) was used to separate particle types based on the spatial characteristics of their clusters
+\cite{WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI}.
 Several quantities are calculated to 
 characterize the cluster: the lateral spread, the mean charge-weighted inverse distance of hits to the primary cluster axis
 (this is expected to distinguish effectively between showers and tracks), the $dE/dx$.
 These variables are then fed into Boosted Decision Trees analyses, 
-each calculating the signal and background likelihoods for a particular particle hypothesis
+each calculating the signal and background likelihoods for a particular particle hypothesis.
 
 The overall performance of the reconstruction chain (from clustering to PID) has been estimated with a simple binned lepton flavour analysis, 
 to understand its ability to distinguish $\nu_{e}$ and $\nu_{\mu}$ events.
@@ -522,7 +562,24 @@ If a single lepton flavour is identified in the event, then the event is conside
 If neither or both lepton flavours are identified, the event is discarded.
 Numbers of events correctly reconstructed is above 90$\%$ for $\nu_{\mu}$-CCQE events.
 assuming that all hits not associated with the lepton cluster are due to hadronic activity.
+For accepted events, the neutrino energy is estimated  assuming a CCQE event and using the two-body approximation, and also calorimetrically.
+The calorimetric reconstruction takes account of the quenching factors for the different particles by 
+assuming that all hits not associated with the lepton cluster are due to hadronic activity.
+Figure~\ref{fig:recoenergynue} shows the results of the kinematic energy reconstruction for $\nu_e$ CCQE and CC1$\pi^{+}$ events.
 
-\fixme{Show LBNO reco vs true energy plot}
+\begin{cdrfigure}[Reconstruction of electron neutrino energy]{recoenergynue}
+{Dual-phase LArTPC neutrino energy measurement. Distributions of reconstructed neutrino energy versus true neutrino energy: assuming two-body kinematics,  $\nu_{e}$ CCQE events, (a) 
+and using calorimetric energy estimation, $\nu_{e}$  CC1$\pi^{+}$ events (b).}
+\includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccqe.pdf}
+\includegraphics[width=0.49\textwidth]{laguna_lbno_recoenergy_nue_ccres.pdf}
+\end{cdrfigure}
+
+
+
+
+
+%\fixme{Be sure to properly reference LAGUNA-LBNO design study: }
+%\cite{WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI}
+
 
 

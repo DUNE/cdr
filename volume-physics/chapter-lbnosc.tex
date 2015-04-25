@@ -397,6 +397,7 @@ Figure~\ref{fig:mh_nominal} shows the significance with which the MH can be dete
 \begin{cdrfigure}[Mass hierarchy sensitivity as a function of exposure]{mh_exposure}{The minimum significance with which the mass hierarchy can be determined for all values of \deltacp as a function of exposure.  The shaded region represents the range in sensitivity due to potential variations in the beam design. This plot assumes normal mass hierarchy.}
  \includegraphics[width=0.7\textwidth]{mh_exp}
 \end{cdrfigure}
+\fixme{We are considering an update to Fig~\ref{fig:mh_exposure} where we show CP coverage at 5sigma as a function of exposure, instead of the significance for a fixed CP coverage of 100\% (which is the current version).}
 
 Figures~\ref{fig:mh_theta23}, \ref{fig:mh_theta13}, and \ref{fig:mh_deltamsq} show the variation in the MH sensitivity due to different values of $\theta_{23}$, $\theta_{13}$, and \dm{31} within the allowed ranges.  The value of $\theta_{23}$ has the biggest impact on the sensitivity, and the least favorable scenario corresponds to a true value of \deltacp in which the MH asymmetry
 is maximally offset by the leptonic CP asymmetry, and where, independently, 
@@ -526,12 +527,13 @@ Figure~\ref{fig:cpv_nominal} shows the significance with which the CP violation 
  \includegraphics[width=0.49\textwidth]{cpv50_exp}
  \includegraphics[width=0.49\textwidth]{cpv75_exp}
 \end{cdrfigure}
+\fixme{We are considering an update to Fig~\ref{fig:cpv_exposure} where we show CP coverage at 3sigma or 5sigma as a function of exposure, instead of the significance for a fixed CP coverage of 50\% and 75\% (which is the current version).}
 
 \fixme{Check required exposure values.}
 \begin{cdrtable}[Required exposure for a CP violation measurement]{lcc}{cpv_requiredexposure}{The minimum exposure required to determine CP violation with a significance of 3$\sigma$ for 75\% of \deltacp values or 5$\sigma$ for 50\% of \deltacp values for the CDR reference beam design and the optimized beam design.}
  Significance & CDR Reference Design & Optimized Design\\
  \toprowrule
- 3$\sigma$ for 75\% of \deltacp values & xxxx~kt-MW-yr & 890~kt-MW-yr \\
+ 3$\sigma$ for 75\% of \deltacp values & 1300~kt-MW-yr & 890~kt-MW-yr \\
  5$\sigma$ for 50\% of \deltacp values & 550~kt-MW-yr & 900~kt-MW-yr\\
 \end{cdrtable}
 
@@ -593,6 +595,22 @@ octant.  The $\Delta\chi^2$ metric is defined as:
 where the value of $\theta_{23}$ in the \emph{wrong} octant is constrained 
 only to have a value within the \emph{wrong} octant (i.e., it is not required
 to have the same value of $\sin^22\theta_{23}$ as the true value).
+Figure~\ref{fig:octant} shows the sensitivity to determining the octant as a function of $\theta_{23}$ for an exposure of 300~kt-MW-yr.  Figure~\ref{fig:res_th23} shows the resolution of $\sin^2\theta_{23}$ as a function of exposure, assuming the true value is $\sin^2\theta_{23} = 0.45$ from the current global fit.
+
+% \begin{cdrfigure}[Octant sensitivity]{octant}{The significance with which DUNE can resolve the $\theta_{23}$ octant for 300~kt-MW-yr. The shaded region represents the range in sensitivity due to potential variations in the beam design and in the true value of \deltacp. }
+%  \includegraphics[width=0.7\textwidth]{}
+% \end{cdrfigure}
+
+\begin{cdrfigure}[Resolution of $\sin^2\theta_{23}$ as a function of exposure]{res_th23}{The resolution of a measurement of $\sin^2\theta_{23}$ as a function of exposure assuming normal MH and $\sin^2\theta_{23} = 0.45$ from the current global fit. The shaded region represents the range in sensitivity due to potential variations in the beam design.  }
+ \includegraphics[width=0.7\textwidth]{res_th23_exp}
+\end{cdrfigure}
+
+
+As mentioned in Section~\ref{sec:physics-lbnosc-cpv}, DUNE will seek not only to demonstrate explict CP violation by observing a difference in the neutrino and antineutrino oscillation probabilities, but also to measure the value of the parameter \deltacp.  Figure~\ref{fig:res_cp} shows the resolution of \deltacp as a function of exposure for a CP-conserving value (\deltacp = 0) and the value that gives the maximum CP violation for normal MH (\deltacp = 90\mbox{$^{\circ}$}).
+
+\begin{cdrfigure}[Resolution of \deltacp as a function of exposure]{res_cp}{The resolution of a measurement of \deltacp as a function of exposure assuming normal MH.  The resolution is shown for a CP-conserving value (\deltacp = 0) and the value that gives the maximum CP violation for normal MH (\deltacp = 90\mbox{$^{\circ}$}). The shaded region represents the range in sensitivity due to potential variations in the beam design.  }
+ \includegraphics[width=0.7\textwidth]{res_dcp_exp}
+\end{cdrfigure}
 
 The rich oscillation structure that can be observed by DUNE and the
 excellent particle identification capability of the detector
@@ -616,47 +634,219 @@ precision expected from the reactor experiments.
 Whereas the reactor experiments measure $\theta_{13}$ using $\overline{\nu}_e$
 disappearance, DUNE will measure it through $\nu_e$ and
 $\overline{\nu}_e$ appearance, thus providing an independent constraint on
-the three-flavor mixing matrix. 
+the three-flavor mixing matrix.   Figure~\ref{fig:res_th13} shows the resolution of $\sin^22\theta_{13}$ as a function of exposure, assuming the true value is $\sin^22\theta_{13} = 0.085$ from the current global fit.
+
+\begin{cdrfigure}[Resolution of $\sin^22\theta_{13}$ as a function of exposure]{res_th13}{The resolution of a measurement of $\sin^22\theta_{13}$ as a function of exposure assuming normal MH and $\sin^22\theta_{13} = 0.085$ from the current global fit. The shaded region represents the range in sensitivity due to potential variations in the beam design.  }
+ \includegraphics[width=0.7\textwidth]{res_th13_exp}
+\end{cdrfigure}
 
 DUNE can also significantly improve the
-resolution on $\Delta m^2_{32}$ beyond the precision of current experiments.  The
-precision on $\Delta m^2_{32}$ will ultimately depend on tight control
-of energy-scale systematics.  Figure shows the expected 1$\sigma$ resolution
-on different three-flavor oscillation parameters as a function of exposure.
+resolution on $\Delta m^2_{31}$ beyond the precision of current experiments.  The
+precision on $\Delta m^2_{31}$ will ultimately depend on tight control
+of energy-scale systematics.  Figure~\ref{fig:res_dm2} shows the expected resolution of \dm{31} as a function of exposure, assuming the true value is \dm{31} = $2.457\times10^{-3}$~eV$^2$ from the current global fit.
 
-Octant sensitivity, resolution for delta, theta13, theta23, deltam2
+\begin{cdrfigure}[Resolution of \dm{31} as a function of exposure]{res_dm2}{The resolution of a measurement of \dm{31} as a function of exposure assuming the true value is \dm{31} = $2.457\times10^{-3}$~eV$^2$ from the current global fit. The shaded region represents the range in sensitivity due to potential variations in the beam design.  }
+ \includegraphics[width=0.7\textwidth]{res_dm_exp}
+\end{cdrfigure}
 
-\section{Testing the 3-flavour Paradigm}
+\section{Testing the 3-flavor Paradigm and the Standard Model}
 \label{sec:physics-lbnosc-3nutests}
 
-NSI, include reference NSI plot in science document.  Sterile neutrinos.  No plots.
+Due to the very small masses and large mixing of neutrinos, their oscillations over a long distance
+  act as an exquisitely precise interferometer with high sensitivity to very small perturbations caused by 
+  new physics phenomena, such as:
+  \begin{itemize}
+  \item nonstandard interactions in matter that manifest in
+    long-baseline oscillations as deviations from the three-flavor mixing model
+  \item new long-distance potentials arising from discrete symmetries
+    that manifest as small perturbations on neutrino and antineutrino
+    oscillations over a long baseline
+  \item sterile neutrino states that mix with the three known active neutrino states
+  \item large compactified extra dimensions from String Theory models that manifest through mixing
+    between the Kaluza-Klein states and the three active neutrino
+    states
+   \item Lorentz and CPT violation due to an underlying Planck-scale theory that manifest through sidereal dependence on the neutrino oscillation probabilty
+  \end{itemize}
+  Full exploitation of DUNE's sensitivity to such new phenomena
+  will require high-precision predictions of the unoscillated
+  neutrino flux at the far detector and large exposures. Studies will be conducted to understand the
+limits that DUNE could impose relative to current limits and those expected from other experiments.
+  
+\subsection{Search for Nonstandard Interactions}
+
+For $\nu_{\mu,e} \rightarrow \nu_{e,\mu}$ 
+oscillations that occur as the neutrinos propagate through matter,  
+the coherent forward scattering of $\nu_e$'s on electrons in matter 
+modifies the energy and path-length dependence of the vacuum oscillation 
+probability in a way that depends on the magnitude \emph{and} sign of $\Delta m^2_{32}$. 
+This is  the Mikheyev-Smirnov-Wolfenstein (MSW) effect~\cite{Mikheev:1986gs,Wolfenstein:1977ue}.
+NC nonstandard interactions (NSI) can be understood as nonstandard
+matter effects that are visible only in a far detector at a
+sufficiently long baseline. 
+They can be parameterized as new contributions
+to the MSW matrix in the neutrino-propagation Hamiltonian:
+
+\begin{equation}
+  H = U \left( \begin{array}{ccc}
+           0 &                    & \\
+             & \Delta m_{21}^2/2E & \\
+             &                    & \Delta m_{31}^2/2E
+         \end{array} \right) U^\dag + \tilde{V}_{\rm MSW} \,,
+\end{equation}
+with
+\begin{equation}
+  \tilde{V}_{\rm MSW} = \sqrt{2} G_F N_e
+\left(
+  \begin{array}{ccc}
+    1 + \epsilon^m_{ee}       & \epsilon^m_{e\mu}       & \epsilon^m_{e\tau}  \\
+        \epsilon^{m*}_{e\mu}  & \epsilon^m_{\mu\mu}     & \epsilon^m_{\mu\tau} \\
+        \epsilon^{m*}_{e\tau} & \epsilon^{m*}_{\mu\tau} & \epsilon^m_{\tau\tau}
+  \end{array} 
+\right)
+\end{equation}
+
+Here, $U$ is the leptonic mixing matrix, and the $\epsilon$-parameters give the
+magnitude of the NSI relative to standard weak interactions.  For new physics
+scales of a few hundred GeV,  a value of $|\epsilon| \leq 0.01$ is
+expected~\cite{Davidson:2003ha,GonzalezGarcia:2007ib,Biggio:2009nt}.
+DUNE's 1300-km baseline provides an advantage in the detection of NSI relative
+to existing beam-based experiments with shorter baselines.
+Only atmospheric-neutrino experiments have longer baselines, but the sensitivity
+of these experiments to NSI is limited by systematic effects. See \cite{Adams:2013qkq}
+for potential sensitivities to these parameters at a 1300-km baseline.
+
+\subsection{Search for Long-Range Interactions}
+
+The small scale of neutrino-mass differences implies that minute
+differences in the interactions of neutrinos and antineutrinos with
+currently unknown particles or forces may be detected through 
+perturbations to the time evolution of the flavor eigenstates.  
+The longer the experimental
+baseline, the higher the sensitivity to a new long-distance potential
+acting on neutrinos. For example, some of the models for such
+long-range interactions (LRI) as described in~\cite{Davoudiasl:2011sz} could contain discrete symmetries that
+stabilize the proton and give rise to a dark-matter candidate particle,
+thus providing new
+connections between neutrino, proton decay and dark matter
+experiments. The longer baseline of DUNE improves the sensitivity to
+LRI beyond that possible with the current generation of long-baseline
+neutrino experiments. The sensitivity will be determined by the amount
+of $\nu_\mu/\overline{\nu}_\mu$-CC statistics accumulated and the accuracy
+with which the unoscillated and oscillated $\nu_\mu$ spectra can be
+determined.
+
+\subsection{Search for Mixing between Active and Sterile Neutrinos}
+
+Searches for evidence of active-sterile neutrino mixing at DUNE can be
+conducted by examining the NC event rate at the far detector and
+comparing it to a precise estimate of the expected rate extrapolated
+from $\nu_\mu$ flux measurements from the  
+near detector and from 
+beam and detector simulations. Observed deficits in the NC rate could be evidence for mixing between the
+active neutrino states and unknown sterile neutrino states. The most recent such search
+in a long-baseline experiment was conducted by the MINOS
+experiment~\cite{Adamson:2011ku,Sousa:2015bxa}.  DUNE will provide a unique
+opportunity to revisit this search over a large
+range of neutrino energies and a longer baseline. The large detector mass and high beam power will
+allow a high-statistics sample of NC interactions to be collected.
+The high-resolution LArTPC far detector
+will enable a coarse measurement of the incoming neutrino
+energy in a NC interaction by using the event topology and correcting
+for the missing energy of the invisible neutrino.  Both the
+energy spectrum and the rate of NC interactions will be measured
+with high precision at both near and far detectors.
+
+\subsection{Search for Large Extra Dimensions}
+
+Several theoretical models propose that right-handed neutrinos
+propagate in large compactified extra dimensions, whereas the standard
+left-handed neutrinos are confined to the four-dimensional 
+brane~\cite{Machado:2011wx}. Mixing between the right-handed \emph{Kaluza-Klein} 
+modes and the standard
+neutrinos would change the mixing patterns predicted by
+the three-flavor model. The effects could manifest, for example, as distortions in the
+disappearance spectrum of $\nu_\mu$.  The rich oscillation
+structure visible in DUNE, measured with
+its high-resolution detector
+using both beam and atmospheric oscillations,
+could provide further opportunities to probe for
+this type of new physics.
+
+\subsection{Search for Lorentz and CPT Violation}
+
+Lorentz invariance and its associated CPT symmetry
+are foundational aspects of the Standard Model. However, the Standard Model is thought to be a low-energy limit of a more fundamental theory that unifies quantum physics with gravity at the Planck
+scale. As a result, an underlying theory can induce violations of Lorentz invariance and
+violations of CPT symmetry that can generate experimentally observable signals of Planck-scale physics.
+The Standard-Model Extension (SME)~\cite{Colladay:1996iz,Colladay:1998fq,Kostelecky:2003fs} is an effective field theory that contains the Standard Model, general relativity, and all possible operators that break Lorentz symmetry. (Since CPT violation implies Lorentz violation, the SME necessarily includes operators that break CPT symmetry.)  Within the SME framework, the probability for neutrino oscillations depends on the direction of neutrino propagation within a Sun-centered inertial frame~\cite{Kostelecky:2003cr,Kostelecky:2011gq}.  For a long-baseline experiment with both the neutrino beam source and detector fixed to the surface of the Earth, the Earth's rotation causes the direction of neutrino propagation to change with sidereal time.  The SME theory thus predicts a sidereal dependence of the observed beam neutrino rate.  DUNE has the potential to perform studies that explore regimes never previously investigated and to improve existing
+sensitivities obtained in other neutrino experiments.
+For example, the baseline of 1300~km offers an advantage because the sensitivity to 
+% the coefficients for
+Lorentz and CPT violation grows linearly with the baseline.   The
+beam orientation for DUNE is different from other experiments such as MINOS or T2K, so
+the combinations of coefficients for Lorentz and CPT violation appearing in the DUNE mixing probabilities are
+distinct. Additionally, the wide range of energy for the beam neutrinos and the ability to investigate both neutrino and antineutrino channels are advantageous.
 
 \section{Neutrino Beam Requirements}
 \label{sec:physics-lbnosc-beam-req}
-The LBNF neutrino facility, located at Fermilab, utilizes a conventional horn-focused neutrino beam produced from pion decay-in-flight. It will aim the beam of neutrinos toward
-the DUNE far detector located 1,300 km away at the Sanford Underground Research Facility. The neutrino facility must be designed for $\ge 20$ years of operation in order to provide adequate exposure for the DUNE experiment. During its lifetime, the facility must be able to accomodate various target and focusing configurations to enable tunability 
-in the neutrino energy spectrum, and must be suitable for upgraded targets and horns as technology improves and the primary proton beam power will increase. Such
+The LBNF neutrino facility located at Fermilab utilizes a conventional
+horn-focused neutrino beam produced from pion decay-in-flight. It will
+aim the neutrino beam toward the 
+the DUNE far detector located 1,300 km away at the Sanford Underground
+Research Facility. LBNF must be designed for approximately twenty years of operation in order to provide adequate exposure for the DUNE experiment. During its lifetime, the facility must be able to accomodate various target and focusing configurations to enable tunability 
+in the neutrino energy spectrum, and must be suitable for upgraded targets and horns as technology improves and the primary proton beam power increases. Such
 flexibility is an essential requirement for a facility that will have to operate over multiple decades. The energy range of the neutrino beam must be adaptable, in order to address new questions in neutrino physics that may come up during such a long period.
 
-The LBNF facility:
+The DUNE experiment requires that the LBNF facility
 \begin{enumerate} 
-\item shall generate a high intensity, wide-band neutrino beam, selectable for muon neutrinos or muon antineutrinos, and with low contamination of the wrong-sign component.
-\item the neutrino beam shall fully cover the energy range of the first oscillation node at $\sim 2.4$ GeV for a distance of 1,300 km, thus extending in energy from $\sim 5$ down to $\sim 1$ GeV. It shall also provide a neutrino flux as high as reasonably achievable around the second oscillation node at $\sim 0.8$ GeV, possibly requiring a dedicated focusing system configuration. Such energy range, extending from 0.5 to 5 GeV, is necessary to provide the maximum sensitivity for CP violation searches and the determination of the ordering of the neutrino masses. Focusing configurations providing neutrino energies higher than 5 GeV may still be required for a full exploration of the three-neutrino paradigm and to address anomalies that may arise during a time period of at least two decades. 
-\item shall operate with $\geq 2$ MW primary proton beam at 120 GeV/c extracted from the Main Injector. It must be able to accept lower primary proton momenta down to 60 GeV/c, since this will provide some optimization in the tuning of the energy range of the neutrinos. More importantly, the capability to lower the energy of the protons is an effective way to reduce the wrong-sign component in the neutrino flux. A reduction of up to $\sim 15 \%$ in beam power is expected as the momentum of the primary protons decreases to 60 GeV/c, since the Main Injector cycle time does not scale linearly with the energy of the accelerated protons.
-\item shall be built to provide a realistic estimation and whenever possible a reduction of the systematic errors on the knowledge of the neutrino flux, e. g. by adequate requirements on the alignment tolerances of the beamline components. Dedicated hadroproduction measurements from 60-120 GeV/c protons will be needed to reduce the uncertainty on the neutrino flux components, both from pion and kaon decays. 
-\item shall be built to ensure the stability of the produced neutrino flux by minimizing the variations in targeting angle and position of the primary proton beam, short and long term displacement of the components of the focusing system, and variations in the current pulse to the horns.
+\item Shall generate a high intensity, wide-band neutrino beam,
+  selectable for muon neutrinos or muon antineutrinos, and with low
+  contamination of electron and wrong-sign neutrinos.
+\item Shall fully cover the energy range of the first oscillation
+  node, which ranges from $\sim 1$ GeV to $\sim 5$ GeV and peaks at
+  $\sim 2.4$ GeV for a 1300 km baseline. It shall also provide a
+  neutrino flux as high as reasonably achievable around the second
+  oscillation node, which peaks at $\sim 0.8$ GeV, possibly requiring
+  a dedicated focusing configuration. An energy range extending
+  from 0.5 to 5 GeV is necessary to provide the maximum sensitivity
+  for CP violation searches and the determination of the neutrino mass
+  hierarchy. Focusing configurations providing neutrino energies
+  higher than 5 GeV may also be required for a full exploration of the
+  three-neutrino paradigm and to address anomalies that may arise
+  during the two decade lifetime of the experiment. 
+\item Shall be capable of operating with a single-turn extracted primary proton beam
+  from the Main Injector with greater than 2 MW of power. It must be
+  able to accept proton momenta between 60 and 120 GeV/c, since this
+  will enable some optimization of the neutrino energy spectrum. More
+  importantly, the capability to lower the energy of the protons is an
+  effective way to reduce the wrong-sign component in the neutrino
+  flux. A reduction of up to $\sim 15 \%$ in beam power is expected as
+  the momentum of the primary protons decreases from 120 to 60 GeV/c, since the Main Injector cycle time does not scale linearly with the energy of the accelerated protons.
+\item Shall be built to provide a realistic estimation and whenever
+  possible a reduction of the systematic errors on the neutrino flux prediction, e. g. by adequate requirements on the alignment tolerances of the beamline components. Dedicated hadroproduction measurements from 60-120 GeV/c protons will be needed to reduce the uncertainty on the neutrino flux components, both from pion and kaon decays. 
+\item Shall be built to ensure the stability of the produced neutrino flux by minimizing variations in targeting angle and position of the primary proton beam, short and long term displacement of the components of the focusing system, and variations in the current pulse to the horns.
 \end{enumerate}
 
 \subsection{Reference Beam Design}
 \label{subsec:reference-design-focusing-system}
-The reference beam design is described in detail in Volume 3. It includes a target similar to the one used for the low-energy tune of the NuMI beam~\cite{numitdr}, but of a larger thickness to accomodate the 1.2 MW primary proton beam, and focusing horns essentially identical to those currently in operation in the NuMI beamline~\cite{numitdr}. The target consists of 47 graphite segments, for a total length of the graphite core of 95 cm including the space between segments, corresponding to two interaction lengths. The upstream face of the first segment has to be positioned 45 cm upstream of the first focusing horn, to ensure sufficient clearance of the target downstream end from the horn inner conductor. The separation of the upstream faces of the two horns has been decreased to 6.6 m, compared to the 10 m distance for the low-energy tune of the NuMI beam, to slightly enhance the neutrino flux at lower energies. A helium-filled decay pipe, 4 m in diameter and 204 m in length, provides the decay volume for the secondary pions to decay to muon neutrinos. 
+The reference beam design is described in detail in Volume 3. It
+includes a target similar to the one used for the low-energy tune of
+the NuMI beam~\cite{numitdr}, but with a larger thickness to accomodate the 1.2 MW primary proton beam, and focusing horns essentially identical to those currently in operation in the NuMI beamline~\cite{numitdr}. The target consists of 47 graphite segments, for a total length of 95 cm including the space between segments, corresponding to two interaction lengths. The upstream face of the first segment has to be positioned 45 cm upstream of the first focusing horn to ensure sufficient clearance of the target's downstream end from the horn inner conductor. The separation of the upstream faces of the two horns has been decreased to 6.6 m, compared to the 10 m distance for the low-energy tune of the NuMI beam, to slightly enhance the neutrino flux at lower energies. A helium-filled decay pipe, 4 m in diameter and 204 m in length, provides the decay volume for the secondary pions to decay to muon neutrinos. 
 
-Neutrino fluxes for the reference beam are shown in Figure~\ref{fig:beam_req_reference_flux}.  By increasing the distance of the target from the first focusing horns, higher energy neutrino spectra can be produced, as shown in Figure~\ref{fig:beam_req_lemehe}. The improvement in the neutrino fluxes for a longer decay pipe length of 250 m is also shown.
+Neutrino fluxes for the reference beam are shown in
+Figure~\ref{fig:beam_req_reference_flux} for a 120 GeV primary proton
+beam.  Lowering the momentum of the primary proton beam increases
+right-sign neutrino flux at low energies and decreases wrong-sign
+contamination.  Given current projections of power versus proton
+energy, we estimate that the optimal energy for measuring
+$\delta_{CP}$ and the mass hierarchy is near 60 GeV, as shown in
+Figure~\ref{fig:beam_req_proton_energy}.   The neutrino energy
+spectrum can also be tuned by changing the distance between the target and the first focusing horn, as shown in Figure~\ref{fig:beam_req_lemehe}. The improvement in the neutrino fluxes with a longer decay pipe length of 250 m is also shown.
 
 \begin{cdrfigure}[Neutrino fluxes for the reference focusing 
   system.]{beam_req_reference_flux}{Neutrino fluxes for the reference 
     focusing system operating in neutrino mode (left) and antineutrino 
-    mode (right), generated by a 120 GeV/c primary proton beam.} 
+    mode (right), generated with a 120 GeV/c primary proton beam.} 
 \centering 
 \begin{minipage}{0.45\textwidth}
 \centering 
@@ -667,41 +857,72 @@ Neutrino fluxes for the reference beam are shown in Figure~\ref{fig:beam_req_ref
 \includegraphics[width=1.0\textwidth]{flux_RHC}
 \end{minipage}
 \end{cdrfigure}
-\begin{cdrfigure}[Neutrino flux comparison for various target
+
+\begin{cdrfigure}[Neutrino flux comparison for various target 
   positions and decay pipe lengths.] {beam_req_lemehe}{Neutrino fluxes for the 
-    reference beam design from 120 GeV/c protons, with the target starting 45 (LE), 135 (ME) 
-    and 250 (LE) cm upstream from the start of Horn 1 (left), and the
-    fractional improvement in flux for the same beam configurations 
-    when the decay pipe is lengthened to 250 m (right).}
+    reference beam design with 120 GeV/c protons, with the target starting 45 (LE), 135 (ME) 
+    and 250 (LE) cm upstream from the start of Horn 1 (left), and the 
+   fractional improvement in flux for the same beam configurations 
+    when the decay pipe is lengthened to 250 m (right). {\it This 
+      figure was generated with 200 kA horn current and will be 
+      updated to use the new reference value of 230 kA.}}
     \includegraphics[width=0.75\textwidth]{LEMEHEComp}
   \end{cdrfigure}
+
+\begin{cdrfigure}[CP and mass hierarchy sensitivity versus proton
+  momentum.]{beam_req_proton_energy}{Minimum mass hierarchy (left) and
+    median CP (right) sensitivities as a function of proton momentum.} 
+\centering 
+\begin{minipage}{0.45\textwidth}
+\centering 
+\includegraphics[width=1.0\textwidth]{summary_rp_nh_mh}
+\end{minipage}\hfill 
+\begin{minipage}{0.45\textwidth}
+\centering 
+\includegraphics[width=1.0\textwidth]{summary_rp_nh_cp_median}
+\end{minipage}
+\end{cdrfigure}
+
 \subsection{Alternative Beam Options}
 \label{subsec:alternative-focusing-systems}
 
-There are several potential modifications to the reference beam design that would improve the experiment's sensitivity to the CP violating phase and mass hierarchy.
-An option, which we will call enhanced reference beam, is still based on the NuMI focusing horn design, but includes a main upgrade to the lenght of the decay pipe, which is 
-increased to 250 m, and a thinner and shorter cylindrical beryllium target positioned 25 cm upstream of the first focusing horn. The resulting neutrino flux, generated by an 80 GeV/c primary proton beam, with the horns operated at 230 kA current, is shown in Figure~\ref{fig:beam_req_focusing_comp}. A summary of the flux improvements associated with these modifications is available in Table~\ref{tab:beam_req_reference_options}.
-\begin{cdrtable}[Optional flux improvements]{ccc}{beam_req_reference_options}
-{Percent changes in muon neutrino flux (integrated over two different energy regions) of the enhanced reference beam, for each of the modifications relative to a reference beam operated with 120 GeV/c protons and 200 kA horn current.} 
- &  0.5-2 GeV & 2-5 GeV \\ \toprowrule  
-84 cm Cylindrical Beryllium Target &  &  \\  
-250 m Decay Pipe & 6.4 & 12.5 \\  
-230 kA Horn Current & 4.8 & 13.5\\    
-80 GeV Proton Beam & 1.4  & -3.9 \\
-Total & & \\
-\end{cdrtable} 
+There are several potential modifications to the reference beam design that would improve the experiment's sensitivity to the CP violating phase and mass hierarchy. 
+One option, which we will call enhanced reference beam, is based on 
+the NuMI focusing horn design but uses a thinner and shorter 
+cylindrical beryllium target positioned 25 cm upstream of the first 
+focusing horn. We consider two decay pipe configurations for this 
+enhanced reference beam, one 204 m long and 6 m in diameter and the other 
+250 m long and 4 meters in diameter.  The neutrino fluxes for these 
+options, generated with an 80 GeV/c primary proton beam is shown in 
+Figure~\ref{fig:beam_req_focusing_comp}. 
   
-The option offering the largest gains in sensitivity is a redesign of the focusing system, including target and horns, which would require a modification of the dimensions
-of the present target chase.  To identify optimal designs, a genetic algorithm was been implemented to search for beam configurations that maximize sensitivity to CP violation.
+The option offering the largest gains in sensitivity is a redesign of the focusing system, including target and horns, which would require a modification of the dimensions 
+of the present target chase.  To identify optimal designs, a genetic algorithm was been implemented to search for beam configurations that maximize sensitivity to CP violation. 
 The procedure is inspired by a similar one developed by the LBNO collaboration , and considers 20 beamline parameters governing the primary proton energy, target dimensions, 
 and horn shapes, positions and current. Figure~\ref{fig:beam_req_opthorn} shows the shape and the relative parameters used for the optimization of the first focusing horn, 
 while the second focusing horn is modeled as a NuMI-style horn, but allowed to rescale both in radial and longitudinal dimensions. The procedure yields horn size and shapes 
-similar to those found by the LBNO collaboration~\cite{LBNO}. The first focusing horn is $\sim 5.5$ m in length and $\sim 1.3$ m in diameter. It is important to note that this 
+similar to those found by the LBNO collaboration~\cite{LBNO}. The first focusing horn is $\sim 5.5$ m in length and $\sim 1.3$ m in diameter. This 
 optimized beam configuration includes a second focusing horn that is 32\% longer and 7.8 m further downstream than that of the reference focusing design.  This option would 
-require an increase both in lenght, by $\sim 9$ m, and in width, by $\sim 60$ cm, of the target chase in the reference design.  Such optimized beam, as shown in 
+require an increase both in lenght, by $\sim 9$ m, and in width, by 
+$\sim 60$ cm, of the target chase in the reference design.  Such an optimized beam, as shown in 
 Figure~\ref{fig:beam_req_focusing_comp}, produces a muon neutrino flux that is XX\% greater than the nominal configuration at the first oscillation maximum, 
 XX\% greater at the second oscillation maximum, and reduces the antineutrino contamination of the beam. The optimized beam leads to improvements in sensitivity to both mass hierarchy 
 and CP violation. Refinement of the optimization procedure, and evaluation of the feasibility of the optimized designs are in progress. 
+
+Figure~\ref{fig:beam_req_focusing_comp} shows a comparison of fluxes 
+for the reference, enhanced reference and optimized beam configurations.  The optimized focusing system substantially 
+increases flux in the 0.5-4 GeV region while decreasing wrong sign 
+contamination.  Sensitivity to $\delta_{CP}$ and the mass hierarchy as 
+a function of the exposure for the two 
+
+\begin{cdrfigure}[Flux, event rates and CP sensitivities of alternative beam designs compared to the reference beam]
+{beam_req_focusing_comp}{Neutrino mode muon 
+    neutrino fluxes (top left), neutrino mode $\nu_e$ signal rates 
+    (top right), antineutrino mode $\nu_e$ background rates (bottom left) and 
+    sensitivities to $\delta_{cP}$ (bottom right) for several beam designs, including the 
+    reference, the enhanced reference, and the optimized beam described in section~\ref{sec:alternative-focusing-systems}}
+  \includegraphics[width=0.66\textwidth]{BeamOptCDR}
+\end{cdrfigure}
 
 \begin{cdrfigure}[Radial view of the first horn shape considered in focusing system 
   optimization]{beam_req_opthorn}{First focusing horn design considered 
@@ -711,58 +932,6 @@ and CP violation. Refinement of the optimization procedure, and evaluation of th
   \includegraphics[width=0.75\textwidth]{horn1}
 \end{cdrfigure}
 
-%The optimization parameters,
-%their allowed ranges and the parameters chosen by the genetic
-%algorithm, are shown in Table~\ref{tab:beam_req_opt_parameters}.
-%\begin{cdrtable}[Parameters of focusing system optimization]{ccc}{beam_req_opt_parameters}
-%{Parameters considered in focusing system optimization.  The first 
- % 12 govern the shape of Horn 1 (see 
- % Figure~\ref{fig:beam_req_opthorn}).  The second focusing horn was 
- % constrained to be similar to the NuMI design, modified by radial and 
-  %longitudinal scale factors and a radial offset.  The target design 
- % was also fixed to the NuMI design, with a variable length and 
- % width.} 
-%Parameter &  Allowed Range & Preferred Value \\ \toprowrule  
-%Horn 1 $r_1$ & 20 - 50 & 38 mm \\  
-%Horn 1 $r_2$ & 35 - 200 & 162 mm \\  
-%Horn 1 $r_3$ & 20 - 75 & 54 mm\\    
-%Horn 1 $r_4$ & 20 - 200 & 167 mm\\  
-%Horn 1 $r_{OC}$ & 200 - 800 & 670 mm\\  
-%Horn 1 $l_{1}$ & 800 - 2500 & 1811 mm\\  
-%Horn 1 $l_{2}$ & 50 - 1000 & 796 mm\\  
-%Horn 1 $l_{3}$ & 50 - 1000 & 594 mm\\  
-%Horn 1 $l_{4}$ & 50 - 1000 & 676 mm\\  
-%Horn 1 $l_{5}$ & 50 - 1000 & 140 mm\\  
-%Horn 1 $l_{6}$ & 50 - 1000 & 525 mm\\  
-%Horn 1 $l_{7}$ & 50 - 1000 & 997 mm\\ 
-%\colhline   
-%Horn 2 Longitudinal Scale & 0.5 - 2 & 1.32\\   
-%Horn 2 Radial Scale & 0.5 - 2 & 1.78\\    
-%Horn 2 Radial Offset & -78 - 100 & 7.6 mm \\ 
-%Horn 2 Longitudinal Position & 3000 - 15000 & 14400 mm \\
-%\colhline  
-%Target Length & 500 - 2500 & 2370 mm \\ 
-%Target Width & 9 - 15 & 9.74 mm \\
-%\colhline  
-%Proton Energy & 40 - 130 & 66 GeV \\ 
-%Horn Current & 150 - 300 & 297 kA \\
-%\end{cdrtable} 
-
-
-Figure~\ref{fig:beam_req_focusing_comp} shows a comparison of flux, signal rates, wrong sign background rates, and sensitivities to $\delta_{CP}$ in
-the reference beam to the enhanced version of the reference design and to the optimized beam configuration.  The optimized focusing system substantially
-increases flux in the 0.5-4 GeV region while decreasing wrong sign contamination.  Assuming an exposure of 150 MW-kton-yr, the net increase in 75\% $\delta_{CP}$ coverage 
-over the reference design is 27\% ({\bf{to be updated with the latest estimates}}).  Although a mass hierarchy measurement was not explicitly optimized here, the optimized beam 
-improves the minimum sensitivity to the mass hierarchy by 38\% ({\bf likewise}).   
-
-\begin{cdrfigure}[Flux, event rates and CP sensitivities of alternative beam designs compared to the reference beam]
-{beam_req_focusing_comp}{Neutrino mode muon
-    neutrino fluxes (top left), neutrino mode $\nu_e$ signal rates
-    (top right), antineutrino mode $\nu_e$ background rates (bottom left) and
-    sensitivities to $\delta_{cP}$ (bottom right) for several beam designs, including the
-    reference, the enhanced reference, and the optimized beam described in section~\ref{sec:alternative-focusing-systems}}
-  \includegraphics[width=0.66\textwidth]{BeamOptCDR}
-\end{cdrfigure}
 
 \section{Detector Requirements}
 \label{sec:physics-lbnosc-det-req}
