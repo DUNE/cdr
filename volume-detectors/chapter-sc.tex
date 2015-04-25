@@ -265,9 +265,9 @@ For the Photon Detector in the dual-phase design:
 Detailed GEANT4-based~\cite{GEANT4:NIM,GEANT4} Monte Carlo simulations have been 
 developed for the single-phase and dual-phase Far Detector designs,
 incorporating both the Liquid Argon TPC modules
-and the photon detection systems. The simulation provides
+and the photon detection systems. The simulatiosn provide
 a basis for detailed studies of detector design and performance, 
-and also enables the development of automated event reconstruction algorithms.
+and also enable the development of automated event reconstruction algorithms.
 
 The single-phase detector simulation is implemented in LArSoft~\cite{Church:2013hea},
 which provides a common simulation framework for Liquid Argon TPC experiments.
@@ -313,18 +313,18 @@ that decayed into two photons with separate conversion vertices.}
 \label{sec:detectors-sc-physics-software-reconstruction-fd}
 
 The reconstruction of particle interactions in Liquid Argon TPC
-detectors is an active area of research and development.
-Although not yet a mature field, there has been considerable progress
-in recent years.
+detectors is an active area of research and development,
+which has advanced significantly in recent years.
 In particular, the data from the ICARUS~\cite{Amerio:2004ze,icarus-url,ICARUS-pizero,Antonello:2012hu} 
 and ArgoNEUT experiments~\cite{Adamson:2013/02/28tla,argoneut-url,Acciarri:2013met}
 have enabled the development of a variety of new reconstruction techniques,
-forming the basis for precision measurements of neutrino physics.
+forming the basis for precision neutrino physics measurements.
 With the advancement of both single-phase and dual-phase technologies,
 and expansion of the experimental program to include MicroBooNE~\cite{Chen:2007ae,microboone-url},
 the 35-ton prototype and the CERN test experiments,
 the reconstruction software has continued to grow in both volume and sophistication,
-supported by powerful frameworks such as LArSoft and Qscan.
+supported by powerful multi-purpose and shared frameworks 
+such as LArSoft and Qscan.
 
 %Say that DUNE programme will require reconstruction of accelerator
 %neutrinos, supernova bursts, atmospheric neutrinos and proton decay ...
@@ -393,7 +393,7 @@ estimate.
 After the hit-finding and disambiguation stages have completed, a series of 
 pattern recognition algorithms are applied to the 2D hits in order to identify 
 the 3D tracks and showers produced by individual final-state particles in an event.
-The reconstruction of 3D particles is accomplished either by forming 2D clusters
+The reconstruction of 3D particles can be accomplished either by forming 2D clusters
 and associating them between views, or by first associating 2D hits between views
 and then clustering the resulting 3D hits. 
 The clustering of hits in Liquid Argon TPC detectors is a challenging task
@@ -416,18 +416,6 @@ Vertex-finding algorithms are also applied,
 and neutrino events are reconstructed by associating the 
 3D particles to the primary interaction vertex.
 
-Figure~\ref{fig:pandoraefficiency} shows the current efficiency for reconstructing
-the leading final-state lepton as a function of its momentum
-for 5\,GeV $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions
-simulated in the MicroBooNE detector.
-In both samples, the reconstruction efficiency increases rapidly with momentum,
-rising above 90\% at 500\,MeV and reaching approximately 100\% at 2\,GeV.
-Figure~\ref{fig:recoannexpandoravertexresolution} shows the spatial resolution for
-reconstructing the primary interaction vertex in these 5\,GeV event samples,
-projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex 
-resolution is obtained by taking the 68\% quantile of 3D vertex residuals, 
-which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
-
 \begin{cdrfigure}[PANDORA reconstruction efficiency]{pandoraefficiency}
 {Reconstruction efficiency of Pandora pattern recognition algorithms
  for the leading final-state lepton in 5\,GeV $\nu_{\mu}$ CC (left) and
@@ -446,6 +434,18 @@ which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 \includegraphics[width=0.49\textwidth]{pandora_uboone_vertex_resolution_numucc.pdf}
 \includegraphics[width=0.49\textwidth]{pandora_uboone_vertex_resolution_nuecc.pdf}
 \end{cdrfigure}
+
+Figure~\ref{fig:pandoraefficiency} shows the current efficiency for reconstructing
+the leading final-state lepton as a function of its momentum
+for 5\,GeV $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions
+simulated in the MicroBooNE detector.
+In both samples, the reconstruction efficiency increases rapidly with momentum,
+rising above 90\% at 500\,MeV and reaching approximately 100\% at 2\,GeV.
+Figure~\ref{fig:recoannexpandoravertexresolution} shows the spatial resolution for
+reconstructing the primary interaction vertex in these 5\,GeV event samples,
+projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex 
+resolution is obtained by taking the 68\% quantile of 3D vertex residuals, 
+which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 
 
 \subsubsection{Track Fitting and Shower Measurement}
@@ -467,32 +467,32 @@ algorithms are applied to the 2D and 3D clusters,
 which fit the trajectories of particle tracks and measure the
 spatial and calorimetric properties of electromagnetic and hadronic showers.
 A range of different high-level techniques have been demonstrated 
-using both real and simulated data.
+for use in Liquid Argon TPC detectors using both real and simulated data.
 
 The Kalman filter technique~\cite{kalman} is well-established in high energy physics,
 and has been applied to 3D track reconstruction by both ICARUS~\cite{REF1} and ArgoNEUT~\cite{REF2}.
 The technique incorporates the effects of multiple Coulomb scattering,
 enabling a scattering-based measurement of the track momentum,
-shown by ICARUS to have a resolution as good as $\Delta p/p \approx 10\%$ 
+which is shown by ICARUS to have a resolution as good as $\Delta p/p \approx 10\%$ 
 for the most favourable track lengths~\cite{REF3}.
 The data from ICARUS have also been used to develop a precise
 track reconstruction algorithm, which builds a 3D trajectory for each track by simultaneously
 optimising its 2D projections to match the observed data~\cite{Antonello:2012hu}.
-Another promising track reconstruction technique based on the local principal curve algorithm 
+Another promising track reconstruction technique, based on the local principal curve algorithm,
 has been implemented in conjunction with the development of the 
 dual-phase detector concept~\cite{LAGUNA-LBNO-deliv}, and is shown to provide 
 a precise reconstruction of two-particle event topologies~\cite{REF5}. 
 
 A full 3D reconstruction of electromagnetic showers is currently in development.
-In the current scheme, the first stage is an examination of clusters 
+In the present scheme, the first stage is an examination of clusters 
 in terms of their 2D parameters, and a selection of shower-like clusters 
 for further analysis. The 3D start position, principal axis,
 and shower shape variables are then reconstructed by matching up 2D hits between views.
-These 3D parameters, combined with calorimetric information, enable the measurement
-of the total energy of the shower, as well discrimination between electrons
+These 3D parameters, combined with calorimetric information, enable a measurement
+of the total shower energy, as well discrimination between electrons
 and converted photons based on the ionization energy in the initial part of
-the shower. The kinematic reconstruction final-state neutral pions from their
-$\pi^{0} \rightarrow \gamma\gamma$ decays can also be performed by 
+the shower. The kinematic reconstruction of final-state neutral pions from their
+$\pi^{0} \rightarrow \gamma\gamma$ decays can be performed by 
 combining together associated pairs of photons.
 
 
@@ -502,22 +502,27 @@ The measurement of the ionization density $dE/dx$ is important
 for particle identification and energy measurement.
 In order to reconstruct this information, the measured charge on each hit 
 is first obtained from fits to the pulse shapes.
-The charge loss due to the finite electron lifetime is corrected
+The charge loss due to the finite electron lifetime is then corrected
 based on the time of the event, and the path length corresponding
 to each hit is calculated based on the event trajectory.
 The effects of recombination, known as ``charge quenching''
 are corrected using a modified Box model~\cite{Thomas:1987zz} 
 or Birks' Law`\cite{Birks:1964zz}.
-The identity of a particle track which ranges out in the active
-volume of the detector may be ascertained by analysing the ionization density 
-$dE/dx$ as a function of residual range from the end point of the track, 
-and comparing with predictions for different particle species.  
-Various techniques, from $\chi^2$ comparisons to neural networks,
-have been developed, and are described in Section~\ref{annex:reco-pid}~\cite{Acciarri:2013met}.
+The identity of a particle track which ranges out in the active detector volume
+may be ascertained by analysing the ionization density $dE/dx$ as a function of 
+the residual range from the end point of the track.
+Various analysis techniques have been developed
+As described in Section~\ref{annex:reco-pid}, various analysis techniques
+have been developed for comparing the $dE/dx$ information to the predictions
+for different particle species.
  
 \fixme{Do we have any calorimetry plots?}
 
 \subsubsection{Neutrino Event Reconstruction and Classification}
+
+Once all the final-state particles from a neutrino interaction have been 
+individually reconstructed, the combined information is used to 
+reconstruct and classify the neutrino event.
 
 In Qscan, a multivariate analysis (MVA) was used to separate particle types based on the spatial characteristics of their clusters
 \cite{WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI}.
