@@ -16,8 +16,7 @@ The low-energy event regime has particular reconstruction, background and trigge
 \subsection{Neutrinos from collapsed stellar cores: basics}
 
 A core-collapse supernova\footnote{``Supernova'' always
-  refers to a ``core-collapse supernova'' in this chapter unless
-  stated otherwise.} occurs when a massive star reaches the end of its
+  refers to a ``core-collapse supernova'' in this chapter.} occurs when a massive star reaches the end of its
 life. As a result of nuclear burning throughout the star's life, the central region of such star gains an ``onion'' structure, with an iron core at the center surrounded by concentric shells of lighter elements (silicon, oxygen, neon, magnesium, carbon, etc). At temperatures of $T\sim 10^{10}$ K and densities of $\rho \sim 10^{10}$ g/cm$^{3}$, the Fe core continuously loses energy by neutrino emission (through pair annihilation and plasmon decay). Since iron cannot be further burned, the lost energy cannot be replenished throughout the volume and the core continues to contract and heat up, while also growing in mass thanks to the shell burning. Eventually, the critical mass of about $1.4 M_{\odot}$ of Fe is reached, at which point a stable configuration is no longer possible. As electrons are absorbed by the protons and some iron is disintegrated by thermal photons, the pressure support is suddenly removed and the core collapses essentially in free fall, reaching speeds of about a quarter of the speed of light. This marks the onset of the explosion.
 
 The collapse of the central region is suddenly halted after $\sim 10^{-2}$ seconds, as the density reaches (supra)nuclear values. The central core bounces and a shock wave is formed. The extreme physical conditions of this core, in particular the densities of order $10^{12}-10^{14}$ g/cm$^{3}$, create a medium that is opaque even for neutrinos. As a consequence, the core initially has a trapped lepton number. The gravitational energy of the collapse at this stage is stored mostly in the degenerate fermi sea of electrons ($E_{F}\sim 200$ MeV) and electron neutrinos, which are in equilibrium with the former. The temperature of this core is only about 30 MeV, which means the core is relatively \emph{cold}. 
@@ -89,7 +88,7 @@ Some fairly generic features of these emitted neutrinos are illustrated in Figur
 \label{fig:spectrum}
 \end{figure}
 
-The physics of neutrino decoupling and spectra formation is far from trivial, owing to the energy dependence of the cross sections and the roles played by both charged and neutral current reactions. In particularly, it has been argued that for $\mu$ and $\tau$ neutrinos, one should distinguish the energy sphere where these neutrinos are created and the transport sphere. Detailed transport calculations using methods such as Monte Carlo or Boltzmann solvers have been employed. It has been observed that spectra coming out of such simulations can typically be parameterized at a given moment in time by the following ansatz (e.g.,~\cite{Minakata:2008nc,Tamborra:2012ac}):
+The physics of neutrino decoupling and spectra formation is far from trivial, owing to the energy dependence of the cross sections and the roles played by both charged- and neutral-current reactions. In particular, it has been argued that for $\mu$ and $\tau$ neutrinos, one should distinguish the energy sphere where these neutrinos are created and the transport sphere. Detailed transport calculations using methods such as Monte Carlo or Boltzmann solvers have been employed. It has been observed that spectra coming out of such simulations can typically be parameterized at a given moment in time by the following ansatz (e.g.,~\cite{Minakata:2008nc,Tamborra:2012ac}):
 \begin{equation}
         \label{eq:pinched}
         \phi(E_{\nu}) = \mathcal{N} 
@@ -106,7 +105,7 @@ $\nu_x, \, x = \mu, \tau$ flavors are expected to have different
 average energy and $\alpha$ parameters and to evolve differently in
 time. 
 
-The initial spectra get further processed (permuted) by flavor oscillations and understanding these oscillations is very important to extracting physics from the detected signal.
+The initial spectra get further processed (permuted) by flavor oscillations and understanding these oscillations is very important for extracting physics from the detected signal.
 
 
 \subsection{Detection Channels and Interaction Rates}
@@ -115,9 +114,10 @@ Luquid argon should have a particular sensitivity to the $\nu_e$
 component of a supernova neutrino burst, via charged-current
 absorption of $\nu_e$ on $^{40}$Ar,
 \begin{equation}
-\nu_e + ^{40}{\rm Ar} \rightarrow e^- + ^{40}{\rm K^*}.
+\nu_e + ^{40}{\rm Ar} \rightarrow e^- + ^{40}{\rm K^*},
 \label{eq:nueabs}
 \end{equation}
+for which the observable is the $e^-$ as well as deexcitation products from the excited $K^*$ final state.
   Cross sections for the most
 relevant interactions are shown in Fig.~\ref{fig:xscns}.
 % I have some improved figures somewhere...
@@ -131,7 +131,7 @@ relevant interactions are shown in Fig.~\ref{fig:xscns}.
 %
 The predicted event rate from a supernova burst may be calculated by
 folding expected neutrino differential energy spectra in with cross
-sections for the relevant channels, and with detector response.
+sections for the relevant channels, and with detector response; we do this using SNOwGLoBES~\cite{snowglobes}, which assumes resolution from~\cite{Amoruso:2003sw}.
 %
 
 
@@ -145,7 +145,7 @@ model~\cite{Gava:2009pj}.
   \caption[Event rates for different models in \SI{34}{\kt} of LAr for
     a core-collapse at 10~kpc]{Event rates for different
     supernova models in \SI{34}{\kt} of liquid argon for a core collapse at 10~kpc, for $\nu_e$ and $\bar{\nu}_e$ charged-current channels and elastic scattering (ES) on electrons.
-    Event rates will simply scale by active detector mass and inverse square of supernova distance.}
+    Event rates will simply scale by active detector mass and inverse square of supernova distance. \fixme{Update to 40 kt}}
 \label{tab:argon_events}\centering
 \begin{tabular}{$L^c^c}%$
 \toprule
@@ -231,14 +231,14 @@ flavor dominates.
   \label{fig:eventrates}
 \end{figure}
 
-The number of signal events scales with mass and inverse square of distance as shown in Fig.~\ref{fig:ratesvsdist}.  For a collapse in the Andromeda galaxy, a 40-kton detector would expect a few events.
+The number of signal events scales with mass and inverse square of distance as shown in Fig.~\ref{fig:ratesvsdist}.  For a collapse in the Andromeda galaxy, a 40-kton detector would observe a few events.
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=5in]{argon_sn.pdf}
-\caption[Rates vs distance]{Estimated numbers of supernova neutrino interactions in DUNE as a function of distance to the supernova, for different detector masses ( events dominate). The red dashed lines represent expected events for a 40-kton detector and the green dotted lines represent expected events for a 10-kton detector. The lines limit a fairly wide range of possibilities for ``Garching-parameterized'' supernova flux spectra with luminosity $0.5\times 10^{52}$ ergs over ten seconds. The optimistic upper line of a pair gives the number of events for average $\nu_e$ energy of $\langle E_{\nu_e}\rangle =12$~MeV, and ``pinching'' parameter $\alpha=2$; the pessimistic lower line of a pair gives the number of events for $\langle E_{\nu_e}\rangle=8$~MeV and $\alpha=6$. (Note that the luminosity, average energy and pinching parameters will vary over the time frame of the burst, and these estimates assume a constant spectrum. Oscillations will also affect the spectrum.) The solid lines represent the integrated number of events for the specific time-dependent neutrino flux model in~\cite{Huedepohl:2009wh} (see Figs.~\ref{fig:garching} and \ref{fig:eventrates}; this model has relatively cool spectra and low event rates). Core collapses are expected to occur a few times per century, at a most-likely distance of about 10-15 kpc.}
+\caption[Rates vs distance]{Estimated numbers of supernova neutrino interactions in DUNE as a function of distance to the supernova, for different detector masses ($\nu_e$ events dominate). The red dashed lines represent expected events for a 40-kton detector and the green dotted lines represent expected events for a 10-kton detector. The lines limit a fairly wide range of possibilities for ``Garching-parameterized'' supernova flux spectra with luminosity $0.5\times 10^{52}$ ergs over ten seconds. The optimistic upper line of a pair gives the number of events for average $\nu_e$ energy of $\langle E_{\nu_e}\rangle =12$~MeV, and ``pinching'' parameter $\alpha=2$; the pessimistic lower line of a pair gives the number of events for $\langle E_{\nu_e}\rangle=8$~MeV and $\alpha=6$. (Note that the luminosity, average energy and pinching parameters will vary over the time frame of the burst, and these estimates assume a constant spectrum. Oscillations will also affect the spectrum and event rates.) The solid lines represent the integrated number of events for the specific time-dependent neutrino flux model in~\cite{Huedepohl:2009wh} (see Figs.~\ref{fig:garching} and \ref{fig:eventrates}; this model has relatively cool spectra and low event rates). Core collapses are expected to occur a few times per century, at a most-likely distance of about 10-15 kpc.}
 
-  \label{fig:ratesvdist}
+  \label{fig:ratesvsdist}
 \end{figure}
 
 
@@ -374,7 +374,7 @@ of solar neutrinos in DUNE possible.
 %of these measurements worthwhile.
 
 Signatures of solar neutrinos in DUNE
-are elastic scattering on electrons as well as CC absorption of $\nu_e$ on $^{40}$Ar, which has a 4.5-MeV energy threshold.
+are elastic scattering on electrons as well as CC absorption of $\nu_e$ on $^{40}$Ar (equation~\ref{eq:nueabs}), which has a 4.5-MeV energy threshold.
 In Table~\ref{tab:solarnu} the solar neutrino event rate in a
 \ktadj{34} LArTPC is shown, assuming a \MeVadj{4.5} neutrino energy
 threshold and 31\% $\nu_e$.
@@ -502,7 +502,7 @@ our understanding of supernova-neutrino emission and the overall
 core-collapse rate.
 
 
-A liquid argon detector such as DUNE''s far detector is sensitive to
+A liquid argon detector such as DUNE's far detector is sensitive to
 the $\nu_e$ component of the diffuse relic supernova neutrino flux,
 whereas water Cherenkov and scintillator detectors are sensitive to
 the antineutrino component.  However, backgrounds in liquid argon are as
@@ -585,15 +585,18 @@ years~\cite{Cocco:2004ac}.
 %
 The expected number of relic
 supernova neutrinos, $N_{\rm SRN}$, that could be observed in a
-\SIadj{100}{\kt} LArTPC detector in five years~\cite{Cocco:2004ac}
+\SIadj{40}{\kt} LArTPC detector in ten years~\cite{Cocco:2004ac}
 assuming normal hierarchy is:
 \begin{equation}
-N_{\rm SRN} = 57 \pm 12  \ \ \ 16 \, {\rm MeV} \leq E_e \leq 40 \, {\rm MeV}
+N_{\rm SRN} = 46 \pm 10  \ \ \ 16 \, {\rm MeV} \leq E_e \leq 40 \, {\rm MeV}
 \label{eqn:srnrate}
 \end{equation}
 where $E_e$ is the energy of the electron from the CC interaction as
 shown in Equation~\ref{eq:nueabs}. 
-\fixme{Update to refer to 40 kt, longer period}
+
+% For 100 kt in 5 years was 57 \pm 12,  stat would be 7.5, so syst is 4.45/57 = 7.8%
+% For 40 kt in 10 years, stat is 6.7, syst is 3.5568 so 46 \pm 10.
+
 % The estimate of the SRN rate
 % shown in Equation~\ref{eqn:srnrate} has a weak dependence on the value
 % of $\sin ^2 \theta_{13}$. The above calculation is valid for values of
@@ -609,7 +612,7 @@ leaks into the search window.
 
 \subsection{Other Low-Energy Neutrino Sources}
 
-We note some other potential sources of signals in the tens-of-MeV range which may be observable in DUNE.  These include neutrinos from accretion disks~\cite{Caballero:2011dw} and black-hole/neutron star mergers~\cite{Caballero:2009ww}.  These will create spectra not unlike those from core-collapse events, and with potentially large fluxes.  However they are are expected to be considerably rarer than core-collapse supernovae within an observable range.
+We note some other potential sources of signals in the tens-of-MeV range which may be observable in DUNE.  These include neutrinos from accretion disks~\cite{Caballero:2011dw} and black-hole/neutron star mergers~\cite{Caballero:2009ww}.  These will create spectra not unlike those from core-collapse events, and with potentially large fluxes.  However they are are expected to be considerably rarer than core-collapse supernovae within an observable distance range.
 % \item ``Boosted'' dark matter?
 
 
@@ -617,16 +620,18 @@ We note some other potential sources of signals in the tens-of-MeV range which m
 \label{sec:physics-snblowe-detector-requirements}
 
 For sensitivity to SNB physics, the detector must be sensitive to energy depositions of at least 5 MeV.  It should also be capable of collecting information for a 10-kpc supernova, which would mean some tens of thousands of events within 10 seconds.    The detectors should be able to self-trigger on the burst, which may require sufficiently good photon detection, and provide prompt event information. 
-Requirements for event reconstruction are that pointing back to the supernova should be limited primarily by event statistics rather than detector angular resolution.
-Energy and event time resolution must be sufficient to resolve interesting physics features of the burst.  Preliminary studies suggest that resolution measured by Icarus for low-energy events~\cite{Amoruso:2003sw} should be adequate, and that approximately millisecond event time resolution should be sufficient to resolve features such as the neutronization burst and the initial notch due to neutrino trapping in the $\nu_e$ spectrum (see Fig.~\ref{fig:garching}), given adequate statistics.   Preliminary background studies (see Fig.~\ref{fig:vicbg}) show that cosmogenic and radioactive contaminants should be subdominant for a Galactic burst; however backgrounds still need to be better understood for solar and DSNB signals.
+The requirements for event reconstruction is that pointing back to the supernova should be limited primarily by event statistics rather than detector angular resolution.
+Energy and event time resolution must be sufficient to resolve interesting physics features of the burst.  Preliminary studies suggest that resolution measured by Icarus for low-energy events~\cite{Amoruso:2003sw} should be adequate, and that approximately millisecond event time resolution should be sufficient to resolve features such as the neutronization burst and the initial notch due to neutrino trapping in the $\nu_e$ spectrum (see Fig.~\ref{fig:garching}), given adequate statistics.   Preliminary background studies (see Fig.~\ref{fig:vicbg}) show that cosmogenic and radioactive contaminants are likely to be subdominant for a Galactic burst; however backgrounds still need to be better understood for solar and DSNB signals.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=12cm]{AllTheThings.pdf}
-\caption{All components of the background model used in a preliminary supernova background study, including radioactive decays (solid lines), cosmogenic neutron (dashed) and proton (dotted) fluxes.  The intrinsic background (independent of depth) is plotted in black.  Surface backgrounds are plotted in red, 800 feet of rock overburden in green, and 4850 feet in blue (color online). The rates are for 10 kton.} 
+\caption{
+All components of the background model used in a preliminary supernova background study, including radioactive decays (solid lines), cosmogenic neutron (dashed) and proton (dotted) fluxes.  The intrinsic background (independent of depth) is plotted in black.  Surface backgrounds are plotted in red, 800 feet of rock overburden in green, and 4850 feet in blue (color online). The rates are for 10 kton. } 
 \label{fig:vicbg}
 \end{center}
 \end{figure}
+\fixme{40 kt, typo in legend} 
 
 
 
