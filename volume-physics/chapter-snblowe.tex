@@ -132,9 +132,9 @@ sections for the relevant channels, and with detector response.
 
 Table~\ref{tab:argon_events} shows rates calculated  for the dominant interactions in argon for
 the ``Livermore'' model~\cite{Totani:1997vj}, and the ``GKVM''
-model~\cite{Gava:2009pj}.  Figure~\ref{fig:eventrates} shows the
-expected observed differential event spectra for these fluxes.  Clearly, the $\nu_e$
-flavor dominates.
+model~\cite{Gava:2009pj}. 
+% Figure~\ref{fig:eventrates} shows the
+%expected observed differential event spectra for these fluxes.  
 %
 \begin{table}[!htb]
   \caption[Event rates for different models in \SI{34}{\kt} of LAr for
@@ -163,21 +163,23 @@ Total &  2794& 3160 \\
 \bottomrule
 \end{tabular}
 \end{table}
+
 %
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=2.0in]{interaction_rates_gvkm_ar34kt.pdf}
-\includegraphics[width=2.0in]{smeared_rates_gvkm_ar34kt.pdf}
-\vspace{-5pt}
-\caption[SN $\nu$ event rates in \SI{34}{kt} of LAr for a core
-  collapse at 10~kpc, GKVM]{Supernova neutrino event rates in 34~kt of argon for a core
-  collapse at 10~kpc, for the GKVM model~\cite{Gava:2009pj} (events
-  per 0.5~MeV), showing three relevant interaction channels. Left:
-  interaction rates as function of true neutrino energy.  Right:
-  ``smeared'' rates as a function of detected energy, assuming
-  resolution from~\cite{Amoruso:2003sw}.}
-  \label{fig:eventrates}
-\end{figure}
+% \begin{figure}[!htb]
+% \centering
+% \includegraphics[width=2.0in]{interaction_rates_gvkm_ar34kt.pdf}
+% \includegraphics[width=2.0in]{smeared_rates_gvkm_ar34kt.pdf}
+% \vspace{-5pt}
+% \caption[SN $\nu$ event rates in \SI{34}{kt} of LAr for a core
+%   collapse at 10~kpc, GKVM]{Supernova neutrino event rates in 34~kt of argon for a core
+%   collapse at 10~kpc, for the GKVM model~\cite{Gava:2009pj} (events
+%   per 0.5~MeV), showing three relevant interaction channels. Left:
+%   interaction rates as function of true neutrino energy.  Right:
+%   ``smeared'' rates as a function of detected energy, assuming
+%   resolution from~\cite{Amoruso:2003sw}.}
+%   \label{fig:eventrates}
+% \end{figure}
+
 
 Figure~\ref{fig:garching} gives another example of an expected burst
 signal, for which a calculation with detailed time dependence of the
@@ -185,6 +187,9 @@ spectra is available~\cite{Huedepohl:2009wh} out to 9~seconds
 post-bounce.  This model has relatively low luminosity but a robust
 neutronization burst.  Note that the relative fraction of
 neutronization-burst events is quite high.
+Figure~\ref{fig:eventrates} shows the event channel breakdown.  Clearly, the $\nu_e$
+flavor dominates.
+
 %
 \begin{figure}[!htb]
 \centering
@@ -208,6 +213,29 @@ neutronization-burst events is quite high.
   the proto-neutron-star cooling period.  \fixme{Update to 40 kt}}
 \label{fig:garching}
 \end{figure}
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=2.4in]{garching_energy_plot.pdf}
+\includegraphics[width=2.4in]{garching_time_plot.pdf}
+\vspace{-5pt}
+\caption[SN $\nu$ event rates in \SI{40}{kt} of LAr for Garching flux]{Left: Expected
+  time-dependent signal in 40 kt of liquid argon for the electron-capture supernova~\cite{Huedepohl:2009wh} at 10~kpc, calculated using SNoWGLoBES~\cite{snowglobes}, showing breakdown of event channels.  Right: expected measured event spectrum for the same model, integrated over time.}
+
+  \label{fig:eventrates}
+\end{figure}
+
+The number of signal events scales with mass and inverse square of distance as shown in Fig.~\ref{fig:ratevsdist}.  For a collapse in the Andromeda galaxy, a 40-kton detector would expect a few events.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=6in]{argon_sn.pdf}
+\caption[Rates vs distance]{Estimated numbers of supernova neutrino interactions in DUNE as a function of distance to the supernova, for different detector masses ( events dominate). The red dashed lines represent expected events for a 40-kton detector and the green dotted lines represent expected events for a 10-kton detector. The lines limit a fairly wide range of possibilities for “Garching-parameterized” supernova flux spectra with luminosity $0.5\times 10^{52}$ ergs over ten seconds. The optimistic upper line of a pair gives the number of events for average $\nu_e$ energy of $\langle E_{\nu_e}\rangle =12$~MeV, and “pinching” parameter $\alpha=2$; the pessimistic lower line of a pair gives the number of events for $\langle E_{\nu_e}\rangle=8$~MeV and $\alpha=6$. (Note that the luminosity, average energy and pinching parameters will vary over the time frame of the burst, and these estimates assume a constant spectrum. Oscillations will also affect the spectrum.) The solid lines represent the integrated number of events for the specific time-dependent neutrino flux model in~\cite{Huedepohl:2009wh} (see Figs.~\ref{fig:garching} and \ref{fig:eventrates}; this model has relatively cool spectra and low event rates). Core collapses are expected to occur a few times per century, at a most-likely distance of about 10-15 kpc.}
+
+  \label{fig:ratesvdist}
+\end{figure}
+
 
 
 \section{Neutrino Physics and Other Particle Physics}
