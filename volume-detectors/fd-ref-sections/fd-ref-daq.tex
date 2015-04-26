@@ -5,7 +5,7 @@
 The scope of the DAQ and monitoring includes the design, procurement,
 fabrication, testing, delivery and installation. It is required to:
 \begin{itemize}
-\item collect data with an uptime of $>90$\%
+\item collect data with an uptime of $\gg 90$\%
 \item collect interactions with an energy deposition of
   100\,MeV and above with a high resolution (smart or no
   zero-suppression) with no dead-time.
@@ -26,17 +26,18 @@ fabrication, testing, delivery and installation. It is required to:
 This section outlines a conceptual design intended to meet the required performance for the DAQ
 for the DUNE far detector. 
 
-To dramatically 
-\fixme{To reduce the deadtime of the overall DUNE detector sufficiently to meet the requirements... AH}
-reduce the times when none of the parts of DUNE is
-collecting data (particularly important for supernova detection) and
-to allow
-\fixme{dissimilar DAQ designs in each of the four 10-kt detector modules..}  the designs of the DAQ in the different 10-kt sections to be
-entirely different if desired, 
-\fixme{the DUNE DAQ employs the most uncoupled design to date. (but less coupled or more uncoupled to/from what?}
-a less coupled design than has ever
-been used in data acquisition before is employed.  The
-synchronization, triggering, data collection and run-state in the
+%  GB - No, what I am saying is subtly different, the reader has to think
+%  to get the subtlety (and is not missing out if they don't take the
+%  time to think \fixme{To reduce the deadtime of the overall DUNE detector sufficiently to meet the requirements... AH}
+To reduce considerably the times when none of the parts of DUNE are
+collecting data (particularly important for supernova detection); and
+to allow the designs of the DAQ in the different 10-kt sections to be
+entirely different if desired, the DUNE DAQ employs the most uncoupled 
+design to date. 
+%\fixme{(but less coupled or more uncoupled to/from what? -AH, original phrasing: a less coupled design than has ever been used in data acquisition before is employed. } 
+% GB - I am trying to say the parts within the DAQ are less coupled
+% with each other
+The synchronization, triggering, data collection and run-state in the
 different 10-kt modules are completely independent in real time and
 are only coupled by processes running asynchronously (in the same fashion
 as a batch queue) in the hour or so after data collection (see section
@@ -49,10 +50,15 @@ Figure~\ref{fig:fddaqblock}.  To collect the fullest detail of the
 most important events (deadtimeless detection of all those with energy
 deposition of 100\,MeV and above), while avoiding tricky communication
 to flag neighboring channels to those that have large hits, a model
-in which the data are collected twice is used. 
-\fixme{Previous sentence not clear: you want to flag channels that have large hits and NOT flag
-neighboring channels?  What's the `tricky communication'?}
-  The first collection
+in which the data are collected from the hardware twice is used. 
+% GB - I can't think of anything better, unless we expand this section
+% a lot, which whould give it too much emphasis.  Ideally we DO want
+% to flag neighbouring channels to those with big hits, but it is
+% difficult because it would entail a big complicated network of
+% comunications between all the boards which is very tricky.
+%\fixme{Previous sentence not clear: you want to flag channels that have large hits and NOT flagneighboring channels?  What's the `tricky communication'?}
+
+The first collection
 supplies a centralized software-based trigger farm continuously with
 zero-suppressed information (a threshold on each channel detects hits
 above the noise level; this causes the ADC samples to be kept in a
@@ -60,8 +66,11 @@ time window around the hit).
 The second pass reads the full data at the times and
 in the regions %of interest that have been 
 selected by the
-trigger. This is similar to the triggering in a collider experiment,
-but with only one level of triggering. \fixme{in other words, here we have one trigger + two collections; in collider expt, two of each? Please clarify sentence.} The software trigger farm also
+trigger. This is similar to the multi-level triggering in a collider experiment,
+but with only one level of triggering.
+%\fixme{in other words, here we have one trigger + two collections; in
+%  collider expt, two of each? Please clarify sentence.} 
+The software trigger farm also
 records the continuous stream of zero-suppressed hits in an archival
 ring buffer on disk to allow later analysis of supernova candidates.
 
@@ -148,8 +157,12 @@ ring buffer on disk to allow later analysis of supernova candidates.
 {\bf LArTPC detector readout} The LArTPC signals are digitized in a
 continuous flash-ADC stream at 2\,MHz, (not zero-suppressed) and
 serialized on 12,000 high-speed links per 10-kt module that exit the
-cryostat (costed separately in the cold-electronics WBS). \fixme{Do we want to refer to costs here?
-And which thing falls under CE, the links? Maybe say `(the links are covered in Section~\ref{sec:detectors-fd-ref-ce})'} The data
+cryostat.
+% GB - agreed, lets just leave this stuff about costs out
+% (costed separately in the cold-electronics WBS). \fixme{Do we want to refer to costs here?
+%And which thing falls under CE, the links? Maybe say `(the links are
+%covered in Section~\ref{sec:detectors-fd-ref-ce})'} 
+The data
 are received by RCE LArTPC data processors %which are 
 housed in
 industry-standard aTCA crates on COB boards that are designed at SLAC
@@ -164,11 +177,11 @@ network using the Ethernet protocol is used on the COBs and in the
 aTCA crates to allow for deveopment of more sophisticated zero-suppression algorithms
 for improved supernova acquisition.
 
-{\bf Photon detector readout} is costed separately in the photon
-detector WBS, the SSP modules amplify and supply bias voltages,
-assemble and process a waveform at 128\,MHz for each hit which is
-detected.\fixme{Continue with this (AH: Why can't you just say `Photon detector readout is covered
-in Section~\ref{detectors-fd-ref-pd}? }.
+{\bf Photon detector readout} is performed by the SiPM signal
+processor (SSP) described in
+section~\ref{sec:detectors-fd-ref-pd-refsystem}.  The additional
+buffering required for the separate trigger and data collection paths
+is implemented in the SSP frontend computers.
 
 {\bf Computer farm} Both the LArTPC and photon detector data are
 received in commodity Linux computers, with no deadtime, from where
@@ -176,13 +189,15 @@ the data are routed to the trigger and full-data collection farms of
 computers.  Although the front-end computers are logically distinct as
 shown in Figure~\ref{fig:fddaqblock}, one physical computer is
 sufficient for all the processes for each rack of APA readout
-electronics.
+electronics. 
 
 {\bf artDAQ software toolkit} (from Fermilab) supplies the real-time
 data collection functionality (buffering, matching event parts,
 synchronization, inter-process communication, etc.) in a modern C++11
 code design that facilitates the efficient use of multicore commodity
-computers running on the Linux computer farms.  The detector-specific
+computers running on the Linux computer farms.  The multi-core
+functionality is crucial in the high data-rate environment on DUNE.  
+The detector-specific
 code is supplied by DUNE groups (this is centered in the UK), along
 with detector-specific triggering (also UK).  The architecture
 provided by artDAQ can be tailored for each experiment and is entirely
@@ -303,9 +318,8 @@ readout send zero-suppressed data, suitable for triggering, to a set
 of event-builder processes that run in parallel, each accepting all
 the data from the entire 10-kt module for a specific time interval and
 performing trigger algorithms on them.  All time intervals are
-processed so that the trigger has no dead time.  The LArTPC and SSP
-data also store data in ring buffers
-\fixme{data store data? The lartpc and ssp somethings also store data...}
+processed so that the trigger has no dead time.  The data from the LArTPC and SSP
+are also stored in ring buffers
   to await collection after an
 affirmative trigger decision --- in the case of the LArTPC, this data
 is not zero suppressed.  The data are built into events in a ``10kt-module
@@ -324,18 +338,30 @@ local disk drives, or (b) use the powerful intercommunications between
 RCEs to cause neighboring channels to be kept around the time of a
 potential supernova event candidate. 
 
-\todo{DAQ2} Add table of rates and describe it.
+\begin{cdrtable}[Estimated data rates]{lcc}{daqrefrates}{Estimated data
+    rates in the DAQ system}  %The third argument (reads {cc}) can use c, l, r or p{some length} % but please do not include lines like “|c|l|l|”. It CAN look like {cll} or {llp{3cm}}, for instance.
+Process & Rate (kHz/APA) & Data rate (MBytes/s) \\ \toprowrule
+Generic 2.3\,ms interval & 0.43 & 6,000\\ \colhline
+Cosmic ray muons (4850L) & $6\times 10^{-7}$ & $1\times 10^{-5}$ \\ \colhline
+Radioactivity & $\sim 64$ & 1.9 \\ \colhline
+Electronics noise (not common mode) & $\sim 1$ & 0.03 \\
+\end{cdrtable}
 
-\todo{DAQ3} Add short paragraph of assumptions made in costing etc. \fixme{I think that should go with the costing information; that's how we did it last time. TBD}
+At the 4850L, the data rate in the trigger is dominated by
+radioactivity from $^{39}$Ar and $^{85}$Kr.  The cosmic-rays that
+occur about once per minute are the major source of events that should
+be collected on the data stream; the physics beam events, atmospheric
+netrinos and other candidate contained events are included in this
+data budget.  Table~\ref{tab:daqrefrates}) gives estimates of the
+rate of occurence of these events and the expected ``steady-state'' data rate
+(after the derandomisation provided by the buffering in the front-end
+computers).
+
+This DAQ design is being prototyped for the 35t tests in 2015, with
+two COBs (containing 16 RCEs) and eight SSPs.  The artDAQ software
+toolkit is being used to implement the readout, event-building and
+triggering, although we are not implementing the ``collect-twice''
+model for the 35t.
 
 %Here is a sample table:
 %
-%%\begin{cdrtable}[short]{cc}{label}{long}  %The third argument (reads {cc}) can use c, l, r or p{some length} 
-% but please do not include lines like “|c|l|l|”. It CAN look like {cll} or {llp{3cm}}, for instance.
-%Header Column1 & Header Column 2 \\ \toprowrule
-%Row 1 & First \\ \colhline
-%Row 2 & Second \\ \colhline
-%Row 3 & Third \\
-%\end{cdrtable}
-%
-%Here is a sample reference to a table Table~\ref{tab:label}).  Notice: ``tab:'' is not present in the label as written in the table code itself.
