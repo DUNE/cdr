@@ -1,40 +1,53 @@
+
 \chapter{Supernova Neutrino Bursts and Low-energy Neutrinos}
 \label{ch:physics-snblowe}
 
 \section{Overview}
 \label{sec:physics-snblowe-overview}
 
-The DUNE experiment will be sensitive to neutrinos in the few to few
-tens of MeV range, which create short tracks potentially accompanied
+The DUNE experiment will be uniquely sensitive to electron neutrinos in the few to few
+tens of MeV range, which create short electron tracks in liquid argon, potentially accompanied by
 gamma ray and other secondary particle signatures.  This regime is of
-particular interest for detection of the burst of neutrinos from a
-core-collapse supernova (the primary focus of this section), and
-neutrinos from other astrophysical sources are also potentially detectable.
+particular interest for detection of the burst of neutrinos from a galactic
+core-collapse supernova (the primary focus of this section). 
+Neutrinos from other astrophysical sources are also potentially detectable.
 The low-energy event regime has particular reconstruction, background and triggering challenges.
 
-\subsection{Expected  Signal}
+\subsection{Neutrinos from collapsed stellar cores: basics}
 
 A core-collapse supernova\footnote{``Supernova'' always
   refers to a ``core-collapse supernova'' in this chapter unless
   stated otherwise.} occurs when a massive star reaches the end of its
-life, and stellar burning can no longer support the star's weight.
-This catastrophic collapse results in a compact remnant such as a
-neutron star, or possibly a black hole, depending on the mass of the
-progenitor.  The infall is followed by a ``bounce'' when sufficiently
-high core density is reached, and in some unknown (but non-zero)
-fraction of cases, the shock wave formed after the bounce results in a
-bright explosion~\cite{Janka:2012wk}.  The explosion energy represents
-only a small fraction of the enormous total gravitational binding
-energy of the resulting compact remnant, however --- thanks to the
-neutrinos' weak coupling, which allows them to escape --- within a few
-tens of seconds almost all of the energy is emitted in the form of
-neutrinos in the tens-of-MeV range.  In spite of their weak coupling,
-the neutrinos are copious enough to (very likely) play a significant
-role in the explosion.
+life. As a result of nuclear burning throughout the star's life, the central region of such star gains an ``onion'' structure, with an iron core at the center surrounded by concentric shells of lighter elements (silicon, oxygen, neon, magnesium, carbon, etc). At temperatures of $T\sim 10^{10}$ K and densities of $\rho \sim 10^{10}$ g/cm$^{3}$, the Fe core continuously loses energy by neutrino emission (through pair annihilation and plasmon decay). Since iron cannot be further burned, the lost energy cannot be replenished throughout the volume and the core continues to contract and heat up, while also growing in mass thanks to the shell burning. Eventually, the critical mass of about $1.4 M_{\odot}$ of Fe is reached, at which point a stable configuration is no longer possible. As electrons are absorbed by the protons and some iron is disintegrated by thermal photons, the pressure support is suddenly removed and the core collapses essentially in free fall, reaching speeds of about a quarter of the speed of light. This marks the onset of the explosion.
+
+The collapse of the central region is suddenly halted after $\sim 10^{-2}$ seconds, as the density reaches (supra)nuclear values. The central core bounces and a shock wave is formed. The extreme physical conditions of this core, in particular the densities of order $10^{12}-10^{14}$ g/cm$^{3}$, create a medium that is opaque even for neutrinos. As a consequence, the core initially has a trapped lepton number. The gravitational energy of the collapse at this stage is stored mostly in the degenerate fermi sea of electrons ($E_{F}\sim 200$ MeV) and electron neutrinos, which are in equilibrium with the former. The temperature of this core is only about 30 MeV, which means the core is relatively \emph{cold}. 
+
+At the next stage, the trapped energy and lepton number both escape from the core, carried by the least interacting particles, which in the Standard Model are neutrinos.  Neutrinos and antineutrinos of all flavors are emitted in a time span of a few seconds (their diffusion time). The resulting central object then settles to a neutron star, or a black hole. A tremendous amount of energy, some $10^{53}$ ergs, is released in $10^{58}$ neutrinos with energies $\sim 10^{7}$ eV. A fraction of this energy is diverted through complicated physical processes into a shock wave that blasts away the rest of the star, creating a spectacular explosion that instantaneously outshines the entire galaxy~\cite{Janka:2012wk}. Yet, from the energetics point of few, this visible explosion is but a tiny perturbation. Over 99\% of all gravitational binding energy of the $1.4 M_{\odot}$ collapsed core -- some 10\% of its rest mass -- is emitted in neutrinos. Core-collapse supernovae are thus essentially \emph{gravity-powered neutrino bombs}.  Detecting the neutrino burst will allow us to look directly at the central engine of the supernova, potentially unraveling its mechanism. 
+
+Importantly, the neutrino signal will also provide invaluable probe of new particle physics, since novel light, weakly coupled particles could modify the energy transport picture. In fact, the mere detection of neutrinos from SN1987A (see below), provided some of the most powerful bounds on many classes of theories, from Majorons and other Goldstone bosons to extra-dimensional states. Moreover, the signal will be extremely interesting from the point of view of neutrino flavor oscillation dynamics. Imprinted on neutrino spectral will be signatures of neutrino oscillations in extreme physical conditions that are impossible to recreate in the lab. The scope of physics that could be gleaned from a supernova neutrino burst is potentially breathtaking. The detector needs to be designed to take advantage of this ``once-in-a-lifetime'' opportunity.
+
+
+
+%The core collapses   and stellar burning can no longer support the star's weight.
+%This catastrophic collapse results in a compact remnant such as a
+%neutron star, or possibly a black hole, depending on the mass of the
+%progenitor.  The infall is followed by a ``bounce'' when sufficiently
+%high core density is reached, and in some unknown (but non-zero)
+%fraction of cases, the shock wave formed after the bounce results in a
+%bright explosion~\cite{Janka:2012wk}.  The explosion energy represents
+%only a small fraction of the enormous total gravitational binding
+%energy of the resulting compact remnant, however --- thanks to the
+%neutrinos' weak coupling, which allows them to escape --- within a few
+%tens of seconds almost all of the energy is emitted in the form of
+%neutrinos in the tens-of-MeV range.  In spite of their weak coupling,
+%the neutrinos are copious enough to (very likely) play a significant
+%role in the explosion.
+
+\subsection{Stages of the explosion}
 
 Neutrinos from the celebrated SN1987A core
 collapse~\cite{Bionta:1987qt,Hirata:1987hu} in the Large Magellanic
-Cloud outside the Milky Way were observed; however, the
+Cloud outside the Milky Way were detected. This observation provided qualitative validation of the basic physical picture outlined above and provided powerful constraints on numerous models of new physics. At the same time, the
 statistics %of this observation
 were sparse %enough that
 and a great many questions remain.  A high-statistics observation of a
@@ -47,18 +60,16 @@ of the flux is highly desirable.
 
 The core-collapse neutrino signal starts with a short, sharp
 \emph{neutronization} (or \emph{break-out}) burst primarily composed of
-$\nu_e$ (originating from $p+e^- \rightarrow n + \nu_e$, as protons
-and electrons get squeezed together), and is followed by an
-``accretion'' phase lasting some hundreds of milliseconds, as matter falls onto the collapsed core.  The later
-``cooling'' phase over $\sim$10~seconds represents the main part of
-the signal, over which the proto-neutron star sheds its gravitational
-binding energy.  The neutrino flavor content and spectra change
-throughout these phases, and the supernova's temperature evolution can
-be followed with the neutrino signal.
-% (see
+$\nu_e$. These neutrinos are messengers of the shock front breaking through the neutrinosphere (the surface of neutrino trapping): when this happens, iron is disintegrated, the neutrino scattering cross section drops and the lepton number trapped just below the original neutrinosphere is suddenly released. This quick and intense burst is followed by an
+\emph{``accretion'' phase} lasting some hundreds of milliseconds, depending on the progenitor star mass, as matter falls onto the collapsed core and the shock is stalled at the distance of perhaps $\sim 200$ km. The gravitational binding energy of the accreting material is powering the neutrino luminosity during this stage. The later
+\emph{``cooling'' phase} over $\sim$10~seconds represents the main part of
+the signal, over which the proto-neutron star sheds its trapped energy.  
+
+The flavor content and spectra of the neutrinos emitted from the neutrinosphere change
+throughout these phases, and the supernova's evolution can
+be followed with the neutrino signal. % (see
 %Figure~\ref{fig:temp_comparison}). 
-Some fairly generic supernova
-signal features are illustrated in Figure~\ref{fig:spectrum}, based on~\cite{Fischer:2009af} and reproduced from~\cite{Wurm:2011zn}.
+Some fairly generic features of these emitted neutrinos are illustrated in Figure~\ref{fig:spectrum}, based on a 1-dimensional model of~\cite{Fischer:2009af} and reproduced from~\cite{Wurm:2011zn}.
 % Last three cases can be quite complicated, especially last
 %
 \begin{figure}[!htb]
@@ -78,9 +89,7 @@ signal features are illustrated in Figure~\ref{fig:spectrum}, based on~\cite{Fis
 \label{fig:spectrum}
 \end{figure}
 
-The supernova neutrino spectrum at a given moment in time is expected
-to be well described by a
-parameterization~\cite{Minakata:2008nc,Tamborra:2012ac} given by:
+The physics of neutrino decoupling and spectra formation is far from trivial, owing to the energy dependence of the cross sections and the roles played by both charged and neutral current reactions. In particularly, it has been argued that for $\mu$ and $\tau$ neutrinos, one should distinguish the energy sphere where these neutrinos are created and the transport sphere. Detailed transport calculations using methods such as Monte Carlo or Boltzmann solvers have been employed. It has been observed that spectra coming out of such simulations can typically be parameterized at a given moment in time by the following ansatz (e.g.,~\cite{Minakata:2008nc,Tamborra:2012ac}):
 \begin{equation}
         \label{eq:pinched}
         \phi(E_{\nu}) = \mathcal{N} 
@@ -96,6 +105,8 @@ high-energy tail). This parameterization is referred to as a
 $\nu_x, \, x = \mu, \tau$ flavors are expected to have different
 average energy and $\alpha$ parameters and to evolve differently in
 time. 
+
+The initial spectra get further processed (permuted) by flavor oscillations and understanding these oscillations is very important to extracting physics from the detected signal.
 
 
 \subsection{Detection Channels and Interaction Rates}
