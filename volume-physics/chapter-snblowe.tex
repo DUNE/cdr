@@ -113,7 +113,12 @@ The initial spectra get further processed (permuted) by flavor oscillations and 
 
 Luquid argon should have a particular sensitivity to the $\nu_e$
 component of a supernova neutrino burst, via charged-current
-absorption of $\nu_e$ on $^{40}$Ar.  Cross sections for the most
+absorption of $\nu_e$ on $^{40}$Ar,
+\begin{equation}
+\nu_e + ^{40}{\rm Ar} \rightarrow e^- + ^{40}{\rm K^*}.
+\label{eq:nueabs}
+\end{equation}
+  Cross sections for the most
 relevant interactions are shown in Fig.~\ref{fig:xscns}.
 % I have some improved figures somewhere...
 
@@ -217,8 +222,8 @@ flavor dominates.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=2.4in]{garching_energy_plot.pdf}
-\includegraphics[width=2.4in]{garching_time_plot.pdf}
+\includegraphics[width=2.5in]{garching_time_plot.pdf}
+\includegraphics[width=2.5in]{garching_energy_plot.pdf}
 \vspace{-5pt}
 \caption[SN $\nu$ event rates in \SI{40}{kt} of LAr for Garching flux]{Left: Expected
   time-dependent signal in 40 kt of liquid argon for the electron-capture supernova~\cite{Huedepohl:2009wh} at 10~kpc, calculated using SNoWGLoBES~\cite{snowglobes}, showing breakdown of event channels.  Right: expected measured event spectrum for the same model, integrated over time.}
@@ -226,12 +231,12 @@ flavor dominates.
   \label{fig:eventrates}
 \end{figure}
 
-The number of signal events scales with mass and inverse square of distance as shown in Fig.~\ref{fig:ratevsdist}.  For a collapse in the Andromeda galaxy, a 40-kton detector would expect a few events.
+The number of signal events scales with mass and inverse square of distance as shown in Fig.~\ref{fig:ratesvsdist}.  For a collapse in the Andromeda galaxy, a 40-kton detector would expect a few events.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=6in]{argon_sn.pdf}
-\caption[Rates vs distance]{Estimated numbers of supernova neutrino interactions in DUNE as a function of distance to the supernova, for different detector masses ( events dominate). The red dashed lines represent expected events for a 40-kton detector and the green dotted lines represent expected events for a 10-kton detector. The lines limit a fairly wide range of possibilities for “Garching-parameterized” supernova flux spectra with luminosity $0.5\times 10^{52}$ ergs over ten seconds. The optimistic upper line of a pair gives the number of events for average $\nu_e$ energy of $\langle E_{\nu_e}\rangle =12$~MeV, and “pinching” parameter $\alpha=2$; the pessimistic lower line of a pair gives the number of events for $\langle E_{\nu_e}\rangle=8$~MeV and $\alpha=6$. (Note that the luminosity, average energy and pinching parameters will vary over the time frame of the burst, and these estimates assume a constant spectrum. Oscillations will also affect the spectrum.) The solid lines represent the integrated number of events for the specific time-dependent neutrino flux model in~\cite{Huedepohl:2009wh} (see Figs.~\ref{fig:garching} and \ref{fig:eventrates}; this model has relatively cool spectra and low event rates). Core collapses are expected to occur a few times per century, at a most-likely distance of about 10-15 kpc.}
+\includegraphics[width=5in]{argon_sn.pdf}
+\caption[Rates vs distance]{Estimated numbers of supernova neutrino interactions in DUNE as a function of distance to the supernova, for different detector masses ( events dominate). The red dashed lines represent expected events for a 40-kton detector and the green dotted lines represent expected events for a 10-kton detector. The lines limit a fairly wide range of possibilities for “Garching-parameterized” supernova flux spectra with luminosity $0.5\times 10^{52}$ ergs over ten seconds. The optimistic upper line of a pair gives the number of events for average $\nu_e$ energy of $\langle E_{\nu_e}\rangle =12$~MeV, and ``pinching'' parameter $\alpha=2$; the pessimistic lower line of a pair gives the number of events for $\langle E_{\nu_e}\rangle=8$~MeV and $\alpha=6$. (Note that the luminosity, average energy and pinching parameters will vary over the time frame of the burst, and these estimates assume a constant spectrum. Oscillations will also affect the spectrum.) The solid lines represent the integrated number of events for the specific time-dependent neutrino flux model in~\cite{Huedepohl:2009wh} (see Figs.~\ref{fig:garching} and \ref{fig:eventrates}; this model has relatively cool spectra and low event rates). Core collapses are expected to occur a few times per century, at a most-likely distance of about 10-15 kpc.}
 
   \label{fig:ratesvdist}
 \end{figure}
@@ -587,7 +592,7 @@ N_{\rm SRN} = 57 \pm 12  \ \ \ 16 \, {\rm MeV} \leq E_e \leq 40 \, {\rm MeV}
 \label{eqn:srnrate}
 \end{equation}
 where $E_e$ is the energy of the electron from the CC interaction as
-shown in Equation~\ref{eqn:srninteract}. 
+shown in Equation~\ref{eq:nueabs}. 
 \fixme{Update to refer to 40 kt, longer period}
 % The estimate of the SRN rate
 % shown in Equation~\ref{eqn:srnrate} has a weak dependence on the value
