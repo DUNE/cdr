@@ -235,6 +235,8 @@
 % Hyperref typically needs to come at the end of all \usepackages 
 \RequirePackage[pdftex,bookmarks]{hyperref}
 
+% Use to import pdf files (Anne 4/28/15)
+\RequirePackage{pdfpages}
 
 % this seems overly tortured
 \newif\iffinal
