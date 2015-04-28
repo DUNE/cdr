@@ -4,6 +4,7 @@ from the expectations given an alternate set of parameters. For example, the CP 
 studies test the spectral differences induced by shifting \deltacp away from 0.0 and $\pi$ and by changing the
 mass hierarchy. These differences are quantified with a test statistic (see Eq.~\ref{eq:dx2_MH}~-~\ref{eq:dx2_CP}) 
 which accounts for statistical and systematic uncertainties. 
+
 The effect of systematic uncertainty in the underlying models parameters used to 
 predict these spectra is included by allowing the parameters to vary within Gaussian ranges. In the fit,
 these systematic nuisance parameters are profiled, i.e. the set of nuisance parameters that produces the
@@ -96,7 +97,7 @@ differences in selection efficiencies.
 %cancellation of uncertainty in this background between the \nue and \numu samples.
 %However, to be conservative the NC+CCnumu backgrounds in the nue are allowed to vary by an additional
 %uncorrelated 5% to account for differences in pi0/pi+- production rates, and detection/selection efficiencies.
-The $\nu_{\tau}$ background uncertainties are again related to cross-section ratio uncertainties
+Again, the $\nu_{\tau}$ background uncertainties are related to cross-section ratio uncertainties
 which are 100\% correlated among samples.
 
 
@@ -192,7 +193,7 @@ normalization from uncertainties in the flux determination of 2\%.
 As described in Section \ref{sec:syst_studies_ind}, preliminary
 studies of the FGT ND support this estimate, predicting 2\% uncertainty on the absolute flux and 1-2\%
 uncertainty on the flux shape.
-\subsubsection{Simulation Uncertainties}
+\subsubsection{Interaction Model Uncertainties}
 \label{sec:syst_just_sim}
 This category of uncertainties arise primarily from uncertainties in modeling neutrino interactions with the target
 nuclei in the near and far detectors. These uncertainties include \nue and \numu cross-section uncertainties,
@@ -214,11 +215,11 @@ cancellation of near-far uncertainties; this is a requirement of the ND design.
 
 Additionally, in considering the effect of the three-flavor analysis on the final uncertainty,
 the neutrino beams in DUNE and MINOS have energy
-spectra that peak around 2.5-3.0~GeV, compared to 600~MeV in T2K. The impact of the inability to
-constrain the ratio of \nue/\numu cross-sections in T2K will be significantly reduced in DUNE
-where the energy range is higher and the theoretical limits on the cross-section differences is
-less than 1\%~\cite{DanSaidSo}. This constraint increases
-the level of cancellation that can be expected in the three-flavor analysis. As
+spectra that peak around 2.5-3.0~GeV, compared to 600~MeV in T2K. 
+The theoretical uncertainty on the \nue/\numu cross section ratio uncertainty is
+less than 1\% above neutrino energoes of 1.0-1.5 GeV~\cite{Day-McFarland:2012},
+thus the uncertainty on the \nue normalization with respect to the \numu spectrum in DUNE will be significantly improved as compared to T2K,
+as will the level of cancellation that can be expected in the three-flavor analysis. As
 described in Section~\ref{sec:syst_studies_ind}, preliminary studies with a Fast MC demonstrate the
 expected cancellation of cross-section uncertainties in the DUNE three-flavor analysis.
 
@@ -230,7 +231,7 @@ where the 2.5\% from T2K actually includes most far detector effects. DUNE's LAr
 is expected to outperform both the MINOS sampling calorimeter and the T2K water Cerenkov detector
 in reconstruction of \nue interactions. Purity of the quasielastic-like event selection
 should be improved relative to T2K by the capability of the LAr TPC to detect hadronic showers
-that would be below threshold in SuperK, as described in \cite{UlrichMosel}. For non-quasielastic-like
+that would be below threshold in SuperK, as described in \cite{Mosel-Lalakulich-Gallmeister:2014}. For non-quasielastic-like
 events, the low thresholds and high resolution of the DUNE LAr TPC will significantly improve
 calorimetric reconstruction over the MINOS sampling calorimeter.
 Significant experience with simulation, reconstruction, and calibration
@@ -247,17 +248,23 @@ In considering the effect of the three-flavor analysis on the final uncertainty,
 to contribute more than half of the total energy deposit for many \nue and \numu interactions in the DUNE
 far detector. Since the hadronic energy scale does not depend on neutrino flavor, the uncertainties on this
 portion of the LAr TPC energy response are expected to largely cancel in the DUNE three-flavor analysis, up
-to kinematic differences in the \nue and \numu samples. The samples in the three-flavor fit, particularly the
-neutrino and antineutrino samples, will have significantly different contributions from neutrons, so understanding
+to kinematic differences in the \nue and \numu samples. The samples in the three-flavor fit will have significantly different contributions from neutrons, 
+(The \nue is different from the \numu because due to oscillation the samples peak at different energies, 
+while the neutrinos are different from antineutrinos due to the relative probability of interacting on
+a proton versus a neutron and because of the additional $(1-\cos\theta)^2$ term in the antineutrino cross section
+which effects the y$_bj$-distribution.) For this reason understanding
 of neutron production and detector response will be important for cancellation of uncertainty in this fit.
 Deployment of the CAPTAIN detector in a neutron beam at LANL is planned to address these issues.
 
+
+\subsubsection{Total Uncertainties Assigned to the Normalization Parameters}
 Based on consideration of the sources of systematic uncertainty 
 and experience from previous and currently-running neutrino oscillation
-experiments, we believe that $5\% \oplus 2\%$ signal normalization (where 5\% is the normalization uncertainty on the
+experiments, we believe that the assigned uncertainties are reasonably achievable in DUNE given a capable near detector with an argon target region.
+The uncertainties on the signal are expressly $5\% \oplus 2\%$ signal normalization, where 5\% is the normalization uncertainty on the
 FD \numu sample and 2\% is the effective uncorrelated uncertainty on the FD \nue sample after fits to both near
-and FD detector data and all external constraints) and normalization uncertainties on background as given
-in Table \ref{tab:bgnormsys} are reasonably achievable in DUNE given a capable near detector with argon targets.
+and FD detector data and all external constraints. The normalization uncertainties on background as given
+in Table \ref{tab:bgnormsys}.
 The goal for the \emph{total} uncertainty on the \nue sample in
 DUNE is less than 4\%, so the $5\% \oplus 2\%$ \nue signal normalization uncertainty
 used for the sensitivity calculations is appropriately conservative.
@@ -349,10 +356,10 @@ propagation studies will be varied between current external knowledge to evaluat
 absence of a DUNE near detector and conservative and optimistic projections
 for ND performance. In cases where systematic uncertainty is shown to degrade the oscillation parameter
 measurement sensitivities, the required constraints will become detector performance requirements.
-The details of these studies is beyond the scope of this document, however the conclusions from some
+The details of these studies are beyond the scope of this document, however the conclusions from some
 initial studies and an overview of each source of systematic uncertainty is laid out in the remainder of this section.
 
-Initial studies using a Fast Monte Carlo with a parameterized detector response
+Initial studies using a Near Detector Fast Monte Carlo with a parameterized detector response
 predict 2-3\% statistical uncertainties on the absolute flux using fully 
 leptonic neutrino interactions for which high-precision cross-section predictions 
 exist. Specifically,
@@ -378,9 +385,10 @@ simulations to project reasonable hadron production uncertainties to ND and FD a
 
 
 Primary interaction uncertainties are specific to each model, and each of the three major-cross 
-section models (QE, resonance production, and DIS) contribute roughly equally to the \nue/\anue
-appearance signal samples. In most cases, these uncertainties come from the hadron tensor part of the
-calculation. These sources of uncertainty will be discussed in the context of nuclear models later in this
+section components (QE, resonance production, and DIS) contribute roughly equally to the \nue/\anue
+appearance signal samples. In most cases, these uncertainties come from the hadronic interaction part of the
+calculation (form factors in the hadron tensor, the nuclear initial state and FSI). 
+The later two sources of uncertainty will be discussed in the context of nuclear models later in this
 section. 
 
   \emph{Coherent scattering}: Coherent models built upon PCAC theory relate the neutrino scattering 
