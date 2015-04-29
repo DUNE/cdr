@@ -22,3 +22,7 @@ annex-*.pdf
 *.pyc
 .~lock.*
 junk
+build
+.lock-waf*
+.waf-*
+*.zip
