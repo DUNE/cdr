@@ -2,8 +2,8 @@
 \section{The Cold Electronics (CE)} 
 \label{sec:detectors-fd-ref-ce}
 
-The TPC read-out electronics are mounted on the APA front-end (Figure~\ref{fig:elec_CMBonAPA})
-in LAr in order to minimize channel capacitance and noise. These electronics are therefore referred to as the ``Cold Electronics'' (CE) subsystem. 
+The TPC read-out electronics are mounted on the APA front-end (Figure~\ref{fig:elec_CMBonAPA}) in LAr.
+These electronics are therefore referred to as the ``Cold Electronics'' (CE) subsystem. 
 The scope of the CE subsystem includes the design, procurement, fabrication, testing,
 delivery and installation of the CE, the principle components of which are:
 \begin{itemize}
@@ -13,19 +13,21 @@ delivery and installation of the CE, the principle components of which are:
 \end{itemize}
 The most significant requirements for the CE are to:
 \begin{itemize}	
+\item Minimize channel capacitance and noise.
+\item Minimize dissipated power per channel in the LAr.
 \item Read out the TPCs and transmit their data to DAQ;
 \item Record the channel waveforms continuously without dead time;
 \item Provide sufficient precision and range in the digitization to satisfy the KPP;
 \item Operate for the life of the facility without significant loss of function;
-% \item Use only materials that are compatible with high-purity liquid argon.
+\item Use only materials that are compatible with high-purity liquid argon and minimal natural radioactivity.
 \end{itemize}
-\begin{cdrfigure}[The front-end electronics as mounted on an APA]{elec_CMBonAPA}{The front-end electronics,
-shown in the red circle, as mounted on an APA.}
+\begin{cdrfigure}[The front-end electronics as mounted on an APA]{elec_CMBonAPA}
+ {The front-end electronics, shown in the red circle, as mounted on an APA.}
 \includegraphics[width=0.70\linewidth]{elec_CMBonAPA_1.pdf}
 \end{cdrfigure}
 
 The CE are implemented as ASIC chips using CMOS technology,
-which performs well at LAr temperatures,
+which performs well at LAr temperatures~\cite{ThornEtAl:CELAr},
 and provides amplification, shaping, digitization, buffering and multiplexing (Mux) of the signals.
 The CE architecture is manifested in the Front End Mother Board (FEMB),
 a 128-channel board which uses eight 16-channel FE ASICs and eight 16-channel ADC ASICs
@@ -36,7 +38,7 @@ and an 8:1 Mux stage with two pairs of serial readout lines in parallel.
 A Cold Digital Data (COLDATA) ASIC chip mounted on each FEMB provides an additional Mux of 4:1 and
 is capable of driving the data at 1~Gb/s through 30~m of copper cable to the feedthrough and on to the DAQ. 
 Tables \ref{tab:DeviceCounts} and \ref{tab:KeyParameters} list the CE device counts and key parameters.
-\vskip -10pt % This prevents the last table from appearing in the PD section by pulling the figure up, which is easily accomodated.
+%\vskip -10pt % This prevents the last table from appearing in the PD section by pulling the figure up, which is easily accomodated.
 \begin{cdrfigure}[The CE Architecture]{elect_schem}{The CE Architecture. The basic unit is the 128-channel FEMB.}
 \includegraphics[width=0.90\linewidth]{elect_schem.pdf}
 \end{cdrfigure}
@@ -66,6 +68,8 @@ The 1~Gb/s data rate is not high enough to require the use of optical fibers in 
 nor is there a need for zero suppression or data compression.
 This greatly reduces the complexity of the COLDATA ASIC, with a corresponding decrease in overall risk,
 including risk of failure-to-implement (within a fixed schedule and budget).
+The COLDATA work is especially challenging, with final production not scheduled to begin until late 2019.
+Alternative approaches are currently under study.
 
 \begin{cdrtable}[Device Counts]{l|r|r|r}{DeviceCounts}{Device Counts}
  Parameter           & per FEMB& per APA& per 10~kt Detector\\ \toprowrule
@@ -78,12 +82,12 @@ including risk of failure-to-implement (within a fixed schedule and budget).
 \end{cdrtable}
 \begin{cdrtable}[Key parameters]{l|l}{KeyParameters}{Key parameters}
  Parameter                &  Value                               \\ \toprowrule
+ Signal-to-Noise (in LAr) &  9:1 for 1~$\mu$s peaking time       \\ \colhline
  Mux Level                &  32                                  \\ \colhline
  Sampling Frequency       &  2~MHz                               \\ \colhline
  ADC Resolution           &  12~bits                             \\ \colhline
  FE Peaking Time          &  0.5, 1, 2, 3~$\mu$s (selectable)    \\ \colhline
  FE Gain                  &  4.7, 7.8, 14, 25~mV/fC (selectable) \\ \colhline
- Signal-to-Noise (in LAr) &  9:1 for 1~$\mu$s peaking time       \\ \colhline
  Calibration Precision    &  1\%                                 \\ \colhline
  Power dissipation        &  11~mW/channel                       \\
 \end{cdrtable}
