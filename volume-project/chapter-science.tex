@@ -1,28 +1,486 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Science}
+\chapter{DUNE Science}
 \label{v1ch:science}
 
 
-Here is a sample figure:
+This section summarizes DUNE's potential for achieving its core
+physics objectives based on the current %understanding of the 
+experimental landscape, scenarios for staging DUNE, and 
+the technical capabilities of DUNE at each stage.
+A detailed description of the physics objectives of DUNE is provided in
+the main text of this document. 
 
-\begin{cdrfigure}[short]{label}{long}
-%\includegraphics[width=\linewidth]{file}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Neutrino Mixing, Mass Hierarchy and CP Violation}
+%\subsection{Long-Baseline/Oscillation Physics}
+
+
+\textbf{Neutrino Mass Hierarchy:} The \SIadj{1300}{\km} baseline
+establishes one of DUNE's key strengths: sensitivity to the matter
+effect. This effect leads to a large discrete asymmetry in the
+$\nu_\mu\to \nu_e$ versus $\overline{\nu}_\mu \to \overline{\nu}_e$
+oscillation probabilities, the sign of which depends on the mass
+hierarchy (MH).  At 1300~km this asymmetry is approximately
+$\pm 40\%$ in the region of the peak flux; this is larger than the
+maximal possible CP-violating asymmetry associated with \deltacp,
+meaning that both the MH and \deltacp can be
+determined unambiguously with high confidence within the same
+experiment using the beam neutrinos.
+%\fixme{I would drop `using the beam neutrinos'}
+% a feat unattainable for an experiment at a much shorter baseline.  
+
+In detail, the sensitivity of DUNE depends on the actual values of
+poorly known mixing parameters (mainly \deltacp and
+$\sin^2{\theta_{23}}$), as well as the true value of the MH itself.
+The discrimination between the two MH hypotheses is characterized as a
+function of the \emph{a priori} unknown true value of \deltacp by
+considering the difference, denoted $\Delta \chi^2$, between the
+$-2\log{\cal L}$ values calculated for a data set with respect to
+these hypotheses, considering all possible values of
+\deltacp\footnote{For the case of the MH determination, the usual
+  association of this test statistic with a $\chi^2$ distribution for
+  one degree of freedom is incorrect; additionally the assumption of a
+  Gaussian probability density % added 'a'
+  implicit in this notation is not exact.  The discussion in
+  Chapter~\ref{nu-oscil-chap} provides a brief description of the
+  statistical considerations.}.  In terms of this test statistic, the
+MH sensitivity of DUNE with an exposure of 300~kt-MW-years which
+corresponds to seven years of data (3.5 years in neutrino mode plus
+3.5 years in antineutrino mode) with a 40-kt detector and a 1.07-MW
+beam is illustrated in Figure~\ref{fig:mhexec} for the case of normal
+hierarchy and the current best fit value of $\sin^2 \theta_{23} = 0.45$.
+%
+\begin{cdrfigure}[Summary of mass hierarchy sensitivities]{mhexec}{The square root of
+    the mass hierarchy discrimination metric $\Delta \chi^2$ is
+    plotted as a function of the unknown value of \deltacp for an
+    exposure of 300~kt-MW-yr (left).  The minimum significance with which the mass hierarchy can be determined for all values of \deltacp as a function of exposure (right).
+    The shaded region represents the range in sensitivity due to
+    potential variations in the beam design.}
+\includegraphics[width=0.49\textwidth]{volume-physics/figures/mh_300ktmwyear}
+\includegraphics[width=0.49\textwidth]{volume-physics/figures/mh_exp}
+\label{fig:mhexec}
 \end{cdrfigure}
 
-Here is a sample reference to a figure (Figure~\ref{fig:label}). Notice: ``fig:'' is not present in the label as written in the figure code itself.
+Across the overwhelming majority of the parameter space for the mixing
+parameters that are not well known (mainly \deltacp and
+$\sin^2{\theta_{23}}$), DUNE's determination of the MH will be
+definitive, but even for unfavorable combinations of the parameter
+values, a statistically ambiguous outcome is highly unlikely.
+The least favorable scenario corresponds to a true value of \deltacp
+in which the MH asymmetry is maximally offset by the leptonic CP
+asymmetry, and where, independently, $\sin^2{\theta_{23}}$ takes on a
+value at the low end of its experimentally allowed range.  For
+this %worst-case
+scenario, studies indicate that with a 40~kt %(fiducial)
+LArTPC operating for %ten years in a \SI{700}{\kW}
+7.5 years in a 1~MW beam, DUNE on its own can (in a typical data set)
+distinguish between normal and inverted hierarchy with $|\Delta
+\chi^2| = \overline{|\Delta \chi^2|} = 25$. This corresponds to a
+$\geq 99.9996\%$ probability of determining the correct hierarchy.  In
+$>97.5\%$ of data sets, DUNE will measure $|\Delta \chi^2| > 9$ in
+this scenario, where measuring $|\Delta\chi^2| = 9$ with an expected
+value of \num{25} corresponds to a significance in excess of three
+Gaussian standard deviations.
 
-Here is a sample table:
+Concurrent analysis of the corresponding atmospheric-neutrino samples
+in an underground detector will improve the precision with which the
+MH is resolved.  
 
-\begin{cdrtable}[short]{cc}{label}{long} %The third argument (reads {cc}) can use c, l, r or p{some length}
-% but please do not include lines like “|c|l|l|”. It CAN look like {cll} or {llp{3cm}}, for instance.
-Header Column1 & Header Column 2 \\ \toprowrule
-Row 1 & First \\ \colhline
-Row 2 & Second \\ \colhline
-Row 3 & Third \\
-\end{cdrtable}
+%It is important to note that for the
+%initial stages of DUNE, a greatly improved level of precision in the
+%determination of the MH can be achieved by incorporating
+%constraints from NO$\nu$A and T2K data.  
+%With an initial 10~kt detector, for half
+%the range of possible \deltacp values, the expected significance 
+%exceeds $\overline{\Delta \chi^2} = 25$; again this corresponds to a $\geq
+%99.9996\%$ probability of determining the correct hierarchy.  To put
+%this in context, it is notable that even an extended NO$\nu$A
+%program~\cite{Messier:2013sfa} at four times its nominal exposure (of six
+%years of operation at \SI{700}{\kW}), would have coverage at the
+%$\overline{\Delta \chi^2} = 9$ level or better for only $40\%$ of the
+%\deltacp range.
 
-Here is a sample reference to a table Table~\ref{tab:label}). Notice: ``tab:'' is not present in the label as written in the table code itself.
+\textbf{CP Violation and the Measurement of {\boldmath \deltacp}:}
+
+The DUNE program has two somewhat distinct objectives with regard to
+CP symmetry violation in the $\nu_\mu \to \nu_e$ oscillation channel.
+First, DUNE aims to make a precise determination of the value of
+\deltacp within the context of the standard three-flavor mixing
+scenario described by the PMNS matrix (discussed in
+Section~\ref{ss:oscphysics}).  Second, and perhaps more significantly,
+DUNE aims to observe a signal for leptonic CP violation, independent
+of the underlying nature of neutrino oscillation phenomenology.
+Within the standard three-flavor mixing scenario, such a signal will
+be observable, provided \deltacp is not too close to either of the
+values for which there is no CP violation (zero and $\pi$).  Together,
+the pursuit of these two goals provides a thorough test of the
+standard three-flavor scenario.
+
+Figure~\ref{fig:execsummaryCP} shows the expected sensitivity to CP
+violation as well as the 1$\sigma$ resolution for \deltacp as a
+function of exposure.  At this beam power, in a six-year run, a
+\ktadj{10} far detector will be able to measure \deltacp to $\pm$
+20$^\circ$ $-$ 30$^\circ$ (depending on its value), independent of
+other experiments.
+%This would be equivalent to a six-year run with a \SI{1.2}{\MW} beam.
+A full-scope %fully realized  ('full-scope' is defined)
+DUNE operating with multi-megawatt 
+beam power in a later phase, will achieve a precision better than $\pm
+10^\circ$, comparable to the current precision on the CP phase in the
+CKM matrix in the quark sector.
+%
+\begin{cdrfigure}[CP violation sensitivity and $\delta_{cp}$
+  resolution as a function of exposure]{execsummaryCP}{The
+    significance with which CP violation can be determined for 75\%
+    (right) of \deltacp values as a function of exposure in detector
+    mass (kiloton) $\times$ beam power (MW) $\times$ time (years)
+    (left). The expected 1$\sigma$ resolution for \deltacp as a
+    function of exposure (right). The shaded region represents the
+    range in sensitivity due to potential variations in the beam
+    design. This plot assumes normal mass hierarchy.}
+\includegraphics[width=0.49\textwidth]{volume-physics/figures/cpv75_exp}
+ \includegraphics[width=0.49\textwidth]{volume-physics/figures/res_dcp_exp}
+\end{cdrfigure}
+
+DUNE with a \ktadj{10} detector, in combination with T2K and NO$\nu$A, will
+determine leptonic CP violation with a precision of $3\sigma$ or
+greater for $\approx 40\%$ of \deltacp values in a 
+%ten-year run at \SI{700}{\kW} 
+six-year run with \SIadj{1.2}{\MW} beam power. It is important to note
+that DUNE alone dominates the combined sensitivity and that T2K and
+NO$\nu$A have very limited %no appreciable 
+sensitivity to CP violation on their
+own. To reach $5\sigma$ for an appreciable fraction of the range of
+\deltacp, the full-scope %fully realized 
+DUNE %, including a near neutrino detector, 
+will be needed to control systematic errors while
+accumulating large enough samples in the far detector to reach this
+level of sensitivity.  No experiment can provide coverage at 100\%,
+since CP violation effects vanish as $\mdeltacp\to 0$ or $\pi$.
+
+\textbf{\boldmath Determination of $\sin^2{2\theta_{23}}$ and Octant
+  Resolution:}  In long-baseline experiments with $\nu_\mu$ beams, the
+magnitude of $\nu_\mu$ disappearance and $\nu_e$ appearance signals is
+proportional to $\sin^2{2\theta_{23}}$ and $\sin^2{\theta_{23}}$,
+respectively, in the standard three-flavor mixing scenario.  Current
+$\nu_\mu$ disappearance data are consistent with maximal mixing,
+$\theta_{23} = 45^\circ$.  To obtain the best sensitivity to both the
+magnitude of its deviation from $45^\circ$ as well as
+its sign ($\theta_{23}$ octant), a combined analysis of the two
+channels is needed~\cite{Huber:2010dx}.  As demonstrated in
+Chapter~\ref{nu-oscil-chap}, a \ktadj{10} DUNE detector will be able to resolve the
+$\theta_{23}$ octant at the $3\sigma$ level or better for
+$\theta_{23}$ values less than $40^\circ$ or greater than $50^\circ$,
+provided \deltacp is not too close to zero or $\pi$.  A full-scope %fully realized  
+DUNE will measure $\theta_{23}$ with a precision of 
+$1^\circ$ or less, even for values within a few degrees of $45^\circ$.
 
 
-Here is a face citation~\cite{REF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\paragraph*{Searches for Baryon Number Violation.}
+\subsection{Nucleon Decay Physics Motivated by Grand Unified Theories}
+% another idea \subsection{Nucleon Decay and Baryon Number Violation}
+% pre-Anne \subsection{Searches for Baryon Number Violation}
+
+The DUNE far detector will significantly extend lifetime sensitivity for specific nucleon decay
+modes by virtue of its high detection efficiency relative to water Cherenkov detectors and its 
+low background rates.  As an example, DUNE has
+enhanced capability for detecting the $p\to K^+\overline{\nu}$
+channel, where lifetime predictions from supersymmetric models extend
+beyond, but remain close to, the current (preliminary)
+Super-Kamiokande limit of  $\tau/B > \SI{5.9e33}{year}$ (90\% CL)
+from a \SI[number-unit-product = -, inter-unit-product=\ensuremath{{}\cdot{}}]{260}{\kt\year}
+exposure~\cite{kearns_isoups}\footnote{The lifetime shown here is divided by the branching
+fraction for this decay mode, $\tau/B$, and as such is a \emph{partial lifetime}.}.  
+The signature for an
+isolated semi-monochromatic charged kaon in a LArTPC is distinctive,
+with multiple levels of redundancy.  A \ktadj{34} DUNE far detector deep
+underground will reach a limit of \SI{3e34}{\year} after ten years
+of operation (Figure~\ref{fig:execsummarypdk}), and would see nine
+events with a background of 0.3 should $\tau/B$ be \SI{1e34}{\year}, just beyond the
+current limit.
+Even a \ktadj{10} detector 
+(placed underground) 
+would yield an intriguing signal of a few events after a ten-year exposure 
+in this scenario.
+
+\begin{cdrfigure}[Sensitivity to the decay $p\to K^+ \overline{\nu}$
+  with liquid argon detectors]{execsummarypdk} {Sensitivity to the
+    decay $p\to K^+ \overline{\nu}$ as a function of time for
+    underground  LArTPCs starting with an initial 10 kt and adding another 30 kt
+after 5 years of running.
+  For comparison, the current limit from SK is also shown.
+  The limits are at 90\% C.L., calculated for
+  a Poisson process including background, assuming that the detected events
+  equal the expected background.}
+\includegraphics[width=0.8\textwidth]{volume-physics/figures/lar10-40.pdf}
+\end{cdrfigure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\paragraph*{Studies of Supernova Neutrino Bursts.}
+\subsection{Supernova-Neutrino Physics and Astrophysics}
+%\subsection{Physics and Astrophysics with Supernova Neutrinos}
+
+The neutrinos from a core-collapse supernova are emitted in a burst of
+a few tens of seconds duration, with about half in the first
+second. Energies are in the range of a few tens of MeV, and the
+luminosity is divided roughly equally between the three known neutrino
+flavors.  Currently, experiments worldwide are sensitive primarily to
+electron antineutrinos ($\bar{\nu}_e$), with detection through the inverse-beta decay
+process on free protons\footnote{This refers to neutrino interactions with the nucleus of a
+hydrogen atom in H$_2$O in water detectors or in hydrocarbon chains in 
+liquid scintillator detectors.},
+ which dominates the interaction rate in water
+and liquid-scintillator detectors.  Liquid argon has a unique sensitivity to
+the electron-neutrino ($\nu_e$) component of the flux, via the absorption
+interaction on $^{40}$Ar as follows:
+\begin{eqnarray*}
+\nu_e +{}^{40}{\rm Ar} & \rightarrow & e^-+{}^{40}{\rm K^*}
+\end{eqnarray*} 
+This interaction can be tagged via the coincidence of the emitted
+electron and the accompanying photon cascade from the $^{40}{\rm K^*}$
+de-excitation.  About 900 events would be expected in a \ktadj{10}
+fiducial mass liquid argon detector for a supernova at a distance of
+\SI{10}{\kilo\parsec}.  In the neutrino channel the oscillation
+features are in general more pronounced, since the $\nu_e$ spectrum is
+always significantly different from the $\nu_\mu$ ($\nu_\tau$) spectra
+in the initial core-collapse stages, to a larger degree than is the
+case for the corresponding $\bar{\nu}_e$ spectrum.  Detection of a large
+neutrino signal in DUNE would help provide critical information on key
+astrophysical phenomena such as
+\begin{enumerate}
+\item the neutronization burst
+\item formation of a black hole
+\item shock wave effects
+\item shock instability oscillations
+\item turbulence effects
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+\subsection{Precision Measurements with a High-Intensity Neutrino Source and High-Resolution Near Detector}
+%\subsection{Physics with a Fine-grained Near Detector.}
+
+
+The near neutrino detector will provide precision measurements of
+neutrino interactions, which in the medium to long term are essential
+for controlling the systematic uncertainties in the long-baseline
+oscillation physics program.  The near detector, which will include argon
+targets, will measure the absolute flux and energy-dependent shape of
+all four neutrino species, $\nu_\mu$, $\bar{\nu}_{\mu}$, $\nu_e$ and $\bar{\nu}_e$, to accurately
+predict for each species the far/near flux ratio as a function of
+energy.  It will also measure the four-momenta of secondary hadrons,
+such as charged and neutral mesons, produced in the neutral and
+charged current interactions that constitute the dominant backgrounds
+to the oscillation signals.
+
+With  \num{240000} (\num{85000}) $\nu_\mu$ ($\overline{\nu}_\mu$) charged current 
+and \num{90000} (\num{35000})  neutral current interactions per ton per $1 \times 10^{20}$
+protons-on-target at \SI{120}{GeV}  in the $\nu$ ($\overline\nu$) beam, the near detector
+will also be the source of data for a rich program of neutrino-interaction 
+physics in its own right.  These numbers correspond to
+\num{e7}  neutrino interactions per year for the range of beam
+configurations and near detector designs under consideration.
+Measurement of fluxes, cross sections and particle production over a
+large energy range of \SIrange{0.5}{50}{\GeV} (which can also help constrain
+backgrounds to proton decay signals from atmospheric neutrinos) are the key
+elements of this program.  
+Furthermore, since the near detector data will feature very large
+samples of events that are amenable to precision reconstruction and
+analysis, they can be exploited for sensitive studies of electroweak
+physics and nucleon structure, as well as for searches for new physics
+in unexplored regions (heavy sterile neutrinos, high-$\Delta m^2$
+oscillations, light Dark Matter particles, and so on). 
+
+%Furthermore, since the near detector data will feature very large samples of events that are amenable to precision reconstruction and analysis, theycan be exploited for sensitive studies of electroweak physics andnucleon structure.  
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\section{Summary}
+%\section{Concluding Remarks}
+
+
+This chapter has touched only briefly on the most prominent portion of
+the full suite of physics opportunities enabled by DUNE.  
+%\fixme{Makes
+%  it sound like there are MANY physics topics not mentioned here.} 
+The following chapters cover these in detail, as well as
+topics that were omitted here in the interest of brevity and focus.
+In Chapter~\ref{conclusion-chap} progress toward
+DUNE physics milestones is addressed, based on one potential scenario
+for the operation of successive stages of DUNE detectors and PIP-II
+implementations,
+%We also elaborate there on 
+and the broad role of DUNE is discussed 
+in the context of such scenarios.
+The present chapter concludes with a summary of its key points.
+
+The primary science goals of DUNE are drivers for the advancement of
+particle physics. The questions being addressed are of wide-ranging
+consequence: the origin of flavor and the generation structure of the
+fermions (i.e., the existence of three families of quark and lepton flavors), 
+the physical mechanism that provides the CP violation needed
+to generate the Baryon Asymmetry of the Universe, 
+and the high energy
+physics that would lead to the instability of matter.
+Achieving these goals requires a dedicated, ambitious and long-term
+program.  No other proposed long-baseline neutrino oscillation program
+with the scientific scope and sensitivity of DUNE is as advanced in terms of
+engineering development and project planning.  A phased program with a
+far detector of even modest size in the initial stage (e.g., 10 kt) will
+enable exciting physics in the intermediate term, including a
+definitive mass hierarchy determination and a measurement of the CP
+phase without ambiguities, while providing the fastest route toward
+achieving the full range of DUNE's science objectives.  Should DUNE find
+that the CP phase is not zero or $\pi$, it will have found strong
+indications ($>3\sigma$) of leptonic CP violation.  Global interest is
+favorable for contributions from international partners to accelerate
+and enhance this program, including the DUNE first-phase scope.
+
+Implementing the vision that has brought DUNE to this point will allow
+the U.S. to host this world-leading program, bringing together the
+world's neutrino community to explore key questions at the forefront of
+particle physics and astrophysics. 
+%Implementing the vision that has brought DUNE to this point will provide a means for continued intellectual leadership for the U.S. within the global HEP community.  
+Moreover, the excitement generated
+by both the technical challenges of mounting DUNE and the potential
+physics payoffs are widely shared --- among the %current 
+generation of 
+scientists who have been paving the way for these innovations, as well as 
+the young scientists for whom DUNE will provide numerous research opportunities
+over the next two decades.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{thebibliography}{99}
+
+
+%\bibitem{snowmass2013} APS Division of Particles and Fields 
+%        Community Summer Study 2013, 
+%        \url{http://www.snowmass2013.org/}.
+
+%\bibitem{cdzero} DOE Office of Science, Office of High Energy Physics, ``Mission 
+%         Need Statement for a Long Baseline Neutrino Experiment (LBNE) Major
+%         System'', LBNE-doc-6259, September 2009, 
+%         \url{http://lbne2-docdb.fnal.gov/cgi-bin/ShowDocument?docid=6259}. 
+
+%\bibitem{nusandbeyond} ``Neutrinos and Beyond: New Windows on Nature'', 
+%                The NRC Neutrino Facilities Assessment Committee, 
+%                The National Academies Press, ISBN 0-309-08716-3, (2003).
+
+%\bibitem{potu} ``The Physics of the Universe, a Strategic Plan for Federal Research at
+%		the Intersection of Physics and Astronomy", 
+%		National Science and Technology Council Committee on Science, February 2004,
+%		\url{http://www.ostp.gov/html/physicsoftheuniverse2.pdf}.
+
+%\bibitem{epp2010} ``Revealing the Hidden Nature of Space and Time: Charting the 
+%                Course for Elementary Particle Physics'', The National Academies 
+%                Press, ISBN 0-309-66039-4, (2006).
+
+%\bibitem{nusag} ``Recommendations to the Department of Energy and the National 
+%                Science Foundation on a Future U.S. Program in Neutrino 
+%                Oscillations'', report of the HEPAP/NSAC 
+%                Neutrino Scientific Assessment Group, July 2007.
+
+%\bibitem{p5report} Particle Physics Project Prioritization Panel, ``U.S. Particle 
+%         Physics: Scientific opportunities, a plan for the next ten years'', May 
+%         2008,  \url{http://www.er.doe.gov/hep/files/pdfs/P5_Report 06022008.pdf}.
+
+%\bibitem{nasdusel} ``An Assessment of the Deep Underground Science and 
+%                   Engineering Laboratory'', The National Academies Press, 
+%                   ISBN 978-0-309-2172three-1, (2012).
+
+%\bibitem{facilitiesreport} ``Input to the prioritization of proposed scientific 
+%                            user facilities for the Office of Science'', 
+%                            HEPAP Facilities Subpanel, March 2013.
+
+%\bibitem{pxbook} A. S. Kronfeld and R. S. Tschirhart, eds., 
+%                 ``Project X: Physics Opportunities'', July 2013, 
+%                 \url{http://projectx-docdb.fnal.gov/cgi-bin/ShowDocument?docid=1199}.
+
+%\bibitem{snowmass-neutrino} A.\ de Gouvea {\sl et al.}, ``Neutrinos'',  
+%                            Intensity Frontier Working Group Report, DPF Community 
+%                            Summer Study 2013, posted at
+%                            \url{http://www.snowmass2013.org/tiki-index.php?page=Neutrinos}.
+
+%\bibitem{snowmass-baryon} K. S. Babu and E. Kearns, eds., ``Baryon Number Violation'', 
+%                          Intensity Frontier Working Group report, DPF Community 
+%                          Summer Study 2013.  See 
+%                          \url{http://www.snowmass2013.org/tiki-index.php?page=Baryon+Number+Violation}.
+
+%\bibitem{mar2012review} Final Report, Director's Independent Conceptual Design 
+%                        and CD-1 Readiness Review of the LBNE Project, March 2012,
+%                        \url{http://lbne2-docdb.fnal.gov:8080/0057/005788/003/FinalReportDirector%27sReviewLBNE2012-0three-30.pdf}
+%
+%\bibitem{LBNEreconfig} Y.-K. Kim {\sl et al.}, 
+%        LBNE Reconfiguration Steering Committee Report, August 2012, see
+%        \url{http://www.fnal.gov/directorate/lbne_reconfiguration/index.shtml}.
+%        See also, J. Appel {\sl et al.}, ``Physics Working Group Report to 
+%        the LBNE Reconfiguration Steering Committee'', also posted at the above URL.
+
+%\bibitem{cdr} LBNE Conceptual Design Report, October 2012, see  
+%         \url{https://sharepoint.fnal.gov/project/lbne/LBNE\%20at\%20Work/SitePages/Reports\%20and\%20Documents.aspx}.
+
+%\bibitem{cd1document} DOE Office of Science, Office of High Energy Physics, 
+%                      ``Critical Decision 1: Approve Alternate Selection and 
+%                      Cost Range of the Long Baseline Neutrino Experiment 
+%                      (LBNE) Project at the Fermi National Accelerator 
+%                      Laboratory and Sanford Underground Research Facility'',
+%                      LBNE-doc-6681, December 2012, 
+%         \url{http://lbne2-docdb.fnal.gov/cgi-bin/ShowDocument?docid=6681}.
+%        see also LBNE-doc-6963
+
+%\bibitem{europeanstrategy} The European Strategy for Particle Physics, Update 2013, 
+%        CERN-Council-S/106, 7 May 2013, 
+%        \url{http://council.web.cern.ch/council/en/EuropeanStrategy/ESParticlePhysics.html}.
+
+%\bibitem{wilson-fermilab-pac} R.~J.~Wilson, ``LBNE Collaboration Status'', 
+%       presentation to the Fermilab Program Advisory Committee, June 2013, 
+%       \url{http://www.fnal.gov/directorate/program_planning/June2013PACPublic/LBNECollabStat%us_PAC_June2013.pdf}.
+
+%\bibitem{docdb-3056} The LBNE Project, ``Physics Research Goals of the LBNE 
+%         Project'', LBNE-doc-3056v8, January 2013,
+%         \url{http://lbne2-docdb.fnal.gov/cgi-bin/ShowDocument?docid=3056}.
+%         
+%\bibitem{Akiri:2011dv} T. Akiri {\sl et al.} (LBNE Collaboration), ``The 2010 Interim 
+%         Report of the Long-Baseline Neutrino Expeirment Collaboration Physics 
+%         Working Groups'', arXiv:1110.6249 [hep-ex], 2011.
+
+%\bibitem{extendednova} M. Messier, for the NOvA Collaboration, ``Extending the 
+%                       NOvA Physics Program'', Whitepaper submitted to the 
+%                       Neutrino Working Group of the DPF Community Summer Study 2013, 
+%                       January 2013, 
+%                       \url{http://if-neutrino.fnal.gov/whitepapers/messier-nova.pdf}
+
+%\bibitem{t2k} K. Abe {\sl et al.} (T2K Collaboration), Phys.\ Rev.\ Lett.\ \textbf{ 107}, 
+%              041801 (2011).
+
+%\bibitem{MINOS-nue} P. Adamson {\sl et al.} (MINOS Collaboration), 
+%                   Phys.\ Rev.\ Lett. \textbf{ 107}, 181802 (2011).
+
+%\bibitem{dchooz} Y. Abe {\sl et al.} (Double Chooz Collaboration), Phys.\ Rev.\ D \textbf{ 86}, 
+%                 052008 (2012).
+
+%\bibitem{dayabay} F. P. An {\sl et. al} (Daya Bay Collaboration), 
+%                  Phys.\ Rev.\ Lett.\ \textbf{ 108}, 171803 (2012).
+%                 arXiv:1203.1669 [hep-ex]
+
+%\bibitem{reno} J. Ahn {\sl et al.} (RENO Collaboration), Phys.\ Rev.\ Lett.\ \textbf{ 108},
+%               191802 (2012).
+
+%\bibitem{Huber:2010dx} P. Huber and J. Kopp, JHEP \textbf{ 1103}, 013 (2011).
+
+%\bibitem{kearns-isoups} E. Kearns, ``Future Experiments for Proton Decay'', 
+%                        presentation at ISOUPS (International Symposium:
+%                        Opportunities in Underground Physics for Snowmass), Asilomar, 
+%                        May 2013.
+
+%\end{thebibliography}
+
+%\end{document}
