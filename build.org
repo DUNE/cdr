@@ -1,0 +1,38 @@
+#+TITLE: Building the CDR
+
+* Manually
+
+#+BEGIN_EXAMPLE
+  $ pdflatex <document>
+  $ bibtex <document>
+  $ pdflatex <document>
+  $ pdflatex <document>
+#+END_EXAMPLE
+
+Where =<document>= is "=volume-physics=", "annex-rate", etc.
+
+* Automatically
+
+An optional automatic build system is provided.  It is also used to regenerate =.tex= files which derive from the [[./data/parameters.xls]] and [[./python/parameters.py]] files.  
+
+One time preparation
+
+#+BEGIN_EXAMPLE
+  $ virtualenv venv
+  $ source venv/bin/activate
+  $ pip install dune-params
+  $ ./waf configure
+#+END_EXAMPLE
+
+Then, build/rebuild:
+
+#+BEGIN_EXAMPLE
+  $ ./waf
+#+END_EXAMPLE
+
+The resulting PDF files will be in =build/*.pdf=.
+
+If any files were regenerated or new ones were generated, they must be added, committed and pushed!
+
+
+

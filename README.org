@@ -15,6 +15,10 @@ zip or tar.gz archives.
 PDFs are generated from the most recent commits and they are available [[https://dune.bnl.gov/tmp/][here]]
 
 
+* Building the documents
+
+You need a =pdflatex= from a relatively recent LaTeX distribution.  Details are in [[./build.org]].
+
 * Contacts
 
 - Anne Heavey <aheavey@fnal.gov> 630-840-8039 (technical editor, content)
