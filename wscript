@@ -36,6 +36,7 @@ def build(bld):
             source = tex,
             outs = 'pdf',
             )
+        bld.install_files('${PREFIX}',tex.change_ext('.pdf', '.tex'))
     return
 
 
