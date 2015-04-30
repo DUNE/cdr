@@ -169,5 +169,26 @@ def filter(ps):
                  ps.gdaq_rone_SN_physics_datarate,
                  'megabyte/second', 'Total R1 data rate per APA'))
 
+
+    # Near Detector
+    ps.add(Param('nd_sst_beam_rate', ps.nd_beam_event_rate_density*ps.nd_sst_mass,
+                 'hertz', 'ND SST beam neutrino interaction rate', precision=1))
+    ps.add(Param('nd_ecal_beam_rate', ps.nd_beam_event_rate_density*ps.nd_ecal_mass,
+                 'hertz', 'ND ECAL beam neutrino interaction rate', precision=1))
+    ps.add(Param('nd_muid_beam_rate', ps.nd_beam_event_rate_density*ps.nd_muid_mass,
+                 'hertz', 'ND MuID beam neutrino interaction rate', precision=1))
+
+
+    ps.add(Param('nd_beam_event_rate', (ps.nd_sst_mass+ps.nd_ecal_mass+ps.nd_muid_mass)*ps.nd_beam_event_rate_density,
+                 'hertz','ND beam event rate', precision=1))
+
+    ps.add(Param('nd_event_rate', ps.nd_beam_event_rate+ps.nd_cosmic_muon_rate+ps.nd_rock_muon_rate,
+                 'hertz','ND total event rate', precision=1))
+
+    ps.add(Param('nd_data_rate', ps.nd_event_rate * ps.nd_event_size * ps.nd_bytes_per_channel,
+                 'megabyte/second', 'ND total data rate', precision=1))
+
     return ps
+
+
     

@@ -26,3 +26,6 @@ build
 .lock-waf*
 .waf-*
 *.zip
+install
+test.tex
+foo
