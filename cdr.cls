@@ -6,7 +6,7 @@
 \ProvidesClass{cdr}[2015/02/02]
 \LoadClass[12pt,letterpaper]{report}
 
-\RequirePackage[letterpaper]{geometry}
+\RequirePackage[letterpaper,margin=2cm]{geometry}
 
 % Required values and their setters
 \newcommand\thedoctitle{DRAFT Conceptual Design Report}
