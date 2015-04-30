@@ -5,11 +5,11 @@
 
 \newcommand{\gdaqchannelnumberfactor}{\num[round-mode=places,round-precision=1]{1.1}\xspace}
 
-\newcommand{\Rthreeoutputrate}{\SI[round-mode=places,round-precision=0]{67551.0}{\byte\per\second}\xspace}
-
 \newcommand{\daqsamplerate}{\SI[round-mode=places,round-precision=1]{2.0}{\mega\hertz}\xspace}
 
 \newcommand{\beamspillcycle}{\SI[round-mode=places,round-precision=1]{1.2}{\second}\xspace}
+
+\newcommand{\snbdatavolumezs}{\SI[round-mode=places,round-precision=0]{2.4e-05}{\giga\byte}\xspace}
 
 \newcommand{\beamreprate}{\SI[round-mode=places,round-precision=2]{0.833333333333}{\hertz}\xspace}
 
@@ -21,9 +21,7 @@
 
 \newcommand{\chargezsthreshold}{\SI[round-mode=places,round-precision=1]{0.5}{\MeV}\xspace}
 
-\newcommand{\Rthreeyearlyoutput}{\SI[round-mode=places,round-precision=0]{2094.0}{\giga\byte\per\year}\xspace}
-
-\newcommand{\Rtwophysicsdatarate}{\SI[round-mode=places,round-precision=0]{67551.0}{\byte\per\second}\xspace}
+\newcommand{\dunenumberchannels}{\num[round-mode=places,round-precision=0]{1536000.0}\xspace}
 
 \newcommand{\chargemaxsignalnoiseratio}{\num[round-mode=places,round-precision=0]{74.0}\xspace}
 
@@ -35,17 +33,21 @@
 
 \newcommand{\dunefsreadoutrate}{\SI[round-mode=places,round-precision=1]{4.608}{\tera\byte/\second}\xspace}
 
-\newcommand{\Ronetotaldatarate}{\SI[round-mode=places,round-precision=0]{10357410.0}{\byte\per\second}\xspace}
-
 \newcommand{\cosmicmuoneventsize}{\SI[round-mode=places,round-precision=1]{50.0}{\kilo\byte}\xspace}
 
 \newcommand{\chargehethreshold}{\SI[round-mode=places,round-precision=1]{10.0}{\MeV}\xspace}
 
 \newcommand{\beamhighdatayear}{\SI[round-mode=places,round-precision=0]{87.7019567714}{\giga\byte}\xspace}
 
+\newcommand{\gdaqronedatarate}{\SI{10.1653208448}{\mega\byte\per\second}\xspace}
+
 \newcommand{\cosmicmuoncorrection}{\num[round-mode=places,round-precision=2]{1.36}\xspace}
 
-\newcommand{\driftwindowtime}{\SI[round-mode=places,round-precision=4]{0.0054}{\second}\xspace}
+\newcommand{\snbeventratetpc}{\SI[round-mode=places,round-precision=0]{100.0}{\hertz}\xspace}
+
+\newcommand{\snbcloserfactor}{\num[round-mode=places,round-precision=0]{100.0}\xspace}
+
+\newcommand{\snbeventsize}{\num[round-mode=places,round-precision=0]{48.0}\xspace}
 
 \newcommand{\beamrunfraction}{\num[round-mode=places,round-precision=3]{0.667}\xspace}
 
@@ -53,9 +55,11 @@
 
 \newcommand{\tpcfulllength}{\SI[round-mode=places,round-precision=1]{58.0}{\meter}\xspace}
 
-\newcommand{\dunefsreadoutsizeyear}{\SI[round-mode=places,round-precision=1]{145.414314891}{\exa\byte}\xspace}
+\newcommand{\snbcanddatayearzs}{\SI[round-mode=places,round-precision=0]{163.296}{\giga\byte}\xspace}
 
-\newcommand{\Rtwototaldatarate}{\SI[round-mode=places,round-precision=2]{1035808593.0}{\byte\per\second}\xspace}
+\newcommand{\snbdataratehighzs}{\SI[round-mode=places,round-precision=0]{2.4e-05}{\tera\byte/\second}\xspace}
+
+\newcommand{\dunefsreadoutsizeyear}{\SI[round-mode=places,round-precision=1]{145.414314891}{\exa\byte}\xspace}
 
 \newcommand{\tpcfullwidth}{\SI[round-mode=places,round-precision=1]{14.5}{\meter}\xspace}
 
@@ -65,23 +69,13 @@
 
 \newcommand{\tpcapaheight}{\SI[round-mode=places,round-precision=1]{6.0}{\meter}\xspace}
 
-\newcommand{\cosmicmuonrate}{\SI[round-mode=places,round-precision=3]{0.258947264}{\hertz}\xspace}
-
-\newcommand{\Ronelowenergyphysicsdatarate}{\SI[round-mode=places,round-precision=0]{7920.0}{\byte\per\second}\xspace}
-
-\newcommand{\snbdatayearzs}{\SI[round-mode=places,round-precision=0]{163.296}{\giga\byte}\xspace}
-
-\newcommand{\Ronebetadatarate}{\SI[round-mode=places,round-precision=0]{9900000.0}{\byte\per\second}\xspace}
-
 \newcommand{\gdaqtrigsamplespersnhit}{\num[round-mode=places,round-precision=0]{48.0}\xspace}
 
 \newcommand{\beamdataratefs}{\SI[round-mode=places,round-precision=0]{6.915456}{\mega\byte\per\second}\xspace}
 
 \newcommand{\tpcapawidth}{\SI[round-mode=places,round-precision=1]{2.3}{\meter}\xspace}
 
-\newcommand{\Rtwomaxphysicsdatarate}{\SI[round-mode=places,round-precision=0]{45741041.0}{\byte\per\second}\xspace}
-
-\newcommand{\Ronebeamphysicsdatarate}{\SI[round-mode=places,round-precision=0]{53460.0}{\byte\per\second}\xspace}
+\newcommand{\cosmicmuonrate}{\SI[round-mode=places,round-precision=3]{0.258947264}{\hertz}\xspace}
 
 \newcommand{\tpcdrifttime}{\SI{2.25}{\milli\second}\xspace}
 
@@ -89,7 +83,9 @@
 
 \newcommand{\chargeminsignalnoiseratio}{\num[round-mode=places,round-precision=0]{15.0}\xspace}
 
-\newcommand{\snbrate}{\SI[round-mode=places,round-precision=0]{12.0}{\per\year}\xspace}
+\newcommand{\gdaqronetriggeredphysicsdatarate}{\SI{0.8448}{\byte\per\second}\xspace}
+
+\newcommand{\gdaqunit}{\SI{0.825}{\byte}\xspace}
 
 \newcommand{\gdaqbetahighrateAPA}{\SI[round-mode=places,round-precision=0]{500.0}{\kilo\hertz}\xspace}
 
@@ -99,37 +95,39 @@
 
 \newcommand{\tpcdriftvelocity}{\SI[round-mode=places,round-precision=1]{1.6}{\milli\meter\per\micro\second}\xspace}
 
-\newcommand{\snbeventsizezs}{\SI[round-mode=places,round-precision=1]{13.608}{\giga\byte}\xspace}
-
-\newcommand{\Ronemaxphysicsdatarate}{\SI[round-mode=places,round-precision=0]{457410.0}{\byte\per\second}\xspace}
+\newcommand{\gdaqronebeamphysicsdatarate}{\SI{9900.0}{\kilo\byte\per\second}\xspace}
 
 \newcommand{\beamfsdatarate}{\SI[round-mode=places,round-precision=0]{436.461066147}{\peta\byte\per\year}\xspace}
 
 \newcommand{\snbreadouttime}{\SI[round-mode=places,round-precision=1]{10.0}{\second}\xspace}
 
-\newcommand{\Ronephysicsdatarate}{\SI[round-mode=places,round-precision=0]{61410.0}{\byte\per\second}\xspace}
+\newcommand{\gdaqronebetadatarate}{\SI[round-mode=places,round-precision=1]{9.9}{\mega\byte\per\second}\xspace}
+
+\newcommand{\snbcanddataratezs}{\SI[round-mode=places,round-precision=0]{5174.64851079}{\byte\per\second}\xspace}
 
 \newcommand{\gdaqnoncosmicoverheadfactor}{\num[round-mode=places,round-precision=1]{1.5}\xspace}
 
 \newcommand{\tpcdetectormass}{\SI[round-mode=places,round-precision=0]{10.0}{\kilo\tonne}\xspace}
 
+\newcommand{\gdaqronelowenergyphysicsdatarate}{\SI{7.92}{\kilo\byte\per\second}\xspace}
+
 \newcommand{\gdaqcrrateAPA}{\SI[round-mode=places,round-precision=4]{0.0004}{\hertz}\xspace}
 
 \newcommand{\betadatayear}{\SI[round-mode=places,round-precision=0]{42.9426648664}{\peta\byte}\xspace}
 
-\newcommand{\gdaqtrigcompression}{\num[round-mode=places,round-precision=0]{2.0}\xspace}
+\newcommand{\betadatarate}{\SI[round-mode=places,round-precision=1]{1.3608}{\giga\byte\per\second}\xspace}
 
-\newcommand{\RoneSNphysicsdatarate}{\SI[round-mode=places,round-precision=0]{396000.0}{\byte\per\second}\xspace}
+\newcommand{\gdaqtrigcompression}{\num[round-mode=places,round-precision=0]{2.0}\xspace}
 
 \newcommand{\gdaqhighrateAPAs}{\num[round-mode=places,round-precision=0]{100.0}\xspace}
 
 \newcommand{\dunenumberdetectors}{\num[round-mode=places,round-precision=0]{4.0}\xspace}
 
-\newcommand{\Ronetriggeredphysicsdatarate}{\SI[round-mode=places,round-precision=0]{30.0}{\byte\per\second}\xspace}
-
 \newcommand{\daqdriftsperreadout}{\num[round-mode=places,round-precision=1]{2.4}\xspace}
 
-\newcommand{\dunenumberchannels}{\num[round-mode=places,round-precision=0]{1536000.0}\xspace}
+\newcommand{\snbdatavolumehighzs}{\SI[round-mode=places,round-precision=0]{0.00024}{\tera\byte}\xspace}
+
+\newcommand{\gdaqroneSNphysicsdatarate}{\SI{257.4}{\kilo\byte\per\second}\xspace}
 
 \newcommand{\beamhighdatarate}{\SI[round-mode=places,round-precision=2]{2.77916666667}{\kilo\byte\per\second}\xspace}
 
@@ -151,22 +149,24 @@
 
 \newcommand{\betaeventsize}{\num[round-mode=places,round-precision=1]{24.0}\xspace}
 
-\newcommand{\betadatarate}{\SI[round-mode=places,round-precision=1]{1.3608}{\giga\byte\per\second}\xspace}
+\newcommand{\snbcandrate}{\SI[round-mode=places,round-precision=0]{12.0}{\per\year}\xspace}
 
 \newcommand{\betareadoutsize}{\SI[round-mode=places,round-precision=0]{36.0}{\byte}\xspace}
+
+\newcommand{\snbcandeventsizezs}{\SI[round-mode=places,round-precision=1]{13.608}{\giga\byte}\xspace}
 
 \newcommand{\daqreadouttime}{\SI{5.4}{\milli\second}\xspace}
 
 \newcommand{\cosmicmuonflux}{\SI[round-mode=places,round-precision=2]{5.66e-09}{\hertz\per\centi\meter\squared}\xspace}
 
-\newcommand{\snbdataratezs}{\SI[round-mode=places,round-precision=0]{5174.64851079}{\byte\per\second}\xspace}
+\newcommand{\snbdataratezs}{\SI[round-mode=places,round-precision=0]{2.4e-06}{\giga\byte\per\second}\xspace}
 
 \newcommand{\tpcfullheight}{\SI[round-mode=places,round-precision=1]{12.0}{\meter}\xspace}
 
-\newcommand{\gdaqsnhighrateAPA}{\num[round-mode=places,round-precision=0]{10000.0}\xspace}
+\newcommand{\gdaqsnhighrateAPA}{\SI[round-mode=places,round-precision=0]{6500.0}{\hertz}\xspace}
 
 \newcommand{\gdaqlphighrateAPA}{\SI[round-mode=places,round-precision=0]{200.0}{\hertz}\xspace}
 
-\newcommand{\daqbytespersample}{\SI[round-mode=places,round-precision=1]{1.5}{\byte}\xspace}
-
 \newcommand{\beamrate}{\SI[round-mode=places,round-precision=0]{8770.19567714}{\per\year}\xspace}
+
+\newcommand{\daqbytespersample}{\SI[round-mode=places,round-precision=1]{1.5}{\byte}\xspace}

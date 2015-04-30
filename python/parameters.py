@@ -105,20 +105,69 @@ def filter(ps):
     # SNB
     ps.add(Param('snb_event_size_fs', ps.dune_fs_readout_rate * ps.snb_readout_time,
                  'terabyte', 'SNB FS event size', precision=1))
-    ps.add(Param('snb_data_rate_fs', ps.snb_event_size_fs * ps.snb_rate,
+    ps.add(Param('snb_data_rate_fs', ps.snb_event_size_fs * ps.snb_cand_rate,
                  'megabyte/second', 'SNB FS data rate', precision=1))
     ps.add(Param('snb_data_year_fs', ps.snb_data_rate_fs * Q('year'),
                  'terabyte', 'Annual SNB FS data volume', precision=0))
 
-    ps.add(Param('snb_event_size_zs', ps.beta_data_rate * ps.snb_readout_time,
-                 'gigabyte', 'SNB ZS event size', precision=1))
-    ps.add(Param('snb_data_rate_zs', ps.snb_event_size_zs * ps.snb_rate,
-                 'byte/second', 'SNB ZS data rate', precision=0))
-    ps.add(Param('snb_data_year_zs', ps.snb_data_rate_zs * Q('year'),
+    # candidate SNB (radioactive backgrounds)
+    ps.add(Param('snb_cand_event_size_zs', ps.beta_data_rate * ps.snb_readout_time,
+                 'gigabyte', 'Candidate SNB ZS event size', precision=1))
+    ps.add(Param('snb_cand_data_rate_zs', ps.snb_cand_event_size_zs * ps.snb_cand_rate,
+                 'byte/second', 'Candidate SNB ZS data rate', precision=0))
+    ps.add(Param('snb_cand_data_year_zs', ps.snb_cand_data_rate_zs * Q('year'),
                  'gigabyte', 'Annual SNB ZS data volume', precision=0))
 
+    # actual SNB
+    ps.add(Param('snb_data_rate_zs', ps.snb_event_size * ps.snb_event_rate_tpc * ps.dune_number_detectors,
+                 'gigabyte/second', 'Instantaneous SNB ZS data rate', precision=0))
+    ps.add(Param('snb_data_volume_zs', ps.snb_data_rate_zs * Q('10 seconds'),
+                 'gigabyte', 'Size of one SNB', precision=0))
+
+    ps.add(Param('snb_data_rate_high_zs', ps.snb_data_rate_zs * ps.snb_closer_factor * ps.snb_closer_factor,
+                 'terabyte/second', 'Instantaneous nearby SNB ZS data rate', precision=0))
+    ps.add(Param('snb_data_volume_high_zs', ps.snb_data_rate_high_zs * Q('10 seconds'),
+                 'terabyte', 'Size of one nearby SNB', precision=0))
 
 
+
+    # GDAQ - parameters from Giles
+    # "rone" = "R1", etc
+
+    ps.add(Param('gdaq_unit',ps.daq_bytes_per_sample * ps.gdaq_channelnumber_factor / ps.gdaq_trig_compression,
+                 'byte','Compressed sample size'))
+
+    ps.add(Param('gdaq_rone_beta_datarate', 
+                 ps.gdaq_unit * ps.beta_event_size * ps.gdaq_beta_highrate_APA,
+                 'megabyte/second', 'Radioactivity data rate from R1 per central APA', precision=1))
+
+    # fixme, original from Giles is I think wrong:
+    # data_bytes_per_sample*gdaq_channelnumber_factor*gdaq_trig_samples_per_beta_hit/gdaq_trig_compression*gdaq_cr_rate_APA*gdaq_APA_channels_per_cosmic
+    # why is there a beta term???
+    # also, this is using redundant terms from the spreadsheet (cosmic_muon_rate and cosmic_muon_event_size is defined above)
+    ps.add(Param('gdaq_rone_triggered_physics_datarate', 
+                 ps.gdaq_unit * ps.gdaq_cr_rate_APA * ps.gdaq_APA_channels_per_cosmic,
+                 'byte/second', 'TP data rate from R1'))
+
+    # Giles comment: Assumes we just double the radioactive rate furing the spills
+    ps.add(Param('gdaq_rone_beam_physics_datarate', ps.gdaq_rone_beta_datarate,
+                 'kilobyte/second', 'EB data rate from R1'))
+
+    # Giles comment: Already included in beta rate, but add again to allow double data size
+    ps.add(Param('gdaq_rone_lowenergy_physics_datarate', 
+                 ps.gdaq_unit * ps.snb_event_size * ps.gdaq_lp_highrate_APA,
+                 'kilobyte/second', 'LP data rate from R21'))
+
+    ps.add(Param('gdaq_rone_SN_physics_datarate', 
+                 ps.gdaq_unit * ps.snb_event_size * ps.gdaq_sn_highrate_APA,
+                 'kilobyte/second', 'SNB data rate from R1'))
+
+    ps.add(Param('gdaq_rone_data_rate', 
+                 ps.gdaq_rone_triggered_physics_datarate + \
+                 ps.gdaq_rone_beam_physics_datarate + \
+                 ps.gdaq_rone_lowenergy_physics_datarate + \
+                 ps.gdaq_rone_SN_physics_datarate,
+                 'megabyte/second', 'Total R1 data rate per APA'))
 
     return ps
     
