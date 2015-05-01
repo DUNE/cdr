@@ -5,6 +5,30 @@
 
 \section{Introduction to the DUNE Detectors}
 \label{sec:intro-dune-det}
+\fixme{Anne adding some possible text from the link Andre provided; go ahead and remove if you prefer to start from scratch!}
+
+\subsection{The Far Detector}
+\label{sec:intro-dune-far-det}
+
+The DUNE collaboration aims to deploy four 10-kt (fiducial mass) far detector modules based on the Liquid Argon Time Projection Chamber (LArTPC) technology. The viability of the basic LArTPC technology has been proven by ICARUS experiment. Neutrino interactions in liquid argon produce ionization and scintillation signals. While the basic detection method is the same, DUNE contemplates two options for the readout of the ionization signals: single-phase readout, where the ionization is detected using wire planes in the liquid argon volume; and the dual-phase approach, where the ionization signals are amplified and detected in gaseous argon above the liquid surface. 
+%
+The DUNE reference design, which implements a single-phase readout, is currently being validated in the 35-t prototype LAr detector at Fermilab. This design allows the charge to be collected directly, enabling precision calibration.
+\fixme{Seems like we should say something about the reference design option first, then the alternate, so I changed the order.} The alternate design, employing a dual-phase approach, if demonstrated, would allow for a 3-mm readout pitch, a lower detection-energy threshold, and better pattern reconstruction of the events. A 20-t dual-phase readout prototype is being constructed at CERN and will operate in 2016. 
+
+An active development program for both technologies is being pursued in the context of the Fermilab SBN program and the CERN neutrino platform. The development of the dual-phase technology is currently fully funded from outside the DOE project, although interest from DOE groups has been expressed in the context of the CERN Neutrino Platform. A flexible approach to the DUNE far detector design offers the potential to attract additional interest and resources into the Collaboration. The vision for the far detector is consolidated in line with \fixme{can we just say ``follows''?} the requirements set by the CD milestones and is guided by the following principles:
+
+\fixme{I did some reorganization here, see what you think..}
+\begin{itemize}
+\item For the first 10-kt module, the Collaboration will adopt the lowest-risk design that satisfies the requirement and allows for installation at SURF to commence in 2021/2022. According to current plans, the first 10-kt module will implement the APA/CPA reference design, discussed in Section~\ref{sec:detectors-fd-ref-tpc}, subject to risks identified in the register.
+
+\item Installation of the second 10-kt module should commence before 2023. The DUNE collaboration will instrument the second cryostat as soon as possible.
+
+\item There is recognition that the LArTPC technology will continue to evolve with (1) the large-scale prototypes at the CERN Neutrino Platform and the experience from the Fermilab SBN program, and (2) the experience gained during the construction and commissioning of the first 10-kt module. 
+
+\item It is assumed that all four detector modules will be similar but not necessarily identical. There will be a clear and transparent decision process for the design of the second and subsequent modules, allowing for implementation of evolved LArTPC technology. The decision will be based on physics performance, technical and schedule risks, costs, and funding opportunities.
+
+\item A comprehensive list of synergies between the reference and alternative design has been identified and summarized in Chapter~\ref{ch:detectors-synergy}. Common solutions for DAQ, electronics, HV feed-throughs, and so on, will pursued and implemented, independent of the details of the TPC design. 
+\end{itemize}
 
 \fixme{Anne is inserting a possible figure}
 
@@ -17,3 +41,21 @@
 \end{center}
 \end{minipage}
 \end{cdrfigure}
+
+\subsection{The Near Detector}
+\label{sec:intro-dune-near-det}
+
+\fixme{I just copied some text; haven't looked at it...}
+
+The primary scientific motivation for the DUNE near detector system is to constrain the beam spectrum for the long-baseline neutrino oscillation studies. It also provides high statistics for precision studies of neutrino-argon interactions. The near detector, which is exposed to an intense flux of neutrinos, also provides an opportunity for a wealth of fundamental neutrino interaction measurements, which are an important part of the secondary scientific goals of the DUNE collaboration. Within the former LBNE collaboration the neutrino near detector (NND) design was the NOMAD-inspired fine-grained tracker (FGT), which was built through a strong collaboration of U.S. and Indian institutes. Guiding principles for the near detector include
+
+\begin{itemize}
+\item Recognition of the central importance of the reference design for NND;
+
+\item The primary design consideration of the DUNE neutrino near detector is the ability to adequately constrain the systematic errors in the DUNE LBL oscillation analysis;
+
+\item The secondary design consideration for the DUNE NND is the self-contained non-oscillation neutrino physics program;
+
+\item It is recognized that a detailed cost-benefit study of potential ND options has yet to take place and such a study is of high priority to the DUNE project. 
+\end{itemize}
+
