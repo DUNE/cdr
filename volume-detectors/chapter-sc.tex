@@ -373,7 +373,7 @@ that decayed into two photons with separate conversion vertices.}
 \label{sec:detectors-sc-physics-software-reconstruction-fd}
 
 The reconstruction of particle interactions in LArTPC
-detectors is an active area of research and development that has advanced significantly in recent years.
+detectors is an active area of research that has advanced significantly in recent years.
 In particular, the data from the ICARUS~\cite{Amerio:2004ze,icarus-url,ICARUS-pizero,Antonello:2012hu} 
 and ArgoNEUT experiments~\cite{Adamson:2013/02/28tla,argoneut-url,Acciarri:2013met}
 have enabled the development of a variety of new reconstruction techniques,
@@ -392,15 +392,15 @@ is being developed for the DUNE far detector.
 The block diagram in figure~\ref{fig:fdrecoblockdiag} illustrates 
 the components of this reconstruction chain.
 The first stage of reconstruction involves the processing of the
-noisy ADC wire signals, and the creation of 2D `hits'. 
+ADC wire signals, and the creation of 2D `hits'. 
 These hits provide the input for a series of pattern-recognition algorithms,
 which form 2D and 3D clusters, representing individual particle tracks and showers.
 A set of high-level algorithms is then used to reconstruct the 
 3D vertex and trajectory of each particle, identify the type of particle,
 and determine the four-momentum.
-While each stage of the reconstruction chain has been implemented,
-the algorithms are not yet fully optimized and are subject to
-continuous improvement.
+While each stage of the reconstruction chain has been implemented, the algorithms -- in
+particular those addressing the higher level aspects of reconstruction such as particle identification -- are
+rather preliminary and in active development.
 
 \begin{cdrfigure}[Far detector reconstruction block diagram]{fdrecoblockdiag}
 {Block diagram showing the far detector reconstruction chain}
@@ -408,7 +408,7 @@ continuous improvement.
 \end{cdrfigure}
 
 
-\begin{cdrfigure}[Dual-phase LArTPC reconstructed events for data and MC]{lbnoeventsdisplay}
+\begin{cdrfigure}[Dual-phase LArTPC reconstructed events for data and MC]{lbnoeventdisplay}
 {
 %Badertscher:2012dq
 Dual-phase LArTPC reconstructed events for data and MC.
@@ -422,6 +422,8 @@ The secondary particles produced in the two interactions are distinguished with 
 
 \subsubsection{Signal Processing, Hit Finding, and Disambiguation}
 
+\fixme{Would help to combine single-phase and dual-phase material on
+ signal processing and hit reconstruction into a single paragraph}
 Separate chains of dedicated signal-processing and hit-finding 
 algorithms have been developed for the single-phase and dual-phase detectors,
 as described in \fixme{refs won't work} Sections~\ref{annex:reconstruction-signal-proc} and \ref{annex:reconstruction-single-phase-hit-find}.
@@ -580,8 +582,13 @@ combining together associated pairs of photons.
 
 \subsubsection{Calorimetry and Particle Identification}
 
-The measurement of the ionization density $dE/dx$ is important
-for particle identification and energy measurement.
+The reconstructed energy of hits follows from the measured charge 
+only after corrections are made for all sources of charge loss. 
+The energy of physics objects can then be reconstructed by summing 
+the energy of the associated hits and, when this is combined with 
+reconstructed trajectory, a measurement of the
+ionization density $dE/dx$ can be made, which is an important input 
+to particle identification.
 In order to reconstruct this information, the measured charge on each hit 
 is first obtained from fits to the pulse shapes.
 The charge loss due to the finite electron lifetime is corrected
