@@ -376,14 +376,13 @@ In particular, the analysis of the data from the ICARUS~\cite{Amerio:2004ze,icar
 and ArgoNEUT experiments~\cite{Adamson:2013/02/28tla,argoneut-url,Acciarri:2013met}
 required the development of a variety of new reconstruction techniques,
 forming the basis for precision neutrino physics measurements.
+Accurate reconstruction is needed not only of neutrino scattering events from the beam, but also atmospheric neutrino events,
+supernova burst neutrino interactions, and nucleon decay events, each with its own requirements.
 With the advancement of both single-phase and dual-phase technologies,
 and expansion of the experimental program to include MicroBooNE~\cite{Chen:2007ae,microboone-url},
 the 35-ton prototype and the CERN test experiments,
 the reconstruction tools have grown in both volume and sophistication,
 supported by powerful software frameworks such as LArSoft and Qscan.
-
-%Probably need to say around here that DUNE will require reconstruction of
-%supernova bursts, atmospheric neutrinos and proton decay, not just beam neutrinos
 
 A fully automated chain of event-reconstruction algorithms
 is being developed for the DUNE far detector.
@@ -513,7 +512,7 @@ which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 \subsubsection{Track Fitting and Shower Measurement}
 
 After the pattern recognition stage, a series of high-level reconstruction
-algorithms are applied to the 2D and 3D clusters,
+algorithms is applied to the 2D and 3D clusters,
 which fit the trajectories of particle tracks and measure the
 spatial and calorimetric properties of electromagnetic and hadronic showers.
 Several high-level techniques have been demonstrated 
@@ -529,8 +528,7 @@ The data from ICARUS have also been used to develop a precise
 track reconstruction algorithm, which builds a 3D trajectory for each track by simultaneously
 optimizing its 2D projections to match the observed data~\cite{Antonello:2012hu}.
 Another promising track reconstruction technique, based on the local principal curve algorithm,
-has been implemented in conjunction with the development of the 
-dual-phase detector concept, and is shown to provide 
+has been implemented for the dual-phase detector, and is shown to provide 
 a precise reconstruction of two-body final states~\cite{Back:2013cva,LAGUNA-LBNO-deliv}. 
 
 A full 3D reconstruction of electromagnetic showers is currently in development.
@@ -567,12 +565,20 @@ The identity of a particle track that ranges out in the active detector volume
 may be ascertained by analyzing the ionization density $dE/dx$ as a function of 
 the range from the end of the track, and comparing with the predictions
 for different particle species. 
- 
-%\fixme{Do we have any calorimetry plots?}
+
+In a liquid argon TPC, electromagnetic showers may be classified as having been initiated by
+an electron or a photon using the $dE/dx$ of the initial $\sim 2.5$~cm of the shower.  Electron-initiated
+showers are expected to have $dE/dx$ of one MIP in the inital part, while photon-initiated showers
+are expected to have twice that.  Current algorithms achieve a performace of 80\% electron efficiency
+with 90\% photon rejection, with a higher efficiency for fully-reconstructed showers.
+
+%Do we have any calorimetry plots?  
+% not for the main CDR.  Perhaps the annex
+
 
 \subsubsection{Neutrino Event Reconstruction and Classification}
 
-Once all the final-state particles in an event have been reconstructed individually, 
+Once the visible particles in an event have been reconstructed individually, 
 the combined information is used to reconstruct and classify the overall event.
 The identification of neutrino event types is based on a 
 multivariate analysis~\cite{Back:2013cva,WA105_TDR,LAGUNA-LBNO-deliv,LAGUNA-LBNO-EOI},
