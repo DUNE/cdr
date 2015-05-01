@@ -2,7 +2,7 @@
 \section{The Photon Detection System}
 \label{sec:detectors-fd-ref-pd}
 
-The scope of the photon detector includes the design,
+The scope of the photon detector (PD) system for the DUNE far detector reference design includes the design,
 procurement, fabrication, testing, delivery and installation of all
 the systems and components that comprise it:  
 
@@ -13,48 +13,53 @@ the systems and components that comprise it:
 \item related infrastructure (frames, mounting boards, etc...)
 \end{itemize}
 
-The design presented here meets the required performance for light
-collection for the DUNE far detector. The most significant
-requirements include determination of t$_0$ of an event relative to
-the TPC timing - resolution better than 30~ns, and sufficient light
-collection efficiency to allow triggering on SN neutrinos with
-energies as low as 20~MeV.
-
-Liquid argon is an excellent scintillating medium. With an average
+The photon detection system will exploit the excellent scintillating properties
+of liquid argon in the far detector. 
+% Liquid argon is an excellent scintillating medium. 
+With an average
 energy needed to produce a photon of 19.5~eV (at zero field) a typical
 particle depositing 1~MeV in liquid argon will generate 40,000~photons
 with wavelength of 128~nm. At higher fields this will be reduced but
-at 500~V/cm the yield is still about $\sim$20,000~photons per
+at 500~V/cm the yield is still $\sim$20,000~photons per
 MeV. Roughly 1/3 of the photons are promptly emitted after about 6~ns
-while the rest are are emitted with a delay of 1100-1600~ns. LAr
+while the rest are are emitted with a delay of 1100 $-$ 1600~ns. LAr
 is highly transparent to the 128~VUV photons with a Rayleigh
-scattering length and absorption length of 95~cm and >200~cm
-respectively. The relatively large light yield makes the scintillation
+scattering length of 95~cm and absorption length of >200~cm.
+ The relatively large light yield makes the scintillation
 process an excellent candidate for determination of $t_{0}$ for
 non-beam related events. Detection of the scintillation light may also
 be helpful in background rejection and triggering on non-beam events.  
 
-Figure~\ref{PD_overview} shows the system layout for the photon
-detector system, which will be described in the following sections. 
+The photon detection system design described in this section meets the required performance for light
+collection for the DUNE far detector. The most significant
+requirements include determination of t$_0$ of an event relative to
+the TPC timing - resolution better than 30~ns, and sufficient light
+collection efficiency to allow triggering on SN neutrinos with
+energies as low as 20~MeV. \fixme{Anne exchanged position of prev two pgraphs}
 
-\begin{cdrfigure}[PD Overview]{PD_overview}{Overview of the photon detector
-    system showing the a cartoon schematic (a) of a single PD module
+Figure~\ref{fig:PD_overview} shows the layout for the photon
+detector system. %, which will be described in the following sections. 
+
+\begin{cdrfigure}[PD Overview]{PD_overview}{Overview of the PD
+    system showing a cartoon schematic (a) of a single PD module
     in the LAr and the channel ganging scheme used to reduce the
     number of readout channels. Panel (b) shows how each PD module
     will be inserted into an APA frame. }
 \includegraphics[width=1.0\linewidth]{pd_schem.png}
 \end{cdrfigure}
 
-\subsection{Reference System Design}
+\subsection{Reference Design}
 \label{sec:detectors-fd-ref-pd-refsystem}   % Refer to SSP description in this section from DAQ section
 
-The baseline design for mounting the PDs into the APA frames calls for
-ten PD modules, approximately 2.2m long, 83~mm wide, and 6~mm thick,
+The PD system is mounted on the APA frames. 
+To enable this, the reference design %for mounting the PDs into the APA frames 
+calls for
+ten PD modules (Figure~\ref{fig:PD_overview}~(a)), approximately 2.2-m long, 83-mm wide, and 6-mm thick,
 equally spaced along the full length of the APA frame
-(Figure~\ref{PD_overview}~(b)). 
+(Figure~\ref{fig:PD_overview}~(b)). 
 
-The 128~nm scintillation photons from liquid argon interact with the
-wavelength shifter on the light guide surface and 430~nm light is
+The 128-nm scintillation photons from liquid argon interact with the
+wavelength shifter on the light guide surface and 430-nm light is
 re-emitted in the bar. The light guide channels the light to
 12 silicon photo-multipliers (SiPMs) mounted at one end of the bar.
 
@@ -65,24 +70,24 @@ internally reflected to the bar's end where they are detected by SiPMs
 with quantum efficiency well matched to the wavelength-shifted
 photons. The light guides are made with a coating of TPB
 (1,1,4,4-tetraphenyl-1,3-butadiene). A testing program is currently
-underway to determine the absolute performance of the light-guides in
+underway to determine the absolute performance of the light guides in
 in liquid argon.
 
 The SiPMs used in the reference design are SensL C-Series 6~mm$^2$
 (MicroFB-60035-SMT) devices. These SiPMs have detection efficiency of
 41\%~\footnote{The detector efficiency combines QE and effective areal
   coverage due to dead space between pixels.} While the C-Series SensL
-SiPMs are not rated for operation below -40$^{\circ}{\rm C}$ their
+SiPMs are not rated for operation below $-40^{\circ}{\rm C}$ their
 performance has been excellent for this application. At LAr
-temperature (88K) the dark rate is on order 50~Hz while after-pulsing
+temperature (88~K) \fixme{89 usually used} the dark rate is of order 50~Hz while after-pulsing
 has not been an issue. Extensive testing is underway to ensure that
 the SiPMs can reliably survive the stresses associated with thermal
-cycling in LAr and long term operation at LAr temperature.
+cycling in LAr and long-term operation at LAr temperature.
 
-The SiPMs are read out using shielded twisted pair cable, one per SiPM
-but the expected final design will have 3 SiPMs ganged together and
-each readout cable with contain 4 individual channel cables to keep
-the cost and cable packing desity down.  
+The SiPMs are read out using shielded twisted-pair cable, one per SiPM,
+but the expected final design will have three SiPMs ganged together and
+each readout cable with contain four individual channel cables to keep
+the cost and cable packing desity down.  \fixme{Then why is the design one per sipm now?} 
 
 The front-end electronics reside outside of the cryostat in
 instrumentation racks. A custom module for receiving SiPM signals has
@@ -90,7 +95,7 @@ been designed and built. The module also performs signal processing in
 the front-end as preprocessing for trigger and DAQ.  The module is
 called the SiPM Signal Processor (SSP) and consists of 12 readout
 channels packaged in a self-contained 1U module.  Each channel
-contains a fully-differential voltage amplifier and a 14-bit, 150 MSPS
+contains a fully-differential voltage amplifier and a 14-bit, 150-MSPS
 analog-to-digital converter (ADC) that digitizes the waveforms
 received from the SiPMs. There is no shaping of the signal, since the
 SiPM response is slow enough relative to the speed of the digitization
@@ -103,56 +108,62 @@ the SSP operation.
 \subsection{Alternative Designs} 
 
 Two alternative designs are currently being considered for the PD
-system. The first alternative design is based on a TPB-coated acrylic
+system. 
+
+The first alternative is based on a TPB-coated acrylic
 panel with an embedded S-shaped wavelength-shifting fiber. The LSU
 group has developed prototypes based on this design in an attempt to
 increase the geometric acceptance of the PD system and hence reduce
 overall system cost. 
-
-A single acrylic panel PD module has the same dimensions as the
-reference design and consists of a TPB coated acrylic panel with an
+%
+In this design, a single acrylic panel PD module has the same dimensions as the
+reference design and consists of a TPB-coated acrylic panel with an
 embedded S-shaped wavelength shifting (Y11) fiber. The fiber is read
 out by two SiPMs, which are coupled to either end of the fiber and
-serves to transport the light over long distances with minimal
+serve to transport the light over long distances with minimal
 attenuation. The double-ended fiber readout has the added benefit of
 providing some position dependence to the light generation along the
 panel by comparing relative signal sizes and arrival times in the two
-SiPMs. The WLS fiber converts the 430~nm light from the TPB to light
-with a peak intensity of about 480 - 500~nm which is well matched to
-the peak photon detection efficiency of typical SiPMs.
+SiPMs. The WLS fiber converts the 430-nm light from the TPB to light
+with a peak intensity of about 480 $-$ 500~nm, which is well-matched to
+the peak photon-detection efficiency of typical SiPMs.
 
-A second alternative being explored by the CSU group utilizes
-blue-green (Y11) fibers that has not been treated with TPB. A thin TPB
-coated acrylic radiator located in front of a close packed array of
-WLS fibers. The motivation for this design was to address an issue
-with the reference design where the application of TPB to acrylic, or
-other base materials, causes a significant decrease in attenuation
-length (down to about 30~cm) of the light-guide. The prototype is two
-sided with 2 identical fiber arrays and radiators mounted back-to-back
-with a tyvek refelctor in between. There is also a reduction in the
+A second alternative, under investigation by the CSU group, utilizes
+blue-green (Y11) fibers that have not been treated with TPB. A thin 
+TPB-coated acrylic radiator is located in front of a close-packed array of
+WLS fibers. The motivation for this design comes from %was to address 
+an issue
+with the reference design, in which the application of TPB to acrylic, or
+other base materials, has been found to cause a significant decrease in attenuation
+length (down to about 30~cm) of the light guide. \fixme{Need to introduce the prototype} %The prototype is 
+The CSU group has made a prototype; it is two-sided and has two identical fiber arrays and radiators mounted back-to-back
+with a tyvek refelctor between. %There is also 
+This design allows for a reduction in the
 number of SiPMs required per PD module. Three SiPMs per side are
 needed per PD module (again the same dimensions in length and width as
-the reference design) for a total of 6 SiPMs per PD module.
+the reference design) for a total of six SiPMs per PD module.
 
-The IU group has advanced the radiator and fiber design by replacing
-the Y11 fiber with a reference design dimensioned cast bar doped (by
-Eljen Technology) with the same wavelegth shifter as the Y11
+The IU group has advanced the radiator and fiber design \fixme{of the second alternative design?} by replacing
+the Y11 fiber with a reference-design-dimensioned cast bar doped (by
+Eljen Technology) with the same wavelength shifter as the Y11
 fiber. The TPB-coated acrylic radiator has also been replaced with a
-thin fused silica plate coated with TPB. This prototype has
+thin-fused silica plate coated with TPB. This prototype has
 demonstrated an attenuation length greater than 2.5~m and early
-indications seem to indicate it could meet the SN neutrino energy
+indications %seem to 
+indicate that it could meet the SN neutrino energy
 requirement. It is the ``brightest'' prototpye tested so far.
 
 \subsection{Technology Selection}
 
-The alternative designs have all demonstrated the ability to detect
-LAr scintillation light, and development work is continuing. In Fall
-2015 a decision will be made as to whether to proceed with the current
-reference design or move to one of the alternatives. A testing program
-is underway comparing the various alternatives against the baseline
-design. The Tallbo large dewar at FNAL and the cryogenic detector
+The alternative designs have all \fixme{both?} demonstrated the ability to detect
+LAr scintillation light, and development work is continuing. A testing program
+is underway comparing the various alternatives against the reference
+design.  The Tallbo large dewar at Fermilab and the cryogenic detector
 development facility at CSU are being used to compare the performance
-of full scale, and near full scale, prototypes in LAr utilizing alpha
-sources and cosmic muons. The DUNE technical board, or equivalent
-body, will review the designs using data from the comparison tests and
-recommend the design we will optimize for the first 10~kt LAr TPC.
+of full-scale and near-full-scale prototypes in LAr utilizing alpha
+sources and cosmic muons. %The DUNE technical board, or equivalent
+%body, will review the designs using data from the comparison tests and
+%recommend the design we will optimize for the first 10~kt LAr TPC.
+ In Fall 2015 a decision will be made regarding which design to adopt and optimize for the first 10-kt far detector module.
+%whether to proceed with the current reference design or move to one of the alternatives.
+
