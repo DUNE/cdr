@@ -5,21 +5,21 @@
 The TPC read-out electronics are mounted on the APA front-end (Figure~\ref{fig:elec_CMBonAPA}) in LAr.
 These electronics are therefore referred to as the ``Cold Electronics'' (CE) subsystem. 
 The scope of the CE subsystem includes the design, procurement, fabrication, testing,
-delivery and installation of the CE, the principle components of which are:
+delivery and installation of the CE, the principal components of which are:
 \begin{itemize}
-\item Front-end electronics cards installed on the APAs;
-\item Signal feedthroughs mounted on the cryostat;
-\item Power supplies and cabling.
+\item front-end electronics cards installed on the APAs;
+\item signal feedthroughs mounted on the cryostat;
+\item power supplies and cabling.
 \end{itemize}
 The most significant requirements for the CE are to:
 \begin{itemize}	
-\item Minimize channel capacitance and noise.
-\item Minimize dissipated power per channel in the LAr.
-\item Read out the TPCs and transmit their data to DAQ;
-\item Record the channel waveforms continuously without dead time;
-\item Provide sufficient precision and range in the digitization to satisfy the KPP;
-\item Operate for the life of the facility without significant loss of function;
-\item Use only materials that are compatible with high-purity liquid argon and minimal natural radioactivity.
+\item minimize channel capacitance and noise
+\item minimize dissipated power per channel in the LAr
+\item read out the TPCs and transmit their data to the DAQ
+\item record the channel waveforms continuously without dead time
+\item provide sufficient precision and range in the digitization to satisfy the KPP
+\item operate for the life of the facility without significant loss of function
+\item use only materials that are compatible with high-purity liquid argon and minimal natural radioactivity
 \end{itemize}
 \begin{cdrfigure}[The front-end electronics as mounted on an APA]{elec_CMBonAPA}
  {The front-end electronics, shown in the red circle, as mounted on an APA.}
@@ -50,7 +50,7 @@ Tables \ref{tab:DeviceCounts} and \ref{tab:KeyParameters} list the CE device cou
 An important aspect of CMOS technology is that the lifetime at cryogenic temperatures is well understood and can be
 well controlled, {\em provided that close control is maintained over the implementation details}.
 This precludes the use of commercial devices, which are not intended for use in LAr,
-and which are produced by proprietary processes over which we have no control.
+and which are produced by proprietary processes over which DUNE has no control.
 % This requirement of close control cannot be satisfied by any commercial device,
 % where the manufacturing process is subject to change.
 % Strict requirements in industry to deliver a device with equivalent performance and lifetime,
@@ -61,17 +61,17 @@ and which are produced by proprietary processes over which we have no control.
 % over which we have no control, nor necessarily any knowledge.
 % It is because of this serious concern that we are undertaking the development and fabrication of our own devices, 
 % so that tight control of the process can be maintained.
-It is worth noting that the FEMB, together with the FE and ADC ASIC chips, has already been prototyped and tested,
+It is worth noting that the FEMB, together with the FE and ADC ASIC chips, has already been prototyped and tested 
 using a commercial FPGA to perform the role of the COLDATA ASIC,
 which is currently under development.
-The 1~Gb/s data rate is not high enough to require the use of optical fibers in the cold,
+The 1-Gb/s data rate is not high enough to require the use of optical fibers in the cold,
 nor is there a need for zero suppression or data compression.
 This greatly reduces the complexity of the COLDATA ASIC, with a corresponding decrease in overall risk,
 including risk of failure-to-implement (within a fixed schedule and budget).
 The COLDATA work is especially challenging, with final production not scheduled to begin until late 2019.
 Alternative approaches are currently under study.
 
-\begin{cdrtable}[Device Counts]{l|r|r|r}{DeviceCounts}{Device Counts}
+\begin{cdrtable}[CE Device Counts]{l|r|r|r}{DeviceCounts}{CE Device Counts}
  Parameter           & per FEMB& per APA& per 10~kt Detector\\ \toprowrule
  Channels            & 128    & 2560   & 384,000           \\ \colhline
  FE \& ADC ASIC Chips&   8    &  160   &  24,000           \\ \colhline
@@ -80,7 +80,7 @@ Alternative approaches are currently under study.
  Signals-Out         &   4    &   80   &  12,000           \\ \colhline
  APA                 & ---    &    1   &     150           \\
 \end{cdrtable}
-\begin{cdrtable}[Key parameters]{l|l}{KeyParameters}{Key parameters}
+\begin{cdrtable}[CE Key parameters]{l|l}{KeyParameters}{CE Key parameters}
  Parameter                &  Value                               \\ \toprowrule
  Signal-to-Noise (in LAr) &  9:1 for 1~$\mu$s peaking time       \\ \colhline
  Mux Level                &  32                                  \\ \colhline
