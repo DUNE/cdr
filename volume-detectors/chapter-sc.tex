@@ -305,6 +305,8 @@ For the Photon Detector in the dual-phase design:
 \section{Far Detector Physics Software}
 \label{sec:detectors-sc-physics-software}
 
+Longer descriptions of the single-phase and dual-phase far detector simulations and reconstruction are given
+in \anxreco, and only an abbreviated summary is given here.
 
 %\subsection{Simulation}
 %\label{sec:detectors-sc-physics-software-simulation}
@@ -322,8 +324,7 @@ For the Photon Detector in the dual-phase design:
 
 Detailed GEANT4-based~\cite{GEANT4:NIM,GEANT4} Monte Carlo simulations have been 
 developed for the single-phase and dual-phase far detector designs,
-incorporating both the %Liquid Argon 
-TPC modules
+incorporating both the TPC modules
 and the photon detection systems. These simulations provide
 a basis for detailed studies of detector design and performance, 
 and also enable the development of automated event-reconstruction algorithms.
@@ -332,19 +333,16 @@ The single-phase detector simulation is implemented in LArSoft~\cite{Church:2013
 which provides a common simulation framework for LArTPC experiments.
 LArSoft is based on the {\it art} framework~\cite{Green:2012gv}, and is supported by Fermilab's
 Scientific Computing Division.
-The comparison of data from ArgoNeuT~\cite{Anderson:2012vc} with LArSoft
+The comparison of data from ArgoNeuT~\cite{Anderson:2012vc,Anderson:2012mra} with LArSoft
 simulations gives confidence in the reliability of the detector simulation.
 Future data from LArIAT~\cite{Adamson:2013/02/28tla,Cavanna:2014iqa},
-MicroBooNE~\cite{Chen:2007ae,Jones:2011ci,microboonecdr}, and the 35-t prototype will allow
+MicroBooNE~\cite{Chen:2007ae,Jones:2011ci,microboonecdr}, and the 35-ton prototype will allow
 further tuning of the LArSoft simulation as experience is gained.
 The dual-phase detector simulation is based on the Qscan package,
 which has been developed over the past decade, and is currently
 being used to perform technical design and physics studies for
 the \cerndualproto{} program.
 
-\fixme{The annexes aren't compiled along with this volume so the section reference below doesn't work.}
-Section~\ref{annex:detectors-sc-physics-software-simulation} gives detailed
-descriptions of both the single-phase and dual-phase detector simulations.
 Events are generated using either the GENIE~\cite{GENIE} simulation of 
 neutrino-nucleus interactions, the CRY~\cite{Cosmic-CRY,Cosmic-CRY-protons,CRY-url} cosmic-ray generator, 
 a radiological decay simulator, a particle gun, or one of several
@@ -374,14 +372,14 @@ that decayed into two photons with separate conversion vertices.}
 
 The reconstruction of particle interactions in LArTPC
 detectors is an active area of research that has advanced significantly in recent years.
-In particular, the data from the ICARUS~\cite{Amerio:2004ze,icarus-url,ICARUS-pizero,Antonello:2012hu} 
+In particular, the analysis of the data from the ICARUS~\cite{Amerio:2004ze,icarus-url,ICARUS-pizero,Antonello:2012hu} 
 and ArgoNEUT experiments~\cite{Adamson:2013/02/28tla,argoneut-url,Acciarri:2013met}
-have enabled the development of a variety of new reconstruction techniques,
+required the development of a variety of new reconstruction techniques,
 forming the basis for precision neutrino physics measurements.
 With the advancement of both single-phase and dual-phase technologies,
 and expansion of the experimental program to include MicroBooNE~\cite{Chen:2007ae,microboone-url},
-the 35-t prototype and the CERN test experiments,
-the reconstruction tools have continued to grow in both volume and sophistication,
+the 35-ton prototype and the CERN test experiments,
+the reconstruction tools have grown in both volume and sophistication,
 supported by powerful software frameworks such as LArSoft and Qscan.
 
 %Probably need to say around here that DUNE will require reconstruction of
@@ -389,23 +387,25 @@ supported by powerful software frameworks such as LArSoft and Qscan.
 
 A fully automated chain of event-reconstruction algorithms
 is being developed for the DUNE far detector.
-The block diagram in figure~\ref{fig:fdrecoblockdiag} illustrates 
-the components of this reconstruction chain.
+% moved block diagram to Annex
+%The block diagram in figure~\ref{fig:fdrecoblockdiag} illustrates 
+%the components of this reconstruction chain.
 The first stage of reconstruction involves the processing of the
-ADC wire signals, and the creation of 2D `hits'. 
+ADC wire signals, and the identification of pulses, or `hits', in the 
+two-dimensional space of wire nubmer and charge arrival time. 
 These hits provide the input for a series of pattern-recognition algorithms,
 which form 2D and 3D clusters, representing individual particle tracks and showers.
 A set of high-level algorithms is then used to reconstruct the 
-3D vertex and trajectory of each particle, identify the type of particle,
-and determine the four-momentum.
+3D vertex and trajectory of each particle, identify the type of particle, and determine the four-momentum.
 While each stage of the reconstruction chain has been implemented, the algorithms -- in
 particular those addressing the higher level aspects of reconstruction such as particle identification -- are
 rather preliminary and in active development.
 
-\begin{cdrfigure}[Far detector reconstruction block diagram]{fdrecoblockdiag}
-{Block diagram showing the far detector reconstruction chain}
-\includegraphics[width=0.9\textwidth]{fdrecoflowchart.pdf}
-\end{cdrfigure}
+% moved to Annex
+%\begin{cdrfigure}[Far detector reconstruction block diagram]{fdrecoblockdiag}
+%{Block diagram showing the far detector reconstruction chain}
+%\includegraphics[width=0.9\textwidth]{fdrecoflowchart.pdf}
+%\end{cdrfigure}
 
 
 \begin{cdrfigure}[Dual-phase LArTPC reconstructed events for data and MC]{lbnoeventdisplay}
@@ -414,7 +414,9 @@ rather preliminary and in active development.
 Dual-phase LArTPC reconstructed events for data and MC.
 Top: Cosmic ray event displays for an hadronic shower candidate.
 Bottom: Reconstructed hits for a MC simulation of a 5 GeV $\nu_{\mu}$ interaction.
-The secondary particles produced in the two interactions are distinguished with different colors based on the MC truth information (blue=muon, green=electron, red=proton, cyan=pion).
+The secondary particles produced in the two interactions are 
+distinguished with different colors based on the MC truth information (blue=muon, green=electron, red=proton, cyan=pion).
+From Ref.~\cite{Badertscher:2012dq}.
 }
 \includegraphics[width=0.99\textwidth]{LArTPC-3L-LEM-cosmics.png}
 \includegraphics[width=0.99\textwidth]{LBNO-MC-nu_mu_event.png}
@@ -422,71 +424,48 @@ The secondary particles produced in the two interactions are distinguished with 
 
 \subsubsection{Signal Processing, Hit Finding, and Disambiguation}
 
-\fixme{Would help to combine single-phase and dual-phase material on
- signal processing and hit reconstruction into a single paragraph}
-Separate chains of dedicated signal-processing and hit-finding 
-algorithms have been developed for the single-phase and dual-phase detectors,
-as described in \fixme{refs won't work} Sections~\ref{annex:reconstruction-signal-proc} and \ref{annex:reconstruction-single-phase-hit-find}.
-The single-phase hit reconstruction proceeds by filtering noise
-from the uncompressed data, and then deconvoluting the 
-detector and electronics response.
-The pulse-shape models used to deconvolute the response are currently
-based on \textit{a priori} predictions, but these will be tuned and
-validated using data from the 35-t prototype and CERN test experiment. \fixme{single-phase test?}
-The current algorithms are found to perform well in ArgoNeuT analyses~\cite{Anderson:2012vc}.
-After deconvolution and pedestal subtraction, pulses are identified in
-the waveforms, and parametric fits are applied to extract the size and
-shape of each pulse. These pulses are called hits for later processing. \fixme{called `hits for later processing' or
-called `hits' and are processed later?}
-At this stage, the data are still 2D --- each hit provides
-a wire location and a measurement of time and total charge,
-but no indication of at what point along a wire the charge was deposited.
-Hits may also overlap if they are close together in time, 
-even if the charge was deposited on distant segments of the wire.
-
-%\fixme{3L dual-phase proto hit reco}
-In the dual-phase detector, the raw waveforms also undergo initial processing, 
-ensuring effective noise reduction and subtraction of the baseline. \fixme{pedestal?}
-Hits, defined as signals that are discriminated from the noise, are then identified and reconstructed.
-The hit-finding algorithms extract multiple hit information \fixme{information from multiple hits? or multiple
-pieces of info about a given hit?}
- by fitting the waveform function of the signal.
-The main parameters determined by the fits are the hit time and the integrated hit charge.
-The full hit-reconstruction procedure has been successfully tested during several phases 
-of R$\&$D and prototyping on small-scale dual-phase LAr-LEM-TPC setups \cite{Badertscher:2008rf,Badertscher:2012dq}.
+The signal-processing steps in the single-phase and dual-phase detectors are similar but
+are accomplished with separate software.  Both proceed first by decompressing the raw data
+and filtering the noise using a frequency-based filter.  The single-phase signal-processing
+algorithm also deconvolutes the detector and electronics responses at this step.
+Both the single-phase and dual-phase hit-finding algorithms then subtract the baselines
+and fit pulse shapes to the filtered raw data.  The hit-finding algorithms are able to
+fit multiple overlapping hits.  The main parameters of the hits are the arrival time, the
+integrated charge, and the width.  A raw ADC sum is also retained in the description of a hit, which
+often carries a better measurement of the total charge.
+The current algorithms are found to perform well in 
+ArgoNeuT analyses~\cite{Anderson:2012vc} for the single-phase software and during several phases 
+of R$\&$D and prototyping on small-scale dual-phase LAr-LEM-TPC 
+setups~\cite{Badertscher:2008rf,Badertscher:2012dq}.
 Figure~\ref{fig:lbnoeventdisplay} shows example event displays of the reconstructed hits 
 in both real and simulated data. 
 
 The wrapping of induction-plane wires in the single-phase APA design
 introduces an additional discrete ambiguity in the data by connecting multiple wire
-segments to each DAQ channel. A ``disambiguation'' algorithm,
-described in Section~\ref{annex:reco-disambiguation}, \fixme{ref prob, maybe use `cite' for all these, as you do below} is used to break the
+segments to each DAQ channel. A ``disambiguation'' algorithm is used to break the
 ambiguity and determine which wire segment generated the charge on each hit.
 The algorithm forms associations between the collection and induction views,
 identifying ``triplets'' of hits that have intersecting wire segments
 and consistent arrival times. In most events, the majority of hits are
 associated with a single wire segment, and can be trivially disambiguated.
 The remaining hits are then disambiguated by clustering them with trivially disambiguated hits.
-The performance of the disambiguation algorithm is discussed in the Section~\cite{annex:disambiguation}.
 
+\subsubsection{Photon Detector Signal Reconstruction}
 
-\subsubsection{Optical Detector Signal Reconstruction}
-
-\fixme{Can we say `photon detector' to use same terminology throughout cdr?}
-
-Optical detector signals are processed in similar ways to those on the TPC wires.
+Photon detector signals are processed in similar ways to those on the TPC wires.
 Noise is filtered out, and hits are identified as pulses above the pedestal.
-Hits are grouped together into clusters, called ``flashes,'' for subsequent
-association with clusters in the TPC.  Each flash has a total integrated charge and a position
-estimate.
-\fixme{This may be enough info, but it feels truncated; maybe something about what algorithm is used, or some concluding sentence?}
+Hits are grouped together into clusters in time, called ``flashes,'' for subsequent
+association with clusters in the TPC.  Each flash has a time, a total integrated charge, and a position
+estimate.  The time of an interaction is important in order to help reject cosmic-ray events
+and also to determine the absolute position of an event along the drift direction.  This position
+is important in order to correct for finite electron lifetime effects for proper charge measurement,
+which is important for particle identification and extraction of physics results.  Signal events which
+can be out of time from the beam include atmospheric neutrinos, supernova burst neutrinos, and proton decay
+interactions.
 
 \subsubsection{TPC Pattern Recognition}
 
-After the hit-finding and disambiguation stages have completed, a series of 
-pattern-recognition algorithms are applied to the 2D hits in order to identify 
-the 3D tracks and showers produced by individual final-state particles in an event.
-The reconstruction of 3D particles can be accomplished either by forming 2D clusters
+The reconstruction of particles in 3D can be accomplished either by forming 2D clusters
 and associating them between views, or by first associating 2D hits between views
 and then clustering the resulting 3D hits. 
 The clustering of hits in LArTPC detectors is a challenging task
@@ -498,9 +477,8 @@ One promising suite of reconstruction tools is the
 PANDORA software development kit~\cite{Marshall:2013bda,Marshall:2012hh}
 which provides fully automated pattern recognition for both single-phase 
 and dual-phase technologies. 
-PANDORA implements a highly modular approach to pattern recognition,
+PANDORA implements a modular approach to pattern recognition,
 in which events are reconstructed using a large chain of algorithms. 
-%A series of <--- this made the singular-plural aspect awkward
 Several 2D pattern-recognition algorithms are first applied
 that cluster together nearby hits based on event topology.
 The resulting 2D clusters are then associated between views
@@ -514,8 +492,8 @@ Figure~\ref{fig:pandoraefficiency} shows the current efficiency for reconstructi
 the leading final-state lepton as a function of its momentum
 for 5\,GeV $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions
 simulated in the MicroBooNE detector.
-In both samples, the reconstruction efficiency increases rapidly with momentum,
-rising above 90\% at 500\,MeV and reaching approximately 100\% at 2\,GeV.
+%In both samples, the reconstruction efficiency increases rapidly with momentum,
+%rising above 90\% at 500\,MeV and reaching approximately 100\% at 2\,GeV.
 Figure~\ref{fig:recoannexpandoravertexresolution} shows the spatial resolution for
 reconstructing the primary interaction vertex in these 5-GeV event samples,
 projected onto the $x$, $y$ and $z$ axes. An estimate of the overall vertex 
@@ -543,22 +521,19 @@ which yields 2.2\,cm (2.5\,cm) for $\nu_{\mu}$ CC ($\nu_{e}$ CC) events.
 
 \subsubsection{Track Fitting and Shower Measurement}
 
-%%%% TODO: Fix the ArgoNeuT reference: Can't find the words Kalman Filter 
-%%%%       in any of their papers. Statement comes from MicroBooNE TDR.
-
 After the pattern recognition stage, a series of high-level reconstruction
 algorithms are applied to the 2D and 3D clusters,
 which fit the trajectories of particle tracks and measure the
 spatial and calorimetric properties of electromagnetic and hadronic showers.
-A range of different high-level techniques have been demonstrated 
+Several high-level techniques have been demonstrated 
 for use in LArTPC detectors using both real and simulated data.
 
 The Kalman filter technique~\cite{kalman} is well-established in high-energy physics,
-and has been applied to 3D track reconstruction by both ICARUS~\cite{Ankowski:2006ts} and ArgoNEUT~\cite{REF}.
+and has been applied to 3D track reconstruction in liquid argon by ICARUS~\cite{Ankowski:2006ts}.
 The technique incorporates the effects of multiple Coulomb scattering,
 enabling a scattering-based measurement of the track momentum,
 which is shown by ICARUS to have a resolution as good as $\Delta p/p \approx 10\%$ 
-for the most favourable track lengths~\cite{Ankowski:2006ts}.
+for the most favourable track lengths.
 The data from ICARUS have also been used to develop a precise
 track reconstruction algorithm, which builds a 3D trajectory for each track by simultaneously
 optimizing its 2D projections to match the observed data~\cite{Antonello:2012hu}.
@@ -596,12 +571,11 @@ based on the time of the event, and the path length corresponding
 to each hit is calculated based on the event trajectory.
 The effects of recombination, known as ``charge quenching''
 are corrected using a modified Box model~\cite{Thomas:1987zz} 
-or Birks' Law`\cite{Birks:1964zz}.
+or Birks' Law~\cite{Birks:1964zz}.
 The identity of a particle track that ranges out in the active detector volume
 may be ascertained by analyzing the ionization density $dE/dx$ as a function of 
 the range from the end of the track, and comparing with the predictions
-for different particle species. Various analysis techniques have been developed
-for this purpose, as described in Section~\ref{annex:reco-pid}.\fixme{ref}
+for different particle species. 
  
 %\fixme{Do we have any calorimetry plots?}
 
@@ -636,4 +610,5 @@ using a calorimetric energy estimation.}
 \end{cdrfigure}
 
 %%%% Do we need a summary?
+% not really -- 5 pages is a little tight; this is the summary
 
