@@ -14,8 +14,90 @@ The following sections describe the simulation of the Near and Far Detectors.
 
 \section{Near Detector Simulation}
 \label{annex:detectors-sc-physics-software-simulation-nd}
+\subsection{Parametrized simulation}
+The DUNE Near Neutrino Detector (NND) parametrized simulation and reconstruction (ND FastMC) has been
+developed to explore the sensitivities of near detector physics. The Near Detector FastMC is an
+extension to the Far Detector FastMC~\cite{Adams:2013qkq}, Appendix A.3. The ND FastMC combines
+the Geant4 simulation of the beamline, the GENIE neutrino interaction model, and a parameterized
+detector response that is used to simulate the measured (reconstructed) energy and momentum of each
+final-state particle. The detector response is based on the NOMAD detector simulation and reconstruction
+as the reference NND design is built upon the NOMAD detector, but with much higher resolution.
 
-\fixme{To be supplied, even if short}
+As the NND is vastly different from FD, the following features have been added into the ND FastMC.
+The first feature is the magnetic field. The $4^{th}$ order Runge-Kutta method which is used by Geant4 simulation has
+been incorporated in the ND FastMC. Fig.~\ref{fig:ndfastmc_mf_trajectory} shows the trajectories of muon passing through
+the detector. From top left to bottom right, the plots are $\mu^+$ with 1 GeV kinetic energy, $\mu^-$ with 1 GeV kinetic energy,
+$\mu^+$ with 0.2 GeV kinetic energy, $\mu^-$ with 0.2 GeV kinetic energy, respectively.
+The second feature is to model the energy deposited in the detector as the particle travels through, $dE/dx$.
+A standalone Geant4 application was developed with a simplified detector description of Straw Tube Tracker. 
+Using the Geant4 particle gun, $e^\pm$, $\pi^\pm$, $\mu^\pm$, $K^\pm$, proton were shot and propagated through
+this simplified detector and the information of $dE/dx$ as a function of their kinetic energy were
+recorded as a 2 dimensional histogram as shown in Fig.~\ref{fig:ndfastmc_dedxvsp}. In the ND FastMC,
+a final-state particle produced by a neutrino-nucleon interaction deposits energy when it is traveling through the detector.
+The amount of energy deposited, $dE/dx$, would be calculated by calling a ROOT method given the particle's kinetic energy, $T_K$.
+The stepping continues until either the particle looses all its energy and stops or exits the detector.
+Special care is paid to the $\pi^0$ reconstruction as it may be a potential background to the neutrino electron scattering when the photons
+from $\pi^0$ decay undergo asymmetric conversion producing a single electron track.
+
+\begin{cdrfigure}[Muons trajectories in the near detector in near detector's magnetic field. ]{ndfastmc_mf_trajectory}
+  {Muons trajectories in the near detector's magnetic field in $y-z$ view.
+    The magnetic field is 0.4 pointing perpendicularly into the paper.    
+    Top left: $\mu^+$ with 1 GeV kinetic energy; top right: $\mu^-$ with 1 GeV kinetic energy;
+    bottom left: $\mu^+$ with 0.2 GeV kinetic energy; bottom right: $\mu^-$ with 0.2 GeV kinetic energy.}
+  \includegraphics[width=0.42\textwidth]{ndfastmc_mf_mu+_1GeV.pdf}
+  \includegraphics[width=0.42\textwidth]{ndfastmc_mf_mu-_1GeV.pdf}
+  \includegraphics[width=0.42\textwidth]{ndfastmc_mf_mu+_200MeV.pdf}
+  \includegraphics[width=0.42\textwidth]{ndfastmc_mf_mu-_200MeV.pdf}
+\end{cdrfigure}
+
+\begin{cdrfigure}[$dE/dx$ vs kinetic energy distribution for individual particles produced by a standalone Geant4 application.]
+  {ndfastmc_dedxvsp}{$dE/dx$ vs kinetic energy distribution for individual particles produced by a standalone Geant4 application}
+\includegraphics[width=0.85\textwidth]{ndfastmc_dedxvsp.pdf}
+\end{cdrfigure}
+
+\begin{table}[!tb]
+  \begin{center}
+    \caption{Summary of the parameters used in the ND FastMC.}
+    \label{tab:ndfastmc_par}
+    \begin{tabular}{l|l} \hline\hline
+      Internal Magnetic Volume & 4.0$\times$4.0$\times$8.1 m\\
+      Tracker volume (STT) & 3.5$\times$3.5$\times$7.04 m, density = 0.1 g/cm$^3$\\
+      Fiducial volume & $|x,y|<150$ cm, $25<z<550$ cm \\
+      Radiation length & $X_0\simeq 600$ cm \\
+      hadronic interaction length & 1,200 cm\\
+      Charged particle momentum resolution & $\sigma_p/p=\frac{0.05}{\sqrt{L}}+0.008p/\sqrt{L^5}$, $L$: track length\\
+      Angular resolution & $\theta_0=\frac{13.6{\,\rm {MeV}}}{\beta cp}z\sqrt{x/X_0}[1+0.038\ln(x/X_0)]$\\
+      EM shower energy resolution & $\sigma_E/E=1\%+0.06/\sqrt{E}$\\
+      Hadronic shower energy resolution &  $\sigma_E/E=1\%+0.50/\sqrt{E}$\\ \hline\hline
+    \end{tabular}
+  \end{center}
+  \end{table}
+
+\subsection{Geant4-based simulation}
+The full Geant4-based detector simulation and reconstruction algorithms are still under development.
+HiSoft (High-resolution FGT Software) is similar to the FD simulation and reconstruction framework, LArSoft.
+It is based on the Art-framework for event management and NuTools for interfacing with Geant4. Git repositories
+serve as the version control, and multi-repository build tool (MRB) has been using to configure and 
+compile the software, though there is only one repository thus far.
+
+The geometry described by Geometry Description Markup Language (GDML) is shown in Fig.~\ref{fig:ndgeo}.
+The GDML file is generated by a python script which has the flexibility of varying the parameters in order
+for the detector optimization study. A test module in the Geometry package has been developed to ensure
+proper spacings/sortings of the straw tubes. The geometry interface service fulfilling all needs of
+Geant4 simulation exists. A Geant4 user action saves particle trajectory information and the simulated space 
+charge (FIG.~\ref{fig:ndsim_mu}) saved per straw tube in a way to make channel digitization most effective and allow for 
+backtracking to simulated information during assessment of reconstruction. 
+Over the next years, increasing effort will be directed at the detector optimization using Geant4.
+
+\begin{cdrfigure}[Near Detector STT geometry described in GDML.]{ndgeo}
+{Near Detector STT geometry described in GDML}
+\includegraphics[width=0.7\textwidth]{nd_geo.png}
+\end{cdrfigure}
+
+\begin{cdrfigure}[The trajectory of a 1 GeV $\mu^-$ produced by HiSoft simulation.]{ndsim_mu}
+{The trajectory of a 1 GeV $\mu^-$ produced by HiSoft simulation}
+\includegraphics[width=0.7\textwidth]{mu-_1GeV_hisoft.png}
+\end{cdrfigure}
 
 \section{Far Detector Simulation}
 \label{annex:detectors-sc-physics-software-simulation-fd}

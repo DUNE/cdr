@@ -19,7 +19,19 @@ technologies are the same.
 \section{Near Detector Reconstruction}
 \label{annex:detectors-sc-physics-software-reconstruction-nd}
 
-\fixme{To be supplied, even if it is brief}
+The Near Detector full reconstruction has not been developed yet, though a parameterized event
+reconstruction of the ND FastMC (described in section \ref{annex:detectors-sc-physics-software-simulation-nd})
+has been developed and used for physics sensitivity studies. Final-state particles are ``reconstructed''
+by applying the smear function shown in Tab.~\ref{tab:ndfastmc_par}. Fig.~\ref{fig:ndfastmc_mures} shows
+the muon resolution obtained from the ND FastMC simulation and reconstruction framework and has been
+varified by the NOMAD muon reconstruction.
+\begin{cdrfigure}[The resolution of a ``reconstructed'' $\mu$ track.]{ndfastmc_mures}
+{The resolution of a ``reconstructed'' $\mu$ track}
+\includegraphics[width=0.8\textwidth]{ndfastmc_mures.pdf}
+\end{cdrfigure}
+
+Along with the ND Geant4 full simulation, ND reconstruction effort will be bolstered 
+with the aim of an optimized and complete near detector design by 2018.
 
 \section{Far Detector Reconstruction}
 \label{annex:detectors-sc-physics-software-reconstruction-fd}
