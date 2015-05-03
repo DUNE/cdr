@@ -3,11 +3,7 @@
 \label{sec:detectors-fd-ref-ov}
 
 
-This chapter describes the reference design of the DUNE far detector.  The detector will consist of four nominal 10-kt fiducial mass, single-phase liquid argon time projection chambers (TPCs) augmented with a photon detection system.  ``Single-phase'' refers to the charge generation, drift and collection all occuring in the liquid-phase argon. 
-%The scope also includes the Cold Electronics, the Data Acquisition System (DAQ) and Installation and Commissioning.
-%
-\fixme{Anne adding the next bit 4/28}
-The scope of the far detector includes the design, procurement, fabrication, testing, delivery, installation and commissioning of the detector components: 
+This chapter describes the reference design of the DUNE far detector.  The detector will consist of four nominal 10-kt fiducial mass, single-phase liquid argon time projection chambers (TPCs) augmented with a photon detection system.  ``Single-phase'' refers to the charge generation, drift and collection all occuring in the liquid-phase argon. The scope of the far detector includes the design, procurement, fabrication, testing, delivery, installation and commissioning of the detector components: 
 
 \begin{itemize}
 \item Time Projection Chamber (TPC)
@@ -15,12 +11,10 @@ The scope of the far detector includes the design, procurement, fabrication, tes
 \item Cold Electronics (CE)
 \item Photon Detector System (PD)
 \end{itemize}
-The TPCs will be housed in cryostats provided by LBNF, described in \vollbnf.
-
-The reference design is based largely on the LBNE far detector design as of January 2015, documented in \anxlbnefd. This annex provides the detailed descriptions of the systems and components that the DUNE reference design incorporates; the differences between the DUNE and LBNE designs are clearly indicated in this chapter. Important differences include detector size, APA and CPA placement, \fixme{what else to list here?} 
+The TPCs will be housed in cryostats provided by LBNF, described in \vollbnf. The reference design is based largely on the LBNE far detector design as of January 2015, documented in \anxlbnefd. This annex provides the detailed descriptions of the systems and components that the DUNE reference design incorporates; the differences between the DUNE and LBNE designs are clearly indicated in this chapter. Important differences include detector size, APA and CPA placement, and small changes to the APA dimensions.
 
 
-The detector modules are planned to be constructed in a staged fashion with the first module coming online as soon as possible and the following modules at a regular pace thereafter. A model of the underground experimental area with the four 10-kt detector modules is shown in Figure~\ref{fig:FarDet-overview-SP}. Planning for the conventional facilities calls for construction of the second cryostat to be completed prior to the filling of the first so that it can serve initially as a liquid storage facility. 
+The detector modules are planned to be constructed in a staged fashion with the first module coming online as soon as possible and the rest at a regular pace. A model of the underground experimental area with the four 10-kt detector modules is shown in Figure~\ref{fig:FarDet-overview-SP}. Planning for the conventional facilities calls for construction of the second cryostat to be completed prior to filling the first so that it may serve initially as a liquid storage facility. 
 The detector technology is expected to improve in the coming years with MicroBooNE, the SBN experiment and the CERN neutrino-platform development program. DUNE's staged program allows selection of the optimal design for each module as the technology evolves.  %detector module at each step. 
 
 \begin{cdrfigure}[FD overview reference design]{FarDet-overview-SP}{Left: 3D model of the reference design for the DUNE far detector to be located at the 4850L. Right: Schematic view of the active detector elements showing the plane ordering of the TPC inside the detector.}
@@ -33,16 +27,12 @@ The detector technology is expected to improve in the coming years with MicroBoo
 \end{minipage}
 \end{cdrfigure}
 
-The reference design, presented in this chapter and documented in the project cost and schedule, is %an array of single-phase TPCs 
+The reference design, presented in this chapter and documented in the project cost and schedule, is  
 patterned after the successful ICARUS experiment, but adapted to the local site requirements at SURF and the need to scale up the detector size. The configuration of the TPC detector is shown on the right in Figure~\ref{fig:FarDet-overview-SP}.  The TPC, described in Section~\ref{sec:detectors-fd-ref-tpc}, is constructed by placing alternating high-voltage cathode planes and anode readout planes in a bath of ultra-pure liquid argon (LAr). Particles interacting in the argon generate charge and VUV photons. 
 
-% Already said in TPC section. AH.
-%The charge drifts in the electric field and is read out on the anode planes. A field cage around the perimeter of the anode and cathode planes insures uniform electric field in the detector volume. The DUNE far detector is  constructed from three rows of anode planes and two cathode planes running the length of the rectangular detector. The reference detector anode planes are constructed using a grid plane, two stereo wire induction planes and vertical collection plane wires. 
-%moved up AH This type TPC design is referred to as a single-phase detector as the charge generation, drift, and collection are all in the liquid phase. 
-The single-phase design offers the advantage that the charge is collected directly, enabling precision calibration. %The disadvantages are that the 
-However, signal levels are low, requiring the use of cold electronics (Section~\ref{sec:detectors-fd-ref-ce}, and the readout is based on stereo induction planes, requiring a de-convolution of the induced signal. A photon detection system (Section~\ref{sec:detectors-fd-ref-pd}) provides the t$_0$ or event time for physics processes uncorrelated with the FNAL neutrino beam.
 
-% Already in TPC section. AH The DUNE detector is constructed of pre-assembled and pretested anode and cathode plane modules referred to as Anode Plane Assemblies (APA) and Cathode Plane Assemblies (CPA). The size of the individual assemblies was chosen so that each assembly would fit in a HiCube shipping container, fit in the hoist at SURF, and was constructed of standard size materials. The APAs shown in Figure~\ref{fig:FarDet-overview-SP}  have an active area 2.3~m long and 6.0~m High, two APAs are hung together during installation to achieve the required 12~m tall detector. This construction has the advantage that the electronics readout can be placed at the outside of the detector minimizing the dead area in the active volume. Three APA walls each constructed of 25 double height APA cells  and two CPA walls instrument the 53~m long detector. The distance between APA and CPA is 3.6~m.
+The single-phase design offers the advantage that the charge is collected directly, enabling precision charge calibration. However, signal levels are low, requiring the use of cold electronics (Section~\ref{sec:detectors-fd-ref-ce}), and the readout is based on stereo induction planes, requiring a de-convolution of the induced signal. A photon detection system (Section~\ref{sec:detectors-fd-ref-pd}) provides the t$_0$ or event time for physics processes uncorrelated with the FNAL neutrino beam.
+
 
 
 The expected performance of the DUNE far detector is based on the measured performance of the ICARUS detector, scanned Monte Carlo data and newer studies with automated reconstruction. The requirements and projected performance is summarized in Table~\ref{tab:TPC-metric}. It is expected that as the software tools improve and as measurements from MicroBooNE and other dedicated test-beam programs become available, the precision of the projected performance will steadily improve.
