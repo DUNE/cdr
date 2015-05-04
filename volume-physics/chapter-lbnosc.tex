@@ -244,28 +244,28 @@ backgrounds mainly at low energy, which is important for the sensitivity to CP v
 
 The LAr TPC performance parameters that go into the GLoBES calculation are generated using the DUNE Fast Monte Carlo (MC) simulation, which is described in detail in \cite{Adams:2013qkq}.  The Fast MC combines the simulated flux, the GENIE neutrino interaction generator~\cite{Andreopoulos:2009rq}, and a parameterized detector response that is used to simulate the reconstructed energy and momentum of each final-state particle.  The simulated energy deposition of the particles in each interaction is then used to calculate reconstructed kinematic quantities (e.~g., the neutrino energy). Event sample classifications ($\nu_e$ CC-like, $\nu_{\mu}$ CC-like, or NC-like), including mis-ID rates, are determined by the identification of lepton candidates. Lepton candidates are selected based on a variety of criteria including on particle kinematics, detector thresholds, and probabilistic estimates of particle fates. To reduce the NC and $\nu_{\tau}$ CC backgrounds in the $\nu_e$ CC-like sample, an additional discriminant is formed using reconstructed transverse momentum along with reconstructed neutrino and hadronic energy as inputs to a k-Nearest-Neighbor (kNN) machine-learning algorithm.  Figures~\ref{fig:smearing_nue}-\ref{fig:smearing_nc} show the true-to-reconstructed energy smearing matrices extracted from the Fast MC and used as inputs to GLoBES.  Figure~\ref{fig:eff} shows the analysis sample detection$\times$selection efficiencies for the various signal and background modes used by GLoBES, also extracted from the Fast MC.
 
-\begin{cdrfigure}[\nue and\anue True-to-reconstructed energy smearing matrices]{smearing_nue}{True-to-reconstructed energy smearing matrices for CC \nue (left) and \anue (right) interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample. PLACEHOLDER PLOTS: WILL BE UPDATED.}
+\begin{cdrfigure}[\nue and\anue True-to-reconstructed energy smearing matrices]{smearing_nue}{True-to-reconstructed energy smearing matrices for CC \nue (left) and \anue (right) interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample.}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nue_nominal_app.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anue_nominal_app.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nue_nominal_dis.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anue_nominal_dis.png}
 \end{cdrfigure}
 
-\begin{cdrfigure}[\numu and\anumu True-to-reconstructed energy smearing matrices]{smearing_numu}{True-to-reconstructed energy smearing matrices for CC \numu (left) and \anumu (right) interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample. PLACEHOLDER PLOTS: WILL BE UPDATED.}
+\begin{cdrfigure}[\numu and\anumu True-to-reconstructed energy smearing matrices]{smearing_numu}{True-to-reconstructed energy smearing matrices for CC \numu (left) and \anumu (right) interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample.}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_numu_nominal_app.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anumu_nominal_app.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_numu_nominal_dis.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anumu_nominal_dis.png}
 \end{cdrfigure}
 
-\begin{cdrfigure}[\nutau and\anutau True-to-reconstructed energy smearing matrices]{smearing_nutau}{True-to-reconstructed energy smearing matrices for CC \nutau (left) and \anutau (right) interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample. PLACEHOLDER PLOTS: WILL BE UPDATED.}
+\begin{cdrfigure}[\nutau and\anutau True-to-reconstructed energy smearing matrices]{smearing_nutau}{True-to-reconstructed energy smearing matrices for CC \nutau (left) and \anutau (right) interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample.}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nut_nominal_app.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anut_nominal_app.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nut_nominal_dis.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anut_nominal_dis.png}
 \end{cdrfigure}
 
-\begin{cdrfigure}[NC True-to-reconstructed energy smearing matrices]{smearing_nc}{True-to-reconstructed energy smearing matrices for NC interactions extracted from the Fast MC and used as inputs to GLoBES.  Left: Used in the appearance sample.  Right: Used in the disappearance sample. PLACEHOLDER PLOTS: WILL BE UPDATED.}
+\begin{cdrfigure}[NC True-to-reconstructed energy smearing matrices]{smearing_nc}{True-to-reconstructed energy smearing matrices for NC interactions extracted from the Fast MC and used as inputs to GLoBES.  Left: Used in the appearance sample.  Right: Used in the disappearance sample.}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_NC_nominal_app.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_NC_nominal_dis.png}
 \end{cdrfigure}
@@ -277,9 +277,10 @@ The LAr TPC performance parameters that go into the GLoBES calculation are gener
  \includegraphics[width=0.49\textwidth]{LBNE_Ev_reco_dis_RHC_eff.png}
 \end{cdrfigure}
 
+ The cross-section inputs to GLoBES have been generated using GENIE 2.8.4~\cite{Andreopoulos:2009rq}.
 The neutrino oscillation parameters and the uncertainty on those parameters are taken from the 
 Nu-Fit~\cite{Gonzalez-Garcia:2014bfa} global fit to neutrino data; the values are given in 
-Table~\ref{tab:oscpar_nufit}.  The cross-section inputs to GLoBES have been generated using GENIE 2.8.4~\cite{Andreopoulos:2009rq}.
+Table~\ref{tab:oscpar_nufit}.  Most of the sensitivities in this chapter are shown assuming normal hierarchy; this is an arbitrary choice for simplicity of presentation.
 
 \begin{cdrtable}[Oscillation parameter values and relative uncertainties]{lcc}{oscpar_nufit}{Central value and relative uncertainty of neutrino oscillation parameters from a global fit~\cite{Gonzalez-Garcia:2014bfa} to neutrino oscillation data. Because the probability distributions are somewhat non-Gaussian (particularly for $\theta_{23}$), the relative uncertainty is computed using 1/6 of the 3$\sigma$ allowed range from the fit, rather than the 1$\sigma$ range.   For $\theta_{23}$ and $\Delta m^2_{31}$, the best-fit values and uncertainties depend on whether normal mass hierarchy (NH) or inverted mass hierarchy (IH) is assumed.}
 Parameter &    Central Value & Relative Uncertainty \\
@@ -298,12 +299,12 @@ show the expected event rate for \nue appearance and \numu disappearance, respec
 expected flux, cross-section, and oscillation probabilities as a function 
 of neutrino energy at a baseline of 1300~km. The spectra are shown for a 150~kt-MW-yr exposure in both neutrino and antineutrino mode, for a total 300~kt-MW-yr exposure.  The optimized beam design results in an increased signal rate in the lower energy region. Tables~\ref{tab:apprates} and~\ref{tab:disrates} give the integrated rate between 0.5 and 8.0~GeV for the appearance and disappearance spectra, respectively.  The spectra and rates are shown for both the reference beam design and the optimized beam design.
 
-\begin{cdrfigure}[\nue and \anue appearance spectra]{appspectra}{\nue and \anue appearance spectra: Reconstructed energy distribution of selected $\nu_e$ CC-like events assuming a 150~kt-MW-yr exposure in the neutrino-beam mode (left) and antineutrino-beam mode (right), for a total 300~kt-MW-yr exposure.  The plots assume normal mass hierarchy and $\mdeltacp = 0$.  The spectra are shown for both the CDR reference beam design and the optimized beam as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
+\begin{cdrfigure}[\nue and \anue appearance spectra]{appspectra}{\nue and \anue appearance spectra: Reconstructed energy distribution of selected $\nu_e$ CC-like events assuming a 150~kt-MW-yr exposure in the neutrino-beam mode (left) and antineutrino-beam mode (right), for a total 300~kt-MW-yr exposure.  The plots assume normal mass hierarchy and $\mdeltacp = 0$.  The spectra are shown for both the CDR reference beam design and the optimized beam design as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
  \includegraphics[width=0.49\textwidth]{NueApp_NH.pdf}
  \includegraphics[width=0.49\textwidth]{NueBarApp_NH.pdf}
 \end{cdrfigure}
 
-\begin{cdrfigure}[\numu and \anumu disappearance spectra]{disspectra}{\numu and \anumu disappearance spectra: Reconstructed energy distribution of selected $\nu_{\mu}$ CC-like events assuming a 150~kt-MW-yr exposure in the neutrino-beam mode (left) and antineutrino-beam mode (right), for a total 300~kt-MW-yr exposure.  The plots assume normal mass hierarchy and $\mdeltacp = 0$.  The spectra are shown for both the CDR reference beam design and the optimized beam as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
+\begin{cdrfigure}[\numu and \anumu disappearance spectra]{disspectra}{\numu and \anumu disappearance spectra: Reconstructed energy distribution of selected $\nu_{\mu}$ CC-like events assuming a 150~kt-MW-yr exposure in the neutrino-beam mode (left) and antineutrino-beam mode (right), for a total 300~kt-MW-yr exposure.  The plots assume normal mass hierarchy and $\mdeltacp = 0$.  The spectra are shown for both the CDR reference beam design and the optimized beam design as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
  \includegraphics[width=0.49\textwidth]{NumuDis.pdf}
  \includegraphics[width=0.49\textwidth]{NumuBarDis.pdf}
 \end{cdrfigure}
@@ -449,10 +450,16 @@ experimentally allowed range.
  \includegraphics[width=0.7\textwidth]{mh_230ktmwyear_varydmsq}
 \end{cdrfigure}
 
-The value of the test statistic for a typical experiment,  
-$\overline{\Delta\chi^2}$, is
-representative of the mean or the most likely value of $\Delta\chi^2$ that 
-would be obtained in an ensemble of experiments.
+In assessing the sensitivity of future experiments, it is common practice to generate
+a simulated data set (for an assumed true MH) that does not include statistical fluctuations.  
+The expected sensitivity can be reported as  
+$\overline{\Delta\chi^2}$, representative of the mean value of $\Delta\chi^2$ that 
+would be obtained in an ensemble of experiments for a particular true MH.  
+It is assumed that the $\Delta \chi^2$ metric follows the expected chi-squared
+function for one degree of freedom, which has a mean of
+$\overline{\Delta\chi^2}$ and can be interpreted using a Gaussian
+distribution with a standard deviation of
+$\sqrt{|\overline{\Delta\chi^2}|}$.
 With the exception of Figure~\ref{fig:mhstats}, the sensitivity plots
 in this document have been generated using this method.
 However, to address the expected sensitivity of a future experiment
@@ -461,12 +468,8 @@ statistical fluctuations and variations in systematics.  If the
 experiment is repeated many times, a distribution of $\Delta\chi^2$
 values will appear.  Studies in~\cite{Qian:2012zn,Blennow:2013oma}
 show that, in the case of the mass hierarchy
-determination, the $\Delta \chi^2$ metric
-{\em does not} follow the commonly expected chi-squared
-function for one degree of freedom, which has a mean of
-$\overline{\Delta\chi^2}$ and can be interpreted using a Gaussian
-distribution with a standard deviation of
-$\sqrt{|\overline{\Delta\chi^2}|}$. Rather, these studies show that
+determination, the $\Delta \chi^2$ metric {\em does not} follow the expected chi-squared
+function for one degree of freedom.  Rather, these studies show that
 when the observed counts in the experiment are large enough,
 the distribution of $\Delta\chi^2$ used here approximately follows
 a Gaussian distribution with a
