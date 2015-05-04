@@ -27,7 +27,7 @@ appropriate thresholds for zero-suppression (ZS) to be set at the levels appropr
 minimum-ionizing particles, which greatly reduces the
 background component of the data. By comparison, the energy scale of the signals produced by
 SNB neutrino interactions in the active volume of the detector is estimated to be in the range of tens
-of MeV, resulting in much lower thresholds to be set for this type of measurement, and therefore
+of MeV. This results in much lower thresholds needed for this type of measurement, and therefore
 in considerable (if not overwhelming) rate of SNB-specific data coming
 out of the LAr TPC in real time, with contribution from radiological backgrounds.
 Another differentiating SNB feature is that \textit{multiple neutrinos are expected
@@ -39,9 +39,8 @@ depositions will need to be processed ``on the fly''
 using approaches and algorithms which are completely  different from those for the
 beam neutrino physics, which mostly relies on off-line processing.
 
-Distinctions such as this one are made here in order to define the scope of this section,
-which focuses on data streams present in
-oscillation physics studies with bean neutrinos, since these data will constitute the bulk of what's committed
+This section focuses on data streams present in
+oscillation physics studies with beam neutrinos, since these data will constitute the bulk of what's committed
 to mass storage, transmitted over networks, processed offline and in general have significant
 infrastructure and cost implications. Issues and parameters related to other classes of data
 are covered in the Annex to this document, titled ``Expected Data Rates for the DUNE Detectors'',
@@ -60,7 +59,7 @@ normalized to \dunedetectormass.
 \item Accelerator spill cycle is \beamspillcycle
 \item Zero-Suppression thresholds will be set at levels that preserve signals from minimum-ionizing particles.
 \item The intensity of the beam provided by LBNF will affect the data rates for a few detector
-systems in DUNE (cf. the Near Detecor).
+systems in DUNE and is likely to have more pronounced effect on the Near Detecor.
 It is assumed that the beam has the characteristics suggested by LBNF Project at the time of writing.
 \item It is assumed that the front-end systems of the TPC and the Photon Detector combined
 with the logic in DAQ will provide triggering capability for the beam neutrino physics, while
@@ -71,12 +70,24 @@ data from the light readout system.
 Certain parameters may be rounded off where appropriate.
 
 \subsubsection{DUNE Detector Subsystems}
+DUNE will contain a few subsystems which can be roughly classed as belongning to the ``Far Site'' and the ``Near Site'', as
+itemized below:
 \begin{itemize}
-\item Far Detector LAr TPC, Photon Detector(PD)
-\item Near Detector (ND) Straw Tracker (STT), Calorimeter(CAL), Muon Detector Resistive Plate Chambers (RPC)
+\item Far Detector:
+\begin{itemize}
+\item LAr TPC
+\item Photon Detector(PD)
+\end{itemize}
+\item Near Detector (ND):
+\begin{itemize}
+\item  Straw Tracker (STT)
+\item Calorimeter(CAL)
+\item Muon Detector Resistive Plate Chambers (RPC)
+\end{itemize}
 \end{itemize}
 
-In the following, estimated data rates for these components are itemized and then aggregated.
+In the following, each of these items will be considered to produce relevant data rates estimates.
+% estimated data rates for these components are itemized and then aggregated.
 There will be cases where no reliable estimates exist at the moment due to continued R\&D, and this will
 be clearly stated where necessary.
 
@@ -93,14 +104,15 @@ the parameters listed there. Consider the following LAr TPC parameters:
 \item ADC resolution (bits): 12
 \end{itemize}
 \
-Factors affecting data rates and volumes:
-\begin{itemize}
-\item Zero Suppression (ZS)  in the Front-End electronics of the detector
-\item Radiological and Cosmological Backgrounds as functions of thresholds set for ZS
-and DAQ trigger configuration (cf. the case of low-energy events)
-\end{itemize}
+\fixme{A good suggestion from Amir to add a comment on the dynamic range... Need more info... --mxp--}
+In addition to these basic parameters, there are other factors affecting data rates and volumes, such as
+implementation of Zero Suppression (ZS)  in the Front-End electronics of the detector, contribution from
+Radiological and Cosmological Backgrounds, and DAQ trigger configuration (cf. the case of low-energy events).
+\textit{For the moment, potential use of lossless data compression algorithms such as Huffman coding is not
+included in any of the estimates provided, since more studies need to be done to determine feasibility and efficacy
+of such approach.}
 
-Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can be calculated as a product of the following numbers:
+Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can be \textit{calculated as a product of the following numbers:}
 \begin{itemize}
 \item Channel count
 \item Number of ADC samples per total drift (collection) time
@@ -108,11 +120,11 @@ Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can 
 \item ADC resolution
 \end{itemize}
 \
-This results in a total of \dunefsreadoutsize worth of TPC data in one
-readout.
+This results in a total of \dunefsreadoutsize worth of TPC data in one readout.
 The effect of zero suppression on
 the beam neutrino event size is dramatic and Monte Carlo studies done with realistic neutrino
 energy spectra suggest that it will be $\sim$\beameventsize.
+\fixme{Brett, are you getting a better estimate from Tom? --mxp--}
 However, one of the possibilities that is
 now actively explored by the DUNE DAQ team is to record beam event candidates (e.g. events with signals
 above the ``high threshold'' as detailed in the Annex) at very low or no threshold, corresponding
@@ -123,12 +135,14 @@ per year (estimated here to be \beamrate) by the full uncompressed event size qu
 Thus one arrives to an estimate of \beamdatayearfs for each year of this type of
 data.
 
-Some of the driving zero-suppressed (ZS) and full-scale (FS) annual
+Some of the driving zero-suppressed (ZS) and full-stream (FS) annual
 data volumes are summarized in table~\ref{tab:sc-zs-summary}.
 \fixme{The $^{39}$Ar data rate is probably not correct as depending on
   the ZS level much of its spectrum is below threshold.
 This still needs further work from physics and DAQ groups.}
+\fixme{Brett, what do I need to do? --mxp--}
 \begin{table}[htbp]
+\label{table:data-volume}
   \centering
   \caption[Annual data volume estimations for zero-suppressed (ZS) data from various sources]{Annual data volume estimations for zero-suppressed (ZS) data from various sources.
   An additional full-stream (FS) data estimation is given for supernova burst (SNB).}
@@ -148,6 +162,7 @@ at a later time:
 \item ADC resolution (bits): 12
 \end{itemize}
 \
+\fixme{currently under investigation, questions sent to Mark Convery and Norm Buchanan --mxp--}
 This results in 36kB per spill cycle, and should be considered negligible from the point of view of requirement to data handling, compared to other data sources.
 
 \subsubsection{Near Detector Data Rates}
@@ -163,21 +178,31 @@ of the Fine-Grained Tracker (FGT):
 \item Average expected event rate per spill: \textasciitilde 1.5
 \end{itemize}
 \
-Based on these parameters, the upper limit of the ND data rate can be estimated as 1.5MB/s. This translates into \textasciitilde 45TB/year. 
+Since there are large uncertainties in estimates of the detector occupancy levels per event, 
+broad assumptions must be made to roughly estimate its data rate. Current estimate (as quoted in the Near Detector
+section of the ``Expected Data Rates'' Annex is \textasciitilde 1MB/s, which translates into \textasciitilde 30TB/year.
+
+% Assuming that 10\% occupancy in the STT and 40 samples
+%per trigger, one arrives to \textasciitilde 1MB of data per event. Under same assumption, ECAL will contribute \textasciitilde 0.25MB
+%and the Muon Detector \textasciitilde  0.75MB.
+%Based on these parameters, the upper limit of the ND data rate can be estimated as 1.5MB/s. This translates into \textasciitilde 45TB/year. 
 
 \subsection{Processed Data}
 \label{sec:detectors-sc-infrastructure-processed-data}
 For the purposes of this document, processed data is defined as most data which is not considered ``raw'', i.e. it's data derived from raw (including possibly multiple stages
 of calibration and reconstruction) as well as data produced as a result of Monte Carlo studies.
 
-There are uncertainties in anticipated quantities of all of these types of data.
-Depending on the optimum readout strategy, an annual raw data volume of
+There are uncertainties in anticipated quantities of all of these types of data. Table \ref{table:data-volume} contains
+a range of numbers reflecting limiting cases such as ZS vs FS.
+Depending on the exact optimum readout strategy, an annual raw data volume of
 \SI{1}{\tera\byte} to \SI{1}{\peta\byte} may be collected.
 Assuming that
 the data will undergo a few processing stages, one can expect the need
 to handle as much as \textasciitilde \SI{2}{\peta\byte} of data annually for reconstruction and a lesser
 volume for final analysis purposes.
 
+\fixme{Amir is right, as we are mostly guessing the MC data volume - but I don't have more guidance at this point.
+We are already stating it's more or less a guess --mxp--}
 For Monte Carlo, at the time of writing typical annual volume of data produced has been of the order of a few tens of terabytes.
 Initial expectations are that the MC sample size for beam events will
 need to be $10$ -- $100\times$ that of the data.
@@ -191,7 +216,9 @@ expectation is that this estimate will increase.
 \subsubsection{Distributed Computing}
 
 Given the fact the Collaboration is large and widely dispersed geographically, a fully distributed approach to computing is recommended, based on experience
-gained during the operation of the LHC experiments. This will allow the DUNE Collaboration to better leverage resources and expertise from many of its
+gained during the operation of the LHC experiments. This includes not only ``traditional'' Grid technologies in the form they were deployed during the first
+decade of this century, but also more recent expansion into Cloud Computing
+and Big Data methodology. This will allow the DUNE Collaboration to better leverage resources and expertise from many of its
 member institutions and improve the overall long-term scalability of its computing platform.
 
 DUNE will operate a  distributed network of federated resources, for both CPU power and storage capability. This will allow for streamlined incorporation
@@ -214,9 +241,11 @@ and the detectors that are part of DUNE. This leads to three basic design elemen
 \item Buffers will be provided at the surface facility to mitigate downtime of the network connection between the Far Site and FNAL.
 \end{itemize}
 \item Robust transmission: data transfer needs to be instrumented with redundant checks (such as checksum calculation), monitoring, error correction and retry logic.
-\item Redundant replicas: it is a common industry practice to have a total of three copies of ``precious'' data, which are geographically distributed. This provides protection against catastrophic events (such as natural disasters) at any given data center participating in this scheme, and facilitates rebuilding (``healing'')  lost data should such event does happen.
+\item Redundant replicas: it is a common industry practice to have a total of three copies of ``precious'' data, which are geographically distributed.
+Such geographical distribution of the replicas may include countries other than the United States, where the data will be collected.
+This provides protection against catastrophic events (such as natural disasters) at any given data center participating in this scheme, and facilitates rebuilding (``healing'')  lost data should such event does happen.
 \end{itemize}
-
+\fixme{Amir - yes I do mean industry like in industry, what's wrong with that? --mxp--}
 
 
 \subsubsection{Data Management}
@@ -228,13 +257,19 @@ A single additional copy does not necessarily need to reside in its entirety on 
 becomes optimal at the time of implementation of the Computing Model. For example, consideration is given to both Brookhaven National Laboratory
 and NERSC as candidates for the placement of extra replicas.
 
+Recent progress in network and storage technologies made possible \textit{federation of storage} across multiple data centers located at
+member insitutions. In this approach, data can be effectively shared and utilized via the network (cf. ``data in the Cloud''). One example of
+an advanced system of this type of XRootD.
+
 For data distribution, a combination of managed data movement between sites (such as ``dataset subscription'',
 primarily for managed production), and a network of XRootD servers to cache processed data and for analysis will be used.
 A file catalog and a Meta-Data system will be required for efficient data management at scale, and an effort will be made to leverage experience of
 member institutions in this area, making an effort to reuse existing systems or design ideas where possible.
 
-\subsection{Computing Implications of the Alternate Design}
+\subsection{Computing Implications of the Alternative Design}
 \label{sec:detectors-sc-alternate}
+Crucial parameters of the alternative design of the Far Detector (based on the dual-phase technology)
+are listed in Chapter 2 of the ``Expected Data Rates'' Annex. Here's a brief summary of some of its characteristics:
 The dual-phase LAr TPC is expected to have the following parameters:
 \begin{itemize}
 	\item Readout channel count: 614,400 (i.e. four times 153,600 which is the channel count
@@ -248,7 +283,11 @@ For the Photon Detector in the dual-phase design:
 	for each 10kt module)
 \end{itemize}
 \
-\fixme{So what are the computing implications? Also expecting 45~TB/yr?}
+According to some estimates listed in the Annex, the ``Full Stream'' readout will produce 16.9GB of data for
+each candidate event. This is about 68\% of the data volume in one readout cycle, in the reference design.
+Although signal processing strategies may be implemented differently in the alternative design, it can be argued
+that the total data rate will be of the same order of magnitude or less than in the reference design.
+\fixme{Can still improve here but I doubt we'll get much more detail in time --mxp--}
 
 
 \section{Far Detector Physics Software}
