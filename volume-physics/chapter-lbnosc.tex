@@ -579,7 +579,7 @@ For long-baseline experiments such as DUNE, where the neutrino beam propagates t
 the Earth's mantle, the leptonic CP-violation effects must be disentangled from 
 the matter effects.
 
-Figure~\ref{fig:cpv_nominal} shows the significance with which the CP violation ($\mdeltacp \neq 0 \ {\rm or} \ \pi$) can be determined as a function of the value of \deltacp for an exposure of 300~kt-MW-yr, which corresponds to seven years of data (3.5 years in neutrino mode plus 3.5 years in antineutrino mode) with a 40-kt detector and a 1.07-MW beam.  Figure~\ref{fig:cpv_exposure} shows the significance with which CP violation can be determined for 50\% or 75\% of \deltacp values as a function of exposure.  Table~\ref{tab:cpv_requiredexposure} lists the minimum exposure required to determine CP violation with a significance of 5$\sigma$ for 50\% of \deltacp values or 3$\sigma$ for 75\% of \deltacp values for both the CDR reference beam design and the optimized beam design.  Unlike the MH determination, it's not possible for any experiment to provide 100\% coverage in \deltacp for a CP violation measurement because CP violation effects vanish as $\mdeltacp \rightarrow 0 {\rm~or~} \pi$.
+Figure~\ref{fig:cpv_nominal} shows the significance with which the CP violation ($\mdeltacp \neq 0 \ {\rm or} \ \pi$) can be determined as a function of the value of \deltacp for an exposure of 300~kt-MW-yr, which corresponds to seven years of data (3.5 years in neutrino mode plus 3.5 years in antineutrino mode) with a 40-kt detector and a 1.07-MW beam.  Figure~\ref{fig:cpv_exposure} shows the significance with which CP violation can be determined for 50\% or 75\% of \deltacp values as a function of exposure.  Table~\ref{tab:cpv_requiredexposure} lists the minimum exposure required to determine CP violation with a significance of 5$\sigma$ for 50\% of \deltacp values or 3$\sigma$ for 75\% of \deltacp values for both the CDR reference beam design and the optimized beam design.  The CP violation sensitivity as a function of \deltacp as shown in Figure~\ref{fig:cpv_nominal} has a characteristic double peak structure because the significance of a CP violation measurement necessarily drops to zero where there is no CP violation: at the CP-conserving values of $-\pi,~0,~{\rm and}~\pi$.  Therefore, unlike the MH determination, it's not possible for any experiment to provide 100\% coverage in \deltacp for a CP violation measurement because CP violation effects vanish at certain values of \deltacp.
 
 \begin{cdrfigure}[CP violation sensitivity for a 300~kt-MW-yr exposure]{cpv_nominal}{The significance with which the CP violation can be determined as a function of the value of \deltacp for an exposure of 300~kt-MW-yr assuming normal MH (left) or inverted MH (right).  The shaded region represents the range in sensitivity due to potential variations in the beam design.}
  \includegraphics[width=0.49\textwidth]{cpv_300ktmwyear}
@@ -623,8 +623,9 @@ Figure~\ref{fig:cpv_staging} shows the CP violation sensitivity as a function of
 
 \section{Precision Oscillation Parameter Measurements}
 
-The value of \sinstt{23} is measured to be $>$~0.95 at 90\% CL 
-using atmospheric neutrino oscillations~\cite{Abe:2011ph}. 
+% The value of \sinstt{23} is measured to be $>$~0.95 at 90\% CL 
+% using atmospheric neutrino oscillations~\cite{Abe:2011ph}. 
+The most precise measurement of $\sin^2\theta_{23}$ to date comes from T2K, $\sin^2\theta_{23}~=~0.514^{+0.055}_{-0.056}$~(normal hierarchy) and $\sin^2\theta_{23}~=~0.511~\pm~0.055$~(inverted hierarchy)~\cite{Abe:2015awa}.
 This corresponds to a value of 
 $\theta_{23}$ near 45\mbox{$^{\circ}$}, but leaves an ambiguity
 as to whether the value of $\theta_{23}$ is in the lower octant 
@@ -634,7 +635,7 @@ The value of $\sin^2 \theta_{23}$ from
 the global fit reported by~\cite{Gonzalez-Garcia:2014bfa} is $\sin ^2 \theta_{23} = 0.452
 ^{+0.052} _{-0.028} (1 \sigma)$ for normal hierarchy (NH), but the distribution of the $\chi^2$ from
 the global fit has another local minimum --- particularly if the MH 
-is inverted --- at $\sin^2 \theta_{23} = 0.579$. A
+is inverted --- at $\sin^2 \theta_{23} = 0.579 ^{+0.025} _{-0.037} (1 \sigma)$. A
 \emph{maximal} mixing value of $\sin^2 \theta_{23} =0.5$ is therefore still allowed
 by the data and the octant is still largely undetermined.
 A value of $\theta_{23}$ exactly equal to 45\mbox{$^{\circ}$} would indicate that 
@@ -684,16 +685,17 @@ relations between them. The
 mixing angle $\theta_{13}$ is
 expected to be measured accurately in reactor experiments by the end
 of the decade with a precision that will be limited by
-systematics. The systematic uncertainty on the value of $\sin ^ 2 2
+systematics. 
+The combined statistical and systematic uncertainty on the value of $\sin ^ 2 2
 \theta_{13}$ from the Daya Bay reactor neutrino experiment, which has
-the lowest systematics, is currently $\sim4$\%~\cite{An:2013zwz}.
+the lowest systematics, is currently $\sim6$\% ($\sin^22\theta_{13} = 0.084\pm0.005$),
+with a projected uncertainty of $\sim$3\% by 2017~\cite{Zhang:2015fya}.
 While the constraint on $\theta_{13}$ from the reactor experiments will be
 important in the
 early stages of DUNE for determining CP violation, measuring
 \deltacp and determining the $\theta_{23}$ octant, 
 DUNE itself will eventually be able to measure
-$\theta_{13}$ independently with a precision on par with the final
-precision expected from the reactor experiments. 
+$\theta_{13}$ independently with a similar precision to that expected from the reactor experiments. 
 Whereas the reactor experiments measure $\theta_{13}$ using $\overline{\nu}_e$
 disappearance, DUNE will measure it through $\nu_e$ and
 $\overline{\nu}_e$ appearance, thus providing an independent constraint on
@@ -704,7 +706,7 @@ the three-flavor mixing matrix.   Figure~\ref{fig:res_th13} shows the resolution
 \end{cdrfigure}
 
 DUNE can also significantly improve the
-resolution on $\Delta m^2_{31}$ beyond the precision of current experiments.  The
+resolution on the larger mass splitting beyond the precision of current experiments.  The current best fit value for $\Delta m^2_{32}$ from MINOS is $|\Delta m^2_{32}| = (2.34\pm0.09)\times10^{-3}$~eV$^2$ (normal hierarchy) and $|\Delta m^2_{32}| = (2.37^{+0.11}_{-0.07})\times10^{-3}$~eV$^2$ (inverted hierarchy)~\cite{Sousa:2015bxa}, with comparable precision acheived by both Daya Bay and T2K. The
 precision on $\Delta m^2_{31}$ will ultimately depend on tight control
 of energy-scale systematics.  Figure~\ref{fig:res_dm2} shows the expected resolution of \dm{31} as a function of exposure, assuming the true value is \dm{31} = $2.457\times10^{-3}$~eV$^2$ from the current global fit.
 
