@@ -449,24 +449,23 @@ experimentally allowed range.
 \begin{cdrfigure}[Variation in MH sensitivity due to $\Delta m^{2}_{31}$]{mh_deltamsq}{The variation in the MH sensitivity due to different values of \dm{31} within the allowed range.  In this figure, the nominal value of \dm{31} = $2.46\times 10^{-3}$~eV$^2$ provides a significance of at least $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for all values of \deltacp.  (See Figure~\ref{fig:mh_exposure} for the possible range of exposures to achieve this level of significance.)}
  \includegraphics[width=0.7\textwidth]{mh_230ktmwyear_varydmsq}
 \end{cdrfigure}
-
-In assessing the sensitivity of future experiments, it is common practice to generate
-a simulated data set (for an assumed true MH) that does not include statistical fluctuations.  
-The expected sensitivity can be reported as  
-$\overline{\Delta\chi^2}$, representative of the mean value of $\Delta\chi^2$ that 
-would be obtained in an ensemble of experiments for a particular true MH.  
-It is assumed that the $\Delta \chi^2$ metric follows the expected chi-squared
+ 
+Studies have indicated that special attention must be paid to the statistical interpretation of MH sensitivities~\cite{Qian:2012zn,Blennow:2013oma}.
+In general, if an experiment is repeated many times, a distribution of $\Delta\chi^2$
+values will appear due to statistical fluctuations.
+It is usually assumed that the $\Delta \chi^2$ metric follows the expected chi-squared
 function for one degree of freedom, which has a mean of
 $\overline{\Delta\chi^2}$ and can be interpreted using a Gaussian
 distribution with a standard deviation of
 $\sqrt{|\overline{\Delta\chi^2}|}$.
+In assessing the MH sensitivity of future experiments, it is common practice to generate
+a simulated data set (for an assumed true MH) that does not include statistical fluctuations. 
+In this typical case, $\overline{\Delta\chi^2}$ is reported as the expected sensitivity, 
+where $\overline{\Delta\chi^2}$ is representative of the mean value of $\Delta\chi^2$ that 
+would be obtained in an ensemble of experiments for a particular true MH.  
 With the exception of Figure~\ref{fig:mhstats}, the sensitivity plots
 in this document have been generated using this method.
-However, to address the expected sensitivity of a future experiment
-requires consideration of the effect of
-statistical fluctuations and variations in systematics.  If the
-experiment is repeated many times, a distribution of $\Delta\chi^2$
-values will appear.  Studies in~\cite{Qian:2012zn,Blennow:2013oma}
+However, studies in~\cite{Qian:2012zn,Blennow:2013oma}
 show that, in the case of the mass hierarchy
 determination, the $\Delta \chi^2$ metric {\em does not} follow the expected chi-squared
 function for one degree of freedom.  Rather, these studies show that
@@ -474,23 +473,36 @@ when the observed counts in the experiment are large enough,
 the distribution of $\Delta\chi^2$ used here approximately follows
 a Gaussian distribution with a
 mean and standard deviation of $\overline{\Delta\chi^2}$ and
-$2\sqrt{|\overline{\Delta\chi^2}|}$, respectively. Figure~\ref{fig:mhstats} the
-demonstrates the possible variation in the significance of a MH determination when statistical
-fluctuations are included for a measurement that would yield a significance of $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for 100\% of \deltacp values in our standard treatment.
+$2\sqrt{|\overline{\Delta\chi^2}|}$, respectively. Because the distribution is atypical, the interpretation of 
+test statistic values in terms of confidence intervals is different than the standard case.
+
+The effect of statistical fluctuations in the MH measurement is shown in Figure~\ref{fig:mhstats}.  The colored bands show
+the possible range in the significance of a MH determination when statistical
+fluctuations are included for a measurement that would yield a significance of $\sqrt{\overline{\Delta\chi^{2}}} = 5$
+for 100\% of \deltacp values in our standard treatment (the solid blue line).  Also shown in 
+Figure~\ref{fig:mhstats} are horizontal lines that specify the confidence level of an experiment that measures a particular
+value of $\sqrt{\Delta \chi^2}$, following the convention in~\cite{Qian:2012zn}. An experiment that measures
+$\sqrt{\Delta \chi^2} = 5$ (black dashed line) has a $1 - 3.7\times10^{-6}$ probability of determining the
+correct MH, while an experiment that measures$\sqrt{\Delta \chi^2} = 3$ (blue dashed line) has a 98.9\% 
+probability of determining the correct MH. An experiment that measures $\sqrt{\Delta \chi^2} = 0$ (cyan dashed line)
+has a 50\% probability of determining the correct MH.  In this case, both hypotheses (normal or inverted hierarchy) 
+fit the data equally well, and the probability of guessing correctly is 50\%.
 
 \begin{cdrfigure}[MH sensitivity including statistical fluctuations]{mhstats}{
-  The variation in the MH sensitivity due to statistical fluctuations for a measurement that would yield a significance of $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for 100\% of \deltacp values in our standard treatment. (See Figure~\ref{fig:mh_exposure} for the possible range of exposures to achieve this level of significance.)  The 
-  sensitivity, given by  $\sqrt{\Delta T}=\sqrt{\Delta\chi^2}$, for a typical experiment 
+  The  sensitivity, given by  $\sqrt{\Delta T}=\sqrt{\Delta\chi^2}$, for a typical experiment 
   (solid blue line) is compared to the bands within which
-  68\% (green) and 95\% (yellow) of experiments are expected to fall. The dashed lines
-  represent the value of the $\Delta T$ metric above which the minimum
-  probability of determining
-  the correct neutrino mass hierarchy is 50\%(cyan), 98.9\% (blue), or $1 - 3.7\times10^{-6}$
-  (black). }
+  68\% (green) and 95\% (yellow) of experiments are expected to fall due to statistical fluctuations.
+  The solid blue line (representing a minimum significance of $\sqrt{\Delta T} = 5$ for 100\% of \deltacp
+   values) is the expected sensitivity in our standard treatment.
+   (See Figure~\ref{fig:mh_exposure} for the possible range of exposures to achieve this level of significance.) 
+  The dashed lines show the values of the $\sqrt{\Delta T}$ metric an experiment must measure for the probability of determining
+  the correct neutrino MH to be 50\%~(cyan), 98.9\%~(blue), or $(1 - 3.7\times10^{-6})$~(black), following the convention in~\cite{Qian:2012zn}.  
+  In the legend, the numbers corresponding to the dashed lines indicate 
+  [probability of determining MH {\em incorrectly}] vs. [probability of determining the MH {\em correctly}].}
  \includegraphics[width=0.7\linewidth]{mhstats_230ktmwyear}
 \end{cdrfigure}
 
-The 40-kt DUNE far detector (FD) will be built in 10-kt modules, which will come online over the course of several years.  The near detector (ND) will likely start operations after FD operations are already ongoing.  Without any ND constraints, systematic uncertainties will be larger in the early stages of the experiment. Additionally, the beam power is expected to be upgraded from $\sim$1~MW to $\sim$2~MW during the course of the experiment. For a rough estimate of the sensitivity of DUNE as a function of real time for the first 10~years of operations, we consider the following staging plan:
+The 40-kt DUNE far detector (FD) will be built in 10-kt modules, which will come online over the course of several years.  The near detector (ND) will likely start operations after FD operations are already ongoing.  Without any ND constraints, systematic uncertainties will be larger in the early stages of the experiment. Additionally, the beam power is expected to be upgraded from $\sim$1~MW to $\sim$2~MW during the course of the experiment. For a rough estimate of the sensitivity of DUNE as a function of real time for the first 10~years of operation, we consider the following staging plan:
 \begin{itemize}
  \item Year 1: 10~kt FD mass; 1.07~MW beam power; No ND constraints (assume 5\% signal systematic)
  \item Year 2: Add second 10~kt FD module, for a total FD mass of 20~kt
