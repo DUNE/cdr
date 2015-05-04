@@ -135,63 +135,55 @@ This still needs further work from physics and DAQ groups.}
   \input{volume-detectors/generated/zs-volume-summary}
   \label{tab:sc-zs-summary}
 \end{table}
-\fixme{Can you put the generated table into cdrtable format?} 
+\fixme{Can you put the generated table into cdrtable format? (brett)} %%%%%% to here 4/29 Anne
 
 \subsubsection{Far Detector Photon Detector (PD)}
-There are variations in the basic parameters of the Photon Detector currently in the R\&D stage, %so
-and the numbers in this section %presented below need to be considered as ballpark values to be 
-will made more precise
+There are variations in the basic parameters of the Photon Detector currently in the R\&D stage,
+so the numbers presented below need to be considered as ballpark values to be made more precise
 at a later time:
 
 \begin{itemize}
-\item Readout channel count: 24,000 (i.e., four times 6,000 per 10-kt module)
-\item Trigger rate not yet certain; %is uncertain at this point due to ongoing investigation; 
-one possible approach assumes 1 trigger per spill cycle
+\item Readout channel count: 24,000 (i.e. four times 6,000 which is the channel count for each 10kt module)
+\item Trigger rate is uncertain at this point due to ongoing investigation; one approach that exists assumes 1 trigger per spill cycle
 \item ADC resolution (bits): 12
 \end{itemize}
 \
-This results in 36~kB per spill cycle, and should be considered negligible % from the point of view of requirement to data handling, 
-compared to other data sources.
+This results in 36kB per spill cycle, and should be considered negligible from the point of view of requirement to data handling, compared to other data sources.
 
 \subsubsection{Near Detector Data Rates}
-%Once again, t
-The Near Detector is subject to an intense R\&D effort and its
-parameters are still being optimized.% and not fixed at this point. 
-The most relevant parameters
-of the Fine-Grained Tracker (FGT) are:
+Once again, the Near Detector is subject to an intense R\&D effort and its
+parameters are being optimized and not fixed at this point. The most relevant parameters
+of the Fine-Grained Tracker (FGT):
 \begin{itemize}
 \item   Straw Tube Tracker (STT) readout channel count: 215,040
-\item STT Drift Time: 120~ns
-\item STT ADC clock frequency and resolution (bits): 3-ns intervals, 10~bit
+\item STT Drift Time: 120ns
+\item STT ADC clock frequency and resolution (bits): 3ns intervals, 10 bit
 \item ECAL channel count: 52,224
 \item Muon Detector Resistive Plane Chambers (RPC) channel count: 165,888
-\item Average expected event rate per spill: $\sim$1.5
+\item Average expected event rate per spill: \textasciitilde 1.5
 \end{itemize}
 \
-Based on these parameters, the upper limit of the ND data rate can be estimated as 1.5~MB/s. This translates into $\sim$45~TB/year. 
+Based on these parameters, the upper limit of the ND data rate can be estimated as 1.5MB/s. This translates into \textasciitilde 45TB/year. 
 
 \subsection{Processed Data}
 \label{sec:detectors-sc-infrastructure-processed-data}
-For the purposes of this document, processed data %is defined as 
-includes most data which is not considered ``raw,'' i.e., data derived from raw (including possibly multiple stages
-of calibration and reconstruction) as well as data produced from Monte Carlo studies.
+For the purposes of this document, processed data is defined as most data which is not considered ``raw'', i.e. it's data derived from raw (including possibly multiple stages
+of calibration and reconstruction) as well as data produced as a result of Monte Carlo studies.
 
-The amount of expected processed data is still uncertain, however, 
-%There are uncertainties in anticipated quantities of all of these types of data.
-depending on the optimum readout strategy, an annual raw data volume of
-\SI{1}{\tera\byte} to \SI{1}{\peta\byte} %may be collected.
-is estimated. 
-%Assuming that the data will undergo a few 
-Given the processing stages, one can expect % the need
-to handle as much as $\sim$\SI{2}{\peta\byte} of data annually for reconstruction and a lesser
-volume for final analysis. % purposes.
+There are uncertainties in anticipated quantities of all of these types of data.
+Depending on the optimum readout strategy, an annual raw data volume of
+\SI{1}{\tera\byte} to \SI{1}{\peta\byte} may be collected.
+Assuming that
+the data will undergo a few processing stages, one can expect the need
+to handle as much as \textasciitilde \SI{2}{\peta\byte} of data annually for reconstruction and a lesser
+volume for final analysis purposes.
 
-At the time of writing. typical annual volume of data produced for Monte Carlo has been on the order of a few tens of terabytes.
-%Initial expectations are 
-It is currently estimated that the MC sample size for beam events will
+For Monte Carlo, at the time of writing typical annual volume of data produced has been of the order of a few tens of terabytes.
+Initial expectations are that the MC sample size for beam events will
 need to be $10$ -- $100\times$ that of the data.
-However, this estimate is likely to increase as the collaboration grows
-and more detailed studies (e.g., of systematics) are undertaken. %, our expectation is that this estimate will increase.
+With Collaboration growing
+and more detailed studies (e.g. of systematics) are undertaken, our
+expectation is that this estimate will increase.
 
 \subsection{Computing Model}
 \label{sec:detectors-sc-infrastructure-computing-model}
@@ -205,61 +197,45 @@ member institutions and improve the overall long-term scalability of its computi
 DUNE will operate a  distributed network of federated resources, for both CPU power and storage capability. This will allow for streamlined incorporation
 of computing facilities as they become available at member institutions, and thus is particularly amenable to accommodate staged construction and commissioning
 of the detector subsystems. A modern Workload Management System will be deployed on top of Grid and Cloud resources to provide computing
-power to DUNE researchers.  % this is a good introduction!
+power to DUNE researchers.
 
 \subsubsection{Raw Data Transmission and Storage Strategy}
-FNAL will be the principal data storage center for the experiment. It will serve as a hub where the data from both the Facility (e.g., the LBNF beam and target)
-and the %various detector systems (such as the  Far and Near Detectors)  
-near and far detectors are collected, catalogued and committed to mass storage. This will %obviously 
-require transmission of
-data over considerable distances (certainly for the far detector). In addition, the far detector DAQ is %systems  are 
-being designed for installation %to be located in the vicinity of the Far Detector (
-in the cavern, resulting in the additional step of transmitting the data from the 4850L to the surface.
+FNAL will be the principal data storage center for the experiment. It will serve as a hub where the data from both the Facility (e.g. beam and target)
+and the various detector systems (such as the  Far and Near Detectors)  are collected, catalogued and committed to mass storage. This will obviously require transmission of
+data over considerable distances (certainly for the Far Detector). In addition, the DAQ systems of the Far Detector are being designed to be located  in the vicinity of
+the Far Detector (in the cavern), which results in an additional step of transmitting the data from 4850L to the surface.
 
-Raw data to be collected from the DUNE detectors are considered ``precious'' due to the high cost of operating both the facility and the detectors. %at FNAL and the detectors that are part of DUNE. 
-This leads to three basic design elements in the data transmission and storage chain:
+Raw data to be collected from the detectors in DUNE are considered ``precious'' due to high cost of operating the both the facility at FNAL
+and the detectors that are part of DUNE. This leads to three basic design elements in the data transmission and storage chain:
 \begin{itemize}
 \item Buffering:
 \begin{itemize}
-\item Sufficient %Adequate (`adequate' always sounds grudging; it just does!)
-buffers will be provided for the DAQ systems  to mitigate possible downtime of the network connection between the 4850L and the surface.
-\item Buffers will be provided at the surface facility to mitigate downtime of the network connection between the Far Site and Fermilab.
+\item Adequate buffers will be provided for the DAQ systems  to mitigate possible downtime of the network connection between 4850L and the surface.
+\item Buffers will be provided at the surface facility to mitigate downtime of the network connection between the Far Site and FNAL.
 \end{itemize}
-\item Robust transmission: data transfer will %needs to 
-be instrumented with redundant checks (such as checksum calculation), monitoring, error correction and retry logic.
-\item Redundant replicas: it is a common industry practice to %have a total of 
-maintain three geographically distributed copies of ``precious'' data. %, which are geographically distributed. 
-This provides protection against catastrophic events (such as natural disasters) at any participating data center 
-%participating in this scheme, 
-and facilitates rebuilding (``healing'')  lost data at a computing center.
+\item Robust transmission: data transfer needs to be instrumented with redundant checks (such as checksum calculation), monitoring, error correction and retry logic.
+\item Redundant replicas: it is a common industry practice to have a total of three copies of ``precious'' data, which are geographically distributed. This provides protection against catastrophic events (such as natural disasters) at any given data center participating in this scheme, and facilitates rebuilding (``healing'')  lost data should such event does happen.
 \end{itemize}
 
-\fixme{Do you want to call these centers computing or data centers? Pick one}
 
 
 \subsubsection{Data Management}
 \label{sec:detectors-sc-infrastructure-computing-model-data-mgt}
 
-Data will be placed into mass storage at Fermilab. As described above, additional copies (replicas) will be 
-distributed to other computing centers possessing sufficient resources.
-Brookhaven National Laboratory and NERSC are candidates for the placement of replicas.
-It is not required that a single replica %additional copy does not necessarily need to 
-reside in its entirety at a given data center; the replicas can be ``striped'' across multiple data centers if that
-proves to be more efficient.
-%becomes optimal at the time of implementation of the Computing Model. For example, consideration is given to both 
+Data will be placed into mass storage at FNAL. Along the lines described above, additional copies (replicas) will be distributed to other
+computing centers possessing sufficient resources.
+A single additional copy does not necessarily need to reside in its entirety on a single data center; the replicas can be ``striped'' across a few data centers if that
+becomes optimal at the time of implementation of the Computing Model. For example, consideration is given to both Brookhaven National Laboratory
+and NERSC as candidates for the placement of extra replicas.
 
+For data distribution, a combination of managed data movement between sites (such as ``dataset subscription'',
+primarily for managed production), and a network of XRootD servers to cache processed data and for analysis will be used.
+A file catalog and a Meta-Data system will be required for efficient data management at scale, and an effort will be made to leverage experience of
+member institutions in this area, making an effort to reuse existing systems or design ideas where possible.
 
-For data distribution, a combination of managed data movement between sites (such as ``dataset subscription'')
-%,primarily for managed production), 
-and a network of XRootD servers (for caching processed data and for analysis) will be used.
-A file catalog and a metadata system will be required for efficient data management at scale; %and an effort will be made to leverage 
-experience of
-member institutions will be leveraged and %in this area, making 
-an effort will be made to reuse existing systems and/or design ideas. % where possible.
-
-\subsection{Computing Implications of the Dual-Phase (Alternate) Design}
+\subsection{Computing Implications of the Alternate Design}
 \label{sec:detectors-sc-alternate}
-The dual-phase LArTPC is expected to have the following parameters:
+The dual-phase LAr TPC is expected to have the following parameters:
 \begin{itemize}
 	\item Readout channel count: 614,400 (i.e. four times 153,600 which is the channel count
 	for each 10kt module)
