@@ -289,6 +289,20 @@ Although signal processing strategies may be implemented differently in the alte
 that the total data rate will be of the same order of magnitude or less than in the reference design.
 \fixme{Can still improve here but I doubt we'll get much more detail in time --mxp--}
 
+\section{Near Detector Physics Software}
+\label{sec:detectors-sc-nd-physics-software}
+
+Longer descriptions of the current status of thenear detector simulation and reconstruction are given
+in \anxreco, and only an abbreviated summary is given here.
+
+Two approaches are being simultaneously pursued for the simulation of the DUNE Near Detector.  The first is a fast Monte Carlo,
+based on parameterized detector responses, which is based on the GENIE~\cite{GENIE} and the achieved NOMAD simulation and reconstruction performance,
+and the second is a full GEANT4-based simulation, which is under development.  The fast Monte Carlo tool is based on work done for
+the Far Detector~\cite{Adams:2013qkq}, Appendix A.3, and is capable of rapidly evaluating the sensitivity of the detector
+design for a broad variety of analyses targeting specific final states.   The full GEANT4-based simulation and subsequent reconstruction
+chains will be used to inform the parameterized responses of the fast Monte Carlo, as well as being indispensable tools for simulating
+and extracting results from the Near detector.  
+
 
 \section{Far Detector Physics Software}
 \label{sec:detectors-sc-physics-software}
@@ -302,10 +316,7 @@ in \anxreco, and only an abbreviated summary is given here.
 %\subsubsection{Beam Simulation}
 %\label{sec:detectors-sc-physics-software-simulation-beam}
 % ND simulation and reconstruction in the ND chapter
-%\subsection{Near Detector Reconstruction}
-%\label{sec:detectors-sc-physics-software-reconstruction-nd}
-%\subsubsection{Near Detector Simulation}
-%\label{sec:detectors-sc-physics-software-simulation-nd}
+%
 
 \subsection{Far Detector Simulation}
 \label{sec:detectors-sc-physics-software-simulation-fd}
@@ -324,16 +335,17 @@ Scientific Computing Division.
 The comparison of data from ArgoNeuT~\cite{Anderson:2012vc,Anderson:2012mra} with LArSoft
 simulations gives confidence in the reliability of the detector simulation.
 Future data from LArIAT~\cite{Adamson:2013/02/28tla,Cavanna:2014iqa},
-MicroBooNE~\cite{Chen:2007ae,Jones:2011ci,microboonecdr}, and the 35-ton prototype will allow
+MicroBooNE~\cite{Chen:2007ae,Jones:2011ci,microboonecdr}, and the 35-ton prototype (Sec.~\ref{sec:proto-35t}) will allow
 further tuning of the LArSoft simulation as experience is gained.
-The dual-phase detector simulation is based on the Qscan package,
+The dual-phase detector simulation and hit-level reconstruction are based on the Qscan~\cite{lussi:thesis} package,
 which has been developed over the past decade, and is currently
 being used to perform technical design and physics studies for
-the \cerndualproto{} program.
+the \cerndualproto{} program.  
 
 Events are generated using either the GENIE~\cite{GENIE} simulation of 
 neutrino-nucleus interactions, the CRY~\cite{Cosmic-CRY,Cosmic-CRY-protons,CRY-url} cosmic-ray generator, 
-a radiological decay simulator, a particle gun, or one of several
+a radiological decay simulator written specifically for LArSoft, using the decay spectra
+in Ref.~\cite{docdb-8797}, a particle gun, or one of several
 text-file-based particle input sources. GEANT4 is then used to simulate the trajectories
 of particles and to model their energy deposition.  
 Custom algorithms have been developed to propagate the drifting charge
@@ -372,8 +384,8 @@ the 35-ton prototype and the CERN test experiments,
 the reconstruction tools have grown in both volume and sophistication,
 supported by powerful software frameworks such as LArSoft and Qscan.
 
-A fully automated chain of event-reconstruction algorithms
-is being developed for the DUNE far detector.
+Fully automated chain of event-reconstruction algorithms
+is being developed for the DUNE far detector, both for the single-phas and dual-phase designs.
 The first stage of reconstruction involves the processing of the
 ADC wire signals, and the identification of pulses, or `hits', in the 
 two-dimensional space of wire nubmer and charge arrival time. 
@@ -400,7 +412,7 @@ From Ref.~\cite{Badertscher:2012dq}.
 \includegraphics[width=0.99\textwidth]{LBNO-MC-nu_mu_event.png}
 \end{cdrfigure}
 
-\subsubsection{Signal Processing, Hit Finding, and Disambiguation}
+\subsubsection{TPC Signal Processing, Hit Finding, and Disambiguation}
 
 The signal-processing steps in the single-phase and dual-phase detectors are similar but
 are accomplished with separate software.  Both proceed first by decompressing the raw data
@@ -469,7 +481,9 @@ and neutrino events are reconstructed by associating the
 Figure~\ref{fig:pandoraefficiency} shows the current efficiency for reconstructing
 the leading final-state lepton as a function of its momentum
 for 5\,GeV $\nu_{e}$ and $\nu_{\mu}$ charged-current interactions
-simulated in the MicroBooNE detector.
+simulated in the MicroBooNE detector; the DUNE single-phase detector is expected to 
+perform similarly, although the multiple TPC geometry with wrapped wires requires
+additional software effort.
 %In both samples, the reconstruction efficiency increases rapidly with momentum,
 %rising above 90\% at 500\,MeV and reaching approximately 100\% at 2\,GeV.
 Figure~\ref{fig:recoannexpandoravertexresolution} shows the spatial resolution for
