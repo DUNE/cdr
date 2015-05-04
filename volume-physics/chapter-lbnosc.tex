@@ -172,6 +172,7 @@ P(\nu_\mu \rightarrow \nu_e) & \simeq & \sin^2 \theta_{23} \sin^2 2 \theta_{13}
 \frac{ \sin^2(\Delta_{31} - aL)}{(\Delta_{31}-aL)^2} \Delta_{31}^2\\ \nonumber
 & & + \sin 2 \theta_{23} \sin 2 \theta_{13} \sin 2 \theta_{12} \frac{ \sin(\Delta_{31} - aL)}{(\Delta_{31}-aL)} \Delta_{31} \frac{\sin(aL)}{(aL)} \Delta_{21} \cos (\Delta_{31} + \mdeltacp)\\ \nonumber
 & & + \cos^2 \theta_{23} \sin^2 2 \theta_{12} \frac {\sin^2(aL)}{(aL)^2} \Delta_{21}^2, \\ \nonumber
+\label{eqn:appprob}
 \end{eqnarray}
 where $\Delta_{ij} = \Delta m^2_{ij} L/4E_\nu$, $a = G_FN_e/\sqrt{2}$, $G_F$ is the Fermi constant, $N_e$ is the number density of electrons in the Earth, $L$ is the baseline in km, and $E_\nu$ is the neutrino energy in GeV. 
 In the above, both \deltacp and $a$ 
@@ -280,7 +281,7 @@ The neutrino oscillation parameters and the uncertainty on those parameters are 
 Nu-Fit~\cite{Gonzalez-Garcia:2014bfa} global fit to neutrino data; the values are given in 
 Table~\ref{tab:oscpar_nufit}.  The cross-section inputs to GLoBES have been generated using GENIE 2.8.4~\cite{Andreopoulos:2009rq}.
 
-\begin{cdrtable}[Oscillation parameter values and relative uncertainties]{lcc}{oscpar_nufit}{Central value and relative uncertainty of neutrino oscillation parameters from a global fit~\cite{Gonzalez-Garcia:2014bfa} to neutrino oscillation data, for normal hierarchy. The relative uncertainty is computed using 1/6 of the 3$\sigma$ allowed range from the fit.  For $\theta_{23}$ and $\Delta m^2_{31}$, the best-fit values and uncertainties are different, depending on whether normal mass hierarchy (NH) or inverted mass hierarchy (IH) is assumed.}
+\begin{cdrtable}[Oscillation parameter values and relative uncertainties]{lcc}{oscpar_nufit}{Central value and relative uncertainty of neutrino oscillation parameters from a global fit~\cite{Gonzalez-Garcia:2014bfa} to neutrino oscillation data. Because the probability distributions are somewhat non-Gaussian (particularly for $\theta_{23}$), the relative uncertainty is computed using 1/6 of the 3$\sigma$ allowed range from the fit, rather than the 1$\sigma$ range.   For $\theta_{23}$ and $\Delta m^2_{31}$, the best-fit values and uncertainties depend on whether normal mass hierarchy (NH) or inverted mass hierarchy (IH) is assumed.}
 Parameter &    Central Value & Relative Uncertainty \\
 \toprowrule
 $\theta_{12}$ & 0.5843 & 2.3\% \\
@@ -523,7 +524,7 @@ $\nu_{\mu,e} \rightarrow \nu_{e,\mu}$ provide the most promising
 experimental signatures of leptonic CP violation.
 
 The variation in the $\nu_\mu \rightarrow
-\nu_e$ oscillation probabilities with the value of \deltacp
+\nu_e$ oscillation probability (Equation~\ref{eqn:appprob}) with the value of \deltacp
 indicates that it is experimentally possible to measure the value of
 \deltacp at a fixed baseline using only the observed shape of the
 $\nu_\mu \rightarrow \nu_e$ {\em or} the 
