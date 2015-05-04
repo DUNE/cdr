@@ -82,7 +82,7 @@ what is required to analyze the interaction of interest.
 
 \subsubsection{Single-Phase Signal Processing and Filtering}
 
-The single-phase detector's bipolar induction-plane pulses must be deconvoluted,
+The single-phase detector's bipolar induction-plane pulses must be deconvolved,
 since the negative portions of pulses may cancel positive portions of pulses on the channel
 that are nearby in time, even if the charge in those pulses is deposited on distant segments
 of the wire.  Deconvoluting the bipolar signals produces unipolar pulses that can be fit in the
@@ -106,7 +106,7 @@ near the wrapping boundaries.
 
 \subsubsection{Dual-Phase Signal Processing and Filtering}
 
-Qscan also provides a set of methods for signal processing. 
+Qscan~\cite{lussi:thesis} also provides a set of methods for signal processing. 
 The raw waveforms are first processed: this involves noise reduction as well as the subtraction of the baseline.
 Hits, defined as signals that are discriminated from the noise, are identified and reconstructed.
 In order to suppress noise without affecting the signal component too much, hence improving the signal to noise ratio, 
@@ -121,7 +121,7 @@ After suppressing the noise, the (constant) pedestal of each waveform has to be 
 \subsection{TPC Hit Finding}
 \label{annex:reconstruction-single-phase-hit-find}
 
-Once deconvoluted, raw ADC values trace out pulses, which are the best
+Once deconvolved, raw ADC values trace out pulses, which are the best
 estimates of when charge arrived on a particular electronics channel.
 The widths of these pulses are determined by the detector resolution,
 by diffusion, and by the intrinsic width of the charge formation
@@ -138,10 +138,10 @@ from opposite sides of the APA, but not for collection-plane signals.
 \subsubsection{Single-Phase Hit Finding}
 
 Hits are reconstructed pulses on each TPC DAQ channel.  Regions of
-interest are identified in the stream of deconvoluted ADC samples, and
+interest are identified in the stream of deconvolved ADC samples, and
 sums of Gaussian functions are fitted to the data using
 MINUIT~\cite{James:1994vla}.  The peak position, the width, the area, and the
-sum of the deconvoluted ADC values corresponding to the fitted
+sum of the deconvolved ADC values corresponding to the fitted
 Gaussian are recorded.  In the case that multiple overlapping Gaussian
 fits are the best model of the data, the ADC sums are calculated for
 the entire region of interest, and then divided among the contributing
@@ -407,7 +407,7 @@ has been implemented in conjunction with the development of the
 dual-phase detector concept, and is shown to provide 
 a precise reconstruction of two-particle event topologies~\cite{Back:2013cva,LAGUNA-LBNO-deliv},
 including precise vertex reconstruction.
-Figure~\ref{recoannexlpcvertexresolution} shows all the vertex resolution plots ...
+Figure~\ref{fig:recoannexlpcvertexresolution} shows vertex resolution plots for the dual-phase detector design.
 
 \begin{cdrfigure}[Vertex reconstruction using local principal curves]{recoannexlpcvertexresolution}
 {CAPTION GOES HERE}
