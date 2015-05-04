@@ -118,24 +118,31 @@ of a non-zero or $\pi$ value of \deltacp. The effect will however be the same in
 the peak of the appearance and the trough of the disappearance spectra. Additional constraints on the FSI 
 model will be required from ND analyses and external data.
 
-\subsection{Projecting Uncertainties Based on Previous Experience}
+\subsection{Anticipating Uncertainties Based on Previous Experience}
 
-Table~\ref{tab:nuesysts} shows the uncertainties in a \nue appearance analysis achieved by MINOS~\cite{Adamson:2013ue}
-and T2K~\cite{Abe:2015awa} compared to the goal uncertainties in DUNE. These goals are chosen by determining which
-of the existing experiments is more representative of DUNE for each source
-of systematic uncertainty and then setting a reasonable goal for a next-generation
+Table~\ref{tab:nuesysts} shows the uncertainties in
+analyses of \nue appearance rate achieved by MINOS~\cite{Adamson:2013ue}
+and T2K~\cite{Abe:2015awa} compared to the goal uncertainties in a similar DUNE analysis.
+The goals for normalization uncertainties represent the total expected uncertainty on
+an analysis of \nue appearance rate in DUNE; the actual DUNE analysis will be based on
+a three-flavor fit to all four far detector samples, so that the portion of these
+uncertainties that are correlated among far detector samples is expected to largely
+cancel. The goals for each source of systematic uncertainty are chosen by determining which
+of the existing experiments is more representative of DUNE for that source
+of uncertainty and, based on that comparison, setting a reasonable goal for a next-generation
 experiment. The goals are based on expected capabilities of the high-resolution
 LAr TPC far detector, precise measurements expected from a highly-capable near detector,
 and well-understood analysis techniques developed in the existing generation of experiments.
-Explanation of the choices in Table~\ref{tab:nuesysts} follow.
+Explanations of the choices in Table~\ref{tab:nuesysts} follow.
 %
-\begin{cdrtable}[Systematic uncertainty in current experiments]{lcccl}{nuesysts}{The dominant
-    systematic uncertainties on the $\nu_e$-appearance
-    signal prediction in MINOS and T2K and a conservative projection of the
-    expected uncertainties in DUNE. In each case, the quoted uncertainty is
-    the effect on the $\nu_e$-appearance signal only. These uncertainties
+\begin{cdrtable}[Systematic uncertainty in current experiments]{lcccl}{nuesysts}{
+    Systematic uncertainties on the $\nu_e$ appearance
+    signal rate prediction in MINOS and T2K and a projection of the
+    anticipated uncertainties in DUNE. In each case, the quoted uncertainty is
+    the effect on the $\nu_e$-appearance signal rate only. These uncertainties
     are the \emph{total} expected uncertainties on the $\nu_e$-appearance signal
-    which include both correlated and uncorrelated uncertainties in the
+    rate; this includes both those uncertainties that are correlated and those that
+    are uncorrelated in the
     three-flavor fit. For reference, the uncertainties assumed in the nominal
     DUNE sensitivity calculations are also provided.}
 Source of & MINOS & T2K & DUNE & Comments \\ 
@@ -175,9 +182,10 @@ site. Therefore, as DUNE is planned to have a highly capable near detector, beam
 muon detectors, dedicated hadronization measurements, and improved simulation of beam flux based on \minerva
 measurements in the NuMI beam, we set a goal uncertainty on \nue signal
 normalization from uncertainties in the flux determination of 2\%.
-As described in Section \ref{sec:syst_studies_ind}, preliminary
-studies of the FGT ND support this estimate, predicting 2\% uncertainty on the absolute flux and 1-2\%
-uncertainty on the flux shape.
+As described in Section \ref{sec:syst_studies_ind}, preliminary simulations of the FGT ND suggest this
+is an appropriate goal, predicting 2\% uncertainty on the absolute flux and 1-2\% uncertainty on
+the flux shape.
+
 \subsubsection{Interaction Model Uncertainties}
 \label{sec:syst_just_sim}
 This category of uncertainties arise primarily from uncertainties in modeling neutrino interactions with the target
@@ -189,11 +197,13 @@ cancellation of interaction model uncertainties than in T2K, in which the target
 carbon while those in the far detector are oxygen. Additionally, the angular resolution, vertex resolution,
 and particle identification capability of the DUNE near detector are expected to increase its ability to
 constrain those cross-section uncertainties which are common between near and far detectors, but for which
-the T2K near detector could not provide significant constraint.
-Finally, DUNE's high-resolution near
+the T2K near detector could not provide significant constraint. DUNE's high-resolution near
 detector is expected to enable further constraints on hadronization uncertainties, relative to MINOS, by
 resolving many of the individual particles produced in the resonance and deep-inelastic scattering interactions
-which represent the majority of the DUNE data sample. Therefore, we take 2\% as a goal for the effect of
+which represent the majority of the DUNE data sample. Finally, significant improvements to neutrino interaction
+models are anticipated as a result of the near-term neutrino program, in which measurements will be made
+across a range of different nuclei and the resulting models will be tested on argon in LAr TPCs.
+Therefore, we take 2\% as a goal for the effect of
 interaction model uncertainties on DUNE \nue signal normalization. It is important to note that this level of
 uncertainty depends upon the ability to isolate neutrino-argon interactions in the near detector to facilitate
 cancellation of near-far uncertainties; this is a requirement of the ND design.
@@ -205,9 +215,14 @@ The theoretical uncertainty on the \nue/\numu cross-section ratio is
 less than 1\% above neutrino energies of 1.0-1.5 GeV~\cite{Day-McFarland:2012},
 a factor of about three smaller than at T2K's median energy,
 so the uncertainty on the \nue normalization with respect to the \numu spectrum in DUNE will be
-significantly improved compared to T2K. 
-As described in Section~\ref{sec:syst_studies_ind}, preliminary studies with a Fast MC demonstrate the
-expected cancellation of cross-section uncertainties in the DUNE three-flavor analysis.
+significantly improved compared to T2K. Uncertainty in the $\nu/\bar{\nu}$ cross-section ratio is
+somewhat more difficult to quantify given the existing discrepancies between data and currently
+implemented models, though this is expected to improve as more complete models are introduced.
+As described in Section~\ref{sec:syst_studies_ind}, preliminary studies with a
+Fast MC demonstrate the potential for significant cancellation of cross-section uncertainties
+in the DUNE three-flavor
+analysis, even when uncertainties in the \nue/\numu and $\nu/\bar\nu$ cross-section ratios
+are as large as 20\%.
 
 \subsubsection{\nue Energy Scale Uncertainties}
 \label{sec:syst_just_fd}
@@ -226,8 +241,11 @@ Fermilab's SBN program which will include three LAr TPCs: SBND, $\mu$BooNE, and 
 prototypes and test beam measurements is planned to study the reconstruction of charged and neutral particles
 in LAr TPCs; this suite of experiments includes the DUNE 35-ton prototype, LArIAT, CAPTAIN, and
 the CERN neutrino platform single and dual phase prototypes.
+Finally, an improved model of neutrino interactions will reduce the impact of imperfect reconstruction
+of energy from neutrons and low-momentum protons on the DUNE analysis.
 Therefore, we set a goal of using the superior detector performance and the improvements
-in understanding of LAr TPC energy response expected in the next 5-10 years to reduce the normalization uncertainty
+in understanding of LAr TPC energy response and neutrino interactions
+expected in the next 5-10 years to reduce the normalization uncertainty
 from the \nue energy scale to 2\%.
 
 In considering the effect of the three-flavor analysis on the final uncertainty, hadronic energy is expected
@@ -483,7 +501,8 @@ this same parameter variation results in only a small reduction in
 sensitivity to CP violation.
 This result includes a 10\% uncertainty in the $\nu/\bar{\nu}$
 cross-section ratio and a 2.5\% uncertainty in the $\nu_e/\nu_{\mu}$
-cross-section ratio.
+cross-section ratio; uncertainties in these ratios as large as 20\% have
+been considered and did not produce dramatically different results.
 Preliminary studies also
 demonstrate significant constraint on cross-section systematics from the 
 near detector. 
