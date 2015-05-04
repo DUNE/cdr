@@ -8,22 +8,23 @@
 The Standard Model of particle physics 
 presents a remarkably accurate
 description of the elementary particles and their
-interactions. However, its limitations beg deeper questions about
-Nature. The unexplained patterns of quarks, leptons, flavors and
-generations imply that a more fundamental underlying theory must
-exist.  
+interactions. However, its limitations pose deeper questions about
+Nature. With the discovery of the Higgs boson at CERN, particle physics would be ``complete,'' except
+for the issues associated with the neutrino sector, such as its unexplained flavor pattern.  These issues
+imply that a more fundamental underlying theory must exist. 
 DUNE plans to pursue a detailed
 study of neutrino mixing, resolve the neutrino mass ordering,
 and search for CP violation in the lepton sector by
 studying the oscillation patterns of high-intensity
 $\nu_\mu$ and $\overline{\nu}_\mu$ beams measured over a long baseline. 
-Neutrino oscillation arises from mixing between the flavor and mass eigenstates of neutrinos,
-corresponding to the weak and gravitational interactions, respectively. 
-This three-flavor-mixing
-scenario can be described by a rotation between the weak-interaction
-eigenstate basis $(\nu_e,\, \nu_\mu,\, \nu_\tau)$ and the basis of
-states of definite mass $(\nu_1,\, \nu_2,\, \nu_3)$.  In direct
-correspondence with mixing in the quark sector, the transformations
+Neutrino oscillation arises from mixing between the flavor $(\nu_e,\, \nu_\mu,\, \nu_\tau)$ and mass $(\nu_1,\, \nu_2,\, \nu_3)$
+eigenstates of neutrinos.
+% corresponding to the weak and gravitational interactions, respectively. 
+% This three-flavor-mixing
+% scenario can be described by a rotation between the weak-interaction
+% eigenstate basis $(\nu_e,\, \nu_\mu,\, \nu_\tau)$ and the basis of
+% states of definite mass $(\nu_1,\, \nu_2,\, \nu_3)$.  
+In direct correspondence with mixing in the quark sector, the transformations
 between basis states is expressed in the form of a complex unitary
 matrix, known as the PMNS matrix :
 \begin{equation}
@@ -42,7 +43,7 @@ and a CP-violating phase.  The mixing angles and phase are designated
 as $(\theta_{12},\, \theta_{23},\, \theta_{13})$ and
 \deltacp.  %\fixme{mathmatical rep of mixing}
 This matrix can be parameterized as the product of three
-two-flavor mixing matrices as follows, where $c_{\alpha \beta}=\cos \theta_{\alpha \beta}$ and $s_{\alpha
+two-flavor mixing matrices as follows~\cite{Schechter:1980gr}, where $c_{\alpha \beta}=\cos \theta_{\alpha \beta}$ and $s_{\alpha
   \beta}=\sin \theta_{\alpha \beta}$:
 
 \begin{equation}
@@ -129,6 +130,8 @@ matrix is almost proportional to the identity matrix plus
 hierarchically ordered off-diagonal elements, the PMNS matrix is far
 from diagonal and, with the possible exception of the $U_{e3}$
 element, all elements are ${\cal O}(1)$.''
+A special role is played here by the fact that the magnitude of the smaller of the lepton
+mixing angles is similar to the larger of the quark mixing parameters, namely the Cabbibo angle~\cite{Boucenna:2012xb}.
 One theoretical method often used to address this question involves the use of non-Abelian discrete
 subgroups of $SU(3)$ as flavor symmetries; the popularity of this method comes partially from
 the fact that these symmetries can give rise to the nearly \emph{tri-bi-maximal}\footnote{Tri-bi-maximal mixing refers to a form of the neutrino mixing matrix with effective bimaximal mixing of $\nu_\mu$ and $\nu_\tau$
@@ -280,7 +283,8 @@ The LAr TPC performance parameters that go into the GLoBES calculation are gener
  The cross-section inputs to GLoBES have been generated using GENIE 2.8.4~\cite{Andreopoulos:2009rq}.
 The neutrino oscillation parameters and the uncertainty on those parameters are taken from the 
 Nu-Fit~\cite{Gonzalez-Garcia:2014bfa} global fit to neutrino data; the values are given in 
-Table~\ref{tab:oscpar_nufit}.  Most of the sensitivities in this chapter are shown assuming normal hierarchy; this is an arbitrary choice for simplicity of presentation.
+Table~\ref{tab:oscpar_nufit}.  (See also \cite{Capozzi:2013csa} and \cite{Forero:2014bxa} for other recent global fits.) Most of the sensitivities 
+in this chapter are shown assuming normal hierarchy; this is an arbitrary choice for simplicity of presentation.
 
 \begin{cdrtable}[Oscillation parameter values and relative uncertainties]{lcc}{oscpar_nufit}{Central value and relative uncertainty of neutrino oscillation parameters from a global fit~\cite{Gonzalez-Garcia:2014bfa} to neutrino oscillation data. Because the probability distributions are somewhat non-Gaussian (particularly for $\theta_{23}$), the relative uncertainty is computed using 1/6 of the 3$\sigma$ allowed range from the fit, rather than the 1$\sigma$ range.   For $\theta_{23}$ and $\Delta m^2_{31}$, the best-fit values and uncertainties depend on whether normal mass hierarchy (NH) or inverted mass hierarchy (IH) is assumed.}
 Parameter &    Central Value & Relative Uncertainty \\
@@ -739,11 +743,11 @@ the coherent forward scattering of $\nu_e$'s on electrons in matter
 modifies the energy and path-length dependence of the vacuum oscillation 
 probability in a way that depends on the magnitude \emph{and} sign of $\Delta m^2_{32}$. 
 This is  the Mikheyev-Smirnov-Wolfenstein (MSW) effect~\cite{Mikheev:1986gs,Wolfenstein:1977ue}.
-NC nonstandard interactions (NSI) can be understood as nonstandard
+NC nonstandard interactions (NSI) may be interpreted as nonstandard
 matter effects that are visible only in a far detector at a
 sufficiently long baseline. 
 They can be parameterized as new contributions
-to the MSW matrix in the neutrino-propagation Hamiltonian:
+to the MSW matrix in the neutrino-propagation Hamiltonian~\cite{Valle:1987gv,Roulet:1991sm}:
 
 \begin{equation}
   H = U \left( \begin{array}{ccc}
@@ -767,7 +771,7 @@ with
 Here, $U$ is the leptonic mixing matrix, and the $\epsilon$-parameters give the
 magnitude of the NSI relative to standard weak interactions.  For new physics
 scales of a few hundred GeV,  a value of $|\epsilon| \leq 0.01$ is
-expected~\cite{Davidson:2003ha,GonzalezGarcia:2007ib,Biggio:2009nt}.
+expected~\cite{Davidson:2003ha,GonzalezGarcia:2007ib,Biggio:2009nt,Barranco:2007ej,Escrihuela:2011cf}.
 DUNE's 1300-km baseline provides an advantage in the detection of NSI relative
 to existing beam-based experiments with shorter baselines.
 Only atmospheric-neutrino experiments have longer baselines, but the sensitivity
