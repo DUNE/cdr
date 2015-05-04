@@ -1,124 +1,101 @@
 \chapter{Software and Computing}
 \label{ch:detectors-sc}
 
-\subsection{Overview}
-
-The scope of the Software and Computing effort includes the design \fixme{and what else, coding, 
-purchasing resources, coordinating effort ??}. The principal areas of focus are the computing 
-infrastructure, the far detector physics software and the near detector physics software. \fixme{no section for ND yet}.
-
-The requirements for the Software and Computing are given throughout this chapter according to the expected data rates \fixme{}
-
-
 \section{Computing Infrastructure}
 \label{sec:detectors-sc-infrastructure}
 
-\fixme{I moved this up to introduce the section}
-The computing infrastructure for DUNE is designed to handle data streams present in
-oscillation physics studies with beam neutrinos, since these data will constitute the bulk of what is 
-committed to mass storage, transmitted over networks, processed offline and, in general, impose the 
-most significant infrastructure and cost considerations. Issues and parameters related to other classes of 
-data are covered in \anxrates, as well as in Section~\ref{sec:detectors-fd-ref-daq}. \fixme{`` and other 
-sections.'' If there are other sections, let's identify them, maybe in the fd alt chap and nd chap?} This 
-annex contains information on both the Reference Design and Alternate Design versions of the Far Detector.
-%\subsection{Single Phase Design and the Alternate design} -- sectioning not needed for this. Anne
-However, the bulk of this section describes characteristics of data in the context of the single-phase LAr detector. 
-Implications of the alternate design (see Section~\ref{sec:detectors-fd-ref-ov}) are outlined in 
-Section~\ref{sec:detectors-sc-alternate}.
+\subsection{Single Phase Design and the Alternate design}
+The bulk of this section describes characteristics of data in the context of
+the single-phase LAr detector. Implications of the alternate design (see~\ref{sec:detectors-fd-ref-ov})
+are outlined in~\ref{sec:detectors-sc-alternate}.
 
-The DUNE Detector Systems that will be discussed are:
+\subsection{Raw Data Rates}
+\label{sec:detectors-sc-infrastructure-data-rates}
+\fixme{A special Annex document for data rates was updated on 4/23/2015. It covers most DUNE physics and
+background processes but the information is still being examined and modified. It is the reference document on
+which important paramaters of the DUNE data are based.
+The Annex contains information on both the Reference Design and Alternate Design versions of the Far Detector.}
+
+
+\subsubsection{Types of Raw Data}
+DUNE is a multipurpose apparatus and the variety of physics goals to be pursued during its operation
+will be reflected in different characteristics of respective data streams processed and collected in real time and off-line.
+As one example, consider the difference between neutrino oscillations physics done with beam neutrinos
+on one hand, and the ambitious goal of detecting the rare Supernova bursts (SNB) on the other.
+Signals produced by ``beam events'' will be characterized by total energy in the GeV range, allowing
+appropriate thresholds for zero-suppression (ZS) to be set at the levels appropriate for
+minimum-ionizing particles, which greatly reduces the
+background component of the data. By comparison, the energy scale of the signals produced by
+SNB neutrino interactions in the active volume of the detector is estimated to be in the range of tens
+of MeV, resulting in much lower thresholds to be set for this type of measurement, and therefore
+in considerable (if not overwhelming) rate of SNB-specific data coming
+out of the LAr TPC in real time, with contribution from radiological backgrounds.
+Another differentiating SNB feature is that \textit{multiple neutrinos are expected
+to arrive and interact in the detector volume} during the possible rare Supernova burst event within seconds
+from each other, as opposed to a single vertex produced by a beam neutrino (or any other localized
+interactions and/or decays).
+To support the SNB physics, a massive sample of data due to multiple low-energy
+depositions will need to be processed ``on the fly''
+using approaches and algorithms which are completely  different from those for the
+beam neutrino physics, which mostly relies on off-line processing.
+
+Distinctions such as this one are made here in order to define the scope of this section,
+which focuses on data streams present in
+oscillation physics studies with bean neutrinos, since these data will constitute the bulk of what's committed
+to mass storage, transmitted over networks, processed offline and in general have significant
+infrastructure and cost implications. Issues and parameters related to other classes of data
+are covered in the Annex to this document, titled ``Expected Data Rates for the DUNE Detectors'',
+and also in the DAQ and other sections.
+
+\subsubsection{Assumptions}
+\label{sec:detectors-sc-infrastructure-assumptions}
+According to the present baseline design, the Far Detector (Liquid Argon TPC) in DUNE will consist
+of four identical modules of \tpcdetectormass each.
+For purposes of this document the issue of possible variations in the design and/or characteristics
+between these modules shall not be addressed, as there is no concrete information developed at
+this point to support this approach. A few basic assumptions will need to be used:
+\begin{itemize}
+\item Estimates presented below correspond to the ``full detector'', i.e. is effectively
+normalized to \dunedetectormass.
+\item Accelerator spill cycle is \beamspillcycle
+\item Zero-Suppression thresholds will be set at levels that preserve signals from minimum-ionizing particles.
+\item The intensity of the beam provided by LBNF will affect the data rates for a few detector
+systems in DUNE (cf. the Near Detecor).
+It is assumed that the beam has the characteristics suggested by LBNF Project at the time of writing.
+\item It is assumed that the front-end systems of the TPC and the Photon Detector combined
+with the logic in DAQ will provide triggering capability for the beam neutrino physics, while
+triggering outside of the beam spills will be provided by DAQ utilizing continuously digitized
+data from the light readout system.
+\end{itemize}
+\
+Certain parameters may be rounded off where appropriate.
+
+\subsubsection{DUNE Detector Subsystems}
 \begin{itemize}
 \item Far Detector LAr TPC, Photon Detector(PD)
 \item Near Detector (ND) Straw Tracker (STT), Calorimeter(CAL), Muon Detector Resistive Plate Chambers (RPC)
 \end{itemize}
 
+In the following, estimated data rates for these components are itemized and then aggregated.
+There will be cases where no reliable estimates exist at the moment due to continued R\&D, and this will
+be clearly stated where necessary.
 
-%\subsubsection{Assumptions} <--- moved up and `unsectioned'
-%\label{sec:detectors-sc-infrastructure-assumptions}
-
-%According to the present baseline design, the Far Detector (Liquid Argon TPC) in 
-
-
-%the issue of possible variations in the design and/or characteristics between these modules shall not be addressed, as there is no concrete information developed at this point to support this approach. 
-A few basic assumptions will be used: \fixme{These are not raw-data-specific; I think they're assumptions for designing the computer infrastructure, no? That's why I moved them up}
+\subsubsection{Far Detector LAr TPC}
+Once again, the Annex ``Expected Data Rates for the DUNE Far Detector''
+provides a useful reference, and estimated presented below are derived from
+the parameters listed there. Consider the following LAr TPC parameters:
 \begin{itemize}
-\item The DUNE far detector will consist of four %identical  
-modules of \tpcdetectormass each.
-\item For purposes of this document the detector modules are taken to be identical.
-\item %Estimates presented below correspond to 
-The detector mass is the sum of the four modules, i.e., %,  is effectively normalized to 
-\dunedetectormass.
-\item The accelerator spill cycle is \beamspillcycle.
-\item Zero-suppression thresholds will be set at levels that preserve signals from minimum-ionizing particles.
-\item The intensity of the beam provided by LBNF will affect the data rates for a few detector
-systems in DUNE (cf. the Near Detecor). \fixme{can we be specific? Won't the beam affect data rates in both detectors?}
-\item The beam characteristics are taken as documented in \vollbnf.
-\item The front-end systems of the TPC and the Photon Detector, combined
-with the logic in DAQ, will provide triggering capability for the beam neutrino physics; 
-triggering outside of the beam spills will be provided by the DAQ utilizing continuously digitized
-data from the photon detection system. %light readout system.
-\end{itemize}
-
-
-
-\subsection{Discussion of Physics Processes and Raw Data Rates} 
-
-\label{sec:detectors-sc-infrastructure-data-rates}
-% -- taken care of (anne)-- \fixme{A special Annex document for data rates was updated on 4/23/2015. It covers most DUNE physics and background processes but the information is still being examined and modified. It is the reference document on which important paramaters of the DUNE data are based.The Annex contains information on both the Reference Design and Alternate Design versions of the Far Detector.}
-
-%\subsubsection{Classes of Raw Data} % you used `class' rather than `type' above
-
-
-%DUNE is a multipurpose apparatus and the variety of physics goals to be pursued during its operation will be reflected in different characteristics of respective data streams processed and collected in real time and offline.
-DUNE is a multipurpose apparatus designed to pursue a variety of physics objectives. It will thus
-require multiple data streams with differing characteristics that will be processed and collected in both real time and offline. \fixme{Is this right?}
-%
-%As one example, consider the difference between neutrino oscillations physics done with beam neutrinos on one hand, and the ambitious goal of detecting the rare Supernova bursts (SNB) on the other.
-For example, signals produced by beam events will be characterized by total energy in the GeV range, allowing
-%appropriate
- thresholds for zero-suppression (ZS) to be set at the levels appropriate for
-minimum-ionizing particles, %which 
-greatly reducing the
-background component of the data. Beam-based data will rely mostly on offline processing. By comparison, the energy scale of the signals produced by
-SNB neutrino interactions %in the active volume of the detector 
-is estimated to be in the range of tens
-of MeV, %resulting in 
-requiring much lower thresholds to be set for this type of measurement, and therefore
-a considerable (if not overwhelming) rate of SNB-specific data coming
-out of the LArTPC in real time, with contribution from radiological backgrounds.
-Another differentiating SNB feature is that \textit{multiple neutrinos are expected
-to arrive and interact in the detector volume} %during the possible rare Supernova burst event 
-within seconds
-of each other. %, as opposed to a single vertex produced by a beam neutrino (or any other localized interactions and/or decays).
-To support the SNB physics, a massive sample of data from multiple low-energy
-depositions will need to be processed ``on the fly''
-using approaches and algorithms that are completely  different from those for the
-beam neutrino physics. %, which mostly relies on offline processing. (moved up)
-
-\subsection{Estimated Data Rates} % New section title from Anne
-
-In the following, estimated data rates for %these components 
-the detector systems are itemized and then aggregated. Certain parameters may be rounded off where appropriate. % I moved this last sentence here (anne)
-
-%There will be cases where no reliable estimates exist at the moment due to continued R\&D, and this will
-%be clearly stated where necessary.
-It will be noted wherever reliable estimates are not yet available.  
-
-\subsubsection{Far Detector LArTPC}
-The rates presented in this section are derived from
-the parameters listed in \anxrates. %Consider the following LAr TPC parameters:
-\begin{itemize}
-\item TPC channel count: \dunenumberchannels (i.e., four times
-  \daqchannelsperdetector, which is the channel count for each \tpcdetectormass module)
+\item TPC channel count: \dunenumberchannels (i.e. four times
+  \daqchannelsperdetector which is the channel count for each \tpcdetectormass module)
 \item Maximum drift Time: \tpcdrifttime
 \item Number of drift time windows in one DAQ readout cycle: \daqdriftsperreadout
 \item ADC clock frequency: approx. \daqsamplerate
 \item ADC resolution (bits): 12
 \end{itemize}
 \
-The following are factors affecting data rates and volumes:
+Factors affecting data rates and volumes:
 \begin{itemize}
-\item Zero Suppression (ZS)  in the front-end electronics of the detector
+\item Zero Suppression (ZS)  in the Front-End electronics of the detector
 \item Radiological and Cosmological Backgrounds as functions of thresholds set for ZS
 and DAQ trigger configuration (cf. the case of low-energy events)
 \end{itemize}
@@ -134,24 +111,20 @@ Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can 
 This results in a total of \dunefsreadoutsize worth of TPC data in one
 readout.
 The effect of zero suppression on
-the beam-neutrino event size is dramatic, and Monte Carlo studies done with realistic neutrino
+the beam neutrino event size is dramatic and Monte Carlo studies done with realistic neutrino
 energy spectra suggest that it will be $\sim$\beameventsize.
-However, %one of the possibilities that is
-%now actively explored by 
-the DUNE DAQ team is actively exploring the possibility of
-recording beam event candidates (e.g., events with signals
+However, one of the possibilities that is
+now actively explored by the DUNE DAQ team is to record beam event candidates (e.g. events with signals
 above the ``high threshold'' as detailed in the Annex) at very low or no threshold, corresponding
-to a virtually full data stream.
-In this case, one can estimate the annual total %size of the 
-TPC data collection
-%to be collected annually 
-by multiplying the predicted number of beam-neutrino interactions
-per year (estimated here to be \beamrate) by the full uncompressed event size quoted above (\dunefsreadoutsize), yielding
-%Thus one arrives to 
-an annual estimate of \beamdatayearfs. % for each year of this type of data.
+to virtually full data stream.
+In that case, one can estimate the total size of the TPC data
+to be collected annually by multiplying the predicted number of beam neutrino interactions
+per year (estimated here to be \beamrate) by the full uncompressed event size quoted above (\dunefsreadoutsize). 
+Thus one arrives to an estimate of \beamdatayearfs for each year of this type of
+data.
 
 Some of the driving zero-suppressed (ZS) and full-scale (FS) annual
-data volumes are summarized in Table~\ref{tab:sc-zs-summary}.
+data volumes are summarized in table~\ref{tab:sc-zs-summary}.
 \fixme{The $^{39}$Ar data rate is probably not correct as depending on
   the ZS level much of its spectrum is below threshold.
 This still needs further work from physics and DAQ groups.}
@@ -162,63 +135,55 @@ This still needs further work from physics and DAQ groups.}
   \input{volume-detectors/generated/zs-volume-summary}
   \label{tab:sc-zs-summary}
 \end{table}
-\fixme{Can you put the generated table into cdrtable format?} 
+\fixme{Can you put the generated table into cdrtable format? (brett)} %%%%%% to here 4/29 Anne
 
 \subsubsection{Far Detector Photon Detector (PD)}
-There are variations in the basic parameters of the Photon Detector currently in the R\&D stage, %so
-and the numbers in this section %presented below need to be considered as ballpark values to be 
-will made more precise
+There are variations in the basic parameters of the Photon Detector currently in the R\&D stage,
+so the numbers presented below need to be considered as ballpark values to be made more precise
 at a later time:
 
 \begin{itemize}
-\item Readout channel count: 24,000 (i.e., four times 6,000 per 10-kt module)
-\item Trigger rate not yet certain; %is uncertain at this point due to ongoing investigation; 
-one possible approach assumes 1 trigger per spill cycle
+\item Readout channel count: 24,000 (i.e. four times 6,000 which is the channel count for each 10kt module)
+\item Trigger rate is uncertain at this point due to ongoing investigation; one approach that exists assumes 1 trigger per spill cycle
 \item ADC resolution (bits): 12
 \end{itemize}
 \
-This results in 36~kB per spill cycle, and should be considered negligible % from the point of view of requirement to data handling, 
-compared to other data sources.
+This results in 36kB per spill cycle, and should be considered negligible from the point of view of requirement to data handling, compared to other data sources.
 
 \subsubsection{Near Detector Data Rates}
-%Once again, t
-The Near Detector is subject to an intense R\&D effort and its
-parameters are still being optimized.% and not fixed at this point. 
-The most relevant parameters
-of the Fine-Grained Tracker (FGT) are:
+Once again, the Near Detector is subject to an intense R\&D effort and its
+parameters are being optimized and not fixed at this point. The most relevant parameters
+of the Fine-Grained Tracker (FGT):
 \begin{itemize}
 \item   Straw Tube Tracker (STT) readout channel count: 215,040
-\item STT Drift Time: 120~ns
-\item STT ADC clock frequency and resolution (bits): 3-ns intervals, 10~bit
+\item STT Drift Time: 120ns
+\item STT ADC clock frequency and resolution (bits): 3ns intervals, 10 bit
 \item ECAL channel count: 52,224
 \item Muon Detector Resistive Plane Chambers (RPC) channel count: 165,888
-\item Average expected event rate per spill: $\sim$1.5
+\item Average expected event rate per spill: \textasciitilde 1.5
 \end{itemize}
 \
-Based on these parameters, the upper limit of the ND data rate can be estimated as 1.5~MB/s. This translates into $\sim$45~TB/year. 
+Based on these parameters, the upper limit of the ND data rate can be estimated as 1.5MB/s. This translates into \textasciitilde 45TB/year. 
 
 \subsection{Processed Data}
 \label{sec:detectors-sc-infrastructure-processed-data}
-For the purposes of this document, processed data %is defined as 
-includes most data which is not considered ``raw,'' i.e., data derived from raw (including possibly multiple stages
-of calibration and reconstruction) as well as data produced from Monte Carlo studies.
+For the purposes of this document, processed data is defined as most data which is not considered ``raw'', i.e. it's data derived from raw (including possibly multiple stages
+of calibration and reconstruction) as well as data produced as a result of Monte Carlo studies.
 
-The amount of expected processed data is still uncertain, however, 
-%There are uncertainties in anticipated quantities of all of these types of data.
-depending on the optimum readout strategy, an annual raw data volume of
-\SI{1}{\tera\byte} to \SI{1}{\peta\byte} %may be collected.
-is estimated. 
-%Assuming that the data will undergo a few 
-Given the processing stages, one can expect % the need
-to handle as much as $\sim$\SI{2}{\peta\byte} of data annually for reconstruction and a lesser
-volume for final analysis. % purposes.
+There are uncertainties in anticipated quantities of all of these types of data.
+Depending on the optimum readout strategy, an annual raw data volume of
+\SI{1}{\tera\byte} to \SI{1}{\peta\byte} may be collected.
+Assuming that
+the data will undergo a few processing stages, one can expect the need
+to handle as much as \textasciitilde \SI{2}{\peta\byte} of data annually for reconstruction and a lesser
+volume for final analysis purposes.
 
-At the time of writing. typical annual volume of data produced for Monte Carlo has been on the order of a few tens of terabytes.
-%Initial expectations are 
-It is currently estimated that the MC sample size for beam events will
+For Monte Carlo, at the time of writing typical annual volume of data produced has been of the order of a few tens of terabytes.
+Initial expectations are that the MC sample size for beam events will
 need to be $10$ -- $100\times$ that of the data.
-However, this estimate is likely to increase as the collaboration grows
-and more detailed studies (e.g., of systematics) are undertaken. %, our expectation is that this estimate will increase.
+With Collaboration growing
+and more detailed studies (e.g. of systematics) are undertaken, our
+expectation is that this estimate will increase.
 
 \subsection{Computing Model}
 \label{sec:detectors-sc-infrastructure-computing-model}
@@ -232,61 +197,45 @@ member institutions and improve the overall long-term scalability of its computi
 DUNE will operate a  distributed network of federated resources, for both CPU power and storage capability. This will allow for streamlined incorporation
 of computing facilities as they become available at member institutions, and thus is particularly amenable to accommodate staged construction and commissioning
 of the detector subsystems. A modern Workload Management System will be deployed on top of Grid and Cloud resources to provide computing
-power to DUNE researchers.  % this is a good introduction!
+power to DUNE researchers.
 
 \subsubsection{Raw Data Transmission and Storage Strategy}
-FNAL will be the principal data storage center for the experiment. It will serve as a hub where the data from both the Facility (e.g., the LBNF beam and target)
-and the %various detector systems (such as the  Far and Near Detectors)  
-near and far detectors are collected, catalogued and committed to mass storage. This will %obviously 
-require transmission of
-data over considerable distances (certainly for the far detector). In addition, the far detector DAQ is %systems  are 
-being designed for installation %to be located in the vicinity of the Far Detector (
-in the cavern, resulting in the additional step of transmitting the data from the 4850L to the surface.
+FNAL will be the principal data storage center for the experiment. It will serve as a hub where the data from both the Facility (e.g. beam and target)
+and the various detector systems (such as the  Far and Near Detectors)  are collected, catalogued and committed to mass storage. This will obviously require transmission of
+data over considerable distances (certainly for the Far Detector). In addition, the DAQ systems of the Far Detector are being designed to be located  in the vicinity of
+the Far Detector (in the cavern), which results in an additional step of transmitting the data from 4850L to the surface.
 
-Raw data to be collected from the DUNE detectors are considered ``precious'' due to the high cost of operating both the facility and the detectors. %at FNAL and the detectors that are part of DUNE. 
-This leads to three basic design elements in the data transmission and storage chain:
+Raw data to be collected from the detectors in DUNE are considered ``precious'' due to high cost of operating the both the facility at FNAL
+and the detectors that are part of DUNE. This leads to three basic design elements in the data transmission and storage chain:
 \begin{itemize}
 \item Buffering:
 \begin{itemize}
-\item Sufficient %Adequate (`adequate' always sounds grudging; it just does!)
-buffers will be provided for the DAQ systems  to mitigate possible downtime of the network connection between the 4850L and the surface.
-\item Buffers will be provided at the surface facility to mitigate downtime of the network connection between the Far Site and Fermilab.
+\item Adequate buffers will be provided for the DAQ systems  to mitigate possible downtime of the network connection between 4850L and the surface.
+\item Buffers will be provided at the surface facility to mitigate downtime of the network connection between the Far Site and FNAL.
 \end{itemize}
-\item Robust transmission: data transfer will %needs to 
-be instrumented with redundant checks (such as checksum calculation), monitoring, error correction and retry logic.
-\item Redundant replicas: it is a common industry practice to %have a total of 
-maintain three geographically distributed copies of ``precious'' data. %, which are geographically distributed. 
-This provides protection against catastrophic events (such as natural disasters) at any participating data center 
-%participating in this scheme, 
-and facilitates rebuilding (``healing'')  lost data at a computing center.
+\item Robust transmission: data transfer needs to be instrumented with redundant checks (such as checksum calculation), monitoring, error correction and retry logic.
+\item Redundant replicas: it is a common industry practice to have a total of three copies of ``precious'' data, which are geographically distributed. This provides protection against catastrophic events (such as natural disasters) at any given data center participating in this scheme, and facilitates rebuilding (``healing'')  lost data should such event does happen.
 \end{itemize}
 
-\fixme{Do you want to call these centers computing or data centers? Pick one}
 
 
 \subsubsection{Data Management}
 \label{sec:detectors-sc-infrastructure-computing-model-data-mgt}
 
-Data will be placed into mass storage at Fermilab. As described above, additional copies (replicas) will be 
-distributed to other computing centers possessing sufficient resources.
-Brookhaven National Laboratory and NERSC are candidates for the placement of replicas.
-It is not required that a single replica %additional copy does not necessarily need to 
-reside in its entirety at a given data center; the replicas can be ``striped'' across multiple data centers if that
-proves to be more efficient.
-%becomes optimal at the time of implementation of the Computing Model. For example, consideration is given to both 
+Data will be placed into mass storage at FNAL. Along the lines described above, additional copies (replicas) will be distributed to other
+computing centers possessing sufficient resources.
+A single additional copy does not necessarily need to reside in its entirety on a single data center; the replicas can be ``striped'' across a few data centers if that
+becomes optimal at the time of implementation of the Computing Model. For example, consideration is given to both Brookhaven National Laboratory
+and NERSC as candidates for the placement of extra replicas.
 
+For data distribution, a combination of managed data movement between sites (such as ``dataset subscription'',
+primarily for managed production), and a network of XRootD servers to cache processed data and for analysis will be used.
+A file catalog and a Meta-Data system will be required for efficient data management at scale, and an effort will be made to leverage experience of
+member institutions in this area, making an effort to reuse existing systems or design ideas where possible.
 
-For data distribution, a combination of managed data movement between sites (such as ``dataset subscription'')
-%,primarily for managed production), 
-and a network of XRootD servers (for caching processed data and for analysis) will be used.
-A file catalog and a metadata system will be required for efficient data management at scale; %and an effort will be made to leverage 
-experience of
-member institutions will be leveraged and %in this area, making 
-an effort will be made to reuse existing systems and/or design ideas. % where possible.
-
-\subsection{Computing Implications of the Dual-Phase (Alternate) Design}
+\subsection{Computing Implications of the Alternate Design}
 \label{sec:detectors-sc-alternate}
-The dual-phase LArTPC is expected to have the following parameters:
+The dual-phase LAr TPC is expected to have the following parameters:
 \begin{itemize}
 	\item Readout channel count: 614,400 (i.e. four times 153,600 which is the channel count
 	for each 10kt module)
