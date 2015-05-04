@@ -7,12 +7,12 @@
 
 The scope of the LBNF Cryogenics Infrastructure includes the design, 
 procurement, fabrication, testing, delivery and installation
-oversight of (a) a cryostat to contain the liquid argon (LAr) 
-and the time projection chamber (TPC), and (b) a comprehensive 
+oversight of (a) cryostats to contain the liquid argon (LAr) 
+and the time projection chambers (TPCs), and (b) a comprehensive 
 cryogenic system that meets the performance requirements
-for acquiring and filling the cryostat, maintaining the 
-LAr temperature within $\pm$1 K range around nominal 
-temperature (88.3 K), and purifying the LAr outside the cryostat.
+for purging, cooling down and filling the cryostats, acquiring and 
+maintaining the LAr temperature within $\pm$1 K range around nominal 
+temperature (88.3 K), and purifying the LAr outside the cryostats.
 
 %This chapter describes a reference design for these interdependent detector elements.
 
@@ -21,8 +21,10 @@ encompasses the following components:
 
 \begin{itemize}
 \item Four 10-metric-kiloton (fiducial mass) membrane cryostats 
-\item Receiving facilities for LAr tanker trucks 
-\item Transfer system to deliver gas argon and nitrogen to the underground detector cryostats
+\item Receiving facilities for LAr and LN$_2$ tanker trucks 
+\item Transfer system to deliver gas argon for liquefaction and 
+      nitrogen for a closed-loop refrigeration system from the
+      surface to the underground cavern area, and vice versa
 \item Boil-off gas reliquefaction equipment
 \item LAr-purification facilities
 \item Cryostat-purge facilities
@@ -31,23 +33,28 @@ encompasses the following components:
 %\section{Introduction}
 %\label{sec:cryo-cryosys-intro}
 
-The conceptual reference design for the DUNE far detector %LBNF 
+The conceptual reference design for the DUNE far detector (FD) %LBNF 
  specifies four   %%%%%%%%%%%%%%  4/7/15
 rectangular vessels each measuring 15.1~m internal width, 14.0~m internal 
 height and 62.0~m internal length, and containing a total mass of 
 17.1~kton of LAr. The membrane design is commonly 
 used for liquified natural gas (LNG) storage and transport 
-tanker ships (Figure~\ref{fig:memb-tank-int}). A membrane tank 
+tanker ships (Figure~\ref{fig:memb-tank-int}) and has been 
+proven to be a viable option for LArTPC experiments. 
+%% (TBD) 
+%% references for 35 ton and further prototyping efforts
+%% on-going at CERN and FNAL 
+A membrane tank 
 is made of a stainless-steel liner to contain the liquid cryogen. 
 The pressure loading of the liquid cryogen is transmitted 
-through rigid foam insulation to the surrounding steel frame, 
+through rigid foam insulation to the, in this case, surrounding steel frame, 
 which provides external support for the liner. The membrane 
 liner is corrugated to provide strain relief resulting from 
 temperature-related expansion and contraction (Figure~\ref{fig:prim-barrier}).
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=.9\textwidth]{v5ch2-memb-tank-int}
+\includegraphics[width=.8\textwidth]{v5ch2-memb-tank-int}
 \caption[Interior of a LNG tanker ship]{Interior of a LNG tanker ship. 
 %A typical tank from one of two potential vendors is made of 
 %four 40,000~m$^3$ compartments, 35~m high by 45~m wide. 
@@ -91,7 +98,7 @@ design changes the design approach.
 \label{sec:cryo-cryosys-params}
 
 The requirements and parameters for the cryostat and cryogenic system 
-design are within the LBNF requirements documentation~\cite{lar-fd-req}~\cite{lar-fd-req-traceback}  
+design are within the LBNF requirement documentation~\cite{lar-fd-req}~\cite{lar-fd-req-traceback}  
 and the parameter tables~\cite{lar-fd-params}, respectively. The 
 overarching system requirements are to provide a high-purity, 
 stable liquid argon environment for the TPC and to provide 
@@ -154,7 +161,7 @@ Ullage Operating Pressure & 130 mbarg (range: 50$-$200 mbarg) \\
 \hline
 Pressure at Bottom & 1,948 mbarg \\
 \hline 
-Cryostat Design Pressure & 250 mbarg \\
+Cryostat Design Pressure & 350 mbarg \\
 \hline
 \end{tabular} 
 \end{table}
@@ -162,7 +169,7 @@ Cryostat Design Pressure & 250 mbarg \\
 % BN Jan 20 2012 changed Table to reflect 4850L
 
 \begin{table}
-\caption{Summary of parameters for membrane cryostat at the 4850L (the bottom of the Ross shaft) (more details TBD)} 
+\caption{Summary of parameters for membrane cryostat at the 4850L (the bottom of the Ross shaft)} 
 \label{table:cryo-reqs}
 \begin{tabular}[htbp]{| p{0.4\textwidth}|p{0.6\textwidth}|}
 \hline 

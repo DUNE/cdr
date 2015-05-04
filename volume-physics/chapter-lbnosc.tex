@@ -172,18 +172,16 @@ P(\nu_\mu \rightarrow \nu_e) & \simeq & \sin^2 \theta_{23} \sin^2 2 \theta_{13}
 \frac{ \sin^2(\Delta_{31} - aL)}{(\Delta_{31}-aL)^2} \Delta_{31}^2\\ \nonumber
 & & + \sin 2 \theta_{23} \sin 2 \theta_{13} \sin 2 \theta_{12} \frac{ \sin(\Delta_{31} - aL)}{(\Delta_{31}-aL)} \Delta_{31} \frac{\sin(aL)}{(aL)} \Delta_{21} \cos (\Delta_{31} + \mdeltacp)\\ \nonumber
 & & + \cos^2 \theta_{23} \sin^2 2 \theta_{12} \frac {\sin^2(aL)}{(aL)^2} \Delta_{21}^2, \\ \nonumber
+\label{eqn:appprob}
 \end{eqnarray}
-%
-where 
-  \[ \Delta_{ij} = \Delta m^2_{ij} L/4E,\ {\rm and} \ a=G_F N_e /\sqrt{2}. \]
-%
+where $\Delta_{ij} = \Delta m^2_{ij} L/4E_\nu$, $a = G_FN_e/\sqrt{2}$, $G_F$ is the Fermi constant, $N_e$ is the number density of electrons in the Earth, $L$ is the baseline in km, and $E_\nu$ is the neutrino energy in GeV. 
 In the above, both \deltacp and $a$ 
 switch signs in going from the
 $\nu_\mu \to \nu_e$ to the $\overline{\nu}_\mu \to \overline{\nu}_e$ channel; i.e.,
-a neutrino-antineutrino asymmetry is introduced both by the CP-violating
-phase, \deltacp, and the matter effect. The origin of the matter effect asymmetry 
+a neutrino-antineutrino asymmetry is introduced both by CP violation (\deltacp)
+and the matter effect ($a$). The origin of the matter effect asymmetry 
 is simply the presence of electrons and absence of positrons in the Earth.  
-The asymmetry from the matter effect increases with baseline as the neutrinos
+In the few-GeV energy range, the asymmetry from the matter effect increases with baseline as the neutrinos
 pass through more matter, so an experiment with a longer baseline will be
 more sensitive to the neutrino mass hierarchy. For baselines longer than 
 $\sim$1200~km, the degeneracy between the asymmetries from matter
@@ -222,7 +220,7 @@ GLoBES\cite{Huber:2004ka,Huber:2007ji}. GLoBES takes flux simulations, cross-sec
 and detector-response parameterization as inputs. In this document we present
 a range of possible physics sensitivity that depends on the design of the neutrino beam.
 A conservative estimate of sensitivity is calculated using a flux simulation that is based on the reference design of the beam line as presented in \vollbnf.  A flux simulation based on an optimized beam design is used to show the goal sensitivity.  There are a range of design options that produce sensitivities in between the sensitivity of the reference beam design and optimized beam design, and further optimization is possible. The actual flux will depend upon details of the hadron production and focusing design; optimization of the beam design to maximize experimental sensitivity is a critical aspect of the experiment
-design.  Table~\ref{tab:beamparam} summarizes some of the properties of the two flux simulations used in the sensitivity studies.  Section~\ref{sec:physics-lbnosc-beam-req} describes the flux simulations in more detail and explores the potential improvements that could be achieved by variations in the reference beam design.
+design.  Table~\ref{tab:beamparam} summarizes some of the properties of the flux simulations used in the sensitivity studies.  The main differences between the two beam designs are the horn current, horn design, and decay pipe length; the choice of horn design has the biggest effect on the sensitivity. Section~\ref{sec:physics-lbnosc-beam-req} describes the flux simulations in more detail and explores the potential improvements that could be achieved by variations in the reference beam design.
 
 \begin{cdrtable}[Beam line parameters for CDR reference and optimized designs]{lcc}{beamparam}{A comparison of the beam line parameters assumed for the CDR Reference Design flux and the Optimized Design flux used in the sensitivity calculations presented in this chapter.  Please see Section~\ref{sec:physics-lbnosc-beam-req} for the details.}
 Parameter & CDR Reference Design & Optimized Design\\
@@ -230,7 +228,7 @@ Parameter & CDR Reference Design & Optimized Design\\
  Proton Beam Energy & 80~GeV & 80~GeV \\ 
  Proton Beam Power & 1.07 MW & 1.07 MW\\
  Target & Graphite & Graphite \\
- Horn Current & 230~kA & 230~kA \\
+ Horn Current & 230~kA & 297~kA \\
  Horn Design & NuMI-style & Genetic Optimization \\ 
  Decay Pipe Length & 204~m & 250~m \\
  Decay Pipe Diameter & 4~m & 4~m\\
@@ -244,30 +242,30 @@ in which the $\tau$'s decay leptonically into electrons/positrons. NC and $\nu_\
 backgrounds are due to interactions of higher energy neutrinos but they contribute to 
 backgrounds mainly at low energy, which is important for the sensitivity to CP violation. 
 
-The LAr TPC performance parameters that go into the GLoBES calculation are generated using the DUNE Fast Monte Carlo (MC) simulation, which is described in detail in \cite{Adams:2013qkq}.  The Fast MC combines the simulated flux, the GENIE neutrino interaction generator~\cite{Andreopoulos:2009rq}, and a parameterized detector response that is used to simulate the reconstructed energy and momentum of each final-state particle.  The simulated energy deposition of the particles in each interaction is then used to calculate reconstructed kinematic quantities (e.g., the neutrino energy). Event sample classifications ($\nu_e$ CC-like, $\nu_{\mu}$ CC-like, or NC-like), including mis-ID rates, are determined by the identification of lepton candidates. Lepton candidates are selected based on a variety of criteria including on particle kinematics, detector thresholds, and probabilistic estimates of particle fates. To reduce the NC and $\nu_{\tau}$ CC backgrounds in the $\nu_e$ CC-like sample, an additional discriminant is formed using reconstructed transverse momentum along with reconstructed neutrino and hadronic energy as inputs to a k-Nearest-Neighbor (kNN) machine-learning algorithm.  Figures~\ref{fig:smearing_nue}-\ref{fig:smearing_nc} show the true-to-reconstructed energy smearing matrices extracted from the Fast MC and used as inputs to GLoBES.  Figure~\ref{fig:eff} shows the analysis sample detection$\times$selection efficiencies for the various signal and background modes used by GLoBES, also extracted from the Fast MC.
+The LAr TPC performance parameters that go into the GLoBES calculation are generated using the DUNE Fast Monte Carlo (MC) simulation, which is described in detail in \cite{Adams:2013qkq}.  The Fast MC combines the simulated flux, the GENIE neutrino interaction generator~\cite{Andreopoulos:2009rq}, and a parameterized detector response that is used to simulate the reconstructed energy and momentum of each final-state particle.  The simulated energy deposition of the particles in each interaction is then used to calculate reconstructed kinematic quantities (e.~g., the neutrino energy). Event sample classifications ($\nu_e$ CC-like, $\nu_{\mu}$ CC-like, or NC-like), including mis-ID rates, are determined by the identification of lepton candidates. Lepton candidates are selected based on a variety of criteria including on particle kinematics, detector thresholds, and probabilistic estimates of particle fates. To reduce the NC and $\nu_{\tau}$ CC backgrounds in the $\nu_e$ CC-like sample, an additional discriminant is formed using reconstructed transverse momentum along with reconstructed neutrino and hadronic energy as inputs to a k-Nearest-Neighbor (kNN) machine-learning algorithm.  Figures~\ref{fig:smearing_nue}-\ref{fig:smearing_nc} show the true-to-reconstructed energy smearing matrices extracted from the Fast MC and used as inputs to GLoBES.  Figure~\ref{fig:eff} shows the analysis sample detection$\times$selection efficiencies for the various signal and background modes used by GLoBES, also extracted from the Fast MC.
 
-\begin{cdrfigure}[\nue and\anue True-to-reconstructed energy smearing matrices]{smearing_nue}{True-to-reconstructed energy smearing matrices for CC \nue (left) and \anue (right) interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample. PLACEHOLDER PLOTS: WILL BE UPDATED.}
+\begin{cdrfigure}[\nue and\anue True-to-reconstructed energy smearing matrices]{smearing_nue}{True-to-reconstructed energy smearing matrices for CC \nue (left) and \anue (right) interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample.}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nue_nominal_app.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anue_nominal_app.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nue_nominal_dis.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anue_nominal_dis.png}
 \end{cdrfigure}
 
-\begin{cdrfigure}[\numu and\anumu True-to-reconstructed energy smearing matrices]{smearing_numu}{True-to-reconstructed energy smearing matrices for CC \numu (left) and \anumu (right) interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample. PLACEHOLDER PLOTS: WILL BE UPDATED.}
+\begin{cdrfigure}[\numu and\anumu True-to-reconstructed energy smearing matrices]{smearing_numu}{True-to-reconstructed energy smearing matrices for CC \numu (left) and \anumu (right) interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample.}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_numu_nominal_app.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anumu_nominal_app.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_numu_nominal_dis.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anumu_nominal_dis.png}
 \end{cdrfigure}
 
-\begin{cdrfigure}[\nutau and\anutau True-to-reconstructed energy smearing matrices]{smearing_nutau}{True-to-reconstructed energy smearing matrices for CC \nutau (left) and \anutau (right) interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample. PLACEHOLDER PLOTS: WILL BE UPDATED.}
+\begin{cdrfigure}[\nutau and\anutau True-to-reconstructed energy smearing matrices]{smearing_nutau}{True-to-reconstructed energy smearing matrices for CC \nutau (left) and \anutau (right) interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample.}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nut_nominal_app.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anut_nominal_app.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nut_nominal_dis.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anut_nominal_dis.png}
 \end{cdrfigure}
 
-\begin{cdrfigure}[NC True-to-reconstructed energy smearing matrices]{smearing_nc}{True-to-reconstructed energy smearing matrices for NC interactions extracted from the Fast MC and used as inputs to GLoBES.  Left: Used in the appearance sample.  Right: Used in the disappearance sample. PLACEHOLDER PLOTS: WILL BE UPDATED.}
+\begin{cdrfigure}[NC True-to-reconstructed energy smearing matrices]{smearing_nc}{True-to-reconstructed energy smearing matrices for NC interactions extracted from the Fast MC and used as inputs to GLoBES.  Left: Used in the appearance sample.  Right: Used in the disappearance sample.}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_NC_nominal_app.png}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_NC_nominal_dis.png}
 \end{cdrfigure}
@@ -279,11 +277,12 @@ The LAr TPC performance parameters that go into the GLoBES calculation are gener
  \includegraphics[width=0.49\textwidth]{LBNE_Ev_reco_dis_RHC_eff.png}
 \end{cdrfigure}
 
+ The cross-section inputs to GLoBES have been generated using GENIE 2.8.4~\cite{Andreopoulos:2009rq}.
 The neutrino oscillation parameters and the uncertainty on those parameters are taken from the 
 Nu-Fit~\cite{Gonzalez-Garcia:2014bfa} global fit to neutrino data; the values are given in 
-Table~\ref{tab:oscpar_nufit}.  The cross-section inputs to GLoBES have been generated using GENIE 2.8.4~\cite{Andreopoulos:2009rq}.
+Table~\ref{tab:oscpar_nufit}.  Most of the sensitivities in this chapter are shown assuming normal hierarchy; this is an arbitrary choice for simplicity of presentation.
 
-\begin{cdrtable}[Oscillation parameter values and relative uncertainties]{lcc}{oscpar_nufit}{Central value and relative uncertainty of neutrino oscillation parameters from a global fit~\cite{Gonzalez-Garcia:2014bfa} to neutrino oscillation data, for normal hierarchy. The relative uncertainty is computed using 1/6 of the 3$\sigma$ allowed range from the fit.  For $\theta_{23}$ and $\Delta m^2_{31}$, the best-fit values and uncertainties are different, depending on whether normal mass hierarchy (NH) or inverted mass hierarchy (IH) is assumed.}
+\begin{cdrtable}[Oscillation parameter values and relative uncertainties]{lcc}{oscpar_nufit}{Central value and relative uncertainty of neutrino oscillation parameters from a global fit~\cite{Gonzalez-Garcia:2014bfa} to neutrino oscillation data. Because the probability distributions are somewhat non-Gaussian (particularly for $\theta_{23}$), the relative uncertainty is computed using 1/6 of the 3$\sigma$ allowed range from the fit, rather than the 1$\sigma$ range.   For $\theta_{23}$ and $\Delta m^2_{31}$, the best-fit values and uncertainties depend on whether normal mass hierarchy (NH) or inverted mass hierarchy (IH) is assumed.}
 Parameter &    Central Value & Relative Uncertainty \\
 \toprowrule
 $\theta_{12}$ & 0.5843 & 2.3\% \\
@@ -300,12 +299,12 @@ show the expected event rate for \nue appearance and \numu disappearance, respec
 expected flux, cross-section, and oscillation probabilities as a function 
 of neutrino energy at a baseline of 1300~km. The spectra are shown for a 150~kt-MW-yr exposure in both neutrino and antineutrino mode, for a total 300~kt-MW-yr exposure.  The optimized beam design results in an increased signal rate in the lower energy region. Tables~\ref{tab:apprates} and~\ref{tab:disrates} give the integrated rate between 0.5 and 8.0~GeV for the appearance and disappearance spectra, respectively.  The spectra and rates are shown for both the reference beam design and the optimized beam design.
 
-\begin{cdrfigure}[\nue and \anue appearance spectra]{appspectra}{\nue and \anue appearance spectra: Reconstructed energy distribution of selected $\nu_e$ CC-like events assuming a 150~kt-MW-yr exposure in the neutrino-beam mode (left) and antineutrino-beam mode (right), for a total 300~kt-MW-yr exposure.  The plots assume normal mass hierarchy and $\mdeltacp = 0$.  The spectra are shown for both the CDR reference beam design and the optimized beam as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
+\begin{cdrfigure}[\nue and \anue appearance spectra]{appspectra}{\nue and \anue appearance spectra: Reconstructed energy distribution of selected $\nu_e$ CC-like events assuming a 150~kt-MW-yr exposure in the neutrino-beam mode (left) and antineutrino-beam mode (right), for a total 300~kt-MW-yr exposure.  The plots assume normal mass hierarchy and $\mdeltacp = 0$.  The spectra are shown for both the CDR reference beam design and the optimized beam design as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
  \includegraphics[width=0.49\textwidth]{NueApp_NH.pdf}
  \includegraphics[width=0.49\textwidth]{NueBarApp_NH.pdf}
 \end{cdrfigure}
 
-\begin{cdrfigure}[\numu and \anumu disappearance spectra]{disspectra}{\numu and \anumu disappearance spectra: Reconstructed energy distribution of selected $\nu_{\mu}$ CC-like events assuming a 150~kt-MW-yr exposure in the neutrino-beam mode (left) and antineutrino-beam mode (right), for a total 300~kt-MW-yr exposure.  The plots assume normal mass hierarchy and $\mdeltacp = 0$.  The spectra are shown for both the CDR reference beam design and the optimized beam as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
+\begin{cdrfigure}[\numu and \anumu disappearance spectra]{disspectra}{\numu and \anumu disappearance spectra: Reconstructed energy distribution of selected $\nu_{\mu}$ CC-like events assuming a 150~kt-MW-yr exposure in the neutrino-beam mode (left) and antineutrino-beam mode (right), for a total 300~kt-MW-yr exposure.  The plots assume normal mass hierarchy and $\mdeltacp = 0$.  The spectra are shown for both the CDR reference beam design and the optimized beam design as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
  \includegraphics[width=0.49\textwidth]{NumuDis.pdf}
  \includegraphics[width=0.49\textwidth]{NumuBarDis.pdf}
 \end{cdrfigure}
@@ -419,7 +418,7 @@ $\pm 40\%$ in the region of the peak flux; this is larger than the
 maximal possible CP-violating asymmetry associated with \deltacp,
 meaning that both the MH and \deltacp can be
 determined unambiguously with high confidence within the same
-experiment using the beam neutrinos.  Concurrent analysis of the corresponding atmospheric-neutrino samples will improve the precision with which the
+experiment using the beam neutrinos.  DUNE's goal is to determine the MH with a significance of at least $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for all \deltacp values using beam neutrinos.  Concurrent analysis of the corresponding atmospheric-neutrino samples will improve the precision with which the
 MH is resolved. 
 
 Figure~\ref{fig:mh_nominal} shows the significance with which the MH can be determined as a function of the value of \deltacp, for an exposure of 300~kt-MW-yr, which corresponds to seven years of data (3.5 years in neutrino mode plus 3.5 years in antineutrino mode) with a 40-kt detector and a 1.07-MW beam.  For this exposure, the MH is determined with a minimum significance of $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for 100\% of the \deltacp values for the optimized beam design and nearly 100\% of \deltacp values for the CDR reference beam design.  Figure~\ref{fig:mh_exposure} shows the significance with which the MH can be determined for 100\% of \deltacp values as a function of exposure.  Minimum exposures of approximately 400~kt-MW-yr and 250~kt-MW-yr are required to determine the MH with a significance of $\sqrt{\overline{\Delta\chi^2}} = 5$ for 100\% of \deltacp values for the CDR reference beam design and the optimized beam design, respectively.
@@ -451,10 +450,16 @@ experimentally allowed range.
  \includegraphics[width=0.7\textwidth]{mh_230ktmwyear_varydmsq}
 \end{cdrfigure}
 
-The value of the test statistic for a typical experiment,  
-$\overline{\Delta\chi^2}$, is
-representative of the mean or the most likely value of $\Delta\chi^2$ that 
-would be obtained in an ensemble of experiments.
+In assessing the sensitivity of future experiments, it is common practice to generate
+a simulated data set (for an assumed true MH) that does not include statistical fluctuations.  
+The expected sensitivity can be reported as  
+$\overline{\Delta\chi^2}$, representative of the mean value of $\Delta\chi^2$ that 
+would be obtained in an ensemble of experiments for a particular true MH.  
+It is assumed that the $\Delta \chi^2$ metric follows the expected chi-squared
+function for one degree of freedom, which has a mean of
+$\overline{\Delta\chi^2}$ and can be interpreted using a Gaussian
+distribution with a standard deviation of
+$\sqrt{|\overline{\Delta\chi^2}|}$.
 With the exception of Figure~\ref{fig:mhstats}, the sensitivity plots
 in this document have been generated using this method.
 However, to address the expected sensitivity of a future experiment
@@ -463,12 +468,8 @@ statistical fluctuations and variations in systematics.  If the
 experiment is repeated many times, a distribution of $\Delta\chi^2$
 values will appear.  Studies in~\cite{Qian:2012zn,Blennow:2013oma}
 show that, in the case of the mass hierarchy
-determination, the $\Delta \chi^2$ metric
-{\em does not} follow the commonly expected chi-squared
-function for one degree of freedom, which has a mean of
-$\overline{\Delta\chi^2}$ and can be interpreted using a Gaussian
-distribution with a standard deviation of
-$\sqrt{|\overline{\Delta\chi^2}|}$. Rather, these studies show that
+determination, the $\Delta \chi^2$ metric {\em does not} follow the expected chi-squared
+function for one degree of freedom.  Rather, these studies show that
 when the observed counts in the experiment are large enough,
 the distribution of $\Delta\chi^2$ used here approximately follows
 a Gaussian distribution with a
@@ -496,9 +497,9 @@ The 40-kt DUNE far detector (FD) will be built in 10-kt modules, which will come
  \item Year 3: Add third 10~kt FD module, for a total FD mass of 30~kt; Include constraints from preliminary ND data analysis (assume 3\% signal systematic)
  \item Year 4: Add fourth 10~kt FD module, for a total FD mass of 40~kt
  \item Year 5: Include constraints from a full ND data analysis (assume 2\% signal systematic)
- \item Year 7: Upgrade of beam power to 1.14~MW
+ \item Year 7: Upgrade of beam power to 2.14~MW
 \end{itemize}
-Figure~\ref{fig:mh_staging} shows the MH sensitivity as a function of time considering this very preliminary staging plan.
+We assume previous data sets can be reanalyzed with new assumptions, so each improvement in systematic uncertainty is applied to the full exposure up to that point.  Figure~\ref{fig:mh_staging} shows the MH sensitivity as a function of time considering this very preliminary staging plan.
 %Add that integrated exposure is 535 kt-MW-yr after 10 years?
 
 \begin{cdrfigure}[Mass hierarchy sensitivity over time]{mh_staging}{The MH sensitivity as a function of time, including expected increases in FD detector mass, ND constraints on systematic uncertainties, and beam power over time.  The beginning time is defined as the time when the first FD module records neutrinos from LBNF.  The shaded region represents the range in sensitivity due to potential variations in the beam design.  The staging plan shown here is very preliminary.}
@@ -526,7 +527,7 @@ $\nu_{\mu,e} \rightarrow \nu_{e,\mu}$ provide the most promising
 experimental signatures of leptonic CP violation.
 
 The variation in the $\nu_\mu \rightarrow
-\nu_e$ oscillation probabilities with the value of \deltacp
+\nu_e$ oscillation probability (Equation~\ref{eqn:appprob}) with the value of \deltacp
 indicates that it is experimentally possible to measure the value of
 \deltacp at a fixed baseline using only the observed shape of the
 $\nu_\mu \rightarrow \nu_e$ {\em or} the 
@@ -641,10 +642,10 @@ octant.  The $\Delta\chi^2$ metric is defined as:
 where the value of $\theta_{23}$ in the \emph{wrong} octant is constrained 
 only to have a value within the \emph{wrong} octant (i.e., it is not required
 to have the same value of $\sin^22\theta_{23}$ as the true value).
-Figure~\ref{fig:octant} shows the sensitivity to determining the octant as a function of $\theta_{23}$ for an exposure of 300~kt-MW-yr.  Figure~\ref{fig:res_th23} shows the resolution of $\sin^2\theta_{23}$ as a function of exposure, assuming the true value is $\sin^2\theta_{23} = 0.45$ from the current global fit.
+Figure~\ref{fig:octant} shows the sensitivity to determining the octant as a function of $\theta_{23}$.  Figure~\ref{fig:res_th23} shows the resolution of $\sin^2\theta_{23}$ as a function of exposure, assuming the true value is $\sin^2\theta_{23} = 0.45$ from the current global fit.
 
-\begin{cdrfigure}[Octant sensitivity]{octant}{The significance with which DUNE can resolve the $\theta_{23}$ octant for 300~kt-MW-yr. The shaded region represents the range in sensitivity due to potential variations in the beam design and in the true value of \deltacp. PLACEHOLDER PLOT FROM LBNE SCIENCE DOC: WILL BE UPDATED.}
- \includegraphics[width=0.7\textwidth]{octant}
+\begin{cdrfigure}[Octant sensitivity]{octant}{The significance with which DUNE can resolve the $\theta_{23}$ octant as a function of the true value of $\theta_{23}$. The green shaded band around the curve represents the range in sensitivity due to potential variations in the beam design and in the true value of \deltacp. The yellow shaded regions indicate the current 1-$\sigma$ and 3-$\sigma$ bounds on the value of $\theta_{23}$ from a global fit.  We assume an exposure that gives a 3-$\sigma$ measurement of CP violation for 75\% of the values of \deltacp.  See Figure~\ref{fig:cpv_exposure} for the possible range of exposure to acheive this significance.}
+ \includegraphics[width=0.7\textwidth]{octant_chi2_exp890}
 \end{cdrfigure}
 
 \begin{cdrfigure}[Resolution of $\sin^2\theta_{23}$ as a function of exposure]{res_th23}{The resolution of a measurement of $\sin^2\theta_{23}$ as a function of exposure assuming normal MH and $\sin^2\theta_{23} = 0.45$ from the current global fit. The shaded region represents the range in sensitivity due to potential variations in the beam design.  }
@@ -835,18 +836,18 @@ distinct. Additionally, the wide range of energy for the beam neutrinos and the 
 
 \section{Neutrino Beam Requirements}
 \label{sec:physics-lbnosc-beam-req}
-The LBNF neutrino facility located at Fermilab utilizes a conventional
-horn-focused neutrino beam produced from pion decay-in-flight. It will
+The LBNF neutrino facility at Fermilab utilizes a conventional
+horn-focused neutrino beam produced from pion and kaon decay-in-flight. It will
 aim the neutrino beam toward the 
 the DUNE far detector located 1,300 km away at the Sanford Underground
-Research Facility. LBNF must be designed for approximately twenty years of operation in order to provide adequate exposure for the DUNE experiment. During its lifetime, the facility must be able to accommodate various target and focusing configurations to enable tunability 
+Research Facility. LBNF must be designed for approximately twenty years of operation, in order to provide adequate exposure for the DUNE experiment. During its lifetime, the facility must be able to accommodate various target and focusing configurations to enable tunability 
 in the neutrino energy spectrum, and must be suitable for upgraded targets and horns as technology improves and the primary proton beam power increases. Such
-flexibility is an essential requirement for a facility that will have to operate over multiple decades. The energy range of the neutrino beam must be adaptable, in order to address new questions in neutrino physics that may come up during such a long period.
+flexibility is an essential requirement for a facility that will operate over multiple decades. The energy range of the neutrino beam must be adaptable, in order to address new questions in neutrino physics that may come up during such a long period.
 
 The DUNE experiment requires that the LBNF facility
 \begin{enumerate} 
 \item Shall generate a high intensity, wide-band neutrino beam,
-  selectable for muon neutrinos or muon antineutrinos, and with low
+  selectable for muon neutrinos or muon antineutrinos with a low
   contamination of electron and wrong-sign neutrinos.
 \item Shall fully cover the energy range of the first oscillation
   node, which ranges from $\sim1$ GeV to $\sim5$ GeV and peaks at
@@ -871,7 +872,7 @@ The DUNE experiment requires that the LBNF facility
   since the Main Injector cycle time does not scale linearly with the
   energy of the accelerated protons.  Table~\ref{tab:beam_req_pot} gives a
   summary of the expected number of protons on target per year at
-  various momenta assuming an uptime/efficiency of 56\%. 
+  various momenta assuming a combined uptime and efficiency of 56\%. 
 \item Shall be built to provide a realistic estimation and whenever
   possible a reduction of the systematic errors on the neutrino flux prediction, e. g. by adequate requirements on the alignment tolerances of the beamline components. Dedicated hadroproduction measurements from 60-120 GeV/c protons will be needed to reduce the uncertainty on the neutrino flux components, both from pion and kaon decays. 
 \item Shall be built to ensure the stability of the produced neutrino flux by minimizing variations in targeting angle and position of the primary proton beam, short and long term displacement of the components of the focusing system, and variations in the current pulse to the horns.
@@ -891,17 +892,33 @@ Proton Momentum (GeV/c) & Expected Beam Power (MW) & Expected POT/year
 \label{sec:reference-design-focusing-system}
 The reference beam design is described in detail in Volume 3. It
 includes a target similar to the one used for the low-energy tune of
-the NuMI beam~\cite{numitdr}, but with a larger thickness to accommodate the 1.2 MW primary proton beam, and focusing horns essentially identical to those currently in operation in the NuMI beamline~\cite{numitdr}. The target consists of 47 graphite segments, for a total length of 95 cm including the space between segments, corresponding to two interaction lengths. The upstream face of the first segment has to be positioned 45 cm upstream of the first focusing horn to ensure sufficient clearance of the target's downstream end from the horn inner conductor. The separation of the upstream faces of the two horns has been decreased to 6.6 m, compared to the 10 m distance for the low-energy tune of the NuMI beam, to slightly enhance the neutrino flux at lower energies. A helium-filled decay pipe, 4 m in diameter and 204 m in length, provides the decay volume for the secondary pions to decay to muon neutrinos. 
+the NuMI beam~\cite{numitdr}, but with a larger thickness to
+accommodate the 1.2 MW primary proton beam, and focusing horns
+essentially identical to those currently in operation in the NuMI
+beamline~\cite{numitdr}. The target consists of 47 graphite segments,
+for a total length of 95 cm including the space between segments,
+corresponding to two interaction lengths. The upstream face of the
+first segment is positioned 45 cm upstream of the first focusing horn to ensure sufficient clearance of the target's downstream end from the horn inner conductor. The separation of the upstream faces of the two horns has been decreased to 6.6 m, compared to the 10 m distance for the low-energy tune of the NuMI beam, to slightly enhance the neutrino flux at lower energies. A helium-filled decay pipe, 4 m in diameter and 204 m in length, provides the decay volume for the secondary pions to decay to muon neutrinos. 
 
 Neutrino fluxes for the reference beam are shown in
 Figure~\ref{fig:beam_req_reference_flux} for a 120 GeV primary proton
 beam.  Lowering the momentum of the primary proton beam increases
 right-sign neutrino flux at low energies and decreases wrong-sign
-contamination.  Given current projections of power versus proton
-energy, we estimate that the optimal energy for measuring
-$\delta_{CP}$ and the mass hierarchy is near 60 GeV, as shown in
-Figure~\ref{fig:beam_req_proton_energy}.   The neutrino energy
-spectrum can also be tuned by changing the distance between the target and the first focusing horn, as shown in Figure~\ref{fig:beam_req_lemehe}. The improvement in the neutrino fluxes with a longer decay pipe length of 250 m is also shown.
+contamination.  Figure~\ref{fig:beam_req_proton_energy} shows current
+projections of power versus proton energy, we estimate that 
+$\delta_{CP}$ and mass hierarchy sensitivities improve modestly as
+proton energy decreases, until approximately 60 GeV, below which the
+Main Injector cycle time becomes constant with proton energy, causing
+beam power to drop sharply.   Unless otherwise noted, results
+throughout this volume assume an 80 GeV proton beam, corresponding to
+the optimal momentum whose technical feasibility has been thoroughly
+studied.  
+
+Another handle for tuning the neutrino energy
+spectrum of the reference beam is modification of the distance between
+the target and the first focusing horn.  The expected fluxes for three
+different configurations are shown in
+Figure~\ref{fig:beam_req_lemehe}. The improvement in flux for each configuration with a longer decay pipe length of 250 m is also shown.
 
 \begin{cdrfigure}[Neutrino fluxes for the reference focusing 
   system.]{beam_req_reference_flux}{Neutrino fluxes for the reference 
@@ -947,7 +964,7 @@ spectrum can also be tuned by changing the distance between the target and the f
     \includegraphics[width=0.75\textwidth]{LEMEHEComp}
   \end{cdrfigure}
 
-\subsection{Alternative Beam Options}
+\subsection{Optimized Beam Options}
 \label{sec:alternative-focusing-systems}
 
 There are several potential modifications to the reference beam design that would improve the experiment's sensitivity to the CP violating phase and mass hierarchy. 
@@ -962,10 +979,10 @@ Figure~\ref{fig:beam_req_focusing_comp}.
   
 The option offering the largest gains in sensitivity is a redesign of the focusing system, including target and horns, which would require a modification of the dimensions 
 of the present target chase.  To identify optimal designs, a genetic algorithm has been implemented to search for beam configurations that maximize sensitivity to CP violation. 
-The procedure is inspired by a similar one developed by the LBNO collaboration , and considers 20 beamline parameters governing the primary proton energy, target dimensions, 
+The procedure is inspired by a similar one developed by the LBNO collaboration~\cite{Agarwalla:2014tca}, and considers 20 beamline parameters governing the primary proton energy, target dimensions, 
 and horn shapes, positions and current. Figure~\ref{fig:beam_req_opthorn} shows the shape and the relative parameters used for the optimization of the first focusing horn, 
 while the second focusing horn is modeled as a NuMI-style horn, but allowed to rescale both in radial and longitudinal dimensions. The procedure yields horn size and shapes 
-similar to those found by the LBNO collaboration~\cite{LBNO}. The first focusing horn is $\sim 5.5$ m in length and $\sim 1.3$ m in diameter. This 
+similar to those found by the LBNO collaboration. The first focusing horn is $\sim 5.5$ m in length and $\sim 1.3$ m in diameter. This 
 optimized beam configuration includes a second focusing horn that is 32\% longer and 7.8 m further downstream than that of the reference focusing design.  This option would 
 require an increase both in length, by $\sim 9$ m, and in width, by 
 $\sim 60$ cm, of the target chase in the reference design.  Figure~\ref{fig:beam_req_focusing_comp} shows a comparison of fluxes 
@@ -983,7 +1000,9 @@ verification of the results with alternate hadron production models, and evaluat
 \begin{cdrfigure}[Neutrino fluxes with alternative beam designs]
 {beam_req_focusing_comp}{Neutrino mode muon 
     neutrino fluxes for several beam designs, including the 
-    reference, the enhanced reference, and the optimized beam described in section~\ref{sec:alternative-focusing-systems}}
+    reference, the enhanced reference, and the optimized beam
+    described in section~\ref{sec:alternative-focusing-systems}.  All
+    beams use 80 GeV protons.}
   \includegraphics[width=0.66\textwidth]{BeamOptCDR}
 \end{cdrfigure}
 
@@ -999,7 +1018,9 @@ verification of the results with alternate hadron production models, and evaluat
   $\delta_{CP}$ for reference and alternative beam designs]
 {beam_req_sensitivities}{Sensitivity to the mass hierarchy (left) and
   $\delta_{CP}$ (right) as a function of exposure for the reference beam and
-  the beam options discussed in Section~\ref{sec:alternative-focusing-systems.}}
+  the beam options discussed in
+  Section~\ref{sec:alternative-focusing-systems}.  All beams use 80
+  GeV protons.}
 
 \centering 
 \begin{minipage}{0.5\textwidth}
