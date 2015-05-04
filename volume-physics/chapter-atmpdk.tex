@@ -895,8 +895,8 @@ computed. Interactions in the LAr medium were simulated with the GENIE event
 generator. Detection thresholds and energy resolutions based on full 
 simulations were applied to the outgoing particles, to take into account 
 detector effects. Events were classified as Fully Contained (FC) or 
-Partially Contained (PC) by placing the vertex at a random position inside the 
-detector and tracking the lepton until its edges. The number of events expected 
+Partially Contained (PC) depending on whether the lepton, with the vertex placed at a random position inside the 
+detector, would be compeletly inside the fiducial wolume. and tracking the lepton until its edges. The number of events expected 
 for each flavor and category is summarized in Table~\ref{tab:atmos_rates}.
 
 %
@@ -904,7 +904,8 @@ for each flavor and category is summarized in Table~\ref{tab:atmos_rates}.
 \caption[Atmospheric-neutrino event rates]
         {
          Atmospheric-neutrino event rates including oscillations in \SI{350}{\ktyr} 
-         with a LArTPC, fully or partially contained in the detector fiducial volume. 
+         with a LArTPC, fully or partially contained in the detector fiducial volume,
+         after applying lepton identification. 
         }
 \begin{center}
 \begin{tabular}{$L^c} %$ 
@@ -921,7 +922,7 @@ partially contained muon-like sample   & 6,871 \\ \colhline
 \end{table}
 %
 
-Figure shows the expected L/E distribution for high-resolution muon-like 
+Figure~\ref{fig:lovere} shows the expected L/E distribution for high-resolution muon-like 
 events from a \SI{350}{\ktyr} exposure. The data provide excellent resolution of the 
 first two oscillation nodes, even when taking into account the expected statistical uncertainty.
 In performing oscillation fits, the data in each flavor/containment category are 
@@ -932,8 +933,10 @@ binned in energy and zenith angle.
 $\mu$-like atmospheric neutrino events in a \SI{350}{\ktyr} exposure with and
 without oscillations (left), and the ratio of the two (right), with the
 shaded band indicating the size of the statistical uncertainty.}
-\includegraphics[width=0.45\linewidth]{atm_spectrum_LoverE.pdf}
+\begin{tabular}{cc}
+\includegraphics[width=0.45\linewidth]{atm_spectrum_LoverE.pdf} &
 \includegraphics[width=0.45\linewidth]{atm_spectrum_LoverE_2.pdf}
+\end{tabular}
 \end{cdrfigure}
 
 When neutrinos travel through the Earth, the MSW resonance influences 
@@ -947,12 +950,12 @@ illustrated in Figure~\ref{fig:atm_e_zenith}.
 \includegraphics[width=0.95\textwidth]{atm_e_zenith.png}
 \caption[Zenith Angle vs. Energy For Atmospheric Neutrinos]
 {Statistical significance of the difference in expected event rates for NH and IH for 
-muon-type events (left) and electron-type events (right), as a function of neutrino
+electron-type events (left) and muon-type events (right), as a function of neutrino
 energy and zenith angle.}
 \label{fig:atm_e_zenith}
 \end{figure}
 
-The MH sensitivity can be greatly enhanced if neutrino and antineutrino events can be 
+The Mass Hierarchy (MH) sensitivity can be greatly enhanced if neutrino and antineutrino events can be 
 separated. The DUNE detector will not be magnetized; however, its high-resolution 
 imaging offers possibilities for tagging features of events that provide statistical 
 discrimination between neutrinos and antineutrinos. For the sensitivity calculations 
@@ -974,7 +977,7 @@ that follow, two such tags were included: a proton tag and a decay electron tag.
 Figure~\ref{fig:atm_mh} shows the MH sensitivity as a function of the fiducial exposure. 
 Over this range of fiducial exposures, the sensitivity goes essentially as the square 
 root of the exposure, indicating that the measurement is not systematics-limited. 
-Unlike for beam measurements, he sensitivity to MH with atmospheric neutrinos is 
+Unlike for beam measurements, the sensitivity to MH with atmospheric neutrinos is 
 nearly independent of the CP violating phase.  The sensitivity comes from both 
 electron neutrino appearance as well as muon neutrino disappearance, and is strongly 
 dependent on the true value of $\theta_{23}$, as shown in Figure~\ref{fig:atm_mh}.  Despite the
@@ -997,8 +1000,9 @@ $\theta_{23}> \pi/4$. Accessing full three-flavor oscillation with atmospheric n
 will give a handle to solve the ambiguity.
 
 %The sensitivity to the $\theta_{23}$ octant is shown in Figure~\ref{fig:atm_octant}. 
-With the nominal exposure of \SI{340}{\ktyr}, DUNE will be able to distinguish between 
-octants at 3$\sigma$ significance, based on atmospheric data alone, for true values of [quantify], 
+With an exposure of \SI{350}{\ktyr}, DUNE will be able to distinguish between 
+octants at 3$\sigma$ significance, based on atmospheric data alone, 
+for true values of $|\theta_{23}-\pi/4|$ larger than about 6 degrees, 
 for any value of $\delta_{CP}$.
 
 %\begin{figure}[!htb]
@@ -1016,8 +1020,13 @@ These analyses will provide a complementary approach to beam neutrinos.   Atmosp
 help to lift degeneracies that can be present in beam analyses, for instance, through the fact that the 
 MH sensitivity is essentially independent of $\delta_{CP}$.   Atmospheric neutrino data will be acquired 
 even in the absence of the beam, and will provide a useful sample for the development of 
-reconstruction software and analysis methodologies.  
-Atmospheric neutrinos provide a window into a range of new physics scenarios, and can place limits
+reconstruction software and analysis methodologies.
+
+Atmospheric neutrinos provide an alternativ emethod to geophysics to explore the Earth's interior.
+MSW resonance effects on low-energy atmospherc neutrinos allow to learn about electron density in the 
+Earth's core and, combined with the average matter density, provide unique information on the chemical compisition.
+
+In addition, atmospheric neutrinos provide a window into a range of new physics scenarios, and can place limits
 on CPT violation~\cite{Kostelecky:2003cr}, 
 non-standard interactions~\cite{Chatterjee:2014gxa}, mass-varying neutrinos~\cite{Abe:2008zza}, 
 sterile neutrinos~\cite{Abe:2014gda}, and
