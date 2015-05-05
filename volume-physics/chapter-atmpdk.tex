@@ -600,7 +600,7 @@ beam-related physics program.  Detector mass plays a more critical role here;
 the atmospheric ``beam'' is fixed, and the number of nucleons available to
 decay obviously depends on the number of nuclei in the detector.  Therefore the
 first requirement for both is that the detector mass be large enough to make
-compelling measurements. As Fig.~\ref{fig:nnn13} shows, a 10~kt detector can
+compelling measurements. As Fig.~\ref{fig:kdklimit} shows, a 10~kt detector can
 exceed the existing Super-Kamiokande limits for the $p\rightarrow K^+ +
 \bar{\nu}$ nucleon decay channel in two years, and the full 40 kt scope in much
 less than that.  For atmospheric neutrinos, a detector mass of 40 kt will
@@ -622,7 +622,9 @@ outside of any beam gate, and that enough information from the front end
 on events of interest. The trigger may be generated online, nearline, or
 offline, but any information that would allow the identification of putative
 events must be kept, and its efficiency should be higher than the efficiency of
-all other cuts placed on the data. 
+all other cuts placed on the data.  The photon system itself must be able to
+provide information that allows linking of tracks in different cells of the far
+detector.
 
 While particle ID features quite prominently for the long-baseline physics, in
 particular the separation of electrons and $\gamma$s, and electrons and muons,
@@ -636,9 +638,19 @@ proton decay sample.
 Energy resolution and knowledge of that resolution will be critical to both
 atmospheric neutrino physics and a search for proton decay.  To accomplish the
 physics goals, we require that the energy resolution is known well enough that
-that uncertainty is a negligible contribution to the measurement of the
+its uncertainty is a negligible contribution to the measurement of the
 atmospheric neutrino energy spectrum of all flavors, and has a neglibible
 impact on background predictions for proton decay.
+
+%To properly reconstruct particle tracks, measure the energy deposition and
+%dE/dx and identify the particle, the position resolution should of the order of
+%a few mm, preferably less than 5 mm. THis is also important for a proper vertex
+%reconstruction, in particular when two verticies are close to each other.
+%Detection of scinitillation light from liquid argon with good timing (around
+%100 ns accuracy) and position sensitivity (around 1 m) is needed to ensure that
+%tracks crossing more than one cell are linked together.
+
+
 %\begin{table}[!htbp]
 %\caption[Detector requirements for nucleon decay and atmospheric neutrino
 %measurements]
