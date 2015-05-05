@@ -458,7 +458,8 @@ generator. Detection thresholds and energy resolutions based on full
 simulations were applied to the outgoing particles, to take into account 
 detector effects. Events were classified as Fully Contained (FC) or 
 Partially Contained (PC) by placing the vertex at a random position inside the 
-detector and tracking the lepton until its edges. The number of events expected 
+detector and tracking the lepton until its edges.  Partially Contained events 
+are those where a final state muon exits the detector.  The number of events expected 
 for each flavor and category is summarized in Table~\ref{tab:atmos_rates}.
 
 %
@@ -506,13 +507,13 @@ illustrated in Figure~\ref{fig:atm_e_zenith}.
 
 \begin{cdrfigure}[Zenith Angle vs. Energy For Atmospheric Neutrinos]{atm_e_zenith}
 {Statistical significance of the difference in expected event rates for NH and IH for 
-muon neutrino events (left) and electron neutrino events (right), as a function of neutrino
+electron neutrino events (left) and muon neutrino events (right), as a function of neutrino
 energy and zenith angle, for a \SI{350}{\ktyr} exposure.}
 \includegraphics[width=0.45\linewidth]{ElAsym.pdf}
 \includegraphics[width=0.45\linewidth]{MuAsym.pdf}
 \end{cdrfigure}
 
-The MH sensitivity can be greatly enhanced if neutrino and antineutrino events can be 
+The mass hierarchy (MH) sensitivity can be greatly enhanced if neutrino and antineutrino events can be 
 separated. The DUNE detector will not be magnetized; however, its high-resolution 
 imaging offers possibilities for tagging features of events that provide statistical 
 discrimination between neutrinos and antineutrinos. For the sensitivity calculations 
@@ -547,6 +548,8 @@ exposure in a liquid argon detector (left), and as a function of the true value 
 $\theta_{23}$ (right).  For comparison, Hyper-K sensitivities are also shown \cite{Kearns:2013lea}.}  
 \includegraphics[width=0.42\linewidth]{atm_mh_vs_exposure.pdf}
 \includegraphics[width=0.48\linewidth]{combined_sensitivity_hierarchy_lbne_vs_hyperk.pdf}
+%\includegraphics[width=0.50\linewidth]{atm_mh_vs_exposure.pdf}
+%\includegraphics[width=0.50\linewidth]{combined_sensitivity_hierarchy_lbne_vs_hyperk.pdf}
 \end{cdrfigure}
 
 In the two-flavour approximation, neutrino oscillation probabilities depend on 
