@@ -304,10 +304,11 @@ Refs.~\cite{lbne-sciopp,klinger2015,blake_doc8836} presented detailed examinatio
 of possible backgrounds, including those arising from cosmic ray interactions in the
 detector and surrounding rock, atmospheric neutrino interactions in the
 dectector, and reconstruction failures. Table~\ref{tab:pdkbkds} summarizes the
-results of those background studies.
+results of those background studies.  All together, our estimates of total
+background events in the proton decay sample is less than 1 \SI{}{\Mtyr}.
 \begin{table}[!htbp]
 \caption[Background Summary for Nucleon Decay]
-        {Background rates (events per \SI{}{\Mtyr}) for nucleon decay }
+        {Background sources and mitigation strategies or nucleon decay. }
 %        {rates (events per \SI{}{\Mtyr}) for nucleon decay 
 %         channels of interest for a large underground LArTPC~\cite{Bueno:2007um}, and 
 %         comparison with water Cherenkov detector capabilities.  
@@ -318,30 +319,28 @@ results of those background studies.
 \begin{tabular}{$L^c^c} %$ 
 \toprule
 \rowtitlestyle
-Background Source & Mitigation Strategy & Leakage Rate  \\
-\rowtitlestyle
-& & (events per \SI{}{\Mtyr})\\
+Background Source & Mitigation Strategy  \\
 \toprowrule
-Internal cosmic ray spallation      & Energy threshold & Negligible  \\ \colhline
+Internal cosmic ray spallation      & Energy threshold \\ \colhline
 External cosmogenic & & \\
-$K^+$ production  & Depth, fiducialization & Negligible \\ \colhline
+$K^+$ production  & Depth, fiducialization \\ \colhline
 External cosmogenic  & & \\
 $K^0$ production & & \\
 +internal charge-exchange  & & \\
-to $K^+$ & Cuts on other secondaries &   < 1  \\ \colhline
+to $K^+$ & Cuts on other secondaries    \\ \colhline
 Atmospheric $\nu$ & & \\ 
-$\Delta S=0$ processes & Cut on associated strange baryon & Negligible   \\ \colhline
+$\Delta S=0$ processes & Cut on associated strange baryon \\ \colhline
 Atmospheric $\nu$ & Cabibbo-suppressed, & \\ 
-$\Delta S=1$ processes &lepton ID & Negligible \\ \colhline
+$\Delta S=1$ processes &lepton ID \\ \colhline
 Atmospheric $\nu$ & $dE/dx$ discrimination, & \\
-with $\pi$ mis-ID & +236 MeV muon track & Negligible \\
+with $\pi$ mis-ID & 236 MeV muon track \\
 \colhline
-Reconstruction pathologies & $dE/dx$ profiles vs track length & Negligible \\
+Reconstruction pathologies & $dE/dx$ profiles vs track length \\
 \colhline
 \bottomrule
 \end{tabular}
 \end{center}
-\label{tab:pdecay}
+\label{tab:pdkbkds}
 \end{table}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -599,15 +598,13 @@ Physics with atmospheric neutrino interactions and searches for nucleon decays
 have several requirements that are not necessarily in common with the
 beam-related physics program.  Detector mass plays a more critical role here;
 the atmospheric ``beam'' is fixed, and the number of nucleons available to
-decay
-obviously depends on the number of nuclei in the detector.  Therefore the first
-requirement for both is that the detector mass be large enough to make
-compelling measurements. As Fig.~\ref{fig:nnn13} shows, a 10~ktonne detector
-can exceed the existing Super-Kamiokande limits for the $p\rightarrow K^+ +
-\bar{\nu}$ nucleon decay channel in two years, and the full 40 ktonne scope in
-much less than that.  For atmospheric neutrinos, a detector mass of 40 ktonne
-will achieve a mass hierarchy determination of better than 3$\sigma$ in 10
-years.
+decay obviously depends on the number of nuclei in the detector.  Therefore the
+first requirement for both is that the detector mass be large enough to make
+compelling measurements. As Fig.~\ref{fig:nnn13} shows, a 10~kt detector can
+exceed the existing Super-Kamiokande limits for the $p\rightarrow K^+ +
+\bar{\nu}$ nucleon decay channel in two years, and the full 40 kt scope in much
+less than that.  For atmospheric neutrinos, a detector mass of 40 kt will
+achieve a mass hierarchy determination of better than 3$\sigma$ in 10 years.
 
 Depth also plays a greater role for these physics topics than for long-baseline
 neutrino oscillations, because of the lack of a beam gate coincidence. As
@@ -620,17 +617,19 @@ sufficient to reduce these backgrounds to negligible levels.
 The need for continuous recording of data is also clearly more critical for
 these physics topics than for those associated with the LBNF beam.  Two
 requirements are associated with this need: that data be recorded continously,
-outside of any beam gate, and that enough information from the front end be
-retained through the DAQ chain to allow a trigger on events of interest. The
-trigger may be generated online, nearline, or offline, but any information that
-would allow the identification of putative events must be kept.
+outside of any beam gate, and that enough information from the front end
+(including photon system) be retained through the DAQ chain to allow a trigger
+on events of interest. The trigger may be generated online, nearline, or
+offline, but any information that would allow the identification of putative
+events must be kept, and its efficiency should be higher than the efficiency of
+all other cuts placed on the data. 
 
 While particle ID features quite prominently for the long-baseline physics, in
 particular the separation of electrons and $\gamma$s, and electrons and muons,
 for proton decay $K^+$ identification is critical.  Unlike the long-baseline
 physics, proton decay is a rare-process search and therefore small tails from
 (for example) atmospheric neutrino interactions creating $\pi^+$s that are
-mis-identified could be very damaging. We therefor require that the separation
+mis-identified could be very damaging. We therefore require that the separation
 of $K^+$s and $\pi^+$s is good enough to leak much less than one event into the
 proton decay sample.
 
