@@ -8,22 +8,23 @@
 The Standard Model of particle physics 
 presents a remarkably accurate
 description of the elementary particles and their
-interactions. However, its limitations beg deeper questions about
-Nature. The unexplained patterns of quarks, leptons, flavors and
-generations imply that a more fundamental underlying theory must
-exist.  
+interactions. However, its limitations pose deeper questions about
+Nature. With the discovery of the Higgs boson at CERN, particle physics would be ``complete,'' except
+for the issues associated with the neutrino sector, such as its unexplained flavor pattern.  These issues
+imply that a more fundamental underlying theory must exist. 
 DUNE plans to pursue a detailed
 study of neutrino mixing, resolve the neutrino mass ordering,
 and search for CP violation in the lepton sector by
 studying the oscillation patterns of high-intensity
 $\nu_\mu$ and $\overline{\nu}_\mu$ beams measured over a long baseline. 
-Neutrino oscillation arises from mixing between the flavor and mass eigenstates of neutrinos,
-corresponding to the weak and gravitational interactions, respectively. 
-This three-flavor-mixing
-scenario can be described by a rotation between the weak-interaction
-eigenstate basis $(\nu_e,\, \nu_\mu,\, \nu_\tau)$ and the basis of
-states of definite mass $(\nu_1,\, \nu_2,\, \nu_3)$.  In direct
-correspondence with mixing in the quark sector, the transformations
+Neutrino oscillation arises from mixing between the flavor $(\nu_e,\, \nu_\mu,\, \nu_\tau)$ and mass $(\nu_1,\, \nu_2,\, \nu_3)$
+eigenstates of neutrinos.
+% corresponding to the weak and gravitational interactions, respectively. 
+% This three-flavor-mixing
+% scenario can be described by a rotation between the weak-interaction
+% eigenstate basis $(\nu_e,\, \nu_\mu,\, \nu_\tau)$ and the basis of
+% states of definite mass $(\nu_1,\, \nu_2,\, \nu_3)$.  
+In direct correspondence with mixing in the quark sector, the transformations
 between basis states is expressed in the form of a complex unitary
 matrix, known as the PMNS matrix :
 \begin{equation}
@@ -42,7 +43,7 @@ and a CP-violating phase.  The mixing angles and phase are designated
 as $(\theta_{12},\, \theta_{23},\, \theta_{13})$ and
 \deltacp.  %\fixme{mathmatical rep of mixing}
 This matrix can be parameterized as the product of three
-two-flavor mixing matrices as follows, where $c_{\alpha \beta}=\cos \theta_{\alpha \beta}$ and $s_{\alpha
+two-flavor mixing matrices as follows~\cite{Schechter:1980gr}, where $c_{\alpha \beta}=\cos \theta_{\alpha \beta}$ and $s_{\alpha
   \beta}=\sin \theta_{\alpha \beta}$:
 
 \begin{equation}
@@ -129,6 +130,8 @@ matrix is almost proportional to the identity matrix plus
 hierarchically ordered off-diagonal elements, the PMNS matrix is far
 from diagonal and, with the possible exception of the $U_{e3}$
 element, all elements are ${\cal O}(1)$.''
+A special role is played here by the fact that the magnitude of the smaller of the lepton
+mixing angles is similar to the larger of the quark mixing parameters, namely the Cabbibo angle~\cite{Boucenna:2012xb}.
 One theoretical method often used to address this question involves the use of non-Abelian discrete
 subgroups of $SU(3)$ as flavor symmetries; the popularity of this method comes partially from
 the fact that these symmetries can give rise to the nearly \emph{tri-bi-maximal}\footnote{Tri-bi-maximal mixing refers to a form of the neutrino mixing matrix with effective bimaximal mixing of $\nu_\mu$ and $\nu_\tau$
@@ -280,7 +283,8 @@ The LAr TPC performance parameters that go into the GLoBES calculation are gener
  The cross-section inputs to GLoBES have been generated using GENIE 2.8.4~\cite{Andreopoulos:2009rq}.
 The neutrino oscillation parameters and the uncertainty on those parameters are taken from the 
 Nu-Fit~\cite{Gonzalez-Garcia:2014bfa} global fit to neutrino data; the values are given in 
-Table~\ref{tab:oscpar_nufit}.  Most of the sensitivities in this chapter are shown assuming normal hierarchy; this is an arbitrary choice for simplicity of presentation.
+Table~\ref{tab:oscpar_nufit}.  (See also \cite{Capozzi:2013csa} and \cite{Forero:2014bxa} for other recent global fits.) Most of the sensitivities 
+in this chapter are shown assuming normal hierarchy; this is an arbitrary choice for simplicity of presentation.
 
 \begin{cdrtable}[Oscillation parameter values and relative uncertainties]{lcc}{oscpar_nufit}{Central value and relative uncertainty of neutrino oscillation parameters from a global fit~\cite{Gonzalez-Garcia:2014bfa} to neutrino oscillation data. Because the probability distributions are somewhat non-Gaussian (particularly for $\theta_{23}$), the relative uncertainty is computed using 1/6 of the 3$\sigma$ allowed range from the fit, rather than the 1$\sigma$ range.   For $\theta_{23}$ and $\Delta m^2_{31}$, the best-fit values and uncertainties depend on whether normal mass hierarchy (NH) or inverted mass hierarchy (IH) is assumed.}
 Parameter &    Central Value & Relative Uncertainty \\
@@ -449,24 +453,23 @@ experimentally allowed range.
 \begin{cdrfigure}[Variation in MH sensitivity due to $\Delta m^{2}_{31}$]{mh_deltamsq}{The variation in the MH sensitivity due to different values of \dm{31} within the allowed range.  In this figure, the nominal value of \dm{31} = $2.46\times 10^{-3}$~eV$^2$ provides a significance of at least $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for all values of \deltacp.  (See Figure~\ref{fig:mh_exposure} for the possible range of exposures to achieve this level of significance.)}
  \includegraphics[width=0.7\textwidth]{mh_230ktmwyear_varydmsq}
 \end{cdrfigure}
-
-In assessing the sensitivity of future experiments, it is common practice to generate
-a simulated data set (for an assumed true MH) that does not include statistical fluctuations.  
-The expected sensitivity can be reported as  
-$\overline{\Delta\chi^2}$, representative of the mean value of $\Delta\chi^2$ that 
-would be obtained in an ensemble of experiments for a particular true MH.  
-It is assumed that the $\Delta \chi^2$ metric follows the expected chi-squared
+ 
+Studies have indicated that special attention must be paid to the statistical interpretation of MH sensitivities~\cite{Qian:2012zn,Blennow:2013oma}.
+In general, if an experiment is repeated many times, a distribution of $\Delta\chi^2$
+values will appear due to statistical fluctuations.
+It is usually assumed that the $\Delta \chi^2$ metric follows the expected chi-squared
 function for one degree of freedom, which has a mean of
 $\overline{\Delta\chi^2}$ and can be interpreted using a Gaussian
 distribution with a standard deviation of
 $\sqrt{|\overline{\Delta\chi^2}|}$.
+In assessing the MH sensitivity of future experiments, it is common practice to generate
+a simulated data set (for an assumed true MH) that does not include statistical fluctuations. 
+In this typical case, $\overline{\Delta\chi^2}$ is reported as the expected sensitivity, 
+where $\overline{\Delta\chi^2}$ is representative of the mean value of $\Delta\chi^2$ that 
+would be obtained in an ensemble of experiments for a particular true MH.  
 With the exception of Figure~\ref{fig:mhstats}, the sensitivity plots
 in this document have been generated using this method.
-However, to address the expected sensitivity of a future experiment
-requires consideration of the effect of
-statistical fluctuations and variations in systematics.  If the
-experiment is repeated many times, a distribution of $\Delta\chi^2$
-values will appear.  Studies in~\cite{Qian:2012zn,Blennow:2013oma}
+However, studies in~\cite{Qian:2012zn,Blennow:2013oma}
 show that, in the case of the mass hierarchy
 determination, the $\Delta \chi^2$ metric {\em does not} follow the expected chi-squared
 function for one degree of freedom.  Rather, these studies show that
@@ -474,23 +477,36 @@ when the observed counts in the experiment are large enough,
 the distribution of $\Delta\chi^2$ used here approximately follows
 a Gaussian distribution with a
 mean and standard deviation of $\overline{\Delta\chi^2}$ and
-$2\sqrt{|\overline{\Delta\chi^2}|}$, respectively. Figure~\ref{fig:mhstats} the
-demonstrates the possible variation in the significance of a MH determination when statistical
-fluctuations are included for a measurement that would yield a significance of $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for 100\% of \deltacp values in our standard treatment.
+$2\sqrt{|\overline{\Delta\chi^2}|}$, respectively. Because the distribution is atypical, the interpretation of 
+test statistic values in terms of confidence intervals is different than the standard case.
+
+The effect of statistical fluctuations in the MH measurement is shown in Figure~\ref{fig:mhstats}.  The colored bands show
+the possible range in the significance of a MH determination when statistical
+fluctuations are included for a measurement that would yield a significance of $\sqrt{\overline{\Delta\chi^{2}}} = 5$
+for 100\% of \deltacp values in our standard treatment (the solid blue line).  Also shown in 
+Figure~\ref{fig:mhstats} are horizontal lines that specify the confidence level of an experiment that measures a particular
+value of $\sqrt{\Delta \chi^2}$, following the convention in~\cite{Qian:2012zn}. An experiment that measures
+$\sqrt{\Delta \chi^2} = 5$ (black dashed line) has a $1 - 3.7\times10^{-6}$ probability of determining the
+correct MH, while an experiment that measures$\sqrt{\Delta \chi^2} = 3$ (blue dashed line) has a 98.9\% 
+probability of determining the correct MH. An experiment that measures $\sqrt{\Delta \chi^2} = 0$ (cyan dashed line)
+has a 50\% probability of determining the correct MH.  In this case, both hypotheses (normal or inverted hierarchy) 
+fit the data equally well, and the probability of guessing correctly is 50\%.
 
 \begin{cdrfigure}[MH sensitivity including statistical fluctuations]{mhstats}{
-  The variation in the MH sensitivity due to statistical fluctuations for a measurement that would yield a significance of $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for 100\% of \deltacp values in our standard treatment. (See Figure~\ref{fig:mh_exposure} for the possible range of exposures to achieve this level of significance.)  The 
-  sensitivity, given by  $\sqrt{\Delta T}=\sqrt{\Delta\chi^2}$, for a typical experiment 
+  The  sensitivity, given by  $\sqrt{\Delta T}=\sqrt{\Delta\chi^2}$, for a typical experiment 
   (solid blue line) is compared to the bands within which
-  68\% (green) and 95\% (yellow) of experiments are expected to fall. The dashed lines
-  represent the value of the $\Delta T$ metric above which the minimum
-  probability of determining
-  the correct neutrino mass hierarchy is 50\%(cyan), 98.9\% (blue), or $1 - 3.7\times10^{-6}$
-  (black). }
+  68\% (green) and 95\% (yellow) of experiments are expected to fall due to statistical fluctuations.
+  The solid blue line (representing a minimum significance of $\sqrt{\Delta T} = 5$ for 100\% of \deltacp
+   values) is the expected sensitivity in our standard treatment.
+   (See Figure~\ref{fig:mh_exposure} for the possible range of exposures to achieve this level of significance.) 
+  The dashed lines show the values of the $\sqrt{\Delta T}$ metric an experiment must measure for the probability of determining
+  the correct neutrino MH to be 50\%~(cyan), 98.9\%~(blue), or $(1 - 3.7\times10^{-6})$~(black), following the convention in~\cite{Qian:2012zn}.  
+  In the legend, the numbers corresponding to the dashed lines indicate 
+  [probability of determining MH {\em incorrectly}] vs. [probability of determining the MH {\em correctly}].}
  \includegraphics[width=0.7\linewidth]{mhstats_230ktmwyear}
 \end{cdrfigure}
 
-The 40-kt DUNE far detector (FD) will be built in 10-kt modules, which will come online over the course of several years.  The near detector (ND) will likely start operations after FD operations are already ongoing.  Without any ND constraints, systematic uncertainties will be larger in the early stages of the experiment. Additionally, the beam power is expected to be upgraded from $\sim$1~MW to $\sim$2~MW during the course of the experiment. For a rough estimate of the sensitivity of DUNE as a function of real time for the first 10~years of operations, we consider the following staging plan:
+The 40-kt DUNE far detector (FD) will be built in 10-kt modules, which will come online over the course of several years.  The near detector (ND) will likely start operations after FD operations are already ongoing.  Without any ND constraints, systematic uncertainties will be larger in the early stages of the experiment. Additionally, the beam power is expected to be upgraded from $\sim$1~MW to $\sim$2~MW during the course of the experiment. For a rough estimate of the sensitivity of DUNE as a function of real time for the first 10~years of operation, we consider the following staging plan:
 \begin{itemize}
  \item Year 1: 10~kt FD mass; 1.07~MW beam power; No ND constraints (assume 5\% signal systematic)
  \item Year 2: Add second 10~kt FD module, for a total FD mass of 20~kt
@@ -563,7 +579,7 @@ For long-baseline experiments such as DUNE, where the neutrino beam propagates t
 the Earth's mantle, the leptonic CP-violation effects must be disentangled from 
 the matter effects.
 
-Figure~\ref{fig:cpv_nominal} shows the significance with which the CP violation ($\mdeltacp \neq 0 \ {\rm or} \ \pi$) can be determined as a function of the value of \deltacp for an exposure of 300~kt-MW-yr, which corresponds to seven years of data (3.5 years in neutrino mode plus 3.5 years in antineutrino mode) with a 40-kt detector and a 1.07-MW beam.  Figure~\ref{fig:cpv_exposure} shows the significance with which CP violation can be determined for 50\% or 75\% of \deltacp values as a function of exposure.  Table~\ref{tab:cpv_requiredexposure} lists the minimum exposure required to determine CP violation with a significance of 5$\sigma$ for 50\% of \deltacp values or 3$\sigma$ for 75\% of \deltacp values for both the CDR reference beam design and the optimized beam design.  Unlike the MH determination, it's not possible for any experiment to provide 100\% coverage in \deltacp for a CP violation measurement because CP violation effects vanish as $\mdeltacp \rightarrow 0 {\rm~or~} \pi$.
+Figure~\ref{fig:cpv_nominal} shows the significance with which the CP violation ($\mdeltacp \neq 0 \ {\rm or} \ \pi$) can be determined as a function of the value of \deltacp for an exposure of 300~kt-MW-yr, which corresponds to seven years of data (3.5 years in neutrino mode plus 3.5 years in antineutrino mode) with a 40-kt detector and a 1.07-MW beam.  Figure~\ref{fig:cpv_exposure} shows the significance with which CP violation can be determined for 50\% or 75\% of \deltacp values as a function of exposure.  Table~\ref{tab:cpv_requiredexposure} lists the minimum exposure required to determine CP violation with a significance of 5$\sigma$ for 50\% of \deltacp values or 3$\sigma$ for 75\% of \deltacp values for both the CDR reference beam design and the optimized beam design.  The CP violation sensitivity as a function of \deltacp as shown in Figure~\ref{fig:cpv_nominal} has a characteristic double peak structure because the significance of a CP violation measurement necessarily drops to zero where there is no CP violation: at the CP-conserving values of $-\pi,~0,~{\rm and}~\pi$.  Therefore, unlike the MH determination, it's not possible for any experiment to provide 100\% coverage in \deltacp for a CP violation measurement because CP violation effects vanish at certain values of \deltacp.
 
 \begin{cdrfigure}[CP violation sensitivity for a 300~kt-MW-yr exposure]{cpv_nominal}{The significance with which the CP violation can be determined as a function of the value of \deltacp for an exposure of 300~kt-MW-yr assuming normal MH (left) or inverted MH (right).  The shaded region represents the range in sensitivity due to potential variations in the beam design.}
  \includegraphics[width=0.49\textwidth]{cpv_300ktmwyear}
@@ -607,8 +623,9 @@ Figure~\ref{fig:cpv_staging} shows the CP violation sensitivity as a function of
 
 \section{Precision Oscillation Parameter Measurements}
 
-The value of \sinstt{23} is measured to be $>$~0.95 at 90\% CL 
-using atmospheric neutrino oscillations~\cite{Abe:2011ph}. 
+% The value of \sinstt{23} is measured to be $>$~0.95 at 90\% CL 
+% using atmospheric neutrino oscillations~\cite{Abe:2011ph}. 
+The most precise measurement of $\sin^2\theta_{23}$ to date comes from T2K, $\sin^2\theta_{23}~=~0.514^{+0.055}_{-0.056}$~(normal hierarchy) and $\sin^2\theta_{23}~=~0.511~\pm~0.055$~(inverted hierarchy)~\cite{Abe:2015awa}.
 This corresponds to a value of 
 $\theta_{23}$ near 45\mbox{$^{\circ}$}, but leaves an ambiguity
 as to whether the value of $\theta_{23}$ is in the lower octant 
@@ -618,7 +635,7 @@ The value of $\sin^2 \theta_{23}$ from
 the global fit reported by~\cite{Gonzalez-Garcia:2014bfa} is $\sin ^2 \theta_{23} = 0.452
 ^{+0.052} _{-0.028} (1 \sigma)$ for normal hierarchy (NH), but the distribution of the $\chi^2$ from
 the global fit has another local minimum --- particularly if the MH 
-is inverted --- at $\sin^2 \theta_{23} = 0.579$. A
+is inverted --- at $\sin^2 \theta_{23} = 0.579 ^{+0.025} _{-0.037} (1 \sigma)$. A
 \emph{maximal} mixing value of $\sin^2 \theta_{23} =0.5$ is therefore still allowed
 by the data and the octant is still largely undetermined.
 A value of $\theta_{23}$ exactly equal to 45\mbox{$^{\circ}$} would indicate that 
@@ -668,16 +685,17 @@ relations between them. The
 mixing angle $\theta_{13}$ is
 expected to be measured accurately in reactor experiments by the end
 of the decade with a precision that will be limited by
-systematics. The systematic uncertainty on the value of $\sin ^ 2 2
+systematics. 
+The combined statistical and systematic uncertainty on the value of $\sin ^ 2 2
 \theta_{13}$ from the Daya Bay reactor neutrino experiment, which has
-the lowest systematics, is currently $\sim4$\%~\cite{An:2013zwz}.
+the lowest systematics, is currently $\sim6$\% ($\sin^22\theta_{13} = 0.084\pm0.005$),
+with a projected uncertainty of $\sim$3\% by 2017~\cite{Zhang:2015fya}.
 While the constraint on $\theta_{13}$ from the reactor experiments will be
 important in the
 early stages of DUNE for determining CP violation, measuring
 \deltacp and determining the $\theta_{23}$ octant, 
 DUNE itself will eventually be able to measure
-$\theta_{13}$ independently with a precision on par with the final
-precision expected from the reactor experiments. 
+$\theta_{13}$ independently with a similar precision to that expected from the reactor experiments. 
 Whereas the reactor experiments measure $\theta_{13}$ using $\overline{\nu}_e$
 disappearance, DUNE will measure it through $\nu_e$ and
 $\overline{\nu}_e$ appearance, thus providing an independent constraint on
@@ -688,7 +706,7 @@ the three-flavor mixing matrix.   Figure~\ref{fig:res_th13} shows the resolution
 \end{cdrfigure}
 
 DUNE can also significantly improve the
-resolution on $\Delta m^2_{31}$ beyond the precision of current experiments.  The
+resolution on the larger mass splitting beyond the precision of current experiments.  The current best fit value for $\Delta m^2_{32}$ from MINOS is $|\Delta m^2_{32}| = (2.34\pm0.09)\times10^{-3}$~eV$^2$ (normal hierarchy) and $|\Delta m^2_{32}| = (2.37^{+0.11}_{-0.07})\times10^{-3}$~eV$^2$ (inverted hierarchy)~\cite{Sousa:2015bxa}, with comparable precision acheived by both Daya Bay and T2K. The
 precision on $\Delta m^2_{31}$ will ultimately depend on tight control
 of energy-scale systematics.  Figure~\ref{fig:res_dm2} shows the expected resolution of \dm{31} as a function of exposure, assuming the true value is \dm{31} = $2.457\times10^{-3}$~eV$^2$ from the current global fit.
 
@@ -727,11 +745,11 @@ the coherent forward scattering of $\nu_e$'s on electrons in matter
 modifies the energy and path-length dependence of the vacuum oscillation 
 probability in a way that depends on the magnitude \emph{and} sign of $\Delta m^2_{32}$. 
 This is  the Mikheyev-Smirnov-Wolfenstein (MSW) effect~\cite{Mikheev:1986gs,Wolfenstein:1977ue}.
-NC nonstandard interactions (NSI) can be understood as nonstandard
+NC nonstandard interactions (NSI) may be interpreted as nonstandard
 matter effects that are visible only in a far detector at a
 sufficiently long baseline. 
 They can be parameterized as new contributions
-to the MSW matrix in the neutrino-propagation Hamiltonian:
+to the MSW matrix in the neutrino-propagation Hamiltonian~\cite{Valle:1987gv,Roulet:1991sm}:
 
 \begin{equation}
   H = U \left( \begin{array}{ccc}
@@ -755,7 +773,7 @@ with
 Here, $U$ is the leptonic mixing matrix, and the $\epsilon$-parameters give the
 magnitude of the NSI relative to standard weak interactions.  For new physics
 scales of a few hundred GeV,  a value of $|\epsilon| \leq 0.01$ is
-expected~\cite{Davidson:2003ha,GonzalezGarcia:2007ib,Biggio:2009nt}.
+expected~\cite{Davidson:2003ha,GonzalezGarcia:2007ib,Biggio:2009nt,Barranco:2007ej,Escrihuela:2011cf}.
 DUNE's 1300-km baseline provides an advantage in the detection of NSI relative
 to existing beam-based experiments with shorter baselines.
 Only atmospheric-neutrino experiments have longer baselines, but the sensitivity
