@@ -16,9 +16,9 @@ normalization uncertainties on each constituent interaction mode that comprise t
 in each sample. The values for these normalization uncertainties are chosen based on current constraints
 on underlying model parameters, the ability of previous experiments to constrain these quantities,
 and the expected ability of the DUNE Near Detector (ND) as outlined in Chapter~\ref{ch:detectors-nd-ref}.
-Consideration is also given to the specific sources of uncertainty that go into each of the effective normalization
-parameters and how the normalization parameters
-may be correlated among the Far Detector (FD) analysis samples that will be fit in combination.
+Consideration is also given to the sources of uncertainty that go into each of the effective normalization
+parameters and how they
+may be correlated among the different Far Detector (FD) analysis samples that will be fit in combination.
 
 %In the sensitivities presented in Section ~\ref{sec:physics-lbnosc-senscalc},
 %the \nue and \anue signal normalization uncertainties are $5\% \oplus 2\%$, implemented as
@@ -78,7 +78,8 @@ limitations of the \numu constraint, differences in energy scale and selection e
 and theoretical uncertainties on the \nue/\numu cross-section ratio.
 %These factors all contribute to the \nue signal normalization parameter uncertainty.
 The uncertainty on the intrinsic
-beam \nue background is dominated by flux uncertainties which are constrained by the near detector.
+beam \nue background is dominated by flux uncertainties which are constrained by the near detector and the
+observed \numu events.
 Predictions for NC and \numu CC background rates are limited by the uncertainties on pion
 production rates,
 %and the uncertainty assigned to the normalization parameter for the \nue appearance sample combines uncertainties
@@ -91,7 +92,7 @@ differences in selection efficiencies.
 Again, the $\nu_{\tau}$ background uncertainties are related to cross-section ratio uncertainties
 which are treated as 100\% correlated among samples.
 
-The far detector samples for the antineutrino beam mirror those described above for the neutrino beam.
+The far detector samples for the antineutrino beam mirror those described above for the neutrino beam samples.
 Additional constraints are expected to occur in a fit to both neutrino and antineutrino beam samples;
 variations in \deltacp induce opposite effects (in both shape and rate) in the \nue and \anue samples,
 while most systematic uncertainties have a positively correlated effect.
@@ -113,10 +114,10 @@ which is the same for both \nue and \numu samples, so relative energy scale unce
 differences in kinematics between \numu and \nue interactions and differences in detector response for
 muons and electrons, which will be highly constrained by test beam experiments.
 Systematic uncertainties stemming from the FSI model are thought to be able to induce an anti-correlated 
-energy scale between the $\nu$ and $\bar\nu$ samples. This has the potential to mimic the effects
-of a non-zero or $\pi$ value of \deltacp. The effect will however be the same in the \nue (\anue) and \numu
-(\anumu) samples, allowing the relative \nue/\numu (\anue/\anumu) energy scale to be fixed by comparing
-the peak of the appearance and the trough of the disappearance spectra. Additional constraints on the FSI 
+energy scale between the $\nu$ and $\bar\nu$ samples, which has the potential to mimic the effect
+of a CP violation signal. However, the effect will be the same in the \nue (\anue) and \numu
+(\anumu) samples, allowing the relative \nue to \numu (\anue to \anumu) energy scales to be fixed by comparing
+the energies of the appearance peak and the disappearance trough. Additional constraints on the FSI 
 model will be required from ND analyses and external data.
 
 \subsection{Anticipating Uncertainties Based on Previous Experience}
@@ -176,8 +177,7 @@ DUNE plans to take advantage of spectral analysis,
 meaning that absolute and relative flux normalization is required. Since the MINOS \nue appearance analysis
 is based on normalization only, in terms of the \nue appearance analysis, DUNE will be more like T2K,
 which has achieved 3.2\% normalization uncertainty on their \nue sample from uncertainties in the flux.
-Additionally, for a more apt
-comparison to MINOS performance, the inclusive neutrino charged current cross-section measurement from the MINOS
+Additionally, the inclusive neutrino charged current cross-section measurement from the MINOS
 near detector reported in \cite{Adamson:2009ju} has achieved a normalization uncertainty of $\sim$2\% in the
 range $3 < E_\nu < 9$ GeV and the near-to-far \numu unoscillated-spectrum extrapolation errors in MINOS
 are $<$3\% without any independent constraints on hadron production or muon flux measurements at the near
@@ -186,8 +186,8 @@ muon detectors, dedicated hadronization measurements, and improved simulation of
 measurements in the NuMI beam, we set a goal uncertainty on \nue signal
 normalization from uncertainties in the flux determination of 2\%.
 As described in Section \ref{sec:syst_studies_ind}, preliminary simulations of the fine-grained tracker near
-detector (ND) suggest this is an appropriate goal, predicting 2\% uncertainty on the absolute flux and
-1-2\% uncertainty on the flux shape.
+detector (ND) suggest this is an appropriate goal, predicting a 2\% uncertainty on the absolute flux and
+a 1-2\% uncertainty on the flux shape.
 
 \subsubsection{Interaction Model Uncertainties}
 \label{sec:syst_just_sim}
@@ -207,7 +207,7 @@ which represent the majority of the DUNE data sample. Finally, significant impro
 models are anticipated as a result of the near-term neutrino program, in which measurements will be made
 across a range of different nuclei and the resulting models will be tested on argon in LAr TPCs.
 Therefore, we take 2\% as a goal for the effect of
-interaction model uncertainties on DUNE \nue signal normalization. It is important to note that this level of
+interaction model uncertainties on the DUNE \nue signal normalization. It is important to note that this level of
 uncertainty depends upon the ability to isolate neutrino-argon interactions in the near detector to facilitate
 cancellation of near-far uncertainties; this is a requirement of the ND design.
 
@@ -272,7 +272,8 @@ $5\% \oplus 2\%$ in both neutrino and antineutrino mode, where 5\% is the normal
 on the FD \numu sample and 2\% is the effective uncorrelated
 uncertainty on the FD \nue sample after fits to both near and far detector data and all external constraints.
 These signal normalization parameters are treated as 100\% uncorrelated between neutrinos and antineutrinos.
-The normalization uncertainties on background to these samples are given in Table \ref{tab:bgnormsys}.
+The normalization uncertainties on background to these samples and their respective correlations
+are given in Table \ref{tab:bgnormsys}.
 These assumptions for the non-oscillation systematic uncertainties 
 are used to calculate the sensitivities presented in Section ~\ref{sec:physics-lbnosc-senscalc}.
 The goal for the \emph{total} uncertainty on the \nue sample in
@@ -320,21 +321,21 @@ near and far detectors.
 %
 \begin{cdrfigure}[Variation in sensitivity due to systematics variations]{exp_systs}{
   Expected sensitivity of DUNE  to determination of the neutrino mass
-  hierarchy (left) and discovery of CP violation, i.e. $\delta_{CP} \ne$ 0 or $\pi$,
-  (middle, right) as a function of exposure in kt-MW-years, assuming 
+  hierarchy (top) and discovery of CP violation, i.e. $\delta_{CP} \ne$ 0 or $\pi$,
+  (bottom) as a function of exposure in kt-MW-years, assuming 
   equal running in neutrino and antineutrino mode, for a range of values for
   the \nue and \anue signal normalization uncertainties from $5\%\oplus3\%$ to
   $5\%\oplus1\%$. The sensitivities quoted
   are the minimum sensitivity for 100\% of \deltacp values in the case of 
-  mass hierarchy and 50\% (middle) or 75\% (right) of \deltacp values 
+  mass hierarchy and 50\% (bottom left) or 75\% (bottom right) of \deltacp values 
   in the case of CP violation. The two bands on each plot represent a range of potential
   beam designs: the blue hashed band is for the CDR Reference Design and the solid green
   band is for the Optimized Design. 
   Sensitivities are for true normal hierarchy; neutrino mass hierarchy
   and $\theta_{23}$ octant are assumed to be unknown.}
-\includegraphics[width=0.32\linewidth]{volume-physics/figures/mh_exp_syst.pdf}
-\includegraphics[width=0.32\linewidth]{volume-physics/figures/cpv50_exp_syst.pdf}
-\includegraphics[width=0.32\linewidth]{volume-physics/figures/cpv75_exp_syst.pdf}
+\includegraphics[width=0.45\linewidth]{volume-physics/figures/mh_exp_syst.pdf} \\
+\includegraphics[width=0.45\linewidth]{volume-physics/figures/cpv50_exp_syst.pdf}
+\includegraphics[width=0.45\linewidth]{volume-physics/figures/cpv75_exp_syst.pdf}
 \end{cdrfigure}
 
 Signal and
@@ -362,13 +363,15 @@ Expected sensitivity of DUNE to determination of the neutrino mass
   energy scale systematic provides a significance of at least $\sqrt{\Delta\chi^2}$ = 5 for
   all values of \deltacp. In the CPV figure, the case with no energy scale systematic provides
   a significance of at least 3$\sigma$ for 75\% of \deltacp values.
+  (See Figures~\ref{fig:mh_exposure} and \ref{fig:cpv_exposure} for the possible range of exposures
+  to achieve this level of significance.)
   Sensitivities are for true normal hierarchy; neutrino mass hierarchy
   and $\theta_{23}$ octant are assumed to be unknown.}
 \includegraphics[width=0.44\linewidth]{volume-physics/figures/mh_230ktmwyear_varyesyst.pdf}
 \includegraphics[width=0.44\linewidth]{volume-physics/figures/cpv_890ktmwyear_varyesyst.pdf}
 \end{cdrfigure}
 %
-\subsection{Ongoing Studies of Systematic Uncertainty}
+\subsection{Ongoing and Planned Studies of Systematic Uncertainty}
 \label{sec:syst_studies_ind}
 Detailed evaluation of systematic uncertainties for DUNE is ongoing. In many cases plans for studies
 have been developed but have not yet been executed. In general, each systematic will be studied both by
@@ -523,16 +526,6 @@ been considered and did not produce dramatically different results.
 Preliminary studies also
 demonstrate significant constraint on cross-section systematics from the 
 near detector.
-%The validity of the GENIE model parameter uncertainties are being
-%studied via comparisons with available data (e.g. MINERvA), and alternate models
-%(e.g. the Intranuke intranuclear rescattering model and related uncertainties will be
-%compared with GiBUU). These comparisons are a high priority of the whole neutrino
-%community as well as the DUNE collaboration, and it is reasonable to expect that
-%model improvements and new data will provide DUNE with improved inputs with reduced
-%uncertainties. ETW Note: Dan, I think I keep taking this out and you keep putting it back in.
-%I wrote this when the section was much shorter. My argument for removing it now is that
-%these studies have been described in the paragraphs immediately
-%preceding, so in the interest of keeping this concise I don't want to repeat it here.
 %
 \begin{cdrfigure}[Example of cross-section uncertainty cancellation in FD fit]{MAresqesyst}{
 An example CP violation sensitivity calculated using inputs from the 
@@ -560,7 +553,15 @@ LARIAT, CAPTAIN, and the CERN neutrino platform experiments, are being designed 
 uncertainties with experimental data. The status of some of these efforts is described in
 Chapter~\ref{ch:detectors-proto}.
 
-
+These ongoing studies to improve models of neutrino interactions in LAr TPC detectors and
+to evaluate the remaining uncertainties, by comparisons to data and alternate models, 
+are a high priority of the whole neutrino community as well as the DUNE collaboration.
+It is reasonable to expect that model improvements and new data will provide DUNE with improved inputs
+and reduced uncertainties compared to current knowledge. Following the plan described in the preceding
+paragraphs, DUNE collaborators will actively participate in the global effort to improve understanding
+of neutrino interactions, will propagate what is learned
+in the intermediate neutrino program to DUNE analyses, and will
+evaluate the effect of remaining uncertainties on the DUNE analyses.
 
 
 
