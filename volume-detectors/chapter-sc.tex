@@ -292,17 +292,24 @@ that the total data rate will be of the same order of magnitude or less than in 
 \section{Near Detector Physics Software}
 \label{sec:detectors-sc-nd-physics-software}
 
-Longer descriptions of the current status of thenear detector simulation and reconstruction are given
+A longer description of the current status of the near detector simulation and reconstruction are given
 in \anxreco, and only an abbreviated summary is given here.
 
 Two approaches are being simultaneously pursued for the simulation of the DUNE Near Detector.  The first is a fast Monte Carlo,
-based on parameterized detector responses, which is based on the GENIE~\cite{GENIE} and the achieved NOMAD simulation and reconstruction performance,
-and the second is a full GEANT4-based simulation, which is under development.  The fast Monte Carlo tool is based on work done for
+based on parameterized detector responses. The GENIE~\cite{GENIE} generator is used to model the interactions of neutrinos
+with nuclei in the detector, and a parameterization of the achieved NOMAD simulation and reconstruction performance is used to
+model the detector response.
+The second approach is a full GEANT4-based simulation, which is under development.  The fast Monte Carlo tool is based on work done for
 the Far Detector~\cite{Adams:2013qkq}, Appendix A.3, and is capable of rapidly evaluating the sensitivity of the detector
 design for a broad variety of analyses targeting specific final states.   The full GEANT4-based simulation and subsequent reconstruction
 chains will be used to inform the parameterized responses of the fast Monte Carlo, as well as being indispensable tools for simulating
-and extracting results from the Near detector.  
+and extracting results from the Near detector.  Figure~\ref{fig:ndeventdisplaychaptersc} shows the trajectory of a
+negatively-charged muon with an initial momentum of 1~GeV propagating in the straw tube tracker, as simulated using GEANT4.
 
+\begin{cdrfigure}[The trajectory of a 1 GeV $\mu^-$ produced by HiSoft simulation.]{ndeventdisplaychaptersc}
+{The trajectory of a 1 GeV $\mu^-$ produced by HiSoft simulation}
+\includegraphics[width=0.7\textwidth]{hisoftndmuon.png}
+\end{cdrfigure}
 
 \section{Far Detector Physics Software}
 \label{sec:detectors-sc-physics-software}
