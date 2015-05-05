@@ -31,8 +31,8 @@ the momentum resolution obtained from the ND FastMC simulation and reconstructio
 \includegraphics[width=0.8\textwidth]{ndfastmc_mures.pdf}
 \end{cdrfigure}
 
-Along with the ND Geant4 full simulation, ND reconstruction effort will be bolstered 
-with the aim of an optimized and complete near detector design by 2018.
+Along with the GEANT4 full simulation of the near detector, additional effort will be directed
+towards reconstruction with the aim of guiding the optmization of the near detector design by 2018.
 
 \section{Far Detector Reconstruction}
 \label{annex:detectors-sc-physics-software-reconstruction-fd}
@@ -47,9 +47,15 @@ Although the field is not yet mature, there has been considerable
 progress in recent years, including the first fully automated
 pattern recognition algorithms. 
 
-A fully automated event reconstruction will be developed for the
-DUNE Far Detector. The block diagram in Figure~\ref{fig:fdrecoblockdiag}
-illustrates the components of the Far reconstruction chain. 
+A fully automated event reconstruction is being developed for the
+DUNE Far Detector, and major pieces are in place and functioning.
+The single-phase reconstruction algorithms are developed in LArSoft~\cite{Church:2013hea},
+which is based on the {\it art} framework~\cite{Green:2012gv}.  The dual-phase reconstruction
+algorithms are incorporated in Qscan~\cite{lussi:thesis}.
+The block diagram in Figure~\ref{fig:fdrecoblockdiag}
+illustrates the components of the far detector reconstruction chain.  The main steps and
+their ordering is similar between the single-phase and the dual-phase software designs
+and may evolve as experience is gained. 
 The first stage involves the processing of the noisy ADC wire signals,
 and creation of 2D `hits'. A series of pattern recognition algorithms
 are then used to group the hits into 2D and 3D clusters representing 
@@ -58,7 +64,6 @@ then reconstructs the vertex and 3D trajectory of each particle,
 provides particle identification, and reconstructs the four-momentum.
 While each step of the reconstruction chain has been implemented,
 the algorithms have not yet been fully optimized.
-\fixme{Not sure whether or not to mention LArSoft and Qscan explicitly here}
 The following sections describe the current status of each task.
 
 \begin{cdrfigure}[Far detector reconstruction block diagram]{fdrecoblockdiag}
@@ -99,7 +104,7 @@ the FFT only needs to see a fraction of the total ADC samples
 collected in each event.
 The detector response functions used to construct the deconvolution kernels are currently
 based on \textit{a priori} predictions, but these will be tuned and
-validated using data from the 35-ton prototype and the~\cernsingleproto.
+validated using data from the 35-ton prototype and the~\cernsingleproto{} at CERN.
 It may be necessary to filter unipolar signal components on the induction-plane
 wires and handle these signals separately, in the case of partial
 non-transparency of the induction planes, which might be unavoidable
@@ -148,10 +153,10 @@ fits are the best model of the data, the ADC sums are calculated for
 the entire region of interest, and then divided among the contributing
 hits proportional to their fit areas.  
 
-\fixme{Hit-finder performance plot?}
-
 %The efficiency of the hit
 %finder is shown in Figure~\ref{fig:hitfinderefficiency}.
+% no hit-finding efficiency just yet -- depends on thresholds and noise we don't know yet.  With s/n > 9, we're
+% probably able to find every MIP hit, but we will merge them in dense environments.  We have a disambiguation plot.
 
 \subsubsection{Dual-Phase Hit Finding}
 
