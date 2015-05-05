@@ -402,8 +402,8 @@ Beam optics variations have been studied in detail
 %, and while the variations in the flux produced by these uncertainties
 %lead to large uncertainties in the FD-only fits,
 and are found to be easily constrained by the ND. Software tools that
-allow re-weighting of neutrinos based on their parent hadrons have been developed by \minerva; we are working with
-them port those tools to DUNE. In the meantime, \minerva has agreed to provide their flux covariance matrix
+allow re-weighting of neutrinos based on their parent hadrons have been developed by \minerva, and we are working with
+them to port those tools to DUNE. In the meantime, \minerva has agreed to provide their flux covariance matrix
 that details the flux rate and shape uncertainties prior to ND constraints. We will combine this with DUNE
 simulations to project reasonable hadron production uncertainties to ND and FD analyses.
 
@@ -419,14 +419,17 @@ the nuclear initial state, and FSI.
   \emph{Coherent scattering}: Coherent models built upon PCAC theory relate the neutrino scattering 
   cross section to pion-nucleon or pion-nucleus scattering data. The choice and characterization
   of that data can have large effects on the calculated cross section. Alternate 'microscopic model' 
-  formulations are valid only over limited kinematic ranges and are not adequate to describe this process 
+  formulations are only valid over limited kinematic ranges and are not adequate to describe this process 
   for DUNE. Both types of model suffer from limited data constraints over a range of neutrino energy
-  and nuclear targets.
+  and nuclear targets. 
   However, the low hadron thresholds and good angular resolution of the DUNE ND should be able
   to produce world-leading measurements and provide adequate constraints for this interaction channel and 
-  its relatively small contribution to the overall cross section.
+  its relatively small contribution to the overall cross section. Data from \minerva[cite PRL], T2K, and the suite
+  of upcoming LAr TPC experiments will provide constraints for a variety of target nuclei, and over the
+  relavent energy ranges required to constrain this subdominant process.
+  
 
-  \emph{Quasi-elastic processes (QE)}: In this type of interaction, the target nucleon 
+  \emph{Quasi-elastic processes (QE)}: Models for this type of interaction require that the target nucleon 
   is neither excited nor fragmented because the 4-momentum transfer to the hadronic system ($Q^{2}$) is low.
   For these low-$Q^{2}$ interactions, details of the nuclear initial state are important. However,
   current implementations of nuclear initial state models are inadequate so the uncertainty in the only
@@ -450,15 +453,18 @@ the nuclear initial state, and FSI.
   model, so-called 'background' interactions where the pion is produced at the interaction vertex
   rather than through an intermediate $\Delta$ (or higher resonance), the interference between the two
   models, and the contributions to single-pion production from low-multiplicity DIS. Improved nuclear models
-  are also required to estimate the impact of processes like pion-less delta decay and FSI.
+  are also required to estimate the impact of processes like pion-less delta decay and FSI. New models are
+  available for some relevant regions of phase space, which need to be incorporated into generators and compared
+  with data.
 
-  \emph{Deep inelastic scattering (DIS)}: The inclusive DIS cross section has been very well constrained by 
+  \emph{Deep inelastic scattering (DIS)}: The inclusive DIS cross section on iron has been very well constrained by 
   data but individual final states have not. The primary source of uncertainty is in modeling the
   content and kinematics of the hadronic system as a function of the invariant mass, $W$. The resulting
   uncertainty on the DIS contribution to signal samples is relatively small, but it is nonetheless important
   to better constrain these models because the DIS contribution to background via pion production is quite large.
-  Data from upcoming LAr TPC experiments should help to constrain
-  the exclusive cross sections. Current studies are focused on building parameterized re-weighting 
+  Data from \minerva and upcoming LAr TPC experiments should help to constrain
+  the exclusive cross sections, as well as nuclear effects on the inclusive cross section.
+  Current studies are focused on building parameterized re-weighting 
   functions for the hadronization model based on GENIE samples generated with 1$\sigma$ changes to each relevant 
   model parameter.
 
@@ -470,7 +476,7 @@ primary interaction vertex with the nuclear medium.
   \emph{Nuclear initial state}: Uncertainties in initial-state interactions due to
   naive modeling of the environment of the nucleus have thus far been taken into account through inflation
   of the uncertainties on the free nucleon or quark interaction
-  model, such as $M_{A}^{QE}$. New models are being added to generators and will soon be incorporated into the Fast MC
+  model. New models are being added to generators and will soon be incorporated into the Fast MC
   to study how the impact on sensitivity of these models compares with uncertainties in the current nominal model.
   Data from upcoming LAr TPC neutrino experiments will provide detailed information on nucleon production
   rates and kinematics, which will help to distinguish which of the new models best describes the data.
@@ -480,9 +486,10 @@ primary interaction vertex with the nuclear medium.
   event topologies used to classify the neutrino flavor and interaction mode. Uncertainties in selection
   efficiencies and event-sample migrations
   due to intranuclear rescattering can be studied with existing DUNE tools. The predictions and
-  uncertainties on GENIE's ``HA'' model of intranuclear interaction
+  uncertainties on GENIE's ``hA'' model of intranuclear interaction
   are also being tested against the detailed FSI model in the GiBUU event
-  generator.
+  generator. Data on electron scattering off argon and studies of hadron production
+  in upcoming LAr TPC experiments are expected to further constrain the effects of FSI in argon nuclei.
 
 A fit to Fast MC simulation of all four far detector samples
 (\nue, \anue, \numu, \anumu) significantly
@@ -505,7 +512,13 @@ cross-section ratio; uncertainties in these ratios as large as 20\% have
 been considered and did not produce dramatically different results.
 Preliminary studies also
 demonstrate significant constraint on cross-section systematics from the 
-near detector. 
+near detector. The validity of the GENIE model parameter uncertainties are being
+studied via comparisons with available data (e.g. MINERvA), and alternate models
+(e.g. the Intranuke intranuclear rescattering model and related uncertainties will be
+compared with GiBUU). These comparisons are a high priority of the whole neutrino
+community as well as the DUNE collaboration, and it is reasonable to expect that
+model improvements and new data will provide DUNE with improved inputs with reduced
+uncertainties.
 %
 \begin{cdrfigure}[Example of cross-section uncertainty cancellation in FD fit]{MAresqesyst}{
 An example CP violation sensitivity calculated using inputs from the 
