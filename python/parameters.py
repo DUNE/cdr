@@ -86,7 +86,7 @@ def filter(ps):
     ps.add(Param('cosmic_muon_data_rate', ps.cosmic_muon_rate * ps.cosmic_muon_event_size,
                  'kilobyte/second', 'Cosmic muon data rate', precision=1))
     ps.add(Param('cosmic_muon_data_year', ps.cosmic_muon_data_rate * Q('year'),
-                 'gigabyte', 'Annual cosmic muon data volume', precision=0))
+                 'terabyte', 'Annual cosmic muon data volume', precision=0))
 
     # Ar39 beta
     ps.add(Param('beta_readout_size', ps.beta_event_size * ps.daq_bytes_per_sample,
