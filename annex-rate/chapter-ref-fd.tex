@@ -208,5 +208,76 @@ Although actual SNB events may result in neutrino with energies as high as
 For this reason, contribution from SNB to these data is not calculated for this threshold setting.
 
 
+\section{Compression}
+
+The above estimates assume that the only compression employed is the
+lossy removal of data below some threshold.
+In addition, a lossless compression is possible.
+The DAQ can employ Huffman encoding during readout or the compression
+features provided by ROOT may be provided during file writing.
+In order to estimate the effects of compression, specific particle
+types and energies were simulated using LArSoft.
+The initial kinematics for the simulated samples covered a matrix of
+particles ($e$, $\mu$, $\tau$, $\pi^+$, $\pi^-$, $\pi^0$ and proton) and momenta
+(\SI{100}{\MeV} to \SI{6}{\GeV}).
+The uncompressed and compressed sizes are summarized in figure~\ref{fig:data-compression}.
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.3\textwidth]{btot.pdf}
+  \includegraphics[width=0.3\textwidth]{bzip.pdf}
+  \includegraphics[width=0.3\textwidth]{brat.pdf}
+
+  \caption{Estimation of DUNE zero-suppressed event sizes for
+    different particles and momenta before (left) and after (center)
+    compression and their ratios (right).
+    Each line represents one particle type.
+    The samples were generated with LArSoft assuming
+    \SI{10}{\kilo\tonne} detector with \num{300000} channels.}
+  \label{fig:data-compression}
+\end{figure}
+
+It must be noted that this exercise discovered the bulk of the
+compressed data written by LArSoft is actually made up channel ID
+numbers providing a data inflation of about a factor of 10.
+For uncompressed data this added about 50\%.
+There are also additional data elements related in the ``raw data''
+branch which are superfluous or at best repeated more frequently than
+is likely to be required.
+In the LArSoft output, even though zero suppression is applied, every
+channel has an associated a pedestal and a sigma as well as a
+compression number.
+There is also a sample count in addition to the one in the sample
+vector which is stored.
+These values do no vary yet each take up about the same (uncompressed)
+size as the ADC values and are significant in size even after
+compression.
+They are not included in figure~\ref{fig:data-compression}.
+
+Finally, as can be seen in the figure, the change in uncompressed
+event size is only a minor function of event momenta and particle types.
+It is believed that LArSoft is saving additional overhead for all
+channels, even those that have been fully zero-suppressed.
+
+The simulation used a detector consisting of \num{300000} wires and
+thus naively the event size in the real detector would be some 5 times
+larger.
+However, given the arguments above, it is expected that this leads to
+a gross over-estimate, possibly by one or two orders of magnitude from
+what should be expected if even just a little effort is put into
+designing a better storage schema.
+Once compression is assumed, the problems with this sub-optimal
+storage schema are lessened.
+We then select the uncompressed event size to be \beameventsize and
+the compressed event size of \beameventsizecompressed based
+on~\ref{fig:data-compression}.
+We identify this with being the zero-suppressed data produced by just
+activity due to beam interactions or similar energy events and accept
+the large over-estimation as a generous safety factor.
+
+
+
+
 
 
