@@ -21,12 +21,13 @@ technologies are the same.
 
 The Near Detector full reconstruction has not been developed yet, though a parameterized event
 reconstruction of the ND FastMC (described in section \ref{annex:detectors-sc-physics-software-simulation-nd})
-has been developed and used for physics sensitivity studies. Final-state particles are ``reconstructed''
-by applying the smear function shown in Tab.~\ref{tab:ndfastmc_par}. Fig.~\ref{fig:ndfastmc_mures} shows
-the muon resolution obtained from the ND FastMC simulation and reconstruction framework and has been
-varified by the NOMAD muon reconstruction.
-\begin{cdrfigure}[The resolution of a ``reconstructed'' $\mu$ track.]{ndfastmc_mures}
-{The resolution of a ``reconstructed'' $\mu$ track}
+has been developed and used for physics sensitivity studies.  In the ND FastMC, particles are ``reconstructed''
+by applying the smearing function shown in Tab.~\ref{tab:ndfastmc_par}.  The parameters of the smearing
+function are guided by NOMAD detector performance.  Fig.~\ref{fig:ndfastmc_mures} shows
+the momentum resolution obtained from the ND FastMC simulation and reconstruction framework.
+
+\begin{cdrfigure}[Near Detector muon momentum resolution]{ndfastmc_mures}
+{The momentum resolution of smeared muon tracks using the Near Detector's FastMC parameterization}
 \includegraphics[width=0.8\textwidth]{ndfastmc_mures.pdf}
 \end{cdrfigure}
 
