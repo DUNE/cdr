@@ -41,7 +41,7 @@ matrix, known as the PMNS matrix :
 The PMNS matrix in full generality depends on just three mixing angles
 and a CP-violating phase.  The mixing angles and phase are designated
 as $(\theta_{12},\, \theta_{23},\, \theta_{13})$ and
-\deltacp.  %\fixme{mathmatical rep of mixing}
+\deltacp.
 This matrix can be parameterized as the product of three
 two-flavor mixing matrices as follows~\cite{Schechter:1980gr}, where $c_{\alpha \beta}=\cos \theta_{\alpha \beta}$ and $s_{\alpha
   \beta}=\sin \theta_{\alpha \beta}$:
@@ -435,7 +435,7 @@ Figure~\ref{fig:mh_nominal} shows the significance with which the MH can be dete
 \begin{cdrfigure}[Mass hierarchy sensitivity as a function of exposure]{mh_exposure}{The minimum significance with which the mass hierarchy can be determined for all values of \deltacp as a function of exposure.  The shaded region represents the range in sensitivity due to potential variations in the beam design. This plot assumes normal mass hierarchy.}
  \includegraphics[width=0.7\textwidth]{mh_exp}
 \end{cdrfigure}
-\fixme{We are considering an update to Fig~\ref{fig:mh_exposure} where we show CP coverage at 5sigma as a function of exposure, instead of the significance for a fixed CP coverage of 100\% (which is the current version).}
+% \fixme{We are considering an update to Fig~\ref{fig:mh_exposure} where we show CP coverage at 5sigma as a function of exposure, instead of the significance for a fixed CP coverage of 100\% (which is the current version).}
 
 Figures~\ref{fig:mh_theta23}, \ref{fig:mh_theta13}, and \ref{fig:mh_deltamsq} show the variation in the MH sensitivity due to different values of $\theta_{23}$, $\theta_{13}$, and \dm{31} within the allowed ranges.  The value of $\theta_{23}$ has the biggest impact on the sensitivity, and the least favorable scenario corresponds to a true value of \deltacp in which the MH asymmetry
 is maximally offset by the leptonic CP asymmetry, and where, independently, 
@@ -526,21 +526,42 @@ We assume previous data sets can be reanalyzed with new assumptions, so each imp
 \section{CP-symmetry Violation}
 \label{sec:physics-lbnosc-cpv}
 
-Whereas the Standard Model allows for violation of charge-parity (CP) symmetries in weak interactions, 
-CP transformations followed by time-reversal transformations (CPT) are invariant. 
-Under CPT invariance, the probabilities of neutrino oscillation and antineutrino oscillation
-are equivalent, i.e., $P(\nu_l \rightarrow \nu_l) =
-P(\overline{\nu}_l\rightarrow \overline{\nu}_l)$
-where $l = e,\, \mu,\, \tau$. CPT invariance in neutrino oscillations was recently
- tested by measurements of $\nu_\mu
-\rightarrow \nu_\mu$ and $\overline{\nu}_\mu \rightarrow \overline{\nu}_\mu$
-oscillations~\cite{Adamson:2013whj}; no evidence for CPT
-violation was found.  Therefore, asymmetries in neutrino versus antineutrino
-oscillations arising from CP violation effects can only be accessed in
-appearance experiments.  Because of the intrinsic challenges of
-producing and detecting $\nu_\tau$'s, the oscillation modes
-$\nu_{\mu,e} \rightarrow \nu_{e,\mu}$ provide the most promising
-experimental signatures of leptonic CP violation.
+In the particular parameterization of the PMNS matrix shown in
+Equation~\ref{eqn:pmns}, the middle factor, labeled `II', describes
+the mixing between the $\nu_1$ and $\nu_3$ mass states, and depends on
+the CP-violating phase \deltacp.  With the recent measurement of $\theta_{13}$, we now know
+that the conditions for measuring \deltacp in the three-flavor framework 
+have been met; all three mixing angles are nonzero, and there are two distinct mass splittings.
+In the approximation for the electron neutrino appearance probability given in Equation~\ref{eqn:appprob}, 
+expanding the middle term results in the presence of CP-odd terms (dependant on $\sin \mdeltacp$) that have opposite signs 
+in $\nu_{\mu} \rightarrow \nu_e$ and $\overline{\nu}_{\mu} \rightarrow \overline{\nu}_e$ oscillations.
+For $\mdeltacp \neq 0$ or $\pi$, these terms introduce an
+asymmetry in neutrino versus antineutrino oscillations. The magnitude of the
+CP-violating terms in the oscillation depends most directly on the size of 
+the Jarlskog Invariant~\cite{Jarlskog:1985cw}, a function that was
+introduced to provide a measure of CP violation independent of the 
+mixing-matrix parameterization. In terms of the parameterization presented in Equation~\ref{eqn:pmns},
+the Jarlskog Invariant is:
+%
+\begin{equation}
+J_{CP}^{\rm PMNS} \equiv \frac{1}{8} \sin 2 \theta_{12} \sin 2 \theta_{13}
+\sin 2 \theta_{23} \cos \theta_{13} \sin \mdeltacp.
+\end{equation}
+The relatively large values of the mixing angles in the lepton sector imply that
+leptonic CP-violation effects may be quite large ---  
+depending on the value of the phase \deltacp, which is currently unknown. 
+Experimentally, it is unconstrained at the 3$\sigma$ level by the global fit~\cite{Gonzalez-Garcia:2014bfa}.
+Given the current best-fit values of the mixing angles~\cite{Gonzalez-Garcia:2014bfa} and assuming normal hierarchy,
+\begin{equation}
+J_{CP}^{\rm PMNS} \approx 0.03 \sin \mdeltacp.
+\end{equation}
+This is in sharp contrast to the very small mixing in the quark sector,  
+which leads to a very small value of the corresponding quark-sector
+Jarlskog Invariant~\cite{Beringer:1900zz},
+\begin{equation}
+J_{CP}^{\rm CKM} \approx 3 \times 10^{-5},
+\end{equation}
+despite the large value of $\delta^{\rm CKM}_{CP}\approx70^{\circ}$.
 
 The variation in the $\nu_\mu \rightarrow
 \nu_e$ oscillation probability (Equation~\ref{eqn:appprob}) with the value of \deltacp
@@ -551,6 +572,7 @@ $\overline{\nu}_\mu \rightarrow \overline{\nu}_e$
 appearance signal measured over an energy range that encompasses at
 least one full oscillation interval. A measurement of the value of
 $\mdeltacp \neq 0 \ {\rm or} \ \pi$, assuming that neutrino mixing follows the three-flavor model, would imply CP violation.  
+
 The CP asymmetry,
 $\mathcal{A}_{CP}$, is defined as 
 \begin{equation}
@@ -568,13 +590,11 @@ order in $\Delta m_{21}^2$ as~\cite{Marciano:2006uc}:
   \ effects}
 \label{eqn:cpasym}
 \end{equation}
-Regardless of the 
-value obtained for \deltacp, it is clear that the explicit observation
-of an asymmetry between $P(\nu_l \rightarrow \nu_{l'})$ and
-$P(\overline{\nu}_l \rightarrow \overline{\nu}_{l'})$ 
-is sought to directly demonstrate the
-leptonic CP violation effect that a value of \deltacp different 
-from zero or $\pi$ implies.
+Regardless of the measured value obtained for \deltacp, the explicit observation
+of the asymmetry $\mathcal{A}_{CP}$ in $\nu_{\mu} \rightarrow \nu_e$ and $\overline{\nu}_{\mu} \rightarrow \overline{\nu}_e$
+oscillations is sought to directly demonstrate the
+leptonic CP violation effect.  A measurement of \deltacp that is inconsistent with the measurement of $\mathcal{A}_{CP}$
+according to Equation~\ref{eqn:cpasym} could be evidence of of physics beyond the standard three-flavor model.
 For long-baseline experiments such as DUNE, where the neutrino beam propagates through 
 the Earth's mantle, the leptonic CP-violation effects must be disentangled from 
 the matter effects.
@@ -590,7 +610,7 @@ Figure~\ref{fig:cpv_nominal} shows the significance with which the CP violation 
  \includegraphics[width=0.49\textwidth]{cpv50_exp}
  \includegraphics[width=0.49\textwidth]{cpv75_exp}
 \end{cdrfigure}
-\fixme{We are considering an update to Fig~\ref{fig:cpv_exposure} where we show CP coverage at 3sigma or 5sigma as a function of exposure, instead of the significance for a fixed CP coverage of 50\% and 75\% (which is the current version).}
+% \fixme{We are considering an update to Fig~\ref{fig:cpv_exposure} where we show CP coverage at 3sigma or 5sigma as a function of exposure, instead of the significance for a fixed CP coverage of 50\% and 75\% (which is the current version).}
 
 \begin{cdrtable}[Required exposure for a CP violation measurement]{lcc}{cpv_requiredexposure}{The minimum exposure required to determine CP violation with a significance of 3$\sigma$ for 75\% of \deltacp values or 5$\sigma$ for 50\% of \deltacp values for the CDR reference beam design and the optimized beam design.}
  Significance & CDR Reference Design & Optimized Design\\
