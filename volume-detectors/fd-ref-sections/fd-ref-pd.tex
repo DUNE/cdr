@@ -7,9 +7,10 @@ procurement, fabrication, testing, delivery and installation of all
 the systems and components that comprise it:  
 
 \begin{itemize}
-\item wavelength-shifting wave-guides
+\item light collection system including wavelength shifter and light guide
 \item silicon photo-multipliers (SiPMs)
 \item readout electronics
+\item calibration system
 \item related infrastructure (frames, mounting boards, etc...)
 \end{itemize}
 
@@ -30,12 +31,17 @@ process an excellent candidate for determination of $t_{0}$ for
 non-beam related events. Detection of the scintillation light may also
 be helpful in background rejection and triggering on non-beam events.  
 
-The photon detection system design described in this section meets the required performance for light
-collection for the DUNE far detector. The most significant
-requirements include determination of t$_0$ of an event relative to
-the TPC timing - resolution better than 30~ns, and sufficient light
-collection efficiency to allow triggering on SN neutrinos with
-energies as low as 20~MeV. \fixme{Anne exchanged position of prev two pgraphs}
+The photon detection system design described in this section meets the
+required performance for light collection for the DUNE far
+detector. The most significant requirements include determination of
+t$_0$ of an event relative to the TPC timing - resolution better than
+1~$\mu$s (event position resolution along drift direction of a few
+mm), and sufficient light collection efficiency to allow triggering on
+neutrinos coming from a supernova, with the capability of detecting
+neutrinos with energies as low as 20~MeV. Effort is underway to
+determine if our reference design can achieve the latter goal
+above. We are also exploring alternate designs that may provide
+greater sensitivity to low energy neutrinos.
 
 Figure~\ref{fig:PD_overview} shows the layout for the photon
 detector system. %, which will be described in the following sections. 
@@ -76,10 +82,10 @@ in liquid argon.
 The SiPMs used in the reference design are SensL C-Series 6~mm$^2$
 (MicroFB-60035-SMT) devices. These SiPMs have detection efficiency of
 41\%~\footnote{The detector efficiency combines QE and effective areal
-  coverage due to dead space between pixels.} While the C-Series SensL
+  coverage accounting for dead space between pixels.} While the C-Series SensL
 SiPMs are not rated for operation below $-40^{\circ}{\rm C}$ their
 performance has been excellent for this application. At LAr
-temperature (88~K) \fixme{89 usually used} the dark rate is of order 50~Hz while after-pulsing
+temperature (89~K) the dark rate is of order 10~Hz while after-pulsing
 has not been an issue. Extensive testing is underway to ensure that
 the SiPMs can reliably survive the stresses associated with thermal
 cycling in LAr and long-term operation at LAr temperature.
@@ -87,7 +93,9 @@ cycling in LAr and long-term operation at LAr temperature.
 The SiPMs are read out using shielded twisted-pair cable, one per SiPM,
 but the expected final design will have three SiPMs ganged together and
 each readout cable with contain four individual channel cables to keep
-the cost and cable packing desity down.  \fixme{Then why is the design one per sipm now?} 
+the cost and cable packing desity down. During the R\&D phase of the
+project each SiPM was read out in order to ensure maximum information
+was gathered during tests.  
 
 The front-end electronics reside outside of the cryostat in
 instrumentation racks. A custom module for receiving SiPM signals has
@@ -105,10 +113,20 @@ a Xilinx Artix-7 Field-Programmable Gate Array (FPGA).  The use of the
 FPGA processing allows for a significant amount of customization of
 the SSP operation. 
 
+Once the DUNE collaboration arrives at a refined set of physics
+requirements for the photon detection system a set of criteria for a
+calibration system will be determined. In the absence of such criteria
+two calibration systems have are being explored, and will be tested in
+the 35t phase II test. The first system, developed by ANL, utilizes 5
+fiber-fed diffusers mounted on the TPC CPA which uniformly illuminate
+the photon detectors. An alternate design is employed on the IU
+prototypes and uses LED-driven fibers mounted alongside the
+waveguides. 
+
 \subsection{Alternative Designs} 
 
-Two alternative designs are currently being considered for the PD
-system. 
+Three alternative designs are currently being considered for the PD
+system.
 
 The first alternative is based on a TPB-coated acrylic
 panel with an embedded S-shaped wavelength-shifting fiber. The LSU
@@ -116,32 +134,33 @@ group has developed prototypes based on this design in an attempt to
 increase the geometric acceptance of the PD system and hence reduce
 overall system cost. 
 %
-In this design, a single acrylic panel PD module has the same dimensions as the
-reference design and consists of a TPB-coated acrylic panel with an
-embedded S-shaped wavelength shifting (Y11) fiber. The fiber is read
-out by two SiPMs, which are coupled to either end of the fiber and
-serve to transport the light over long distances with minimal
-attenuation. The double-ended fiber readout has the added benefit of
-providing some position dependence to the light generation along the
-panel by comparing relative signal sizes and arrival times in the two
-SiPMs. The WLS fiber converts the 430-nm light from the TPB to light
-with a peak intensity of about 480 $-$ 500~nm, which is well-matched to
-the peak photon-detection efficiency of typical SiPMs.
+In this design, a single acrylic panel PD module has the same
+dimensions as the reference design and consists of a TPB-coated
+acrylic panel with an embedded S-shaped wavelength shifting (Y11)
+fiber. The fiber is read out by two SiPMs, which are coupled to either
+end of the fiber and serve to transport the light over long distances
+with minimal attenuation. The double-ended fiber readout has the added
+benefit of providing some position dependence to the light generation
+along the panel by comparing relative signal sizes and arrival times
+in the two SiPMs. The WLS fiber converts the 430-nm light from the TPB
+to light with a peak intensity of about 480 $-$ 500~nm, which is
+well-matched to the peak photon-detection efficiency of typical SiPMs.
 
 A second alternative, under investigation by the CSU group, utilizes
-blue-green (Y11) fibers that have not been treated with TPB. A thin 
-TPB-coated acrylic radiator is located in front of a close-packed array of
-WLS fibers. The motivation for this design comes from %was to address 
-an issue
-with the reference design, in which the application of TPB to acrylic, or
-other base materials, has been found to cause a significant decrease in attenuation
-length (down to about 30~cm) of the light guide. \fixme{Need to introduce the prototype} %The prototype is 
-The CSU group has made a prototype; it is two-sided and has two identical fiber arrays and radiators mounted back-to-back
-with a tyvek refelctor between. %There is also 
-This design allows for a reduction in the
-number of SiPMs required per PD module. Three SiPMs per side are
-needed per PD module (again the same dimensions in length and width as
-the reference design) for a total of six SiPMs per PD module.
+blue-green (Y11) fibers that have not been treated with TPB. A thin
+TPB-coated acrylic radiator is located in front of a close-packed
+array of WLS fibers. The motivation for this design comes from %was to
+address an issue with the reference design, in which the application
+of TPB to acrylic, or other base materials, has been found to cause a
+significant decrease in attenuation length (down to about 30~cm) of
+the light guide. \fixme{Need to introduce the prototype} %The
+prototype is The CSU group has made a prototype; it is two-sided and
+has two identical fiber arrays and radiators mounted back-to-back with
+a tyvek refelctor between. %There is also This design allows for a
+reduction in the number of SiPMs required per PD module. Three SiPMs
+per side are needed per PD module (again the same dimensions in length
+and width as the reference design) for a total of six SiPMs per PD
+module.
 
 The IU group has advanced the radiator and fiber design \fixme{of the second alternative design?} by replacing
 the Y11 fiber with a reference-design-dimensioned cast bar doped (by
