@@ -17,7 +17,7 @@ The most significant requirements for the CE are to:
 \item minimize dissipated power per channel in the LAr
 \item read out the TPCs and transmit their data to the DAQ
 \item record the channel waveforms continuously without dead time
-\item provide sufficient precision and range in the digitization to satisfy the KPP
+\item provide sufficient precision and range to satisfy the Key Physics Parameters
 \item operate for the life of the facility without significant loss of function
 \item use only materials that are compatible with high-purity liquid argon and minimal natural radioactivity
 \end{itemize}
@@ -28,22 +28,26 @@ The most significant requirements for the CE are to:
 
 The CE are implemented as ASIC chips using CMOS technology,
 which performs well at LAr temperatures~\cite{ThornEtAl:CELAr},
-and provides amplification, shaping, digitization, buffering and multiplexing (Mux) of the signals.
+and provides amplification, shaping, digitization, buffering and multiplexing (MUX) of the signals.
 The CE architecture is manifested in the Front End Mother Board (FEMB),
-a 128-channel board which uses eight 16-channel FE ASICs and eight 16-channel ADC ASICs
+a 128-channel board which uses eight 16-channel Front End (FE) ASICs and eight 16-channel ADC ASICs
 (Figure~\ref{fig:elect_schem}).
 The FE ASIC provides amplification and pulse shaping, while
 the ADC ASIC comprises a 12-bit digitizer
-and an 8:1 Mux stage with two pairs of serial readout lines in parallel.
-A Cold Digital Data (COLDATA) ASIC chip mounted on each FEMB provides an additional Mux of 4:1 and
+and an 8:1 MUX stage with two pairs of serial readout lines in parallel.
+A Cold Digital Data (COLDATA) ASIC chip (Fig.~\ref{fig:elec_COLDATAfig}) mounted on each FEMB provides an additional MUX of 4:1 and
 is capable of driving the data at 1~Gb/s through 30~m of copper cable to the feedthrough and on to the DAQ. 
 Tables \ref{tab:DeviceCounts} and \ref{tab:KeyParameters} list the CE device counts and key parameters.
 %\vskip -10pt % This prevents the last table from appearing in the PD section by pulling the figure up, which is easily accomodated.
-\begin{cdrfigure}[The CE Architecture]{elect_schem}{The CE Architecture. The basic unit is the 128-channel FEMB.}
+\begin{cdrfigure}[The CE Architecture]{elect_schem}
+{
+  The CE Architecture. The basic unit is the 128-channel FEMB. FEASIC: Front End ASIC.
+  PA: Pre-amplifier.  $\int$: Shaper.  MUX: Multiplexer.  Drv: Driver.
+}
 \includegraphics[width=0.90\linewidth]{elect_schem.pdf}
 \end{cdrfigure}
-\begin{cdrfigure}[Functional Block Diagram of the Cold Digital Data (COLDATA) ASIC]{elec_COLDATAfig}
-{Functional Block Diagram of the Cold Digital Data (COLDATA) ASIC}
+\begin{cdrfigure}[Functional Block Diagram of the COLDATA ASIC]{elec_COLDATAfig}
+{Functional Block Diagram of the COLDATA ASIC. PLL: Phase Locked Loop.  VCXO: Voltage-Controlled Crystal Oscillator}
 \includegraphics[width=0.80\linewidth]{elec_COLDATAfig.pdf}
 \end{cdrfigure}
 
@@ -64,8 +68,9 @@ and which are produced by proprietary processes over which DUNE has no control.
 It is worth noting that the FEMB, together with the FE and ADC ASIC chips, has already been prototyped and tested 
 using a commercial FPGA to perform the role of the COLDATA ASIC,
 which is currently under development.
-The 1-Gb/s data rate is not high enough to require the use of optical fibers in the cold,
-nor is there a need for zero suppression or data compression.
+The 1-Gb/s data rate can be achieved with copper links and without zero suppression or data compression.
+% is not high enough to require the use of optical fibers in the cold,
+% nor is there a need for zero suppression or data compression.
 This greatly reduces the complexity of the COLDATA ASIC, with a corresponding decrease in overall risk,
 including risk of failure-to-implement (within a fixed schedule and budget).
 The COLDATA work is especially challenging, with final production not scheduled to begin until late 2019.
@@ -83,7 +88,7 @@ Alternative approaches are currently under study.
 \begin{cdrtable}[CE Key parameters]{l|l}{KeyParameters}{CE Key parameters}
  Parameter                &  Value                               \\ \toprowrule
  Signal-to-Noise (in LAr) &  9:1 for 1~$\mu$s peaking time       \\ \colhline
- Mux Level                &  32                                  \\ \colhline
+ MUX Level                &  32                                  \\ \colhline
  Sampling Frequency       &  2~MHz                               \\ \colhline
  ADC Resolution           &  12~bits                             \\ \colhline
  FE Peaking Time          &  0.5, 1, 2, 3~$\mu$s (selectable)    \\ \colhline
