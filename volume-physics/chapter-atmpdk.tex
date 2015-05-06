@@ -434,9 +434,9 @@ mass would improve the limits even more in that span of time.
 \section{Atmospheric Neutrinos}
 \label{sec:physics-atmpdk-atmnu}
 
-Atmospheric neutrinos are a unique tool to study neutrino oscillations: they 
-contain all flavors of neutrinos and anti-neutrinos, are very sensitive to 
-matter effects and to both $\Delta m^2$, and cover a wide range of L/E. In principle, 
+Atmospheric neutrinos are a unique tool to study neutrino oscillations: the 
+oscillated flux contains all flavors of neutrinos and anti-neutrinos, is very sensitive to 
+matter effects and to both $\Delta m^2$, and covers a wide range of L/E. In principle, 
 all oscillation parameters could be measured, with high complementarity to 
 measurements performed with a neutrino beam. In addition, atmospheric 
 neutrinos are available all the time, in particular before the beam becomes 
@@ -458,7 +458,8 @@ generator. Detection thresholds and energy resolutions based on full
 simulations were applied to the outgoing particles, to take into account 
 detector effects. Events were classified as Fully Contained (FC) or 
 Partially Contained (PC) by placing the vertex at a random position inside the 
-detector and tracking the lepton until its edges. The number of events expected 
+detector and tracking the lepton until its edges.  Partially Contained events 
+are those where a final state muon exits the detector.  The number of events expected 
 for each flavor and category is summarized in Table~\ref{tab:atmos_rates}.
 
 %
@@ -483,7 +484,7 @@ partially contained muon-like sample   & 6,871 \\ \colhline
 \end{table}
 %
 
-Figure shows the expected L/E distribution for high-resolution muon-like 
+Figure~\ref{fig:lovere} shows the expected L/E distribution for high-resolution muon-like 
 events from a \SI{350}{\ktyr} exposure. The data provide excellent resolution of the 
 first two oscillation nodes, even when taking into account the expected statistical uncertainty.
 In performing oscillation fits, the data in each flavor/containment category are 
@@ -504,17 +505,15 @@ occurs for $\nu_e$ in the case of normal mass hierarchy (NH, $\Delta m^2_{23} > 
 $\overline{\nu}_e$ in the case of inverted mass hierarchy (IH, $\Delta m^2_{23} < 0$). This is 
 illustrated in Figure~\ref{fig:atm_e_zenith}. 
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=0.95\textwidth]{atm_e_zenith.png}
-\caption[Zenith Angle vs. Energy For Atmospheric Neutrinos]
+\begin{cdrfigure}[Zenith Angle vs. Energy For Atmospheric Neutrinos]{atm_e_zenith}
 {Statistical significance of the difference in expected event rates for NH and IH for 
-muon-type events (left) and electron-type events (right), as a function of neutrino
-energy and zenith angle.}
-\label{fig:atm_e_zenith}
-\end{figure}
+electron neutrino events (left) and muon neutrino events (right), as a function of neutrino
+energy and zenith angle, for a \SI{350}{\ktyr} exposure.}
+\includegraphics[width=0.45\linewidth]{ElAsym.pdf}
+\includegraphics[width=0.45\linewidth]{MuAsym.pdf}
+\end{cdrfigure}
 
-The MH sensitivity can be greatly enhanced if neutrino and antineutrino events can be 
+The mass hierarchy (MH) sensitivity can be greatly enhanced if neutrino and antineutrino events can be 
 separated. The DUNE detector will not be magnetized; however, its high-resolution 
 imaging offers possibilities for tagging features of events that provide statistical 
 discrimination between neutrinos and antineutrinos. For the sensitivity calculations 
@@ -549,6 +548,8 @@ exposure in a liquid argon detector (left), and as a function of the true value 
 $\theta_{23}$ (right).  For comparison, Hyper-K sensitivities are also shown \cite{Kearns:2013lea}.}  
 \includegraphics[width=0.42\linewidth]{atm_mh_vs_exposure.pdf}
 \includegraphics[width=0.48\linewidth]{combined_sensitivity_hierarchy_lbne_vs_hyperk.pdf}
+%\includegraphics[width=0.50\linewidth]{atm_mh_vs_exposure.pdf}
+%\includegraphics[width=0.50\linewidth]{combined_sensitivity_hierarchy_lbne_vs_hyperk.pdf}
 \end{cdrfigure}
 
 In the two-flavour approximation, neutrino oscillation probabilities depend on 
@@ -559,9 +560,9 @@ $\theta_{23}> \pi/4$. Accessing full three-flavor oscillation with atmospheric n
 will give a handle to solve the ambiguity.
 
 %The sensitivity to the $\theta_{23}$ octant is shown in Figure~\ref{fig:atm_octant}. 
-With the nominal exposure of \SI{340}{\ktyr}, DUNE will be able to distinguish between 
-octants at 3$\sigma$ significance, based on atmospheric data alone, for true values of [quantify], 
-for any value of $\delta_{CP}$.
+%With the nominal exposure of \SI{340}{\ktyr}, DUNE will be able to distinguish between 
+%octants at 3$\sigma$ significance, based on atmospheric data alone, for true values of [quantify], 
+%for any value of $\delta_{CP}$.
 
 %\begin{figure}[!htb]
 %\centering
@@ -587,7 +588,7 @@ Lorentz invarance violation~\cite{Kostelecky:2011gq}.
 
 \section{Indirect Search for WIMPs at the DUNE Far Detector}
 
-If the true nature of DM does indeed involve a weakly-interacting particle with a mass in the 100's of GeV range, one of the main search strategies involves looking for anomalous signals in astrophysical data from its annihilation (or decay) into SM particles, like neutrinos. Signals of DM via neutrinos can come from such distant objects as the galactic center, the center of the Sun or even the Earth. As our solar system moves through the DM halo, WIMPs interact with the nuclei of celestial bodies and become trapped in the body's gravitational well.  Over time, the WIMPs accumulate near the core of the body, enhancing the possibility of annihilation. The high-energy neutrinos ($E\sim m_{WIMP}$) from these annihilations can free-stream through the astrophysical body and emerge roughly unaffected (although oscillation and matter effects can slightly alter the energy spectrum).  For the Sun, the background of neutrinos are produced at much lower energies via the nuclear fusion process. Thus, the detection of high-energy neutrinos pointing to the Sun and detected in the DUNE far detector would be clear evidence of DM annihilation (see~\cite{Cirelli:2005gh}).  Since the DUNE far detector has relatively large mass of the order tens of kilotons, it can act as a ``neutrino telescope'' and be used to search for signals of DM annihilations coming from the Sun and/or the core of the Earth. IceCube~\cite{Aartsen:2012kia} and Super-Kamiokande~\cite{Choi:2015ara} have searched for DM through this method but have not observed a signal of DM annihilation into neutrinos.  These indirect-detection experiments  are limited by atmospheric neutrino background.  Compared to these experiments, which are based on Cerenkov light detection using large PMTs, the DUNE LArTPC can provide much better angular resolution. This would substantially reduce the background in the direction of the  expected WIMP-induced neutrino signal, and could potentially provide competitive limits in the low-WIMP-mass range.  Studies are needed to investigate the sensitivity of DUNE for indirect WIMP detection.
+If the true nature of DM does indeed involve a weakly-interacting particle with a mass in the 100's of GeV range, one of the main search strategies involves looking for anomalous signals in astrophysical data from its annihilation (or decay) into SM particles, like neutrinos. Signals of DM via neutrinos can come from such distant objects as the galactic center, the center of the Sun or even the Earth~\cite{Press:1985ug,Silk:1985ax,Gaisser:1986ha,Gould:1987ir,Cirelli:2005gh}. As our solar system moves through the DM halo, WIMPs interact with the nuclei of celestial bodies and become trapped in the body's gravitational well.  Over time, the WIMPs accumulate near the core of the body, enhancing the possibility of annihilation. The high-energy neutrinos ($E\sim m_{WIMP}$) from these annihilations can free-stream through the astrophysical body and emerge roughly unaffected (although oscillation and matter effects can slightly alter the energy spectrum).  For the Sun, the background of neutrinos are produced at much lower energies via the nuclear fusion process. Thus, the detection of high-energy neutrinos pointing to the Sun and detected in the DUNE far detector would be clear evidence of DM annihilation.  Since the DUNE far detector has relatively large mass of the order tens of kilotons, it can act as a ``neutrino telescope'' and be used to search for signals of DM annihilations coming from the Sun and/or the core of the Earth. IceCube~\cite{Aartsen:2012kia} and Super-Kamiokande~\cite{Choi:2015ara} have searched for WIMPs with masses from a few to a few hundred GeV/c$2$ through this method, but have not observed a signal of DM annihilation into neutrinos.  These indirect-detection experiments  are limited by atmospheric neutrino background.  Compared to these experiments, which are based on Cerenkov light detection using large PMTs, the DUNE LArTPC can provide much better angular resolution. This would substantially reduce the background in the direction of the  expected WIMP-induced neutrino signal, and could potentially provide competitive limits in the low-WIMP-mass range.  Studies are needed to investigate the sensitivity of DUNE for indirect WIMP detection.
 %The mass of the IceCube's $1~km^{3}$ ice volume is of the order $\sim2.6 \times 10^{4}$ times that of the 34-kt DUNE far detector. This requires the DUNE far detector to perform $\sim2.6 \times 10^{4}$ better than IceCube. While this factor seems quite daunting, if not out right impossible, more thorough studies are needed to investigate possible improvements in various performance factors to accomplish this level of enhancement. \fixme{Kate will address this}
 
 \section{Detector Requirements}

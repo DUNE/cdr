@@ -7,11 +7,11 @@ The scope of the DUNE Fine-Grained Tracker (FGT) near neutrino detector includes
 %\fixme{edit this as needed}
 
 \begin{itemize}
-\item a central straw-tube tracker (STT)
-\item an electromagnetic calorimeter (ECAL) 
-\item a 0.4-T dipole magnet surrounding the STT and ECAL
-\item muon identifiers (MuIDs) located in the steel of the magnet, as well as upstream and downstream of the STT
-\item instrumentation for monitoring and control
+\item A central straw-tube tracker (STT)
+\item An electromagnetic calorimeter (ECAL) 
+\item A 0.4-T dipole magnet surrounding the STT and ECAL
+\item Muon identifiers (MuIDs) located in the steel of the magnet, as well as upstream and downstream of the STT
+\item Instrumentation for monitoring and control
 \end{itemize}
 
 
@@ -28,20 +28,21 @@ The DUNE ND must fulfill the physics program described in Section~\ref{ch:physic
 as in Ref.~\cite{DPR}. The most significant requirements~\cite{ND-REQ1,ND-REQ2} for the FGT include:  
 
 \begin{itemize}
-\item muon energy scale uncertainty better than 0.2\% and hadronic energy scale uncertainty 
+\item Muon energy scale uncertainty better than 0.2\% and hadronic energy scale uncertainty 
 better than 0.5\% for the low-$\nu$ flux measurements 
 
 \item 
-magnetized detector capable to separate $\mu^+$ from $\mu^-$, as well as $h^+$ from $h^-$ 
+Magnetized detector capable of  separating  as well as 
+ $\mu^+$ from $\mu^-$, as well as   $h^+$ from $h^-$, where $h$ is a charged hadron 
 
 \item 
-capability to to separate $e^+$ from $e^-$ for absolute and relative flux measurements
+Capability to to separate $e^+$ from $e^-$ for absolute and relative flux measurements
 
 %\item low density $\rho \sim 0.1$ g/cm$^3$, similar to that of liquid hydrogen
 
 %\item dipole magnetic field of $B=0.4$ T with high detector granularity 
 
-\item excellent momentum and angular resolutions for $\mu^{\pm}$, $e^{\pm}$, 
+\item Excellent momentum ($<5\%$) and angular ($<2$ mrad) resolutions for $\mu^{\pm}$, $e^{\pm}$, 
 $\pi^{\pm}$ and $proton$, and $\pi^0$/$\gamma$ via decay/conversion, 
  and $K^0_S$/$\Lambda$ produced in $\nu$-induced interactions. 
 
@@ -50,17 +51,18 @@ $\pi^{\pm}$ and $proton$, and $\pi^0$/$\gamma$ via decay/conversion,
 
 \item 4$\pi$ MuID coverage to identify muons with a wide range of energies and angles  
 
-\item continuous electron/positron identification through the use of transition radiation (TR) 
+\item Electron/positron identification through the use of transition radiation (TR) in the 
+      entire tracking detector for low-energy and/or large angle tracks (e.g. $\gamma$ conversions)  
 
-\item continuous $\pi/K/p$ identification by dE/dx 
+\item $\pi/K/p$ identification by dE/dx in the entire tracking detector 
 
 \item 
-identification of $\pi^0$ and $\gamma$ that can mimic oscillation signals at the FD 
+Identification of $\pi^0$ and $\gamma$ that can mimic oscillation signals at the FD 
 
-\item use of a variety of nuclear targets, (C$_3$H$_6$)$_n$, Ar, Ca, C, Fe, etc., to quantitate the impact of nuclear 
+\item Use of a variety of nuclear targets, (C$_3$H$_6$)$_n$, Ar, Ca, C, Fe, etc., to quantitate the impact of nuclear 
 effects in $\nu$($\bar \nu$)-nucleus cross sections  
 
-\item provide more than 10 times the unoscillated statistics expected in a 40 kt FD on Ar target
+\item Provide more than 10 times the unoscillated statistics expected in a 40 kt FD on Ar target 
 
 %\item  identification and measurement of processes such as neutral current $\pi^0$ production that can mimic oscillation signals at the FD
 %\item comparability with measurements made in the FD
@@ -124,7 +126,11 @@ Vertical (YY) and horizontal (XX) planes of straws will be alternated and
 arranged in modules, with each module containing close-packed double straw layers 
 of vertical and horizontal straws (XXYY). 
 Figure~\ref{fig:STT_Detail} shows a schematic drawing of an STT module with four straw-tube planes and
-radiators. 
+radiators. Each XXYY module equipped with radiators is equivalent to $1.25 \times 10^{-2} X_0$, with a 
+radiation length $X_0\sim 6m$. The momentum measurement requires that tracks are detected in at least 
+6 straw layers. The staggered design of double layers, the average number of straw planes crossed by tracks, 
+and the double-end readout will contribute to the short track disambiguation. 
+
 
 \begin{cdrfigure}[A schematic drawing of the fine-grained
 tracker design]{STT_Detail}{A schematic drawing of the fine-grained tracker design.}
@@ -143,14 +149,20 @@ Number of Straw Tube Modules & 80 \\ \colhline
 Number of Straw Tube Sub-Modules & 320 \\ \colhline
 Length of Straw Tube Wire & 376.3 km \\ \colhline
 Number of Electronics Channels & 215,040 \\ \colhline
-%Number of Modules with Radiators & 46 \\ \colhline
+Number of Modules with Radiators & 70 \\ \colhline
 Radiator Thickness per Module & 3.6cm \\ \colhline
 Radiator Mass per Module & 69.1 kg \\ \colhline
-%Number of Modules with Target Planes & 34 \\ \colhline
-Target Geometry & 1.27cm Diameter $\times$ 3.5m long \\ \colhline
-Number of Targets per Plane & 275 \\ \colhline
-Ar Mass per Target Plane & 15.5 kg \\  
-%Ar Mass per Target Plane & 15.5 kg \\ \colhline
+Number of Modules with Nuclear Targets & 10 \\ \colhline
+C Mass per Target Plane & 192 kg \\ \colhline  
+Number of Modules with C Target Planes & 2 \\ \colhline 
+Ca Mass per Target Plane & 132 kg \\ \colhline  
+Number of Modules with Ca Target Planes & 1 \\ \colhline 
+Ar Target Geometry & 1.27cm Diameter $\times$ 3.5m long \\ \colhline
+Number of Ar Targets per Plane & 275 \\ \colhline
+Ar Mass per Target Plane & 15.5 kg \\ \colhline  
+Number of Modules with Ar Target Planes & 6 \\ \colhline
+Fe Mass per Target Plane & 96.5 kg \\ \colhline  
+Number of Modules with Fe Target Planes & 1 \\  
 %Water Mass per Target Plane & 95 kg \\
 \end{cdrtable}
 
@@ -183,6 +195,10 @@ The STT will have a total of 107,520 straws  --- corresponding to 336 straws per
 1344 straws per module ---
 and 80 modules. Both ends of the straw tubes will be read out, leading to a total
 number of electronics channels of 215,040. The total mass of the STT, including targets and radiators, is approximately 8~t.  
+Table~\ref{tab:STT_details} summarizes the main parameters of the STT design. 
+In addition to tracking the charged particles and measuring Transition Radiation (TR), 
+the STT readout provides dE/dx measurement to identify particles. 
+Figure~\ref{fig:PartID_dedx} provides a sample of pion, kaon, and proton identification via dE/dx in the STT.
 
 \subsubsection{Radiator Targets} 
 
@@ -206,19 +222,25 @@ and in Ref.~\cite{DPR}.
 
 \subsubsection{Nuclear Targets} 
 
-The most important nuclear target is the argon target that comprises the DUNE far detector.
-This target will consist of planes of 0.5-inch diameter, 3.5-m-long aluminum tubes filled
+A set of different nuclear targets will be installed in front of the most upstream STT modules, 
+which will not be equipped with radiators. 
+% 
+The most important nuclear target is the argon target that constitutes the DUNE far detector.
+This target will consist of planes of 0.5-inch diameter, 3.5-m-long aluminum tubes, with wall 
+thickness 0.065-inch, filled
 with argon gas pressurized to 140 atm ($\rho = 0.233$), with sufficient Ar mass to provide 
 $\sim$10 times the unoscillated statistics expected in a 40t FD. 
+We are currently investigating the possibility to use C-composite tubes instead of Al to 
+contain the pressurized Ar gas. 
 
-In this regard, a crucial target is calcium which has the same atomic weight ($A=40$) 
+Relevant to argon, a crucial target is calcium which has the same atomic weight ($A=40$) 
 as argon but is isoscalar. 
 Since most nuclear effects depend on the atomic weight
 $A$, inclusive properties of (anti)neutrino interactions are expected
 to be the same for these two targets.
 This fact would allow the use of both targets to model signal and
-backgrounds in the LBNE far detector (argon target), as well as to
-compare LBNE results for nuclear effects on argon with the extensive
+backgrounds in the DUNE far detector (argon target), as well as to
+compare DUNE results for nuclear effects on argon with the extensive
 data on calcium from charged lepton scattering. 
 
 
@@ -230,7 +252,9 @@ accurate flux determinations and cross section measurements, and, for the first 
 a direct model-independent measurement of nuclear effects --- including
 both the primary and final-state interactions --- on the argon target
 relevant for the far detector oscillation analysis. The required carbon target mass 
-is about 0.5~t (in addition to the carbon in the STT frames).  
+is about 0.5~t (in addition to the carbon in the STT frames). The corresponding 
+expected number of events on H target are $5.0 (1.5) \times 10^6 \pm 13(6.6) \times 10^3$ 
+$\nu(\bar \nu)$ CC, where the uncertainty is dominated by the subtraction procedure. 
 
 A stainless steel target in the form of a single thin slab will provide 
 service measurements of (anti)neutrino cross-sections for the INO experiment in India. 
@@ -239,14 +263,22 @@ Finally, the same aluminum tubes used for the pressurized Ar gas can be filled w
 standard and heavy water (H$_2$O and D$_2$O). The statistical subtraction of H$_2$O from 
 D$_2$O would result in a quasi-free neutron. 
 
+Table~\ref{tab:STT_details} gives a placeholder configuration of the radiators and nuclear targets, 
+listed according to their location from downstream to upstream.  
+The final configuartion of the nuclear targets will require detailed Geant4 simulations of FGT and 
+corresonding physics sensitivity studies. 
 
 
 %%%%%%%%%%%%%%%%% 
 \subsection{Electromagnetic Calorimeter}
 \label{cdrsec:detectors-nd-ref-fgt-ecal}
 
-An electromagnetic calorimeter 
-(ECAL) will surround the tracking volume on all sides and consist of three separate pieces: Forward ECAL, Barrel ECAL, and Backward ECAL.  
+An electromagnetic calorimeter (ECAL) will surround the tracking volume on 
+all sides and consist of three separate pieces: Forward ECAL, Barrel ECAL, and Backward ECAL.  
+The expected energy resolution is $\sim 5\% / \sqrt{E}$ for the forward ECAL. 
+The ECAL must provide a high segmentation in both the transverse and longitudinal directions 
+to reconstruct photons from $\pi^0$ decay and electron/positrons from their 
+Bremsstrahlung emissions. 
 The ECAL conceptual design consists of 
 layers of either 1.75-mm-thick (for the forward ECAL) or 3.5-mm-thick 
 (for the barrel and backward ECAL) lead sheets and 2.5-cm-wide by 10-mm-thick 
@@ -260,7 +292,8 @@ bar has dimensions 3.2~m $\times$ 2.5~cm $\times$ 1~cm. The
 Backward ECAL will consist of 16 layers of scintillator bars, where each 
 bar has the same dimensions, 3.2~m $\times$ 2.5~cm $\times$ 1~cm. The Barrel ECAL will also consist 
 of 16 layers of scintillator bars, where each bar has the same dimensions, 
-3.2~m $\times$ 2.5~cm $\times$ 1~cm. 
+3.2~m $\times$ 2.5~cm $\times$ 1~cm. The parameters of the ECAL design will be further 
+optimized with the help of a full Geant simulation of FGT.  
 
 The lead sheets and scintillator bars will be assembled and glued together
 into complete modules of dimension 
@@ -278,6 +311,11 @@ The scintillator bars will be extruded with
 holes in the middle of each bar. The
 holes will then be fitted with 0.7-mm-diameter Kuraray wavelength-shifting (WLS) fibers.
 The fibers will be read out by SiPM (silicon photomultiplier) photosensors at each end.
+Detailed R\&D studies will be performed to optimize the diameter of the scintillator hole, 
+the fiber diameter and the proper coupling between the scintillator and the 
+fiber for optimum light transmission.
+
+
 The total mass of scintillator is 20.9~t, 
 the total mass of Pb is 70.8~t, and
 the total number of readout channels is 52,224. 
@@ -331,6 +369,8 @@ from eight ``C'' (C-shaped) sections, and the thickness of the
 magnet steel will be 60~cm, consisting of 6
 $\times$ 10-cm-thick plates. The magnet power requirement with Al coils is $\sim 2.4$~MW,
 corresponding to 6~kA at 400~V. The water flow required for cooling is 20~l/s.
+Figure~\ref{fig:Magnet_Bfield} shows the $B$ field results obtained from detailed 
+simulations performed at the Bhabha Atomic Research Center (BARC) in India. 
 
 \begin{cdrtable}[Dipole Magnet specifications]{ll}{Magnet_specs}{Dipole Magnet specifications}
 Item&Specification \\ \toprowrule
@@ -363,10 +403,14 @@ The sides and ends of the dipole magnet will be instrumented
 with a muon identifier
 detector (MuID) that will distinguish muons from hadrons by the ability 
 of muons to penetrate the iron without showering or interacting.
+The task of the MuID is to reconstruct the muon track segments and 
+match them with the corresponding charged track reconstructed in the STT. 
 The MuID will consist of 432 resistive plate chamber (RPC) modules
 interspersed between two 10-cm-thick steel plates of the 
 dipole magnet and between 20-cm-thick steel plates at the upstream and
-downstream ends of the magnet. 
+downstream ends of the magnet. The choice of RPC is motivated by the 
+combineation of low cost, ability to reach sub $mm$ space resolution, 
+and existing expertise. 
 The MuID is only meant to provide %the 
 identification of the 
 muon; the muon momentum %itself 
@@ -399,7 +443,10 @@ the Variable Energy Cyclotron Centre (VECC) in India (left) and corresponding ef
 The nominal dimensions of all RPC modules will be 1~m $\times$ 2~m with
 active areas of 96~cm $\times$ 196~cm. Each
 module has 256 X strips
-at 7.65-mm pitch and 128 Y strips at 7.5-mm pitch. The modules
+at 7.65-mm pitch and 128 Y strips at 7.5-mm pitch. This fine-grained pitch 
+allows to reach spatial resolutions of $\sim$ 0.7 $mm$ and to disentangle multiple 
+hits resulting from events originated in the magnet iron. 
+The modules
 will be grouped into trays, each containing six modules, and the trays will
 be sufficiently wide to allow overlapping modules. 
 The downstream MuID will contain five steel planes of 
@@ -411,7 +458,9 @@ planes (170.1~t) of dimensions 6 $\times$ 6 $\times$ 0.2~m$^3$ and three RPC pla
 of 15~mm and a gap width of 2~mm. One possible gas mixture could be %composed, for example,
 of Ar (75\%), tetraflouroethane (20\%), isobutane (4\%),
 and sulphurhexaflouride (1\%). 
-Figure~\ref{fig:FGT_RPC} shows a schematic drawing of an RPC module. 
+A full scale prototype of the RPC modules was built at the Variable Energy Cyclotron Centre (VECC) in India. 
+Figure~\ref{fig:FGT_RPC} shows a picture taken during the assembly of the prototype and the corresponding 
+efficiency measurement with a cosmic ray telescope. 
 
 
 
@@ -457,7 +506,7 @@ while the magnet yokes are instrumented with RPCs that must remain dry. Continuo
 humidity in all these detectors is needed.
 Temperature must also be continuously monitored in all of the subdetectors
 in order for the electronics to not overheat. 
-To ensure that the magnet does not overheat, the water flow (pressure gradient) will be continuously monitored.  
+%To ensure that the magnet does not overheat, the water flow (pressure gradient) will be continuously monitored.  
 Also, all power sources instrumenting the FGT and its readout need to be monitored for 
 appropriate voltage and current.
 
