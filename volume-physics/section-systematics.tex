@@ -43,8 +43,11 @@ of uncertainty when propagated to oscillation parameter measurements in the DUNE
 
 \subsection{Far Detector Samples}
 \label{sec:syst_just}
-Uncertainties in DUNE will be constrained by external data, near detector data, and the combined
+Uncertainties in DUNE will be constrained by external data, near detector data, and a combined
 fit to the four (\nue appearance, \anue appearance, \numu disappearance, \anumu disappearance) far detector samples.
+This four-sample fit is alternatively referred to as a three-flavor analysis, because the constraints depend
+upon the validity of the three-flavor model of neutrino oscillation.
+
 The \numu disappearance analysis sample is composed of \numu CC interactions with backgrounds from NC
 interactions in which a charged pion is misidentified as a muon and $\nu_{\tau}$ CC interactions in which the resulting
 tau decays to a muon and two neutrinos.
@@ -113,9 +116,10 @@ and from final-state interactions (FSI). The dominant source of uncertainty is t
 which is the same for both \nue and \numu samples, so relative energy scale uncertainties are limited to
 differences in kinematics between \numu and \nue interactions and differences in detector response for
 muons and electrons, which will be highly constrained by test beam experiments.
-Systematic uncertainties stemming from the FSI model are thought to be able to induce an anti-correlated 
-energy scale between the $\nu$ and $\bar\nu$ samples, which has the potential to mimic the effect
-of a CP violation signal. However, the effect will be the same in the \nue (\anue) and \numu
+Systematic uncertainties stemming from the FSI model are different
+between the $\nu$ and $\bar\nu$ samples, which provides enough freedom in the three-flavor fit to
+potentially mimic the effect of a CP violation signal, thus degrading experimental sensitivity.
+However, the effect will be the same in the \nue (\anue) and \numu
 (\anumu) samples, allowing the relative \nue to \numu (\anue to \anumu) energy scales to be fixed by comparing
 the energies of the appearance peak and the disappearance trough. Additional constraints on the FSI 
 model will be required from ND analyses and external data.
@@ -164,8 +168,7 @@ Energy  scale & 2.7\% & 2.5\% & 2\% & See ``\nue Energy Scale Uncertainties''\\
  & & effects & & \\  \hline
 Fiducial & 2.4\% & 1\% & 1\% & Larger detectors = smaller uncertainty. \\
 volume & & & & \\  \hline \hline 
-Total  & 5.7\% & 6.8\% & 3.6 \% & Residual $\nu_e$ uncertainty in  \\
-& & & & full DUNE 3-flavor fit = 1-2\%. \\ \hline \hline
+Total  & 5.7\% & 6.8\% & 3.6 \% & \\ \hline \hline
 Used in DUNE & & & $5\% \oplus 2\%$ & Residual \nue uncertainty: 2\% \\
 Sensitivity & & & & \\
 Calculations & & & & \\ 
@@ -185,8 +188,9 @@ site. Therefore, as DUNE is planned to have a highly capable near detector, beam
 muon detectors, dedicated hadronization measurements, and improved simulation of beam flux based on
 \minerva~\cite{Aliaga:2013uqz} measurements in the NuMI beam, we set a goal uncertainty on \nue signal
 normalization from uncertainties in the flux determination of 2\%.
-As described in Section \ref{sec:syst_studies_ind}, preliminary simulations of the fine-grained tracker near
-detector (ND) suggest this is an appropriate goal, predicting a 2\% uncertainty on the absolute flux and
+As described in Chapter~\ref{ch:physics-nd} and summarized in Section~\ref{sec:syst_studies_ind},
+preliminary simulations of the fine-grained tracker near
+detector (ND) suggest this is an appropriate goal, predicting a 2.5\% uncertainty on the absolute flux and
 a 1-2\% uncertainty on the flux shape.
 
 \subsubsection{Interaction Model Uncertainties}
@@ -261,16 +265,22 @@ In considering the effect of the three-flavor analysis on the final uncertainty,
 to contribute more than half of the total energy deposit for many \nue and \numu interactions in the DUNE
 far detector. Since the hadronic energy scale does not depend on neutrino flavor, the uncertainties on this
 portion of the LAr TPC energy response are expected to largely cancel in the DUNE three-flavor analysis, up
-to kinematic differences in the \nue and \numu samples.
-The contribution from neutrons will be different between the $\nu$ and $\bar{\nu}$
-samples both because of the different
-probabilities for neutrinos and antineutrinos to interact with protons and neutrons and because of differing
+to kinematic differences in the \nue and \numu samples. However, uncertainty in the \nue and \numu energy
+scales will also reduce the sensitivity of the fit to spectral shape.
+The effect of one such uncertainty on experimental sensitivity is shown in
+Section~\ref{sec:syst_var}, but the full impact of energy scale uncertainty has not yet been explored.
+The fraction of the total energy carried by neutrons will be different between the $\nu$ and $\bar{\nu}$
+samples both because of the different probabilities for neutrinos and antineutrinos to interact with
+protons and neutrons and because of differing
 kinematics. The contribution from neutrons will also be different between the \nue and \numu samples because
 these samples peak at different energies due to oscillation effects. For this reason, understanding
-of neutron production and detector response to neutrons will be important for constraining uncertainty in
-the three-sample fit. Deployment of the CAPTAIN detector in a neutron beam at LANL is planned to address
-these issues.
-
+of both neutron production and detector response to neutrons
+will be important for constraining uncertainty in
+the three-sample fit. Deployment of the CAPTAIN detector in a neutron beam at LANL is planned to
+determine the response of a LArTPC to neutrons. With the neutron response well-understood, measurements
+by CAPTAIN and other detectors in the intermediate neutrino program will be able to determine
+average neutron production rates, which will allow for appropriate corrections to the energy-scale bias at
+a statistical level.
 
 \subsubsection{Total Uncertainties Assigned to the Normalization Parameters}
 Based on the preceding considerations, the DUNE signal normalization uncertainty is taken to be
@@ -307,6 +317,7 @@ correlations for background to the \nue, \anue, \numu, and \anumu data samples.}
 %
 
 \subsection{Effect of Variation in Uncertainty}
+\label{sec:syst_var}
 Figure \ref{fig:exp_systs} shows DUNE sensitivity to determination of
 neutrino mass hierarchy and discovery of CP violation
 as a function of exposure for several levels of signal normalization uncertainty.
@@ -393,23 +404,27 @@ initial studies and an overview of each source of systematic uncertainty is laid
 this section.
 
 Initial studies using a Near Detector Fast Monte Carlo with a parameterized detector response
-predict 2-3\% statistical uncertainties on the absolute flux using fully 
+predict 3\% statistical uncertainties on the absolute flux using fully 
 leptonic neutrino interactions for which high-precision cross-section predictions 
 exist. Specifically,
-the statistical uncertainty is expected to be 2\% for neutrino-electron
-scattering ($E_\nu<5$~GeV) and 3\% for inverse muon decay ($E_\nu>11$~GeV).
+the statistical uncertainty is expected to be $\sim$3\% for neutrino-electron
+scattering ($E_\nu<5$~GeV) and inverse muon decay ($E_\nu>11$~GeV).
 Relative normalization using the low-$\nu_0$ method is
 expected to constrain the flux shape to 1-2\%; this level of
 precision in the \numu flux was achieved by NOMAD\cite{Wu:2007ab,Lyubushkin:2008pe}, enabled by its 0.2\%
 uncertainty in the muon energy scale. This flux shape measurement will be made for both \nue and \numu, so,
 in combination with measurements from hadron production experiments, can determine the distribution of
 the parent mesons which will constrain the near/far flux ratio. Detailed discussion of the planned program
-of ND measurements is available in \cite{Mishra:2008nx,Adams:2013qkq}.
+of ND measurements is in Chapter~\ref{ch:physics-nd} and \cite{Mishra:2008nx,Adams:2013qkq}.
 Studies using a multi-sample fit  to constrain the flux with simulated DUNE near detector
 event samples show significant constraints on all flux
 uncertainties; the post-fit uncertainty in most flux bins for this preliminary fit is less
 than 5\%, which is the uncorrelated \numu signal normalization
-uncertainty assumed by the sensitivity calculations. 
+uncertainty assumed by the sensitivity calculations.
+
+%%NOTE TO EDITORS: Important to make sure that the numbers quoted in this section match those in
+%%chapter-near.tex - should currently match, but if any changes are made to that section, they should
+%%be propagated here.
 
 The two main sources of uncertainty in the beam simulation come from variations in the beam optics,
 $\mathcal{O}($1\%), and uncertainties in the hadron production models, $\mathcal{O}$(10\%).
@@ -418,13 +433,14 @@ Beam optics variations have been studied in detail
 %lead to large uncertainties in the FD-only fits,
 and are found to be easily constrained by the ND. Software tools that
 allow re-weighting of neutrinos based on their parent hadrons have been developed by \minerva; we are working with
-them to implement these tools in the DUNE simulation.
+them to implement these tools in the DUNE simulation to evaluate the impact of uncertainty in
+hadron production models.
 In the meantime, \minerva has agreed to provide their flux covariance matrix
 that details the flux rate and shape uncertainties prior to ND constraints. We will combine this with DUNE
-simulations to project reasonable hadron production uncertainties to ND and FD analyses. Finally,
+simulations to project reasonable hadron production uncertainties to ND and FD analyses. 
+Ultimately these uncertainties will be constrained by near detector measurements and
 dedicated hadron production measurements such as those at NA61/SHINE~\cite{NA61:2014fnalbeams}
-are expected to reduce these
-uncertainties to $\sim$5\%.
+will provide additional external constraints.
 
 Primary interaction uncertainties are specific to each model, and each of the three major
 cross-section components (quasi-elastic processes, resonance production, and deep inelastic scattering)
@@ -448,7 +464,7 @@ the nuclear initial state, and FSI.
   its relatively small contribution to the overall cross section. Data from \minerva~\cite{Higuera:2014azj},
   T2K, and
   upcoming LAr TPC experiments will provide constraints for a variety of target nuclei over the
-  relevant energy ranges required to constrain this subdominant process.
+  relevant energy ranges required to constrain this sub-dominant process.
 
   \emph{Quasi-elastic processes (QE)}: Models for this type of interaction require that the target nucleon 
   is neither excited nor fragmented because the 4-momentum transfer to the hadronic system ($Q^{2}$) is low.
