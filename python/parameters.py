@@ -15,11 +15,11 @@ def filter(ps):
 
     # TPC
     ps.add(Param('tpc_drift_time', ps.tpc_drift_distance / ps.tpc_drift_velocity, 
-                 'millisecond', 'Drift time'))
+                 'millisecond', 'Drift time', precision=2))
 
     # DAQ
     ps.add(Param('daq_readout_time', ps.daq_drifts_per_readout * ps.tpc_drift_time,
-                 'millisecond', 'DAQ readout time'))
+                 'millisecond', 'DAQ readout time', precision=1))
     ps.add(Param('daq_readout_channel_samples', (ps.daq_sample_rate * ps.daq_readout_time).to_base_units(),
                  '', 'Samples/readout/channel', precision=0))
     ps.add(Param('daq_channels_per_module', (ps.daq_channels_per_apa * ps.tpc_apa_per_module).to_base_units(),
