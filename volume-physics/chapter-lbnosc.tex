@@ -215,14 +215,33 @@ is also a critical component of the experiment.
 \includegraphics[width=0.45\linewidth]{energy_anu_no.pdf}
 \end{cdrfigure}
 
-The experimental sensitivities presented here are estimated using 
-GLoBES\cite{Huber:2004ka,Huber:2007ji}. GLoBES takes flux simulations, cross-sections,
-and detector-response parameterization as inputs. In this document we present
-a range of possible physics sensitivity that depends on the design of the neutrino beam.
-A conservative estimate of sensitivity is calculated using a flux simulation that is based on the reference design of the beam line as presented in \vollbnf.  A flux simulation based on an optimized beam design is used to show the goal sensitivity.  There are a range of design options that produce sensitivities in between the sensitivity of the reference beam design and optimized beam design, and further optimization is possible. The actual flux will depend upon details of the hadron production and focusing design; optimization of the beam design to maximize experimental sensitivity is a critical aspect of the experiment
-design.  Table~\ref{tab:beamparam} summarizes some of the properties of the flux simulations used in the sensitivity studies.  The main differences between the two beam designs are the horn current, horn design, and decay pipe length; the choice of horn design has the biggest effect on the sensitivity. Section~\ref{sec:physics-lbnosc-beam-req} describes the flux simulations in more detail and explores the potential improvements that could be achieved by variations in the reference beam design.
+The experimental sensitivities presented here are estimated using
+GLoBES\cite{Huber:2004ka,Huber:2007ji}. GLoBES takes neutrino beam
+fluxes, cross-sections, and detector-response parameterization as
+inputs. In this document we present a range of possible physics
+sensitivity that depends on the design of the neutrino beam.  A
+conservative estimate of sensitivity is calculated using neutrino
+fluxes produced from a detailed GEANT4 beamline simulation that is
+based on the reference design of the beamline as presented in
+\vollbnf.  Neutrino fluxes from a simulation based on an optimized
+beam design is used to show the goal sensitivity.  There are a range
+of design options that produce sensitivities in between the
+sensitivity of the reference beam design and optimized beam design,
+and further optimization is possible. The actual flux will depend upon
+details of the hadron production and focusing design; optimization of
+the beam design to maximize experimental sensitivity is a critical
+aspect of the experiment design.  Table~\ref{tab:beamparam} summarizes
+some of the properties of the GEANT4 beamline simulations used to
+produce fluxes for the sensitivity studies.  The main differences
+between the two beam designs are the target geometry, horn current,
+horn design, and decay pipe length; the choice of horn design has the
+biggest effect on the
+sensitivity. Section~\ref{sec:physics-lbnosc-beam-req} describes the
+beamline simulations in more detail and explores the potential
+improvements that could be achieved by variations in the reference
+beam design.
 
-\begin{cdrtable}[Beam line parameters for CDR reference and optimized designs]{lcc}{beamparam}{A comparison of the beam line parameters assumed for the CDR Reference Design flux and the Optimized Design flux used in the sensitivity calculations presented in this chapter.  Please see Section~\ref{sec:physics-lbnosc-beam-req} for the details.}
+\begin{cdrtable}[Beamline parameters for CDR reference and optimized designs]{lcc}{beamparam}{A comparison of the beamline parameters assumed for the CDR Reference Design flux and the Optimized Design flux used in the sensitivity calculations presented in this chapter.  Please see Section~\ref{sec:physics-lbnosc-beam-req} for the details.}
 Parameter & CDR Reference Design & Optimized Design\\
 \toprowrule 
  Proton Beam Energy & 80~GeV & 80~GeV \\ 
@@ -235,14 +254,41 @@ Parameter & CDR Reference Design & Optimized Design\\
 \end{cdrtable}
 
 
-The signal for \nue appearance is an excess of charged-current (CC) \nue and \anue interactions over the expected background in the far detector.  The background to \nue appearance is composed of: i) CC interactions of \nue and \anue intrinsic
-to the beam; ii) mis-identified \numu and \anumu CC events; 
-iii) neutral current (NC) backgrounds; iv) $\nu_\tau$ and $\bar{\nu}_\tau$ CC events 
-in which the $\tau$'s decay leptonically into electrons/positrons. NC and $\nu_\tau$ 
-backgrounds are due to interactions of higher energy neutrinos but they contribute to 
-backgrounds mainly at low energy, which is important for the sensitivity to CP violation. 
+The signal for \nue appearance is an excess of charged-current (CC)
+\nue and \anue interactions over the expected background in the far
+detector.  The background to \nue appearance is composed of: i) CC
+interactions of \nue and \anue intrinsic to the beam; ii)
+mis-identified \numu and \anumu CC events; iii) neutral current (NC)
+backgrounds; iv) $\nu_\tau$ and $\bar{\nu}_\tau$ CC events in which
+the $\tau$'s decay leptonically into electrons/positrons. NC and
+$\nu_\tau$ backgrounds are due to interactions of higher energy
+neutrinos but they contribute to backgrounds mainly at low energy,
+which is important for the sensitivity to CP violation.
 
-The LAr TPC performance parameters that go into the GLoBES calculation are generated using the DUNE Fast Monte Carlo (MC) simulation, which is described in detail in \cite{Adams:2013qkq}.  The Fast MC combines the simulated flux, the GENIE neutrino interaction generator~\cite{Andreopoulos:2009rq}, and a parameterized detector response that is used to simulate the reconstructed energy and momentum of each final-state particle.  The simulated energy deposition of the particles in each interaction is then used to calculate reconstructed kinematic quantities (e.~g., the neutrino energy). Event sample classifications ($\nu_e$ CC-like, $\nu_{\mu}$ CC-like, or NC-like), including mis-ID rates, are determined by the identification of lepton candidates. Lepton candidates are selected based on a variety of criteria including on particle kinematics, detector thresholds, and probabilistic estimates of particle fates. To reduce the NC and $\nu_{\tau}$ CC backgrounds in the $\nu_e$ CC-like sample, an additional discriminant is formed using reconstructed transverse momentum along with reconstructed neutrino and hadronic energy as inputs to a k-Nearest-Neighbor (kNN) machine-learning algorithm.  Figures~\ref{fig:smearing_nue}-\ref{fig:smearing_nc} show the true-to-reconstructed energy smearing matrices extracted from the Fast MC and used as inputs to GLoBES.  Figure~\ref{fig:eff} shows the analysis sample detection$\times$selection efficiencies for the various signal and background modes used by GLoBES, also extracted from the Fast MC.
+The LAr TPC performance parameters that go into the GLoBES calculation
+are generated using the DUNE Fast Monte Carlo (MC) simulation, which
+is described in detail in \cite{Adams:2013qkq}.  The Fast MC combines
+the simulated flux, the GENIE neutrino interaction
+generator~\cite{Andreopoulos:2009rq}, and a parameterized detector
+response that is used to simulate the reconstructed energy and
+momentum of each final-state particle.  The simulated energy
+deposition of the particles in each interaction is then used to
+calculate reconstructed kinematic quantities (e.~g., the neutrino
+energy). Event sample classifications ($\nu_e$ CC-like, $\nu_{\mu}$
+CC-like, or NC-like), including mis-ID rates, are determined by the
+identification of lepton candidates. Lepton candidates are selected
+based on a variety of criteria including particle kinematics,
+detector thresholds, and probabilistic estimates of particle fates. To
+reduce the NC and $\nu_{\tau}$ CC backgrounds in the $\nu_e$ CC-like
+sample, an additional discriminant is formed using reconstructed
+transverse momentum along with reconstructed neutrino and hadronic
+energy as inputs to a k-Nearest-Neighbor (kNN) machine-learning
+algorithm.  Figures~\ref{fig:smearing_nue}-\ref{fig:smearing_nc} show
+the true-to-reconstructed energy smearing matrices extracted from the
+Fast MC and used as inputs to GLoBES.  Figure~\ref{fig:eff} shows the
+analysis sample detection$\times$selection efficiencies for the
+various signal and background modes used by GLoBES, also extracted
+from the Fast MC.
 
 \begin{cdrfigure}[\nue and\anue True-to-reconstructed energy smearing matrices]{smearing_nue}{True-to-reconstructed energy smearing matrices for CC \nue (left) and \anue (right) interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample.}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nue_nominal_app.png}
@@ -277,11 +323,15 @@ The LAr TPC performance parameters that go into the GLoBES calculation are gener
  \includegraphics[width=0.49\textwidth]{LBNE_Ev_reco_dis_RHC_eff.png}
 \end{cdrfigure}
 
- The cross-section inputs to GLoBES have been generated using GENIE 2.8.4~\cite{Andreopoulos:2009rq}.
-The neutrino oscillation parameters and the uncertainty on those parameters are taken from the 
-Nu-Fit~\cite{Gonzalez-Garcia:2014bfa} global fit to neutrino data; the values are given in 
-Table~\ref{tab:oscpar_nufit}.  (See also \cite{Capozzi:2013csa} and \cite{Forero:2014bxa} for other recent global fits.) Most of the sensitivities 
-in this chapter are shown assuming normal hierarchy; this is an arbitrary choice for simplicity of presentation.
+The cross-section inputs to GLoBES have been generated using GENIE
+2.8.4~\cite{Andreopoulos:2009rq}.  The neutrino oscillation parameters
+and the uncertainty on those parameters are taken from the
+Nu-Fit~\cite{Gonzalez-Garcia:2014bfa} global fit to neutrino data; the
+values are given in Table~\ref{tab:oscpar_nufit}.  (See also
+\cite{Capozzi:2013csa} and \cite{Forero:2014bxa} for other recent
+global fits.) Most of the sensitivities in this chapter are shown
+assuming normal hierarchy; this is an arbitrary choice for simplicity
+of presentation.
 
 \begin{cdrtable}[Oscillation parameter values and relative uncertainties]{lcc}{oscpar_nufit}{Central value and relative uncertainty of neutrino oscillation parameters from a global fit~\cite{Gonzalez-Garcia:2014bfa} to neutrino oscillation data. Because the probability distributions are somewhat non-Gaussian (particularly for $\theta_{23}$), the relative uncertainty is computed using 1/6 of the 3$\sigma$ allowed range from the fit, rather than the 1$\sigma$ range.   For $\theta_{23}$ and $\Delta m^2_{31}$, the best-fit values and uncertainties depend on whether normal mass hierarchy (NH) or inverted mass hierarchy (IH) is assumed.}
 Parameter &    Central Value & Relative Uncertainty \\
@@ -295,10 +345,18 @@ $\Delta m^2_{31}$ (NH) & 2.457$\times10^{-3}$~eV$^2$ &  2.0\% \\
 $\Delta m^2_{31}$ (IH) & -2.449$\times10^{-3}$~eV$^2$ &  1.9\% \\
 \end{cdrtable}
 
-Figures~\ref{fig:appspectra} and~\ref{fig:disspectra} 
-show the expected event rate for \nue appearance and \numu disappearance, respectively, including
-expected flux, cross-section, and oscillation probabilities as a function 
-of neutrino energy at a baseline of 1300~km. The spectra are shown for a 150~kt-MW-yr exposure in both neutrino and antineutrino mode, for a total 300~kt-MW-yr exposure.  The optimized beam design results in an increased signal rate in the lower energy region. Tables~\ref{tab:apprates} and~\ref{tab:disrates} give the integrated rate between 0.5 and 8.0~GeV for the appearance and disappearance spectra, respectively.  The spectra and rates are shown for both the reference beam design and the optimized beam design.
+Figures~\ref{fig:appspectra} and~\ref{fig:disspectra} show the
+expected event rate for \nue appearance and \numu disappearance,
+respectively, including expected flux, cross-section, and oscillation
+probabilities as a function of neutrino energy at a baseline of
+1300~km. The spectra are shown for a 150~kt-MW-yr exposure each for
+neutrino and antineutrino beam mode, for a total 300~kt-MW-yr exposure.
+The optimized beam design results in an increased signal rate in the
+lower energy region. Tables~\ref{tab:apprates} and~\ref{tab:disrates}
+give the integrated rate between 0.5 and 8.0~GeV for the appearance
+and disappearance spectra, respectively.  The spectra and rates are
+shown for both the reference beam design and the optimized beam
+design.
 
 \begin{cdrfigure}[\nue and \anue appearance spectra]{appspectra}{\nue and \anue appearance spectra: Reconstructed energy distribution of selected $\nu_e$ CC-like events assuming a 150~kt-MW-yr exposure in the neutrino-beam mode (left) and antineutrino-beam mode (right), for a total 300~kt-MW-yr exposure.  The plots assume normal mass hierarchy and $\mdeltacp = 0$.  The spectra are shown for both the CDR reference beam design and the optimized beam design as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
  \includegraphics[width=0.49\textwidth]{NueApp_NH.pdf}
@@ -370,11 +428,16 @@ of neutrino energy at a baseline of 1300~km. The spectra are shown for a 150~kt-
 %  Total Bkgd & 2687 & 1584 \\
 \end{cdrtable}
 
-Sensitivity to determination of the neutrino mass hierarchy and discovery
-of CP violation are obtained by
-simultaneously fitting the $\nu_\mu \rightarrow \nu_\mu$,
-$\overline{\nu}_\mu \rightarrow \overline{\nu}_\mu$, $\nu_\mu \rightarrow \nu_e$, 
-and  $\overline{\nu}_\mu \rightarrow \overline{\nu}_e$ oscillated spectra.  We assume 50\% of the total exposure comes in neutrino beam mode and 50\% in antineutrino beam mode.  A 50\%/50\% ratio of neutrino to antineutrino data has been shown to produce a nearly optimal sensitivity, and small deviations from this (e.g., 40\%/60\%, 60\%/40\%) produce negligible changes in the sensitivity.
+Sensitivity to determination of the neutrino mass hierarchy and
+discovery of CP violation are obtained by simultaneously fitting the
+$\nu_\mu \rightarrow \nu_\mu$, $\overline{\nu}_\mu \rightarrow
+\overline{\nu}_\mu$, $\nu_\mu \rightarrow \nu_e$, and
+$\overline{\nu}_\mu \rightarrow \overline{\nu}_e$ oscillated spectra.
+We assume 50\% of the total exposure comes in neutrino beam mode and
+50\% in antineutrino beam mode.  A 50\%/50\% ratio of neutrino to
+antineutrino data has been shown to produce a nearly optimal
+sensitivity, and small deviations from this (e.g., 40\%/60\%,
+60\%/40\%) produce negligible changes in the sensitivity.
 
 The neutrino oscillation parameters are all
 allowed to vary, constrained by a Gaussian prior with 1$\sigma$ width given
