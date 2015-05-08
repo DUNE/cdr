@@ -3,31 +3,49 @@
 \chapter{DUNE Science}
 \label{v1ch:science}
 
+\section{Overview} % Anne added new 5/8
 
-This section summarizes DUNE's potential for achieving its core
+This chapter summarizes DUNE's potential for achieving its core
 physics objectives based on the current %understanding of the 
-experimental landscape, scenarios for staging DUNE, and 
-the technical capabilities of DUNE at each stage.
+experimental landscape, scenarios for staging \fixme{LBNF and} DUNE, and 
+the technical capabilities of DUNE at each stage. \fixme{The objectives include topics in long-baseline neutrino 
+physics, nucleon decay, supernova neutrinos, astrophysics and short-baseline physics.}
 A detailed description of the physics objectives of DUNE is provided in
-the main text of this document. 
+the main text of this document. \fixme{reference chap or sec} 
 
-In the DUNE project, the 40-kt DUNE far detector (FD) is expected to
-be built as four 10-kt modules, which will come online over the course
+\fixme{This next part seems like it should be in the Strategy chapter and just referenced here. You could keep something about improvements in systematic uncertainties. Start Anne's }
+
+The \ktadj{40} DUNE far detector (FD) is expected to
+be built as four \ktadj{10} modules, which will come online over the course
 of several years.  The near detector (ND) will likely start operations
 after FD operations are already ongoing.  Without any ND constraints,
 systematic uncertainties will be larger in the early stages of the
-experiment. Additionally, the beam power is expected to be upgraded
-from $\sim$1~MW to $\sim$2~MW during the course of the experiment. For
+experiment. Additionally, the LBNF beam power is expected to be upgraded
+from $\sim$\SI{1}\MW{} to $\sim$\SI{2}\MW{} during the course of the experiment. 
+The staging strategy is described in Chapter~\ref{ch:strategy}. 
+It is assumed that data sets collected during earlier stages can be reanalyzed with new
+assumptions, so that each improvement in systematic uncertainty is applied
+to the full exposure up to that point.
+
+\fixme{end Anne's; suggestion to go straight to next section.}
+
+In the DUNE project, the \ktadj{40} DUNE far detector (FD) is expected to
+be built as four \ktadj{10} modules, which will come online over the course
+of several years.  The near detector (ND) will likely start operations
+after FD operations are already ongoing.  Without any ND constraints,
+systematic uncertainties will be larger in the early stages of the
+experiment. Additionally, the LBNF beam power is expected to be upgraded
+from $\sim$\SI{1}\MW{} to $\sim$\SI{2}\MW{} during the course of the experiment. For
 a rough estimate of the sensitivity of DUNE as a function of real time
-for the first 10~years of operation, the following staging plan has
+for the first \num{10} years of operation, the following staging plan has
 been assumed:
 \begin{itemize}
- \item Year 1: 10~kt FD mass; 1.07~MW beam power; No ND constraints (assume 5\% signal systematic)
- \item Year 2: Add second 10~kt FD module, for a total FD mass of 20~kt
- \item Year 3: Add third 10~kt FD module, for a total FD mass of 30~kt; Include constraints from preliminary ND data analysis (assume 3\% signal systematic)
- \item Year 4: Add fourth 10~kt FD module, for a total FD mass of 40~kt
- \item Year 5: Include constraints from a full ND data analysis (assume 2\% signal systematic)
- \item Year 7: Upgrade of beam power to 2.14~MW
+ \item Year 1: \SI{10}\kt{} FD mass; \SI{1.07}\MW{} beam power; No ND constraints (assume \num{5}\% signal systematic)
+ \item Year 2: Add second \ktadj{10} FD module, for a total FD mass of \SI{20}\kt
+ \item Year 3: Add third \ktadj{10} FD module, for a total FD mass of \SI{30}\kt; Include constraints from preliminary ND data analysis (assume \num{3}\% signal systematic)
+ \item Year 4: Add fourth \ktadj{10} FD module, for a total FD mass of \SI{40}\kt
+ \item Year 5: Include constraints from a full ND data analysis (assume \num{2}\% signal systematic)
+ \item Year 7: Upgrade of beam power to \SI{2.14}\MW
 \end{itemize}
 It is assumed that previous data sets can be reanalyzed with new
 assumptions, so each improvement in systematic uncertainty is applied
@@ -39,11 +57,13 @@ to the full exposure up to that point.
 \section{Neutrino Mixing, Mass Hierarchy and CP Violation}
 %\subsection{Long-Baseline/Oscillation Physics}
 
+\fixme{Title puts MH 2nd, then it's the first thing you see in the text; a little strange. I suggest getting rid of these would-be headings.}
 
 \textbf{Neutrino Mass Hierarchy:} The \SIadj{1300}{\km} baseline
 establishes one of DUNE's key strengths: sensitivity to the matter
 effect. This effect leads to a large discrete asymmetry in the
-$\nu_\mu\to \nu_e$ versus $\overline{\nu}_\mu \to \overline{\nu}_e$
+\numu to \nue versus \anumu to \anue
+%$\nu_\mu\to \nu_e$ versus $\overline{\nu}_\mu \to \overline{\nu}_e$
 oscillation probabilities, the sign of which depends on the mass
 hierarchy (MH).  At 1300~km this asymmetry is approximately
 $\pm 40\%$ in the region of the peak flux; this is larger than the
@@ -56,7 +76,8 @@ experiment using the beam neutrinos.
 
 In detail, the sensitivity of DUNE depends on the actual values of
 poorly known mixing parameters (mainly \deltacp and
-$\sin^2{\theta_{23}}$), as well as the true value of the MH itself.
+\sinst{23}), %$\sin^2{\theta_{23}}$), 
+as well as the true value of the MH itself.
 The discrimination between the two MH hypotheses is characterized as a
 function of the \emph{a priori} unknown true value of \deltacp by
 considering the difference, denoted $\Delta \chi^2$, between the
@@ -69,19 +90,20 @@ these hypotheses, considering all possible values of
   implicit in this notation is not exact.  The discussion in
   Chapter~\ref{nu-oscil-chap} provides a brief description of the
   statistical considerations.}.  In terms of this test statistic, the
-MH sensitivity of DUNE with an exposure of 300~kt-MW-years which
-corresponds to seven years of data (3.5 years in neutrino mode plus
-3.5 years in antineutrino mode) with a 40-kt detector and a 1.07-MW
+MH sensitivity of DUNE with an exposure of \SI{300}\ktMWyr{}  which
+corresponds to seven years of data (\num{3.5} years in neutrino mode plus
+\num{3.5} years in antineutrino mode) with a \ktadj{10} detector and a \SI{1.07}\MW{}
 beam is illustrated in Figure~\ref{fig:mhexec} for the case of normal
-hierarchy and the current best fit value of $\sin^2 \theta_{23} = 0.45$.
+hierarchy and the current best fit value of \sinst{23} = \SI{45}. %$\sin^2 \theta_{23} = 0.45$.
 %
 \begin{cdrfigure}[Summary of mass hierarchy sensitivities]{mhexec}{The
     square root of the mass hierarchy discrimination metric $\Delta
     \chi^2$ is plotted as a function of the unknown value of \deltacp
-    for an exposure of 300~kt-MW-yr (left).  The minimum significance
-    - the lowest point on the curve on the left - with which the mass
+    for an exposure of \SI{300}\ktMWyr{} % ~kt-MW-yr 
+    (left).  The minimum significance
+    --- the lowest point on the curve on the left - with which the mass
     hierarchy can be determined for all values of \deltacp as a
-    function of years of exposure assuming the staging plan outlined in this Chapter (right).
+    function of years of exposure assuming the staging plan outlined in this chapter (right).
     The shaded region represents the range in sensitivity due to
     potential variations in the beam design.}
 \includegraphics[width=0.49\textwidth]{volume-physics/figures/mh_300ktmwyear}
@@ -91,18 +113,18 @@ hierarchy and the current best fit value of $\sin^2 \theta_{23} = 0.45$.
 
 Across the overwhelming majority of the parameter space for the mixing
 parameters that are not well known (mainly \deltacp and
-$\sin^2{\theta_{23}}$), DUNE's determination of the MH will be
+\sinst{23}), DUNE's determination of the MH will be
 definitive, but even for unfavorable combinations of the parameter
 values, a statistically ambiguous outcome is highly unlikely.  The
 least favorable scenario corresponds to a true value of \deltacp in
 which the MH asymmetry is maximally offset by the leptonic CP
-asymmetry, and where, independently, $\sin^2{\theta_{23}}$ takes on a
+asymmetry, and where, independently, \sinst{23} takes on a
 value at the low end of its experimentally allowed range.  For
 this %worst-case
 scenario, studies indicate that with the DUNE staging plan outlined earlier, the DUNE
 LArTPC, operating for %ten years in a \SI{700}{\kW}
-8.5 years in the 80 GeV 1.07~MW reference beam design, 
-can (in a typical data set) distinguish between normal and inverted
+\num{8.5} years in the \GeVadj{80} \MWadj{1.07} (reference design) beam, 
+can --- in a typical data set ---  distinguish between normal and inverted
 hierarchy with $|\Delta \chi^2| = \overline{|\Delta \chi^2|} = 25$.
 This corresponds to a $\geq 99.9996\%$ probability of determining the
 correct hierarchy.  In $>97.5\%$ of data sets, DUNE will measure
@@ -110,8 +132,8 @@ $|\Delta \chi^2| > 9$ in this scenario, where measuring
 $|\Delta\chi^2| = 9$ with an expected value of \num{25} corresponds to
 a significance in excess of three Gaussian standard
 deviations. Improvements to the beam design can lower the exposure
-needed to reach this level of sensitivity from 400 kt-MW-years to
-around 230 kt-MW.years. The dependence of the mass hierarchy
+needed to reach this level of sensitivity from \SI{400}\ktMWyr{} to
+around \SI{230}\ktMWyr. The dependence of the mass hierarchy
 sensitivity on systematics is still under evaluation, but current
 studies indicate a weak dependence on systematic uncertainties. This
 indicates that a measurement of the unknown neutrino mass hierarchy
@@ -137,6 +159,9 @@ which the MH is resolved.
 %\deltacp range.
 
 \textbf{CP Violation and the Measurement of {\boldmath \deltacp}:}
+\fixme{Again, I suggest getting rid of this heading and rewording the first sentence in
+the next pgraph to clearly introduce CP, i.e.,  ``With regard to
+CP symmetry violation in the \numu to \nue oscillation channel, the DUNE program...''}
 
 The DUNE program has two somewhat distinct objectives with regard to
 CP symmetry violation in the $\nu_\mu \to \nu_e$ oscillation channel.
@@ -153,8 +178,8 @@ standard three-flavor scenario.
 
 Figure~\ref{fig:execsummaryCP} shows the expected sensitivity to CP
 violation as well as the 1$\sigma$ resolution for \deltacp as a
-function of exposure.  The exposure in detector mass (kiloton) X beam
-power(MW) X time (years) required to measure $\delta_{\rm CP} = 0 $ with a
+function of exposure.  The exposure in detector mass (kiloton) $\times$ beam
+power(MW) $\times$ time (years) required to measure $\delta_{\rm CP} = 0 $ with a
 precision better than $10^\circ$ ranges from 290 to 450 kt-MW-years
 depending on the beam design.  
 %At this beam power, in a six-year run,
@@ -172,9 +197,10 @@ CKM matrix in the quark sector (5\%).
   resolution as a function of exposure]{execsummaryCP}{The
     significance with which CP violation can be determined for 75\% of
     \deltacp values as a function of exposure in years using the
-    proposed staging plan outlined in this Chapter (left). The
+    proposed staging plan outlined in this chapter (left). The
     expected 1$\sigma$ resolution for \deltacp as a function of
-    exposure in kt-MW-years (right). The shaded region represents the
+    exposure in \ktMWyr{} %kt-MW-years 
+    (right). The shaded region represents the
     range in sensitivity due to potential variations in the beam
     design. This plot assumes normal mass hierarchy.}
 \includegraphics[width=0.49\textwidth]{volume-physics/figures/cpv75_exp_staging15yr}
@@ -182,21 +208,20 @@ CKM matrix in the quark sector (5\%).
 \end{cdrfigure}
 
 To reach $5\sigma$ sensitivity for 50\% of the range of \deltacp, a
-DUNE exposure in the range of 550 to 810 kt-MW-years is needed. The
+DUNE exposure in the range of \num{550} to \SI{810}\ktMWyr{}  is needed. The
 range of exposures corresponds to potential variations in the beam
 design, with the highest exposures corresponding to the reference beam
-design. Table ~\ref{tab:execosctable} summarizes the exposures needed to
+design. Table~\ref{tab:execosctable} summarizes the exposures needed to
 achieve specific oscillation physics milestones.  The sensitivities
 and exposures calculated are for the current best fit values of the
 known neutrino mixing parameters. Changes in the value of
 $\theta_{23}$ impact CP violation and mass hierarchy sensitivities the
-most as discussed in Volume 2 and can reduce or increase the exposure
+most, as discussed in Volume 2, and can reduce or increase the exposure
 needed to reach discovery potential for CP violation over a
 significant fraction of \deltacp values. In addition, potential
 improvements in beamline geometry, focusing and target element designs
 that can significantly lower the exposure required for CP violation
-discovery potential as demonstrated in Table
-~\ref{tab:execosctable}. Several such potential improvements are discussed
+discovery potential as demonstrated in Table~\ref{tab:execosctable}. Several such potential improvements are discussed
 in CDR Volume 2 and Volume 3. A highly capable near neutrino detector
 is required to control systematic uncertainties at a level lower than
 the statistical uncertainties in the far detector needed to reach this
@@ -205,11 +230,15 @@ level of sensitivity.  No experiment can provide coverage at 100\% of
 or $\pi$.
 
 \textbf{\boldmath Determination of $\sin^2{2\theta_{23}}$ and Octant
-  Resolution:} In long-baseline experiments with $\nu_\mu$ beams, the
-magnitude of $\nu_\mu$ disappearance and $\nu_e$ appearance signals is
-proportional to $\sin^2{2\theta_{23}}$ and $\sin^2{\theta_{23}}$,
+  Resolution:} 
+  \fixme{Again, remove the heading}
+  
+In long-baseline experiments with \numu beams, the
+magnitude of \numu disappearance and \nue appearance signals is
+proportional to \sinstt{23} and \sinst{23},
+%$\sin^2{2\theta_{23}}$ and $\sin^2{\theta_{23}}$,
 respectively, in the standard three-flavor mixing scenario.  Current
-$\nu_\mu$ disappearance data are consistent with close to maximal
+\numu disappearance data are consistent with close to maximal
 mixing, $\theta_{23} = 45^\circ$.  To obtain the best sensitivity to
 both the magnitude of its deviation from $45^\circ$ as well as its
 sign ($\theta_{23}$ octant), a combined analysis of the two channels
@@ -219,16 +248,16 @@ resolve the $\theta_{23}$ octant at the $3\sigma$ level or better for
 $\theta_{23}$ values less than $43^\circ$ or greater than $48^\circ$.
 A fully realized DUNE can measure $\theta_{23}$ with a precision of
 $1^\circ$ or less, even for values within a few degrees of
-$45^\circ$. Table ~\ref{tab:execosctable} summarizes the exposures
+$45^\circ$. Table~\ref{tab:execosctable} summarizes the exposures
 needed to reach a given level of precision on the value of
 $\theta_{23}$.
 
 \begin{cdrtable}[Exposures needed to reach physics
-  milestones]{lcc}{execosctable}{The exposure in mass (kt) X proton beam power
-    (MW) X time (years) needed to reach certain oscillation physics
+  milestones]{lcc}{execosctable}{The exposure in mass (kt) $\times$ proton beam power
+    (MW) $\times$ time (years) needed to reach certain oscillation physics
     milestones. The numbers are for normal hierarchy using the current best fit values of the known oscillation parameters. The two columns
     on the left are for different beam design assumptions. }
-Physics milestone & Exposure kt-MW-years & Exposure kt-MW-years\\
+Physics milestone & Exposure \ktMWyr{} & Exposure \ktMWyr{}\\
   & (reference beam) & (optimized beam) \\ \toprowrule 
   $1^\circ$ $\theta_{23}$ resolution ($\theta_{23} = 42^\circ$) & 70  &  45\\ \colhline
   CPV at $3\sigma$ ($\delta_{\rm CP} = +\pi/2$)  & 70 & 60 \\ \colhline
