@@ -29,7 +29,7 @@ def build(bld):
             shell = True)
 
 
-    for tex in bld.path.ant_glob('*.tex'):
+    for tex in bld.path.ant_glob('*.tex', excl=['*-indiv.tex']):
         # do latex'ing
         bld(features='tex',
             type='pdflatex',

@@ -5,20 +5,20 @@
 \input{common/preamble}
 
 \renewcommand\thedoctitle{\voldune}
-\def\titleextra{\includegraphics[width=0.95\textwidth]{tpc_floor_view}}
+\def\titleextra{\includegraphics[width=0.95\textwidth]{tpc_floor_view_no_label}}
 
 \begin{document}
 
 \input{common/init}
 
-\input{volume-detectors/chapter-execsumm}
+\input{volume-detectors/chapter-overview}
 \cleardoublepage
 
 \input{volume-detectors/chapter-strategy}
 \cleardoublepage
 
-\input{volume-detectors/chapter-pm}
-\cleardoublepage
+%\input{volume-detectors/chapter-pm}  <--- put this info in Project Volume (1)
+%\cleardoublepage
 
 \input{volume-detectors/chapter-fd-ref}
 \cleardoublepage
@@ -36,6 +36,9 @@
 \cleardoublepage
 
 \input{volume-detectors/chapter-proto}
+\cleardoublepage
+
+\input{volume-detectors/chapter-mgmt-struc}  % <--- new 5/7/15
 \cleardoublepage
 
 \input{volume-detectors/chapter-summary}

@@ -11,6 +11,29 @@ the technical capabilities of DUNE at each stage.
 A detailed description of the physics objectives of DUNE is provided in
 the main text of this document. 
 
+In the DUNE project, the 40-kt DUNE far detector (FD) is expected to
+be built as four 10-kt modules, which will come online over the course
+of several years.  The near detector (ND) will likely start operations
+after FD operations are already ongoing.  Without any ND constraints,
+systematic uncertainties will be larger in the early stages of the
+experiment. Additionally, the beam power is expected to be upgraded
+from $\sim$1~MW to $\sim$2~MW during the course of the experiment. For
+a rough estimate of the sensitivity of DUNE as a function of real time
+for the first 10~years of operation, the following staging plan has
+been assumed:
+\begin{itemize}
+ \item Year 1: 10~kt FD mass; 1.07~MW beam power; No ND constraints (assume 5\% signal systematic)
+ \item Year 2: Add second 10~kt FD module, for a total FD mass of 20~kt
+ \item Year 3: Add third 10~kt FD module, for a total FD mass of 30~kt; Include constraints from preliminary ND data analysis (assume 3\% signal systematic)
+ \item Year 4: Add fourth 10~kt FD module, for a total FD mass of 40~kt
+ \item Year 5: Include constraints from a full ND data analysis (assume 2\% signal systematic)
+ \item Year 7: Upgrade of beam power to 2.14~MW
+\end{itemize}
+It is assumed that previous data sets can be reanalyzed with new
+assumptions, so each improvement in systematic uncertainty is applied
+to the full exposure up to that point.
+
+%Add that integrated exposure is 535 kt-MW-yr after 10 years?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Neutrino Mixing, Mass Hierarchy and CP Violation}
@@ -58,11 +81,11 @@ hierarchy and the current best fit value of $\sin^2 \theta_{23} = 0.45$.
     for an exposure of 300~kt-MW-yr (left).  The minimum significance
     - the lowest point on the curve on the left - with which the mass
     hierarchy can be determined for all values of \deltacp as a
-    function of exposure (right).  The shaded region represents the
-    range in sensitivity due to potential variations in the beam
-    design.}
+    function of years of exposure assuming the staging plan outlined in this Chapter (right).
+    The shaded region represents the range in sensitivity due to
+    potential variations in the beam design.}
 \includegraphics[width=0.49\textwidth]{volume-physics/figures/mh_300ktmwyear}
-\includegraphics[width=0.49\textwidth]{volume-physics/figures/mh_exp}
+\includegraphics[width=0.49\textwidth]{volume-physics/figures/mh_exp_staging15yr}
 \label{fig:mhexec}
 \end{cdrfigure}
 
@@ -76,9 +99,9 @@ which the MH asymmetry is maximally offset by the leptonic CP
 asymmetry, and where, independently, $\sin^2{\theta_{23}}$ takes on a
 value at the low end of its experimentally allowed range.  For
 this %worst-case
-scenario, studies indicate that with a 40~kt %(fiducial)
-LArTPC operating for %ten years in a \SI{700}{\kW}
-10 years in the 80 GeV 1.07~MW reference beam design, DUNE on its own
+scenario, studies indicate that with the DUNE staging plan outlined earlier, the DUNE
+LArTPC, operating for %ten years in a \SI{700}{\kW}
+8.5 years in the 80 GeV 1.07~MW reference beam design, 
 can (in a typical data set) distinguish between normal and inverted
 hierarchy with $|\Delta \chi^2| = \overline{|\Delta \chi^2|} = 25$.
 This corresponds to a $\geq 99.9996\%$ probability of determining the
@@ -131,8 +154,8 @@ standard three-flavor scenario.
 Figure~\ref{fig:execsummaryCP} shows the expected sensitivity to CP
 violation as well as the 1$\sigma$ resolution for \deltacp as a
 function of exposure.  The exposure in detector mass (kiloton) X beam
-power(MW) X time (years) required to measure $\delta_{cp} = 0 $ with a
-precision better than $10^\circ$ ranges from 290 to 445 kt-MW-years
+power(MW) X time (years) required to measure $\delta_{\rm CP} = 0 $ with a
+precision better than $10^\circ$ ranges from 290 to 450 kt-MW-years
 depending on the beam design.  
 %At this beam power, in a six-year run,
 %a \ktadj{10} far detector will be able to measure \deltacp to $\pm$
@@ -145,16 +168,16 @@ beam power can eventually achieve a precision
 comparable to the current precision on the CP phase in the
 CKM matrix in the quark sector (5\%).
 %
-\begin{cdrfigure}[CP violation sensitivity and $\delta_{cp}$
+\begin{cdrfigure}[CP violation sensitivity and $\delta_{\rm CP}$
   resolution as a function of exposure]{execsummaryCP}{The
-    significance with which CP violation can be determined for 75\%
-    (right) of \deltacp values as a function of exposure in detector
-    mass (kiloton) $\times$ beam power (MW) $\times$ time (years)
-    (left). The expected 1$\sigma$ resolution for \deltacp as a
-    function of exposure (right). The shaded region represents the
+    significance with which CP violation can be determined for 75\% of
+    \deltacp values as a function of exposure in years using the
+    proposed staging plan outlined in this Chapter (left). The
+    expected 1$\sigma$ resolution for \deltacp as a function of
+    exposure in kt-MW-years (right). The shaded region represents the
     range in sensitivity due to potential variations in the beam
     design. This plot assumes normal mass hierarchy.}
-\includegraphics[width=0.49\textwidth]{volume-physics/figures/cpv75_exp}
+\includegraphics[width=0.49\textwidth]{volume-physics/figures/cpv75_exp_staging15yr}
  \includegraphics[width=0.49\textwidth]{volume-physics/figures/res_dcp_exp}
 \end{cdrfigure}
 
@@ -162,17 +185,18 @@ To reach $5\sigma$ sensitivity for 50\% of the range of \deltacp, a
 DUNE exposure in the range of 550 to 810 kt-MW-years is needed. The
 range of exposures corresponds to potential variations in the beam
 design, with the highest exposures corresponding to the reference beam
-design. To reach $3\sigma$ sensitivity for 75\% of
-the range of \deltacp, exposures of 850-1300 kt-MW-years are
-needed. The sensitivities and exposures given here are for the current
-best fit values of the known neutrino mixing parameters. Changes in
-the value of $\theta_{23}$ impact CP violation sensitivities the most
-as discussed in Volume 2 and can reduce or increase the exposure
+design. Table ~\ref{tab:execosctable} summarizes the exposures needed to
+achieve specific oscillation physics milestones.  The sensitivities
+and exposures calculated are for the current best fit values of the
+known neutrino mixing parameters. Changes in the value of
+$\theta_{23}$ impact CP violation and mass hierarchy sensitivities the
+most as discussed in Volume 2 and can reduce or increase the exposure
 needed to reach discovery potential for CP violation over a
 significant fraction of \deltacp values. In addition, potential
 improvements in beamline geometry, focusing and target element designs
 that can significantly lower the exposure required for CP violation
-discovery potential. Several such potential improvements are discussed
+discovery potential as demonstrated in Table
+~\ref{tab:execosctable}. Several such potential improvements are discussed
 in CDR Volume 2 and Volume 3. A highly capable near neutrino detector
 is required to control systematic uncertainties at a level lower than
 the statistical uncertainties in the far detector needed to reach this
@@ -190,12 +214,34 @@ mixing, $\theta_{23} = 45^\circ$.  To obtain the best sensitivity to
 both the magnitude of its deviation from $45^\circ$ as well as its
 sign ($\theta_{23}$ octant), a combined analysis of the two channels
 is needed~\cite{Huber:2010dx}.  As demonstrated in Volume 2, a
-\ktadj{10} DUNE detector will be able to resolve the $\theta_{23}$
-octant at the $3\sigma$ level or better for $\theta_{23}$ values less
-than $40^\circ$ or greater than $50^\circ$, provided \deltacp is not
-too close to zero or $\pi$.  A fully realized DUNE can measure
-$\theta_{23}$ with a precision of $1^\circ$ or less, even for values
-within a few degrees of $45^\circ$.
+\ktadj{40} DUNE detector with sufficient exposure will be able to
+resolve the $\theta_{23}$ octant at the $3\sigma$ level or better for
+$\theta_{23}$ values less than $43^\circ$ or greater than $48^\circ$.
+A fully realized DUNE can measure $\theta_{23}$ with a precision of
+$1^\circ$ or less, even for values within a few degrees of
+$45^\circ$. Table ~\ref{tab:execosctable} summarizes the exposures
+needed to reach a given level of precision on the value of
+$\theta_{23}$.
+
+\begin{cdrtable}[Exposures needed to reach physics
+  milestones]{lcc}{execosctable}{The exposure in mass (kt) X proton beam power
+    (MW) X time (years) needed to reach certain oscillation physics
+    milestones. The numbers are for normal hierarchy using the current best fit values of the known oscillation parameters. The two columns
+    on the left are for different beam design assumptions. }
+Physics milestone & Exposure kt-MW-years & Exposure kt-MW-years\\
+  & (reference beam) & (optimized beam) \\ \toprowrule 
+  $1^\circ$ $\theta_{23}$ resolution ($\theta_{23} = 42^\circ$) & 70  &  45\\ \colhline
+  CPV at $3\sigma$ ($\delta_{\rm CP} = +\pi/2$)  & 70 & 60 \\ \colhline
+  CPV at $3\sigma$ ($\delta_{\rm CP} = -\pi/2$)  & 160 & 100 \\ \colhline
+  CPV at $5\sigma$ ($\delta_{\rm CP} = +\pi/2$)  & 280 & 210 \\ \colhline
+  MH at  $5\sigma$ (worst point) & 400 & 230 \\ \colhline
+  $10^\circ$ resolution ($\delta_{\rm CP} = 0$) & 450 & 290 \\ \colhline
+  CPV at $5\sigma$ ($\delta_{\rm CP} = -\pi/2$)  & 525 & 320 \\ \colhline
+  CPV at $5\sigma$ 50\% of \deltacp & 810 & 550 \\ \colhline 
+  Reactor $\theta_{13}$ resolution ($\sin^2 2 \theta_{13} = 0.084 \pm 0.003$) & 1200 & 850 \\ \colhline
+  CPV at $3\sigma$ 75\% of \deltacp & 1320 & 850\\ \colhline 
+
+\end{cdrtable}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -232,7 +278,7 @@ exposure.
 \begin{cdrfigure}[Sensitivity to the decay $p\to K^+ \overline{\nu}$
   with liquid argon detectors]{execsummarypdk} {Sensitivity to the
     decay $p\to K^+ \overline{\nu}$ as a function of time for different DUNE 
-deployment  LArTPCs deployment strategies. 
+LArTPCs deployment strategies. 
   For comparison, the current limit from SK is also shown, as well as the projected limit from the proposed Hyper-K experiment with 5600 kt-years of exposure.
   The limits are at 90\% C.L., calculated for
   a Poisson process including background, assuming that the detected events
@@ -268,7 +314,7 @@ interaction on $^{40}$Ar as follows:
 \end{eqnarray*} 
 This interaction can be tagged via the coincidence of the emitted
 electron and the accompanying photon cascade from the $^{40}{\rm K^*}$
-de-excitation.  About 900 events would be expected in a \ktadj{10}
+de-excitation.  About 3000 events would be expected in a \ktadj{40}
 fiducial mass liquid argon detector for a supernova at a distance of
 \SI{10}{\kilo\parsec}.  In the neutrino channel the oscillation
 features are in general more pronounced, since the $\nu_e$ spectrum is

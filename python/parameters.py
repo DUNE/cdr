@@ -15,23 +15,23 @@ def filter(ps):
 
     # TPC
     ps.add(Param('tpc_drift_time', ps.tpc_drift_distance / ps.tpc_drift_velocity, 
-                 'millisecond', 'Drift time'))
+                 'millisecond', 'Drift time', precision=2))
 
     # DAQ
     ps.add(Param('daq_readout_time', ps.daq_drifts_per_readout * ps.tpc_drift_time,
-                 'millisecond', 'DAQ readout time'))
+                 'millisecond', 'DAQ readout time', precision=1))
     ps.add(Param('daq_readout_channel_samples', (ps.daq_sample_rate * ps.daq_readout_time).to_base_units(),
                  '', 'Samples/readout/channel', precision=0))
-    ps.add(Param('daq_channels_per_detector', (ps.daq_channels_per_apa * ps.tpc_apa_per_detector).to_base_units(),
-                 '', 'Channels per detector', precision=0))
+    ps.add(Param('daq_channels_per_module', (ps.daq_channels_per_apa * ps.tpc_apa_per_module).to_base_units(),
+                 '', 'Channels per detector module', precision=0))
 
     # Global DUNE
-    ps.add(Param('dune_number_apas', ps.tpc_apa_per_detector * ps.dune_number_detectors,
+    ps.add(Param('dune_number_apas', ps.tpc_apa_per_module * ps.dune_number_modules,
                  name='Total number of APAs'))
-    ps.add(Param('dune_detector_mass', ps.tpc_detector_mass * ps.dune_number_detectors,
+    ps.add(Param('dune_detector_mass', ps.tpc_module_mass * ps.dune_number_modules,
                  'kilotonne', name='Total fiducial mass', precision=0))
 
-    ps.add(Param('dune_number_channels', ps.daq_channels_per_detector * ps.dune_number_detectors,
+    ps.add(Param('dune_number_channels', ps.daq_channels_per_module * ps.dune_number_modules,
                  '', 'Total channels in DUNE', precision=0))
 
 
@@ -52,6 +52,8 @@ def filter(ps):
                  'hertz', 'Beam spill repetition rate', precision=2))
     ps.add(Param('beam_rate', ps.beam_event_occupancy * ps.beam_rep_rate * ps.beam_run_fraction,
                  '1/year', 'Beam neutrino interaction rate', precision=0))
+    ps.add(Param('beam_on_fraction', (ps.beam_rep_rate * ps.beam_run_fraction * ps.daq_readout_time).to_base_units(),
+                 '', 'Fraction of time beam is on'))
 
     ps.add(Param('beam_data_rate_fs', ps.beam_rate * ps.dune_fs_readout_size, 
                  'megabyte/second', 'FS readout rate for events with beam interactions', precision=0))
@@ -81,7 +83,7 @@ def filter(ps):
     # box 100*40*50 m^3 give an event rate of about 9.7*10^6 muons per year,
     # which is close to the flux * horizontal area * 1.36.
 
-    ps.add(Param('cosmic_muon_rate', ps.dune_number_detectors * ps.tpc_full_width * ps.tpc_full_length * ps.cosmic_muon_flux * ps.cosmic_muon_correction,
+    ps.add(Param('cosmic_muon_rate', ps.dune_number_modules * ps.tpc_full_width * ps.tpc_full_length * ps.cosmic_muon_flux * ps.cosmic_muon_correction,
                  'hertz', 'Cosmic muon event rate', precision=3))
     ps.add(Param('cosmic_muon_data_rate', ps.cosmic_muon_rate * ps.cosmic_muon_event_size,
                  'kilobyte/second', 'Cosmic muon data rate', precision=1))
@@ -92,14 +94,20 @@ def filter(ps):
     ps.add(Param('beta_readout_size', ps.beta_event_size * ps.daq_bytes_per_sample,
                  'byte', 'Ar39 readout size', precision=0))
 
-    ps.add(Param('beta_rate', ps.beta_rate_apa * ps.dune_number_apas, 
-                 'megahertz', 'Ar39 event rate', precision=1))
+    ps.add(Param('beta_rate', ps.beta_rate_density * ps.tpc_module_mass * ps.dune_number_modules, 
+                 'megahertz', 'Ar39 event rate above 0.5MeV', precision=1))
 
     ps.add(Param('beta_data_rate', ps.beta_rate * ps.beta_readout_size,
                  'gigabyte/second', 'Ar39 data rate', precision=1))
 
     ps.add(Param('beta_data_year', ps.beta_data_rate * Q('year'),
                  'petabyte', 'Annual Ar39 data volume', precision=0))
+
+    ps.add(Param('beta_in_spill_year', ps.beta_data_year * ps.beam_on_fraction,
+                 'terabyte', 'Annual Ar39 data volume in spill', precision=0))
+
+    ps.add(Param('beta_in_beam_year', ps.beta_in_spill_year * ps.beam_event_occupancy,
+                 'gigabyte', 'Annual Ar39 data volume in beam events', precision=0))
 
 
     # SNB
@@ -119,7 +127,7 @@ def filter(ps):
                  'gigabyte', 'Annual SNB ZS data volume', precision=0))
 
     # actual SNB
-    ps.add(Param('snb_data_rate_zs', ps.snb_event_size * ps.snb_event_rate_tpc * ps.dune_number_detectors,
+    ps.add(Param('snb_data_rate_zs', ps.snb_event_size * ps.snb_event_rate_tpc * ps.dune_number_modules,
                  'gigabyte/second', 'Instantaneous SNB ZS data rate', precision=0))
     ps.add(Param('snb_data_volume_zs', ps.snb_data_rate_zs * Q('10 seconds'),
                  'gigabyte', 'Size of one SNB', precision=0))

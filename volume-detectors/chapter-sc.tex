@@ -1,10 +1,14 @@
 \chapter{Software and Computing}
 \label{ch:detectors-sc}
 
+\section{Overview}
+
+\fixme{Might want to add an overview of chapter. Anne 5/7}
+
 \section{Computing Infrastructure}
 \label{sec:detectors-sc-infrastructure}
 
-\subsection{Overview}
+%\subsection{Overview}
 There are many factors that influence various characteristics of the data (e.g. rates, volume etc)
 to be collected and processed in DUNE.
 A special Annex document for data rates was created in order to provide a systematic reference
@@ -47,7 +51,7 @@ beam neutrino physics, which mostly relies on off-line processing.
 
 \subsubsection{Assumptions}
 \label{sec:detectors-sc-infrastructure-assumptions}
-According to the present baseline design, the Far Detector will consist of four identical modules of \tpcdetectormass each.
+According to the present baseline design, the Far Detector will consist of four identical modules of \tpcmodulemass each.
 For purposes of estimating data characteristics in this document the issue of possible variations in the design of these modules shall not be addressed. A few basic assumptions will need to be used:
 \begin{itemize}
 \item Estimates presented below correspond to the ``full detector'', i.e. is effectively
@@ -90,7 +94,7 @@ The information presented below is based on the parameters listed in
 ``\anxrates''.
 \begin{itemize}
 \item TPC channel count: \dunenumberchannels (i.e. four times
-  \daqchannelsperdetector which is the channel count for each \tpcdetectormass module)
+  \daqchannelspermodule which is the channel count for each \tpcmodulemass module)
 \item Maximum drift Time: \tpcdrifttime
 \item Number of drift time windows in one DAQ readout cycle: \daqdriftsperreadout
 \item ADC clock frequency: approx. \daqsamplerate
@@ -277,8 +281,8 @@ For the Photon Detector in the dual-phase design:
 	for each 10kt module)
 \end{itemize}
 \
-According to some estimates listed in the Annex, the ``Full Stream'' readout will produce 16.9GB of data for
-each candidate event. This is about 68\% of the data volume in one readout cycle, in the reference design.
+According to some estimates listed in the Annex, the ``Full Stream'' readout will produce 16.09GB of data for
+each candidate event. This is about 65\% of the data volume in one readout cycle, in the reference design.
 Although signal processing strategies may be implemented differently in the alternative design, it can be argued
 that the total data rate will be of the same order of magnitude or less than in the reference design.
 % \fixme{Can still improve here but I doubt we'll get much more detail in time --mxp--}
