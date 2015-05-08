@@ -167,7 +167,6 @@ to first order, in a constant density
 approximation is~\cite{Nunokawa:2007qh}:
 %
 \begin{eqnarray}
-\label{eq:oscprob}
 P(\nu_\mu \rightarrow \nu_e) & \simeq & \sin^2 \theta_{23} \sin^2 2 \theta_{13} 
 \frac{ \sin^2(\Delta_{31} - aL)}{(\Delta_{31}-aL)^2} \Delta_{31}^2\\ \nonumber
 & & + \sin 2 \theta_{23} \sin 2 \theta_{13} \sin 2 \theta_{12} \frac{ \sin(\Delta_{31} - aL)}{(\Delta_{31}-aL)} \Delta_{31} \frac{\sin(aL)}{(aL)} \Delta_{21} \cos (\Delta_{31} + \mdeltacp)\\ \nonumber
@@ -200,7 +199,7 @@ for different values of \deltacp is larger at higher oscillation nodes, which
 correspond to energies less than 1.5~GeV. Therefore, a broadband experiment, 
 capable of measuring not only the rate of \nue appearance but of mapping out the 
 spectrum of observed oscillations down to energies of at least 500~MeV, 
-is desirable. Since there are terms proportional to $\sin\mdeltacp$ in Eq.~\ref{eq:oscprob},
+is desirable. Since there are terms proportional to $\sin\mdeltacp$ in Equation~\ref{eqn:appprob},
 changes to the value of \deltacp induce opposite changes to \nue and
 \anue appearance probabilities, so a beam that is capable of operating in
 neutrino (forward horn current) and antineutrino (reverse horn current)
@@ -245,7 +244,7 @@ beam design.
 Parameter & CDR Reference Design & Optimized Design\\
 \toprowrule 
  Proton Beam Energy & 80~GeV & 80~GeV \\ 
- Proton Beam Power & 1.07 MW & 1.07 MW\\
+ Proton Beam Power & 1.07~MW & 1.07~MW\\
  Target & Graphite & Graphite \\
  Horn Current & 230~kA & 297~kA \\
  Horn Design & NuMI-style & Genetic Optimization \\ 
@@ -350,13 +349,13 @@ expected event rate for \nue appearance and \numu disappearance,
 respectively, including expected flux, cross-section, and oscillation
 probabilities as a function of neutrino energy at a baseline of
 1300~km. The spectra are shown for a 150~kt-MW-yr exposure each for
-neutrino and antineutrino beam mode, for a total 300~kt-MW-yr exposure.
-The optimized beam design results in an increased signal rate in the
-lower energy region. Tables~\ref{tab:apprates} and~\ref{tab:disrates}
-give the integrated rate between 0.5 and 8.0~GeV for the appearance
-and disappearance spectra, respectively.  The spectra and rates are
-shown for both the reference beam design and the optimized beam
-design.
+neutrino and antineutrino beam mode, for a total 300~kt-MW-yr
+exposure.  The optimized beam design results in an increased signal
+rate in the lower energy region. Tables~\ref{tab:apprates}
+and~\ref{tab:disrates} give the integrated rate for the
+$\nu_e$ appearance and $\nu_\mu$ disappearance spectra,
+respectively.  The spectra and rates are shown for both the reference
+beam design and the optimized beam design.
 
 \begin{cdrfigure}[\nue and \anue appearance spectra]{appspectra}{\nue and \anue appearance spectra: Reconstructed energy distribution of selected $\nu_e$ CC-like events assuming a 150~kt-MW-yr exposure in the neutrino-beam mode (left) and antineutrino-beam mode (right), for a total 300~kt-MW-yr exposure.  The plots assume normal mass hierarchy and $\mdeltacp = 0$.  The spectra are shown for both the CDR reference beam design and the optimized beam design as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
  \includegraphics[width=0.49\textwidth]{NueApp_NH.pdf}
@@ -368,41 +367,75 @@ design.
  \includegraphics[width=0.49\textwidth]{NumuBarDis.pdf}
 \end{cdrfigure}
 
+%\begin{cdrtable}[\nue and \anue appearance rates]{lcc}{apprates}{\nue and \anue appearance rates: Integrated rate of selected $\nu_e$ CC-like events between 0.5 and 20.0~GeV assuming a 150~kt-MW-yr exposure each in the neutrino-beam mode and antineutrino-beam mode.  The signal rates are shown for both normal mass hierarchy (NH) and inverted mass hierarchy (IH), and all the background rates assume normal mass hierarchy.  All the rates assume $\mdeltacp = 0$, and the rates are shown for both the CDR reference beam design and the optimized beam as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
+%  & CDR Reference Design & Optimized Design\\
+%  \toprowrule
+%  \toprowrule
+% $\nu$ mode (150~kt-MW-yr) & & \\
+% \toprowrule
+% \nue Signal NH (IH) & 881 (510) & 968 (538)\\
+% \anue Signal NH (IH) & 17 (29) & 11 (23)\\
+% \toprowrule
+% Total Signal NH (IH) & 898 (539) & 979 (561) \\
+% \toprowrule
+% Beam $\nu_{e}+\bar{\nu}_{e}$ CC Bkgd & 284 & 293 \\
+% NC Bkgd & 30 & 26 \\
+% $\nu_{\tau}+\bar{\nu}_{\tau}$ CC Bkgd & 43 & 20 \\
+% $\nu_{\mu}+\bar{\nu}_{\mu}$ CC Bkgd & 3 & 3 \\
+% \toprowrule
+% Total Bkgd & 360 & 342 \\
+% \toprowrule
+% \toprowrule
+% $\bar{\nu}$ mode (150~kt-MW-yr) & & \\
+% \toprowrule
+% \nue Signal NH (IH) & 68 (43) & 52 (31)\\
+% \anue Signal NH (IH) & 172 (383) & 173 (441)\\
+% \toprowrule
+% Total Signal NH (IH) & 240 (426) & 225 (472) \\
+% \toprowrule
+% Beam $\nu_{e}+\bar{\nu}_{e}$ CC Bkgd & 177 & 173 \\
+% NC Bkgd & 16 & 13 \\
+% $\nu_{\tau}+\bar{\nu}_{\tau}$ CC Bkgd & 24 & 11 \\
+% $\nu_{\mu}+\bar{\nu}_{\mu}$ CC Bkgd & 2 & 2 \\
+% \toprowrule
+% Total Bkgd & 219 & 199 \\
+%\end{cdrtable}
+
 \begin{cdrtable}[\nue and \anue appearance rates]{lcc}{apprates}{\nue and \anue appearance rates: Integrated rate of selected $\nu_e$ CC-like events between 0.5 and 8.0~GeV assuming a 150~kt-MW-yr exposure in the neutrino-beam mode and antineutrino-beam mode.  The signal rates are shown for both normal mass hierarchy (NH) and inverted mass hierarchy (IH), and all the background rates assume normal mass hierarchy.  All the rates assume $\mdeltacp = 0$, and the rates are shown for both the CDR reference beam design and the optimized beam as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
   & CDR Reference Design & Optimized Design\\
   \toprowrule
   \toprowrule
  $\nu$ mode (150~kt-MW-yr) & & \\
  \toprowrule
- \nue Signal NH (IH) & 881 (510) & 968 (538)\\
- \anue Signal NH (IH) & 17 (29) & 11 (23)\\
+ \nue Signal NH (IH) & 861 (495) & 945 (521)\\
+ \anue Signal NH (IH) & 13 (26) & 10 (22)\\
  \toprowrule
- Total Signal NH (IH) & 898 (539) & 979 (561) \\
+ Total Signal NH (IH) & 874 (521) & 955 (543) \\
  \toprowrule
- Beam $\nu_{e}+\bar{\nu}_{e}$ CC Bkgd & 284 & 293 \\
- NC Bkgd & 30 & 26 \\
- $\nu_{\tau}+\bar{\nu}_{\tau}$ CC Bkgd & 43 & 20 \\
+ Beam $\nu_{e}+\bar{\nu}_{e}$ CC Bkgd & 159 & 204 \\
+ NC Bkgd & 22 & 17 \\
+ $\nu_{\tau}+\bar{\nu}_{\tau}$ CC Bkgd & 42 & 19 \\
  $\nu_{\mu}+\bar{\nu}_{\mu}$ CC Bkgd & 3 & 3 \\
  \toprowrule
- Total Bkgd & 360 & 342 \\
+ Total Bkgd & 226 & 243 \\
  \toprowrule
  \toprowrule
  $\bar{\nu}$ mode (150~kt-MW-yr) & & \\
  \toprowrule
- \nue Signal NH (IH) & 68 (43) & 52 (31)\\
- \anue Signal NH (IH) & 172 (383) & 173 (441)\\
+ \nue Signal NH (IH) & 61 (37) & 47 (28)\\
+ \anue Signal NH (IH) & 167 (378) & 168 (436)\\
  \toprowrule
- Total Signal NH (IH) & 240 (426) & 225 (472) \\
+ Total Signal NH (IH) & 228 (415) & 215 (464) \\
  \toprowrule
- Beam $\nu_{e}+\bar{\nu}_{e}$ CC Bkgd & 177 & 173 \\
- NC Bkgd & 16 & 13 \\
- $\nu_{\tau}+\bar{\nu}_{\tau}$ CC Bkgd & 24 & 11 \\
+ Beam $\nu_{e}+\bar{\nu}_{e}$ CC Bkgd & 89 & 105 \\
+ NC Bkgd & 12 & 9 \\
+ $\nu_{\tau}+\bar{\nu}_{\tau}$ CC Bkgd & 23 & 11 \\
  $\nu_{\mu}+\bar{\nu}_{\mu}$ CC Bkgd & 2 & 2 \\
  \toprowrule
- Total Bkgd & 219 & 199 \\
+ Total Bkgd & 126 & 127 \\
 \end{cdrtable}
 
-\begin{cdrtable}[\numu and \anumu disappearance rates]{lcc}{disrates}{\numu and \anumu disappearance rates: Integrated rate of selected $\nu_{\mu}$ CC-like events between 0.5 and 8.0~GeV assuming a 150~kt-MW-yr exposure in the neutrino-beam mode and antineutrino-beam mode.  The rates are shown for normal mass hierarchy and $\mdeltacp = 0$, and the rates are shown for both the CDR reference beam design and the optimized beam as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
+\begin{cdrtable}[\numu and \anumu disappearance rates]{lcc}{disrates}{\numu and \anumu disappearance rates: Integrated rate of selected $\nu_{\mu}$ CC-like events between 0.5 and 20.0~GeV assuming a 150~kt-MW-yr exposure in the neutrino-beam mode and antineutrino-beam mode.  The rates are shown for normal mass hierarchy and $\mdeltacp = 0$, and the rates are shown for both the CDR reference beam design and the optimized beam as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
   & CDR Reference Design & Optimized Design\\
   \toprowrule
   \toprowrule
@@ -439,53 +472,73 @@ antineutrino data has been shown to produce a nearly optimal
 sensitivity, and small deviations from this (e.g., 40\%/60\%,
 60\%/40\%) produce negligible changes in the sensitivity.
 
-The neutrino oscillation parameters are all
-allowed to vary, constrained by a Gaussian prior with 1$\sigma$ width given
-by the relative uncertainties shown in Table~\ref{tab:oscpar_nufit}.
-The effect of systematic uncertainty
-is approximated using signal and background normalization uncertainties, which
-are treated as 100\% uncorrelated among the four samples.
-The baseline systematic uncertainty estimates and the effect
-of considering larger signal and background normalization uncertainties are
-discussed in Section~\ref{sec:physics-lbnosc-beamnd-req}. 
+The neutrino oscillation parameters are all allowed to vary,
+constrained by a Gaussian prior with 1$\sigma$ width 
+as given by the relative uncertainties shown in
+Table~\ref{tab:oscpar_nufit}.  The effect of systematic uncertainty is
+approximated using signal and background normalization uncertainties,
+which are treated as 100\% uncorrelated among the four samples.  The
+baseline systematic uncertainty estimates and the effect of
+considering larger signal and background normalization uncertainties,
+as well as some energy scale uncertainties are discussed in
+Section~\ref{sec:physics-lbnosc-beamnd-req}.
 
-In these fits, experimental sensitivity is
-quantified using a test statistic, $\Delta\chi^2$, which is calculated
-by comparing the predicted spectra for alternate hypotheses.
-These quantities are defined, differently for neutrino mass hierarchy
-and CP violation sensitivity, to be:
+In these fits, experimental sensitivity is quantified using a test
+statistic, $\Delta\chi^2$, which is calculated by comparing the
+predicted spectra for alternate hypotheses.  These quantities are
+defined, differently for neutrino mass hierarchy and CP violation
+sensitivity, to be:
 \begin{eqnarray}
 \Delta\chi^2_{MH} & = & \chi^2_{IH} - \chi^2_{NH}\textrm{ (true normal hierarchy),}\label{eq:dx2_MH}\\ 
 \Delta\chi^2_{MH} & = & \chi^2_{NH} - \chi^2_{IH}\textrm{ (true inverted hierarchy),}\\
 \Delta\chi^2_{CPV} & = & Min[\Delta\chi^2_{CP}(\mdeltacp^{test}=0),\Delta\chi^2_{CP}(\mdeltacp^{test}=\pi)]\textrm{, where} \\
 \Delta\chi^2_{CP} & = & \chi^2_{\mdeltacp^{test}} - \chi^2_{\mdeltacp^{true}}.\label{eq:dx2_CP} \\ \nonumber
 \end{eqnarray}
-Since the true value of $\mdeltacp$ is unknown, a scan is  performed over
-all possible values of $\mdeltacp^{true}$. 
-We define a ``typical experiment'' as one with the most probable data given a set of input parameters, 
-i.e. in which no statistical fluctuations have been applied.
-In this case, the predicted spectra and the true spectra are identical;
-for the example of CP violation, $\chi^2_{\mdeltacp^{true}}$ 
-is identically zero and the $\Delta\chi^2_{CP}$ value for a typical experiment is given by 
+Since the true value of $\mdeltacp$ is unknown, a scan is performed
+over all possible values of $\mdeltacp^{true}$.  We define a ``typical
+experiment'' as one with the most probable data given a set of input
+parameters, i.e. in which no statistical fluctuations have been
+applied.  In this case, the predicted spectra and the true spectra are
+identical; for the example of CP violation,
+$\chi^2_{\mdeltacp^{true}}$ is identically zero and the
+$\Delta\chi^2_{CP}$ value for a typical experiment is given by
 $\chi^2_{\mdeltacp^{test}}$.
 %Add octant chi2, calculation of resolutions?
 
 \section{Mass Hierarchy}
 \label{sec:physics-lbnosc-mh}
 
-The 1300~km baseline establishes one of DUNE's key strengths: sensitivity to the matter
-effect. This effect leads to a large asymmetry in the
-$\nu_\mu\to \nu_e$ versus $\overline{\nu}_\mu \to \overline{\nu}_e$
-oscillation probabilities, the sign of which depends on the mass
-hierarchy (MH).  At 1300~km this asymmetry is approximately
-$\pm 40\%$ in the region of the peak flux; this is larger than the
-maximal possible CP-violating asymmetry associated with \deltacp,
-meaning that both the MH and \deltacp can be
-determined unambiguously with high confidence within the same
-experiment using the beam neutrinos.  DUNE's goal is to determine the MH with a significance of at least $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for all \deltacp values using beam neutrinos.  Concurrent analysis of the corresponding atmospheric-neutrino samples will improve the precision with which the
-MH is resolved. 
+The 1300~km baseline establishes one of DUNE's key strengths:
+sensitivity to the matter effect. This effect leads to a large
+asymmetry in the $\nu_\mu\to \nu_e$ versus $\overline{\nu}_\mu \to
+\overline{\nu}_e$ oscillation probabilities, the sign of which depends
+on the mass hierarchy (MH).  At 1300~km this asymmetry is
+approximately $\pm 40\%$ in the region of the peak flux; this is
+larger than the maximal possible CP-violating asymmetry associated
+with \deltacp, meaning that both the MH and \deltacp can be determined
+unambiguously with high confidence within the same experiment using
+the beam neutrinos.  DUNE's goal is to determine the MH with a
+significance of at least $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for
+all \deltacp values using beam neutrinos.  Concurrent analysis of the
+corresponding atmospheric-neutrino samples will improve the precision
+with which the MH is resolved.
 
-Figure~\ref{fig:mh_nominal} shows the significance with which the MH can be determined as a function of the value of \deltacp, for an exposure of 300~kt-MW-yr, which corresponds to seven years of data (3.5 years in neutrino mode plus 3.5 years in antineutrino mode) with a 40-kt detector and a 1.07-MW beam.  For this exposure, the MH is determined with a minimum significance of $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for 100\% of the \deltacp values for the optimized beam design and nearly 100\% of \deltacp values for the CDR reference beam design.  Figure~\ref{fig:mh_exposure} shows the significance with which the MH can be determined for 100\% of \deltacp values as a function of exposure.  Minimum exposures of approximately 400~kt-MW-yr and 230~kt-MW-yr are required to determine the MH with a significance of $\sqrt{\overline{\Delta\chi^2}} = 5$ for 100\% of \deltacp values for the CDR reference beam design and the optimized beam design, respectively.
+Figure~\ref{fig:mh_nominal} shows the significance with which the MH
+can be determined as a function of the value of \deltacp, for an
+exposure of 300~kt-MW-yr, which corresponds to seven years of data
+(3.5 years in neutrino mode plus 3.5 years in antineutrino mode) with
+a 40-kt detector and a 1.07-MW 80-GeV beam.  For this exposure, the MH is
+determined with a minimum significance of
+$\sqrt{\overline{\Delta\chi^{2}}} = 5$ for 100\% of the \deltacp
+values for the optimized beam design and nearly 100\% of \deltacp
+values for the CDR reference beam design.
+Figure~\ref{fig:mh_exposure} shows the significance with which the MH
+can be determined for 100\% of \deltacp values as a function of
+exposure.  Minimum exposures of approximately 400~kt-MW-yr and
+230~kt-MW-yr are required to determine the MH with a significance of
+$\sqrt{\overline{\Delta\chi^2}} = 5$ for 100\% of \deltacp values for
+the CDR reference beam design and the optimized beam design,
+respectively.
 
 \begin{cdrfigure}[Mass hierarchy sensitivity for a 300~kt-MW-yr exposure]{mh_nominal}{The significance with which the mass hierarchy can be determined as a function of the value of \deltacp for an exposure of 300~kt-MW-yr assuming normal MH (left) or inverted MH (right).  The shaded region represents the range in sensitivity due to potential variations in the beam design.}
  \includegraphics[width=0.49\textwidth]{mh_300ktmwyear}
@@ -497,9 +550,14 @@ Figure~\ref{fig:mh_nominal} shows the significance with which the MH can be dete
 \end{cdrfigure}
 % \fixme{We are considering an update to Fig~\ref{fig:mh_exposure} where we show CP coverage at 5sigma as a function of exposure, instead of the significance for a fixed CP coverage of 100\% (which is the current version).}
 
-Figures~\ref{fig:mh_theta23}, \ref{fig:mh_theta13}, and \ref{fig:mh_deltamsq} show the variation in the MH sensitivity due to different values of $\theta_{23}$, $\theta_{13}$, and \dm{31} within the allowed ranges.  The value of $\theta_{23}$ has the biggest impact on the sensitivity, and the least favorable scenario corresponds to a true value of \deltacp in which the MH asymmetry
-is maximally offset by the leptonic CP asymmetry, and where, independently, 
-$\sin^2{\theta_{23}}$ takes on a value at the low end of its 
+Figures~\ref{fig:mh_theta23}, \ref{fig:mh_theta13}, and
+\ref{fig:mh_deltamsq} show the variation in the MH sensitivity due to
+different values of $\theta_{23}$, $\theta_{13}$, and \dm{31} within
+the allowed ranges.  The value of $\theta_{23}$ has the biggest impact
+on the sensitivity, and the least favorable scenario corresponds to a
+true value of \deltacp in which the MH asymmetry is maximally offset
+by the leptonic CP asymmetry, and where, independently,
+$\sin^2{\theta_{23}}$ takes on a value at the low end of its
 experimentally allowed range.
 
 \begin{cdrfigure}[Variation in MH sensitivity due to $\theta_{23}$]{mh_theta23}{The variation in the MH sensitivity due to different values of $\theta_{23}$ within the allowed range.  In this figure, the nominal value of $\sin^2\theta_{23} = 0.45$ provides a significance of at least $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for all values of \deltacp. (See Figure~\ref{fig:mh_exposure} for the possible range of exposures to achieve this level of significance.) The significance decreases for all values of \deltacp as $\sin^2\theta_{23}$ gets smaller.}
@@ -608,21 +666,24 @@ fit the data equally well, and the probability of guessing correctly is 50\%.
 \label{sec:physics-lbnosc-cpv}
 
 In the particular parameterization of the PMNS matrix shown in
-Equation~\ref{eqn:pmns}, the middle factor, labeled `II', describes
+Equation~\ref{eqn:pmns}, the middle factor labeled ``II'' describes
 the mixing between the $\nu_1$ and $\nu_3$ mass states, and depends on
-the CP-violating phase \deltacp.  With the recent measurement of $\theta_{13}$, we now know
-that the conditions for measuring \deltacp in the three-flavor framework 
-have been met; all three mixing angles are nonzero, and there are two distinct mass splittings.
-In the approximation for the electron neutrino appearance probability given in Equation~\ref{eqn:appprob}, 
-expanding the middle term results in the presence of CP-odd terms (dependent on $\sin \mdeltacp$) that have opposite signs 
-in $\nu_{\mu} \rightarrow \nu_e$ and $\overline{\nu}_{\mu} \rightarrow \overline{\nu}_e$ oscillations.
-For $\mdeltacp \neq 0$ or $\pi$, these terms introduce an
-asymmetry in neutrino versus antineutrino oscillations. The magnitude of the
-CP-violating terms in the oscillation depends most directly on the size of 
-the Jarlskog Invariant~\cite{Jarlskog:1985cw}, a function that was
-introduced to provide a measure of CP violation independent of the 
-mixing-matrix parameterization. In terms of the parameterization presented in Equation~\ref{eqn:pmns},
-the Jarlskog Invariant is:
+the CP-violating phase \deltacp.  With the recent measurement of
+$\theta_{13}$, it is now known that the minimal conditions required
+for measuring \deltacp in the three-flavor framework have been met;
+all three mixing angles are nonzero, and there are two distinct mass
+splittings.  In the approximation for the electron neutrino appearance
+probability given in Equation~\ref{eqn:appprob}, expanding the middle
+term results in the presence of CP-odd terms (dependent on $\sin
+\mdeltacp$) that have opposite signs in $\nu_{\mu} \rightarrow \nu_e$
+and $\overline{\nu}_{\mu} \rightarrow \overline{\nu}_e$ oscillations.
+For $\mdeltacp \neq 0$ or $\pi$, these terms introduce an asymmetry in
+neutrino versus antineutrino oscillations. The magnitude of the
+CP-violating terms in the oscillation depends most directly on the
+size of the Jarlskog Invariant~\cite{Jarlskog:1985cw}, a function that
+was introduced to provide a measure of CP violation independent of the
+mixing-matrix parameterization. In terms of the parameterization
+presented in Equation~\ref{eqn:pmns}, the Jarlskog Invariant is:
 %
 \begin{equation}
 J_{CP}^{\rm PMNS} \equiv \frac{1}{8} \sin 2 \theta_{12} \sin 2 \theta_{13}
@@ -671,16 +732,39 @@ order in $\Delta m_{21}^2$ as~\cite{Marciano:2006uc}:
   \ effects}
 \label{eqn:cpasym}
 \end{equation}
-Regardless of the measured value obtained for \deltacp, the explicit observation
-of the asymmetry $\mathcal{A}_{CP}$ in $\nu_{\mu} \rightarrow \nu_e$ and $\overline{\nu}_{\mu} \rightarrow \overline{\nu}_e$
-oscillations is sought to directly demonstrate the
-leptonic CP violation effect.  A measurement of \deltacp that is inconsistent with the measurement of $\mathcal{A}_{CP}$
-according to Equation~\ref{eqn:cpasym} could be evidence of of physics beyond the standard three-flavor model.
-Furthermore, for long-baseline experiments such as DUNE where the neutrino beam propagates through 
-the Earth's mantle, the leptonic CP-violation effects must be disentangled from 
-the matter effects, discussed in Section~\ref{sec:physics-lbnosc-mh}.
+Regardless of the measured value obtained for \deltacp, the explicit
+observation of the asymmetry $\mathcal{A}_{CP}$ in $\nu_{\mu}
+\rightarrow \nu_e$ and $\overline{\nu}_{\mu} \rightarrow
+\overline{\nu}_e$ oscillations is sought to directly demonstrate the
+leptonic CP violation effect.  A measurement of \deltacp that is
+inconsistent with the measurement of $\mathcal{A}_{CP}$ according to
+Equation~\ref{eqn:cpasym} could be evidence of of physics beyond the
+standard three-flavor model.  Furthermore, for long-baseline
+experiments such as DUNE where the neutrino beam propagates through
+the Earth's mantle, the leptonic CP-violation effects must be
+disentangled from the matter effects, discussed in
+Section~\ref{sec:physics-lbnosc-mh}.
 
-Figure~\ref{fig:cpv_nominal} shows the significance with which the CP violation ($\mdeltacp \neq 0 \ {\rm or} \ \pi$) can be determined as a function of the value of \deltacp for an exposure of 300~kt-MW-yr, which corresponds to seven years of data (3.5 years in neutrino mode plus 3.5 years in antineutrino mode) with a 40-kt detector and a 1.07-MW beam.  Figure~\ref{fig:cpv_exposure} shows the significance with which CP violation can be determined for 50\% or 75\% of \deltacp values as a function of exposure.  Table~\ref{tab:cpv_requiredexposure} lists the minimum exposure required to determine CP violation with a significance of 5$\sigma$ for 50\% of \deltacp values or 3$\sigma$ for 75\% of \deltacp values for both the CDR reference beam design and the optimized beam design.  The CP violation sensitivity as a function of \deltacp as shown in Figure~\ref{fig:cpv_nominal} has a characteristic double peak structure because the significance of a CP violation measurement necessarily drops to zero where there is no CP violation: at the CP-conserving values of $-\pi,~0,~{\rm and}~\pi$.  Therefore, unlike the MH determination, it's not possible for any experiment to provide 100\% coverage in \deltacp for a CP violation measurement because CP violation effects vanish at certain values of \deltacp.
+Figure~\ref{fig:cpv_nominal} shows the significance with which the CP
+violation ($\mdeltacp \neq 0 \ {\rm or} \ \pi$) can be determined as a
+function of the value of \deltacp for an exposure of 300~kt-MW-yr,
+which corresponds to seven years of data (3.5 years in neutrino mode
+plus 3.5 years in antineutrino mode) with a 40-kt detector and a
+1.07-MW 80-GeV beam.  Figure~\ref{fig:cpv_exposure} shows the significance
+with which CP violation can be determined for 50\% or 75\% of \deltacp
+values as a function of exposure.
+Table~\ref{tab:cpv_requiredexposure} lists the minimum exposure
+required to determine CP violation with a significance of 5$\sigma$
+for 50\% of \deltacp values or 3$\sigma$ for 75\% of \deltacp values
+for both the CDR reference beam design and the optimized beam design.
+The CP violation sensitivity as a function of \deltacp as shown in
+Figure~\ref{fig:cpv_nominal} has a characteristic double peak
+structure because the significance of a CP violation measurement
+necessarily drops to zero where there is no CP violation: at the
+CP-conserving values of $-\pi,~0,~{\rm and}~\pi$.  Therefore, unlike
+the MH determination, it's not possible for any experiment to provide
+100\% coverage in \deltacp for a CP violation measurement because CP
+violation effects vanish at certain values of \deltacp.
 
 \begin{cdrfigure}[CP violation sensitivity for a 300~kt-MW-yr exposure]{cpv_nominal}{The significance with which the CP violation can be determined as a function of the value of \deltacp for an exposure of 300~kt-MW-yr assuming normal MH (left) or inverted MH (right).  The shaded region represents the range in sensitivity due to potential variations in the beam design.}
  \includegraphics[width=0.49\textwidth]{cpv_300ktmwyear}
@@ -745,37 +829,40 @@ DUNE will improve the precision on key parameters that govern neutrino oscillati
  \item \dm{31}
 \end{itemize}
 
-
+Higher precision measurements of the known oscillation parameters
+improves sensitivity to physics beyond the 3-flavor oscillation model,
+particularly when compared to independent measurements by other
+experiments such as reactor measurements of $\theta_{13}$ and
+measurements with atmospheric neutrinos.
 % The value of \sinstt{23} is measured to be $>$~0.95 at 90\% CL 
 % using atmospheric neutrino oscillations~\cite{Abe:2011ph}. 
-The most precise measurement of $\sin^2\theta_{23}$ to date comes from T2K, $\sin^2\theta_{23}~=~0.514^{+0.055}_{-0.056}$~(normal hierarchy) and $\sin^2\theta_{23}~=~0.511~\pm~0.055$~(inverted hierarchy)~\cite{Abe:2015awa}.
-This corresponds to a value of 
-$\theta_{23}$ near 45\mbox{$^{\circ}$}, but leaves an ambiguity
-as to whether the value of $\theta_{23}$ is in the lower octant 
-(less than 45\mbox{$^{\circ}$}), the upper octant (greater than 45\mbox{$^{\circ}$}),
-or exactly 45\mbox{$^{\circ}$}. 
-The value of $\sin^2 \theta_{23}$ from
-the global fit reported by~\cite{Gonzalez-Garcia:2014bfa} is $\sin ^2 \theta_{23} = 0.452
-^{+0.052} _{-0.028} (1 \sigma)$ for normal hierarchy (NH), but the distribution of the $\chi^2$ from
-the global fit has another local minimum --- particularly if the MH 
-is inverted --- at $\sin^2 \theta_{23} = 0.579 ^{+0.025} _{-0.037} (1 \sigma)$. A
-\emph{maximal} mixing value of $\sin^2 \theta_{23} =0.5$ is therefore still allowed
-by the data and the octant is still largely undetermined.
-A value of $\theta_{23}$ exactly equal to 45\mbox{$^{\circ}$} would indicate that 
+The most precise measurement of $\sin^2\theta_{23}$ to date comes from
+T2K, $\sin^2\theta_{23}~=~0.514^{+0.055}_{-0.056}$~(normal hierarchy)
+and $\sin^2\theta_{23}~=~0.511~\pm~0.055$~(inverted
+hierarchy)~\cite{Abe:2015awa}.  This corresponds to a value of
+$\theta_{23}$ near 45\mbox{$^{\circ}$}, but leaves an ambiguity as to
+whether the value of $\theta_{23}$ is in the lower octant (less than
+45\mbox{$^{\circ}$}), the upper octant (greater than
+45\mbox{$^{\circ}$}), or exactly 45\mbox{$^{\circ}$}.  The value of
+$\sin^2 \theta_{23}$ from the global fit reported
+by~\cite{Gonzalez-Garcia:2014bfa} is $\sin ^2 \theta_{23} = 0.452
+^{+0.052} _{-0.028} (1 \sigma)$ for normal hierarchy (NH), but the
+distribution of the $\chi^2$ from the global fit has another local
+minimum --- particularly if the MH is inverted --- at $\sin^2
+\theta_{23} = 0.579 ^{+0.025} _{-0.037} (1 \sigma)$. A \emph{maximal}
+mixing value of $\sin^2 \theta_{23} =0.5$ is therefore still allowed
+by the data and the octant is still largely undetermined.  A value of
+$\theta_{23}$ exactly equal to 45\mbox{$^{\circ}$} would indicate that
 $\nu_{\mu}$ and $\nu_{\tau}$ have equal contributions from $\nu_3$,
-which could be evidence for a previously unknown symmetry. 
-It is
-therefore important experimentally to determine the value of
-$\sin ^2 \theta_{23}$ 
-with sufficient precision to determine 
-the octant of $\theta_{23}$. 
-The measurement of $\nu_\mu \rightarrow \nu_\mu$ oscillations is
-sensitive to $\sin ^2 2 \theta_{23}$, whereas the measurement of
-$\nu_\mu \rightarrow \nu_e$ oscillations is sensitive to $\sin^2
-\theta_{23}$. 
-A combination of both $\nu_e$ appearance and $\nu_\mu$ disappearance
-measurements can probe both maximal mixing and the $\theta_{23}$
-octant.  The $\Delta\chi^2$ metric is defined as:
+which could be evidence for a previously unknown symmetry.  It is
+therefore important experimentally to determine the value of $\sin ^2
+\theta_{23}$ with sufficient precision to determine the octant of
+$\theta_{23}$.  The measurement of $\nu_\mu \rightarrow \nu_\mu$
+oscillations is sensitive to $\sin ^2 2 \theta_{23}$, whereas the
+measurement of $\nu_\mu \rightarrow \nu_e$ oscillations is sensitive
+to $\sin^2 \theta_{23}$.  A combination of both $\nu_e$ appearance and
+$\nu_\mu$ disappearance measurements can probe both maximal mixing and
+the $\theta_{23}$ octant.  The $\Delta\chi^2$ metric is defined as:
 \begin{eqnarray}
 \Delta\chi^2_{octant} & = & |\chi^2_{\theta_{23}^{test}>45^\circ} - \chi^2_{\theta_{23}^{test}<45^\circ}|, \\ \nonumber
 \end{eqnarray}
