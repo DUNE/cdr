@@ -129,21 +129,25 @@ with optimization these sizes can be further reduced.
 
 % by at least an order of magnitude.
 
-However, one of the possibilities that is now actively explored by the DUNE
-DAQ team is to record beam event candidates (e.g. events with signals
-above the ``high threshold'' as detailed in the Annex) at a very low threshold, corresponding
-to a virtually full data stream in the selected time interval. This is motivated
-by the desire to preserve unusual signatures that may exist due to new
-phenomena and to allow for better control of systematics during reconstruction.
+Some of the driving zero-suppressed (ZS) and full-stream (FS) annual
+data volumes are summarized in table~\ref{tab:sc-zs-summary}. It is important to note
+that the numbers in the row characterizing $^{39}$Ar are given for information only and do
+not represent our estimates of actual data to be committed to mass storage.
 
-In that case, one can estimate the total size of the TPC data
-to be collected annually by multiplying the predicted number of beam neutrino interactions
-per year (estimated here to be \beamrate) by the full stream event size
-quoted above (\dunefsreadoutsize).  Thus one arrives to an estimate of
+There is a range of possible approaches to reducing data volume in real time without
+losing much of information due to low-amplitude signals, which may be important
+for more precise particle identification or in search for unusual  signatures that may
+exist due to new phenomena. For example, implementation of the ``trigger stream''
+in the DAQ system allows to trigger on event candidates using ``high threshold'', while
+capturing data in the potential event without applying any threshold at all. In that case, one can estimate
+the total size of the TPC data to be collected annually by multiplying the predicted number of beam neutrino interactions
+per year (estimated here to be \beamrate) by the full stream event size quoted above (\dunefsreadoutsize).  Thus one arrives to an estimate of
 \beamdatayearfs for each year of this type of data.
 
-Some of the driving zero-suppressed (ZS) and full-stream (FS) annual
-data volumes are summarized in table~\ref{tab:sc-zs-summary}.
+This scheme can be augmented by an ``express offline'' farm (extension of DAQ) which would perform functions similar to a high-level trigger
+utilized in collider experiments, allowing more flexibility in choosing thresholds and other parameters which
+will determines rates and volumes of the data produced by the Far Detector. Design of such system is currently
+in the conceptual stage and information will be added to DUNE planning documents as it is developed.
 
 
 \input{volume-detectors/generated/zs-volume-summary}
