@@ -123,7 +123,8 @@ Zero suppression greatly reduces the size event size.  An overly conservative es
 (leaning to the higher end of the range of values)
  based on a LArSoft Monte Carlo simulation of GeV-scale
 events suggests a zero-suppressed and uncompressed event size of $\sim$\beameventsize.
-After compression this event size is expected to be $\sim$0.1 MB.  This particular
+After compression this event size is expected to be $\sim$\beameventsizecompressed.
+This particular
 simulation employed a less than optimial schema for packing data and it is expected that
 with optimization these sizes can be further reduced.
 
@@ -174,17 +175,17 @@ Once again, the Near Detector is subject to an intense R\&D effort and its
 parameters are being optimized and not fixed at this point. The most relevant parameters
 of the Fine-Grained Tracker (FGT):
 \begin{itemize}
-\item   Straw Tube Tracker (STT) readout channel count: 215,040
+\item   Straw Tube Tracker (STT) readout channel count: \ndsstchannels
 \item STT Drift Time: 120ns
 \item STT ADC clock frequency and resolution (bits): 3ns intervals, 10 bit
-\item ECAL channel count: 52,224
-\item Muon Detector Resistive Plane Chambers (RPC) channel count: 165,888
+\item ECAL channel count: \ndecalchannels
+\item Muon Detector Resistive Plane Chambers (RPC) channel count: \ndmuidchannels
 \item Average expected event rate per spill: \textasciitilde 1.5
 \end{itemize}
 \
 Since there are large uncertainties in estimates of the detector occupancy levels per event, 
 broad assumptions must be made to roughly estimate its data rate. Current estimate (as quoted in the Near Detector
-section of the ``Expected Data Rates'' Annex is \textasciitilde 1MB/s, which translates into \textasciitilde 30TB/year.
+section of the ``Expected Data Rates'' Annex is \textasciitilde \nddatarate, which translates into \textasciitilde 30TB/year.
 
 % Assuming that 10\% occupancy in the STT and 40 samples
 %per trigger, one arrives to \textasciitilde 1MB of data per event. Under same assumption, ECAL will contribute \textasciitilde 0.25MB
