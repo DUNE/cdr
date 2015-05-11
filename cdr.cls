@@ -33,6 +33,10 @@
 \RequirePackage{graphicx}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{lmodern}
+% Anne adds parskip 5/7/15
+\RequirePackage{parskip}
+\setlength{\parskip}{\baselineskip}
+
 
 % Smart end-of-macro spacing
 \RequirePackage{xspace}

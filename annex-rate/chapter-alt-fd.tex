@@ -4,17 +4,16 @@
 \section{Data rates tables for the alternate Far Detector Design}
 
 In the following the summary tables for the rates and data volumes, corresponding to the alternate Far Detector design, are reported.
-Given the amplification factor of the ionization electrons provided in the gas phase by the LEM detectors the signal to noise ratio is 100:1
-for a particle at the ionization minimum. The noise level, given the strips pitch of 3.125 mm, corresponds to about 20 keV. 
-A zero-suppressed (ZS) threshold at $\approx 3\sigma$ above the mean noise level of the front-end electronics can be computed similarly to the 
-one reported for the reference design, this would correspond to 60 keV.Each 10 kton detector is read out by
-80 CRP anode units of $3 \times 3$ m$^2$ with two perpendicular collection views segmented in strips of 3m length and 3.125 mm pitch. 
-There are 1920 readout channels per CRP and 153600 channels per detector. Given the drift path of 12m the drift time amounts to 7.5 ms.  The ADC sampling frequency is 2.5 MHz and its resolution is 12 bits. The number of ADC samples per drift window is then 18750.
+Given the amplification factor of the ionization electrons provided in the gas phase by the LEM detectors the signal to noise ratio can exceed 100:1
+for a particle at the ionization minimum. Assuming conservative requirements on the argon purity, like 3 ms electrons lifetime, and a drift field of 0.5 kV/cm 
+the minimal S/N after 12 m of drift path is in the range 12:1-60:1 depending on the LEM gain  (20-100). Given the strips pitch of 3.125 mm, 
+a noise level of 60:1 corresponds to about 11 keV.  A zero-suppressed (ZS) threshold at $\approx 3\sigma$ above the mean noise level of the front-end electronics can be computed similarly to the one reported for the reference design. This corresponds to 33 keV threshold. The excellent S/N ratio provided by the double-phase amplification can translate in a very low energy threshold but also make easier the zero suppression since there are margins to increase the ZS threshold, still remaining at low energy, in the 100 KeV range. A higher threshold provides some immunity margins with respect to additional unforeseen noise sources which could be present on top on the intrinsic nose of the front-end amplifiers, like coherent noise related to grounding or external noise sources. This additional noise can quickly make less effective the ZS data volume reduction based on thresholds relying only on the expected front-end noise level. The DAQ system described in the alternate far detector design foresees, on top or independently than ZS, a lossless data compression scheme implemented in the digitization cards by using the Huffman compression algorithm. This compression factor is not taken into account in the full stream data volume calculation reported in the following.
+
+Each 10 kton detector is read out by 80 CRP anode units of $3 \times 3$ m$^2$ with two perpendicular collection views segmented in strips of 3m length and 3.125 mm pitch.  There are 1920 readout channels per CRP and 153600 channels per detector. Given the drift path of 12m the drift time amounts to 7.5 ms.  The ADC sampling frequency is 2.5 MHz and its resolution is 12 bits. The number of ADC samples per drift window is then 18750.
 
 These fundamental parameters serving as input for the data rate estimations are summarized in table~\ref{tab:ad-fundamental-parameters}
 
 \input{annex-rate/ad-fundamental-parameters-table}
-
 
 The parameters which apply to the full-stream data rates are given in table~\ref{tab:ad-full-stream-parameters}.
 

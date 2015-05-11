@@ -3,402 +3,339 @@
 \chapter{Near Detector Physics}
 \label{ch:physics-nd}
 
-%\section{Introduction}
-%\label{sec:physics-nd-introduction}
+\section{Introduction and Motivation}
+\label{sec:physics-nd-introduction}
 
 Because neutrinos oscillate and because the neutrino beam is an extended  source, every single 
-spectrum,  induced by the neutrino charged (CC) and neutral (NC) current interactions -- $\nu_\mu$-CC, 
-$\bar \nu_\mu$-CC, $\nu_e$-CC, $\bar \nu_e$-CC, and the NC --- measured at the far detector (FD)  is different from that at the near detector (ND). 
-In order to achieve the systematic precision for the signal and background events  in the FD,  
-which ideally should always be lower than the corresponding statistical error, the ND 
-measurements,  including neutrino fluxes,  cross-sections, topology of 
-interactions and smearing effects, must be unfolded and extrapolated to the far detector location 
-~\cite{ND-REQ1}, ~\cite{ND-REQ2}.  The charge, ID,  and the momentum vector resolution of 
-particles produced in the neutrino interactions  are the key to constraining  the systematic 
-uncertainties in the predictions at FD. 
+spectrum induced by the neutrino charged (CC) and neutral (NC) current interactions --- $\nu_\mu$-CC, 
+$\bar \nu_\mu$-CC, $\nu_e$-CC, $\bar \nu_e$-CC, and the NC --- is different when measured at the far detector versus 
+the near detector. 
+In order to achieve the systematic precision for the signal and background events  in the far detector,  
+which ideally should always be lower than the corresponding statistical error, the near detector 
+measurements ---  including neutrino fluxes,  cross sections, topology of 
+interactions and smearing effects --- must be unfolded and extrapolated to the far detector 
+location~\cite{near-detector-REQ1},~\cite{near-detector-REQ2}.  The charge, ID,  and the momentum vector resolution of 
+particles produced in the neutrino interactions are %the 
+key to constraining  the systematic 
+uncertainties in the predictions at far detector. 
 %
-%
-To this end, it is useful to remind that for the LBNF low-energy beam 
-(80 GeVprotons, 1.07 MW, $1.47 \times 10^{21} $ POT/year), the raw event rates expected at the  
-40 kton FD in a 5+5 year run (214 kt-MW-yr exposure) are 15476 (5355) for 
+
+To this end, it is useful to recall that for the LBNF low-energy beam 
+(80-GeV protons, 1.07 MW, $1.47 \times 10^{21} $ POT/year), the raw event rates expected at the  
+40-kt far detector in a 5+5 year run (214 kt-MW-yr exposure) are 15476 (5355) for 
 the $\nu_\mu (\bar \nu_\mu)$ disappearance channel 
 and 1280 (342) for the $\nu_e(\bar \nu_e)$ appearance channel (for $\delta_{CP}=0$ and assumed 
 best fit values of the mass-squared differences and mixings). 
 
 
-%The particle ID and the energy, angular and spatial resolutions of the ND 
-%are key factors in reducing the systematic 
-%uncertainties on the predicted FD spectra, allowing   a high precision in the measurements of the
-%elements of the neutrino mixing matrix and, importantly, affording  
-%redundancy to establish a discovery should something entirely unexpected be observed in the FD.  
-\noindent
-Importantly, given the scale and ambition of LBNF/DUNE, the ND must offer a physics 
+Importantly, given the scale and ambition of LBNF/DUNE, the near detector must offer a physics 
 potential that is as rich as those offered by collider detectors. 
-One of the main advantages of a high resolution ND built according to the reference design 
-(detailed in Volume 4, section 7 of  this document) is that it will offer a rich panoply of physics composed 
-of an estimated 100 topics,  resulting in over 200 publications and  theses during a ten-year operation. 
+One of the main advantages of a high-resolution near detector built according to the reference design 
+(detailed in Volume 4, Chapter 7 of  this CDR) is that it will offer a rich panoply of physics %composed of 
+spanning an estimated 100 topics and  resulting in over 200 publications and theses during a ten-year operation. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Physics Goals of the Near Detector}
 \label{sec:physics-nd-goals}
 
-The physics goals of the DUNE-ND fall under three broad categories: 
+The physics goals of the DUNE near detector fall under three categories: 
 
-\noindent
-{\boldmath $ {\cal A:}$} Constraining the systematic uncertainties in  oscillation studies;  
-
-\noindent
-{\boldmath $ {\cal B:}$} Offering a generational advance in the precision measurements of neutrino interactions, including 
-cross-sections, exclusive processes, electroweak and isospin physics, structure of nucleons and nuclei etc.;  
-
-\noindent
-{\boldmath $ {\cal C:}$} Conducting searches for new physics covering unexplored regions, 
+\begin{itemize}
+\item constraining the systematic uncertainties in  oscillation studies
+\item  offering a generational advance in the precision measurements of neutrino interactions, e.g., % including 
+cross sections, exclusive processes, electroweak and isospin physics, structure of nucleons and nuclei % etc.;  
+\item conducting searches for new physics covering unexplored regions, 
 including heavy (sterile) neutrinos, large $\Delta m^2$ neutrino oscillations, light Dark Matter 
-candidates etc. \\
-\noindent
-We stress that there is a large synergy in the above three goals. The physics requirements for the ND are driven 
+candidates, etc. 
+\end{itemize}
+
+%We stress that there is a large synergy in the above three goals. 
+These three broad goals possess significant synergy. The physics requirements for the near detector are driven 
 by the oscillation physics. However,  the unprecedented neutrino fluxes available at LBNF and the challenging 
-constraints required by the long-baseline program, especially those related to the CP measurement,   make the ND imminently suitable for  short-baseline 
-precision physics. Conversely, conducting precision measurements of neutrino 
-interactions would result in a reduction of systematic uncertainties on signal and background 
-predictions in the FD ~\cite{HIRESMNU, DPR, Adams:2013qkq}. 
+constraints required by the long-baseline program, especially those related to the CP measurement, also  make the near detector imminently suitable for  short-baseline 
+precision physics. And conversely, conducting precision measurements of neutrino 
+interactions will actually %would 
+result in a reduction of systematic uncertainties on signal and background 
+predictions in the far detector~\cite{HIRESMNU, DPR, Adams:2013qkq}.  
 
 
-
-\subsection{The Role of ND in Oscillation Physics}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Role of the Near Detector in Oscillation Physics} 
 \label{sec-nd-oscl} 
 
-%For neutrino oscillation studies ($\nu$OSCL) in LBNF/DUNE ---  
-%be it $\nu_e$ or $\bar \nu_e$ appearance leading to CP-violating $\delta$ and mass hierarchy (MH), or 
-%$\nu_\mu$ or $\bar \nu_\mu$ disappearance, or distortion in the NC spectrum,  or the non-standard oscillation --  
-%the associated systematic error determined from the extrapolation of the ND measurements 
-%must be less than the corresponding statistical error in the FD. 
-As illustrated in Section~\ref{ch:physics-lbnosc}, studies on the impact of different levels of systematic 
+As illustrated in Chapter~\ref{ch:physics-lbnosc}, studies on the impact of different levels of systematic 
 uncertainties on the oscillation analysis indicate 
 that uncertainties exceeding 1\% for signal and 5\% for backgrounds may result in 
 substantial degradation of the sensitivity to CP violation and mass hierarchy. 
-In the following we list the physics measurements required in the ND in order to 
-match this level of systematic uncertainty:   
+%In the following we list the physics measurements required in the near detector in order to 
+The near detector physics measurements discussed in this section are needed in order to match this level of systematic uncertainty.   
 
-\vspace{0.25cm} 
-\noindent
-{\bf (1):}  Determination of the relative abundance and 
-energy spectrum of all  {\bf four} species of neutrinos in the LBNE beam: Measurement of 
-$\nu_\mu$, $\bar \nu_\mu$, $\nu_e$, and $\bar \nu_e$ via their  CC-interactions.  
-The requirement demands precise measurement of $\mu^-$, $\mu^+$, $e^-$, and $e^+$ in the 
-the ND. Specifically, to measure both the small $\nu_e$ and $\bar \nu_e$ contamination in the beam with high precision, 
+The near detector will need to determine the relative abundance and 
+energy spectrum of all \textit{four} species of neutrinos in the LBNE beam.
+%
+This requires measurement of 
+$\nu_\mu$, $\bar \nu_\mu$, $\nu_e$, and $\bar \nu_e$ via their  CC-interactions,  
+which in turn demands precise measurement of $\mu^-$, $\mu^+$, $e^-$, and $e^+$ in the 
+the near detector. Specifically, to measure both the small $\nu_e$ and $\bar \nu_e$ contamination in the beam with high precision, 
 the detector would need to be able to distinguish $e^+$  from $e^-$. 
-This last requirement is motivated by a) the need to measure and identify $\nu - e$ NC elastic scattering (and calibrate 
-the corresponding backgrounds) for the absolute flux measurements; b) the redundancy in determining the distributions 
-of the parent mesons -- and in particular the $K^0$ content -- which are an essential ingredient to predict 
-the FD/ND flux ratio as a function of energy; c) the measurement of the $\pi^0$ yield in CC and NC interactions 
-from converted photons; d) the different composition in terms of QE, single-pion resonance, multi-pion resonance, and deep inelastic scattering (DIS) of CC and NC events originated by each of the four species in the FD and ND, respectively. 
-%{\it To motivate the need for this requirement, we note that the channels QE, single-pion resonance, multi-pion resonance, and deep inelastic scattering (DIS),  all of which are turned on in this energy range,  have different  energy spectra,  conveying the complexity of elucidating what one measures at the  ND. What makes the precision oscillation study challenging at LBNE, or at any long baseline experiment, is that the composition (of the four types of interactions listed above) for  the inclusive $\mu$-CC at the FD is different from that at the ND. Furthermore, $\bar{\mu}$-CC, $e$-CC and $\bar{e}$-CC will have still different compositions compared to the inclusive $\mu$-CC, and these compositions at the FD will not be the same as at the ND. Finally, the neutral current spectra from all four neutrino species will be entirely distinct at the two locations. The stringent systematics requirements for CP measurements thus dictate a precise separation of the four species at the ND, as do the precision measurements and new physics searches.}
+This last requirement is motivated by 
+\begin{enumerate}
+\item the need to measure and identify $\nu - e$ NC elastic scattering (and calibrate 
+the corresponding backgrounds) for the absolute flux measurements
+\item  the redundancy in determining the distributions 
+of the parent mesons -- %and 
+in particular, the $K^0$ content -- 
+\fixme{together the parent meson distributions are an ingredient, or each distribution is an ingredient?}
+which are an essential ingredient for predicting 
+the far detector/near detector flux ratio as a function of energy
+\item the measurement of the $\pi^0$ yield in CC and NC interactions 
+from converted photons
+\item the different composition in terms of QE, single-pion resonance, multi-pion resonance, and deep inelastic scattering (DIS) of CC and NC events originated by each of the four species in the far detector and near detector, respectively 
+\end{enumerate}
 
-% this would require a low density detector with a commensurately long physical radiation length. 
 
-
-\vspace{0.25cm} 
-\noindent
-{\bf (2):} Quantify asymmetries between neutrinos and anti-neutrinos, such as 
-energy-scales and interaction topologies, which are relevant for the measurement of the CP-violating phase. 
-We note that since the 
+Quantifying asymmetries between neutrinos and antineutrinos, such as 
+energy scales and interaction topologies, which are relevant for the measurement of the CP-violating phase, is
+another job of the near detector.
 %
-%---$ 
-% 
-reference ND, the fine-grained tracker (FGT),  
-%
+Since the reference near neutrino detector, the fine-grained tracker (FGT),  
 is not identical to the far
- detector it is not possible in long-baseline analyses to ``cancel'' the event reconstruction
- errors in a near to far ratio. %, as it is done for example in MINOS. 
+ detector, it is not possible in long-baseline analyses to ``cancel'' the event reconstruction
+ errors in a near-to-far ratio.  
 The extent to which such a cancellation will limit the ultimate precision of the experiment has yet to
  be fully explored. 
-Because of the low average density of the FGT, 0.1 g/cm$^3$, however, we will be able to 
-measure the missing transverse momentum ($p_{T}$)  vector in the CC processes, besides accurately 
+Because of the low average density of the FGT (0.1 g/cm$^3$), however, DUNE will be able to 
+measure the missing transverse momentum ($p_{T}$)  vector in the CC processes, in addition to accurately 
 measuring the lepton and hadron energies.
 This redundant missing-$p_{T}$ vector measurement provides a most important
 constraint on the neutrino and antineutrino energy scales. Measurements of
 exclusive topologies like quasi-elastic, resonance and
-coherent meson production also offer additional constraints on the neutrino energy scale. 
+coherent meson production offer additional constraints on the neutrino energy scale. 
 
 
-
-\vspace{0.25cm} 
-\noindent
-{\bf (3):} Determination of the absolute $\nu_\mu$- and $\bar \nu_\mu$-flux so as to  eliminate uncertainties in the neutrino and anti-neutrino cross-sections 
-affecting the oscillations measured  in LBNF/DUNE In the  disappearance 
-studies, the absolute flux should be determined to $\simeq 3\%$ precision in 
-$0.5 \leq E_\nu \leq 8$~GeV. For precision measurements of electroweak 
-and QCD physics a similar precision is required at higher energies. 
-
-\vspace{0.25cm} 
-\noindent
-{\bf (4):} The  Flux at FD Relative to ND: For precision $\nu_\mu$- and $\bar \nu_\mu$-disappearance  
-channels, the ratio of number of neutrinos ($\nu_\mu$  and $\bar \nu_\mu$) at FD to ND (FD/ND) 
-at given $E_\nu$ bin in $0.5 \leq E_\nu \leq 8$ GeV range should be known
-%
-%---$ 
-% 
-to $\simeq 1--2\%$ precision. 
-
-\vspace{0.25cm} 
-\noindent
-{\bf (5):} Neutral Current (NC) versus Charged Current (CC): 
-The requirement calls for event by event classification of NC  
-CC events leading to a precise measurement of 
-the NC cross-section relative to 
-CC as a function of the hadronic energy, $E_{Had}$, since NC processes 
-constitute one of the largest background to all appearance and disappearance oscillation 
-channels.
-
-\vspace{0.25cm} 
-\noindent
-{\bf (6):} Precise measurement 
-of $\pi^0$ and photon yields  in {\bf both}  $\nu$-induced 
-NC and CC interactions: 
-This is the most important background to the $\nu_e$- and $\bar \nu_e$-appearance 
-%
-%---$ 
-%
-at low energies; 
+In the disappearance 
+studies, the absolute $\nu_\mu$- and $\bar \nu_\mu$ flux should be determined to $\simeq 3\%$ precision in 
+$0.5 \leq E_\nu \leq 8$~GeV so as to eliminate uncertainties in the neutrino 
+and antineutrino cross sections affecting the oscillation measurements. For precision measurements of electroweak 
+and QCD physics, a similar precision is required at higher energies. 
 
 
-\vspace{0.25cm} 
-\noindent
-{\bf (7)} Measurement of the $\pi^{\pm}$ content in 
-CC and NC hadronic jets:  This is the most important background to 
-the $\nu_\mu$- and $\bar \nu_\mu$-disappearance coming from  the hadronic   $\pi^{\pm} \rightarrow \mu^{\pm}$; 
-it can also be a background to the 
-%
-%---$ 
-%
-appearance channel at lower energies. 
+%\textbf{The  Flux at the far detector relative to that at the near detector}
+ 
+For precision $\nu_\mu$- and $\bar \nu_\mu$-disappearance  
+channels, the far detector/near detector ratio of the number of neutrinos ($\nu_\mu$  and $\bar \nu_\mu$)
+at a given $E_\nu$ bin in $0.5 \leq E_\nu \leq 8$ GeV range should be known
+to $\simeq 1-2\%$ precision. \fixme{Some sentence like ``The blah capability of the near detector will enable this precision.''}
 
-\vspace{0.25cm} 
-\noindent
-{\bf (8)} Characterization of various exclusive (semi-exclusive) 
-channels such as Quasi-Elastic (QE), Resonance (Res), 
-Coherent-mesons and Deep-Inelastic-Scattering (DIS): 
-Precise measurements of these processes yields  
- in situ constraints on the nuclear effects from both initial and final interaction (FSI); 
+%\textbf{Neutral Current (NC) versus Charged Current (CC)}
 
-\vspace{0.25cm} 
-\noindent 
-{\bf (9)} Quantification of neutrino-argon cross-section 
-by measuring interactions off Ar, Ca, C, H, etc. targets: The goal is to provide 
+%This requirement calls for event-by-event classification of NC and CC events. 
+NC processes 
+constitute one of the largest backgrounds to all appearance and disappearance oscillation 
+channels. It is therefore important for the near detector to make a precise measurement of the NC cross section relative to 
+CC as a function of the hadronic energy, $E_{Had}$. 
+
+
+A precise measurement of $\pi^0$ and photon yields by the near detector in \textit{both}  $\nu$-induced NC and CC interactions is
+essential;
+this is the most important background to the $\nu_e$- and $\bar \nu_e$ appearance at low energies.
+
+
+%\textbf{Measurement of the $\pi^{\pm}$ content in CC and NC hadronic jets}  
+
+The $\pi^{\pm}$ content in CC and NC hadronic jets is is the most important background to 
+the $\nu_\mu$- and $\bar \nu_\mu$ disappearance coming from the hadronic   $\pi^{\pm} \rightarrow \mu^{\pm}$; 
+it can also be a background to the appearance channel at lower energies. \fixme{So how does the ND help?}
+
+%\textbf{Characterization of various exclusive (semi-exclusive) channels such as Quasi-Elastic (QE), Resonance (Res), Coherent-mesons and Deep-Inelastic-Scattering (DIS)}
+
+Precise near detector measurements leading to characterization of 
+ various exclusive (semi-exclusive) 
+channels such as Quasi-Elastic (QE), resonance (Res), 
+coherent-mesons and Deep-Inelastic-Scattering (DIS)
+%these processes 
+will yield  
+ in situ constraints on the nuclear effects from both initial and final interaction (FSI). 
+
+%\textbf{Quantification of neutrino-argon cross section by measuring interactions off Ar, Ca, C, H, etc. targets}
+
+The near detector will quantify the neutrino-argon cross section 
+by measuring interactions off Ar, Ca, C, H, etc. targets. The goal is to provide 
 a consistent model, as opposed to an empirical parametrization, for the nuclear effects. 
 
 
-\vspace{0.25cm} 
-\noindent 
-{\bf (10):} Constrain NC and CC backgrounds to the {\boldmath $\tau-$}Appearance in FD, 
-which is one of the most important, and unique, capabilities of the Liquid-Argon (LAr) detector. 
-%This is a sufficiently important physics topic to warrant that FD should 'calibrate' topologies 
-%in the NC and CC interactions at ND, where no $\tau$ is expected, to allow FD to conduct 
-%the measurement which will be dominated by the FD-statistics.
+Finally, the near detector will constrain NC and CC backgrounds to the $\tau-$ appearance in the far detector, 
+which is one of the most important, and unique, capabilities of the liquid argon (LAr) detector. \fixme{Sorry, what's the unique
+FD capability? This says the ND will constrain the backgrounds. Clarify.}
 
-\noindent
-The above requirements suggest a high resolution, magnetized ND for identifying and 
+The above requirements suggest a high-resolution, magnetized near detector for identifying and 
 measuring $e^+$, $e^-$, $\mu^-$, $\mu^+$, $\pi^0$, $\pi^{+,-}$ and protons  with high efficiency. 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Precision Measurements at the ND} 
+\section{Precision Measurements at the Near Detector} 
 \label{sec-nd-sbp} 
 
-\noindent
-Over a 5 year run focusing neutrinos,  the intense neutrino source at LBNF would provide 
-${\cal {O}}$(100) million neutrino interactions in a 7 tonne ND; 
-and about $0.4$ times as many while focusing anti-neutrinos. 
-%An ND possessing the possessing 
-%resolution and redundancy  to match such a statistical precision, the physics possibilities are enormous. 
-A high resolution, fine grained ND such as described in Volume-4 would offer not only the requisite systematic 
-precision for  oscillation studies but a generational advance in the precision measurements and unique 
-searches  that neutrinos provide. Here we outline the salient physics reach of such an ND; further details can be 
-found in ~\cite{DPR} and ~\cite{Adams:2013qkq}. We first discuss precision measurements which would support 
-and impact the oscillation physics program, and then give examples of other non-oscillation related 
-physics measurements which would extend our knowledge of important aspects of particle physics. 
+Over a five-year run in neutrino mode,  %focusing neutrinos,  
+the intense neutrino source at LBNF will provide 
+${\cal {O}}$(100) million neutrino interactions in a 7-t near detector; 
+and about $0.4$ times as many in antineutrino mode. %while focusing antineutrinos. 
+The high-resolution, fine-grained near detector described in \voldune would offer not only the requisite systematic 
+precision for  oscillation studies, but also a generational advance in the precision measurements and unique 
+searches that a neutrino beam can provide. \fixme{Anne added `beam'} This section outlines the salient physics reach of this detector; further details can be 
+found in~\cite{DPR} and~\cite{Adams:2013qkq}. Discussed first are precision measurements that would support 
+and impact the oscillation physics program, followed by examples of other non-oscillation-related 
+physics measurements that would extend our knowledge of important aspects of particle physics. 
 
 
-\vspace{0.25cm} 
-\noindent 
-{\bf Precision measurements related to Oscillation Physics:}
+\subsection{Precision Measurements Related to Oscillation Physics}
 
-\vspace{0.25cm} 
-\noindent 
-{\bf (a) Absolute Flux Measurement:} Using  $\nu$-electron NC scattering, the absolute flux can be determined 
+% Absolute Flux Measurement:} 
+
+Using  $\nu$-electron NC scattering, the absolute neutrino flux can be determined 
 to $\leq 3\%$ precision in the range $0.5 \leq E_\nu \leq 10$ GeV. Additionally, the $\nu$-electron CC scattering leading to  inverse 
-muon decay would determine the absolute flux to $\simeq 3\%$ precision in $E_\nu \geq 20$ GeV region 
-~\cite{ABS-FLUX}. 
-The DUNE-ND's ability to determine the background (primarily from $\nu_{\mu}$ quasi-elastic scattering) 
-to inverse muon decay  $without$ relying on $\bar \nu_\mu$ measurements or 
-ad hoc extrapolations, such as made in CCFR ~\cite{CCFR-IMD-Mishra-89}, ~\cite{CCFR-IMD-Mishra-90} 
-and CHARM ~\cite{CHARM-IMD-95}, allows such precisions which are dominated by statistics. 
+muon decay would determine the absolute flux to $\simeq 3\%$ precision in $E_\nu \geq 20$ GeV region~\cite{ABS-FLUX}. 
+The DUNE near detector's ability to determine the background (primarily from $\nu_{\mu}$ quasi-elastic scattering) 
+to inverse muon decay \textit{without} relying on $\bar \nu_\mu$ measurements or 
+ad hoc extrapolations, such as made in CCFR~\cite{CCFR-IMD-Mishra-89},~\cite{CCFR-IMD-Mishra-90} 
+and CHARM~\cite{CHARM-IMD-95}, allows such precisions, which are dominated by statistics. 
 Importantly, the ability to extract the quasi-elastic 
 $\bar \nu_\mu$-H interaction, via subtraction of hydrocarbon and pure carbon targets, would allow an extraction of 
 the $\bar \nu_\mu$ absolute flux to a few percent precision. Furthermore, novel techniques such as the use of 
-coherent-$\rho$ meson production in ND combined with the photo-production, could provide a constraint 
-to the absolute flux to $\simeq 5\%$ in the intermediate $5 \leq E_\nu \leq 20$ GeV region. 
-We note that the DUNE-ND will be the first neutrino experiment to in situ constrain the absolute flux 
-to a level approaching $~2.5\%$ precision. 
+coherent-$\rho$ meson production in the near detector combined with photo-production could provide a constraint 
+on the absolute flux to $\simeq 5\%$ in the intermediate $5 \leq E_\nu \leq 20$ GeV region. 
+We note that this near detector will be the first %neutrino experiment 
+to in-situ-constrain the absolute flux to a level approaching $\sim$2.5\% precision. 
 
-\vspace{0.25cm} 
- 
-\noindent 
-{\bf  (b)Relative Neutrino and Antineutrino Flux Measurement:} The most promising method of determining 
-the shape of  $\nu_\mu$ and $\bar \nu_\mu$ flux is by measuring the low-hadronic energy CC, the Low-$\nu_0$ method ~\cite{MISHRA-Nu0}. The method, when combined with the empirical parametrization of the $\pi^{\pm}$, $K^{\pm}$ 
+%Relative Neutrino and Antineutrino Flux Measurement:} 
+The most promising method of determining 
+the shape of  $\nu_\mu$ and $\bar \nu_\mu$ flux is by measuring the low-hadronic energy CC, the Low-$\nu_0$
+method~\cite{MISHRA-Nu0}. The method, when combined with the empirical parametrization of the $\pi^{\pm}$, $K^{\pm}$ 
 and such hadroproduction data as would be available in the coming decade, permits a bin-to-bin precision of 1--2\% on 
-the flux spanning $1 \leq E_\nu \leq 50$ GeV ~\cite{ND-REL-FLUX}. 
+the flux spanning $1 \leq E_\nu \leq 50$ GeV ~\cite{near-detector-REL-FLUX}. 
 Recent model calculations by Bodek et al. ~\cite{Bodek:2012uu} confirm these estimates. 
 Specifically, for the $\nu_\mu$ and $\bar \nu_\mu$ disappearance the Low-$\nu_0$ method would predict the 
-FD/ND($E_\nu$) to 1--2\% precision. 
+far detector/near detector($E_\nu$) to 1--2\% precision. \fixme{Where does ``Relative Neutrino and Antineutrino Flux Measurement'' fit in?}
 
-\vspace{0.25cm} 
-\noindent 
-{\bf (c) Flavor Content of the Neutrino Source:} By precisely measuring the $\nu_\mu$-, $\bar \nu_\mu$-, $\nu_e$-, $\bar \nu_e$-CC, 
-the ND would decompose the $\pi^+$, $K^+$, $\pi^-$, $K^-$, $\mu^+$, $\mu^-$, and $K^0_L$ contents of the beam, thus 
-allowing a precise FD/ND($E_\nu$) prediction to a few percent.  This ability lends a unique power to 
-not only measure the cross-sections of all four neutrino species but also allow sensitive searches for new 
-physics, such a violation of universality and large-$\Delta$m$^2$ oscillations,  as adumbrated below. 
+%Flavor Content of the Neutrino Source:} 
+By precisely measuring the $\nu_\mu$-, $\bar \nu_\mu$-, $\nu_e$-, $\bar \nu_e$-CC, 
+the near detector will decompose the $\pi^+$, $K^+$, $\pi^-$, $K^-$, $\mu^+$, $\mu^-$, and $K^0_L$ contents of the beam, thus 
+allowing a precise far detector/near detector($E_\nu$) prediction to a few percent.  This ability lends a unique power to 
+not only measure the cross sections of all four neutrino species, but also to allow sensitive searches for new 
+physics, e.g., violation of universality and large-$\Delta$m$^2$ oscillations, as discussed %adumbrated 
+below. 
 
 \noindent
-For the $\delta_{CP}$ in particular, the ND measurements would constrain the $\nu_e$/$\nu_\mu$ to 
+For the $\delta_{CP}$ in particular, the near detector measurements would constrain the $\nu_e$/$\nu_\mu$ to 
 $<1\%$ and $\bar \nu_e$/$\bar \nu_\mu$ to $\simeq 1\%$ precision, thereby vastly reducing the associated error. 
 
 
 
-\vspace{0.25cm} 
-\noindent 
-{\bf (d) Determination of the $E_\nu$-Scale of Neutrinos versus Anti-Neutrinos:} The high resolution 
+%Determination of the $E_\nu$-Scale of Neutrinos versus Anti-Neutrinos:} 
+The high resolution 
 measurements of $E_\mu$ and $E_e$ and those of charged hadrons and the reconstruction of about one 
-million $K^0_S$ and several million $\pi^0$ provide a tight constraint on the (anti)neutrino energy scale. 
-However,  nuclear physics, including initial and final state interactions, 
- affects the $E_\nu$-scale. Also, it can affect $\nu$ differently from $\bar\nu$ interactions thus  
+million $K^0_S$ and several million $\pi^0$ will provide a tight constraint on the (anti)neutrino energy scale. 
+However, nuclear physics, including initial and final state interactions, 
+ affects the $E_\nu$-scale and can affect $\nu$ differently from $\bar\nu$ interactions thus  
 producing a spurious contribution to any measured CP-violating observable. 
 The unique experimental handle on these seemingly intractable effects comes from a 
 a precise measurement of the missing transverse momentum {\it vector},{ \bf{ $P^m_T$}} afforded by the 
-high resolution ND. 
+high-resolution near detector. 
 %Specific interaction modes are being explored to quantify the precision 
 %on the $E_\nu$-scale in $\nu$ versus $\bar\nu$. 
 
 
-\vspace{0.25cm} 
-\noindent 
-{\bf (e) Event-by-Event Measurements of NC interactions:} The ability to determine  { \bf{ $P^m_T$}} affords an event-by-event 
-identification of NC events. This is particularly crucial to decompose the background contributions to 
+%Event-by-Event Measurements of NC interactions:} 
+The ability to determine {\bf{$P^m_T$}} affords an event-by-event 
+identification of NC events. This is particularly crucial in order to decompose the background contributions to 
 the $\nu_e$ or $\bar \nu_e$ appearance and the disappearance measurements. 
 
 
-\vspace{0.25cm} 
-\noindent 
-{\bf (f) Measurement of $\pi^0$, $\pi^+$, $\pi^-$, $K^+$, $K^-$, Proton, $K^0_S$ and $\Lambda$ in NC \& CC:} 
-The yields and momentum vector measurements of these particles in CC and NC, as a function of 
-visible energy will provide an "event generator" $measurement$ for the FD and constrain the 
-`hadronization' error to $\leq 2.5\%$ associated with the FD-prediction. 
+%Measurement of $\pi^0$, $\pi^+$, $\pi^-$, $K^+$, $K^-$, Proton, $K^0_S$ and $\Lambda$ in NC \& CC:} 
+The yields and momentum vector measurements of %these 
+$\pi^0$, $\pi^+$, $\pi^-$, $K^+$, $K^-$, proton, $K^0_S$ and $\Lambda$ particles in CC and NC, as a function of 
+visible energy, will provide an ``event generator'' $measurement$ for the far detector and constrain the 
+``hadronization'' error to $\leq 2.5\%$ associated with the far detector prediction. 
 
 %of exclusive and semi-exclusive measurements. 
 
 
-
-\vspace{0.25cm} 
-\noindent 
-{\bf (g) Quasi-Elastic (QE) and Resonance Measurements:}  
+%Quasi-Elastic (QE) and Resonance Measurements:}  
 In any long-baseline neutrino oscillation program, including LBNF/DUNE, 
 the quasi-elastic (QE) interactions are special. First, the QE cross section is substantial, especially at the second oscillation maximum. 
-Second, because of the simple topology -- a muon and a proton -- QE provides, to the first order, 
+Second, because of the simple topology --- a muon and a proton --- QE provides, to  first order, 
 a close approximation to $E_\nu$.  
-Precise momentum measurements  of this two track topology impose direct constraints on nuclear effects 
-associated with both initial and final state interactions~\cite{ND-QE}. 
+Precise momentum measurements  of this two-track topology impose direct constraints on nuclear effects 
+associated with both initial and final state interactions~\cite{near-detector-QE}. 
 
-\vspace{0.25cm}
-\noindent
 Resonance is the second most dominant interaction mode, besides deep inelastic scattering (DIS),  
 in the LBNF/DUNE oscillation range, $0.5 \leq E_\nu \leq 10$ GeV.
 % Traditionally, the resonance measurements 
 %have been imprecise due to the difficulty of measuring the protons and pions.
  By measuring the complete 
-topology of resonance, a high resolution ND 
-would offer an unprecedented precision on the resonance cross section, and will provide in situ constraints on the 
-nuclear effects ~\cite{ND-RES}.  
+topology of resonance, a high-resolution near detector 
+will offer an unprecedented precision on the resonance cross section, and will provide in situ constraints on the 
+nuclear effects~\cite{near-detector-RES}.  
 
 
-
-
-\vspace{0.25cm} 
-\noindent 
-{\bf (h) Nucleon Structure, Parton Distribution Functions, and QCD Studies:} 
+%Nucleon Structure, Parton Distribution Functions, and QCD Studies:} 
 Precision measurements of  structure functions and 
 differential cross sections would directly affect the oscillation measurements 
-by providing accurate simulations of neutrino interactions and offer an estimate of 
+by providing accurate simulations of neutrino interactions. They would also offer an estimate of 
 all background processes that are dependent upon the angular distribution of 
-the outgoing particles in the FD. 
-Furthermore, QCD analyses within the framework of global fits to 
+the outgoing particles in the far detector. 
+\fixme{Next sentence is a mouthful; can't parse unambiguously; clarify} Furthermore, QCD analyses within the framework of global fits to 
 extract parton distribution functions (PDF) by using the differential cross sections 
-measured in ND data provide a crucial input,  because they  constrain systematic errors in 
-precision electroweak measurements.\\
-% not only in neutrino physics but also in hadron-collider measurements.\\
-Under the rubric of nucleon-structure, the topics include: i) Measurement of form factors and structure functions; ii) QCD analysis,  tests of perturbative QCD,  and quantitating the non-perturbative 
-QCD effects; iii) d/u Parton distribution functions at large x which is the limiting error in the 
-$\nu_\tau$-CC measurements/searches at FD ; iv) Sum rules and the strong coupling constant; and v) Quark-hadron duality. 
-%\noindent
-%$\bullet$ Measurement of form factors and structure functions; 
-%
-%
-%\noindent
-%$\bullet$ QCD analysis,  tests of perturbative QCD,  and quantitating the non-perturbative 
-%QCD effects; 
-%
-%\noindent
-%$\bullet$ d/u Parton distribution functions at large x which is the limiting error in the 
-%$\nu_\tau$-CC measurements/searches at FD ; %
-%\noindent
-%$\bullet$ Sum rules and the strong coupling constant 
-%\noindent
-%$\bullet$ Quark-hadron duality 
+measured in near detector data provide a crucial input,  because they  constrain systematic errors in 
+precision electroweak measurements.
 
-\vspace{0.25cm} 
-\noindent 
-{\bf (i) Neutrino-Argon Interactions and Nuclear Effects:} 
-An integral part of the ND physics program is a  detailed measurements of (anti)neutrino 
-interactions in Argon and in a variety of nuclear targets including Calcium, Carbon, Hydrogen (via subtraction), 
-and Steel~\cite{ND-NUCL}. 
-The goals are twofold: a) obtain a model-independent direct measurement of nuclear effects in Ar 
-using the FGT's ability to isolate $\nu (\bar \nu)$ interactions off free-hydrogen, 
-via subtraction of hydrocarbon and carbon targets; 
-b) measure the neutrino-nuclear interactions as to allow an accurate modeling 
+% not only in neutrino physics but also in hadron-collider measurements.\\
+Under the rubric of nucleon structure, the topics \fixme{for QCD analysis?} include: 
+\begin{enumerate}
+\item Measurement of form factors and structure functions
+\item QCD analysis,  tests of perturbative QCD and quantitating the non-perturbative 
+QCD effects
+\item d/u Parton distribution functions at large $x$, which is the limiting error in the 
+$\nu_\tau$-CC measurements/searches at the far detector
+\item Sum rules and the strong coupling constant; and v) Quark-hadron duality
+\end{enumerate}
+
+%Neutrino-Argon Interactions and Nuclear Effects:} 
+An integral part of the near detector physics program is a set of detailed measurements of (anti)neutrino 
+interactions in argon and in a variety of nuclear targets including calcium, carbon, hydrogen (via subtraction), 
+and steel~\cite{near-detector-NUCL}. 
+The goals are twofold, (1) obtain a model-independent direct measurement of nuclear effects in Ar 
+using the FGT's ability to isolate $\nu (\bar \nu)$ interactions off free hydrogen 
+via subtraction of hydrocarbon and carbon targets; and
+(2) measure the neutrino-nuclear interactions as to allow an accurate modeling 
 of initial and final state effects. The studies would include 
-the nuclear modification of form-factors and structure functions, effects in coherent and incoherent 
+the nuclear modification of form factors and structure functions, effects in coherent and incoherent 
 regimes, nuclear dependence of exclusive and semi-exclusive processes, and nuclear 
 effects including short-range correlations, pion-exchange currents, pion absorption, shadowing, 
-initial-state interactions, and final-state interactions. 
+initial-state interactions and final-state interactions. 
 
-\vspace{0.25cm} 
-\noindent 
-{\bf Other Precision Measurements:}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Other Precision Measurements}
 
-\vspace{0.25cm} 
-\noindent 
-{\bf (a) Precision measurements of  Electroweak Physics:} 
+The near detector may be able to make precision measurements of electroweak physics. \fixme{check} 
 %Neutrinos and antineutrinos are the most effective probes for investigating electroweak physics.  
 Interest in a precise determination of the weak mixing angle ($\sin^2 \theta_W$) at DUNE 
 energies via neutrino scattering is twofold: (1) it provides a direct measurement of neutrino couplings to 
-the $Z$ boson and (2) it probes a different scale of momentum transfer than LEP did by virtue
+the $Z$ boson, and (2) it probes a different scale of momentum transfer than LEP did by virtue
 of not being at the $Z$ boson mass peak. 
 % 
 The weak mixing angle can be extracted experimentally from several independent NC physics processes:
-i) deep inelastic scattering off quarks inside nucleons: $\nu N \to \nu X$; ii) elastic scattering off electrons: $\nu e^- \to \nu e^-$; 
-iii) elastic scattering off protons: $\nu p \to \nu p$; iv) coherent $\rho^0$ meson production. 
+(1) deep inelastic scattering off quarks inside nucleons: $\nu N \to \nu X$; (2) elastic scattering off electrons: $\nu e^- \to \nu e^-$; 
+(3) elastic scattering off protons: $\nu p \to \nu p$; iv) coherent $\rho^0$ meson production. 
 Note that these processes involve
 substantially different scales of momentum transfer, providing a tool
 to test the running of $\sin^2 \theta_W$ wihin a single experiment. 
 
-\vspace{0.25cm} 
-\noindent 
 The most sensitive channel for $\sin^2 \theta_W$ 
-in the DUNE ND is expected to be the $\nu N$ DIS through a precision measurement 
-of the NC/CC cross-section ratio~\cite{ND-EW}. This measurement will be dominated by systematic uncertainties, which can be 
+in the DUNE near detector is expected to be the $\nu N$ DIS through a precision measurement 
+of the NC/CC cross-section ratio~\cite{near-detector-EW}. This measurement will be dominated by systematic uncertainties, which can be 
 accurately constrained by dedicated in situ measurements using the large CC samples and employing corresponding 
 improvements in theory that will have evolved over the course of the experiment. Using the existing knowledge of 
 structure functions and cross-sections we expect a relative precision of about $0.35\%$ on $\sin^2 \theta_W$, with 
@@ -406,57 +343,41 @@ the default low-energy LBNF beam. An increase of the fluxes with a beam upgrade 
 energy tuning of the neutrino spectrum would allow a substantial reduction of uncertainties down to about $0.2\%$. 
 This level of precision is comparable to colliders (LEP) and offers a shot at discovery.
  
-\vspace{0.25cm} 
-\noindent 
-The various independent channels measured in the DUNE ND can be combined though global electroweak fits, 
+The various independent channels measured in the DUNE near detector can be combined though global electroweak fits, 
 further optimizing the sensitivity to electroweak parameters. The level of precision achievable as well as the richness of 
-the physics measurements put the DUNE ND electroweak program on par with the gold standard electroweak measurements at LEP.   
+the physics measurements put the DUNE near detector electroweak program on par with the gold standard electroweak measurements at LEP.   
 
 
 
-\vspace{0.25cm} 
-\noindent 
-{\bf ( b) Isospin Physics and the Adler Sum Rule:} One of the most compelling physics topics 
-accessible to the DUNE-ND in the LBNF-beam is the isospin physics 
+% Isospin Physics and the Adler Sum Rule:} 
+One of the most compelling physics topics 
+accessible to the DUNE-near detector in the LBNF-beam is the isospin physics 
 using neutrino and antineutrino interactions. Given the statistics and a commensurate 
-resolution of ND, for the first time we have a chance to test the Adler sum-rule to a 
+resolution of near detector, for the first time we have a chance to test the Adler sum-rule to a 
 few percent level, and perhaps claim a discovery. 
 Precision test of sum-rules is a rich ground for finding something new, refuting the prevalent wisdom. 
 An added motivation is the possibility of isospin asymmetry in nucleons . 
-\vspace{0.25cm} 
-\noindent 
+
 To accomplish this, neutrino and anti-neutrino scattering off hydrogen is needed. 
 Whereas the Adler sum rule is the prize, the $\bar \nu_\mu$-H and $\nu_\mu$-H scattering
 will provide (a)  the 
 absolute flux normalization via low-Q$^2$ $\bar \nu_\mu$-QE interactions,  
 and (b) will be crucial to achieve a model-independent measurement of nuclear effects in the 
 neutrino-nuclear interactions. 
-%In the proposed ND, neutrino-H scattering will be obtained 
-%via statistical subtraction between the radiator targets (C$_3$H$_6$)$_n$ and a pure carbon (graphite) 
-%target. The resulting physics is expected to be limited by 
-%the statistical precision of the samples.  
 
-\vspace{0.25cm} 
-\noindent 
-{\bf (c) Measurement of Nucleon's Strangeness Content:} The question is whether the strange
+%Measurement of Nucleon's Strangeness Content:} 
+The question of whether strange
   quarks contribute substantially to the vector and axial-vector
-  currents of the nucleon still remains unresolved. A large observed value of the
+  currents of the nucleon remains unresolved. A large observed value of the
   strange-quark contribution to the nucleon spin (axial current),
   $\Delta s$, would enhance our understanding of the proton structure.
-  %The spin structure of the nucleon also affects the couplings of axions and
-%supersymmetric particles to dark matter. 
-%\vspace{0.25cm} 
-\%noindent 
+
 The strange \emph{axial vector} form factors are poorly 
 determined. The most direct measurement of $\Delta s$, which does not rely on the difficult
 measurements of the $g_1$ structure function at very small values of the Bjorken variable $x$, 
 can be obtained from (anti)neutrino NC elastic scattering off protons.  %
-%Systematic uncertainties can be reduced by measuring the ratios of NC to CC (quasi-elastic) 
-%for both neutrinos and antineutrinos as a function of $Q^2$. 
 
-\vspace{0.25cm} 
-\noindent 
-The low-density magnetized tracker in DUNE ND can provide a good proton reconstruction efficiency as well as
+The low-density magnetized tracker in DUNE near detector can provide a good proton reconstruction efficiency as well as
 high resolution on both the proton angle and energy, down to $Q^2\sim0.07$~GeV$^2$. 
 This capability will reduce the uncertainties in the extrapolation of the form factors to the limit
 $Q^2 \to 0$. About $2.0 (1.2) \times 10^6$ $\nu p
@@ -465,72 +386,61 @@ the low-density tracker, yielding a statistical precision on the order
 of 0.1\%.
 
 
-
-\subsection{New Physics Searches} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{New Physics Searches} 
 \label{sec-nd-np} 
 
-\vspace{0.25cm} 
-\noindent 
-{\bf Search for Heavy Neutrinos:} 
-The most economic way to handle the problems of neutrino masses, dark matter and baryon asymmetry of the Universe in a unified way may be to add to the SM three Majorana singlet fermions with masses roughly on the order of the masses of known quarks and leptons. 
+A search for heavy neutrinos is intriguing. 
+The most economic way to handle the problems of neutrino masses, dark matter and baryon asymmetry of the universe in a unified way may be to add to the SM three Majorana singlet fermions with masses roughly on the order of the masses of known quarks and leptons. 
 %The appealing feature of this theory (called the $\nu$-MSM for ``Neutrino Minimal SM'') is the fact that there every 
 %left-handed fermion has a right-handed counterpart, leading to an symmetric way of treating quarks and leptons.
- The lightest of the three new leptons is expected to have a mass from 1 keV to 50 keV and play the role of the dark matter particle (for details and additional references, see ~\cite{DPR} and ~\cite{Adams:2013qkq}).
+ The lightest of the three new leptons is expected to have a mass from 1~keV to 50~keV and play the role of the Dark Matter particle (for details and additional references, see~\cite{DPR} and ~\cite{Adams:2013qkq}).
 
-\vspace{0.25cm} 
-\noindent 
-The most effective  mechanism of sterile neutrino production is through weak two body and three body decays of heavy mesons and baryons. In the search for heavy neutrinos, the strength of the proposed high-resolution ND, compared to earlier experiments lies in reconstructing the exclusive decay modes, including electronic, hadronic and muonic channels. Furthermore, the detector provides a means to constrain and measure the backgrounds using control samples. Preliminary investigations of these issues are ongoing and  suggest that the FGT  will have an order of magnitude higher sensitivity in exclusive channels than previous experiments did. 
+The most effective  mechanism of sterile neutrino production is through weak two body and three body decays of heavy mesons and baryons. In the search for heavy neutrinos, the strength of the proposed high-resolution near detector, compared to earlier experiments lies in reconstructing the exclusive decay modes, including electronic, hadronic and muonic channels. Furthermore, the detector provides a means to constrain and measure the backgrounds using control samples. Preliminary investigations of these issues are ongoing and  suggest that the FGT  will have an order of magnitude higher sensitivity in exclusive channels than previous experiments did. 
 
-\vspace{0.25cm} 
-\noindent 
-{\bf Search for Large $\Delta$m$^2$ Oscillation:} 
+%Search for Large $\Delta$m$^2$ Oscillation:} 
 
-\vspace{0.25cm} 
-\noindent 
-As has become evident over the past decade or more, there may be evidence from several distinct experiments pointing towards the existence of sterile neutrinos with mass in the range $1$ eV$^2$ (for details and additional references, see ~\cite{DPR} and ~\cite{Adams:2013qkq}).  A short baseline neutrino program has been initiated at Fermilab and elsewhere to clear the questions raised by these varying pieces of evidence.  
+The near detector could potentially search for large $\Delta$m$^2$ oscillations. As has become evident over the past decade or more, there may be evidence from several distinct experiments that points towards the existence of sterile neutrinos with mass in the range 1~eV$^2$ (for details and additional references, see~\cite{DPR} and~\cite{Adams:2013qkq}).  A short-baseline neutrino program has been initiated at Fermilab and elsewhere to clear the questions raised by these varying pieces of evidence.  
 
-\vspace{0.25cm} 
-\noindent 
-Since the ND at DUNE  is located at a baseline of several hundred meters  and uses the LE beam, it has values of   $L/E \sim 1$ which render it sensitive to these oscillations if they exist. Due to the differences between neutrinos and antineutrinos,  four possibilities have to be considered in the analysis: $\nu_\mu$ disappearance,  $\bar \nu_\mu$ disappearance, $\nu_e$ appearance and $\bar \nu_e$  appearance. It must be noted that  the search for the high
- $\Delta$m$^2$ oscillations has to be performed simultaneously with the in situ determination of the fluxes. 
-To this end, we need to obtain an independent prediction of the $\nu_e$  and $\bar \nu_e$  fluxes starting from the measured $\nu_\mu$ and  $\bar \nu_\mu$ CC distributions since the  $\nu_e$  and $\bar \nu_e$ CC distributions could be distorted by the appearance signal. We have evolved an iterative procedure to handle this, details of which can be found in ~\cite{DPR} and ~\cite{Adams:2013qkq}.\\
+Since the DUNE near detector is located at a baseline of several hundred meters and uses the LE beam, it has values of  $L/E \sim 1$, which render it sensitive to these oscillations --- if they exist. Due to the differences between neutrinos and antineutrinos,  four possibilities have to be considered in the analysis: 
+$\nu_\mu$ disappearance,  $\bar \nu_\mu$ disappearance, $\nu_e$ appearance and $\bar \nu_e$  appearance. 
+It must be noted that  the search for the high
+ $\Delta$m$^2$ oscillations must be performed simultaneously with the in situ determination of the fluxes. 
+To this end, it is necessary to obtain an independent prediction of the $\nu_e$  and $\bar \nu_e$  fluxes starting from the measured $\nu_\mu$ and  $\bar \nu_\mu$ CC distributions, since the  $\nu_e$  and $\bar \nu_e$ CC distributions could be distorted by the appearance signal. An iterative procedure has been developed to handle this, details of which can be found in~\cite{DPR} and~\cite{Adams:2013qkq}.\\
 
-\vspace{0.25cm}
-\noindent
-{\bf Light (sub-GeV) Dark Matter (DM) Searches in the Neutrino Beam at DUNE}
-Recently, a great deal of interest has been generated in searching for DM at low-energy, fixed-target experiments.  High flux neutrino beam experiments, such as DUNE, have been shown to provide coverage ofthe  DM and DM mediator parameter space which cannot be covered by either direct detection or collider experiments. Upon striking the target, the proton beam can produce  dark photons either directly through $pp(pn)\rightarrow \bf {V}$  or indirectly through the production of a $\pi^{0}$ or a $\eta$ meson which then promptly decays into a SM photon and a dark photon. For the case where $m_{V}\geq 2m_{DM}$, the dark photons will quickly decay into a pair of DM particles.  These relativistic DM particles from the beam will travel along with the neutrinos to the DUNE near detector.  The DM particles can then be detected through neutral-current like interactions either with electrons or nucleons in the detector. Since the signature of DM events looks just like those of the neutrinos, the neutrino beam provides the major source of background for the DM signal. Several ways have been proposed to suppress neutrino backgrounds by using the unique characteristics of the DM beam. Since DM, due to much higher maas,  will travel much slower than the neutrinos,  the timing  in the near detector becomes a discriminator.  In addition, since the electrons struck by DM will be much more forward in direction, the angles of these electrons may be used to reduce backgrounds, taking advantage of the fine angular resolution of the DUNE-ND.  Finally, a special run can be devised to turn off the focusing horn to significantly reduce the charged particle flux that will produce neutrinos. Further studies are required to determine appropriate  hardware-parameter choices that could benefit these searches, including granularity, absorbers, timing resolution, DAQ-speed etc. Studies are also required  to determine if DUNE will effectively cover the important region in parameter space between the MiniBooNE exclusion and the direct detection region of  the most popular candidates.
+%Light (sub-GeV) Dark Matter (DM) Searches in the Neutrino Beam at DUNE}
+Recently, a great deal of interest has been generated in searching for DM at low-energy, fixed-target experiments.  High-flux neutrino beam experiments, as DUNE is planned to be, have been shown to provide coverage of the  DM and DM-mediator parameter space which can be covered by neither direct detection nor collider experiments. Upon striking the target, the proton beam can produce  dark photons either directly through $pp(pn)\rightarrow \bf {V}$  or indirectly through the production of a $\pi^{0}$ or a $\eta$ meson which then promptly decays into a SM photon and a dark photon. For the case of $m_{V}\geq 2m_{DM}$, the dark photons will quickly decay into a pair of DM particles.  These relativistic DM particles from the beam will travel along with the neutrinos to the DUNE near detector.  The DM particles can then be detected through neutral-current-like interactions either with electrons or nucleons in the detector. 
+
+Since the signature of DM events looks just like those of the neutrinos, the neutrino beam provides the major source of background for the DM signal. Several ways have been proposed to suppress neutrino backgrounds by using the unique characteristics of the DM beam. Since DM, due to much higher maas,  will travel much more slowly than the neutrinos,  the timing  in the near detector becomes a discriminator.  In addition, since the electrons struck by DM will be much more forward in direction, the angles of these electrons may be used to reduce backgrounds, taking advantage of the fine angular resolution of the DUNE near detector.  Finally, a special run can be devised to turn off the focusing horn to significantly reduce the charged particle flux that will produce neutrinos. Further studies are required to determine appropriate  hardware-parameter choices that could benefit these searches, including granularity, absorbers, timing resolution, DAQ-speed, etc. Studies are also required to determine if DUNE will effectively cover the important region in parameter space between the MiniBooNE exclusion and the direct detection region of  the most popular candidates.
  
-\vspace{0.25cm} 
-\noindent 
-{\bf Distortion of Neutrino Flux at High Energies ($E_\nu > 10$ GeV):} 
-LBNF/DUNE will be the first long baseline experiment possessing a large 
-statistics of high energy $\nu_\mu$,  $\bar \nu_\mu$, and $\nu_e$ + $\bar \nu_e$ CC and NC events 
-measured with high precision in the liquid argon FD. An obvious venue for discovery is to 
-search for distortion at energies greater than 10 GeV, not envisioned by the 
+%Distortion of Neutrino Flux at High Energies ($E_\nu > 10$ GeV):} 
+%LBNF/DUNE 
+DUNE will be the first long-baseline experiment possessing a large 
+statistics of high-energy $\nu_\mu$,  $\bar \nu_\mu$, and $\nu_e$ + $\bar \nu_e$ CC and NC events 
+measured with high precision in the liquid argon far detector. An obvious venue for discovery is to 
+search for distortion at energies greater than 10~GeV, not envisioned by the 
 PMNS mixing. 
-%The role of ND will be to provide a precise prediction of 
+%The role of near detector will be to provide a precise prediction of 
 %the neutrino spectra at higher energies, including NC.  
 
-
-\vspace{0.25cm} 
-\noindent 
-{\bf Measurement of $\nu_\tau$-CC at FD:} 
-LBNF/DUNE will be the first long baseline experiment with an ability to 
+%Measurement of $\nu_\tau$-CC at far detector:} 
+%LBNF/DUNE 
+DUNE will also be the first long-baseline experiment with an ability to 
 reconstruct $\nu_\tau$-appearance with high statistics. The paucity of the number of measured 
 $\nu_\tau$-CC motivates searching for new physics. 
-The role of ND -- where no $\tau$ is expected -- will be to accurately 'calibrate' background topologies 
-in the NC and CC interactions, most notably at large-x$_{bj}$. 
+The role of near detector --- where no $\tau$ is expected --- will be to accurately ``calibrate'' background topologies 
+in the NC and CC interactions, most notably at large $x_{bj}$. 
 
 
 \section{Summary}
 \label{sec:physics-nd-summary}
 
-\noindent
-%{\it The DUNE-ND, as embodied in the FGT reference design, will offer a rich physics portfoilio which will not only  support and buttress the oscillation program at the FD, but also extend our knowledge of cross sections, structure functions, interaction topologies, weak interaction parameters, sum rules and possibly lead to the discovery of new phenomena. It will  do so by providing  tracking of charged particles at levels of precision unattained by previous experiments.  In the above, we have tried to summarize these capabilities and provide a glimpse of its impact on the overall DUNE physics program.}
-The DUNE-ND, as embodied in the FGT reference design, will offer a rich physics portfolio which will not 
-only support and buttress the oscillation program at the FD, but also extend our knowledge of fundamental interactions 
+
+%{\it The DUNE-near detector, as embodied in the FGT reference design, will offer a rich physics portfoilio which will not only  support and buttress the oscillation program at the far detector, but also extend our knowledge of cross sections, structure functions, interaction topologies, weak interaction parameters, sum rules and possibly lead to the discovery of new phenomena. It will  do so by providing  tracking of charged particles at levels of precision unattained by previous experiments.  In the above, we have tried to summarize these capabilities and provide a glimpse of its impact on the overall DUNE physics program.}
+The DUNE near detector, as embodied in the FGT reference design, will offer a rich physics portfolio that will not 
+only support and buttress the oscillation program at the far detector, but also extend our knowledge of fundamental interactions 
 and of the structure of nucleons and nuclei, possibly leading to the discovery of new phenomena. It will do 
-so by providing tracking of charged particles at levels of precision unattained by previous experiments.  
+so by providing tracking of charged particles at levels of a precision unattained by previous experiments.  
 In the above, we have tried to summarize these capabilities and provide a glimpse of its 
 impact on the overall DUNE physics program. 
 

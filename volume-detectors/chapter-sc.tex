@@ -1,10 +1,14 @@
 \chapter{Software and Computing}
 \label{ch:detectors-sc}
 
+\section{Overview}
+
+\fixme{Might want to add an overview of chapter. Anne 5/7}
+
 \section{Computing Infrastructure}
 \label{sec:detectors-sc-infrastructure}
 
-\subsection{Overview}
+%\subsection{Overview}
 There are many factors that influence various characteristics of the data (e.g. rates, volume etc)
 to be collected and processed in DUNE.
 A special Annex document for data rates was created in order to provide a systematic reference
@@ -47,7 +51,7 @@ beam neutrino physics, which mostly relies on off-line processing.
 
 \subsubsection{Assumptions}
 \label{sec:detectors-sc-infrastructure-assumptions}
-According to the present baseline design, the Far Detector will consist of four identical modules of \tpcdetectormass each.
+According to the present baseline design, the Far Detector will consist of four identical modules of \tpcmodulemass each.
 For purposes of estimating data characteristics in this document the issue of possible variations in the design of these modules shall not be addressed. A few basic assumptions will need to be used:
 \begin{itemize}
 \item Estimates presented below correspond to the ``full detector'', i.e. is effectively
@@ -90,7 +94,7 @@ The information presented below is based on the parameters listed in
 ``\anxrates''.
 \begin{itemize}
 \item TPC channel count: \dunenumberchannels (i.e. four times
-  \daqchannelsperdetector which is the channel count for each \tpcdetectormass module)
+  \daqchannelspermodule which is the channel count for each \tpcmodulemass module)
 \item Maximum drift Time: \tpcdrifttime
 \item Number of drift time windows in one DAQ readout cycle: \daqdriftsperreadout
 \item ADC clock frequency: approx. \daqsamplerate
@@ -115,29 +119,36 @@ Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can 
 \
 This results in a total of \dunefsreadoutsize worth of TPC data in one readout.
 
-Zero suppression greatly reduces the size event size.  An
-over-estimate based on a LArSoft Monte Carlo simulation of GeV-scale
-events suggests a zero-suppressed and uncompressed event size of $\sim$\beameventsize
-MB.  After compression this event size is expected to be 0.1 MB.  This
-simulation employed a suboptimial data schema and it is expected that
-with optimization these sizes can be reduced by at least an order of
-magnitude.
+Zero suppression greatly reduces the size event size.  An overly conservative estimate
+(leaning to the higher end of the range of values)
+ based on a LArSoft Monte Carlo simulation of GeV-scale
+events suggests a zero-suppressed and uncompressed event size of $\sim$\beameventsize.
+After compression this event size is expected to be $\sim$\beameventsizecompressed.
+This particular
+simulation employed a less than optimial schema for packing data and it is expected that
+with optimization these sizes can be further reduced.
 
-However, one of the possibilities that is now actively explored by the DUNE
-DAQ team is to record beam event candidates (e.g. events with signals
-above the ``high threshold'' as detailed in the Annex) at a very low threshold, corresponding
-to a virtually full data stream in the selected time interval. This is motivated
-by the desire to preserve unusual signatures that may exist due to new
-phenomena and to allow for better control of systematics during reconstruction.
-
-In that case, one can estimate the total size of the TPC data
-to be collected annually by multiplying the predicted number of beam neutrino interactions
-per year (estimated here to be \beamrate) by the full stream event size
-quoted above (\dunefsreadoutsize).  Thus one arrives to an estimate of
-\beamdatayearfs for each year of this type of data.
+% by at least an order of magnitude.
 
 Some of the driving zero-suppressed (ZS) and full-stream (FS) annual
-data volumes are summarized in table~\ref{tab:sc-zs-summary}.
+data volumes are summarized in table~\ref{tab:sc-zs-summary}. It is important to note
+that the numbers in the row characterizing $^{39}$Ar are given for information only and do
+not represent our estimates of actual data to be committed to mass storage.
+
+There is a range of possible approaches to reducing data volume in real time without
+losing much of information due to low-amplitude signals, which may be important
+for more precise particle identification or in search for unusual  signatures that may
+exist due to new phenomena. For example, implementation of the ``trigger stream''
+in the DAQ system allows to trigger on event candidates using ``high threshold'', while
+capturing data in the potential event without applying any threshold at all. In that case, one can estimate
+the total size of the TPC data to be collected annually by multiplying the predicted number of beam neutrino interactions
+per year (estimated here to be \beamrate) by the full stream event size quoted above (\dunefsreadoutsize).  Thus one arrives to an estimate of
+\beamdatayearfs for each year of this type of data.
+
+This scheme can be augmented by an ``express offline'' farm (extension of DAQ) which would perform functions similar to a high-level trigger
+utilized in collider experiments, allowing more flexibility in choosing thresholds and other parameters which
+will determines rates and volumes of the data produced by the Far Detector. Design of such system is currently
+in the conceptual stage and information will be added to DUNE planning documents as it is developed.
 
 
 \input{volume-detectors/generated/zs-volume-summary}
@@ -164,17 +175,17 @@ Once again, the Near Detector is subject to an intense R\&D effort and its
 parameters are being optimized and not fixed at this point. The most relevant parameters
 of the Fine-Grained Tracker (FGT):
 \begin{itemize}
-\item   Straw Tube Tracker (STT) readout channel count: 215,040
+\item   Straw Tube Tracker (STT) readout channel count: \ndsstchannels
 \item STT Drift Time: 120ns
 \item STT ADC clock frequency and resolution (bits): 3ns intervals, 10 bit
-\item ECAL channel count: 52,224
-\item Muon Detector Resistive Plane Chambers (RPC) channel count: 165,888
+\item ECAL channel count: \ndecalchannels
+\item Muon Detector Resistive Plane Chambers (RPC) channel count: \ndmuidchannels
 \item Average expected event rate per spill: \textasciitilde 1.5
 \end{itemize}
 \
 Since there are large uncertainties in estimates of the detector occupancy levels per event, 
 broad assumptions must be made to roughly estimate its data rate. Current estimate (as quoted in the Near Detector
-section of the ``Expected Data Rates'' Annex is \textasciitilde 1MB/s, which translates into \textasciitilde 30TB/year.
+section of the ``Expected Data Rates'' Annex is \textasciitilde \nddatarate, which translates into \textasciitilde 30TB/year.
 
 % Assuming that 10\% occupancy in the STT and 40 samples
 %per trigger, one arrives to \textasciitilde 1MB of data per event. Under same assumption, ECAL will contribute \textasciitilde 0.25MB
@@ -277,8 +288,8 @@ For the Photon Detector in the dual-phase design:
 	for each 10kt module)
 \end{itemize}
 \
-According to some estimates listed in the Annex, the ``Full Stream'' readout will produce 16.9GB of data for
-each candidate event. This is about 68\% of the data volume in one readout cycle, in the reference design.
+According to some estimates listed in the Annex, the ``Full Stream'' readout will produce 16.09GB of data for
+each candidate event. This is about 65\% of the data volume in one readout cycle, in the reference design.
 Although signal processing strategies may be implemented differently in the alternative design, it can be argued
 that the total data rate will be of the same order of magnitude or less than in the reference design.
 % \fixme{Can still improve here but I doubt we'll get much more detail in time --mxp--}

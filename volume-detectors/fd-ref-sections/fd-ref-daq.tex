@@ -5,11 +5,13 @@
 The scope of the DAQ and monitoring includes the design, procurement,
 fabrication, testing, delivery and installation. It is required to:
 \begin{itemize}
-\item collect data with an uptime of $\gg 90$\%
-\item collect interactions with an energy deposition of
-  100\,MeV and above with a high resolution (smart or no
+\item collect data with a very high uptime (the goal is $> 99\%$)
+\item collect beam neutrino, atmospheric neutrino and proton
+  decay candidates (generally all interactions with total energy deposition
+  above about 100\,MeV) with a high resolution (smart or no
   zero-suppression) with no dead-time.
-\item have the capability to collect interactions with an energy $<100$\,MeV with some
+\item have the capability to collect interactions with total energy
+  below $100$\,MeV with some
  low amount of zero-suppression loss.
 \item have the ability to trigger at the time of the beam pulses,
   irrespective of how little energy is deposited in the detector.
@@ -32,8 +34,8 @@ for the DUNE far detector.
 To reduce considerably the times when none of the parts of DUNE are
 collecting data (particularly important for supernova detection); and
 to allow the designs of the DAQ in the different 10-kt sections to be
-entirely different if desired, the DUNE DAQ employs the most uncoupled 
-design to date. 
+entirely different if desired, the DUNE DAQ employs a decoupled 
+design. 
 %\fixme{(but less coupled or more uncoupled to/from what? -AH, original phrasing: a less coupled design than has ever been used in data acquisition before is employed. } 
 % GB - I am trying to say the parts within the DAQ are less coupled
 % with each other
@@ -46,11 +48,12 @@ detector module to be restarted without interrupting data collection in the
 others. %rest.
 
 The layout of the DAQ is shown schematically in
-Figure~\ref{fig:fddaqblock}.  To collect the fullest detail of the
+Figure~\ref{fig:fddaqblock}.  To collect full detail of the
 most important events (deadtimeless detection of all those with energy
 deposition of 100\,MeV and above), while avoiding tricky communication
-to flag neighboring channels to those that have large hits, a model
-in which the data are collected from the hardware twice is used. 
+to flag neighboring channels to those that have large hits, a model is used
+in which the digitised data are collected twice from the initial data
+storage that is associatated with each peice of hardware. 
 % GB - I can't think of anything better, unless we expand this section
 % a lot, which whould give it too much emphasis.  Ideally we DO want
 % to flag neighbouring channels to those with big hits, but it is
@@ -63,7 +66,7 @@ supplies a centralized software-based trigger farm continuously with
 zero-suppressed information (a threshold on each channel detects hits
 above the noise level; this causes the ADC samples to be kept in a
 time window around the hit).  
-The second pass reads the full data at the times and
+The second collection reads the full data at the times and
 in the regions %of interest that have been 
 selected by the
 trigger. This is similar to the multi-level triggering in a collider experiment,
@@ -154,7 +157,8 @@ ring buffer on disk to allow later analysis of supernova candidates.
 \end{tikzpicture}
 \end{cdrfigure}
 
-{\bf LArTPC detector readout} The LArTPC signals are digitized in a
+{\bf LArTPC detector readout} The LArTPC signals are digitized in the
+cold in a
 continuous flash-ADC stream at 2\,MHz, (not zero-suppressed) and
 serialized on 12,000 high-speed links per 10-kt module that exit the
 cryostat.
@@ -163,9 +167,10 @@ cryostat.
 %And which thing falls under CE, the links? Maybe say `(the links are
 %covered in Section~\ref{sec:detectors-fd-ref-ce})'} 
 The data
-are received by RCE LArTPC data processors %which are 
+are received by LArTPC data processors called RCEs (Reconfigurable
+Computing Elements) %which are 
 housed in
-industry-standard aTCA crates on COB boards that are designed at SLAC
+industry-standard aTCA crates on COB (cluster-on-board) motherboards that are designed at SLAC
 for a wide range of applications.  The RCEs are part of a network of
 field programmable gate arrays (FPGAs) that buffer the full raw data,
 zero-suppress it for passing to the trigger and accept requests for
@@ -174,7 +179,7 @@ Xilinx Zynq family and contain a full Linux processor system on the
 chip.  They facilitate the high-speed data transfer from firmware into
 DRAM memory that is accessible from Linux.  A fast data-transfer
 network using the Ethernet protocol is used on the COBs and in the
-aTCA crates to allow for deveopment of more sophisticated zero-suppression algorithms
+aTCA crates to allow for development of more sophisticated zero-suppression algorithms
 for improved supernova acquisition.
 
 {\bf Photon detector readout} is performed by the SiPM signal
@@ -193,8 +198,8 @@ electronics.
 
 {\bf artDAQ software toolkit} (from Fermilab) supplies the real-time
 data collection functionality (buffering, matching event parts,
-synchronization, inter-process communication, etc.) in a modern C++11
-code design that facilitates the efficient use of multicore commodity
+synchronization, inter-process communication, etc.) in a modern
+design that facilitates the efficient use of multicore commodity
 computers running on the Linux computer farms.  The multi-core
 functionality is crucial in the high data-rate environment on DUNE.  
 The detector-specific
@@ -204,10 +209,11 @@ provided by artDAQ can be tailored for each experiment and is entirely
 suitable for the ``collect-twice'' architecture envisioned for DUNE.
 
 {\bf Run Control and Slow Control software framework} manages the
-control, status display and status archival of the experiment.  This
+control, status display and status archival of the experiment.  It is
+based on the ICECube design.  This
 exploits a combination of readily available, well-supported packages
-[message passing (zeroMQ), a web-framework (Django), databases
-(postgress)] to give the shift operator a unified view of the status
+[message passing (zeroMQ), a web-framework (Django), databases (postgres)] 
+to give the shift operator a unified view of the status
 of the running experiment, and views of the monitoring data including
 customized views and historical views.  The database of slow-control
 measurements is exported to the host lab to give access for offline
@@ -302,7 +308,8 @@ The time sequence, trigger deadlines and buffering of the readout are all
 shown in Figure~\ref{fig:fddaqtime}.  This figure shows time in the
 horizontal direction on a logarithmic scale to indicate how long after
 the particles appear in the detector each process can start and must
-finish.  There is one level of triggering, with a trigger deadline of
+finish.  There is one level of triggering, with a trigger deadline
+(latest time a trigger decision can arrive) of
 0.16\,s after the event has occurred, indicated by the vertical dotted
 line.  This is long enough that in 99\% of the cases, a message will
 arrive from the Fermilab site to update the predicted time of a
@@ -328,13 +335,15 @@ the data from the separate 10-kt module files and archives them at the host lab.
 
 To maximize data collection for a supernova, the continuous
 zero-suppressed trigger data is kept in a large buffer area on disk.
-Ways to collect data that is cropped more gently than the zero-suppressed 
+Ways to collect data that are cropped more gently than the zero-suppressed 
 data stream during the extended period of a supernova are
-under study: The non-zero-suppressed ring buffers on the RCEs are
-sufficient for 0.4\,s of buffering and the trigger farm can manage its optimal
-usage during a supernova. Two possible extensions
-are (a) extend the memory in the aTCA crate to buffer longer with
-local disk drives, or (b) use the powerful intercommunications between
+under study: The non-zero-suppressed ring buffers on the current
+design of RCEs are
+sufficient for 0.4\,s of buffering; the trigger farm can send
+instructions in the trigger messages to manage storage of data in
+these buffers during a supernova. Two possible extensions
+are (a) extend the memory to buffer longer, either on the RCEs or
+elsewhere in the aTCA crate, or (b) use the powerful intercommunications between
 RCEs to cause neighboring channels to be kept around the time of a
 potential supernova event candidate. 
 
@@ -352,10 +361,17 @@ radioactivity from $^{39}$Ar and $^{85}$Kr.  The cosmic-rays that
 occur about once per minute are the major source of events that should
 be collected on the data stream; the physics beam events, atmospheric
 netrinos and other candidate contained events are included in this
-data budget.  Table~\ref{tab:daqrefrates}) gives estimates of the
+data budget.  
+Table~\ref{tab:daqrefrates}) gives estimates of the
 rate of occurence of these events and the expected ``steady-state'' data rate
 (after the derandomisation provided by the buffering in the front-end
-computers).
+computers).  The requirements are met in this conceptual design by
+the very high throughput provided by modern off-the-shelf components 
+and the parallelism provided by artDAQ, which
+makes the design extendable to avoid bottolenecks.  The triggering
+allows the zero-suppression to be tuned to optimise for the final
+level of noise, while retaining the maximum level of information for
+the important physics events.
 
 This DAQ design is being prototyped for the 35t tests in 2015, with
 two COBs (containing 16 RCEs) and eight SSPs.  The artDAQ software

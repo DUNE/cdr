@@ -23,11 +23,15 @@ The Near Detector full reconstruction has not been developed yet, though a param
 reconstruction of the ND FastMC (described in section \ref{annex:detectors-sc-physics-software-simulation-nd})
 has been developed and used for physics sensitivity studies.  In the ND FastMC, particles are ``reconstructed''
 by applying the smearing function shown in Tab.~\ref{tab:ndfastmc_par}.  The parameters of the smearing
-function are guided by NOMAD detector performance.  Fig.~\ref{fig:ndfastmc_mures} shows
-the momentum resolution obtained from the ND FastMC simulation and reconstruction framework.
+function are guided by NOMAD detector performance~\cite{Anfreville:2001zi}.  Fig.~\ref{fig:ndfastmc_mures} shows
+the momentum resolution in $\nu_\mu$-CC obtained from the ND FastMC simulation and reconstruction framework with DUNE ND flux.
 
 \begin{cdrfigure}[Near Detector muon momentum resolution]{ndfastmc_mures}
-{The momentum resolution of smeared muon tracks using the Near Detector's FastMC parameterization}
+{The distribution of fractional differences of measured muon momenta from their true values 
+for smeared muon tracks in $\nu_\mu$-CC events using the Near Detector's FastMC parameterization.  The distribution
+of $\delta p_\mu/p_\mu$ is shown with a blue histogram and a fit to a single Gaussian is shown with a red curve.  The
+Gaussian fit gives an average resolution of 3.3\%.
+}
 \includegraphics[width=0.8\textwidth]{ndfastmc_mures.pdf}
 \end{cdrfigure}
 
@@ -415,7 +419,11 @@ including precise vertex reconstruction.
 Figure~\ref{fig:recoannexlpcvertexresolution} shows vertex resolution plots for the dual-phase detector design.
 
 \begin{cdrfigure}[Vertex reconstruction using local principal curves]{recoannexlpcvertexresolution}
-{CAPTION GOES HERE}
+{Spatial resolutions for the primary vertex reconstruction using local principal curves, separately in the $x$, $y$, and
+$z$ directions, in a dual-phase detector.  The left-hand column shows the resolutions for CCQE $\nu_\mu\rightarrow \mu + p$
+events, and the right-hand column shows the resolutions for CCQE $\nu_e\rightarrow e + p$ events.  The distributions
+are fit to a sum of two Gaussians with equal means.  The effective width is quoted above each plot
+as  $\sigma_1 + r* \sigma_2$, where $r$ is the ratio of amplitudes of the two Gaussian components. }
 \includegraphics[width=0.33\textwidth]{barker_vertex_numuccqe_x_annex.pdf}
 \includegraphics[width=0.33\textwidth]{barker_vertex_nueccqe_x_annex.pdf}
 \includegraphics[width=0.33\textwidth]{barker_vertex_numuccqe_y_annex.pdf}
