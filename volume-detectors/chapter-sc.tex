@@ -119,13 +119,15 @@ Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can 
 \
 This results in a total of \dunefsreadoutsize worth of TPC data in one readout.
 
-Zero suppression greatly reduces the size event size.  An
-over-estimate based on a LArSoft Monte Carlo simulation of GeV-scale
-events suggests a zero-suppressed and uncompressed event size of $\sim$\beameventsize
-MB.  After compression this event size is expected to be 0.1 MB.  This
-simulation employed a suboptimial data schema and it is expected that
-with optimization these sizes can be reduced by at least an order of
-magnitude.
+Zero suppression greatly reduces the size event size.  An overly conservative estimate
+(leaning to the higher end of the range of values)
+ based on a LArSoft Monte Carlo simulation of GeV-scale
+events suggests a zero-suppressed and uncompressed event size of $\sim$\beameventsize.
+After compression this event size is expected to be $\sim$0.1 MB.  This particular
+simulation employed a less than optimial schema for packing data and it is expected that
+with optimization these sizes can be further reduced.
+
+% by at least an order of magnitude.
 
 However, one of the possibilities that is now actively explored by the DUNE
 DAQ team is to record beam event candidates (e.g. events with signals
