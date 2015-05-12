@@ -22,17 +22,17 @@ versions of the Far Detector.
 
 \subsubsection{Types of Raw Data}
 DUNE is a multipurpose apparatus and the variety of physics goals to be pursued during its operation
-will be reflected in different characteristics of respective data streams processed and collected in real time and off-line.
-As one example, consider the difference between neutrino oscillations physics done with beam neutrinos
-on one hand, and the ambitious goal of detecting the rare Supernova bursts (SNB) on the other.
+will be reflected in different characteristics of data streams processed and collected in real time and off-line.
+As one example, consider the difference between neutrino oscillation physics with beam neutrinos
+on the one hand and Supernova neutrino bursts (SNB) on the other.
 Signals produced by ``beam events'' will be characterized by total energy in the GeV range, allowing
-appropriate thresholds for zero-suppression (ZS) to be set at the levels appropriate for
+thresholds for zero-suppression (ZS) to be set at the levels appropriate for
 minimum-ionizing particles, which greatly reduces the
-background component of the data. By comparison, the energy scale of the signals produced by
-SNB neutrino interactions in the active volume of the detector is estimated to be in the range of tens
-of MeV. This results in much lower thresholds needed for this type of measurement, and therefore
-in considerable (if not overwhelming) rate of SNB-specific data coming
-out of the LAr TPC in real time, with contribution from radiological backgrounds.
+data volume. By comparison, the energy scale of signals produced by
+SNB neutrino interactions is in the range of tens
+of MeV. This results in much lower thresholds and therefore
+in considerable rate of SNB-specific data coming
+out of the LArTPC in real time, with contribution from radiological backgrounds.
 Another differentiating SNB feature is that \textit{multiple neutrinos are expected
 to arrive and interact in the detector volume} during the possible rare Supernova burst event within seconds
 from each other, as opposed to a single vertex produced by a beam neutrino (or any other localized
@@ -60,7 +60,7 @@ normalized to \dunedetectormass.
 \item Zero-Suppression thresholds will be set at levels that preserve signals from minimum-ionizing particles.
 \item The intensity of the beam provided by LBNF will affect the data rates for a few detector
 systems in DUNE and is likely to have more pronounced effect on the Near Detecor.
-It is assumed that the beam has the characteristics suggested by LBNF Project at the time of writing.
+It is assumed that the beam has the characteristics suggested by LBNF Project at the time of writing.{\fixme Are you referring to something other than the reference design? If so, which configuration? If not, no need to state this.}
 \item It is assumed that the front-end systems of the TPC and the Photon Detector combined
 with the logic in DAQ will provide triggering capability for the beam neutrino physics, while
 triggering outside of the beam spills will be provided by DAQ utilizing continuously digitized
@@ -119,7 +119,7 @@ Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can 
 \
 This results in a total of \dunefsreadoutsize worth of TPC data in one readout.
 
-Zero suppression greatly reduces the size event size.  An overly conservative estimate
+Zero suppression greatly reduces the event size.  An overly conservative estimate
 (leaning to the higher end of the range of values)
  based on a LArSoft Monte Carlo simulation of GeV-scale
 events suggests a zero-suppressed and uncompressed event size of $\sim$\beameventsize.
@@ -131,19 +131,23 @@ with optimization these sizes can be further reduced.
 % by at least an order of magnitude.
 
 Some of the driving zero-suppressed (ZS) and full-stream (FS) annual
-data volumes are summarized in table~\ref{tab:sc-zs-summary}. It is important to note
+data volumes are summarized in Table~\ref{tab:sc-zs-summary}. It is important to note
 that the numbers in the row characterizing $^{39}$Ar are given for information only and do
 not represent our estimates of actual data to be committed to mass storage.
 
-There is a range of possible approaches to reducing data volume in real time without
-losing much of information due to low-amplitude signals, which may be important
-for more precise particle identification or in search for unusual  signatures that may
-exist due to new phenomena. For example, implementation of the ``trigger stream''
-in the DAQ system allows to trigger on event candidates using ``high threshold'', while
-capturing data in the potential event without applying any threshold at all. In that case, one can estimate
-the total size of the TPC data to be collected annually by multiplying the predicted number of beam neutrino interactions
-per year (estimated here to be \beamrate) by the full stream event size quoted above (\dunefsreadoutsize).  Thus one arrives to an estimate of
-\beamdatayearfs for each year of this type of data.
+There is a range of possible approaches to reducing data volume in
+real time without losing much of information due to low-amplitude
+signals, which may be important for more precise particle
+identification or in search for unusual signatures that may exist due
+to new phenomena. For example, implementation of the ``trigger
+stream'' in the DAQ system allows to trigger on event candidates using
+``high threshold'', while capturing data in the potential event
+without applying any threshold at all. In that case, one can estimate
+the total size of the TPC data to be collected annually by multiplying
+the predicted number of beam neutrino interactions per year (estimated
+here to be \beamrate) by the full stream event size quoted above
+(\dunefsreadoutsize).  This results in an estimate of
+\beamdatayearfs of this type of data per year.
 
 This scheme can be augmented by an ``express offline'' farm (extension of DAQ) which would perform functions similar to a high-level trigger
 utilized in collider experiments, allowing more flexibility in choosing thresholds and other parameters which
@@ -165,7 +169,7 @@ at a later time:
 \item ADC digitization frequency: 150MHz
 \end{itemize}
 \
-It is assumed that a few dozen of samples will be recorded in each channel, and there will
+It is assumed that a few dozen samples will be recorded in each channel, and there will
 be zero suppression of channels with signals below a chosen threshold, resulting in an order
 of magnitude reduction of the data volume.
 This results in 360kB per spill cycle, and should be considered negligible from the point of view of requirement to data handling, compared to other data sources.
@@ -219,11 +223,16 @@ expectation is that this estimate will increase.
 
 \subsubsection{Distributed Computing}
 
-Given the fact the Collaboration is large and widely dispersed geographically, a fully distributed approach to computing is recommended, based on experience
-gained during the operation of the LHC experiments. This includes not only ``traditional'' Grid technologies in the form they were deployed during the first
-decade of this century, but also more recent expansion into Cloud Computing
-and Big Data methodology. This will allow the DUNE Collaboration to better leverage resources and expertise from many of its
-member institutions and improve the overall long-term scalability of its computing platform.
+Given the fact the Collaboration is large and widely dispersed
+geographically, a fully distributed approach to computing is planned,
+based on experience gained during the operation of the LHC
+experiments. This includes not only ``traditional'' Grid technologies
+in the form they were deployed during the first decade of this
+century, but also more recent expansion into Cloud Computing and Big
+Data methodology. This will allow the DUNE Collaboration to better
+leverage resources and expertise from many of its member institutions
+and improve the overall long-term scalability of its computing
+platform.
 
 DUNE will operate a  distributed network of federated resources, for both CPU power and storage capability. This will allow for streamlined incorporation
 of computing facilities as they become available at member institutions, and thus is particularly amenable to accommodate staged construction and commissioning
@@ -300,16 +309,24 @@ that the total data rate will be of the same order of magnitude or less than in 
 A longer description of the current status of the near detector simulation and reconstruction are given
 in \anxreco, and only an abbreviated summary is given here.
 
-Two approaches are being simultaneously pursued for the simulation of the DUNE Near Detector.  The first is a fast Monte Carlo,
-based on parameterized detector responses. The GENIE~\cite{GENIE} generator is used to model the interactions of neutrinos
-with nuclei in the detector, and a parameterization of the achieved NOMAD simulation and reconstruction performance is used to
-model the detector response.
-The second approach is a full GEANT4-based simulation, which is under development.  The fast Monte Carlo tool is based on work done for
-the Far Detector~\cite{Adams:2013qkq}, Appendix A.3, and is capable of rapidly evaluating the sensitivity of the detector
-design for a broad variety of analyses targeting specific final states.   The full GEANT4-based simulation and subsequent reconstruction
-chains will be used to inform the parameterized responses of the fast Monte Carlo, as well as being indispensable tools for simulating
-and extracting results from the Near detector.  Figure~\ref{fig:ndeventdisplaychaptersc} shows the trajectory of a
-negatively-charged muon with an initial momentum of 1~GeV propagating in the straw tube tracker, as simulated using GEANT4.
+Two approaches are being simultaneously pursued for the simulation of
+the DUNE Near Detector.  The first is a fast Monte Carlo based on
+parameterized detector responses. The GENIE~\cite{GENIE} generator is
+used to model the interactions of neutrinos with nuclei in the
+detector, and a parameterization of the achieved NOMAD 
+reconstruction performance is used to model the detector response.
+The second approach is a full GEANT4-based simulation, which is under
+development.  The fast Monte Carlo tool is based on work done for the
+Far Detector~\cite{Adams:2013qkq} (Appendix A.3) and is capable of
+rapidly evaluating the sensitivity of the detector design for a broad
+variety of analyses targeting specific final states.  The full
+GEANT4-based simulation and subsequent reconstruction chains will be
+used to inform the parameterized responses of the fast Monte Carlo, as
+well as being indispensable tools for simulating and extracting
+results from the Near detector.
+Figure~\ref{fig:ndeventdisplaychaptersc} shows the trajectory of a
+negatively-charged muon with an initial momentum of 1~GeV propagating
+in the straw tube tracker, as simulated using GEANT4.
 
 \begin{cdrfigure}[The trajectory of a 1 GeV $\mu^-$ simulated in the near detector.]{ndeventdisplaychaptersc}
 {The trajectory of a 1 GeV $\mu^-$ produced by the GEANT4 simulation of the near detector's straw-tube tracker.}
@@ -351,7 +368,7 @@ MicroBooNE~\cite{Chen:2007ae,Jones:2011ci,microboonecdr}, and the 35-ton prototy
 further tuning of the LArSoft simulation as experience is gained.
 The dual-phase detector simulation and hit-level reconstruction are based on the Qscan~\cite{lussi:thesis} package,
 which has been developed over the past decade, and is currently
-being used to perform technical design and physics studies for
+being used for technical design and physics studies for
 the \cerndualproto{} program.  
 
 Events are generated using either the GENIE~\cite{GENIE} simulation of 
@@ -390,17 +407,17 @@ required the development of a variety of new reconstruction techniques,
 forming the basis for precision neutrino physics measurements.
 Accurate reconstruction is needed not only of neutrino scattering events from the beam, but also atmospheric neutrino events,
 supernova burst neutrino interactions, and nucleon decay events, each with its own requirements.
-With the advancement of both single-phase and dual-phase technologies,
+With the advance of both single-phase and dual-phase technologies,
 and expansion of the experimental program to include MicroBooNE~\cite{Chen:2007ae,microboone-url},
 the 35-ton prototype and the CERN test experiments,
 the reconstruction tools have grown in both volume and sophistication,
 supported by powerful software frameworks such as LArSoft and Qscan.
 
 Fully automated chains of event-reconstruction algorithms
-are being developed for the DUNE far detector, both for the single-phas and dual-phase designs.
+are being developed for the DUNE far detector, both for the single-phase and dual-phase designs.
 The first stage of reconstruction involves the processing of the
 ADC wire signals, and the identification of pulses, or ``hits,'' in the 
-two-dimensional space of wire nubmer and charge arrival time. 
+two-dimensional space of wire number and charge arrival time. 
 These hits provide the input for a series of pattern-recognition algorithms,
 which form 2D and 3D clusters, representing individual particle tracks and showers.
 A set of high-level algorithms is then used to reconstruct the 
