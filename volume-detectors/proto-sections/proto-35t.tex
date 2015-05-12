@@ -134,10 +134,8 @@ External plastic scintillator paddles placed around the cryostat will be used to
 trigger signals as well as rough position measurements of the incoming cosmic rays.
 Installation of the TPC into the cryostat is expected in May 2015 and 
 commissioning is expected to begin in July 2015.
-
-%Figure~\ref{fig:tpc-35ton-trial} shows the trial assembly of the TPC outside of the cryostat. 
 Figure~\ref{fig:35TTPC} shows a model of the TPC inside the cryostat and a trial assembly of
-the TPC done outside of the cyrostat. 
+the TPC outside of the cyrostat. 
 
 \begin{cdrfigure}[35-ton with TPC]{35TTPC}{(left) Rendering of the
 35-ton Cryostat with TPC and photon detectors installed. 
@@ -182,14 +180,16 @@ Triggerless-capable DAQ & \ref{sec:detectors-fd-ref-daq} & Take data using multi
 \end{cdrtable}
 
 \subsection{35-ton Phase-2: Simulation, Reconstruction and Analysis}
-As can be seen from Table~\ref{tab:35TDesign}, successful tests of many of the new 
-design features requires simulation, reconstruction and analysis of 35-ton data. 
-This will be done with the help of the LarSoft package, which is also used to simulate and 
-reconstruct data from the ArgoNeuT and MicroBoone experiments.
-Reuse of software developed for those experiments can greatly facilitate 35-ton development. 
-However, the novel hardware features of the 35t prototype necessitate new software developments 
-as well.  
-Among the required new software developments are:
+The performance of many of the DUNE design elements discussed in
+Table~\ref{tab:35TDesign} will be studied with data collected in 2015.
+Study of these design features requires simulation, reconstruction and
+analysis of 35-ton data.  This will be done with the help of the
+LarSoft package, which is also used to simulate and reconstruct data
+from the ArgoNeuT and MicroBoone experiments.  Reuse of software
+developed for those experiments can greatly facilitate 35-ton
+development.  However, the novel hardware features of the 35t
+prototype necessitate new software developments as well.  Among the
+required new software developments are:
 \begin{itemize}
 \item{Code to divide the wrapped wires into as many as five individual linear segments. 
 A hit on a single electronic channel can, in principle, be related to a
