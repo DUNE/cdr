@@ -27,16 +27,21 @@ electronics, and transmitted through cold cables and feedthroughs to
 the data acquisition system outside of the cryostat.
 
 
-\begin{cdrfigure}[Cross section of the TPC inside the cryostat]{tpc-xsect1}{Cross sections of the LBNE 5 kton TPC (left) vs. the DUNE 10 kton TPC (right).  The exchange of the APA and CPA positions significantly reduces the energy stored in the TPC by eliminating the two ground facing cathode planes. This allows an increase in the detector's fiducial volume with the same cryostat.  The length of the DUNE TPC is  58~m along the direction of the neutrino beam (into the page).}
+
+
+The TPC active volume (Figure~\ref{fig:tpc-xsect1}) is 12~m high,
+14.5~m wide and 58~m long in the beam direction.  
+\begin{cdrfigure}[Cross section of the TPC inside the cryostat]{tpc-xsect1}
+{Cross sections of the LBNE 5~kt TPC (left) vs. the DUNE 10~kt TPC (right).  
+The exchange of the APA and CPA positions significantly reduces the energy 
+stored in the TPC by eliminating the two ground facing cathode planes. 
+This allows an increase in the detector's fiducial volume with the same cryostat.  
+The length of the DUNE TPC is  58~m along the direction of the neutrino beam (into the page).}
 \includegraphics[width=\linewidth]{tpc_xsection_lbne_dune.pdf}
 \end{cdrfigure}
-
-
-The TPC's active volume (Figure~\ref{fig:tpc-xsect1}) is 12~m high,
-14.5~m wide and 58~m long in the beam direction.  Its three rows of
-APA planes interleaved with two rows of CPA planes are oriented
-vertically, with the planes parallel to the beamline. The electric
-field is applied perpendicular to the planes.  The maximum
+Its three rows of APA planes interleaved with two rows of CPA planes
+are oriented vertically, with the planes parallel to the beamline. The
+electric field is applied perpendicular to the planes.  The maximum
 electron-drift distance between a cathode and an adjacent anode is
 3.6~m. This requires a $-$180~kV bias voltage on the cathode plane to
 reach the 500~V/cm nominal drift field. The anode plane assemblies are
@@ -52,7 +57,10 @@ cage,'' assembled from panels of FR-4 glass-reinforced epoxy laminate
 sheets with parallel copper strips connected to resistive divider
 networks.  The entire TPC is suspended from 5 mounting rails under the
 cryostat ceiling (see Figure~\ref{fig:tpc-floor-view}).
-\begin{cdrfigure}[A view of the partial assembled TPC]{tpc-floor-view}{A view of the partially installed TPC inside the membrane cryostat.  The APAs are shown in red, CPAs are in cyan, field cage modules in yellow/green. Some of the field cage modules are in their folded position against the cathode.}
+\begin{cdrfigure}[A view of the partial assembled TPC]{tpc-floor-view}
+{A view of the partially installed TPC inside the membrane cryostat.  
+The APAs are shown in red, CPAs are in cyan, field cage modules in yellow/green. 
+Some of the field cage modules are in their folded position against the cathode.}
 \includegraphics[width=\linewidth]{tpc_floor_view.png}
 \end{cdrfigure}
 
@@ -94,6 +102,9 @@ traces on the boards for electrical connections.
 
 On each APA, four planes of wires cover each side of a frame (the
 ``wire frame'') as shown in Figure~\ref{fig:tpc-wire-frame-xsect}.
+\begin{cdrfigure}[Illustration of the APA wire wrapping scheme]{tpc-wire-frame-xsect}{Illustration of the APA wire wrapping scheme, and three cross sectional views.}
+\includegraphics[width=\linewidth]{tpc_apa_cross_sections}
+\end{cdrfigure}
 These four planes of wires are labeled, in order from the outside in:
 G (for grid), U, V and X.  Table~\ref{tab:wire-parameters} summarizes
 the key parameters of each of the wire planes.  
@@ -108,24 +119,23 @@ the key parameters of each of the wire planes.
     X            	&  Collection plane			& 0$^\circ$ 			& 4.79 		&  960  		& +820 		\cr \hline
 
 \end{cdrtable}
-The distance between
-wire planes is 4.76~mm (3/16", a standard printed circuit board
-thickness).  Each wire plane is biased to a particular voltage such
-that the ionization electrons from charged particle tracks will drift
-past the first 3 wire planes and be completely collected by the last
-(X) wire plane.  The V wires are DC-coupled to the readout electronics
-to minimize the maximum voltage on the other wire planes.  A grounded
-mesh plane with good optical transparency, located 4.8~mm behind the
-collection plane, prevents the electric field around this set of wires
-from being distorted by the metal frame structure and the wires on the
-opposite side of the frame. It also shields the sensing wires from
-potential EM interference from the silicon photomultipliers (SiPMs) on
-the photon detectors, mounted within the frame.  Each wire on the U,V
-and X planes is connected to a front-end readout channel. The Grid
-plane wires are not read out, but serve the important purpose of
-shielding the U wires from responding to distant moving charges. The
-total number of readout channels in an APA is 2560, for a total of
-384,000 in each cryostat.
+The distance between wire planes is 4.76~mm (3/16", a standard printed
+circuit board thickness).  Each wire plane is biased to a particular
+voltage such that the ionization electrons from charged particle
+tracks will drift past the first 3 wire planes and be completely
+collected by the last (X) wire plane.  The V wires are DC-coupled to
+the readout electronics to minimize the maximum voltage on the other
+wire planes.  A grounded mesh plane with good optical transparency,
+located 4.8~mm behind the collection plane, prevents the electric
+field around this set of wires from being distorted by the metal frame
+structure and the wires on the opposite side of the frame. It also
+shields the sensing wires from potential EM interference from the
+silicon photomultipliers (SiPMs) on the photon detectors, mounted
+within the frame.  Each wire on the U,V and X planes is connected to a
+front-end readout channel. The Grid plane wires are not read out, but
+serve the important purpose of shielding the U wires from responding
+to distant moving charges. The total number of readout channels in an
+APA is 2560, for a total of 384,000 in each cryostat.
 
 The wires on the two induction planes (U and V) are wrapped in a
 helical pattern around the long edges of the wire frame
@@ -139,7 +149,7 @@ therefore able to resolve this ambiguity.  The upper APAs in the
 cryostat will have their readouts at the top edge of the frame (as
 shown in Figure~\ref{fig:tpc-wire-frame-xsect}), while the lower APAs
 will mount their electronics at the bottom edge.  These readout
-electronics are located outside of the TPC's active volume.  On the
+electronics are located outside of the TPC active volume.  On the
 readout end of an APA, 20 sets of front-end readout boards with 128
 channels each (40U+40V+48X) are distributed on both sides of the APA,
 reading out the 2560 sense wires.
@@ -165,9 +175,6 @@ utilize these double sided APAs by adding another plane of cathode
 with a small negative bias between the cryostat wall and the APAs to
 form a very shallow veto region.
 
-\begin{cdrfigure}[Illustration of the APA wire wrapping scheme]{tpc-wire-frame-xsect}{Illustration of the APA wire wrapping scheme, and three cross sectional views.}
-\includegraphics[width=\linewidth]{tpc_apa_cross_sections}
-\end{cdrfigure}
 
 
 
@@ -176,8 +183,8 @@ form a very shallow veto region.
 \label{subsec:fd-ref-apaframes}
 
 At the nominal wire tension of 5~N, the total of 3520 wires exert a
-force of $\sim 7.0$~kN/m on the short edges of the APA, and a $\sim
-1.5 $~kN/m force on the long edges. The wire frame must be able to
+force of $\sim$7.0~kN/m on the short edges of the APA, and a
+$\sim$1.5~kN/m force on the long edges. The wire frame must be able to
 withstand the wire tension with a minimal distortion, while minimizing
 the thickness of the frame to reduce the resulting dead space. The
 wire frame is constructed from all stainless-steel tubes welded in a
@@ -232,7 +239,7 @@ boards to contain the bubbles and direct them to the gas volume of the
 cryostat. This is particularly important for the bottom APAs where the
 bubbles must be contained and funneled through the vertical hollow
 frame members to the top of the cryostat to prevent the bubbles
-entering the TPC's active volume.
+entering the TPC active volume.
 
 Comb-like wire support structures (see Figure~2.9 in \anxlbnefd) are
 located on each of the 4 cross beams so that the longitudinal wires
@@ -253,11 +260,6 @@ wire planes near the bottom of the TPC to prevent a broken wire from
 contacting the field cage.
 
 
-\begin{cdrfigure}[Winding machine concepts]{tpc-winding-machine}{Illustration of the wire winding machine concept.  The tensioner head is passed from one side of the APA to the other as it is moved around the APA to wind wire onto the APA frame.  The horizontal/vertical positioning systems on each side of the APA are made of commercial linear motion components. }
-\includegraphics[width=0.9\linewidth]{tpc_apa_winding_machine.png}
-\end{cdrfigure}
-
-
 %%%%%%%%%%%%%%%%
 \subsubsection{Wire-Winding Machines}
 \label{subsec:fd-ref-wirewinding}
@@ -267,17 +269,25 @@ APA. It has sufficient versatility that the same mechanism can wind
 both the angled and the longitudinal layers.
  
 Its working concepts are illustrated in
-Figure~\ref{fig:tpc-winding-machine}.  The wire tensioner is a
-self-contained unit that includes the wire spool.  It is designed so
-that correct wire tension is maintained independent of the wire feed
-rate and direction.  The APA is held off the ground by a couple posts,
-with one of its long edges down.  There are X-Y positioners on either
-side of the APA; the tensioner is moved across the face of the APA by
-one of these positioners -- unspooling tensioned wire as it moves.
-When the tensioner arrives at the edge of the APA it is passed across
-to the positioner on the other side of APA while placing the wire into
-the appropriate slots of the edge boards. In this way the entire layer
-of wire can be placed on the frame.
+Figure~\ref{fig:tpc-winding-machine}.
+\begin{cdrfigure}[Winding machine concepts]{tpc-winding-machine}
+{Illustration of the wire winding machine concept.  The tensioner 
+head is passed from one side of the APA to the other as it is moved 
+around the APA to wind wire onto the APA frame.  The horizontal/vertical 
+positioning systems on each side of the APA are made of commercial linear motion components. }
+\includegraphics[width=0.9\linewidth]{tpc_apa_winding_machine.png}
+\end{cdrfigure}
+The wire tensioner is a self-contained unit that includes the wire
+spool.  It is designed so that correct wire tension is maintained
+independent of the wire feed rate and direction.  The APA is held off
+the ground by a couple posts, with one of its long edges down.  There
+are X-Y positioners on either side of the APA; the tensioner is moved
+across the face of the APA by one of these positioners -- unspooling
+tensioned wire as it moves.  When the tensioner arrives at the edge of
+the APA it is passed across to the positioner on the other side of APA
+while placing the wire into the appropriate slots of the edge
+boards. In this way the entire layer of wire can be placed on the
+frame.
 
 Although a large part of an entire plane of wires can be wound in one
 continuous process, a more fault-tolerant procedure would be to pause
@@ -295,27 +305,33 @@ abnormal tension will be replaced manually.
 \subsection{Cathode Plane Assemblies}
 \label{subsec:fd-ref-cpa}
 
-\begin{cdrfigure}[Conceptual design of the cathode plane assembly]{tpc-cathode-model}{Conceptual design of the different cathode plane components near a corner of a cathode wall.  Two flavors of CPAs (outer and inner unit) make up the entire wall of a cathode plane, terminated at both ends by the end pieces (cyan colored).  A high voltage receptacle (orange) connects with the HV feedthrough from the cryostat ceiling. Each CPA is roughly 2.3m wide by 3m tall.}
-\includegraphics[width=0.9\linewidth]{tpc_cpa_components}
-\end{cdrfigure}
-
 There are 2 cathode planes in each detector module.  Each plane is
 tiled from a 4 unit high by 25 unit wide array of cathode plane
 assemblies (CPAs). Figure~\ref{fig:tpc-cathode-model} shows the
-building blocks of a cathode plane.  Each CPA is 2.3~m wide (identical
-to the APA width) and 3~m tall (half of APA height) for ease of
-fabrication, assembly and handling.  Each CPA is made of a
-stainless-steel framework, with panels of solid stainless steel sheets
-mounted between the from openings.  Along each vertical column of the
-4 CPAs, there are two slightly different versions: the outer CPAs (top
-and bottom rows ), and the inner CPAs (2nd and 3rd rows).  The inner
-CPAs use all rectangular tubes for the frame structure, while the
-outer CPAs use 5~cm OD round tubes on the outside edge of the CPA
-facing the floor or ceiling of the cryostat to minimize the surface
-electric field.  Two sets of field shaping end pieces are installed at
-the two ends of a CPA wall to properly terminate the cathode wall with
-rounded edges.  All CPAs are suspended from the ceiling using G10
-hangers under fiberglass rails to insulate the CPAs from the cryostat.
+building blocks of a cathode plane.  
+\begin{cdrfigure}[Conceptual design of the cathode plane assembly]
+{tpc-cathode-model}{Conceptual design of the different cathode plane 
+components near a corner of a cathode wall.  Two flavors of CPAs (outer 
+and inner unit) make up the entire wall of a cathode plane, terminated 
+at both ends by the end pieces (cyan colored).  A high voltage receptacle 
+(orange) connects with the HV feedthrough from the cryostat ceiling. Each 
+CPA is roughly 2.3~m wide by 3~m tall.}
+\includegraphics[width=0.9\linewidth]{tpc_cpa_components}
+\end{cdrfigure}
+Each CPA is 2.3~m wide (identical to the APA width) and 3~m tall (half
+of APA height) for ease of fabrication, assembly and handling.  Each
+CPA is made of a stainless-steel framework, with panels of solid
+stainless steel sheets mounted between the from openings.  Along each
+vertical column of the 4 CPAs, there are two slightly different
+versions: the outer CPAs (top and bottom rows ), and the inner CPAs
+(2$^{nd}$ and 3$^{rd}$ rows).  The inner CPAs use all rectangular tubes for the
+frame structure, while the outer CPAs use 5~cm OD round tubes on the
+outside edge of the CPA facing the floor or ceiling of the cryostat to
+minimize the surface electric field.  Two sets of field shaping end
+pieces are installed at the two ends of a CPA wall to properly
+terminate the cathode wall with rounded edges.  All CPAs are suspended
+from the ceiling using G10 hangers under fiberglass rails to insulate
+the CPAs from the cryostat.
 
 A recent design decision exchanged the positions of the CPAs and APAs
 in the detector, placing the APAs adjacent to the cryostat wall
@@ -349,19 +365,14 @@ resistive structure.
 \subsection{Field Cage}
 \label{subsec:fd-ref-fieldcage}
 
-In the TPC, each pair of facing cathode and anode rows forms an
+In the TPC each pair of facing cathode and anode rows forms an
 electron-drift region. A field cage must completely surround the four
 open sides of this region to provide the necessary boundary conditions
 to ensure a uniform electric field within, unaffected by the presence
 of the cryostat walls.
 
 
-\begin{cdrfigure}[35T field cage]{tpc-field-cage}{A corner of the 35ton TPC field cage as it is being constructed}
-\includegraphics[width=4in]{tpc_fca_35t.jpg}
-\end{cdrfigure}
-
-
-Each 10 kton detector module requires $\sim 2000 \rm{m}^2$ of field
+Each 10-kt detector module requires $\sim$2000~m$^2$ of field
 cage coverage. In the current reference design, the field cages are
 constructed using multiple copper-clad FR-4 sheets reinforced with
 fiber glass I-beams to form modules of 2.3~m $\times$ 3.6~m in
@@ -369,7 +380,7 @@ size. Parallel copper strips are etched on the FR-4 sheets using
 standard printed circuit board fabrication technique. Strips are
 biased at appropriate voltages provided by a resistive-divider
 network. These strips create a linear electric-potential gradient in
-the LAr, ensuring a uniform drift field in the TPC's active volume.
+the LAr, ensuring a uniform drift field in the TPC active volume.
 Simulations have shown that the drift-field non-uniformity quickly
 drops to about 1\%, roughly a strip pitch away from the field-cage
 surface.
@@ -396,13 +407,48 @@ will be installed between each field cage strips to avoid an
 over-voltage condition occurring between field cage electrodes and the
 cathode in a high voltage discharge.
 
-The major challenge of this field cage design is to minimize the electric field exposed to the liquid argon near the thin copper strips.  One solution is to cover all copper edges with a thick layer of solder mask (an acrylic based polymer with a high dielectric strength) as part of the standard PCB fabrication process.  This construction is currently being implemented in the 35ton TPC (see Sec~7.5 of \anxlbnefd).  Figure~\ref{fig:tpc-field-cage} shows a section of the partially constructed field cage.  The 35ton TPC test results will be evaluated to determine if this technique is suitable for the much larger far detector. 
+The major challenge of this field cage design is to minimize the
+electric field exposed to the liquid argon near the thin copper
+strips.  One solution is to cover all copper edges with a thick layer
+of solder mask (an acrylic based polymer with a high dielectric
+strength) as part of the standard PCB fabrication process.  This
+construction is currently being implemented in the 35-t TPC (see
+Sec~7.5 of \anxlbnefd).  Figure~\ref{fig:tpc-field-cage} shows a
+section of the partially constructed field cage.  
+\begin{cdrfigure}[35-t field cage]{tpc-field-cage}{A corner of the 35-t TPC 
+field cage as it is being constructed}
+\includegraphics[width=4in]{tpc_fca_35t.jpg}
+\end{cdrfigure}
+The 35-t TPC test results will be evaluated to determine if this
+technique is suitable for the much larger far detector.
  
-In the meantime, alternate concepts are being actively developed to further minimize the electric field on the field cage.  One example is to apply a very high resistive coating on the outside surface of the field cage such that the surface potential distributes uniformly across the gaps between conductors therefore eliminates the high field region near the conductor edges.  The challenge here is how to ventilate this field cage surface without significantly increasing the field at the edge of perforation.  Another concept is to use roll-formed metal profiles as the field cage electrodes supported by insulating beams.  These profiles have large edge radii that makes their surface electric field relatively low, which makes it possible to be placed even closer to the cryostat walls to improve the efficiency in LAr use.  One particular profile is shown in Figure~\ref{fig:tpc-field-cage-roll-form}.  With only a 20~cm distance away from a ground plane, the electric field on the field cage is still under 12~kV/cm.  The ends of the profiles still have high electric field.  A possible solution is to cover the ends with UHMW polyethylene caps.  This design may also cost significantly less than the reference design with PCBs.
-
-\begin{cdrfigure}[FCA with roll-formed metal profile]{tpc-field-cage-roll-form}{Left: electrostatic simulation of a field cage design that uses roll-formed metal profiles as the field cage electrodes.  Right: a conceptual design of a field cage module using this profile.}
+In the meantime, alternate concepts are being actively developed to
+further minimize the electric field on the field cage.  One example is
+to apply a very high resistive coating on the outside surface of the
+field cage such that the surface potential distributes uniformly
+across the gaps between conductors therefore eliminates the high field
+region near the conductor edges.  The challenge here is how to
+ventilate this field cage surface without significantly increasing the
+field at the edge of perforation.  Another concept is to use
+roll-formed metal profiles as the field cage electrodes supported by
+insulating beams.  These profiles have large edge radii that makes
+their surface electric field relatively low, which makes it possible
+to be placed even closer to the cryostat walls to improve the
+efficiency in LAr use.  One particular profile is shown in
+Figure~\ref{fig:tpc-field-cage-roll-form}.  
+\begin{cdrfigure}[FCA with roll-formed metal profile]{tpc-field-cage-roll-form}
+{Left: electrostatic simulation of a field cage design that uses roll-formed 
+metal profiles as the field cage electrodes.  Right: a conceptual design of a 
+field cage module using this profile.}
 \includegraphics[width=\linewidth]{tpc_fca_rollform.png}
 \end{cdrfigure}
+With only a 20~cm distance
+away from a ground plane, the electric field on the field cage is
+still under 12~kV/cm.  The ends of the profiles still have high
+electric field.  A possible solution is to cover the ends with UHMW
+polyethylene caps.  This design may also cost significantly less than
+the reference design with PCBs.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -414,21 +460,17 @@ The two cathode planes are biased at $-$180~kV to provide the required
 dedicated HV power supply through an RC filter and feedthrough.
 
 The power supplies for the TPC cathode planes must be able to provide
-$-200$ kV at 1~mA current. The output voltage ripple must not
+$-$200~kV at 1~mA current. The output voltage ripple must not
 introduce more than 10\% of the equivalent thermal noise from the
 front-end electronics.  The power supplies must be programmable to
 trip (shutdown) their output at a certain current limit.  During power
 on and off, including output loss (for any reason), the voltage ramp
 rate at the feedthrough must be controllable to prevent damage to the
 in-vessel electronics through excess charge injection.  High-voltage
-feedthroughs must be able to withstand $-$250 kV at their center
+feedthroughs must be able to withstand $-$250~kV at their center
 conductors in 1~atm argon gas environment when terminated in liquid
 argon.
 
-\begin{cdrfigure}[Concept of new feedthrough]{tpc-UCLA-feedthrough}{Top: The high voltage feedthrough and filter developed by the UCLA 
-group for the 35ton TPC.  It was tested up to 150 kV.  Bottom: a conceptual design of a new feedthrough for the far detector.}
-\includegraphics[width=\linewidth]{tpc_hv_feedthrough.png}
-\end{cdrfigure}
 
 The current candidate for the high-voltage power supplies is the
 Heinzinger PNC{\it hp} series, which has the lowest output ripple
@@ -447,9 +489,15 @@ conductor on the cold side of a feedthrough will be insulated and
 shielded by a grounded shroud at least 50~cm below the surface of the
 liquid to ensure bubble free operation at the
 tip. Figure~\ref{fig:tpc-UCLA-feedthrough} shows an example of the
-feedthrough and filter box made by the UCLA group for the 35ton TPC,
+feedthrough and filter box made by the UCLA group for the 35-t TPC,
 as well as the conceptual design of a feedthrough suitable for the far
 detector TPCs.
+\begin{cdrfigure}[Concept of new feedthrough]{tpc-UCLA-feedthrough}
+{Top: The high voltage feedthrough and filter developed by the UCLA 
+group for the 35-t TPC.  It was tested up to 150~kV.  
+Bottom: a conceptual design of a new feedthrough for the far detector.}
+\includegraphics[width=\linewidth]{tpc_hv_feedthrough.png}
+\end{cdrfigure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -469,9 +517,8 @@ the integrity of the wire-to-board and board-to-frame bonds.
 
 The second set of prototypes are scale models of the APA and CPA. They
 are being used to validate the designs and to evaluate production
-procedures. These functional prototypes will be installed in the 35
-ton prototype cryostat. This TPC is expected to be operational in
-2015.
+procedures. These functional prototypes will be installed in the 35-t
+prototype cryostat. This TPC is expected to be operational in 2015.
 
 A TPC prototype that is proposed to go into a CERN test beamline
 requires 6 full-size APAs with fully instrumented readout electronics,
