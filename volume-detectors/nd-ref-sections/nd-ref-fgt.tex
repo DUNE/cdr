@@ -2,93 +2,70 @@
 \section{The Fine-Grained Tracker} 
 \label{cdrsec:detectors-nd-ref}
 
-The scope of the DUNE Fine-Grained Tracker (FGT) near neutrino detector includes the design, procurement, fabrication, testing, delivery and installation of all the systems and components that comprise it:
-
-%\fixme{edit this as needed}
-
+The scope of the DUNE Fine-Grained Tracker (FGT) near neutrino
+detector includes the design, procurement, fabrication, testing,
+delivery and installation of all subsystems:
 \begin{itemize}
-\item A central straw-tube tracker (STT)
-\item An electromagnetic calorimeter (ECAL) 
-\item A 0.4-T dipole magnet surrounding the STT and ECAL
-\item Muon identifiers (MuIDs) located in the steel of the magnet, as well as upstream and downstream of the STT
+\item Central straw-tube tracker (STT)
+\item Electromagnetic calorimeter (ECAL) 
+\item Dipole magnet (0.4-T) surrounding the STT and ECAL
+\item Muon identifiers (MuIDs): in the magnet steel and upstream/downstream of the STT
 \item Instrumentation for monitoring and control
 \end{itemize}
 
 
 
+A schematic drawing of the FGT design is shown in Figure~\ref{fig:STT_schematic}. 
 \begin{cdrfigure}[A schematic drawing of the fine-grained
 tracker design]{STT_schematic}{A schematic drawing of the fine-grained tracker design.}
-\includegraphics[width=1.1\textwidth]{FGT_Overview}
+\includegraphics[width=0.9\textwidth]{FGT_Overview}
 \end{cdrfigure}
-
-A schematic drawing of the FGT design is shown in Figure~\ref{fig:STT_schematic}. 
-The design presented here meets the required performance for making precision measurements of the 
+The design presented here meets the required performance for making precision measurements of 
 neutrino fluxes, cross sections, signal rates and background rates for the DUNE far detector. 
-The DUNE ND must fulfill the physics program described in Section~\ref{ch:physics-nd}, as well 
-as in Ref.~\cite{DPR}. The most significant requirements~\cite{ND-REQ1,ND-REQ2} for the FGT include:  
-
+The DUNE ND must fulfill the physics program described in Chapter 6 of CDR \volphys %Section~\ref{ch:physics-nd}, 
+as well as the DAE/DST Dtailed Project Report\cite{DPR}. The most significant 
+requirements\cite{ND-REQ1,ND-REQ2} for the FGT include:  
 \begin{itemize}
-\item Muon energy scale uncertainty better than 0.2\% and hadronic energy scale uncertainty 
-better than 0.5\% for the low-$\nu$ flux measurements 
-
-\item 
-Magnetized detector capable of  separating  as well as 
- $\mu^+$ from $\mu^-$, as well as   $h^+$ from $h^-$, where $h$ is a charged hadron 
-
-\item 
-Capability to to separate $e^+$ from $e^-$ for absolute and relative flux measurements
-
+\item Muon energy scale uncertainty better than 0.2\% and hadronic
+  energy scale uncertainty better than 0.5\% for the low-$\nu$ flux
+  measurements
+\item Magnetized detector capable of separating as well as $\mu^+$
+  from $\mu^-$, as well as $h^+$ from $h^-$, where $h$ is a charged
+  hadron
+\item Capability to to separate $e^+$ from $e^-$ for absolute and
+  relative flux measurements
 %\item low density $\rho \sim 0.1$ g/cm$^3$, similar to that of liquid hydrogen
-
 %\item dipole magnetic field of $B=0.4$ T with high detector granularity 
-
-\item Excellent momentum ($<5\%$) and angular ($<2$ mrad) resolutions for $\mu^{\pm}$, $e^{\pm}$, 
-$\pi^{\pm}$ and $proton$, and $\pi^0$/$\gamma$ via decay/conversion, 
- and $K^0_S$/$\Lambda$ produced in $\nu$-induced interactions. 
-
-\item 4$\pi$ ECAL coverage to ensure an  
- accurate determination of the momentum vector of the hadronic shower
-
-\item 4$\pi$ MuID coverage to identify muons with a wide range of energies and angles  
-
-\item Electron/positron identification through the use of transition radiation (TR) in the 
-      entire tracking detector for low-energy and/or large angle tracks (e.g. $\gamma$ conversions)  
-
-\item $\pi/K/p$ identification by dE/dx in the entire tracking detector 
-
-\item 
-Identification of $\pi^0$ and $\gamma$ that can mimic oscillation signals at the FD 
-
-\item Use of a variety of nuclear targets, (C$_3$H$_6$)$_n$, Ar, Ca, C, Fe, etc., to quantitate the impact of nuclear 
-effects in $\nu$($\bar \nu$)-nucleus cross sections  
-
-\item Provide more than 10 times the unoscillated statistics expected in a 40 kt FD on Ar target 
-
+\item Excellent momentum ($<5\%$) and angular ($<2$ mrad) resolutions
+  for $\mu^{\pm}$, $e^{\pm}$, $\pi^{\pm}$ and $proton$, and
+  $\pi^0$/$\gamma$ via decay/conversion, and $K^0_S$/$\Lambda$
+  produced in $\nu$-induced interactions.
+\item 4$\pi$ ECAL coverage to ensure an accurate determination of the
+  momentum vector of the hadronic shower
+\item 4$\pi$ MuID coverage to identify muons with a wide range of
+  energies and angles
+\item Electron/positron identification through the use of transition
+  radiation (TR) in the entire tracking detector for low-energy and/or
+  large angle tracks (e.g. $\gamma$ conversions)
+\item $\pi/K/p$ identification by dE/dx in the entire tracking
+  detector
+\item Identification of $\pi^0$ and $\gamma$ that can mimic
+  oscillation signals at the FD
+\item Use of a variety of nuclear targets, (C$_3$H$_6$)$_n$, Ar, Ca,
+  C, Fe, etc., to quantitate the impact of nuclear effects in
+  $\nu$($\bar \nu$)-nucleus cross sections
+\item Provide more than 10 times the unoscillated statistics expected
+  in a 40 kt FD on Ar target
 %\item  identification and measurement of processes such as neutral current $\pi^0$ production that can mimic oscillation signals at the FD
 %\item comparability with measurements made in the FD
 %\item measurement of nuclear effects, including short-range correlations, two-body currents, pion absorption, initial-state interactions, 
 %and final-state interactions
 \end{itemize}
-The requirements listed above imply the use of a low density, $\rho \sim 0.1$ g/cm$^3$, high-resolution magnetic spectrometer. 
-A summary of the performance requirements is given in Table~\ref{tab:comparison}
-Regardless of the process under study, the goal is
-to have the systematic error less than the corresponding statistical error. 
-
-\begin{cdrfigure}[Simulated distributions of dE/dx for different particles in FGT]
-{PartID_dedx}{Simulated distributions of dE/dx for different particles in FGT.}
-\includegraphics[width=1.1\textwidth]{PartID_dedx}
-\end{cdrfigure}
-
-%The FGT will measure the neutrino event rates and cross sections 
-%on argon, water, and other nuclear 
-%targets for both $\nu_e$ and $\nu_\mu$ charged current (CC) and
-%neutral current (NC) scattering events. The FGT design 
-%consists of a straw-tube tracker (STT), consisting of straw tubes, water targets, argon targets, 
-%and radiator targets, and an electromagnetic calorimeter (ECAL), both inside a
-%dipole magnet. In addition, muon detectors (MuID) consisting of resistive plate
-%chambers (RPCs) will be embedded in the steel
-%of the magnet. 
-
+The requirements listed above imply the use of a low density, $\rho
+\sim$0.1~g/cm$^3$, high-resolution magnetic spectrometer.  A summary
+of the performance requirements is given in Table~\ref{tab:comparison}
+Regardless of the process under study, the goal is to have the
+systematic error less than the corresponding statistical error.
 \begin{cdrtable}[A summary of the performance for 
 the FGT configuration]{ll}{comparison}{A summary of the performance for 
 the FGT configuration}
@@ -109,6 +86,18 @@ CC$\mu$/CCe Rejection&0.01\% \\
 \end{cdrtable}
 
 
+%The FGT will measure the neutrino event rates and cross sections 
+%on argon, water, and other nuclear 
+%targets for both $\nu_e$ and $\nu_\mu$ charged current (CC) and
+%neutral current (NC) scattering events. The FGT design 
+%consists of a straw-tube tracker (STT), consisting of straw tubes, water targets, argon targets, 
+%and radiator targets, and an electromagnetic calorimeter (ECAL), both inside a
+%dipole magnet. In addition, muon detectors (MuID) consisting of resistive plate
+%chambers (RPCs) will be embedded in the steel
+%of the magnet. 
+
+
+
 %%%%%%%%%%%%%%%%% 
 \subsection{Straw-Tube Tracking Detector}
 \label{cdrsec:detectors-nd-ref-fgt-stt}
@@ -119,6 +108,11 @@ CC$\mu$/CCe Rejection&0.01\% \\
 The Straw-Tube Tracking Detector (STT) at the center of the FGT 
 will be composed of straw tubes with an outer diameter of 1~cm, as well as 
 radiators and targets that reside next to the straw tubes (see Figure~\ref{fig:STT_Detail}).
+\begin{cdrfigure}[A schematic drawing of the fine-grained
+tracker design]{STT_Detail}{A schematic drawing of the Straw-Tube Tracking Detector (STT) design.}
+\includegraphics[width=0.6\textwidth]{STT_Detail}
+\end{cdrfigure}
+
 The straw walls are made by wounding together a film of carbon loaded Kapton XC (inner) and 
 a film of aluminum coated Kapton HN (outer), for a total thickness of about 70 $\mu$m. 
 Vertical (YY) and horizontal (XX) planes of straws will be alternated and 
@@ -126,17 +120,9 @@ arranged in modules, with each module containing close-packed double straw layer
 of vertical and horizontal straws (XXYY). 
 Figure~\ref{fig:STT_Detail} shows a schematic drawing of an STT module with four straw-tube planes and
 radiators. Each XXYY module equipped with radiators is equivalent to $1.25 \times 10^{-2} X_0$, with a 
-radiation length $X_0\sim 6m$. The momentum measurement requires that tracks are detected in at least 
+radiation length $X_0\sim$6~m. The momentum measurement requires that tracks are detected in at least 
 6 straw layers. The staggered design of double layers, the average number of straw planes crossed by tracks, 
 and the double-end readout will contribute to the short track disambiguation. 
-
-
-\begin{cdrfigure}[A schematic drawing of the fine-grained
-tracker design]{STT_Detail}{A schematic drawing of the fine-grained tracker design.}
-\includegraphics[width=0.75\textwidth]{STT_Detail}
-\end{cdrfigure}
-
-
 \begin{cdrtable}[Straw Tube Detector specifications]{ll}{STT_details}{Straw Tube Detector specifications}
 Item&Specification \\ \toprowrule
 Straw Tube Geometry & 1cm Diameter x 3.5m Long \\ \colhline
@@ -166,14 +152,14 @@ Number of Modules with Fe Target Planes & 1 \\
 \end{cdrtable}
 
 
-The straw tubes will be filled with a
-gas mixture of either 70\% Ar plus 30\% CO$_2$ (for modules with targets) or
-70\% Xe plus 30\% CO$_2$ (for modules with radiators). 
-The dimensions of each module in the reference design will
-be approximately 350~cm $\times$ 350~cm $\times$ 8.0~cm, including 
-target or radiator planes and four straw planes. For ease of construction and
-transportation, each module is made up of four sub-modules, with dimensions of
-appproximately 350~cm $\times$ 175~cm $\times$ 4.0~cm. 
+The straw tubes will be filled with a gas mixture of either 70\% Ar
+plus 30\% CO$_2$ (for modules with targets) or 70\% Xe plus 30\%
+CO$_2$ (for modules with radiators).  The dimensions of each module in
+the reference design will be approximately 350~cm $\times$ 350~cm
+$\times$ 8.0~cm, including target or radiator planes and four straw
+planes. For ease of construction and transportation, each module is
+made up of four sub-modules, with dimensions of appproximately 350~cm
+$\times$ 175~cm $\times$ 4.0~cm.
 %The straw tubes in a single sub-module will be able to provide the tension 
 %for the wires, however, a temporary sub-module carbon composite frame will 
 %be employed for shipping. 
@@ -198,6 +184,10 @@ Table~\ref{tab:STT_details} summarizes the main parameters of the STT design.
 In addition to tracking the charged particles and measuring Transition Radiation (TR), 
 the STT readout provides dE/dx measurement to identify particles. 
 Figure~\ref{fig:PartID_dedx} provides a sample of pion, kaon, and proton identification via dE/dx in the STT.
+\begin{cdrfigure}[Simulated distributions of dE/dx for different particles in FGT]
+{PartID_dedx}{Simulated distributions of dE/dx for different particles in FGT.}
+\includegraphics[width=0.7\textwidth]{PartID_dedx}
+\end{cdrfigure}
 
 \subsubsection{Radiator Targets} 
 
@@ -283,6 +273,11 @@ layers of either 1.75-mm-thick (for the forward ECAL) or 3.5-mm-thick
 (for the barrel and backward ECAL) lead sheets and 2.5-cm-wide by 10-mm-thick 
 plastic scintillator bars,
 as shown in Figure~\ref{fig:ECAL_detail}. 
+\begin{cdrfigure}[Schematic drawing of the ECAL]{ECAL_detail}
+{Schematic drawing of the ECAL, which is made up of alternating planes
+of plastic scintillator and Pb sheets.}
+\includegraphics[width=0.5\textwidth,angle=0]{ECAL_detail}
+\end{cdrfigure}
 The scintillator layers for the
 Forward and Backward ECAL alternate as XYXYXY..., while the scintillator 
 layers for the Barrel ECAL are all horizontal along the axis of the magnet.
@@ -345,10 +340,6 @@ Total Mass of Scintillator & 20,890 kg \\ \colhline
 Total Mass of Pb & 70,800kg \\\end{cdrtable}
 
 
-\begin{cdrfigure}[Schematic drawing of the ECAL]{ECAL_detail}{Schematic drawing of the ECAL, which is made up of alternating planes
-of plastic scintillator and Pb sheets.}
-\includegraphics[width=0.5\textwidth,angle=0]{ECAL_detail}
-\end{cdrfigure}
 
 
 %%%%%%%%%%%%%%%%% 

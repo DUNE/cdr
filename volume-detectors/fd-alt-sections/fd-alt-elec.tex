@@ -208,8 +208,8 @@ detector design is based on 2 industrial standards:
 The global DAQ scheme foresees that electrical signals transit from
 the front-end electronics ASICs through the signal chimneys. The
 signals are then collected by digitization boards in the $\mu$TCA
-standard which offers data connections through a 10~GbE network
-(L1). Each $\mu$TCA crate (shelf) is connected through a 10Gbe up-link
+standard which offers data connections through a 10GbE network
+(L1). Each $\mu$TCA crate (shelf) is connected through a 10GbE up-link
 to the next level (L2). The L2 directly connects the micro-TCA crates
 to high performance, FPGA based, back-end processing boards for event
 building. A lossless transmission scheme is foreseen down to the
@@ -220,7 +220,7 @@ argon events.
 
 Recorded data are sent to a local storage level where Object Storage
 Servers (OSS) and MetaData Servers (MDS) are connected with the event
-building workstations via a 10/40 GbE network (Ethernet or
+building workstations via a 10/40GbE network (Ethernet or
 InfiniBand). In parallel, a high stability common clock and time
 synchronization signals are distributed to L1 digitization cards,
 using the White Rabbit standard, through a dedicated, deterministic
@@ -340,7 +340,7 @@ This kind of board is used for massive processing in many fields
 processing with reduced power consumption (only 10\% of the power
 dissipated by an equivalent CPU for a comparable number of
 operations). This particular board has two QSFP+ cages to bring the
-data directly to the FPGA for lowest possible latency. Up-to 8x10Gbe
+data directly to the FPGA for lowest possible latency. Up-to 8x10GbE
 links w/o data loss are available per board.  The board performs
 further data processing, filtering and transmission to the highest
 level for storage. This type of board is widely used and the present
