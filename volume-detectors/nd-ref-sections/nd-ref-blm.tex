@@ -9,7 +9,7 @@ on the neutrino flux at the near and far
 detectors, and data on the pulse-to-pulse variation
 of the beam for beam diagnostic purposes. A description of equipment
 for monitoring the proton beam's interaction with the proton target
-can be found in Volume 2: The Beamline at the Near Site. 
+can be found in Volume 2: The Beamline at the Near Site. \fixme{The Physics Volume, Volume 2 does not have a ``Beamline at the near site chapter''}
 
 The measurements and apparatus described in this chapter fall into
 the category of equipment designed specifically for DUNE to
@@ -19,7 +19,7 @@ detect muons exiting the decay tunnel.
 \label{subsec:detectors-nd-blm-design}
 
 The requirements for the beamline measurements, as discussed in the
-NDC requirements documentation~\cite{nd_requirements_doc}, \fixme{old
+NDC requirements documentation\cite{nd_requirements_doc}, \fixme{old
 LBNE reference} are intimately related to how well the neutrino flux
 must be known.
 %Given that DUNE does not have the luxury to construct identical 
@@ -82,27 +82,7 @@ accuracy of approximately 5~cm.
 The muon measurements are carried out in the region immediately
 following the hadron absorber at the end of the decay tunnel, below
 the Absorber Service Building (LBNF 30).  A view of the absorber area
-and the muon alcove is shown in
-Figure~\ref{fig:AbsorberElevationView}.  The axis of the decay pipe
-cuts across the muon alcove at an angle, and the size of the alcove is
-largely determined by the requirement that it contain the shadow of
-the four-meter-diameter decay pipe, projected through the alcove, as
-shown in the elevation view of Figure~\ref{fig:AbsorberElevationView}.
-
-Figure~\ref{fig:AbsorberElevationView} shows the downstream side of the
-absorber and a conceptual layout of the muon systems described in various sections of this
-chapter.  
-The absorber itself is encased in concrete. The first set of
-muon-measurement devices, from left to right, is a
- variable-pressure gas Cherenkov counters, which 
-mounted on a movable stand in order to scan across the rear surface of the absorber.
- Following that is an
-array of diamond ionization detectors and finally a set of stopped-muon 
-counters which are interspersed between walls of
-steel ``blue blocks''.   The blue blocks are there to provide several
-depths at which to monitor the stopped muons as they range out in the
-material. A second array of ionization devices will also be placed farther downstream within the blue blocks.
-
+and the muon alcove is shown in Figure~\ref{fig:AbsorberElevationView}.  
 \begin{cdrfigure}[Absorber conceptual design, elevation view]{AbsorberElevationView}
 {Absorber conceptual design. The figure shows the elevation view of the 
 absorber at the end of the decay tunnel. The beam axis is shown by
@@ -111,21 +91,44 @@ materials as shown: aluminum core in blue and grey, concrete
 (grey and tan), and steel (in brown and green).}
 \includegraphics[width=4in,angle=0]{AbsorberElevationView}
 \end{cdrfigure}
+The axis of the decay pipe
+cuts across the muon alcove at an angle and the size of the alcove is
+largely determined by the requirement that it contain the shadow of
+the four-meter-diameter decay pipe, projected through the alcove.
+%, as shown in the elevation view of Figure~\ref{fig:AbsorberElevationView}.
+
+Figure~\ref{fig:AbsorberElevationView} shows the downstream side of
+the absorber and a conceptual layout of the muon systems described in
+various sections of this chapter.  The absorber itself is encased in
+concrete. The first set of muon-measurement devices, from left to
+right, is a variable-pressure gas Cherenkov counters, which mounted on
+a movable stand in order to scan across the rear surface of the
+absorber.  Following that is an array of diamond ionization detectors
+and finally a set of stopped-muon counters which are interspersed
+between walls of steel ``blue blocks''.  The blue blocks are there to
+provide several depths at which to monitor the stopped muons as they
+range out in the material. A second array of ionization devices will
+also be placed farther downstream within the blue blocks.
+
 
 Figure~\ref{fig:AbsorberThickness} shows the energy lost by a
 horizontal muon as it traverses the absorber, as a function of the
 distance from the beam axis along a 45$^\circ$ line perpendicular to the beam axis. 
-In the central region, roughly to a distance of  105~cm, the muons lose between 5.0 to 6.4~GeV, so that the
-lowest-energy muons leaving the absorber at that point correspond to
-neutrino energies of $\sim$ 1.5 to 2.0~GeV. At a radius of roughly 105~cm, the
-full thickness of steel causes the muons 10~GeV or more,
-corresponding to neutrino energies of $\sim$ 2.6~GeV. From the
-perspective of the muon systems it will be desirable to lower these
-thresholds if possible. 
-
-\begin{cdrfigure}[Energy loss in absorber]{AbsorberThickness}{The energy loss a muon, parallel to the beam axis, experiences as it traverses the material in the absorber. The muon's energy loss is plotted versus the distance from the beam axis, along a 45 $^\circ$ line perpendicular to the beam axis. Muons suffer between 4.7 and 9.3~GeV of energy loss depending upon where they cross the absorber.}
+\begin{cdrfigure}[Energy loss in absorber]{AbsorberThickness}
+{The energy loss a muon, parallel to the beam axis, experiences as it traverses 
+the material in the absorber. The muon's energy loss is plotted versus the distance 
+from the beam axis, along a 45$^\circ$ line perpendicular to the beam axis. Muons 
+suffer between 4.7 and 9.3~GeV of energy loss depending upon where they cross the absorber.}
 \includegraphics[width=4in,angle=0]{AbsorberThickness}
 \end{cdrfigure}
+In the central region, roughly to a distance of 105~cm, the muons lose
+between 5.0 to 6.4~GeV, so that the lowest-energy muons leaving the
+absorber at that point correspond to neutrino energies of $\sim$1.5
+to 2.0~GeV. At a radius of roughly 105~cm, the full thickness of steel
+causes the muons 10~GeV or more, corresponding to neutrino energies of
+$\sim$2.6~GeV. From the perspective of the muon systems it will be
+desirable to lower these thresholds if possible.
+
 
 %
 %  REmoved the individual muon component sections per Bill 4/23/15 (AH)
@@ -139,57 +142,68 @@ will be installed as soon as the absorber hall (LBNF-30) is ready.
 Because the system will be located in a radiation-controlled
 environment that will not be accessible during beam operation, it is
 essential that the electronics and gas handling system be both robust
-and remotely operable.  The prototype system in use at the NuMI area can be relocated for that purpose,
-or if desired a new system may be constructed.
-Periodic access will be required to the utilities area to replace gas bottles.
+and remotely operable.  The prototype system in use at the NuMI area
+can be relocated for that purpose, or if desired a new system may be
+constructed.  Periodic access will be required to the utilities area
+to replace gas bottles.
 
-The blue blocks associated with the muon systems will be installed first.
-The positioned stand for the Cherenkov detector system will be installed next.
-and then the various detectors will be installed.
-The stopped-muon counters will be placed into the spaces between the blue-block walls on
-support frames.   There will be access to the areas between the shield blocks 
-from the side, and the stopped-muon counters will be designed so that they can 
-be wheeled in from the side.  If needed, they could then be moved around to measure
-the stopped-muon rates across the muon beam.
+The blue blocks associated with the muon systems will be installed
+first.  The positioned stand for the Cherenkov detector system will be
+installed next.  and then the various detectors will be installed.
+The stopped-muon counters will be placed into the spaces between the
+blue-block walls on support frames.  There will be access to the areas
+between the shield blocks from the side, and the stopped-muon counters
+will be designed so that they can be wheeled in from the side.  If
+needed, they could then be moved around to measure the stopped-muon
+rates across the muon beam.
 
-The muon systems will be operated continuously in order to insure a stable,
-high quality neutrino beam.
-The muon-monitor-system data will be displayed in the control room on
-a spill-by-spill basis to monitor the beam stability. Because the
-system will be located in a radiation-controlled environment that will
-not be accessible during the beam operation, it is essential that the
-electronics be designed for remote operation.
+The muon systems will be operated continuously in order to insure a
+stable, high quality neutrino beam.  The muon-monitor-system data will
+be displayed in the control room on a spill-by-spill basis to monitor
+the beam stability. Because the system will be located in a
+radiation-controlled environment that will not be accessible during
+the beam operation, it is essential that the electronics be designed
+for remote operation.
 
 \section{Hadron Production Measurements}
 \label{sec:detectors-nd-ref-hadron}
 
 \subsection{Introduction}
 
-The technical components that would be needed to implement the strategies 
-described in this chapter are outside the scope of the DUNE NDS conceptual 
-design. This information is included in this document because it complements the conceptual 
-design and expands the NDS capabilities to more closely meet the mission need without increasing the project cost.
+The technical components that would be needed to implement the
+strategies described in this chapter are outside the scope of the DUNE
+NDS conceptual design. This information is included in this document
+because it complements the conceptual design and expands the NDS
+capabilities to more closely meet the mission need without increasing
+the project cost.
 
 \subsection{External Hadron-Production Measurements}
 \label{sec:detectors-nd-external-hadron}
 
-Uncertainties on hadron production will translate into uncertainties in the neutrino fluxes
-in the DUNE Far Detector, since the neutrinos are produced by hadrons decaying in the decay pipe. Precise calculations of neutrino fluxes in high-energy accelerator beams are limited
-at present by our knowledge of hadron production cross-sections in hadron-nucleus collisions. 
-The modeling of strong-interaction cascades and hadronic yields from ``thick'' targets
-(up to a couple of interaction lengths) relies on detailed knowledge of underlying physics
-and cross-sections, which must be provided as a starting point to simulations. The resulting 
-prediction of the flux of neutrinos, produced from decays of pions, kaons, and muons
-emerging from a hadronic shower and beam line re-interactions, is an essential part
-of simulations of most neutrino experiments. 
+Uncertainties on hadron production will translate into uncertainties
+in the neutrino fluxes in the DUNE Far Detector, since the neutrinos
+are produced by hadrons decaying in the decay pipe. Precise
+calculations of neutrino fluxes in high-energy accelerator beams are
+limited at present by our knowledge of hadron production
+cross-sections in hadron-nucleus collisions.  The modeling of
+strong-interaction cascades and hadronic yields from ``thick'' targets
+(up to a couple of interaction lengths) relies on detailed knowledge
+of underlying physics and cross-sections, which must be provided as a
+starting point to simulations. The resulting prediction of the flux of
+neutrinos, produced from decays of pions, kaons, and muons emerging
+from a hadronic shower and beam line re-interactions, is an essential
+part of simulations of most neutrino experiments.
 
-Two-detector neutrino oscillation experiments 
-predict the neutrino flux at the far detector by using neutrino fluxes ``calibrated'' (or
-appropriately scaled) by event energy spectra measured in the near detector. However,
-these experiments rely on beam simulations since the decay pipe (where most beam
-neutrinos are created) provides different angular acceptance for the two detectors. In addition, 
-experiments using near and far detectors based on different detection technologies further complicate the extrapolation. This chapter outlines the DUNE strategy for augmenting the capabilities of the BLM with
-external measurements of secondary-beam particles. 
+Two-detector neutrino oscillation experiments predict the neutrino
+flux at the far detector by using neutrino fluxes ``calibrated'' (or
+appropriately scaled) by event energy spectra measured in the near
+detector. However, these experiments rely on beam simulations since
+the decay pipe (where most beam neutrinos are created) provides
+different angular acceptance for the two detectors. In addition,
+experiments using near and far detectors based on different detection
+technologies further complicate the extrapolation. This chapter
+outlines the DUNE strategy for augmenting the capabilities of the BLM
+with external measurements of secondary-beam particles.
 %\fixme{This was originally written when we just had 
 %the BLM and no NND; no change needed here? Second point: This sentence should be in the intro paragraph of this chapter.}
 
@@ -218,7 +232,7 @@ energy and the various materials found in the target, horn and decay pipe.
 
 At the present time, a sufficient body of hadron-production
 measurements does not exist to achieve DUNE's desired accuracy of
-4-5\%, as determined by the irreducible error on the statistical
+4--5\%, as determined by the irreducible error on the statistical
 uncertainty for the appearance-measurement background, although this
 is expected to improve over time. A program of hadroproduction
 measurements has been approved as US-NA61 to run at CERN.

@@ -5,20 +5,19 @@
 \section{Sides and Bottom of Cryostat}
 
 The membrane cryostat is a sealed container that relies on external support 
-from the surrounding steel frame to resist the hydrostatic load of the 
-contents. In order from innermost to outermost layers, the side walls 
-of the membrane cryostat consist of the stainless-steel primary membrane; 
+from the surrounding steel frame (outer warm vessel) to resist the hydrostatic 
+load of the contents. In order from innermost to outermost layers, the side 
+walls of the membrane cryostat consist of the stainless-steel primary membrane; 
 insulation (inner layer); a secondary barrier (thin aluminum membrane 
 that contains the LAr in case of a leak in the primary membrane); 
 more insulation (outer layer); a barrier to prevent water-vapor 
-ingress to the cryostat; and finally the steel frame.  
+ingress to the cryostat; and finally the steel frame (outer warm vessel).  
 The membrane cryostat is considered a ``full containment'' 
 system in the LNG industry lexicon. The basic components of the 
 membrane cryostat are illustrated in Figure~\ref{fig:composite-sys-install}.
-The cryostat is positioned inside the rock pit with 0.29 m air space 
-reserved (convection or forced air circulation), which maintains rock 
-temperatures above freezing and provides clearance required between 
-steel frame and rock for the sides and bottom (detailed floor strategy TBD).
+The cryostat is positioned inside the rock pit with enough air space 
+reserved for convection or forced air circulation, which maintains rock 
+temperatures above freezing.
 
 \begin{figure}[htbp]
 \centering
@@ -28,19 +27,17 @@ steel frame and rock for the sides and bottom (detailed floor strategy TBD).
 \end{figure}
 
 
-
 \section{Steel Frame and Vapor Barrier}
 %The formed concrete liner will be poured against the sides 
 %and bottom of the excavated rock pit. Conduits and heating 
 %elements will be embedded in the concrete liner
 
-. %The embedded conduits are encased approximately midway in 
+%The embedded conduits are encased approximately midway in 
 %the concrete side walls, end walls and bottom floor slab 
 %as depicted in Figure~\ref{fig:endview-liner}. 
 %The concrete liner and conduits are provided under the 
 %conventional facilities scope. The heating elements are 
 %provided by LBNF scope.
-
 A vapor barrier is required on all internal surfaces of the 
 steel frame (base, side walls, and end walls) and the roof to 
 prevent the ingress of any water vapor into the insulation 
@@ -49,11 +46,121 @@ insulation space, it could freeze and degrade the thermal
 performance of the insulation. The barrier must also 
 reliably absorb the stresses and strains from all normal 
 loading conditions. The selected vapor barrier material 
-is a steel plate for the side and bottom surfaces. 
-%This has been used extensively in onshore LNG tank applications.  
-The vapor barrier for the top will be solid steel plate 
-welded together to the underside of the roof truss.
+is a stainless steel plate of 10 mm applied to the side,
+top and bottom surfaces. 
 
+Each of the four identical cryostats will consist of two 
+major components: a steel outer frame (warm vessel) and 
+membrane cold vessel. The membrane cold vessel is based 
+on the technology used for liquefied natural gas (LNG) 
+storage and transport ships. It consists of an inner 
+stainless steel corrugated thin membrane in contact with 
+the liquid and thermal insulation surrounding it. Details 
+of this technology are presented in section 1.3. The main 
+idea behind this concept is that the cold membrane vessel 
+represents a fully contained vessel with two independent 
+barriers.
+
+The function of steel warm vessel is to contain the membrane 
+vessel and provide mechanical support to it, while providing 
+also a gas barrier towards the outside. Figure~\ref{fig:SteelVessel} 
+below presents the layout of such an assembly which consists
+of a modular self-supporting steel structure.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{SteelVessel}
+\caption[Outer layout of steel warm vessel]{Outer layout of steel warm vessel}
+\label{fig:SteelVessel}
+\end{figure}
+
+The structure will be positioned on a firm surface and with 
+no additional structural connections necessary for either 
+the cavern floor or the cavern walls. The internal (external) 
+dimensions of the structure are approximately 16.9 (19.0) m 
+in width, 15.8 (18.0) m in height and 63.8 (66.0) m in length.
+
+The warm vessel consists of outer supporting profiles, interconnected 
+through a steel grid and a 10 mm thick Stainless Steel (type 304L) 
+continuous plate to the inside in contact with the membrane insulation.
+The material used is S460ML structural carbon steel, with yield 
+strength of 430 MPa and tensile strength of 510 MPa. The main 
+profile used is HL 1100$\times$548 or its ASTM alternative W 44
+$\times$16$\times$368. Four profiles are bolted together, by 
+four bolting connections, forming a structural"portal".Each 
+bolting connection consists of 16 bolts (M42). The additional 
+grid is made of the IPE300 profile. The total self-weight of 
+the structure is approximately 2000 T.
+
+The main advantage of this design is the fact that such a structure 
+can be fully decoupled from the civil engineering work related to
+the excavation and finishing of the four caverns. All components 
+can be procured and prepared on the surface, ready to be lowered 
+through the Ross elevator. Underground installation will take 4 
+months for each of the cryostats and can be done sequentially.  
+The warm vessel will be fully accessible from outside and can be 
+inspected at any moment. A net of stairs and gangways is included 
+in the design at the allocated space. No requirements are put on 
+the distance of the warm structure to the cavern walls. Typically
+ this value might vary between 200 mm and 500 mm. The warm cryostat 
+is positioned inside the cavern pit with enough air space 
+reserved (convection or forced air circulation), which maintains 
+the rock temperatures above freezing.
+
+Finite Elements Analysis Methods using the commercial ANSYS code 
+have been employed as the main design technique. The safety codes 
+used are the Eurocode III and ASME Boiler and Pressure Vessel code 
+Section VIII, Rules for Construction of Pressure Vessel, 
+Division II. The most conservative requirements among the two 
+codes have been adopted. The structure has been treated as a 
+low pressure vessel (<500 mBar). 
+
+Approximately 18000 T of LAr is acting as load on the floor, i.e. 
+around 20 T/m2. Approximately 8000 T of hydrostatic force is acting 
+on each of the long walls, with triangular distribution over the 
+height, and around 2000 T of hydrostatic force is acting on each 
+of the short walls.  Additionally a normal operational pressure 
+of 75 mBar (0.75 T/m2) is considered, acting in addition on every 
+wall. The structure has been also verified to accidental overpressure 
+of 350 mBar (3.5 T/m2), which is the maximum allowable working pressure 
+of the cryostat.  The weight of the detector itself, as well as 
+seismic action, has been taken into account in the calculations.
+
+The following models and analyses methods have been utilized:
+\begin{itemize}
+ \item{For evaluation of the global behavior of the entire structure,
+       a beam model has been developed.}
+ \item{Analytical models of a single portal, i.e. 4 main beams 
+       connected together (roof, floor and the side walls) 
+       have been used.}
+ \item{To study in more details the main elements of the structure, 
+       an additional shell model of single cell, i.e. one portal 
+       and 8 additional grid beams, has been also developed.}
+ \item{In order to evaluate the stability of the structure specific 
+       analyses, i.e. liner (eigenvalue) and nonlinear buckling, 
+       have been performed on the following parts of the structure:}
+ \begin{itemize}
+  \item{A single portal by utilizing beams elements}
+  \item{A single cell (one portal and two additional grid beams, one 
+        left and one right) on two different FE models:}
+  \begin{itemize}
+   \item{One consisting of beam \& shell (using ANSYS Workbench)}
+   \item{On another one containing only shell elements (using ANSYS APDL)} 
+  \end{itemize}
+ \end{itemize}
+ \item{Very detailed models on the connections (bolting and/or welding) 
+       on a single portal utilizing solid and contact elements have 
+       been further developed and used.}
+\end{itemize}
+
+The maximum stress levels at the main profiles, at the location of 
+the maximum moment, are in the range of 125 MPa, which allows a 
+safety factor of 4 with respect to the tensile strength of the 
+chosen material. Additional bracing of the main profiles increases 
+the stability of the structure by factor 2.5, as verified with 
+stability analyses.  An additional optimization work aiming at 
+reducing the global external dimensions as well as the self-weight 
+of the structure is also ongoing. 
 
 \section{Insulation System and Secondary Membrane}
 \label{subsec:insul-2nd-mem}
@@ -64,7 +171,7 @@ roof in order to minimize the heat ingress and the required
 refrigeration load. Choosing a reasonable insulation 
 thickness of 80~cm, given an average conductivity coefficient 
 for the insulation material of C $\approx$ 0.0283~W/m-K, the 
-heat input is expected to be 29.8~kW 
+heat input is expected to be 32.1~kW 
 per cryostat. %This is shown in Table~\ref{table:heat-load-calc}.  
 
 
@@ -75,7 +182,7 @@ The insulation material, a solid fiberglass foam, is manufactured in 1 m
 $\times$ 3 m composite panels. The panels will be laid out in a grid with 
 3 cm gaps between them (these will be filled with loose fiberglass) and 
 fixed onto anchor bolts embedded into the steel outer structure
-at $\sim$3 m intervals. 
+at about $\sim$3 m intervals. 
 The composite panels contain an outer insulation layer, the secondary 
 membrane and an inner insulation layer. After positioning adjacent 
 composite panels and filling the 3 cm gap, the secondary membrane 
@@ -107,8 +214,10 @@ secondary membrane volume.
 
 \section{Cryostat Layers as Packaged Units}
 Membrane tank vendors have a ``cryostat in a kit'' design that 
-incorporates insulation and secondary barriers into packaged units. See Figure~\ref{fig:gst-composite}.  
-Figure~\ref{fig:composite-sys-install} illustrates how these layers would be used in the LBNF reference design.
+incorporates insulation and secondary barriers into packaged 
+units. See Figure~\ref{fig:gst-composite}.  
+Figure~\ref{fig:composite-sys-install} illustrates how these 
+layers would be used in the LBNF reference design.
 
 \begin{figure}[htbp]
 \centering
@@ -122,31 +231,15 @@ Figure~\ref{fig:composite-sys-install} illustrates how these layers would be use
 The stainless-steel primary membrane and the intermediate layers of 
 insulation and water-vapor barrier continue across the top of the 
 cryostat, providing a vapor-tight seal.  Note that no secondary 
-membrane is required for the cryostat top. The cryostat 
-roof is a steel truss structure that bridges the detector. The truss 
-construction is illustrated in Figure~\ref{fig:roof-truss}. Stiffened 
-steel plates hermetically welded to the underside of the truss form 
-a flat vapor barrier surface onto which the roof insulation attaches 
-directly. Fully fabricated roof
-trusses are placed across the roof with a 2.5 m spacing. Field-fabricated 
-truss members and steel plates are welded between the prefabricated 
-trusses to connect the two prefabricated sections.  The roof is built 
-up of alternating prefabricated and field-fabricated ``in-fill'' roof 
-sections.  This configuration was selected during the screening process 
-because it provides an efficient, gas-tight solution that can be 
-readily constructed within the cavern space.
+membrane is required for the cryostat top. 
 
-The roof truss structure is anchored to the top of the steel walls 
-as shown in Figure~\ref{fig:composite-sys-install} 
-where a positive structural connection between the steel and the 
-truss is made to resist the upward (lifting) force caused by the 
-internal cryostat pressure. The hydrostatic load of the LAr in the 
-cryostat is carried by the steel frame on sides and bottom. Everything 
+The hydrostatic load of the LAr in the cryostat is carried by 
+the steel frame on the sides and bottom. Everything 
 else within the cryostat (TPC planes, electronics, sensors,
-cryogenic and gas connections) is supported by the 
-steel plates under the truss structure. All piping (except for 
-piping connections form the recirculation pumps) and electrical 
-penetrations into the interior of the cryostat are made through 
+cryogenic and gas connections) is supported by the top of the 
+cryostat. All piping and electrical penetrations into the 
+interior of the cryostat (except for sidewall penetrations from
+the external liquid argon recirculation pumps) are made through 
 this top plate to minimize the potential for leaks.
 
 Studs are welded to the underside of the steel plates to bolt the 
@@ -158,33 +251,16 @@ ports located at regular intervals within the corrugation pattern
 of the primary membrane to accommodate TPC hangers, electrical 
 and fiber-optic cables, and piping are
 shown in Figure~\ref{fig:v5ch2-roof-nozzle}. 
-The roof truss will be pre-fabricated 
-off-site in $\sim$2~m wide, fully-welded modules and transported to
-the cavern as required by the installation schedule.
-%AH moved from under circulation
-The prefabricated steel roof-truss modules are relatively 
-lightweight ($\sim$8,000~kg each) and require only moderate 
-crane capacity.  If the steel trusses need to be separated 
-into smaller pre-fabricated units for transport to the 
-%shallow or deeper 
-underground site, assembly within the cavern space prior to 
-installation is relatively straightforward. 
 
 Some equipment, such as monitoring instrumentation and pumps, 
 will be installed within wells extending through the roof 
 structure. All connections into the cryostat (except for 
-connections from the recirculation pumps) will be made 
+sidewall penetrations from the external liquid argon 
+recirculation pumps) will be made 
 via nozzles or penetrations above the maximum liquid level 
 and mostly located on the roof of the cryostat. See figure 
 \ref{fig:v5ch2-roof-nozzle} for a typical roof-port 
 penetration.  
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.5\textwidth]{v5ch2-roof-truss-2}
-\caption[Roof truss structure]{Roof truss structure  (Courtesy Arup)}
-\label{fig:roof-truss}
-\end{figure}
 
 \begin{figure}[htbp]
 \centering
@@ -239,20 +315,22 @@ have only a minimal, short-term impact on operations~\cite{docdb4303}.
 \chapter{Cryogenic System Layout}
 \label{sec:cryo-cryosys-layout}
 
-Cryogenic system components are located on the surface or within 
-the cavern area. Figure~\ref{fig:eqp-at-surface} illustrates 
+Cryogenic system components are located in and around the surface 
+building, in the Ross shaft and within the underground caverns. 
+Figure~\ref{fig:eqp-at-surface} illustrates 
 the cryogenic system layout. On the surface near the Ross 
 shaft there will be a cryogen 
 receiving station. A 50 m$^3$ (69 tons of LAr capacity) 
 vertical dewar will have two LAr truck connections 
-to allow for receipt of LAr deliveries for the
+to allow for receipt of LAr deliveries for the initial
 filling period. This liquid argon dewar serves as a buffer volume 
 to accept liquid argon at a pace of about 5 LAr trailers 
-(18 tons per trailer) per day. An analyzer
+(18 tons per trailer) per day during the fill period. An analyzer
 rack with instruments to check water, nitrogen and oxygen content 
-of the trailers is located in the vicinity. A large 
+of the trailers will also be located in the vicinity. A large 
 280 kW vaporizer at the surface is used to vaporize the liquid
-argon from the storage dewar prior to the argon gas being 
+argon from the storage dewar and warm up the resulting gas to 
+room temperature prior to the argon gas being 
 transferred by uninsulated piping down the Ross shaft.
 
 \begin{figure}[htbp]
@@ -263,20 +341,26 @@ surface, piping down the Ross shaft, and in the cavern area}
 \label{fig:eqp-at-surface}
 \end{figure}
 
-
 Another 50 m$^3$ vertical dewar and fill connection will be 
 available near the liquid argon dewar. This dewar is used 
 to accept nitrogen deliveries for the initial charging and startup of
 the nitrogen refrigerator. It is also used for pressure control of 
 the liquid argon storage dewar. A large vaporizer for the nitrogen 
-circuit nearby converts liquid to gas to feed the compressors 
-of the nitrogen refrigerator. Four compressors are located in 
-a compressor building on the surface near the Ross shaft and cryogen
-receiving area. The compressors require a closed-loop water 
-cooling circuit with recirculation pumps in the compressor 
+circuit nearby converts liquid nitrogen to nitrogen gas and warm to
+warm the gas to room temperature. This gas is used as the feed for
+the compressors of the nitrogen refrigerator. Four compressors are 
+located in a compressor building on the surface near the Ross shaft 
+and cryogen receiving area. The compressors require a set of nitrogen 
+gas buffers as to regulate the nitrogen compressor low and high 
+pressure loop, a set of oil separators and coalescers to clean the 
+nitrogen gas after the pressurization loop, and a closed-loop water 
+cooling circuit. The closed loop water-cooling circuit has 
+recirculation pumps in the compressor 
 building and an evaporative cooling tower located outside 
-near the vaporizers. The compressors are only refrigeration-cycle 
-components located on the surface. 
+near the vaporizers. The compressors are the only refrigeration-cycle 
+components located on the surface. The compressors discharge high 
+pressure (1.14 MPa) nitrogen gas into
+pipes that run down the Ross shaft. 
 The reason why compressors were chosen to be on the 
 surface is the electrical power and cooling supply 
 much cheaper to provide at the surface rather 
@@ -284,36 +368,34 @@ than at deep depth in the mine. Each compressor is an
 1500 horsepower machine running at 4160 volts. 
 Four running compressors will require a total of
 2.6 MW of electrical power at the surface.
-The compressors discharge high pressure (1.1 MPa) nitrogen gas into
-pipes that run down the Ross shaft.
+
 
 The Ross shaft contains the vertical pipelines connecting the 
 surface equipment with the equipment in the cavern area. The 
 vertical piping run is described in 
 Chapter~\ref{sec:cryo-cryosys-pipework-surface-cav}. 
-The piping run consists of a gas argon transfer line and the 
+The piping run consists of a GAr transfer line and the 
 GN$_2$ compressor suction and discharge lines. At the bottom of 
 the Ross shaft at the 4850 level, the piping exits the 
 shaft and runs along a drift to the cavern area.
 
 The central utility cavern at the 4850 level contains the
-equipment for the nitrogen refrigerator (such as LN$_2$ cold 
-boxes, LN$_2$ dewars and other peripheral equipment)
-and argon purification/filtration, which will be
-described more in Chapter \ref{sec:cryo-cryosys-equip-cavern}. 
-In the cavern, the nitrogen refrigerator equipment 
-is positioned in the opposite side of the Ross shaft to
-provide optimized paths for ventilation. Fresh ventilation 
-air is supplied down the Ross shaft, enters the detector caverns 
-and flows over the cryostats or the refrigerator
-equipment in the central utility cavern before being 
-exhausted out.
+rest of the nitrogen refrigerator (cold boxes), liquid
+nitrogen storage vessels, argon condensers, external liquid
+argon recirculation pumps, and filtration equipment.
+The nitrogen refrigerator equipment is located at the far
+end of the central utility cavern, away from Ross shaft.
+Fresh ventilation air is supplied down the Ross shaft, 
+enters the detector caverns and flows over the cryostats 
+or the refrigerator equipment in the central utility 
+cavern before being exhausted out via the Oro Hondo
+exhaust shaft.
 
 There are four argon recondensers per cryostat. They are 
 placed above each cryostat. Four 23 m$^3$/hr recirculation 
-pumps per cryostat to circulate liquid from the bottom 
-of the cryostat through the purifier are set close to 
-each cryostat as well. Each pump will have a sidewall
+pumps per cryostat are used to circulate liquid from the bottom 
+of the cryostat through the LAr filters and are set close to 
+each cryostat as well. Each pump will have sidewall
 penetration to the membrane cryostat. 
 
 
@@ -322,8 +404,9 @@ penetration to the membrane cryostat.
 
 The piping between the surface and cavern area is located in a utility 
 chase down the Ross shaft. See Figure~\ref{fig:framing-at-ross-piping}. 
-The piping material is single wall carbon steel coated with a corrosion 
-barrier. Table~\ref{table:pipelines} lists the piping and its duty 
+The piping material is carbon steel coated with a corrosion barrier,
+a single layer of fusion epoxy. Table~\ref{table:pipelines} lists 
+the piping and its duty 
 and size. The frictional pressure drop for the supply pipes matches
 the pressure gained due to the static head from elevation change. 
 All the piping connections will be made with victaulic fittings. 
@@ -360,9 +443,10 @@ associated with the cryogenic system.}
 \end{figure}
 
 \begin{table}
-\caption{Piping between surface and cavern area; location, duty and required size}
+\caption{Piping between surface and cavern area; description, duty, 
+and size and pressure required}
 \label{table:pipelines}
-\begin{tabular}[htbp]{|p{0.17\textwidth}|p{0.31\textwidth}|p{0.19\textwidth}|p{0.22\textwidth}|}
+\begin{tabular}[htbp]{|p{0.24\textwidth}|p{0.28\textwidth}|p{0.20\textwidth}|p{0.185\textwidth}|}
 \hline
 {\bf Description} & {\bf Duty} & {\bf [Number] Size} & {\bf Gas Pressure} \\
 \hline\hline
@@ -370,7 +454,8 @@ Argon transfer   & During filling and emptying & [1] 8'' sch. 40 pipe &  0.24 MP
 \hline
 N$_2$ compressor discharge & Continuous & [2] 8'' sch. 40 pipes & 1.14 MPa \\
 \hline
-N$_2$ compressor suction & Continuous & [3] 12'' sch. 40 pipes &  0.19 MPa (down); 0.11 MPa (up) \\
+N$_2$ compressor suction & Continuous & [3] 12'' sch. 40 pipes & 0.19 MPa (down);  \\
+                         &            &                        & 0.11 MPa (up) \\
 \hline\end{tabular} 
 \end{table}
 
@@ -393,7 +478,7 @@ thus not being an oxygen deficiency concern.
 \chapter{Equipment in the Cavern Area}
 \label{sec:cryo-cryosys-equip-cavern}
 
-There are four independent 78 kW (maximum capacity: 20\% up above nominal) 
+There are four independent 85 kW (maximum capacity: 20\% up above nominal) 
 nitrogen refrigerators in the cavern area. The nitrogen
 refrigerator heat exchangers and expander sets are located 
 at the east end of the central utility cavern.
@@ -401,31 +486,28 @@ The heat exchangers (1.2 m diameter $\times$ 9.1 m long)
 will be in a horizontal orientation in order to
 fit them within the cavern. The liquid nitrogen produced 
 by the refrigerators is stored in six horizontal 
-12.5 m$^3$ (1.2 m diameter $\times$ 11 m long) liquid 
+8.3 m$^3$ (1.2 m diameter $\times$ 11 m long) liquid 
 nitrogen vessels per cryostat that are mounted in the
 central utility cavern. These liquid nitrogen vessels
-in turn feed the argon condensers that are connected 
+feed the argon condensers that are connected 
 to the cryostat. The returning nitrogen gas from the 
 condensers is routed through the refrigerator heat 
 exchangers and warmed to ambient temperature. The 
-nitrogen gas is then boosted by four 120 kW 
+nitrogen gas is then boosted by four independent 120 kW 
 compressors located in the cavern to 0.19 MPa 
-and returned up the nitrogen suction piping 
+and returned in the nitrogen suction piping 
 in the Ross shaft.
 
 Four argon condensers (0.8 m diameter $\times$ 2.0 m long) 
-per cryostat are placed above cryostat. The full 
+are located above each of the cryostats. The full 
 power of the argon condensers is used during the initial 
-phase of the cryostats to fill the cryostat by 
-condensation of the gas argon transferred down the Ross 
-shaft. The fill process is expected to take 12 months 
-for the first cryostat and 11 months for the second. 
-The fill time durations given here assume two refrigeration 
-units available for the first fill and three available for 
-the second fill. If the second fill is restricted to two 
-refrigeration units then its fill time will be 39 months. 
-This duration is calculated with the latest heat estimate 
-from electronics which is higher than previous ones. 
+cooldown and filling phase of the cryostats in order to
+condense the gas argon transferred down the Ross 
+shaft. The fill process is expected to take between 6 and 16 months. 
+The fill time durations given here assume three refrigeration 
+units available for the first and second cryostat fill and
+all four units available for the third and fourth cryostats (where
+steady state operations are maintaining liquid in the full cryostats).
 Additional information about the filling process is 
 described in Chapter~\ref{sec:cryo-cryosys-proc}.  
 
@@ -438,8 +520,8 @@ Purification filters are located in the central utility cavern
 as shown in Figure~\ref{fig:det-cavern-purif}. The filters (1.0 m
 diameter $\times$ 4.3 m high) contain dual media, a molecular 
 sieve for removal of water and a copper coated catalyst media 
-for oxygen removal. There is one gas filter that is used during 
-the argon filling phase and one liquid filter for each cryostat. 
+for oxygen removal. There are four gas filters used during 
+the argon filling phase and four liquid filters for each cryostat. 
 Associated with the filters, there will be regeneration 
 equipment such as heaters, gas blowers, and a hydrogen
 generator also located in the central utility cavern.
@@ -456,11 +538,11 @@ generator also located in the central utility cavern.
 \label{sec:cryo-cryosys-proc}
 %added by russ 10/6
 The entire cryogenic system process is summarized with functions of 
-every cryogenic syste components in 
+every cryogenic syste component in 
 Figure~\ref{fig:v5ch2-LBNF-block-diagram-2014}.  
 The major functions serving the cryostat are cryogen supply for 
-cool-down and fill, gas filtration, argon condensing, liquid 
-filtration and circulation, and argon-purity analysis. 
+cooldown and fill, gas filtration, argon condensing, liquid 
+circulation and filtration, and argon-purity analysis. 
 The methods presented in this section are motivated by
 experience from the cryogenic systems of other LArTPC 
 experiments, such as ICARUS, LAPD and prototype 35 ton 
@@ -484,8 +566,8 @@ This cycle will be repeated several times to reduce contamination
 levels in the piping to the ppm level. The reference-design choice 
 for removing air from the membrane cryostat is argon 
 flow/piston-purge, introducing the heavy argon gas at the
-bottom of the tank and removing the exhaust at the top. The bottom 
-field cage (part of the TPC), serves an additional role as a flow 
+bottom of the cryostat and removing the exhaust at the top. The bottom 
+field cage (part of the TPC) serves an additional role as a flow 
 diffuser during the initial purge. A matrix of small holes in the 
 field cage, approximately 10 mm diameter at a 50 mm pitch, 
 will provide a uniform flow. 
@@ -576,7 +658,7 @@ the TPC components and structure.
 \subsection{Initial Purge and Cool-Down Design Features}
 
 Internal piping is positioned within the cryostat to support the purge and cool-down procedure.  Heavy argon vapor, which is a result of cooling down the membrane bottom with liquid, will promote purging after it rises from the base of the cryostat and is vented from the roof level.  The LAr-supply pipework will have nozzles spaced along its length to 
- distribute equal liquid-delivery flow rates across the bottom of the cryostat.  The flow nozzles will be directed downward or to the side so that the injection velocity will not cause local vertical gas plumes or turbulent mixing but rather will spread across the bottom of the tank and produce a stable, upwardly advancing argon wave front. The vertical velocity of 1.2~m/hr for the gas purge includes a contingency for some level of turbulent mixing. 
+ distribute equal liquid-delivery flow rates across the bottom of the cryostat.  The flow nozzles will be directed downward or to the side so that the injection velocity will not cause local vertical gas plumes or turbulent mixing but rather will spread across the bottom of the cryostat and produce a stable, upwardly advancing argon wave front. The vertical velocity of 1.2~m/hr for the gas purge includes a contingency for some level of turbulent mixing. 
 
 Main gas returns, used for pressure control, will be distributed along the cryostat roof.  All nozzles and dead-end (stagnant) volumes located at the top of the cryostat will have gas-exhaust lines for the initial purge and for continuous sweep-purge of those volumes during normal operations.  
 The sweep-purge during the initial stage of purging will be vented outside of the cavern.  After all but trace amounts of air have been expelled, the gas returns will be routed to the recondensers before being returned to the cryostat.  When cool-down to 120~K is complete (and during steady state operations), the gas returns will be sent to the recondenser to be liquefied by heat exchange with a liquid nitrogen stream.  The recondensed liquid will be filtered and sent back to the cryostat to complete the cool-down operation.
@@ -605,14 +687,20 @@ LAr as opposed to lower-quality commercial-grade argon combined with
 on-site coarse purification
 \end{itemize}
 
-Total argon production in the United States is currently approximately 
-\textcolor{red}{3.6~kton (TBD with market analysis)} per day. Argon is normally co-produced 
-along with large volumes of oxygen, so any project that requires large 
-oxygen quantities may also spur additional argon production and enhance 
-the argon supply capacity.  A 2013-2018 market-forecast report by the Freedonia 
-group~\cite{freedonia} indicates that the demand for argon will increase 
-at a rate of 3.4\% per year, whereas the demand 
-for oxygen will increase 4.8\%.  
+The current total argon capacity in the United states is approximately 5.2 kton/day, 
+whereas the demand is about 4.7 kton/day, which means 90\% capacity utilization in 
+2015. Argon demand slowed down during recession (2008$-$2009), but has been 
+recovering strongly since 2010, especially in electronics and welding industries, 
+in a pace faster than capacity growth. Some capacity was taken offline in recession 
+and has not come back. The trend of growing demand at a rate of 3.4\% per year, 
+faster than capacity, is expected to continue for at least the next five years and 
+will cause argon supply to be tight and prices to rise. Therefore, creating clusters 
+of existing argon capacity that can provide argon to LBNF, rather than using one 
+supplier, or identifying new argon capacity (preferrably closer to SURF site) can 
+be options to consider for economic and reliable supply. At the time of market 
+research, air separation plants (ASPs) in Chicago and the Gulf Coast were 
+identified as the most important supply source, but this option will 
+require significant delivery cost.
 
 The standard grade specification for argon is a minimum purity of
  99.995\%, allowing a maximum concentration of 5.0~ppm for O$_2$ 
@@ -626,8 +714,7 @@ procured from multiple vendors.
 The most efficient mode of argon delivery seems to be
 over-the-road tank truck with a maximum capacity of 18.7~metric ton (MT).  
 The expected number of such deliveries per cryostat is about 1000 
-over six to ten months (It will take approximately 10/8/6/10 months 
-to fill the first/second/third/fourth cryostat; Find more details in 
+over six to sixteen months (Find more details in 
 Chapter \ref{sec:cryo-cryosys-equip-cavern} and Section 
 \ref{sec:refrigeration-load-scenarios}). 
 Rail delivery is not cost-effective as there are no rail spurs leading
@@ -639,7 +726,7 @@ required. It will be necessary to  procure approximately four trailer
 loads of liquid nitrogen (about 40~tons) for the initial filling of 
 the LN$_{2}$ refrigeration dewar and charging of a single refrigeration 
 plant. Vehicle access and hard-surfaced driving areas are required 
-adjacent to the LN$_{2}$ dewar and LAr-supply piping. An interim 
+adjacent to the LN$_{2}$ and LAr dewars. An interim 
 LAr storage dewar will hold the contents of a few road tankers in order 
 to minimize off-loading time.  Road tankers will connect to a 
 manifold and will use their on-board pumps to transfer the LAr 
@@ -658,8 +745,8 @@ will take place over many months due to the delivery schedule
 of liquid argon described in the previous section and the 
 need to condense gaseous argon. Liquid-argon purification 
 can begin once the liquid depth reaches about 2 m in the cryostat. 
-At this depth, the recirculation pumps can safely
-turn on and direct up to 93~m$^{3}$/hr (411~gpm) 
+At this depth, the recirculation pumps can be safely
+turned on and it will direct up to 93~m$^{3}$/hr (411~gpm) 
 of liquid argon through the purification system.
 
 \section{Argon Reliquefaction and Pressure Control}
@@ -691,7 +778,7 @@ gas would be drawn into the heat exchanger, developing
 a thermal siphon.  Therefore, a pressure-control valve on 
 the boil-off gas lines will control the flow to the recondenser 
 to maintain the pressure within the cryostat at 0.113~MPa $\pm$ 0.008~MPa.  
-The liquid nitrogen stream (that provides the coolant for the 
+The liquid nitrogen stream (serving as the coolant for the 
 recondenser) will be supplied from a closed-loop LN$_{2}$ refrigeration plant.  
 The commercial refrigeration plant uses compression/expansion and heat 
 rejection to continuously liquefy and reuse the returning nitrogen 
@@ -728,8 +815,8 @@ Misc. heat leaks (pipes, filters, etc.) & 3.7 \\
 \end{figure}
 
 Each cryostat has a dedicated nitrogen-refrigeration plant 
-and all four will be used for the initial 
-cooldown of the cryostats because of the large volume of 
+and all four will be used for the initial cooldown and filling of the 
+cryostats if possible because of the large volume of 
 gas which must be cooled from 300 K to liquid
 argon temperature (88.3$\pm$1 K). Further, each cryostat will
 have four 85 kW condensers to 
@@ -748,8 +835,8 @@ the recondensers and the refrigeration plants.
 The cryostat is to be designed with side penetrations below the liquid level 
 for external recirculation pumps used to continuously filter the cryostat's 
 LAr. Figure~\ref{fig:external-pump} illustrates this mechanism. An Ebara 
-model of vertical pump inserted into a pump well, extending down from the 
-top of cryostat to the bottom and external to the cryostat, is given 
+model of vertical pump inserted into a vacuum insulated pump well, and 
+external to the cryostat, is given 
 as a typical example in Figure~\ref{fig:vert-submers-pumps}. The pump suction 
 must be located at a minimum distance (normally $\sim$1.5 to 2~m) below 
 the lowest liquid level at which they are to pump in order to prevent 
@@ -780,7 +867,7 @@ will be 93~m$^3$/hr (411~gpm). The liquid-argon volume in one
 cryostat will turn over every 5.5 days at this rate. 
 Longer term, the rate will decrease to 23~m$^3$/hr 
 with a turn-over rate of 22 days.  As a point of comparison, ICARUS 
-T600 has a maximum turn-over rate of eight to ten days. See the 
+T600 has a maximum turn-over rate of about ten days. See the 
 Table~\ref{table:purif-compare} for a comparison of purification 
 rates among other experiments and LBNF. 
 %To achieve the turn-down required between the short- and long-term flow rates, 
@@ -793,13 +880,14 @@ high level of redundancy, which will extend the maintenance-free
 operating period of the cryostat.  
 
 
-The purification system consists of two filter vessels containing
+The purification system consists of two types of filter vessels containing
  molecular-sieve and copper media filters. The filter is 1.0~m in 
 diameter by 4.3~m tall. The filters are sized to provide effective 
 media usage at low pressure drop (2~kPa or 0.3~psi) over the 
 expected range of flow rates. One filter is for gas filtration 
 during filling; the other is for liquid filtration. After filling 
-is complete, the gas filter will be repurposed for liquid filtration.
+is complete, the gas filter can be repurposed for cryostat 
+liquid filtration.
 
 %The purifiers will be located \textcolor{red}{close to the cryostat} 
 %to minimize both the volume of LAr in the circulation pipework 
@@ -811,12 +899,34 @@ remove oxygen, will become saturated. The nearly saturated purification
 filter is regenerated to vent the contaminants. The liquid argon flow 
 is switched to another purification filter for uninterrupted filtration. 
 
-A purity monitor after the purification filter will monitor the filter effectiveness. (Purity monitors measuring electron lifetime will also be in the LAr bath and resident in the cryostat.  It is a requirement that purity levels reach < 200 ppt oxygen equivalent to match the required electron lifetime of the detector). 
+A purity monitor after the purification filter will monitor the filter 
+effectiveness. (Purity monitors measuring electron lifetime will also 
+be in the LAr bath and resident in the cryostat. It is a requirement 
+that purity levels reach < 200 ppt oxygen equivalent to match the 
+required electron lifetime of the detector). 
 
-The regeneration of a filter is done in several steps. A saturated purification filter is first warmed with heated argon gas to an elevated temperature driving the captured water into the gas. Hydrogen gas is generated and mixed with the circulating argon gas up to 1.5\% hydrogen by volume. The hydrogen reacts with the oxygen and makes water that is also released into the circulating argon gas.
-Argon gas is vented to purge water from the hot circulating gas. 
+The regeneration of a filter is done in several steps. A saturated 
+purification filter is first warmed with heated argon gas to an 
+elevated temperature driving the captured water into the gas. 
+Hydrogen gas is generated and mixed with the circulating argon 
+gas up to 1.5\% hydrogen by volume. The hydrogen reacts with the 
+oxygen and makes water that is also released into the circulating 
+argon gas. Argon gas is vented to purge water from the hot 
+circulating gas. 
 
-The hot filter full of regenerated media is cooled by circulating chilled argon gas. The circulating argon gas is chilled first with a heat exchanger using a commercial R-404A refrigeration unit until the filter is cold. The commercial refrigeration unit accumulates the R-404A liquid and shuts down. The filter is next cooled down to cryogenic temperatures by circulating argon gas chilled by a second heat exchanger with a liquid nitrogen coolant. This completes the regeneration steps for a purification filter. The filter is now ready to be switched into service or held cold until needed. Two spare purification filters are used with separate heating and cooling loops to reduce the usage rate of electricity and liquid nitrogen. This also reduces the stresses on heat exchangers by decreasing their temperature swings.
+The hot filter full of regenerated media is cooled by circulating 
+chilled argon gas. The circulating argon gas is chilled first with 
+a heat exchanger using a commercial R-404A refrigeration unit until 
+the filter is cold. The commercial refrigeration unit accumulates 
+the R-404A liquid and shuts down. The filter is next cooled down to 
+cryogenic temperatures by circulating argon gas chilled by a second 
+heat exchanger with a liquid nitrogen coolant. This completes the 
+regeneration steps for a purification filter. The filter is now 
+ready to be switched into service or held cold until needed. Two 
+spare purification filters are used with separate heating and 
+cooling loops to reduce the usage rate of electricity and liquid 
+nitrogen. This also reduces the stresses on heat exchangers by 
+decreasing their temperature swings.
 
 \begin{table}
 \caption{Purification comparision data for LArTPCs}
@@ -873,8 +983,8 @@ LBNF                 & 12452 & 129828 & 1328.26 &  5.5 & > 1.4 required \\
 The pressure-control valves are sized and set to control the 
 internal cryostat pressure under normal operating conditions 
 to the nominal design pressure of 0.113~MPa. Fluctuations 
-within the range 0.105~MPa (50~mbarg) to 0.121~MPa (200~mbarg) 
-will be allowed.
+between 0.105~MPa (50~mbarg) and 0.121~MPa (200~mbarg) are 
+intended to be the normal operating range.
 %\fixme{note to self: put this unit in list of abbrevs}).  
 Ten percent excursions above or below these levels will set off 
 alarms to alert the operator to intervene. Further excursion 
@@ -896,9 +1006,7 @@ gives important pressure values.
 \hline 
 Vessel ullage maximum operating pressure & 0.121 MPa, 200 mbarg, 2.9 psig\\
 \hline
-Relief valve set pressure& 0.135 MPa, 350 mbarg, 5.1 psig\\
-\hline
-Roof truss design working pressure& 0.135 MPa, 350 mbarg, 5.1 psig\\
+Cryostat Design Pressure; Relief valve set pressure& 0.135 MPa, 350 mbarg, 5.1 psig\\
 \hline
 \end{tabular} 
 
@@ -915,8 +1023,10 @@ storage vessels. Reaction time to changes in the heat load is slow,
 on the order of an hour.  At the expected heat-load rate of 
 69.9~kW, and for an isolated or un-cooled cryostat,
 the rate of pressure rise would be 393~mbar (5.7 psi) per hour. 
-We plan to provide two redundant pressure control valves to maintain the required pressure range, each sized to handle at least 1300 kg/hr of argon flow to the recondenser to handle the cooling and
-reliquefaction of warm GAr during cryostat filling.
+We plan to provide two redundant pressure control valves to 
+maintain the required pressure range, each sized to handle 
+at least 1300 kg/hr of argon flow to the recondenser to handle 
+the cooling and reliquefaction of warm GAr during cryostat filling.
 
 
 \subsection{Overpressure Control}
@@ -933,7 +1043,7 @@ preset value. A pressure-sensing line is used to trigger a pilot
 valve which in turn opens the PRV. A pressurized reservoir of 
 power fluid is provided to each valve to ensure that the valves 
 will operate under all upset and/or shutdown scenarios. The PRVs 
-are self-contained devices provided specially for tank protection; 
+are self-contained devices provided specially for cryostat protection; 
 they are not normally part of the control system. 
 
 The installation of the PRVs will ensure that each valve can 
@@ -981,17 +1091,17 @@ the cryostat to restore a safe pressure.
 \label{sec:ln-refrig-sys}
 %BN modified refrigeration size 10/6/2011
 Four commercial LN$_2$-refrigeration plants will be procured for LBNF.  
-After achieving the required purity and completing initial fill, each 
+After achieving the required purity and completing the initial fill, each 
 cryostat will have a dedicated LN$_2$ plant for steady-state operations.
 The plants will be located in the central utility cavern at the 
 4850L. Each will be a closed-loop system supplying LN$_2$
 to the argon recondenser. The nominal rating of the quoted
-refrigerators is in the range of 65 kW.
+refrigerators is in the range of 71 kW.
 
 Two-phase nitrogen is delivered from the cold end of the refrigerator 
 into a farm of  LN$_2$ storage vessels with a total capacity of 50 m$^3$ per cryostat. 
 Pure liquid is withdrawn from the LN$_2$ storage vessels and is supplied 
-via transfer line to a pressure-reducing valve and phase-separator tank 
+via a transfer line to a pressure-reducing valve and phase-separator tank 
 also located within the central utility cavern. LN$_2$ is then withdrawn from the bottom 
 of the phase-separator tank, at a pressure of 2.0 bar and temperature of 
 84 K, and directed to the recondenser. This results in a 5 K temperature 
@@ -1007,7 +1117,7 @@ continuously for at least a year, and then require only
 minor servicing. The system will be equipped with 
 automatic controls and a remote monitoring so that no operator 
 will be required during normal operation. 
-Estimated maximum power requirement is 1500 hp, 
+Estimated maximum power requirement is 1500 hp (1119 kVA), 
 not taking into account the power generated by the expanders.  
 The LBNF reference design places the nitrogen compressor in 
 a surface-level equipment building. A closed-loop water system 
@@ -1060,10 +1170,10 @@ required, we forecast the LN$_2$ refrigeration loads and plant capacity
 needed over fourteen scenarios.  Those scenarios are described below and 
 a summary is given in Table~\ref{table:Refrigeration-loads}. 
                           
-The conclusion points to the requirement of four 65 kW plants. Each of 
+The conclusion points to the requirement of four 71 kW plants. Each of 
 these plants can achieve a 20\% turn up or turn down. Scenarios 1, 4, A and D 
-impose the most severe requirements. In these scenarios, all four plants 
-will be required to operate at a duty cycle of approximately 85\%. These 
+impose the most severe requirements. In these scenarios, all plants operating 
+will be required to run at the maximum duty cycle. These 
 scenarios include one (two or three) completely filled and purified 
 cryostat (s) and another one being purified and requiring frequent 
 filter regeneration.
@@ -1167,8 +1277,8 @@ are in the LAr inventory protection mode.
 \begin{table}
 \centering
 \rotatebox{90}{
-%\scriptsize
-\tiny
+\scriptsize
+%\tiny
 \begin{tabular}[htbp]{|l|c|c|c|c|c|c|c|c||c|c|c|c|c|c|c|}
 \hline
                      & \textbf{Unit}  & \multicolumn{14}{c|}{\textbf{Scenarios}} \\
@@ -1179,66 +1289,66 @@ are in the LAr inventory protection mode.
 \multicolumn{16}{|c|}{\textbf{Recondenser Load, Cryostat \#1}}                          \\
 \hline
 Cryostat \#1, Heat Ingress & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 \\     
-With 1 Recirculation Pump  & 5.2 &      &      & 5.2 & 5.2 & 5.2 & 5.2 &      & 5.2 & 5.2 & 5.2 & 5.2 & 5.2 & 5.2 & \\ 
+With 2 Recirculation Pumps & 10.4 &      &      & 10.4 & 10.4 & 10.4 & 10.4 &      & 10.4 & 10.4 & 10.4 & 10.4 & 10.4 & 10.4 & \\ 
 With 4 Recirculation Pumps & 20.7   & 20.7 & 20.7 &      &      &      &      &      & & & & & & & \\ 
 Piping \& Purification Vessel Heat Ingress & 3.7 & 3.7 & 3.7 & 3.7 & 3.7 & 3.7 & 3.7 &   & 3.7 & 3.7 & 3.7 & 3.7 & 3.7 & 3.7 &      \\
 Detector Electronics in Cryostat & 23.7 & & & 23.7 & 23.7 & 23.7 & 23.7 &   & 23.7 & 23.7 & 23.7 & 23.7 & 23.7& 23.7 &        \\
-Cryostat Fill - GAr Transfer/Recondense &  & 105.48 & & & & & & & & & & & & &               \\
+Cryostat Fill - GAr Transfer/Recondense &  & 190.48 & & & & & & & & & & & & &               \\
 \hline
-Number of Condensers in Operation & & 2 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\
-\textbf{Condenser Load} & & 162.0 & 56.5 & 64.7 & 64.7 & 64.7 & 64.7 & 32.1 & 64.7 & 64.7 & 64.7 & 64.7 & 64.7 & 64.7 & 32.1 \\
+Number of Condensers in Operation & & 3 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\
+\textbf{Condenser Load} & & 247.0 & 56.5 & 69.9 & 69.9 & 69.9 & 69.9 & 32.1 & 69.9 & 69.9 & 69.9 & 69.9 & 69.9 & 69.9 & 32.1 \\
 \hline\hline
 \multicolumn{16}{|c|}{\textbf{Recondenser Load, Cryostat \#2}} \\
 \hline
 Cryostat \#2, Heat Ingress & 32.1 &    &   &   & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 \\     
-With 1 Recirculation Pump  & 5.2 &      &      &      &      &      & 5.2 &   & 5.2 & 5.2 & 5.2 & 5.2 & 5.2 & 5.2 &   \\ 
+With 2 Recirculation Pumps & 10.4 &      &      &      &      &      & 10.4 &   & 10.4 & 10.4 & 10.4 & 10.4 & 10.4 & 10.4 &   \\ 
 With 4 Recirculation Pumps & 20.7 &      &      &      & 20.7 & 20.7 &      &   & & & & & & &   \\ 
 Piping \& Purification Vessel Heat Ingress & 3.7 &   &   &   & 3.7 & 3.7 & 3.7 &  & 3.7 & 3.7 & 3.7 & 3.7 & 3.7 & 3.7 &       \\
-Detector Electronics in Cryostat & 23.7 &   &   &   &   &   & 23.7 &   & & & 23.7 & & & 23.7 &        \\
-Cryostat Fill - GAr Transfer/Recondense & &  & & & 125.80 & & &  & & & & & & &              \\
+Detector Electronics in Cryostat & 23.7 &   &   &   &   &   & 23.7 &   & 23.7 & 23.7 & 23.7 & 23.7 & 23.7 & 23.7 &        \\
+Cryostat Fill - GAr Transfer/Recondense & &  & & & 120.62 & & &  & & & & & & &              \\
 \hline
 Number of Condensers in Operation & &  &  &  & 3 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-\textbf{Condenser Load} & &   &   &   & 182.3 & 56.5 & 64.7 & 32.1 & 41.0 & 41.0 & 64.7 & 41.0 & 41.0 & 64.7 & 32.1 \\
+\textbf{Condenser Load} & &   &   &   & 177.1 & 56.5 & 69.9 & 32.1 & 69.9 & 69.9 & 69.9 & 69.9 & 69.9 & 69.9 & 32.1 \\
 \hline\hline
 \multicolumn{16}{|c|}{\textbf{Recondenser Load, Cryostat \#3}}                          \\
 \hline
 Cryostat \#3, Heat Ingress & 32.1 &  & &  &  &  &  &  & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 & 32.1 \\     
-With 1 Recirculation Pump  & 5.2  &   &   &  &   &   &   &   & & & 5.2 & 5.2 & 5.2 & 5.2 & \\ 
+With 2 Recirculation Pumps & 10.4  &   &   &  &   &   &   &   & & & 10.4 & 10.4 & 10.4 & 10.4 & \\ 
 With 4 Recirculation Pumps & 20.7 &   &   &  &    &  &  &  & 20.7 & 20.7 & & & & & \\ 
 Piping \& Purification Vessel Heat Ingress & 3.7 &  &  &  &  &  &  &  & 3.7 & 3.7 & 3.7 & 3.7 & 3.7 & 3.7 &       \\
 Detector Electronics in Cryostat & 23.7  & & & & &  &  &  & & & 23.7 & 23.7 & 23.7 & 23.7 &         \\
-Cryostat Fill - GAr Transfer/Recondense & & & & & & & & & 169.82 & & & & & &               \\
+Cryostat Fill - GAr Transfer/Recondense & & & & & & & & & 135.76 & & & & & &               \\
 \hline
 Number of Condensers in Operation & &  &  &  &  &  &  &  & 3  & 1 & 1 & 1 & 1 & 1 & 1 \\
-\textbf{Condenser Load} & &   &   &   &   &   &   &   & 226.3 & 56.5 & 64.7 & 64.7 & 64.7 & 64.7 & 32.1 \\
+\textbf{Condenser Load} & &   &   &   &   &   &   &   & 192.3 & 56.5 & 69.9 & 69.9 & 69.9 & 69.9 & 32.1 \\
 \hline\hline
 \multicolumn{16}{|c|}{\textbf{Recondenser Load, Cryostat \#4}} \\
 \hline
 Cryostat \#4, Heat Ingress & 32.1 &  &   &   &  &  &  &  & & & & 32.1 & 32.1 & 32.1 & 32.1\\     
-With 1 Recirculation Pump  &  5.2 &      &      &      &      &      &      &  & & & & & & 5.2 &    \\ 
+With 2 Recirculation Pumps &  10.4 &      &      &      &      &      &      &  & & & & & & 10.4 &    \\ 
 With 4 Recirculation Pumps & 20.7 &      &      &      &      &      &      &  & & & & 20.7 & 20.7 & &    \\ 
 Piping \& Purification Vessel Heat Ingress & 3.7 &   &   &   &  &  &  &   & & & & 3.7 & 3.7 & 3.7 &      \\
 Detector Electronics in Cryostat & 23.7 &   &   &   &   &   &  &   & & & & & & 23.7 &        \\
-Cryostat Fill - GAr Transfer/Recondense &   &  & & &  & & & & & & & 105.14 & & &               \\
+Cryostat Fill - GAr Transfer/Recondense &   &  & & &  & & & & & & & 65.90 & & &               \\
 \hline
 Number of Condensers in Operation & &  &  &  &  &  &  &  & & & & 2 & 1 & 1 & 1 \\
-\textbf{Condenser Load} & &   &   &   &   &   &   &  & & & & 161.7 & 56.5 & 64.7 & 32.1 \\
+\textbf{Condenser Load} & &   &   &   &   &   &   &  & & & & 122.4 & 56.5 & 69.9 & 32.1 \\
 Cavern LN$_2$ Dewar Heat Ingress & 8 & 8 & 8 & 8 & 8 & 8 & 8 & & 8 & 8 & 8 & 8 & 8 & 8 & \\
 \hline\hline
 %LN$_{2}$ Storage Dewar Recondenser & 2 & 2 & 2 & 2 & 2 & 2 & 2 & & & & & & & & \\
-Refrigeration Needed & & 170.0 & 64.5 & 72.7 & 255.0 & 129.2 & 137.4 & 64.2 & 340.0 & 170.2 & 202.0 & 340.0 & 234.9 & 266.7 & 128.4 \\
-Refrigeration Plants in Operation & & 2 & 2 & 2 & 3 & 3 & 3 & 0 & 4 & 4 & 4 & 4 & 4 & 4 & 0 \\
-Total Refrigeration Capacity Available & & 170 & 170 & 170 & 255 & 255 & 255 & & 340 & 340 & 340 & 340 & 340 & 340 & \\
-Required Duty per Plant & & 85 & 60 & 60 & 85 & 60 & 60 & & 85 & 60 & 60 & 85 & 60 & 67 & \\
+Refrigeration Needed & & 255.0 & 64.5 & 77.9 & 255.0 & 134.4 & 147.7 & 64.2 & 340.0 & 204.2 & 217.6 & 340.0 & 274.1 & 287.4 & 128.4 \\
+Refrigeration Plants in Operation & & 3 & 3 & 3 & 3 & 3 & 3 & 0 & 4 & 4 & 4 & 4 & 4 & 4 & 0 \\
+Total Refrigeration Capacity Available & & 255 & 255 & 255 & 255 & 255 & 255 & & 340 & 340 & 340 & 340 & 340 & 340 & \\
+Required Duty per Plant & & 85 & 60 & 60 & 85 & 60 & 60 & & 85 & 60 & 60 & 85 & 69 & 72 & \\
 %Actual Duty per Plant & & & & & & & & & & & & & & & \\
-Electric Trim Heater Load & & 0.0 & 55.5 & 47.3 & 0.0 & 50.8 & 42.6 & & 0.0 & 69.8 & 38.0 & 0.0 & 5.1 & 0.0 & \\
-Total Refrigeration Load & & 170 & 120 & 120 & 255 & 180 & 180 & 0 & 340 & 240 & 240 & 340 & 240 & 266.72 & 0 \\
+Electric Trim Heater Load & & 0.0 & 115.5 & 102.1 & 0.0 & 45.6 & 32.3 & & 0.0 & 35.8 & 22.4 & 0.0 & 0.0 & 0.0 & \\
+Total Refrigeration Load & & 255 & 180 & 180 & 255 & 180 & 180 & 0 & 340 & 240 & 240 & 340 & 274.1 & 287.4 & 0 \\
 \hline\hline
 LAr Mass in Cryostat & & 17129778 & & & 17129778 & & & & 17129778 & & & 17129778 & & & kg \\
-Fill Time Using Available Cooling Above & & 7228 & & & 6060 & & & & 4489 & & & 7251 & & & hr \\
-(Units Listed on the right-most column & & 301.0 & & &253.0 & & & & 187.0 & & & 302.0 & & & days \\
-of table) & & 43.0 & & & 36.1 & & & & 26.7 & & & 43.2 & & & weeks \\ 
-& & 9.9 & & & 8.3 & & & & 6.2 & & & 9.9 & & & months \\
+Fill Time Using Available Cooling Above & & 4002 & & & 6321 & & & & 5616 & & & 11569 & & & hr \\
+(Units Listed on the right-most column & & 167.0 & & & 263.0 & & & & 234.0 & & & 482.0 & & & days \\
+of table) & & 23.8 & & & 37.6 & & & & 33.4 & & & 68.9 & & & weeks \\ 
+& & 5.5 & & & 8.7 & & & & 7.7 & & & 15.9 & & & months \\
 \hline  
 \end{tabular} 
 }
@@ -1274,26 +1384,35 @@ of table) & & 43.0 & & & 36.1 & & & & 26.7 & & & 43.2 & & & weeks \\
 The development of the LBNF cryogenics infrastructure from conceptual 
 to preliminary design includes a prototyping program. The most 
 significant issue to resolve is whether a membrane cryostat in
-the size of LBNF can achieve the required electron-drift lifetime. 
-There was the Liquid Argon Purity Demonstrator (LAPD), an 
-off-project prototype built as part of an R\&D program at 
-Fermilab to study the scaling of LAr cryostat to kton
-level. The purge process accomplished in the LAPD was 
+the size of LBNF can achieve the required electron drift lifetime. 
+Previously, there was the Liquid Argon Purity Demonstrator (LAPD), an 
+off-project prototype, built to study the concept of achieving
+LAr purity requirements in a non-evacuated vessel. 
+The purge process accomplished in the LAPD was 
 repeated on the 35 ton membrane-cryostat prototype 
 developed as an LBNE effort, which confirmed that initial 
 evacuation of the cryostat is unnecessary and that 
 a LAr purity level sufficient to enable the required 
-drift times in a membrane cryostat can be achieved 
-among other requirements~cite{Montanari:2013/06/13aqa}.
+drift times in a membrane cryostat can be achieved~\cite{Montanari:2013/06/13aqa}.
+Further prototyping program aiming to test and demonstrate 
+this technology at the 1 kton scale is forseen over the
+next two years as part of the CERN Neutrino Platform program.
 
 \chapter{ES\&H}
 \label{sec:cryo-cryosys-esh}
 
-During all phases of LBNF and the proposed prototypes, Fermilab ES\&H standards and
-Sanford Laboratory ES\&H codes and standards will guide the design, procurement and
-installation phases of the project. Particular attention will be paid to critical sections of
-Chapter 5000~\cite{feshm} relating to ODH, standards for piping construction and vessel design. The
-planned work process will provide for reviews throughout all phases of the project to guarantee
-stringent adherence to the safety requirements. Requirements on the membrane-cryostat
-materials and their fabrication will be strictly outlined in the specification documents. Close
-communication between the vendors, Fermilab's cryogenic and process engineers, and Fermilab and Sanford Laboratory ES\&H personnel will be maintained at all times.
+During all phases of LBNF and the proposed prototypes, 
+Fermilab ES\&H standards and Sanford Underground Research 
+Facility (SURF) ES\&H codes and standards will guide the design, 
+procurement and installation phases of the project. Particular 
+attention will be paid to critical sections of
+Chapter 4240~\cite{feshm} relating to ODH and 
+Chapter 5000~\cite{feshm} standards for 
+piping construction and vessel design. The planned 
+work process will provide for reviews throughout all 
+phases of the project to guarantee stringent adherence 
+to the safety requirements. Requirements on the membrane-cryostat
+materials and their fabrication will be strictly outlined in the 
+specification documents. Close communication between the vendors, 
+Fermilab and CERN's cryogenic and process engineers, and Fermilab and 
+SURF ES\&H personnel will be maintained at all times.
