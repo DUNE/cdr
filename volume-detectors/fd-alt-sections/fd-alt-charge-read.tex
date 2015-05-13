@@ -112,12 +112,15 @@ The DUNE CRP is a down-sized version of the LBNO one with dimensions
 of $3\times3$~m$^2$ and 3 signal feedthrough chimneys and 1920 readout
 channels.
 
-\subsection{The 0.5$\times$0.5 m$^2$  LEM/Anode Sandwich (LAS)}
+\subsection{The LEM/Anode Sandwich (LAS)}
 
 A picture of the LEMs and anodes along with a zoom on their structure
 is shown in Figure~\ref{fig:LEM_anode}.
-\begin{cdrfigure}[Pictures of the LEM and anode along with microscope views ]{LEM_anode}{Top: pictures of the LEM and anode along with microscope
-  views. Bottom: close up of the LEM HV connectors and back view of the anode with the KEL signal connectors to bridge to the adjacent LAS or to connect the flat cables going to the signals feedthrough}
+\begin{cdrfigure}[Pictures of the LEM and anode along with microscope views]
+{LEM_anode}{Top: pictures of the LEM and anode along with microscope
+  views. Bottom: close up of the LEM HV connectors and back view of the anode 
+with the KEL signal connectors to bridge to the adjacent LAS or to connect 
+flat cables going to the signal feedthrough}
  \includegraphics[width=.7\textwidth]{LEM_anode_zoom}  
  \end{cdrfigure}
 
@@ -144,13 +147,15 @@ respect to the orientation of the readout strips. This design has been
 optimized by testing various PCB layouts for the implementation of the
 readout strips as described in \cite{Cantini:2013yba}.  The layout and
 schematic of the anode are shown in Figure~\ref{fig:anode_sch}.
-\begin{cdrfigure}[The 2D anode]{anode_sch}{The 2D anode (left) and its schematic explaining the  interconnections between both views (right). One view is filled  in red and the other in white.}
+\begin{cdrfigure}[The 2D anode]{anode_sch}
+{The 2D anode (left) and its schematic explaining the  interconnections 
+between both views (right). One view is filled  in red and the other in white.}
 \includegraphics[scale=0.2]{anode_pcb} \hspace{0.2cm} \includegraphics[scale=0.2]{anode_sch}
 \end{cdrfigure}
 
 As part of this optimization, the electrical capacitance of the
 readout strips has been limited to only 150~pF/m, which translates
-into an electronic noise of about $\sim$ 1000 electrons for 2~m readout
+into an electronic noise of about $\sim$1000 electrons for 2~m readout
 length.  Figure~\ref{fig:anode_res} (right) shows that the charge
 sharing asymmetry between the two views is kept within 1\% . This
 allows to treat the two views in a completely equivalent way from the
@@ -158,7 +163,12 @@ point of view of the reconstruction. The response in terms of the
 charge collection per unit of pathlength $\Delta Q/\Delta s$ is
 independent on the charged particles tracks azimuthal angle $\phi$ (see
 Figure~\ref{fig:anode_res} left and middle).
-\begin{cdrfigure}[Charge deposition as function of track angle ]{anode_res}{Charge deposition per unit of pathlength measured on LEM view 0 ( $\Delta Q_0/\Delta s_0$) as a function  of the track angle $\phi$ (left) and projection of the  $\Delta Q_0/\Delta s_0$ distribution in three $\phi$ intervals (middle). The right plot  shows the distribution of the difference between the total charge  collected on both views normalized to their sum}
+\begin{cdrfigure}[Charge deposition as function of track angle ]{anode_res}
+{Charge deposition per unit of pathlength measured on LEM view 0 
+($\Delta Q_0/\Delta s_0$) as a function  of the track angle $\phi$ (left) and 
+projection of the  $\Delta Q_0/\Delta s_0$ distribution in three $\phi$ intervals (middle). 
+The right plot  shows the distribution of the difference between the total charge  collected 
+on both views normalized to their sum}
 \includegraphics[width=.9\textwidth,scale=1]{anodeD_prop}
 \end{cdrfigure}
 
@@ -174,7 +184,7 @@ prevent photon feedback. This property makes the LEM suitable for
 operation in ultra-pure argon vapor without the addition of a
 quenching gas. The amplification of the drifting charges in pure argon
 vapor at 87~K with LEMs has been extensively demonstrated on a chamber
-with $10\times10$~cm$^2$ area readout (see e.g.
+with 10$\times$10~cm$^2$ area readout (see e.g.
 Refs.~\cite{Badertscher:2008rf,Badertscher:2010fi}) as well as on a
 larger device consisting of a $40\times80$~cm$^2$
 readout\cite{Badertscher:2013wm}.  Both setups were successfully
