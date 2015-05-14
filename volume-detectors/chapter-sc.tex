@@ -21,30 +21,55 @@ Design versions of the Far Detector.
 \label{sec:detectors-sc-infrastructure-data-rates}
 
 
-\subsubsection{Types of Raw Data}
-DUNE is a multipurpose apparatus and the variety of physics goals to
-be pursued during its operation will be reflected in different
+\subsubsection{Types of data (using Supernova Burst example)}
+DUNE is a multipurpose apparatus and will pursue a variety of physics goals during its operation.
+This will be reflected in different
 characteristics of data streams processed and collected in real time
-and off-line.  As one example, consider the difference between
-neutrino oscillation physics with beam neutrinos on the one hand and
+as well as off-line, and different strategies and algorithms for handling
+these streams.
+
+As one example, consider the difference between
+neutrino oscillation physics with beam neutrinos on one hand and search for
 Supernova neutrino bursts (SNB) on the other.  Signals produced by
 ``beam events'' will be characterized by total energy in the GeV
-range, allowing thresholds for zero-suppression (ZS) to be set at the
-levels appropriate for minimum-ionizing particles, which greatly
-reduces the data volume. By comparison, the energy scale of signals
-produced by SNB neutrino interactions is in the range of tens of
-MeV. This results in much lower thresholds and therefore in
-considerable rate of SNB-specific data coming out of the LArTPC in
-real time, with contribution from radiological backgrounds.  Another
-differentiating SNB feature is that \textit{multiple neutrinos are
+range, so that various aspects of handling the signal and the data (e.g. thresholds for zero suppression etc)
+can be optimized for  minimum-ionizing particles.
+
+By comparison, the energy scale of signals
+produced by SNB neutrino interactions is in the range of tens of MeV.
+For that reason, it is expected that lower thresholds will need to be applied while processing these data in real time,
+which will result in considerable contribution from radiological backgrounds. For this readon, the data rate that needs
+to be handled in the process of SNB search can be expected to be quite significant. These is supported by estimates
+presented in ``\anxrates''.
+
+Another differentiating SNB feature is that \textit{multiple neutrinos are
   expected to arrive and interact in the detector volume} during the
 possible rare Supernova burst event within seconds from each other, as
 opposed to a single vertex produced by a beam neutrino (or any other
-localized interactions and/or decays).  To support the SNB physics, a
-massive sample of data due to multiple low-energy depositions will
-need to be processed ``on the fly'' using approaches and algorithms
-which are completely different from those for the beam neutrino
-physics, which mostly relies on off-line processing.
+localized interactions and/or decays). This opens an opportunity to apply the DAQ architecture
+presented in \ref{sec:detectors-fd-ref-daq} to make these data ``self-triggering'', i.e.
+to use the buffer memory in the LArTPC detector readout to detect a corresponding
+signature in the data stream and trigger recording of the potential SNB event.
+
+Characteristic
+time scale for such SNB data capture will be $\sim$10s. Given the large amount of
+data arriving within this time period (see the Appendix) and practical limits on the bandwidth of
+the connection between the RCE data processors and frontend computers in DAQ, local
+storage attached to data processors will be necessary to record the data at the peak rate. The buffer
+in the data processor will not have sufficient capacity due to design and cost considerations (it can effectively
+buffer about 0.4s of streaming data which is likely enough for the trigger decision but not for the complete
+supernova event capture).
+Preliminary estimates indicate that a storage device such as a SSD (one or two per board) will have
+speed sufficient for this purpose. With trigger properly tuned, the rate of ``write'' operation
+in the SSD can be kept sufficiently low so as to ensure their longevity. Once captured in this manner,
+the data can then be transmitted to the rest of the farm within the available bandwidth.
+
+The core elements of the DAQ system now exist as prototypes.
+The system as a whole with capabilities such as descibed above is
+in the conceptual design stage and information will be added to DUNE planning documents as it is developed.
+
+
+
 
 %This section focuses on data streams present in oscillation physics studies with beam
 %neutrinos, since these data will constitute the bulk of what's committed
@@ -151,12 +176,13 @@ important to note that the numbers in the row characterizing $^{39}$Ar
 are given for information only and do not represent our estimates of
 actual data to be committed to mass storage.
 
-There is a range of possible approaches to reducing data volume in
+There is a range of possible approaches to data volume reduction in
 real time without losing much of information due to low-amplitude
 signals, which may be important for more precise particle
 identification or in search for unusual signatures that may exist due
 to new phenomena. For example, implementation of the ``trigger
-stream'' in the DAQ system allows to trigger on event candidates using
+stream'' in the DAQ system (see~\ref{sec:detectors-fd-ref-daq})
+allows to trigger on event candidates using
 ``high threshold'', while capturing data in the potential event
 without applying any threshold at all. In that case, one can estimate
 the total size of the TPC data to be collected annually by multiplying
@@ -165,13 +191,13 @@ here to be \beamrate) by the full stream event size quoted above
 (\dunefsreadoutsize).  This results in an estimate of
 \beamdatayearfs of this type of data per year.
 
-This scheme can be augmented by an ``express offline'' farm (extension
-of DAQ) which would perform functions similar to a high-level trigger
-utilized in collider experiments, allowing more flexibility in
-choosing thresholds and other parameters which will determines rates
-and volumes of the data produced by the Far Detector. Design of such
-system is currently in the conceptual stage and information will be
-added to DUNE planning documents as it is developed.
+%This scheme can be augmented by an ``express offline'' farm (extension
+%of DAQ) which would perform functions similar to a high-level trigger
+%utilized in collider experiments, allowing more flexibility in
+%choosing thresholds and other parameters which will determines rates
+%and volumes of the data produced by the Far Detector. Design of such
+%system is currently in the conceptual stage and information will be
+%added to DUNE planning documents as it is developed.
 
 
 \input{volume-detectors/generated/zs-volume-summary}
