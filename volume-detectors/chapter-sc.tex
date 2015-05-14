@@ -38,9 +38,9 @@ can be optimized for  minimum-ionizing particles.
 By comparison, the energy scale of signals
 produced by SNB neutrino interactions is in the range of tens of MeV.
 For that reason, it is expected that lower thresholds will need to be applied while processing these data in real time,
-which will result in considerable contribution from radiological backgrounds. For this readon, the data rate that needs
-to be handled in the process of SNB search can be expected to be quite significant. These is supported by estimates
-presented in ``\anxrates''.
+which will result in considerable contribution from radiological backgrounds.
+For this readon, the data rate that needs
+to be handled in the process of SNB search can be expected to be quite significant. 
 
 Another differentiating SNB feature is that \textit{multiple neutrinos are
   expected to arrive and interact in the detector volume} during the
@@ -52,17 +52,23 @@ to use the buffer memory in the LArTPC detector readout to detect a correspondin
 signature in the data stream and trigger recording of the potential SNB event.
 
 Characteristic
-time scale for such SNB data capture will be $\sim$10s. Given the large amount of
-data arriving within this time period (see the Appendix) and practical limits on the bandwidth of
+time scale for such SNB data capture will be $\sim$\SI{10}{\second}.
+Given the large amount of
+data arriving within this time period (see the Annex) and practical limits on the bandwidth of
 the connection between the RCE data processors and frontend computers in DAQ, local
-storage attached to data processors will be necessary to record the data at the peak rate. The buffer
+storage attached to data processors will be necessary to record the
+data at full-stream (no zero-suppression).
+The buffer
 in the data processor will not have sufficient capacity due to design and cost considerations (it can effectively
-buffer about 0.4s of streaming data which is likely enough for the trigger decision but not for the complete
+buffer about \SI{0.4}{\second} of streaming data which is likely enough for the trigger decision but not for the complete
 supernova event capture).
 Preliminary estimates indicate that a storage device such as a SSD (one or two per board) will have
-speed sufficient for this purpose. With trigger properly tuned, the rate of ``write'' operation
-in the SSD can be kept sufficiently low so as to ensure their longevity. Once captured in this manner,
-the data can then be transmitted to the rest of the farm within the available bandwidth.
+speed sufficient for this purpose.
+With trigger properly tuned, the number of times data are written to
+the SSD can be kept sufficiently low so as to ensure their
+longevity.
+Once captured in this manner, the data can then be
+transmitted to the rest of the farm within the available bandwidth.
 
 The core elements of the DAQ system now exist as prototypes.
 The system as a whole with capabilities such as descibed above is
@@ -88,44 +94,15 @@ addressed. A few basic assumptions will need to be used:
 \begin{itemize}
 \item Estimates presented below correspond to the ``full detector'',
   i.e. is effectively normalized to \dunedetectormass.
-\item Accelerator spill cycle is \beamspillcycle
+\item Accelerator spill cycle is \beamspillcycle with beam expected
+  for \beamrunfraction of each calendar year.
 \item Zero-Suppression thresholds will be set at levels that preserve
-  signals from minimum-ionizing particles.
-\item The intensity of the beam provided by LBNF will affect the data
-  rates for a few detector systems in DUNE and is likely to have more
-  pronounced effect on the Near Detector.  It is assumed that the beam
-  has the characteristics suggested by LBNF Project at the time of
-  writing. \fixme{Are you referring to something other than the
-    reference design? If so, which configuration? If not, no need to
-    state this.}
-\item It is assumed that the front-end systems of the TPC and the
-  Photon Detector combined with the logic in DAQ will provide
-  triggering capability for the beam neutrino physics, while
-  triggering outside of the beam spills will be provided by DAQ
-  utilizing continuously digitized data from the light readout system.
+  signals from minimum-ionizing particles while effectively removing
+  data due to electronics noise.
+\item The DAQ will be able to trigger based on spill times and will be
+  able to reject isolated $^{39}Ar$ decays on at least a per-APA
+  basis. (for DAQ details see~\ref{sec:detectors-fd-ref-daq})
 \end{itemize}
-
-%\subsubsection{DUNE Detector Subsystems}
-%DUNE will contain a few subsystems which can be roughly classed as belongning to the ``Far Site'' and the ``Near Site'', as
-%itemized below:
-%\begin{itemize}
-%\item Far Detector:
-%\begin{itemize}
-%\item LAr TPC
-%\item Photon Detector(PD)
-%\end{itemize}
-%\item Near Detector (ND):
-%\begin{itemize}
-%\item  Straw Tracker (STT)
-%\item Calorimeter(CAL)
-%\item Muon Detector Resistive Plate Chambers (RPC)
-%\end{itemize}
-%\end{itemize}
-
-%In the following, each of these items will be considered to produce relevant data rates estimates.
-% estimated data rates for these components are itemized and then aggregated.
-%There will be cases where no reliable estimates exist at the moment due to continued R\&D, and this will
-%be clearly stated where necessary.
 
 \subsubsection{Far Detector LAr TPC}
 The information presented below is based on the parameters listed in
@@ -138,16 +115,12 @@ The information presented below is based on the parameters listed in
 \item ADC clock frequency: approx. \daqsamplerate
 \item ADC resolution (bits): 12
 \end{itemize}
-\
 
 In addition to these basic parameters, there are other factors
 affecting data rates and volumes, such as implementation of Zero
-Suppression (ZS) in the Front-End electronics of the detector,
+Suppression (ZS) in the DAQ RCE processors,
 contribution from Radiological and Cosmological Backgrounds, and DAQ
 trigger configuration (cf. the case of low-energy events).
-%\textit{For the moment, potential use of lossless data compression algorithms
-%such as Huffman coding is not included in any of the estimates provided,
-%since more studies need to be done to determine feasibility and efficacy of such approach.}
 
 Non-ZS maximum event size (corresponding to a snapshot of the complete TPC) can be calculated as a product of the following numbers:
 \begin{itemize}
@@ -168,36 +141,37 @@ to be $\sim$\beameventsizecompressed.  This particular simulation
 employed a less than optimal schema for packing data and it is
 expected that with optimization these sizes can be further reduced.
 
-% by at least an order of magnitude.
-
 Some of the driving zero-suppressed (ZS) and full-stream (FS) annual
 data volumes are summarized in Table~\ref{tab:sc-zs-summary}. It is
 important to note that the numbers in the row characterizing $^{39}$Ar
 are given for information only and do not represent our estimates of
 actual data to be committed to mass storage.
+Once DAQ-level rejection of isolated $^{39}Ar$ decay events is invoked
+a residual amount of data is accepted when the decay is accidentally
+coincident with beam-$\nu$ activity.
+The data required to record this background is reduced to 3\% of the
+``with-beam-$\nu$'' estimate of table~\ref{tab:sc-zs-summary} and is
+thus negligible being an order of magnitude smaller than the data
+associated with the beam neutrino interactions themselves.
 
-There is a range of possible approaches to data volume reduction in
-real time without losing much of information due to low-amplitude
-signals, which may be important for more precise particle
-identification or in search for unusual signatures that may exist due
-to new phenomena. For example, implementation of the ``trigger
-stream'' in the DAQ system (see~\ref{sec:detectors-fd-ref-daq})
-allows to trigger on event candidates using
-``high threshold'', while capturing data in the potential event
-without applying any threshold at all. In that case, one can estimate
-the total size of the TPC data to be collected annually by multiplying
-the predicted number of beam neutrino interactions per year (estimated
-here to be \beamrate) by the full stream event size quoted above
-(\dunefsreadoutsize).  This results in an estimate of
-\beamdatayearfs of this type of data per year.
-
-%This scheme can be augmented by an ``express offline'' farm (extension
-%of DAQ) which would perform functions similar to a high-level trigger
-%utilized in collider experiments, allowing more flexibility in
-%choosing thresholds and other parameters which will determines rates
-%and volumes of the data produced by the Far Detector. Design of such
-%system is currently in the conceptual stage and information will be
-%added to DUNE planning documents as it is developed.
+%%%% I think this simply restates our simple assumption that isolated
+%%%% 39Ar can be killed by the DAQ.
+%%%%  The "high threshold" approach makes people nervous, so I don't
+%%%%  think we need to invoke it.
+% There is a range of possible approaches to data volume reduction in
+% real time without losing much of information due to low-amplitude
+% signals, which may be important for more precise particle
+% identification or in search for unusual signatures that may exist due
+% to new phenomena. For example, implementation of the ``trigger
+% stream'' in the DAQ system (see~\ref{sec:detectors-fd-ref-daq})
+% allows to trigger on event candidates using
+% ``high threshold'', while capturing data in the potential event
+% without applying any threshold at all. In that case, one can estimate
+% the total size of the TPC data to be collected annually by multiplying
+% the predicted number of beam neutrino interactions per year (estimated
+% here to be \beamrate) by the full stream event size quoted above
+% (\dunefsreadoutsize).  This results in an estimate of
+% \beamdatayearfs of this type of data per year.
 
 
 \input{volume-detectors/generated/zs-volume-summary}
@@ -208,15 +182,15 @@ currently in the R\&D stage, so the numbers presented below need to be
 considered as ballpark values to be made more precise at a later time:
 
 \begin{itemize}
-\item Readout channel count: 24,000 (i.e. four times 6,000 which is the channel count for each 10kt module)
+\item Readout channel count: \num{24000} (i.e. four times \num{6000} which is the channel count for each 10kt module)
 \item Trigger rate is uncertain at this point due to ongoing investigation; one approach that exists assumes 1 trigger per spill cycle
 \item ADC resolution (bits): 12
-\item ADC digitization frequency: 150MHz
+\item ADC digitization frequency: \SI{150}{\MHz}
 \end{itemize}
 It is assumed that a few dozen samples will be recorded in each
 channel, and there will be zero suppression of channels with signals
 below a chosen threshold, resulting in an order of magnitude reduction
-of the data volume.  This results in 360kB per spill cycle, and should
+of the data volume.  This results in \SI{360}{\kilo\byte} per spill cycle, and should
 be considered negligible from the point of view of requirement to data
 handling, compared to other data sources.
 
@@ -227,7 +201,7 @@ most relevant parameters of the Fine-Grained Tracker (FGT):
 \begin{itemize}
 \item   Straw Tube Tracker (STT) readout channel count: \ndsstchannels
 \item STT Drift Time: 120ns
-\item STT ADC clock frequency and resolution (bits): 3ns intervals, 10 bit
+\item STT ADC clock frequency and resolution (bits): \SI{3}{\ns} intervals, 10 bit
 \item ECAL channel count: \ndecalchannels
 \item Muon Detector Resistive Plane Chambers (RPC) channel count: \ndmuidchannels
 \item Average expected event rate per spill: \textasciitilde 1.5
@@ -237,7 +211,7 @@ occupancy levels per event, broad assumptions must be made to roughly
 estimate its data rate. Current estimate (as quoted in the Near
 Detector section of the ``Expected Data Rates'' Annex is
 \textasciitilde \nddatarate, which translates into \textasciitilde
-30TB/year.
+\SI{30}{\tera\byte\per\year}.
 
 % Assuming that 10\% occupancy in the STT and 40 samples
 %per trigger, one arrives to \textasciitilde 1MB of data per event. Under same assumption, ECAL will contribute \textasciitilde 0.25MB
