@@ -110,19 +110,54 @@ will be composed of straw tubes with an outer diameter of 1~cm, as well as
 radiators and targets that reside next to the straw tubes as shown in Figure~\ref{fig:STT_Detail}.
 \begin{cdrfigure}[A schematic drawing of the straw tube tracker]
 {STT_Detail}{A schematic drawing of the Straw-Tube Tracking Detector (STT) design.}
-\includegraphics[width=0.6\textwidth]{STT_Detail}
+\includegraphics[width=0.5\textwidth]{STT_Detail}
 \end{cdrfigure}
 
-The straw walls are made by wounding together a film of carbon loaded Kapton XC (inner) and 
-a film of aluminum coated Kapton HN (outer), for a total thickness of about 70 $\mu$m. 
-Vertical (YY) and horizontal (XX) planes of straws will be alternated and 
-arranged in modules, with each module containing close-packed double straw layers 
-of vertical and horizontal straws (XXYY). 
-Figure~\ref{fig:STT_Detail} shows a schematic drawing of an STT module with four straw-tube planes and
-radiators. Each XXYY module equipped with radiators is equivalent to $1.25 \times 10^{-2} X_0$, with a 
-radiation length $X_0\sim$6~m. The momentum measurement requires that tracks are detected in at least 
-6 straw layers. The staggered design of double layers, the average number of straw planes crossed by tracks, 
-and the double-end readout will contribute to the short track disambiguation. 
+The straw walls are made by wounding together a film of carbon loaded
+Kapton XC (inner) and a film of aluminum coated Kapton HN (outer), for
+a total thickness of about 70~$\mu$m.  Vertical (YY) and horizontal
+(XX) planes of straws will be alternated and arranged in modules, with
+each module containing close-packed double straw layers of vertical
+and horizontal straws (XXYY).  Figure~\ref{fig:STT_Detail} shows a
+schematic drawing of an STT module with four straw-tube planes and
+radiators. Each XXYY module equipped with radiators is equivalent to
+$1.25 \times 10^{-2} X_0$, with a radiation length $X_0\sim$6~m. The
+momentum measurement requires that tracks are detected in at least 6
+straw layers. The staggered design of double layers, the average
+number of straw planes crossed by tracks, and the double-end readout
+will contribute to the short track disambiguation.
+
+
+The straw tubes will be filled with a gas mixture of either 70\% Ar
+plus 30\% CO$_2$ (for modules with targets) or 70\% Xe plus 30\%
+CO$_2$ (for modules with radiators).  The dimensions of each module in
+the reference design will be approximately 350~cm $\times$ 350~cm
+$\times$ 8.0~cm, including target or radiator planes and four straw
+planes. For ease of construction and transportation, each module is
+made up of four sub-modules, with dimensions of appproximately 350~cm
+$\times$ 175~cm $\times$ 4.0~cm.
+%The straw tubes in a single sub-module will be able to provide the tension 
+%for the wires, however, a temporary sub-module carbon composite frame will 
+%be employed for shipping. 
+The sub-modules will be assembled %put together into modules 
+at Fermilab, where each module will have a carbon composite frame around 
+the perimeter for support and will have an attached target or 
+radiator. 
+%Nominally, there will be 34 modules with targets and 46 modules 
+%with radiators, still keeping the 
+%average density of the STT at around 0.1 g/cm$^3$. 
+
+The modularity of the STT provides for successive measurements using
+thin nuclear targets (thickness $< 0.1 X_0$), while the excellent
+angular and spatial resolution allows a clean separation of events
+originating in different target materials.
+
+The STT will have a total of 107,520 straws --- corresponding to 336
+straws per plane, 1344 straws per module --- and 80 modules. Both ends
+of the straw tubes will be read out, leading to a total number of
+215,040 electronics channels. The total mass of the STT, including
+targets and radiators, is approximately 8~t. Table~\ref{tab:STT_details} 
+summarizes the main parameters of the STT design.
 \begin{cdrtable}[Straw Tube Detector specifications]{ll}{STT_details}{Straw Tube Detector specifications}
 Item&Specification \\ \toprowrule
 Straw Tube Geometry & 1cm Diameter x 3.5m Long \\ \colhline
@@ -150,37 +185,6 @@ Fe Mass per Target Plane & 96.5 kg \\ \colhline
 Number of Modules with Fe Target Planes & 1 \\  
 %Water Mass per Target Plane & 95 kg \\
 \end{cdrtable}
-
-
-The straw tubes will be filled with a gas mixture of either 70\% Ar
-plus 30\% CO$_2$ (for modules with targets) or 70\% Xe plus 30\%
-CO$_2$ (for modules with radiators).  The dimensions of each module in
-the reference design will be approximately 350~cm $\times$ 350~cm
-$\times$ 8.0~cm, including target or radiator planes and four straw
-planes. For ease of construction and transportation, each module is
-made up of four sub-modules, with dimensions of appproximately 350~cm
-$\times$ 175~cm $\times$ 4.0~cm.
-%The straw tubes in a single sub-module will be able to provide the tension 
-%for the wires, however, a temporary sub-module carbon composite frame will 
-%be employed for shipping. 
-The sub-modules will be assembled %put together into modules 
-at Fermilab, where each module will have a carbon composite frame around 
-the perimeter for support and will have an attached target or 
-radiator. 
-%Nominally, there will be 34 modules with targets and 46 modules 
-%with radiators, still keeping the 
-%average density of the STT at around 0.1 g/cm$^3$. 
-
-The modularity of the STT provides for successive measurements using
-thin nuclear targets (thickness $< 0.1 X_0$), while the excellent
-angular and spatial resolution allows a clean separation of events
-originating in different target materials.
-
-The STT will have a total of 107,520 straws  --- corresponding to 336 straws per plane,
-1344 straws per module ---
-and 80 modules. Both ends of the straw tubes will be read out, leading to a total
-number of 215,040 electronics channels. The total mass of the STT, including targets and radiators, is approximately 8~t.  
-Table~\ref{tab:STT_details} summarizes the main parameters of the STT design. 
 In addition to tracking the charged particles and measuring Transition Radiation (TR), 
 the STT readout provides dE/dx measurement to identify particles. 
 Figure~\ref{fig:PartID_dedx} provides a sample of pion, kaon, and proton identification via dE/dx in the STT.
@@ -362,7 +366,11 @@ to 6~kA at 400~V. The water flow required for cooling is 20~l/s.
 Figure~\ref{fig:Magnet_Bfield} shows the $B$ field results obtained
 from detailed simulations performed at the Bhabha Atomic Research
 Center (BARC) in India.
-
+\begin{cdrfigure}[Magnetic field maps]{Magnet_Bfield}{Design of the dipole magnet and simulation of the 
+corresponding magnetic field at the Bhabha Atomic Research Center (BARC) in India.}  
+\includegraphics[width=\textwidth]{Magnet_Bfield} % [width=6in,angle=90] <-- was too small
+\end{cdrfigure}
+The magnet specifications are summarized in Table~\ref{tab:Magnet_specs}.
 \begin{cdrtable}[Dipole Magnet specifications]{ll}{Magnet_specs}{Dipole Magnet specifications}
 Item&Specification \\ \toprowrule
 Inner Dimensions & 4.5m x 4.5m x 8.0m \\ \colhline
@@ -377,14 +385,11 @@ Magnet Voltage & 400 V \\ \colhline
 Magnet Power Requirements & 2.4 MW \\ \colhline
 Water Flow for Cooling & 20 l/s \\\end{cdrtable}
 
-\begin{cdrfigure}[Magnetic field maps]{Magnet_Bfield}{Design of the dipole magnet and simulation of the 
-corresponding magnetic field at the Bhabha Atomic Research Center (BARC) in India.}  
-\includegraphics[width=\textwidth]{Magnet_Bfield} % [width=6in,angle=90] <-- was too small
-\end{cdrfigure}
 
-The momentum resolution is dominated by multiple scattering in the STT. The momentum resolution is, therefore, given by 
-$\delta p/p = 0.053/\sqrt(LX_0)B$. For B = 0.4T, L = 3m, and $X_0 = 4$m, the
-expected momentum resolution is $\sim 3.8\%$. 
+The momentum resolution is dominated by multiple scattering in the
+STT. The momentum resolution is, therefore, given by $\delta p/p =
+0.053/\sqrt(LX_0)B$. For B = 0.4T, L = 3m, and $X_0 = 4$m, the
+expected momentum resolution is $\sim$3.8\%.
 
 %%%%%%%%%%%%%%%%% 
 \subsection{Muon Identifier}
