@@ -2,77 +2,65 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Technical Designs}
 \label{v1ch:tech-designs}
-
-
-
+ 
+ 
+ 
 \section{LBNF Project}
-
-LBNF will provide facilities at Fermilab and at SURF to enable the scientific program of DUNE. These facilities are geographically separated into the Near Site Facilities, those to be constructed at Fermilab, and the Far Site Facilities, those to be constructed at SURF. %They are summarized in sections below. AH: not needed
-
-LBNF is managed through a Project Office where management and functions common to both Far Site and Near Site Facilities occur. LBNF coordinates requirements and interfaces with the DUNE Project through the Experiment-Facility Interface Group as well as working teams comprised of members of both projects. \fixme{why is this here? it's covered in org/mgmt}
-
+ 
+LBNF will provide facilities at Fermilab and at SURF to enable the scientific program of DUNE. These facilities are geographically separated into the Near Site Facilities, those to be constructed at Fermilab, and the Far Site Facilities, those to be constructed at SURF. %They are summarized in sections below.
+ 
 \subsection{Near Site Facilities}
-
-The scope of LBNF at Fermilab is provision of the beamline plus the conventional facilities (CF) for this beamline as well as for the DUNE near detector. The layout of these facilities is shown in Figure~\ref{fig:nearsite-topo}. The science requirements as determined by the DUNE %Science  <<---- standardize on just `Collaboration'
+ 
+The scope of LBNF at Fermilab is provision of the beamline plus the conventional facilities (CF) for this beamline as well as for the DUNE near detector. The layout of these facilities is shown in Figure~\ref{fig:nearsite-topo}. The science requirements as determined by the DUNE
 Collaboration drive the performance of the beamline and near detector, which then provide requirements for the components, space, and functions necessary to construct, install, and operate the beamline and near detector. ES\&H and facility operations requirements (i.e., \textit{programmatic} requirements) also provide input to the design.
-
+ 
 \begin{cdrfigure}[Layout of LBNF Near Site]{nearsite-topo}{Layout of LBNF Near Site}
   \includegraphics[width=\textwidth]{nearsite-topo}
 \end{cdrfigure}
-
-
-The beamline is designed to provide a neutrino beam of sufficient intensity and appropriate energy range to meet the goals of DUNE for long-baseline neutrino oscillation physics. The design is a conventional, horn-focused neutrino beamline. The components of the beamline will be designed to extract a proton beam from the Fermilab Main Injector (MI) and transport it to a target area where the collisions generate a beam of charged particles. \fixme{add something about decaying to neutrinos in the decay pipe?}
-
+ 
+ 
+The beamline is designed to provide a neutrino beam of sufficient intensity and appropriate energy range to meet the goals of DUNE for long-baseline neutrino oscillation physics. The design is a conventional, horn-focused neutrino beamline. The components of the beamline will be designed to extract a proton beam from the Fermilab Main Injector (MI) and transport it to a target area where the collisions generate a beam of charged particles which decay into neutrinos to create the neutrino beam aimed at the near and far detectors.
+ 
 The facility is designed for initial operation at proton-beam power of \SI{1.2}{\MW}, with the capability to support an upgrade to \SI{2.4}{\MW}. The plan is for twenty years of operation, while the lifetime of the Beamline Facility, including the shielding, is for thirty years. It is conservatively assumed that operations during the first five years will be at \MWadj{1.2} and the remaining fifteen years at \SI{2.4}{\MW}.  
 The experience gained from the various neutrino projects has contributed extensively to the reference design. In particular, the NuMI beamline serves as the prototype design. Most of the subsystem designs and the integration between them follow, to a large degree, from previous projects. 
-
-The proton beam will be extracted at a new point at MI-10. After extraction, this primary beam will establish a horizontally straight compass heading west-northwest toward the far detector, but will be bent upward to an apex before being bent downward at the appropriate angle. The primary beam is designed to be above grade to minimize expensive, underground construction; this also significantly enhances ground-water radiological protection. The design requires% , however, 
-construction of an earthen embankment, or hill, whose dimensions are commensurate with the bending strength of the dipole magnets required for the beamline. 
-
-The target marks the transition from the intense, narrowly directed proton beam to the more diffuse, secondary beam of particles that in turn decay to produce the neutrino beam. After collection and focusing, the pions and kaons that did not initially decay need a long, unobstructed volume in which to %decay
-do so. This decay volume in the reference design is a pipe of circular cross section with its diameter and length optimized such that decays of the pions and kaons result in neutrinos in the energy range useful for the experiment. The decay volume is followed immediately by the absorber, which removes the remaining beam hadrons. 
-
+ 
+The proton beam will be extracted at a new point at MI-10. After extraction, this primary beam will establish a horizontally straight compass heading west-northwest toward the far detector, but will be bent upward to an apex before being bent downward at the appropriate angle. The primary beam is designed to be above grade to minimize expensive, underground construction; this also significantly enhances ground-water radiological protection. The design requires construction of an earthen embankment, or hill, whose dimensions are commensurate with the bending strength of the dipole magnets required for the beamline. 
+ 
+The target marks the transition from the intense, narrowly directed proton beam to the more diffuse, secondary beam of particles that in turn decay to produce the neutrino beam. After collection and focusing, the pions and kaons that did not initially decay need a long, unobstructed volume in which to decay. This decay volume in the reference design is a pipe of circular cross section with its diameter and length optimized such that decays of the pions and kaons result in neutrinos in the energy range useful for the experiment. The decay volume is followed immediately by the absorber, which removes the remaining beam hadrons. 
+ 
 Radiological protection is integrated into the LBNF beamline reference design in two important ways. First, shielding is optimized to reduce exposure of personnel to radiation dose and to minimize radioisotope production in ground water within the surrounding rock. Secondly, the handling and control of tritiated ground water produced in or near the beamline drives many aspects of the design. 
-
-Beamline CF includes an enclosure connecting to the existing Main Injector at MI-10, concrete underground enclosures for the primary beam, targetry, horns, absorber, and related technical support systems. Service buildings will be constructed to provide support utilities the primary proton beam at LBNF~5 and to support the absorber at LBNF~30 (shown in Figure~\ref{fig:nearsite-topo}).  The enclosure for the Target Hall will be both below and above grade \fixme{`both below and above grade' is not clear; confusing} and is identified as LBNF~20.  Utilities will be extended from nearby existing services, including power, domestic and industrial water, sewer, and communications. 
-
-Near Detector CF includes a small muon alcove area in the Beamline Absorber Hall and a separate underground Near Detector Hall that houses the near detector. A service building called LBNF~40 with two shafts to the underground supports the near detector. The underground hall is sized for the reference Near Neutrino Detector (NND). \fixme{just reference near detector is better, I think.}
-
+ 
+Beamline CF includes an enclosure connecting to the existing Main Injector at MI-10, concrete underground enclosures for the primary beam, targetry, horns, absorber, and related technical support systems. Service buildings will be constructed to provide support utilities the primary proton beam at LBNF~5 and to support the absorber at LBNF~30 (shown in Figure~\ref{fig:nearsite-topo}).  The Target Hall Complex at LBNF~20 houses the targetry system.  Utilities will be extended from nearby existing services, including power, domestic and industrial water, sewer, and communications. 
+ 
+Near Detector CF includes a small muon alcove area in the Beamline Absorber Hall and a separate underground Near Detector Hall that houses the near detector. A service building called LBNF~40 with two shafts to the underground supports the near detector. The underground hall is sized for the reference near detector.
+ 
 \subsection{Far Site Facilities}
-
-The scope of LBNF at SURF includes both conventional facilities (CF) and cryogenic infrastructure to support the DUNE far detector. Figure~\ref{fig:lbnf-cavern-layout} shows the layout of the underground caverns that will house the detector modules. The requirements derive from DUNE Collaboration science requirements, which drive the space and functions necessary to construct and operate the far detector.  ES\&H and facility operations (programmatic) requirements also provide input to the design. The far detector is modularized into four \ktadj{10} fiducial mass detectors \fixme{determine if reference should be for total mass instead of fiducial}. The four caverns and the services to the caverns will be as similar to one another as possible for % to enable repetitive designs for 
-efficiency in design and construction, as well as operation. 
-
+ 
+The scope of LBNF at SURF includes both conventional facilities and cryogenic infrastructure to support the DUNE far detector. Figure~\ref{fig:lbnf-cavern-layout} shows the layout of the underground caverns that will house the detector modules with a separate cavern to house utilities and cryogenic systems. The requirements derive from DUNE Collaboration science requirements, which drive the space and functions necessary to construct and operate the far detector.  ES\&H and facility operations (programmatic) requirements also provide input to the design. The far detector is modularized into four \ktadj{10} fiducial mass detectors \fixme{determine if reference should be for total mass instead of fiducial}. The designs of the four detector pits in two caverns and the services to the caverns will be as similar to one another as possible for efficiency in design and construction as well as operation. 
+ 
 \begin{cdrfigure}[LBNF Far Site cavern configuration]{lbnf-cavern-layout}{LBNF Far Site cavern configuration}  
 \includegraphics[width=.7\textwidth]{lbnf-cavern-layout}
 \end{cdrfigure}
-
-
-The %scope of the 
-Far Site CF includes design and construction for facilities both on the surface and underground. The underground conventional facilities includes new excavated spaces at the 4850L for the detector, utility spaces for experimental equipment, utility spaces for facility equipment, drifts for access, as well as construction-required spaces. Underground infrastructure provided by CF for the experiment includes power to experimental equipment, cooling systems and cyberinfrastructure. Underground infrastructure necessary for the facility includes domestic (potable) water, industrial water for process and fire suppression, fire detection and alarm, normal and standby power systems, a sump pump drainage system for native and leak water around the detector, water drainage to the facility-wide pump discharge system, and cyberinfrastructure for communications and security.
-In addition to providing new spaces and infrastructure underground, CF will enlarge and provide infrastructure in some existing spaces, % for use, 
-such as the access drifts from the Ross Shaft to the new caverns. New piping will be provided in the shaft for cryogens (gas argon transfer line and the compressor suction and discharge lines) and domestic water as well as power conduits for normal and standby power and cyberinfrastructure. 
-
-%The existing Sanford Laboratory 
-SURF currently has many surface buildings and utilities, some of which will be utilized for LBNF. The scope of the above-ground CF includes only that work necessary for LBNF, and not for the general rehabilitation of buildings on the site, which remains the responsibility of SURF. %the Sanford Laboratory. 
+ 
+ 
+The scope of the Far Site CF includes design and construction for facilities both on the surface and underground. The underground conventional facilities includes new excavated spaces at the 4850L for the detector, utility spaces for experimental equipment, utility spaces for facility equipment, drifts for access, as well as construction-required spaces. Underground infrastructure provided by CF for the experiment includes power to experimental equipment, cooling systems and cyberinfrastructure. Underground infrastructure necessary for the facility includes domestic (potable) water, industrial water for process and fire suppression, fire detection and alarm, normal and standby power systems, a sump pump drainage system for native and leak water around the detector, water drainage to the facility-wide pump discharge system, and cyberinfrastructure for communications and security.
+In addition to providing new spaces and infrastructure underground, CF will enlarge and provide infrastructure in some existing spaces for LBNF and DUNE use, such as the access drifts from the Ross Shaft to the new caverns. New piping will be provided in the shaft for cryogens (gas argon transfer line and the compressor suction and discharge lines) and domestic water as well as power conduits for normal and standby power and cyberinfrastructure. 
+ 
+SURF currently has many surface buildings and utilities, some of which will be utilized for LBNF. The scope of the above-ground CF includes only that work necessary for LBNF, and not for the general rehabilitation of buildings on the site, which remains the responsibility of SURF. 
 Electrical substations and distribution will be upgraded to increase power and provide standby capability for life safety. Additional surface scope includes a small control room in an existing building and a new building to support cryogen transfer from the surface to the underground near the existing Ross Shaft.
-
-To reduce risk during the construction and installation period, several SURF infrastructure operations/maintenance activities are included as early activities in  the LBNF Project. These include completion of the Ross Shaft rehabilitation, rebuilding of hoist motors, and replacement of the Oro Hondo fan; if not addressed, this aging infrastructure could limit or remove access to the underground if equipment failed. 
-
+ 
+To reduce risk of essential but aging support equipment failure during the construction and installation period, several SURF infrastructure operations/maintenance activities are included as early activities in  the LBNF Project. These include completion of the Ross Shaft rehabilitation, rebuilding of hoist motors, and replacement of the Oro Hondo fan; if not addressed, this aging infrastructure could limit or remove access to the underground if equipment failed. 
+ 
 The scope of the LBNF cryogenics infrastructure includes the design, fabrication, and installation of four cryostats to contain the liquid argon (LAr) and the detector components. It also includes a comprehensive cryogenic system that meets the performance requirements for purging, cooling and filling the cryostats, for achieving and maintaining the LAr temperature, and for purifying the LAr outside the cryostats. 
-
-Each cryostat will be composed of a free-standing steel-framed structure, to be constructed in %one of the four 
-its individual cavern, with a membrane cryostat %vessel 
-installed inside. The interior dimension of the cryostat design is 15.1~m width, 14.0~m height and 62.0~m length and it has  a total LAr mass capacity of 17.1~kt . Each %membrane tank 
-cryostat will include a stainless-steel liner to contain the liquid cryogen. The pressure loading of the liquid cryogen is transmitted through rigid foam insulation to the surrounding structural steel frame which provides external support for the membrane. The membrane system will provide full containment of the LAr. The hydrostatic load of the LAr in the cryostat design is carried by the steel frame on sides and bottom. Everything else within the cryostat (TPC planes \fixme{TPCs haven't been introduced; maybe ``detector elements''}, electronics, sensors, cryogenic- and gas-plumbing connections) will be supported by the steel top plate \fixme{check this is true with steel frame}. All piping and electrical penetrations into the interior of the cryostat will be made through this top plate to minimize the potential for leaks.
-
-Cryogenic system components will be located on the surface or within the cavern. The cryogen receiving station will be located on the surface near the Ross Shaft to allow for receipt of LAr deliveries for the initial filling period, as well as a buffer volume to accept liquid argon during the extended fill period. A large vaporizer at the surface will vaporize the liquid argon from the storage dewar prior to the argon gas being transferred by uninsulated piping down this shaft. 
-
-A liquid nitrogen dewar also located at the surface will be used to accept nitrogen deliveries for the initial charging and startup of the nitrogen refrigerator, as well as for pressure control of the LAr storage dewar. A large vaporizer for the nitrogen circuit will vaporize nitrogen to nitrogen gas for feeding the compressors of the nitrogen refrigerator. Four compressors, the only refrigerator components on the surface, and supporting systems will be located in a compressor building near the Ross Shaft and cryogen receiving area. The compressors discharge high pressure nitrogen gas into pipes that will run down the shaft. The compressors will be located on the surface because the electrical power requirement and cooling requirement is much less than for similar equipment at the 4850L.  
-
-The detector cavern at 4850L will contain the rest of the nitrogen refrigerator, liquid nitrogen vessels, argon condensers, external liquid argon recirculation pumps, and filtration equipment. Filling each cryostat with LAr in a reasonable period of time is a driving factor for the refrigerator and condenser sizing.  Each cryostat will have its own argon recondensers, argon-purifying equipment and overpressure protection system, also located in the central utility cavern. Recirculation pumps will be placed outside of each %membrane 
-cryostat to circulate liquid from the bottom of the tank through the purifier.
-
+ 
+Each cryostat is composed of a free-standing steel-framed structure with a membrane cryostat vessel installed inside, to be constructed in one of the four excavated detector pits. The cryostat is designed to hold a total LAr mass capacity of 
+17.1~kt. Each membrane tank cryostat has a stainless-steel liner as part of a full membrane system to provide full containment of the liquid cryogen. The hydrostatic pressure loading of the liquid cryogen is transmitted through rigid foam insulation to the surrounding structural steel frame which provides external support for the membrane. All penetrations into the interior of the cryostat will be made through the top plate to minimize the potential for leaks with the exception of the sidewall penetration for connection to the LAr recirculation system.
+ 
+Cryogenic system components are located both on the surface and within the cavern. The cryogen receiving station is located on the surface near the Ross Shaft to allow for receipt of LAr deliveries for the initial filling period, as well as a buffer volume to accept liquid argon during the extended fill period. A large vaporizer for the nitrogen circuit feeds gas to one of four compressors located in the Cryogenic Compressor Building; the compressor discharges high pressure nitrogen gas to pipes in the Ross shaft. The compressors are located on the surface because the electrical power requirement and cooling requirement is much less than for similar equipment at the 4850L.  
+ 
+Equipment at the 4850L includes the nitrogen refrigerator, liquid nitrogen vessels, argon condensers, external liquid argon recirculation pumps, and filtration equipment. Filling each cryostat with LAr in a reasonable period of time is a driving factor for the refrigerator and condenser sizing.  Each cryostat will have its own argon recondensers, argon-purifying equipment and overpressure protection system located in the Central Utility Cavern. Recirculation pumps will be placed outside and adjacent to each cryostat to circulate liquid from the bottom of the tank through the purifier.
+ 
+ 
 
 
 \section{The DUNE Detectors}
