@@ -5,25 +5,31 @@
 \label{sec:physics-lbnosc-context}
 
 % {\bf [Note: Copied from Section 2.2 of the LBNE Science Document.]}  
-The Standard Model of particle physics 
-presents a remarkably accurate
+The Standard Model of particle physics presents a remarkably accurate
 description of the elementary particles and their
 interactions. However, its limitations pose deeper questions about
-Nature. With the discovery of the Higgs boson at CERN, particle physics would be ``complete,''
-\fixme{`particle physics would be complete' doesn't seem right. How about `the Standard Model appears complete'}
- except
-for %the issues associated with (Anne changed 5/9)
- \fixme {some questions (or are they inconsistencies? I don't like `issues') remaining} in the neutrino sector, such as its unexplained flavor pattern.  These issues \fixme{inconsistencies, unknowns, puzzles?} 
-imply that a more fundamental underlying theory must exist. 
-DUNE plans to pursue a detailed
-study of neutrino mixing, resolve the neutrino mass ordering,
-and search for CP violation in the lepton sector \fixme{call it either lepton sector or neutrino sector if you are referring to the same thing; `lepton sector' includes more than just neutrinos, I know} by
-studying the oscillation patterns of high-intensity
-\numu and \anumu %$\nu_\mu$ and $\bar{\nu}_\mu$ 
-beams measured over a long baseline. 
-Neutrino oscillation arises from mixing between the flavor %$(\nu_e,\, \nu_\mu,\, \nu_\tau)$ 
-\nue, \numu, \nutau and mass $(\nu_1,\, \nu_2,\, \nu_3)$
-eigenstates of neutrinos.
+Nature. With the discovery of the Higgs boson at CERN, the Standard
+Model would be ``complete,'', except for the discovery of neutrino
+mixing which indicated neutrinos had a very small but non-zero
+mass. In the Standard Model, the simple Higgs mechanism is responsible
+for both quark and charged lepton masses, quark mixing and
+charge-parity (CP) violation. However, the small size of neutrino
+masses and their relatively large mixing bears little resemblance to
+quark masses and mixing, suggesting that different physics - and
+possibly different mass scales - in the two sectors may be present,
+and motivating precision study of mixing and CP violation in the
+lepton sector of the Standard Model.
+
+\fixme{Wrote a better opening paragraph using text from the Sci. Opp. - MB}
+
+DUNE plans to pursue a detailed study of neutrino mixing, resolve the
+neutrino mass ordering, and search for CP violation in the lepton
+sector by studying the oscillation patterns of
+high-intensity \numu and \anumu %$\nu_\mu$ and $\bar{\nu}_\mu$
+beams measured over a long baseline.  Neutrino oscillation arises from
+mixing between the flavor %$(\nu_e,\, \nu_\mu,\, \nu_\tau)$
+\nue, \numu, \nutau and mass $(\nu_1,\, \nu_2,\, \nu_3)$ eigenstates
+of neutrinos.
 % corresponding to the weak and gravitational interactions, respectively. 
 % This three-flavor-mixing
 % scenario can be described by a rotation between the weak-interaction
@@ -31,7 +37,8 @@ eigenstates of neutrinos.
 % states of definite mass $(\nu_1,\, \nu_2,\, \nu_3)$.  
 In direct correspondence with mixing in the quark sector, the transformations
 between basis states is expressed in the form of a complex unitary
-matrix, known as the \textit{PMNS mixing matrix}: \fixme{Anne added `mixing' here instead of below}
+matrix, known as the \textit{PMNS mixing matrix}: 
+
 \begin{equation}
 \left(\begin{array}{ccc} \nu_e \\ \nu_\mu \\ \nu_\tau \end{array} \right)= 
 \underbrace{
@@ -98,7 +105,7 @@ is the crux of the
 mass hierarchy ambiguity.
 The values of $\theta_{12}$ and $\theta_{23}$ are large, while 
 $\theta_{13}$ is smaller. The value of \deltacp is unknown.
-The absolute values of the entries of the PMNS \fixme{rmv: mixing} matrix, which
+The absolute values of the entries of the PMNS matrix, which
 contains information on the strength of flavor-changing weak decays in
 the lepton sector, can be expressed in approximate form as
 \begin{equation}
@@ -123,7 +130,7 @@ decays in the quark sector) can be expressed in approximate form as
 |V_{\rm CKM}|\sim \left(\begin{array}{ccc} 1 & 0.2 & 0.004\\ 0.2 & 1 & 0.04 \\ 0.008 & 0.04 & 1\end{array} \right)
 \label{eq:ckmmatrix}
 \end{equation}
-and compared \fixme{change to: `for comparison to'} to the entries of the PMNS matrix given in Equation~\ref{eq:pmnsmatrix}.
+for comparison to the entries of the PMNS matrix given in Equation~\ref{eq:pmnsmatrix}.
 As discussed in \cite{King:2014nza}, the question of why the quark mixing angles are
 smaller than the lepton mixing angles is an important part of the %``flavor problem.'' AH 5/9
 flavor pattern question. 
@@ -227,7 +234,7 @@ The experimental sensitivities presented here are estimated using
 GLoBES\cite{Huber:2004ka,Huber:2007ji}. GLoBES takes neutrino beam
 fluxes, cross sections, and detector-response parameterization as
 inputs. This document presents a range of possible physics
-sensitivities that depend on the design of the neutrino beam, \fixme{does the range depend or do the sensitivities depend?}
+sensitivities depending on the design of the neutrino beam, 
 including the proton beam energy and power used.  
 The beam power as a function of proton beam energy from the
 PIP-II upgrades and the number of protons-on-target per year assumed
@@ -255,7 +262,7 @@ and further optimization is possible. The actual flux will depend upon
 details of the hadron production and focusing design; optimization of
 the beam design to maximize experimental sensitivity is a critical
 aspect of the experiment design.  Table~\ref{tab:beamparam} summarizes
-some of \fixme{summarizes the important properties?} the properties of the GEANT4 beamline simulations used to
+the key properties of the GEANT4 beamline simulations used to
 produce fluxes for the sensitivity studies.  The main differences
 between the two beam designs are the target geometry, horn current,
 horn design and decay pipe length; the choice of horn design has the
@@ -309,31 +316,35 @@ transverse momentum along with reconstructed neutrino and hadronic
 energy as inputs to a k-Nearest-Neighbor (kNN) machine-learning
 algorithm.  Figures~\ref{fig:smearing_nue}-\ref{fig:smearing_nc} show
 the true-to-reconstructed energy smearing matrices extracted from the
-Fast MC and \fixme{that are used?} used as inputs to GLoBES.  Figure~\ref{fig:eff} shows the
+Fast MC and used as inputs to GLoBES.  Figure~\ref{fig:eff} shows the
 analysis sample detection $\times$ selection efficiencies for the
 various signal and background modes used by GLoBES, also extracted
 from the Fast MC.
 
-\begin{cdrfigure}[\nue and\anue True-to-reconstructed energy smearing matrices]{smearing_nue}{True-to-reconstructed energy smearing matrices for \nue (left) and \anue (right) CC interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample.}
- \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nue_nominal_app.png}
- \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anue_nominal_app.png}
- \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nue_nominal_dis.png}
- \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anue_nominal_dis.png}
+\begin{cdrfigure}[\nue and\anue True-to-reconstructed energy smearing matrices]{smearing_nue}{True-to-reconstructed energy smearing matrices for \nue (top) and \numu (center), and \nutau (bottom) CC interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Left: Used in the \nue appearance sample. Right: Used in the \numu disappearance samples}
+ \includegraphics[width=0.4\textwidth]{LBNE_smear_plot2_nue_nominal_app.png}
+\includegraphics[width=0.4\textwidth]{LBNE_smear_plot2_nue_nominal_dis.png}
+ \includegraphics[width=0.4\textwidth]{LBNE_smear_plot2_numu_nominal_app.png}
+\includegraphics[width=0.4\textwidth]{LBNE_smear_plot2_numu_nominal_dis.png}
+ \includegraphics[width=0.4\textwidth]{LBNE_smear_plot2_nut_nominal_app.png}
+ \includegraphics[width=0.4\textwidth]{LBNE_smear_plot2_nut_nominal_dis.png}
+% \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anue_nominal_app.png}
+% \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anue_nominal_dis.png}
 \end{cdrfigure}
 
-\begin{cdrfigure}[\numu and\anumu True-to-reconstructed energy smearing matrices]{smearing_numu}{True-to-reconstructed energy smearing matrices for \numu (left) and \anumu (right)  CC interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample.}
- \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_numu_nominal_app.png}
- \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anumu_nominal_app.png}
- \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_numu_nominal_dis.png}
- \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anumu_nominal_dis.png}
-\end{cdrfigure}
+%\begin{cdrfigure}[\numu and\anumu True-to-reconstructed energy smearing matrices]{smearing_numu}{True-to-reconstructed energy smearing matrices for \numu (left) and \anumu (right)  CC interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample.}
+% \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_numu_nominal_app.png}
+% \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anumu_nominal_app.png}
+% \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_numu_nominal_dis.png}
+% \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anumu_nominal_dis.png}
+%\end{cdrfigure}
 
-\begin{cdrfigure}[\nutau and\anutau True-to-reconstructed energy smearing matrices]{smearing_nutau}{True-to-reconstructed energy smearing matrices for \nutau (left) and \anutau (right) CC interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample.}
- \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nut_nominal_app.png}
- \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anut_nominal_app.png}
- \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nut_nominal_dis.png}
- \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anut_nominal_dis.png}
-\end{cdrfigure}
+%\begin{cdrfigure}[\nutau and\anutau True-to-reconstructed energy smearing matrices]{smearing_nutau}{True-to-reconstructed energy smearing matrices for \nutau (left) and \anutau (right) CC interactions extracted from the Fast MC and used as inputs to GLoBES.  Top: Used in the appearance sample.  Bottom: Used in the disappearance sample.}
+% \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nut_nominal_app.png}
+% \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anut_nominal_app.png}
+% \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_nut_nominal_dis.png}
+% \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_anut_nominal_dis.png}
+%\end{cdrfigure}
 
 \begin{cdrfigure}[NC True-to-reconstructed energy smearing matrices]{smearing_nc}{True-to-reconstructed energy smearing matrices for NC interactions extracted from the Fast MC and used as inputs to GLoBES.  Left: Used in the appearance sample.  Right: Used in the disappearance sample.}
  \includegraphics[width=0.49\textwidth]{LBNE_smear_plot2_NC_nominal_app.png}
@@ -452,16 +463,16 @@ beam design and the optimized beam design.
 %  Total Bkgd & 2687 & 1584 \\
 \end{cdrtable}
 
-Sensitivity \fixme{sensitivities are obtained?} to determination of the neutrino mass hierarchy and
-discovery of CP violation are obtained by simultaneously fitting the
-$\nu_\mu \rightarrow \nu_\mu$, $\bar{\nu}_\mu \rightarrow
-\bar{\nu}_\mu$, $\nu_\mu \rightarrow \nu_e$, and
-$\bar{\nu}_\mu \rightarrow \bar{\nu}_e$ oscillated spectra.
-It is assumed that 50\% of the total exposure comes in neutrino beam mode and
-50\% in antineutrino beam mode.  A 50\%/50\% ratio of neutrino to
-antineutrino data has been shown to produce a nearly optimal
-sensitivity, and small deviations from this (e.g., 40\%/60\%,
-60\%/40\%) produce negligible changes in the sensitivity.
+Sensitivities to the neutrino mass hierarchy and the degree of CP
+violation are obtained by simultaneously fitting the $\nu_\mu
+\rightarrow \nu_\mu$, $\bar{\nu}_\mu \rightarrow \bar{\nu}_\mu$,
+$\nu_\mu \rightarrow \nu_e$, and $\bar{\nu}_\mu \rightarrow
+\bar{\nu}_e$ oscillated spectra.  It is assumed that 50\% of the total
+exposure comes in neutrino beam mode and 50\% in antineutrino beam
+mode.  A 50\%/50\% ratio of neutrino to antineutrino data has been
+shown to produce a nearly optimal sensitivity, and small deviations
+from this (e.g., 40\%/60\%, 60\%/40\%) produce negligible changes in
+the sensitivity.
 
 The neutrino oscillation parameters are all allowed to vary,
 constrained by a Gaussian prior with 1$\sigma$ width 
@@ -494,7 +505,8 @@ obtained used to estimate the sensitivities.
 A ``typical
 experiment'' is defined as one with the most probable data given a set of input
 parameters, i.e. in which no statistical fluctuations have been
-applied. \fixme{``most prob data set given blah'' implies ``no statistical fluct''?}
+applied. 
+%\fixme{``most prob data set given blah'' implies ``no statistical fluct''?}
  In this case, the predicted spectra and the true spectra are
 identical; for the example of CP violation,
 $\chi^2_{\mdeltacp^{true}}$ is identically zero and the
@@ -595,18 +607,24 @@ mean and standard deviation of $\overline{\Delta\chi^2}$ and
 $2\sqrt{|\overline{\Delta\chi^2}|}$, respectively. Because the distribution is atypical, the interpretation of 
 test statistic values in terms of confidence intervals is different than the standard case.
 
-The effect of statistical fluctuations in the MH measurement is shown in Figure~\ref{fig:mhstats}.  The colored bands show
-the possible range in the significance of a MH determination when statistical
-fluctuations are included for a measurement that would yield a significance of $\sqrt{\overline{\Delta\chi^{2}}} = 5$
-for 100\% of \deltacp values in our standard treatment (the solid blue line).  Also shown in 
-Figure~\ref{fig:mhstats} are horizontal lines that specify the confidence level of an experiment that measures a particular
-value of $\sqrt{\Delta \chi^2}$, following the convention in~\cite{Qian:2012zn}. An experiment that measures
-$\sqrt{\Delta \chi^2} = 5$ (black dashed line) has a 1 to \num{3.7e-6}
-\fixme{check `to' ok?} probability of determining the
-correct MH, while an experiment that measures$\sqrt{\Delta \chi^2} = 3$ (blue dashed line) has a 98.9\% 
-probability of determining the correct MH. An experiment that measures $\sqrt{\Delta \chi^2} = 0$ (cyan dashed line)
-has a 50\% probability of determining the correct MH.  In this case, both hypotheses (normal or inverted hierarchy) 
-fit the data equally well, and the probability of guessing correctly is 50\%.
+The effect of statistical fluctuations in the MH measurement is shown
+in Figure~\ref{fig:mhstats}.  The colored bands show the possible
+range in the significance of a MH determination when statistical
+fluctuations are included for a measurement that would yield a
+significance of $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for 100\% of
+\deltacp values in our standard treatment (the solid blue line).  Also
+shown in Figure~\ref{fig:mhstats} are horizontal lines that specify
+the confidence level of an experiment that measures a particular value
+of $\sqrt{\Delta \chi^2}$, following the convention
+in~\cite{Qian:2012zn}. An experiment that measures $\sqrt{\Delta
+  \chi^2} = 5$ (black dashed line) has a 1-\num{3.7e-6} probability of
+determining the correct MH, while an experiment that
+measures$\sqrt{\Delta \chi^2} = 3$ (blue dashed line) has a 98.9\%
+probability of determining the correct MH. An experiment that measures
+$\sqrt{\Delta \chi^2} = 0$ (cyan dashed line) has a 50\% probability
+of determining the correct MH.  In this case, both hypotheses (normal
+or inverted hierarchy) fit the data equally well, and the probability
+of guessing correctly is 50\%.
 
 \begin{cdrfigure}[MH sensitivity including statistical fluctuations]{mhstats}{
   The  sensitivity, given by  $\sqrt{\Delta T}=\sqrt{\Delta\chi^2}$, for a typical experiment 
@@ -926,6 +944,8 @@ of energy-scale systematics.  Figure~\ref{fig:res_dm2} shows the expected resolu
 
 \section{Effect of Systematic Uncertainties}
 \label{sec:physics-lbnosc-beamnd-req}
+
+\fixme{Need some clear discussion of what the uncertainities are without the ND and in the early stages of the ND ...MB}
 \input{volume-physics/section-systematics}  %  <------ file input here
 
 \section{Optimization of the LBNF Beam Designs}
@@ -1037,7 +1057,10 @@ Figure~\ref{fig:beam_req_lemehe}. The improvement in flux for each configuration
 There are several potential modifications to the reference beam design
 that would improve the experiment's sensitivity to the CP-violating
 phase and mass hierarchy.  One option, which will be referred to as enhanced
-reference beam, \fixme{elsewhere `optimized beam design' To fix} is based on the NuMI focusing horn design but uses a
+reference beam, 
+%\fixme{elsewhere `optimized beam design' To fix}. This is not the optimized beam. The enhanced beam
+% is somewhere between the reference beam and optimized beam - MB
+is based on the NuMI focusing horn design but uses a
 thinner and shorter cylindrical beryllium target positioned 25~cm
 upstream of the first focusing horn. We consider two decay pipe
 configurations for this enhanced reference beam, one 204 m long and 6~m 
@@ -1054,17 +1077,18 @@ violation.  The procedure is inspired by a similar one developed by
 the LBNO collaboration~\cite{Agarwalla:2014tca}, and considers 20
 beamline parameters governing the primary proton momentum, target
 dimensions, and horn shapes, positions and
-current. Figure~\ref{fig:beam_req_opthorn} shows the shape and the
-relative parameters\fixme{`relative' parameters? Relative to what?}  used for the optimization of the first focusing
-horn, while the second focusing horn is modeled as a NuMI-style horn,
-but allowed to rescale both in radial and longitudinal dimensions. The
-procedure yields horn size and shapes similar to those found by the
-LBNO collaboration. The first focusing horn is $\sim$5.5~m in length
-and $\sim$1.3~m in diameter. This optimized beam configuration
-includes a second focusing horn that is 32\% longer and 7.8~m further
-downstream than that of the reference focusing design.  This option
-would require an increase both in length, by $\sim$9~m, and in width,
-by $\sim$60~cm, of the target chase in the reference design.
+current. Figure~\ref{fig:beam_req_opthorn} shows the approximate shape
+and the 12 shape parameters (5 radial and 7 longitudinal dimensions) used for the
+optimization of the first focusing horn, while the second focusing
+horn is modeled as a NuMI-style horn, but allowed to rescale both in
+radial and longitudinal dimensions. The procedure yields horn size and
+shapes similar to those found by the LBNO collaboration. The first
+focusing horn is $\sim$5.5~m in length and $\sim$1.3~m in
+diameter. This optimized beam configuration includes a second focusing
+horn that is 32\% longer and 7.8~m further downstream than that of the
+reference focusing design.  This option would require an increase both
+in length, by $\sim$9~m, and in width, by $\sim$60~cm, of the target
+chase in the reference design.
 Figure~\ref{fig:beam_req_focusing_comp} shows a comparison of fluxes
 for the reference, enhanced reference and optimized beam
 configurations. This optimized beam, with a decay pipe 204 m long and
@@ -1135,9 +1159,8 @@ Due to the very small masses and large mixing of neutrinos, their oscillations o
     states
    \item Lorentz and CPT violation due to an underlying Planck-scale theory that manifest through sidereal dependence on the neutrino oscillation probability
   \end{itemize}
-  \fixme{Fix placement of figures}
-  
-  Full exploitation of DUNE's sensitivity to such new phenomena
+%%  \fixme{Fix placement of figures} Not sure what this was referring to - MB
+    Full exploitation of DUNE's sensitivity to such new phenomena
   will require high-precision predictions of the unoscillated
   neutrino flux at the far detector and large exposures. Studies will be conducted to understand the
 limits that DUNE could impose relative to current limits and those expected from other experiments.
