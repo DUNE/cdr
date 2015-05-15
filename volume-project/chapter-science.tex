@@ -4,47 +4,72 @@
 \label{v1ch:science}
 
 \section{Overview} % Anne added new 5/8
+%% Andre' addresses \fixme 5/12
 
 This chapter summarizes DUNE's potential for achieving its core
-physics objectives based on the current %understanding of the 
-experimental landscape, scenarios for staging \fixme{LBNF and} DUNE, and 
-the technical capabilities of DUNE at each stage. \fixme{The objectives include topics in long-baseline neutrino 
-physics, nucleon decay, supernova neutrinos, astrophysics and short-baseline physics.}
-A detailed description of the physics objectives of DUNE is provided in
-the main text of this document. \fixme{reference chap or sec} 
+physics objectives based on the current %understanding of the
+experimental landscape, scenarios for staging LBNF and DUNE, and the
+technical capabilities of DUNE at each stage.  The objectives include
+topics in long-baseline neutrino physics, nucleon decay, supernova
+neutrinos, astrophysics and short-baseline physics.  A detailed
+description of the physics objectives of DUNE is provided in Volume 2
+of the CDR.
 
-\fixme{This next part seems like it should be in the Strategy chapter and just referenced here. You could keep something about improvements in systematic uncertainties. Start Anne's }
+% The \ktadj{40} DUNE far detector (FD) is expected to be built as
+% four \ktadj{10} modules,
+For reasons described later in Chapter~\ref{v1ch:strategy}, the DUNE
+far detector (FD) will be built as four \ktadj{10} modules, which will
+come online over the course of several years. The staged program with
+the FD rapidly growing in mass will enable an early start of the
+science, initially primarily focused at the observation of natural
+sources neutrinos, the searches for nucleon decays and the
+measurements of backgrounds. Soon after the long-baseline neutrino
+beam at FNAL will start operation sending neutrinos over the 1300~km
+baseline.  The near detector (ND) will likely start operations after
+beamline operation is already ongoing.  Without any ND constraints,
+the neutrino flux will be moderately well constrainted in the early
+stages of the experiment, however this will not significantly impact
+the early physics programme since the statistical errors in the FD
+will dominate in most channels.  It is assumed that data sets
+collected during earlier stages will be reanalyzed with new
+assumptions, so that each improvement in systematic uncertainty is
+applied to the full exposure up to that point.  Eventually, the LBNF
+beam power is expected to be upgraded from $\sim$\SI{1}\MW{} to
+$\sim$\SI{2}\MW{} enabling high statistics to be collected in the
+FD. Here, the ND will provide the necessary capability to reduce
+systematic errors at the level where the full power of the beam
+coupled to the large FD mass will yield the ultimate sensitivities of
+the experiment.
 
-The \ktadj{40} DUNE far detector (FD) is expected to
-be built as four \ktadj{10} modules, which will come online over the course
-of several years.  The near detector (ND) will likely start operations
-after FD operations are already ongoing.  Without any ND constraints,
-systematic uncertainties will be larger in the early stages of the
-experiment. Additionally, the LBNF beam power is expected to be upgraded
-from $\sim$\SI{1}\MW{} to $\sim$\SI{2}\MW{} during the course of the experiment. 
-The staging strategy is described in Chapter~\ref{v1ch:strategy}. 
-It is assumed that data sets collected during earlier stages can be reanalyzed with new
-assumptions, so that each improvement in systematic uncertainty is applied
-to the full exposure up to that point.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Long-Baseline neutrino oscillation physics}
+%\subsection{Long-Baseline/Oscillation Physics}
 
-\fixme{end Anne's; suggestion to go straight to next section.}
+The DUNE science reach is described in details in \volphys as a
+function of exposure.  The exposure is a measure of the amount of data
+collected and is expressed in units of \ktMWyr{}. For instance, an
+exposure of \SI{300}\ktMWyr{} corresponds to seven years of data
+(\num{3.5} years in neutrino mode plus \num{3.5} years in antineutrino
+mode) with a \ktadj{10} detector and a \SI{1.07}\MW{} beam.
 
-In the DUNE project, the \ktadj{40} DUNE far detector (FD) is expected to
-be built as four \ktadj{10} modules, which will come online over the course
-of several years.  The near detector (ND) will likely start operations
-after FD operations are already ongoing.  Without any ND constraints,
-systematic uncertainties will be larger in the early stages of the
-experiment. Additionally, the LBNF beam power is expected to be upgraded
-from $\sim$\SI{1}\MW{} to $\sim$\SI{2}\MW{} during the course of the experiment. For
-a rough estimate of the sensitivity of DUNE as a function of real time
-for the first \num{10} years of operation, the following staging plan has
+For the estimate of the sensitivity of DUNE as a function of real time
+for the first \num{10} years of operation, a staging plan is assumed 
+to determine the reachable
+exposure as a function of the running years. For the discussions below,
+the following staging plan has
 been assumed:
 \begin{itemize}
- \item Year 1: \SI{10}\kt{} FD mass; \SI{1.07}\MW{} beam power; No ND constraints (assume \num{5}\% signal systematic)
- \item Year 2: Add second \ktadj{10} FD module, for a total FD mass of \SI{20}\kt
- \item Year 3: Add third \ktadj{10} FD module, for a total FD mass of \SI{30}\kt; Include constraints from preliminary ND data analysis (assume \num{3}\% signal systematic)
- \item Year 4: Add fourth \ktadj{10} FD module, for a total FD mass of \SI{40}\kt
- \item Year 5: Include constraints from a full ND data analysis (assume \num{2}\% signal systematic)
+\item Year 1: \SI{10}\kt{} FD mass; \SI{1.07}\MW{} beam power; No ND
+  constraints (assume \num{5}\% signal systematic)
+\item Year 2: Add second \ktadj{10} FD module, for a total FD mass of
+  \SI{20}\kt
+\item Year 3: Add third \ktadj{10} FD module, for a total FD mass of
+  \SI{30}\kt; Include constraints from preliminary ND data analysis
+  (assume \num{3}\% signal systematic)
+\item Year 4: Add fourth \ktadj{10} FD module, for a total FD mass of
+  \SI{40}\kt
+\item Year 5: Include constraints from a full ND data analysis (assume
+  \num{2}\% signal systematic)
  \item Year 7: Upgrade of beam power to \SI{2.14}\MW
 \end{itemize}
 It is assumed that previous data sets can be reanalyzed with new
@@ -53,48 +78,37 @@ to the full exposure up to that point.
 
 %Add that integrated exposure is 535 kt-MW-yr after 10 years?
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Neutrino Mixing, Mass Hierarchy and CP Violation}
-%\subsection{Long-Baseline/Oscillation Physics}
-
-\fixme{Title puts MH 2nd, then it's the first thing you see in the text; a little strange. I suggest getting rid of these would-be headings.}
-
-\textbf{Neutrino Mass Hierarchy:} The \SIadj{1300}{\km} baseline
-establishes one of DUNE's key strengths: sensitivity to the matter
-effect. This effect leads to a large discrete asymmetry in the
-\numu $\to$ \nue versus \anumu $\to$ \anue
+The \SIadj{1300}{\km} baseline establishes one of DUNE's key
+strengths: sensitivity to the matter effect. This effect leads to a
+discrete asymmetry in the \numu $\to$ \nue versus \anumu $\to$ \anue
 %$\nu_\mu\to \nu_e$ versus $\overline{\nu}_\mu \to \overline{\nu}_e$
-oscillation probabilities, the sign of which depends on the mass
-hierarchy (MH).  At 1300~km this asymmetry is approximately
-$\pm 40\%$ in the region of the peak flux; this is larger than the
-maximal possible CP-violating asymmetry associated with \deltacp,
-meaning that both the MH and \deltacp can be
-determined unambiguously with high confidence within the same
-experiment using the beam neutrinos.
-%\fixme{I would drop `using the beam neutrinos'}
-% a feat unattainable for an experiment at a much shorter baseline.  
+oscillation probabilities, the sign of which depends on the presently
+unknown mass hierarchy (MH).  At 1300~km this asymmetry is
+approximately $\pm 40\%$ in the region of the peak flux; this is
+larger than the maximal possible CP-violating asymmetry associated
+with \deltacp, meaning that both the MH and \deltacp can be determined
+unambiguously with high confidence within the same experiment.
 
 In detail, the sensitivity of DUNE depends on the actual values of
 poorly known mixing parameters (mainly \deltacp and
-\sinst{23}), %$\sin^2{\theta_{23}}$), 
-as well as the true value of the MH itself.
-The discrimination between the two MH hypotheses is characterized as a
-function of the \emph{a priori} unknown true value of \deltacp by
-considering the difference, denoted $\Delta \chi^2$, between the
-$-2\log{\cal L}$ values calculated for a data set with respect to
-these hypotheses, considering all possible values of
-\deltacp\footnote{For the case of the MH determination, the usual
-  association of this test statistic with a $\chi^2$ distribution for
-  one degree of freedom is incorrect; additionally the assumption of a
-  Gaussian probability density % added 'a'
-  implicit in this notation is not exact.  The discussion in
-  Chapter~3 of \volphys provides a brief description of the
-  statistical considerations.}.  In terms of this test statistic, the
-MH sensitivity of DUNE with an exposure of \SI{300}\ktMWyr{}  which
-corresponds to seven years of data (\num{3.5} years in neutrino mode plus
-\num{3.5} years in antineutrino mode) with a \ktadj{10} detector and a \SI{1.07}\MW{}
-beam is illustrated in Figure~\ref{fig:mhexec} for the case of normal
-hierarchy and the current best fit value of \sinst{23} = \SI{45}. %$\sin^2 \theta_{23} = 0.45$.
+\sinst{23}), %$\sin^2{\theta_{23}}$),
+as well as the true value of the MH itself.  The discrimination
+between the two MH hypotheses is characterized as a function of the
+\emph{a priori} unknown true value of \deltacp by considering the
+difference, denoted $\Delta \chi^2$, between the $-2\log{\cal L}$
+values calculated for a data set with respect to these hypotheses,
+considering all possible values of \deltacp\footnote{For the case of
+  the MH determination, the usual association of this test statistic
+  with a $\chi^2$ distribution for one degree of freedom is incorrect;
+  additionally the assumption of a Gaussian probability
+  density % added 'a'
+  implicit in this notation is not exact.  The discussion in Chapter~3
+  of \volphys provides a brief description of the statistical
+  considerations.}.  In terms of this test statistic, the MH
+sensitivity of DUNE with an exposure of \SI{300}\ktMWyr{} is
+illustrated in Figure~\ref{fig:mhexec} for the case of normal
+hierarchy and the current best fit value of \sinst{23} =
+\SI{45}. %$\sin^2 \theta_{23} = 0.45$.
 %
 \begin{cdrfigure}[Summary of mass hierarchy sensitivities]{mhexec}{The
     square root of the mass hierarchy discrimination metric $\Delta
@@ -103,7 +117,7 @@ hierarchy and the current best fit value of \sinst{23} = \SI{45}. %$\sin^2 \thet
     (left).  The minimum significance
     --- the lowest point on the curve on the left - with which the mass
     hierarchy can be determined for all values of \deltacp as a
-    function of years of exposure assuming the staging plan outlined in this chapter (right).
+    function of years of running under the staging plan described in the text (right).
     The shaded region represents the range in sensitivity due to
     potential variations in the beam design.}
 \includegraphics[width=0.49\textwidth]{volume-physics/figures/mh_300ktmwyear}
@@ -111,35 +125,35 @@ hierarchy and the current best fit value of \sinst{23} = \SI{45}. %$\sin^2 \thet
 \label{fig:mhexec}
 \end{cdrfigure}
 
-\fixme{staging plan may be moved to different chapter (two figure caption)} 
 Across the overwhelming majority of the parameter space for the mixing
-parameters that are not well known (mainly \deltacp and
-\sinst{23}), DUNE's determination of the MH will be
-definitive, but even for unfavorable combinations of the parameter
-values, a statistically ambiguous outcome is highly unlikely.  The
-least favorable scenario corresponds to a true value of \deltacp in
-which the MH asymmetry is maximally offset by the leptonic CP
-asymmetry, and where, independently, \sinst{23} takes on a
-value at the low end of its experimentally allowed range.  For
-this %worst-case
-scenario, studies indicate that with the DUNE staging plan outlined earlier, the DUNE
-LArTPC, operating for %ten years in a \SI{700}{\kW}
-\num{8.5} years in the \GeVadj{80} \MWadj{1.07} (reference design) beam, 
-can --- in a typical data set ---  distinguish between normal and inverted
-hierarchy with $|\Delta \chi^2| = \overline{|\Delta \chi^2|} = 25$.
-This corresponds to a $\geq 99.9996\%$ probability of determining the
-correct hierarchy.  In $>97.5\%$ of data sets, DUNE will measure
-$|\Delta \chi^2| > 9$ in this scenario, where measuring
-$|\Delta\chi^2| = 9$ with an expected value of \num{25} corresponds to
-a significance in excess of three Gaussian standard
-deviations. Improvements to the beam design can lower the exposure
-needed to reach this level of sensitivity from \SI{400}\ktMWyr{} to
-around \SI{230}\ktMWyr. The dependence of the mass hierarchy
-sensitivity on systematics is still under evaluation, but current
-studies indicate a weak dependence on systematic uncertainties. This
-indicates that a measurement of the unknown neutrino mass hierarchy
-with very high precision can be carried out during the first few years
-of operation with an optimized beamline design.
+parameters that are not well known (mainly \deltacp and \sinst{23}),
+DUNE's determination of the MH will be definitive, but even for
+unfavorable combinations of the parameter values, a statistically
+ambiguous outcome is highly unlikely.  The least favorable scenario
+corresponds to a true value of \deltacp in which the MH asymmetry is
+maximally offset by the leptonic CP asymmetry, and where,
+independently, \sinst{23} takes on a value at the low end of its
+experimentally allowed range.  For this %worst-case
+scenario, studies indicate that with the DUNE staging plan outlined
+earlier, the DUNE LArTPC, operating for %ten years in a \SI{700}{\kW}
+\num{8.5} years in the \GeVadj{80} 
+%\MWadj{1.07} actually power changes in staging plan
+(reference design) beam, can --- in a typical data set --- distinguish
+between normal and inverted hierarchy with $|\Delta \chi^2| =
+\overline{|\Delta \chi^2|} = 25$.  This corresponds to a $\geq
+99.9996\%$ probability of determining the correct hierarchy.  In
+$>97.5\%$ of data sets, DUNE will measure $|\Delta \chi^2| > 9$ in
+this scenario, where measuring $|\Delta\chi^2| = 9$ with an expected
+value of \num{25} corresponds to a significance in excess of three
+Gaussian standard deviations. Improvements to the beam design can
+lower the exposure needed to reach this level of sensitivity from
+\SI{400}\ktMWyr{} to around \SI{230}\ktMWyr. The dependence of the
+mass hierarchy sensitivity on systematics is still under evaluation,
+but current studies indicate a weak dependence on systematic
+uncertainties. This indicates that a measurement of the unknown
+neutrino mass hierarchy with very high precision can be carried out
+during the first few years of operation with an optimized beamline
+design.
 
 Concurrent analysis of the corresponding atmospheric-neutrino samples
 in an underground detector will improve the precision and speed with
@@ -159,30 +173,26 @@ which the MH is resolved.
 %$\overline{\Delta \chi^2} = 9$ level or better for only $40\%$ of the
 %\deltacp range.
 
-\textbf{CP Violation and the Measurement of {\boldmath \deltacp}:}
-\fixme{Again, I suggest getting rid of this heading and rewording the first sentence in
-the next pgraph to clearly introduce CP, i.e.,  ``With regard to
-CP symmetry violation in the \numu to \nue oscillation channel, the DUNE program...''}
-
-The DUNE program has two somewhat distinct objectives with regard to
-CP symmetry violation in the $\nu_\mu \to \nu_e$ oscillation channel.
-First, DUNE aims to make a precise determination of the value of
-\deltacp within the context of the standard three-flavor mixing
-scenario described by the PMNS neutrino mixing matrix.  Second, and perhaps more significantly,
-DUNE aims to observe a signal for leptonic CP violation, independent
-of the underlying nature of neutrino oscillation phenomenology.
-Within the standard three-flavor mixing scenario, such a signal will
-be observable, provided \deltacp is not too close to either of the
-values for which there is no CP violation (zero and $\pi$).  Together,
-the pursuit of these two goals provides a thorough test of the
-standard three-flavor scenario.
+With regard to the search for CP-violation using the \numu to \nue and
+\anumu to \anue oscillation channels, the DUNE program has two
+somewhat distinct objectives.  First, DUNE aims to make a precise
+determination of the value of \deltacp within the context of the
+standard three-flavor mixing scenario described by the PMNS neutrino
+mixing matrix.  Second, and perhaps more significantly, DUNE aims to
+observe a signal for leptonic CP violation, independent of the
+underlying nature of neutrino oscillation phenomenology.  Within the
+standard three-flavor mixing scenario, such a signal will be
+observable, provided \deltacp is not too close to either of the values
+for which there is no CP violation (zero and $\pi$).  Together, the
+pursuit of these two goals provides a thorough test of the standard
+three-flavor scenario.
 
 Figure~\ref{fig:execsummaryCP} shows the expected sensitivity to CP
 violation as well as the 1$\sigma$ resolution for \deltacp as a
-function of exposure.  The exposure in detector mass (kiloton) $\times$ beam
-power(MW) $\times$ time (years) required to measure $\delta_{\rm CP} = 0 $ with a
-precision better than $10^\circ$ ranges from 290 to \SI{450}\ktMWyr{}
-depending on the beam design.  
+function of exposure.  The exposure in detector mass (kiloton)
+$\times$ beam power(MW) $\times$ time (years) required to measure
+$\delta_{\rm CP} = 0 $ with a precision better than $10^\circ$ ranges
+from 290 to \SI{450}\ktMWyr{} depending on the beam design.
 %At this beam power, in a six-year run,
 %a \ktadj{10} far detector will be able to measure \deltacp to $\pm$
 %20$^\circ$ $-$ 30$^\circ$ (depending on its value), independent of
@@ -229,10 +239,6 @@ the statistical uncertainties in the far detector needed to reach this
 level of sensitivity.  No experiment can provide coverage at 100\% of
 \deltacp values, since CP violation effects vanish as $\mdeltacp\to 0$
 or $\pi$.
-
-\textbf{\boldmath Determination of $\sin^2{2\theta_{23}}$ and Octant
-  Resolution:} 
-  \fixme{Again, remove the heading}
   
 In long-baseline experiments with \numu beams, the
 magnitude of \numu disappearance and \nue appearance signals is
@@ -249,9 +255,18 @@ resolve the $\theta_{23}$ octant at the $3\sigma$ level or better for
 $\theta_{23}$ values less than $43^\circ$ or greater than $48^\circ$.
 A fully realized DUNE can measure $\theta_{23}$ with a precision of
 $1^\circ$ or less, even for values within a few degrees of
-$45^\circ$. Table~\ref{tab:execosctable} summarizes the exposures
-needed to reach a given level of precision on the value of
-$\theta_{23}$.
+$45^\circ$. 
+
+To summarize, DUNE long-baseline program will comple
+our understanding of the oscillation phenomenology. 
+DUNE has great prospects to discover CP-violation or in absence of
+effect, set stringent limits on the allowed values of the $\delta_{\rm CP}$
+phase. DUNE will also determine the neutrino mass hierarchy with better
+than a $5\sigma$~C.L.
+Table~\ref{tab:execosctable} summarizes the exposures
+needed to reach these oscillation physics
+ milestones. The numbers are for normal hierarchy using the current best fit values of the known oscillation parameters. The two columns
+    on the right are for different beam design assumptions. 
 
 \begin{cdrtable}[Exposures needed to reach physics
   milestones]{lcc}{execosctable}{The exposure in mass (kt) $\times$ proton beam power
@@ -371,12 +386,11 @@ extra-dimensional gauge bosons.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %
-\section{Precision Measurements with a High-Intensity Neutrino Source and High-Resolution Near Detector}
+\section{Precision Measurements with the DUNE Near Detector}
+%%\section{Precision Measurements with a High-Intensity Neutrino Source and High-Resolution Near Detector}
 
-\fixme{Can we shorten the title assuming a near detector is near a source and that source is the lbnf beam (i.e., high-intensity)? I propose: Precision Measurements with High-Resolution Near Detector}
-
-The DUNE near neutrino detector will provide precision measurements of
-neutrino interactions, which, in the medium-to-long term, are essential
+The DUNE near neutrino detector (ND) will provide precision measurements of
+neutrino interactions, which are essential
 for controlling the systematic uncertainties in the long-baseline
 oscillation physics program.  The near detector %, which will include argon targets, 
 will include argon targets and will measure the absolute flux and energy-dependent
@@ -388,24 +402,26 @@ four-momenta of secondary hadrons, such as charged and neutral mesons,
 produced in the neutral and charged current interactions that
 constitute the dominant backgrounds to the oscillation signals.
 
-With  \num{240000} (\num{85000}) %$\nu_\mu$ ($\overline{\nu}_\mu$) 
+The near detector will also be the source of data for a rich program of neutrino-interaction 
+physics in its own right. For an integrated beam intensity of 
+\num{1e20} %$1 \times 10^{20}$
+protons-on-target at \SI{120}{GeV}, the expected number
+of events per ton is 
+ \num{288000} (\num{96000}) %$\nu_\mu$ ($\overline{\nu}_\mu$) 
 \numu (\anumu) charged current 
-and \num{90000} (\num{35000})  neutral current interactions per ton per \num{1e20} %$1 \times 10^{20}$
-protons-on-target at \SI{120}{GeV}  in the $\nu$ ($\overline\nu$) beam, the near detector
-will also be the source of data for a rich program of neutrino-interaction 
-physics in its own right.  These numbers correspond to
+and \num{98000} (\num{43000})  neutral current interactions in the $\nu$ ($\overline\nu$) beam. These numbers correspond to
 \num{e7}  neutrino interactions per year for the range of beam
 configurations and near detector designs under consideration.
 Measurement of fluxes, cross sections and particle production over a
-large energy range of \SIrange{0.5}{50}{\GeV} (which can also help constrain
-backgrounds to proton decay signals from atmospheric neutrinos) are the key
-elements of this program.  
-Furthermore, since the near detector data will feature very large
-samples of events that are amenable to precision reconstruction and
-analysis, they can be exploited for sensitive studies of electroweak
+large energy range of \SIrange{0.5}{50}{\GeV} are the key
+elements of this program.  These events
+will also help constrain backgrounds to proton decay signals from atmospheric neutrinos.
+Furthermore, very large
+samples of events will be amenable to precision reconstruction and
+analysis, and will be exploited for sensitive studies of electroweak
 physics and nucleon structure, as well as for searches for new physics
-in unexplored regions (heavy sterile neutrinos, high-$\Delta m^2$
-oscillations, light Dark Matter particles, and so on). 
+in unexplored regions, such as heavy sterile neutrinos, high-$\Delta m^2$
+oscillations, light Dark Matter particles, and so on. 
 
 %Furthermore, since the near detector data will feature very large samples of events that are amenable to precision reconstruction and analysis, theycan be exploited for sensitive studies of electroweak physics andnucleon structure.  
 
@@ -428,34 +444,33 @@ addressed, based on potential scenarios for the deployment of DUNE
 detector modules, the beamline and PIP-II implementations. 
 %The present chapter concludes with a summary of its key points.
 
-In summary, the primary science goals of DUNE are drivers for the advancement of
-particle physics. The questions being addressed are of wide-ranging
-consequence: the origin of flavor and the generation structure of the
-fermions (i.e., the existence of three families of quark and lepton
-flavors), the physical mechanism that provides the CP violation needed
-to generate the Baryon Asymmetry of the Universe (BAU), and the high-energy
-physics that would lead to the instability of matter.  Achieving these
-goals requires a dedicated, ambitious and long-term program.  No other
-proposed long-baseline neutrino oscillation program with the
-scientific scope and sensitivity of DUNE is as advanced in terms of
-engineering development and project planning.  Implementation of a
-staged program with a far detector of even modest size in the initial
-stage (e.g., \SI{10}\kt) will enable exciting physics in the intermediate
-term, including a definitive mass hierarchy determination and a
-measurement of the CP phase without ambiguities, while providing the
-fastest route toward achieving the full range of DUNE's science
-objectives.  Should DUNE find that the CP phase is not zero or $\pi$,
-it will have found strong indications ($>3\sigma$) of leptonic CP
-violation.
+In summary, the primary science goals of DUNE are drivers for the
+advancement of particle physics. The questions being addressed are of
+wide-ranging consequence: the origin of flavor and the generation
+structure of the fermions (i.e., the existence of three families of
+quark and lepton flavors), the physical mechanism that provides the CP
+violation needed to generate the Baryon Asymmetry of the Universe
+(BAU), and the high-energy physics that would lead to the instability
+of matter.  Achieving these goals requires a dedicated, ambitious and
+long-term program.  No other proposed long-baseline neutrino
+oscillation program with the scientific scope and sensitivity of DUNE
+is as advanced in terms of engineering development and project
+planning.  Implementation of a staged program with a far detector of
+even modest size in the initial stage (e.g., \SI{10}\kt) will enable
+exciting physics in the intermediate term, including a definitive mass
+hierarchy determination and a measurement of the CP phase without
+ambiguities, while providing the fastest route toward achieving the
+full range of DUNE's science objectives.  Should DUNE find that the CP
+phase is not zero or $\pi$, it will have found strong indications
+($>3\sigma$) of leptonic CP violation.
 
 The DUNE experiment is a world-leading international physics
-experiment, bringing together the %world's 
-global neutrino community as well
-as leading experts in nucleon decay and particle astrophysics to
-explore key questions at the forefront of particle physics and
-astrophysics. The highly capable beam and detectors will enable a
-large suite of new physics measurements with potential groundbreaking
-discoveries.
+experiment, bringing together the %world's
+global neutrino community as well as leading experts in nucleon decay
+and particle astrophysics to explore key questions at the forefront of
+particle physics and astrophysics. The highly capable beam and
+detectors will enable a large suite of new physics measurements with
+potential groundbreaking discoveries.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
