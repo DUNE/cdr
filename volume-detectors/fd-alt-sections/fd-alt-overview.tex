@@ -2,9 +2,9 @@
 \section{Overview}
 \label{sec:detectors-fd-alt-ov}
 
-This chapter describes an alternate design for one or more DUNE far
-detector modules. The first module to be installed will use the
-reference design. This alternate design implements a dual-phase liquid
+This chapter describes an alternative far detector design for DUNE.
+The first detector module to be installed will use the
+reference design, however this alternative design could be used for one or more subsequent modules. This design implements a dual-phase liquid
 argon time projection chamber (LArTPC) augmented with a light-readout
 system. ``Dual-phase'' refers to the extraction of ionization
 electrons at the interface between liquid and gas argon and their
@@ -12,7 +12,7 @@ amplification and collection in the gas phase.
 
 The scope of the dual-phase far detector includes the design,
 procurement, fabrication, testing, delivery, installation and
-commissioning of the detector components:
+commissioning of the detector components
 \begin{itemize}
 \item Charge-Readout Planes (CRP)
 \item Field Cage and High-Voltage System  
@@ -21,42 +21,52 @@ commissioning of the detector components:
 \item Light-Readout System
 \end{itemize}
 
-The components and the liquid argon will be housed in cryostats
+The components and the liquid argon (LAr) will be housed in cryostats
 provided by LBNF, described in \vollbnf.  As for the reference design
-far detector, this alternate design satisfies the DUNE physics
-requirements already described in the reference design chapter. Some
-additional parameters specific to the dual-phase design are listed
-in Table~\ref{tab:FD_req}. The alternate design provides as well some
-improvements with respect to the reference design (larger S/N and
-lower detection threshold, smaller pitch, smaller number of readout
-channels, two identical collection views, absence of dead material in
-the liquid argon volume) which will be described in more details in
-this section.
-\begin{cdrtable}[Alternate Far Detector design parameters]{llll}{FD_req}{Sub-set of performance parameters specific to the alternate far detector design.}  
+far detector, this alternative design satisfies the DUNE physics
+requirements already described in the reference design chapter. %Some 
+Additional parameters specific to the dual-phase design are listed
+in Table~\ref{tab:FD_req}. 
+
+This design incorporates some
+improvements with respect to the reference design, namely a larger signal-to-noise ratio, 
+a lower detection threshold, a smaller pitch, a smaller number of readout
+channels, two identical collection views, and the absence of dead material \fixme{dead material or space?}  in
+the LAr volume. These advantages will be described in
+this chapter, and are covered in detail in \anxlbnob. \fixme{right annex?}
+
+\begin{cdrtable}[Dual-phase (alternative) far detector design parameters]{llll}{FD_req}{Subset of performance parameters specific to the alternative far detector design.}  
 Parameter & Requirement & Achieved Elsewhere & Expected Performance \\ \toprowrule
 Gas phase gain & 20 & 200 & 20-100  \\ \colhline
 Electron Lifetime & 3~ms &  $>3$~ms 35-t membrane cryostat & $>5$~ms \\ \colhline
 Minimal S/N Ratio after 12 m drift & 9:1 &  $>100$:1 & 12:1-60:1  \\ \colhline
 \end{cdrtable}
 
-The alternate design is the result of 13 years of R\&D and two
-programs funded by the European Union, the LAGUNA-LBNO design study
+\fixme{Parameters table: design or performance parameters? Pick one!}
+
+The alternative design is the %result 
+culmination of 13 years of R\&D and %two programs , <---- 2 programs was confusing (anne)
+\fixme{It said `two programs' then said `the LAGUNA-LBNO study'; are the two programs laguna
+and lbno, or is there another that wasn't named? glacier?}
+the LAGUNA-LBNO design study, funded by the European Union, 
 concluded in August 2017.  In collaboration with industrial partners,
-LAGUNA-LBNO defined an optimized and cost-effective configuration for
-a long-baseline experiment incorporating technological developments
-and innovative solutions. The studies were focused on the underground
-implementation of a very large liquid argon detector (GLACIER) and
-beyond the dual-phase readout concept involved many technical aspects
-such as the tank, the field cage, the cathode as well as the logistics
+LAGUNA-LBNO defined \fixme{designed?} an innovative, optimized and cost-effective configuration for
+a long-baseline experiment. \fixme{ incorporating technological developments  (why does this need to be stated?}. 
+%
+The studies \fixme{one or two?} were focused on the underground
+implementation of a very large LAr detector (GLACIER) and
+beyond the dual-phase readout concept, involved many technical aspects \fixme{aspects or advances?}
+such as the tank, the field cage and the cathode, as well as the logistics of 
 the detector assembly sequence and full costing. The full design and
 the related technical developments are described in the deliverable
 documents submitted to the EU at the conclusion of the design study,
 included with this CDR as \anxlbnoa and \anxlbnob.
 
-%The alternate detector benefits from 13 years of R\&D activity and two programs funded by the European Union for a total budget of 17 Million Euros which resulted in the LAGUNA-LBNO design study concluded in August 2014. The LAGUNA-LBNO design study allowed to define, in collaboration with several industrial partners, an optimized configuration for a long baseline experiment  experiment with associated technological developments, innovative solutions and full costing. In particular, since the very beginning, these studies were focused on the underground implementation of a very large liquid argon detector (GLACIER) aiming at optimizing the construction and installation costs and making affordable the detector implementation and operation. This optimization concerned not only the dual-phase readout concept but also many technical aspects related to the underground design and implementation such as the tank, the field cage, the cathode  and the definition of the logistics and the detector assembly sequence. All these technical developments are described in the deliverable documents submitted to the EU at the conclusion of the design study \cite{LAGUNA-LBNO-deliv}
 
 Following the GLACIER concept \cite{LAGUNA-LBNO-deliv} (see
-Figure~\ref{fig:LBNO_50}), the dual-phase LArTPC detector has a fully
+Figure~\ref{fig:LBNO_50}), 
+\fixme{glacier is the name of the detector associated with the LBNO project?}
+the dual-phase LArTPC detector design for DUNE has a fully
 homogeneous liquid argon volume, where electrons drift vertically
 towards the liquid-vapor interface. From there they are extracted from
 the liquid into the gas phase, amplified, and collected on a segmented
@@ -65,54 +75,71 @@ electron amplification in the gas phase enables a robust and tunable
 signal-to-noise ratio. Amplification of the ionization charges in the
 extremely pure argon gas is achieved by using micro-pattern avalanche
 gas detectors (Large Electron Multiplier, LEM). The detector
-configuration is similar to a single-phase LArTPC but the features of
+configuration is similar to a single-phase LArTPC but the features \fixme{specify which features}  of
 the dual-phase design enable very long drift paths and large detector
-dimensions while minimizing the number of readout channels.
-\begin{cdrfigure}[The 50-kt LBNO detector]{LBNO_50}{The 50-kt LBNO detector}
+dimensions \fixme{at this point the reader has no idea how big this thing is or how long the drift
+paths are; maybe add these parameters to the table?} while minimizing the number of readout channels.
+
+\begin{cdrfigure}[The \ktadj{50} LBNO detector, GLACIER]{LBNO_50}{The \ktadj{50} LBNO detector, GLACIER}
 \includegraphics[width=0.9\linewidth]{LBNO50kton2}
 \end{cdrfigure}
+
+\fixme{Add a little more description in the figure caption; include dimensions}
 
 An extraction efficiency of 100\% of the electrons from the liquid to
 the gas phase is achieved with an electric field of the order of
 2~kV/cm created by a submersed grid at the liquid-gas interface. The
 ionization charge is then amplified by avalanches occurring in the gas
 in the micro-pattern structure of the LEM and collected in a
-2-dimensional readout plane on the top of the volume. Readout units,
+2D readout plane on the top of the \fixme{gas or liquid?} volume. Readout units,
 combining both the amplification and collection functions have an area
-of 0.5$\times$0.5~m$^2$ and are finely segmented with a 3.125~mm
-pitch strips. The typical amplification achieved in this configuration
-is around 20--100. It allows to compensate for the charge losses due to
+%<<<<<<< Updated upstream
+ %=======
+of $0.5\times 0.5$~m$^2$ and are finely segmented with 3.125-mm-pitch 
+strips. The typical amplification achieved in this configuration
+is around 20-100, \fixme{Given this range, do you need the word `about'?}
+which %allows to 
+compensates for the charge losses that occur due to
 the presence of electronegative impurities along very long drift
-paths. Although the dual-phase TPC has longer drift length, it should
-be noted that it requires a liquid argon purity around 0.1~ppb 
-(100~ppt) of oxygen equivalent (3~ms electron lifetime), similarly as
-for the single-phase TPC. These conditions can be reached by starting
+paths. Although the dual-phase TPC has a longer drift length, it should
+be noted that it requires a LAr purity similar to that
+for the single-phase TPC, 
+around 0.1~ppb (or 100~ppt) of oxygen equivalent, corresponding to a 3~ms electron lifetime.
+% These conditions 
+This level of purity can be reached by starting
 from commercially available ppm-level bulk argon and filling a
-non-evacuated vessel \cite{WA105_TDR}. The S/N ratio can exceed 100
-for a particle at the ionization minimum (MIP) after a drift path of
-12~m (for instance with an electron lifetime of 3~ms, a drift field of
-0.5~kV/cm and a LEM gain of 180). With the same drift field and
-electron lifetime conditions and a LEM gain of 25 the S/N is larger
-than 50:1 for the first 6~m of drift and reaches 14:1 for MIP tracks
-after 12~m of drift.
+non-evacuated vessel~\cite{WA105_TDR}. \fixme{That's all? Buy and fill?} The S/N ratio can exceed 100
+for a minimum ionizing particle (MIP) after a drift path of
+12~m (assuming an electron lifetime of 3~ms, a drift field of
+0.5~kV/cm and a LEM gain of 180). With the same drift field, 
+electron-lifetime conditions and a LEM gain of \fixme{only} 25, the S/N is larger
+than 50:1 for the first 6~m of drift; it reaches 14:1 for MIP tracks
+after 12~m of drift. \fixme{Do you mean: S/N is greater than 50:1 for tracks that are up to 6~m long, but only 14:1 for tracks longer than 12~m? The wording makes it sound like different values for different points in the track which doesn't make sense to me.}
 
-The drift field (E${\simeq}$0.5--1.0~kV/cm) inside the fully active
+The single \fixme{added `single'} drift field (E${\simeq}$0.5--1.0~kV/cm) inside the fully active
 LAr volume is produced by applying high voltage to the cathode plane
 at the bottom of the cryostat and is kept uniform by a stack of
-equally spaced field shaping electrodes (field cage) polarized at
+equally spaced field-shaping electrodes (field cage) polarized at
 linearly decreasing voltage from the cathode voltage to ground. Each
-electrode is made are made from stainless-steel tubes along a
+electrode is made from stainless-steel tubes 
+\fixme{one electrode made from one tube?} along a
 rectangular path with round corners. The field cage is held in place
-by insulating mechanical structures hung from the top deck of the
-vessel.  The cathode structure is suspended from the field cage. The
-cathode plane is gridded and is transparent to allow the detection of
-the scintillation light by uniform arrays of photomultipliers mounted
-at the bottom of the tank, 1~m below the cathode surface.
+\fixme{changes here}
+by mechanical structures hung from the top deck of the
+vessel that also provide insulation.  The cathode structure is suspended from the field cage. The
+cathode plane is gridded \fixme{in the form of a grid? What is gridded? Is it not solid, or is it solid and transparent?} and is transparent in order to allow scintillation light to pass through and be
+detected by uniform arrays of photomultipliers mounted
+at the bottom of the tank, 1~m below the cathode surface. \fixme{if the cathode is thick enough that you
+need to specify `surface', is it 1 m below the top or bottom surface?}
 
-The drift field is closed at the top by the anode. It consists of a
-collection of modules for the charge readout: Charge Readout Planes
-(CRPs). Each CRP is composed of several 0.5$\times$0.5~m$^2$ readout
-units and it is independently suspended with stainless-steel ropes
+The drift field is %closed 
+bordered at the top by the anode, which consists of a
+collection of %modules 
+devices for the charge readout called Charge Readout Planes %%%%% Anne to here 5/13
+(CRPs). Each CRP is composed of several $0.5\times 0.5$-m$^2$ readout
+units and is independently suspended with stainless-steel ropes
+% end>>>>>>> Stashed changes
+%%%%%%%%%%
 linked to the top deck. This suspension system allows to adjust the
 CRP distance and parallelism with respect to the LAr surface. The
 electrical signals from the collected charges are then passed outside
