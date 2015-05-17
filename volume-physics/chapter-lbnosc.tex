@@ -796,8 +796,8 @@ the MH determination, it's not possible for any experiment to provide
 \begin{cdrtable}[Required exposure for a CP-violation measurement]{lcc}{cpv_requiredexposure}{The minimum exposure required to determine CP violation with a significance of 3$\sigma$ for 75\% of \deltacp values or 5$\sigma$ for 50\% of \deltacp values for the CDR reference beam design and the optimized beam design.}
  Significance & CDR Reference Design & Optimized Design\\
  \toprowrule
- 3$\sigma$ for 75\% of \deltacp values & \SI{1325}~\ktMWyr{} & \SI{855}~\ktMWyr{} \\
- 5$\sigma$ for 50\% of \deltacp values & \SI{815}~\ktMWyr{} & \SI{550}~\ktMWyr{}\\
+ 3$\sigma$ for 75\% of \deltacp values & \SI{1320}~\ktMWyr{} & \SI{850}~\ktMWyr{} \\
+ 5$\sigma$ for 50\% of \deltacp values & \SI{810}~\ktMWyr{} & \SI{550}~\ktMWyr{}\\
 \end{cdrtable}
 
 Figures~\ref{fig:cpv_theta23}, \ref{fig:cpv_theta13}, and \ref{fig:cpv_deltamsq} show the variation in the CP sensitivity due to different values of $\theta_{23}$, $\theta_{13}$, and \dm{31} within the allowed ranges.  The value of $\theta_{23}$ has the biggest impact on the sensitivity, and the least favorable scenario corresponds to a value of $\sin^2{\theta_{23}}$ at the high end of its 
@@ -896,7 +896,18 @@ Figure~\ref{fig:octant} shows the sensitivity to determining the octant as a fun
 \end{cdrfigure}
 
 
-As mentioned in Section~\ref{sec:physics-lbnosc-cpv}, DUNE will seek not only to demonstrate explicit CP violation by observing a difference in the neutrino and antineutrino oscillation probabilities, but also to measure the value of the parameter \deltacp.  Figure~\ref{fig:res_cp} shows the resolution of \deltacp as a function of exposure for a CP-conserving value (\deltacp = 0) and the value that gives the maximum CP violation for normal MH (\deltacp = 90\mbox{$^{\circ}$}).  Minimum exposures of approximately \SI{445}~\ktMWyr{} and \SI{285}~\ktMWyr{} are required to measure \deltacp with a resolution of 10\mbox{$^{\circ}$}  for the CDR reference beam design and the optimized beam design, respectively, for a true value $\mdeltacp = 0$.
+As mentioned in Section~\ref{sec:physics-lbnosc-cpv}, DUNE will seek
+not only to demonstrate explicit CP violation by observing a
+difference in the neutrino and antineutrino oscillation probabilities,
+but also to measure the value of the parameter \deltacp.
+Figure~\ref{fig:res_cp} shows the resolution of \deltacp as a function
+of exposure for a CP-conserving value (\deltacp = 0) and the value
+that gives the maximum CP violation for normal MH (\deltacp =
+90\mbox{$^{\circ}$}).  Minimum exposures of approximately
+\SI{450}~\ktMWyr{} and \SI{290}~\ktMWyr{} are required to measure
+\deltacp with a resolution of 10\mbox{$^{\circ}$} for the CDR
+reference beam design and the optimized beam design, respectively, for
+a true value $\mdeltacp = 0$.
 
 \begin{cdrfigure}[Resolution of \deltacp as a function of exposure]{res_cp}{The resolution of a measurement of \deltacp as a function of exposure assuming normal MH.  The resolution is shown for a CP-conserving value (\deltacp = 0) and the value that gives the maximum CP violation for normal MH (\deltacp = 90\mbox{$^{\circ}$}). The shaded region represents the range in sensitivity due to potential variations in the beam design.  }
  \includegraphics[width=0.7\textwidth]{res_dcp_exp}
@@ -973,11 +984,10 @@ The reference beam design is based on the designs of targets and
 focusing systems for NuMI. These designs are well understood and have
 proven track records of reliability and performance. The LBNF
 reference design includes a target similar to the one used for the
-low-energy tune of the NuMI beam~\cite{numitdr}, 
-\fixme{fix ref} but with a larger
+low-energy tune of the NuMI beam~\cite{Anderson:1998zza},  but with a larger
 thickness to accommodate the \MWadj{1.2} primary proton beam, and focusing
 horns essentially identical to those currently in operation in the
-NuMI beamline. %~\cite{numitdr}. 
+NuMI beamline. %~\cite{Anderson:1998zza}. 
 The target consists of 47 graphite
 segments, for a total length of 95~cm including the space between
 segments, corresponding to two interaction lengths. The upstream face
@@ -1324,7 +1334,8 @@ antineutrino channels are advantageous.
 The technical designs of LBNF and the DUNE detectors must fulfill the
 scientific objectives described in Chapter~\ref{ch:physics-goals}. The
 following is a summary of the high-level scientific requirements for
-the neutrino oscillation physics.
+the neutrino oscillation physics. Details of the scientific and technical 
+requirements for LBNF/DUNE deriving from the scientific objectives can be found in reference~\cite{lbnfdune-cdr-req}.
 
 \subsection{Neutrino Beam Requirements}
 \label{sec:physics-lbnosc-beam-req}
@@ -1341,60 +1352,68 @@ decades. The energy range of the neutrino beam must be adaptable, in
 order to address new questions in neutrino physics that may come up
 during such a long period.
 
-The DUNE experiment requires that the LBNF facility
+The DUNE experiment requires that the LBNF facility provides a
+neutrino beamline and the conventional facilities to support it. The
+global science requirements on the LBNF beamline are as follows:
+
 \begin{itemize} 
-\item shall generate a high-intensity, wide-band neutrino beam,
-  selectable for muon neutrinos or muon antineutrinos with a low
-  contamination of electron and wrong-sign neutrinos.
+\item The neutrino beam spectrum shall cover the energy
+  region of the first two oscillation maxima affected by muon-neutrino
+  conversion from the atmospheric parameters. For a baseline of 1300
+  km, with the current knowledge of parameters, the first two nodes
+  are expected to be approximately 2.4 and 0.8 GeV. The matter effects
+  dominate over the CP effects above 3 GeV and the CP effect dominates
+  below 1.5 GeV. Adequate number of electron neutrino events with good
+  energy resolution will allow DUNE to exploit this spectral
+  information to determine mass hierarchy, CP phase, and a precise
+  value of $\theta_{13}$ unambiguously. The beam spectrum will also
+  allow muon disappearance measurement with two nodes.
+
+\item The beam shall be sign-selected to provide separate neutrino and
+  anti-neutrino beams with high purity to enable measurement of CP
+  violation mass hierarchy, and precision oscillation measurement.
+
+\item The electron neutrino content in the beam shall be kept small so
+  that the systematic errors on the additional background has a small
+  impact on the CP phase measurement (compared to the statistical
+  error).
+
+\item The neutrino beam spectrum shall extend beyond the first maximum
+  to higher energies, while maintaining a high signal to background
+  ratio to obtain the maximum number of charged current signal events.
+  This will allow precision probes of the PMNS parameters that govern
+  neutrino oscillations.
+
+\item The beam shall be aimed at the far detector with an angular
+  accuracy that allows the determination of the far detector spectrum
+  using the near detector measurements.  The angular accuracy shall
+  not be the dominant factor in the determination of oscillation
+  parameters.
   
-\item shall fully cover the energy range of the first oscillation
-  node, which ranges from $\sim1$~GeV to $\sim5$~GeV and peaks at
-  $\sim2.4$~GeV for a \kmadj{1300} baseline. It shall also provide a
-  neutrino flux as high as reasonably achievable around the second
-  oscillation node, which peaks at $\sim0.8$~GeV, possibly requiring
-  a dedicated focusing configuration. An energy range extending
-  from 0.5 to 5~GeV is necessary to provide the maximum sensitivity
-  for CP-violation searches and the determination of the neutrino mass
-  hierarchy. Focusing configurations providing neutrino energies
-  higher than 5~GeV may also be required for a full exploration of the
-  three-neutrino paradigm and to address anomalies that may arise
-  during the two-decade lifetime of the experiment. 
-  
-\item shall be capable of operating with a single-turn, fast-extracted
-  primary proton beam from the Main Injector with greater than 2~MW of
-  power. It must be able to accept proton momenta between 60 and 120~GeV/c, 
-  since this will enable some optimization of the neutrino
-  energy spectrum. The capability to lower the energy of the protons
-  is also an effective way to reduce the wrong-sign component in the
-  neutrino flux. A reduction of up to $\sim15\,\%$ in beam power is
-  expected as the momentum of the primary protons decreases from 120
-  to 60~GeV/c, since the Main Injector cycle time does not scale
-  linearly with the energy of the accelerated protons.
-  Table~\ref{tab:beam_req_pot} gives a summary of the expected number
-  of protons on target per year at various momenta assuming a combined
-  uptime and efficiency of 56\%.
-  
-\item shall be built to provide a realistic estimation and whenever
-  possible a reduction of the systematic errors on the neutrino flux
-  prediction, e.g., by adequate requirements on the alignment
-  tolerances of the beamline components. Dedicated hadroproduction
-  measurements from 60 to \GeVadj{120} %GeV/c 
-  protons will be needed to reduce the
-  uncertainty on the neutrino flux components, both from pion and kaon
-  decays.
-  
-\item shall be built to ensure the stability of the produced neutrino
-  flux by minimizing variations in targeting angle and position of the
-  primary proton beam, short- and long-term displacement of the
-  components of the focusing system, and variations in the current
-  pulse to the horns.
+\item The beam shall be capable of operating with a single-turn,
+  fast-extracted primary proton beam from the Main Injector with
+  greater than 2~MW of power. The fast extraction enables short spills
+  which are essential for good cosmic ray background rejection for
+  detectors. 
+
+\item The beamline shall be able to accept a range of Main Injector
+  proton energies that is well matched to the oscillation physics
+  requirements. Proton beam energies of around \SI{60}\GeV{} are
+  optimal for measurement simultaneous measurements of CP violation
+  and MH, while higher energy beams (the maximum possible from the
+  Main Injector is \SI{150}\GeV) can probe physics beyond the 3-flavor
+  mixing, and probe $\nu_\tau$ appearance with higher statistics. The
+  power and protons-on-target available from the MI as a function of
+  proton beam energy is summarized in Table~\ref{tab:beam_req_pot}.
+ 
 \end{itemize}
 
 
 \subsection{Far Detector Requirements}
 \label{sec:physics-lbnosc-fd-req}
 
-The DUNE Far Detector (FD) requirements relevant to long-baseline neutrino oscillation physics include:
+The DUNE Far Detector (FD) requirements relevant to long-baseline
+neutrino oscillation physics include:
 \begin{itemize}
 \item Identification of Electron Neutrino and Antineutrino Events: The
   FD shall be capable of identifying electron neutrino and
@@ -1419,7 +1438,10 @@ The DUNE Far Detector (FD) requirements relevant to long-baseline neutrino oscil
   conversion for the two cases of neutrino mass ordering can be
   clearly separated from the variation due to the CP phase, leading to
   unique determination of the CP phase.
- \item  Cosmic Ray Shielding: The FD shall be located at a depth to reduce the number of in-time (within the beam spill time) cosmic ray background so that it does not contribute more than 1\% of the final beam neutrino sample. 
+\item Cosmic Ray Shielding: The FD shall be located at a depth to
+  reduce the number of in-time (within the beam spill time) cosmic ray
+  background so that it does not contribute more than 1\% of the final
+  beam neutrino sample.
  \item CP Phase Measurement: The total number of observed
    electron-neutrino and electron-antineutrino type events --
    including consideration of background -- shall be sufficient to
@@ -1449,7 +1471,10 @@ neutrino oscillation physics include:
   spectra separately.  See Sections~\ref{sec:syst_just_flux}
   \ref{sec:syst_studies_ind} for discussions of the required flux
   uncertainty and current studies.
- \item Electron Neutrino and Antineutrino Flux measurements: The ND shall measure the electron-neutrino and antineutrino contamination spectra of the beam separately in order to render the CP measurement as precise as possible.
+\item Electron Neutrino and Antineutrino Flux measurements: The ND
+  shall measure the electron-neutrino and antineutrino contamination
+  spectra of the beam separately in order to render the CP measurement
+  as precise as possible.
  \item Background Measurements: The ND shall measure rates, kinematic
    distributions and detailed topologies of physics processes that
    could mimic signal events in the FD nuclear targets. This
