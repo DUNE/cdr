@@ -52,8 +52,9 @@ exposure of \SI{300}\ktMWyr{} corresponds to seven years of data
 (\num{3.5} years in neutrino mode plus \num{3.5} years in antineutrino
 mode) with a \ktadj{40} detector and a \SI{1.07}\MW{} beam.
 
-For the estimate of the sensitivity of DUNE as a function of real time
-for the first \num{10} years of operation, a staging plan is assumed 
+To produce an estimate estimate of the sensitivity of DUNE as a 
+function of real time
+for the first \num{15} years of operation, a staging plan is assumed 
 to determine the reachable
 exposure as a function of the running years. For the discussions below,
 the following staging plan has
@@ -86,11 +87,15 @@ strengths: sensitivity to the matter effect. This effect leads to a
 discrete asymmetry in the \numu $\to$ \nue versus \anumu $\to$ \anue
 %$\nu_\mu\to \nu_e$ versus $\overline{\nu}_\mu \to \overline{\nu}_e$
 oscillation probabilities, the sign of which depends on the presently
-unknown mass hierarchy (MH).  At 1300~km this asymmetry is
-approximately $\pm 40\%$ in the region of the peak flux; this is
-larger than the maximal possible CP-violating asymmetry associated
-with \deltacp, meaning that both the MH and \deltacp can be determined
-unambiguously with high confidence within the same experiment.
+unknown mass hierarchy (MH).  At 1300~km this asymmetry, defined as:
+\begin{equation}
+\mathcal{A} = \frac{ P(\nu_\mu \rightarrow \nu_e)-P(\bar{\nu}_\mu \rightarrow \bar{\nu}_e)}{P(\nu_\mu \rightarrow \nu_e)+P(\bar{\nu}_\mu \rightarrow \bar{\nu}_e)}
+\end{equation}
+is approximately $\pm 40\%$ in the region of the peak flux in the
+absence of CP violating effects. This is larger than the maximal
+possible CP-violating asymmetry associated with the CP violating phase, \deltacp, of the 3-flavor PMNS mixing matrix, meaning that both the MH
+and \deltacp can be determined unambiguously with high confidence
+within the same experiment. 
 
 In detail, the sensitivity of DUNE depends on the actual values of
 poorly known mixing parameters (mainly \deltacp and
@@ -108,7 +113,7 @@ by considering the difference, denoted $\Delta \chi^2$, between the
 $-2\log{\cal L}$ values calculated for the normal and inverted
 hierarchy. As the sensitivity depends on the true value of the unknown
 CP violating phase, \deltacp, all possible values of \deltacp are
-considered.  \footnote{For the case of the MH determination, the usual
+considered  \footnote{For the case of the MH determination, the usual
   association of this test statistic with a $\chi^2$ distribution for
   one degree of freedom is incorrect; additionally the assumption of a
   Gaussian probability density % added 'a'
@@ -118,7 +123,7 @@ considered.  \footnote{For the case of the MH determination, the usual
 sensitivity of DUNE with an exposure of \SI{300}\ktMWyr{} is
 illustrated in Figure~\ref{fig:mhexec} for the case of normal
 hierarchy and the current best fit value of \sinst{23} =
-\SI{45}. %$\sin^2 \theta_{23} = 0.45$.
+\SI{0.45}. %$\sin^2 \theta_{23} = 0.45$.
 %
 \begin{cdrfigure}[Summary of mass hierarchy sensitivities]{mhexec}{The
     square root of the mass hierarchy discrimination metric $\Delta
@@ -165,11 +170,9 @@ current studies indicate a weak dependence on systematic
 uncertainties. This indicates that a measurement of the unknown
 neutrino mass hierarchy with very high precision can be carried out
 during the first few years of operation with an optimized beamline
-design.
-
-Concurrent analysis of the corresponding atmospheric-neutrino samples
-in an underground detector will improve the precision and speed with
-which the MH is resolved.
+design. Concurrent analysis of the corresponding atmospheric-neutrino
+samples in an underground detector will improve the precision and
+speed with which the MH is resolved.
 
 %It is important to note that for the
 %initial stages of DUNE, a greatly improved level of precision in the
@@ -191,15 +194,28 @@ somewhat distinct objectives.  First, DUNE aims to observe a signal
 for leptonic CP violation independent of the underlying nature of
 neutrino oscillation phenomenology. Such a signal will be observable
 in comparisons of $\nu_\mu \rightarrow \nu_e$ and $\bar{\nu}_{\mu}
-\rightarrow \bar{\nu}_e$ oscillations of the LBNF beam neutrinos over
-the \SIadj{1300}{\km} baseline. In the three-flavor mixing model
-described by the PMNS matrix, CP violating effects occur for values
-of \deltacp not equal zero or $\pi$. Second, DUNE aims to make a precise
-determination of the value of \deltacp within the context of the
-standard three-flavor mixing scenario described by the PMNS neutrino
-mixing matrix. Together, the pursuit of these two goals provides a
-thorough test of the standard three-flavor scenario.
-
+\rightarrow \bar{\nu}_e$ oscillations of the LBNF beam neutrinos in a
+wide range of neutrino energies over the \SIadj{1300}{\km} baseline. In the
+three-flavor mixing model described by the PMNS matrix, CP violating
+effects occur for values of \deltacp not equal zero or $\pi$. Second,
+DUNE aims to make a precise determination of the value of \deltacp
+within the context of the standard three-flavor mixing scenario
+described by the PMNS neutrino mixing matrix. Together, the pursuit of
+these two goals provides a thorough test of the standard three-flavor
+scenario.
+%
+\begin{cdrfigure}[CP violation sensitivity and $\delta_{\rm CP}$
+  resolution as a function of exposure]{execsummaryCP}{The
+    significance with which CP violation can be determined for 75\% of
+    \deltacp values (left) and the expected 1$\sigma$ resolution
+    (right) as a function of exposure in years using the proposed
+    staging plan outlined in this Chapter. The shaded region
+    represents the range in sensitivity due to potential variations in
+    the beam design. This plot assumes normal mass hierarchy.}
+\includegraphics[width=0.49\textwidth]{volume-physics/figures/cpv75_exp_staging15yr}
+ \includegraphics[width=0.49\textwidth]{volume-physics/figures/dcp_exp_staging.pdf}
+\end{cdrfigure}
+%
 Figure~\ref{fig:execsummaryCP} shows the expected sensitivity to CP
 violation as well as the 1$\sigma$ resolution for \deltacp as a
 function of exposure.  The exposure in detector mass (kiloton)
@@ -216,21 +232,9 @@ DUNE operating with multi-megawatt
 beam power can eventually achieve a precision 
 comparable to the current precision on the CP phase in the
 CKM matrix in the quark sector (5\%).
-%
-\begin{cdrfigure}[CP violation sensitivity and $\delta_{\rm CP}$
-  resolution as a function of exposure]{execsummaryCP}{The
-    significance with which CP violation can be determined for 75\% of
-    \deltacp values (left) and the expected 1$\sigma$ resolution
-    (right) as a function of exposure in years using the proposed
-    staging plan outlined in this Chapter. The shaded region
-    represents the range in sensitivity due to potential variations in
-    the beam design. This plot assumes normal mass hierarchy.}
-\includegraphics[width=0.49\textwidth]{volume-physics/figures/cpv75_exp_staging15yr}
- \includegraphics[width=0.49\textwidth]{volume-physics/figures/dcp_exp_staging.pdf}
-\end{cdrfigure}
-%
-To reach $5\sigma$ sensitivity for 50\% of the range of \deltacp, a
-DUNE exposure in the range of \num{550} to \SI{810}\ktMWyr{}  is needed. The
+
+To reach $5\sigma$ sensitivity for 75\% of the range of \deltacp, a
+DUNE exposure in the range of \num{850} to \SI{1320}\ktMWyr{}  is needed. The
 range of exposures corresponds to potential variations in the beam
 design, with the highest exposures corresponding to the reference beam
 design. Table~\ref{tab:execosctable} summarizes the exposures needed to
@@ -250,6 +254,25 @@ the statistical uncertainties in the far detector needed to reach this
 level of sensitivity.  No experiment can provide coverage at 100\% of
 \deltacp values, since CP violation effects vanish as $\mdeltacp\to 0$
 or $\pi$.
+%
+\begin{cdrtable}[Exposures needed to reach physics
+  milestones]{lcc}{execosctable}{The exposure in mass (kt) $\times$ proton beam power
+    (MW) $\times$ time (years) needed to reach certain oscillation physics
+    milestones. The numbers are for normal hierarchy using the current best fit values of the known oscillation parameters. The two columns
+    on the right are for different beam design assumptions. }
+Physics milestone & Exposure \ktMWyr{} & Exposure \ktMWyr{}\\ \rowtitlestyle
+  & (reference beam) & (optimized beam) \\ \toprowrule 
+  $1^\circ$ $\theta_{23}$ resolution ($\theta_{23} = 42^\circ$) & 70  &  45\\ \colhline
+  CPV at $3\sigma$ ($\delta_{\rm CP} = +\pi/2$)  & 70 & 60 \\ \colhline
+  CPV at $3\sigma$ ($\delta_{\rm CP} = -\pi/2$)  & 160 & 100 \\ \colhline
+  CPV at $5\sigma$ ($\delta_{\rm CP} = +\pi/2$)  & 280 & 210 \\ \colhline
+  MH at  $5\sigma$ (worst point) & 400 & 230 \\ \colhline
+  $10^\circ$ resolution ($\delta_{\rm CP} = 0$) & 450 & 290 \\ \colhline
+  CPV at $5\sigma$ ($\delta_{\rm CP} = -\pi/2$)  & 525 & 320 \\ \colhline
+  CPV at $5\sigma$ 50\% of \deltacp & 810 & 550 \\ \colhline 
+  Reactor $\theta_{13}$ resolution ($\sin^2 2 \theta_{13} = 0.084 \pm 0.003$) & 1200 & 850 \\ \colhline
+  CPV at $3\sigma$ 75\% of \deltacp & 1320 & 850\\ \colhline 
+\end{cdrtable}
   
 In long-baseline experiments with \numu beams, the
 magnitude of \numu disappearance and \nue appearance signals is
@@ -278,26 +301,7 @@ Table~\ref{tab:execosctable} summarizes the exposures
 needed to reach these oscillation physics
  milestones. The numbers are for normal hierarchy using the current best fit values of the known oscillation parameters. The two columns
     on the right are for different beam design assumptions. 
-%
-\begin{cdrtable}[Exposures needed to reach physics
-  milestones]{lcc}{execosctable}{The exposure in mass (kt) $\times$ proton beam power
-    (MW) $\times$ time (years) needed to reach certain oscillation physics
-    milestones. The numbers are for normal hierarchy using the current best fit values of the known oscillation parameters. The two columns
-    on the right are for different beam design assumptions. }
-Physics milestone & Exposure \ktMWyr{} & Exposure \ktMWyr{}\\ \rowtitlestyle
-  & (reference beam) & (optimized beam) \\ \toprowrule 
-  $1^\circ$ $\theta_{23}$ resolution ($\theta_{23} = 42^\circ$) & 70  &  45\\ \colhline
-  CPV at $3\sigma$ ($\delta_{\rm CP} = +\pi/2$)  & 70 & 60 \\ \colhline
-  CPV at $3\sigma$ ($\delta_{\rm CP} = -\pi/2$)  & 160 & 100 \\ \colhline
-  CPV at $5\sigma$ ($\delta_{\rm CP} = +\pi/2$)  & 280 & 210 \\ \colhline
-  MH at  $5\sigma$ (worst point) & 400 & 230 \\ \colhline
-  $10^\circ$ resolution ($\delta_{\rm CP} = 0$) & 450 & 290 \\ \colhline
-  CPV at $5\sigma$ ($\delta_{\rm CP} = -\pi/2$)  & 525 & 320 \\ \colhline
-  CPV at $5\sigma$ 50\% of \deltacp & 810 & 550 \\ \colhline 
-  Reactor $\theta_{13}$ resolution ($\sin^2 2 \theta_{13} = 0.084 \pm 0.003$) & 1200 & 850 \\ \colhline
-  CPV at $3\sigma$ 75\% of \deltacp & 1320 & 850\\ \colhline 
 
-\end{cdrtable}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -413,26 +417,28 @@ four-momenta of secondary hadrons, such as charged and neutral mesons,
 produced in the neutral and charged current interactions that
 constitute the dominant backgrounds to the oscillation signals.
 
-The near detector will also be the source of data for a rich program of neutrino-interaction 
-physics in its own right. For an integrated beam intensity of 
-\num{1e20} %$1 \times 10^{20}$
-protons-on-target at \SI{120}{GeV}, the expected number
-of events per ton is 
- \num{288000} (\num{96000}) %$\nu_\mu$ ($\overline{\nu}_\mu$) 
-\numu (\anumu) charged current 
-and \num{98000} (\num{43000})  neutral current interactions in the $\nu$ ($\overline\nu$) beam. These numbers correspond to
-\num{e7}  neutrino interactions per year for the range of beam
-configurations and near detector designs under consideration.
-Measurement of fluxes, cross sections and particle production over a
-large energy range of \SIrange{0.5}{50}{\GeV} are the key
-elements of this program.  These events
-will also help constrain backgrounds to proton decay signals from atmospheric neutrinos.
-Furthermore, very large
-samples of events will be amenable to precision reconstruction and
-analysis, and will be exploited for sensitive studies of electroweak
-physics and nucleon structure, as well as for searches for new physics
-in unexplored regions, such as heavy sterile neutrinos, high-$\Delta m^2$
-oscillations, light Dark Matter particles, and so on. 
+The near detector will also be the source of data for a rich program
+of neutrino-interaction physics in its own right. For an integrated
+beam intensity of \num{1e20} %$1 \times 10^{20}$
+protons-on-target at \SI{120}{GeV}, the expected number of events per
+ton is \num{288000} (\num{96000}) %$\nu_\mu$ ($\overline{\nu}_\mu$)
+\numu (\anumu) charged current and \num{98000} (\num{43000}) neutral
+current interactions in the $\nu$ ($\overline\nu$) beam
+~\footnote{With PIP-II, the integrated protons-on-target per year is
+  expected to be around $1.1\times 10^{21}$ at \SI{120}\GeV. The mass
+  of the Ar target in the DUNE ND is expected to be approximately
+  100~kg.}. These numbers correspond to \num{e5} neutrino interactions
+on Argon per year for the range of beam configurations and near detector
+designs under consideration.  Measurement of fluxes, cross sections
+and particle production over a large energy range of
+\SIrange{0.5}{50}{\GeV} are the key elements of this program.  These
+events will also help constrain backgrounds to proton decay signals
+from atmospheric neutrinos.  Furthermore, very large samples of events
+will be amenable to precision reconstruction and analysis, and will be
+exploited for sensitive studies of electroweak physics and nucleon
+structure, as well as for searches for new physics in unexplored
+regions, such as heavy sterile neutrinos, high-$\Delta m^2$
+oscillations, light Dark Matter particles, and so on.
 
 %Furthermore, since the near detector data will feature very large samples of events that are amenable to precision reconstruction and analysis, theycan be exploited for sensitive studies of electroweak physics andnucleon structure.  
 
