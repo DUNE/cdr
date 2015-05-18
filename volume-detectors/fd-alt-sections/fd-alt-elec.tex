@@ -2,96 +2,81 @@
 \section{The Electronics, Chimneys and DAQ}
 \label{sec:detectors-fd-alt-elec}
 
-The LBNO 20--50-kt detector designs have channel
-counts in the range of 500,000 to 1,000,000. This large number has spawned extensive
- R\&D over the last few years into large-scale charge-readout solutions.  The 
- solutions under development will provide 
-high integration levels, significant cost reduction and, it is expected, 
+The large number of charge readout channels, needed for the 20--50~kt
+LAr detectors developed in the LAGUNA-LBNO design study with channel
+count in the range of 500,000 to 1,000,000, naturally called during
+the last years for R\&D efforts in view of the development of large
+scale charge readout solutions. These are characterized by
+high-integration levels, significant cost reduction and aims to
 performance improvement.
 
-
-The R\&D activities (ongoing since 2006) have focused effort on two main areas: %axes:
+The related R\&D activities (ongoing since 2006) have focused on two main axes:
 \begin {itemize} 
-\item{development of cold front-end ASIC electronics}
-\item{development of low-cost, largely scalable data 
-acquisition systems (DAQ) based on modern telecommunications technologies}
+\item{Development of cold front-end ASIC electronics}
+\item{Development of low cost, largely scalable, data 
+acquisition system based on modern telecommunication technologies.}
 \end{itemize}
 
-%Efforts in both areas aim at improving the effectiveness and the integration level of the complete readout chain and cost reductions for the large number of channels to be implemented in the detector. 
-\fixme{some text was already said in intro pgraph, so I removed it}
-One of the goals
-of the WA105 6$\times$6$\times$6~m$^3$ demonstrator, a LArTPC with \num{7680}
-charge-readout channels, is to establish \fixme{test? validate?} the large-scale readout
-system developed in the LAGUNA-LBNO design study. \anxdualtdr and~\cite{WA105_SREP}
-provide detailed
-descriptions of the charge-readout electronics, including the cold front-end ASICs and the DAQ.
-%, and the related references, is available in the WA105 Technical Design Report and in the Status report document submitted to the CERN SPSC committee in March 2015\cite{WA105_TDR},\cite{WA105_SREP}.
+Both efforts aim at improving the effectiveness and the integration
+level of the complete readout chain and cost reductions for the large
+number of channels to be implemented in the detector. One of the goals
+of the WA105 6$\times$6$\times$6~m$^3$ demonstrator including 7680
+charge readout channels, is to establish this large scale readout
+system developed in the LAGUNA-LBNO design study. A detailed
+description of the charge readout electronics including the cold
+front-end ASICs and the data acquisition system, and the related
+references, is available in the WA105 Technical Design Report and in
+the Status report document submitted to the CERN SPSC committee in
+March 2015\cite{WA105_TDR},\cite{WA105_SREP}.
 
-The design of the electronics was driven by both cost %s reduction 
-and by its \fixme{the electronics'?} 
-particular use of the dual-phase readout, which allows releasing
-some requirements. \fixme{what do you mean ``release requirements?'' Get
-rid of some?}
-Section~\ref{sec:detectors-fd-alt-chg-readout} describes the charge readout system. 
-\fixme{I would drop all this: ``in the dual-phase design, the ionization electrons
+The design of the electronics was driven by costs reduction and by its
+particular use for the dual-phase readout, which allows releasing
+some requirements. In the dual-phase design the ionization electrons
 are collected by a segmented anode in the gas phase (GAr) at the top
 of the detector, the Charge Readout Plane (CRP). The anode sandwich
 incorporates the Large Electron Multipliers (LEM) which amplify the
 ionization charges by at least a factor 20 with avalanches occurring
 in the pure GAr within the strong electric field regions of the
-LEM.''}
- Recall that the LEM gain is tunable from the minimal requirement of 20 up to
-200, by adjusting the LEM voltage. %The electrons then reach the strips
-%of the segmented anode Printed Circuit Boards where they are equally
-%shared among two perpendicular collection views. 
-The front-end
+LEM. The LEM gain is tunable from the minimal requirement of 20 up to
+200, by adjusting the LEM voltage. The electrons then reach the strips
+of the segmented anode Printed Circuit Boards where they are equally
+shared among two perpendicular collection views. The front-end
 amplifier connected to the anode, given the capacitance of the anode
-strips, would have at unitary LEM gain a S/N ratio of
-14. Considering a minimal LEM gain of 20, the amplifier provides an
-overall S/N ratio of 140. The S/N ratio is boosted by the
-LEM gain \fixme{which means that the preamp can be less powerful and thus 
-its noise will be reduced?} and this releases the requirements on the preamplifier
-noise. 
-
-The front-end amplifiers are implemented as cryogenic CMOS
-ASICs connected to the anode with 50-cm cables; they are completely
-accessible from the outside while remaining very low-noise.
-The amplifiers must be housed in separate volumes (called chimneys) that are 
-completely distinct from the volume containing the pure LAr and gas argon. They 
-can therefore be replaced as needed without contaminating the LAr inside the 
-cryostat. 
-%
-Flat, 2-m-long cables
-inside the chimneys connect the front-end cards to the
-digitization electronics, which is outside the cryostat, hosted \fixme{housed?} in
-micro-TCA crates at the chimney exits. This solution %based on
-%accessible cryogenic front-end and external digital electronics
-provides risk mitigation and significant flexibility. The digitization
+strips, would have at unitary LEM gain a signal to noise ratio of
+14. Considering a minimal LEM gain of 20 the amplifier provides an
+overall S/N ratio of 140. The signal to noise ratio is boosted by the
+LEM gain and this releases the requirements on the preamplifier
+noise. The front-end amplifiers are implemented as cryogenic CMOS
+ASIC. Given the fact that the anode is at the top of the detector the
+front-end can be connected with short (50~cm) cables and kept at cold
+but in specific volumes (chimneys) completely separated from the one
+containing the pure LAr and gas argon. The front-end electronics is
+cryogenic and located at short distance from the detector, both
+aspects concurring to the noise reduction, but it is completely
+accessible from outside and it can be replaced at any time without
+contaminating the LAr inside the cryostat. Flat cables (2~m long)
+inside the chimneys connect then the front-end cards to the
+digitization electronics which is outside the cryostat, hosted in
+microTCA crates at the exit of the chimneys. This solution based on
+accessible cryogenic front-end and external digital electronics
+provides risks mitigation and large flexibility. The digitization
 units in the micro-TCA crates are synchronized with the White Rabbit
-time-distribution standard, \fixme{citation?} which was originally designed to
-achieve sub-ns accuracy. 
-%
-This built-in accuracy, while not a critical aspect of the system
-design, is much better than what is needed to align the 400-ns samples of
-the charge readout. 
-%This built-in accuracy is much better than
-%the one which one would need in order to align the 400~ns samples of
-%the charge readout and it is not a critical aspect of the system
-%design. 
-White Rabbit was adopted for its practical integration
-aspects and cost reduction; its timing accuracy is a bonus.
-White Rabbit is also used in the LBNO design as an independent network for
-the trigger distribution. The light-readout digitization electronics (see Section~\ref{})
+time distribution standard which was originally designed designed to
+achieve sub-ns accuracy. This built-in accuracy is much better than
+the one which one would need in order to align the 400~ns samples of
+the charge readout and it is not a critical aspect of the system
+design. White Rabbit was adopted on the basis of practical integration
+aspects and cost reduction. Its very good timing accuracy comes as an
+extra bonus, White Rabbit is also used as an independent network for
+the trigger distribution. The light readout digitization electronics
 is also implemented in micro-TCA and provides triggers from the
 photomultipliers which are distributed to the DAQ via the White Rabbit
-network. Commercial high-bandwidth and high-computing-power back-end
-cards are used for event-building and are coupled to a farm for online
-processing, which is implemented for event filtering, data
-reconstruction, calibrations and data-quality assessment. Details on
-the system are given in the following. 
-\fixme{Is the following text something for which we could refer the reader to the annexes?}
+network. Commercial high bandwidth and high computing power back-end
+cards are used for event building and are coupled to a farm for online
+processing which is implemented for event filtering, data
+reconstruction, calibrations and data quality assessment. Details on
+the system are given in the following.
 
-\fixme{Awaiting answer, I left off editing here. Anne}
 
 \subsection{Front-end cryogenic amplifiers}
 In the framework of the R\&D related to LAGUNA-LBNO, since 2006,
