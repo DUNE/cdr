@@ -2,21 +2,21 @@
 \section{The Data Acquisition (DAQ) System and Monitoring} 
 \label{sec:detectors-fd-ref-daq}
 
-The scope of the DAQ and monitoring includes the design, procurement,
+The scope of the DAQ and monitoring includes design, procurement,
 fabrication, testing, delivery and installation. It is required to:
 \begin{itemize}
-\item collect data with a very high uptime (the goal is $> 99\%$)
+\item collect data with a very high uptime (the goal is $>$99\%)
 \item collect beam neutrino, atmospheric neutrino and proton
   decay candidates (generally all interactions with total energy deposition
-  above about 100\,MeV) with a high resolution (smart or no
+  above about 100~MeV) with a high resolution (smart or no
   zero-suppression) with no dead-time.
 \item have the capability to collect interactions with total energy
-  below $100$\,MeV with some
+  below 100~MeV with some
  low amount of zero-suppression loss.
 \item have the ability to trigger at the time of the beam pulses,
   irrespective of how little energy is deposited in the detector.
 \item collect data with the most favorable zero-suppression possible over a
-  period of >10\,s (supernova trigger)
+  period of $>$10~s (supernova trigger)
 \item assemble data from sub-detectors into a unified
   event for offline analysis.
 \item provide access to the shift operator and others to control and
@@ -48,35 +48,7 @@ detector module to be restarted without interrupting data collection in the
 others. %rest.
 
 The layout of the DAQ is shown schematically in
-Figure~\ref{fig:fddaqblock}.  To collect full detail of the
-most important events (deadtimeless detection of all those with energy
-deposition of 100\,MeV and above), while avoiding tricky communication
-to flag neighboring channels to those that have large hits, a model is used
-in which the digitised data are collected twice from the initial data
-storage that is associatated with each peice of hardware. 
-% GB - I can't think of anything better, unless we expand this section
-% a lot, which whould give it too much emphasis.  Ideally we DO want
-% to flag neighbouring channels to those with big hits, but it is
-% difficult because it would entail a big complicated network of
-% comunications between all the boards which is very tricky.
-%\fixme{Previous sentence not clear: you want to flag channels that have large hits and NOT flagneighboring channels?  What's the `tricky communication'?}
-
-The first collection
-supplies a centralized software-based trigger farm continuously with
-zero-suppressed information (a threshold on each channel detects hits
-above the noise level; this causes the ADC samples to be kept in a
-time window around the hit).  
-The second collection reads the full data at the times and
-in the regions %of interest that have been 
-selected by the
-trigger. This is similar to the multi-level triggering in a collider experiment,
-but with only one level of triggering.
-%\fixme{in other words, here we have one trigger + two collections; in
-%  collider expt, two of each? Please clarify sentence.} 
-The software trigger farm also
-records the continuous stream of zero-suppressed hits in an archival
-ring buffer on disk to allow later analysis of supernova candidates.
-
+Figure~\ref{fig:fddaqblock}.  
 \begin{cdrfigure}[DAQ subsystem block diagram]{fddaqblock}{Block diagram layout of the main
     components of the DAQ subsystem.}
 \begin{tikzpicture}[
@@ -156,10 +128,38 @@ ring buffer on disk to allow later analysis of supernova candidates.
 \draw[data,dotted] (fthru.south) -- ($(fthru.south)-(0,2.7cm)$);
 \end{tikzpicture}
 \end{cdrfigure}
+To collect full detail of the
+most important events (deadtimeless detection of all those with energy
+deposition of 100~MeV and above), while avoiding tricky communication
+to flag neighboring channels to those that have large hits, a model is used
+in which the digitised data are collected twice from the initial data
+storage that is associatated with each peice of hardware. 
+% GB - I can't think of anything better, unless we expand this section
+% a lot, which whould give it too much emphasis.  Ideally we DO want
+% to flag neighbouring channels to those with big hits, but it is
+% difficult because it would entail a big complicated network of
+% comunications between all the boards which is very tricky.
+%\fixme{Previous sentence not clear: you want to flag channels that have large hits and NOT flagneighboring channels?  What's the `tricky communication'?}
+
+The first collection
+supplies a centralized software-based trigger farm continuously with
+zero-suppressed information (a threshold on each channel detects hits
+above the noise level; this causes the ADC samples to be kept in a
+time window around the hit).  
+The second collection reads the full data at the times and
+in the regions %of interest that have been 
+selected by the
+trigger. This is similar to the multi-level triggering in a collider experiment,
+but with only one level of triggering.
+%\fixme{in other words, here we have one trigger + two collections; in
+%  collider expt, two of each? Please clarify sentence.} 
+The software trigger farm also
+records the continuous stream of zero-suppressed hits in an archival
+ring buffer on disk to allow later analysis of supernova candidates.
 
 {\bf LArTPC detector readout} The LArTPC signals are digitized in the
 cold in a
-continuous flash-ADC stream at 2\,MHz, (not zero-suppressed) and
+continuous flash-ADC stream at 2~MHz, (not zero-suppressed) and
 serialized on 12,000 high-speed links per 10-kt module that exit the
 cryostat.
 % GB - agreed, lets just leave this stuff about costs out
@@ -184,7 +184,7 @@ for improved supernova acquisition.
 
 {\bf Photon detector readout} is performed by the SiPM signal
 processor (SSP) described in
-section~\ref{sec:detectors-fd-ref-pd-refsystem}.  The additional
+Section~\ref{sec:detectors-fd-ref-pd-refsystem}.  The additional
 buffering required for the separate trigger and data collection paths
 is implemented in the SSP frontend computers.
 
@@ -303,7 +303,6 @@ cross-checks.
 
 \end{tikzpicture}
 \end{cdrfigure}
-
 The time sequence, trigger deadlines and buffering of the readout are all
 shown in Figure~\ref{fig:fddaqtime}.  This figure shows time in the
 horizontal direction on a logarithmic scale to indicate how long after
@@ -339,7 +338,7 @@ Ways to collect data that are cropped more gently than the zero-suppressed
 data stream during the extended period of a supernova are
 under study: The non-zero-suppressed ring buffers on the current
 design of RCEs are
-sufficient for 0.4\,s of buffering; the trigger farm can send
+sufficient for 0.4~s of buffering; the trigger farm can send
 instructions in the trigger messages to manage storage of data in
 these buffers during a supernova. Two possible extensions
 are (a) extend the memory to buffer longer, either on the RCEs or
@@ -347,14 +346,6 @@ elsewhere in the aTCA crate, or (b) use the powerful intercommunications between
 RCEs to cause neighboring channels to be kept around the time of a
 potential supernova event candidate. 
 
-\begin{cdrtable}[Estimated data rates]{lcc}{daqrefrates}{Estimated data
-    rates in the DAQ system}  %The third argument (reads {cc}) can use c, l, r or p{some length} % but please do not include lines like “|c|l|l|”. It CAN look like {cll} or {llp{3cm}}, for instance.
-Process & Rate (kHz/APA) & Data rate (MBytes/s) \\ \toprowrule
-Generic 2.3\,ms interval & 0.43 & 6,000\\ \colhline
-Cosmic ray muons (4850L) & $6\times 10^{-7}$ & $1\times 10^{-5}$ \\ \colhline
-Radioactivity & $\sim 64$ & 1.9 \\ \colhline
-Electronics noise (not common mode) & $\sim 1$ & 0.03 \\
-\end{cdrtable}
 
 At the 4850L, the data rate in the trigger is dominated by
 radioactivity from $^{39}$Ar and $^{85}$Kr.  The cosmic-rays that
@@ -365,7 +356,16 @@ data budget.
 Table~\ref{tab:daqrefrates}) gives estimates of the
 rate of occurence of these events and the expected ``steady-state'' data rate
 (after the derandomisation provided by the buffering in the front-end
-computers).  The requirements are met in this conceptual design by
+computers).  
+\begin{cdrtable}[Estimated data rates]{lcc}{daqrefrates}{Estimated data
+    rates in the DAQ system}  %The third argument (reads {cc}) can use c, l, r or p{some length} % but please do not include lines like “|c|l|l|”. It CAN look like {cll} or {llp{3cm}}, for instance.
+Process & Rate (kHz/APA) & Data rate (MBytes/s) \\ \toprowrule
+Generic 2.3\,ms interval & 0.43 & 6,000\\ \colhline
+Cosmic ray muons (4850L) & $6\times 10^{-7}$ & $1\times 10^{-5}$ \\ \colhline
+Radioactivity & $\sim 64$ & 1.9 \\ \colhline
+Electronics noise (not common mode) & $\sim 1$ & 0.03 \\
+\end{cdrtable}
+The requirements are met in this conceptual design by
 the very high throughput provided by modern off-the-shelf components 
 and the parallelism provided by artDAQ, which
 makes the design extendable to avoid bottolenecks.  The triggering
@@ -373,11 +373,11 @@ allows the zero-suppression to be tuned to optimise for the final
 level of noise, while retaining the maximum level of information for
 the important physics events.
 
-This DAQ design is being prototyped for the 35t tests in 2015, with
+This DAQ design is being prototyped for the 35-t tests in 2015, with
 two COBs (containing 16 RCEs) and eight SSPs.  The artDAQ software
 toolkit is being used to implement the readout, event-building and
 triggering, although we are not implementing the ``collect-twice''
-model for the 35t.
+model for the 35-t.
 
 %Here is a sample table:
 %
