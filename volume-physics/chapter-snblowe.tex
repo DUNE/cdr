@@ -130,7 +130,7 @@ Cross sections for the most
 relevant interactions are shown in Fig.~\ref{fig:xscns}.
 
 % From Flavio
-Another process of interest for supernova detection in LAr detectors, not yet fully studied,  is neutral-current  scattering on Ar nuclei by any type of neutrino: $\nu_x + Ar \rightarrow \nu_x + Ar^*$,  for which the signature is given by the cascade of deexcitation $\gamma$s from the final state Ar nucleus. A dominant 9.8-MeV Ar$^*$ decay line has been recently identified as a spin-flip M1 transition~\cite{Hayes}.   At this energy the probability of $e^+e^-$ pair production is relatively high, offering a potentially interesting neutral-current tag.
+Another process of interest for supernova detection in LAr detectors, not yet fully studied,  is neutral-current  scattering on Ar nuclei by any type of neutrino: $\nu_x + {\rm Ar} \rightarrow \nu_x + {\rm Ar}^*$,  for which the signature is given by the cascade of deexcitation $\gamma$s from the final state Ar nucleus. A dominant 9.8-MeV Ar$^*$ decay line has been recently identified as a spin-flip M1 transition~\cite{Hayes}.   At this energy the probability of $e^+e^-$ pair production is relatively high, offering a potentially interesting neutral-current tag.
 %M1 transitions are the ones that can be excited by neutrino interactions.
 %  At this energy the probability of  conversion into e+,e− pair in Ar medium is nearly equivalent to Compton conversion. Identification of an e+,e− vertex from pair production of the 9.8 MeV γ looks affordable in LArTPC, providing a distinguished signature for supernova neutrino through neutral current interactions. See for example, the inset of Fig.2 where an e+,e− pair is clearly visible in an event collected with the ICARUS 3t-prototype.
 
@@ -274,7 +274,7 @@ $\langle E_{\nu} \rangle$ for the unoscillated spectrum. Clearly, the rate of en
 \end{figure}
 
 
-The analysis will make use of two types of information. First, the total energy of the emitted neutrinos should be compared with the expected release in the gravitational collapse. 
+The analysis will make use of two types of information. First, the total energy of the emitted neutrinos should be compared with the expected release in the gravitational collapse.  Note that measurements of all flavors, including $\nu_e$, are needed for the best estimate of the energy release.
 %Examples of the integrated neutrino event rates are shown in Fig.~\ref{fig:eventrates}. 
 Second, the rate of cooling of the protoneutron state should be measured and compared with what is expected from diffusion of the standard neutrinos. This requires comparing one-second-interval time-integrated spectra at successive times as illustrated in Fig.~\ref{fig:coolingcurves}. 
 
@@ -388,11 +388,9 @@ nature of the sources.  Further, a long-timescale, sensitive search
 yielding no bursts will also provide limits on the rate of
 core-collapse supernovae.
 
+We note that the better one can understand the astrophysical nature of core-collapse supernovae, the easier it will be to extract information about particle physics.  DUNE's capability to characterize the $\nu_e$ component of the signal is unique and critical.
 
 % r-process
-
-
-
 
 
 \section{Additional Astrophysical Neutrinos}
@@ -436,11 +434,11 @@ of solar neutrinos in DUNE possible.
 %of these measurements worthwhile.
 
 Signatures of solar neutrinos in DUNE
-are elastic scattering on electrons as well as CC absorption of $\nu_e$ on $^{40}$Ar (equation~\ref{eq:nueabs}), which has a 4.5-MeV energy threshold.
+are elastic scattering on electrons as well as CC absorption of $\nu_e$ on $^{40}$Ar (equation~\ref{eq:nueabs}), which has a 4.5-MeV energy threshold and a large cross section compared to elastic scattering on electrons.  Furthermore, the CC absorption differential cross section (the interaction products track neutrino energy closely) potentially enables precise solar-neutrino spectral measurements.
 %In Table~\ref{tab:solarnu} 
 The solar neutrino event rate in a
-\ktadj{34} LArTPC, assuming a \MeVadj{4.5} neutrino energy
-threshold and 31\% $\nu_e$ survival, is 122 per day in 40 kt.
+\ktadj{40} LArTPC, assuming a \MeVadj{4.5} neutrino energy
+threshold and 31\% $\nu_e$ survival, is 122 per day.
 %
 % \begin{table}[!htb]
 % \caption[Solar neutrino rates in a LArTPC]{Solar neutrino event rates in a \ktadj{34} LArTPC assuming 
@@ -670,107 +668,133 @@ leaks into the search window.
 
 \subsection{Other Low-Energy Neutrino Sources}
 
-We note some other potential sources of signals in the tens-of-MeV range which may be observable in DUNE.  These include neutrinos from accretion disks~\cite{Caballero:2011dw} and black-hole/neutron star mergers~\cite{Caballero:2009ww}.  These will create spectra not unlike those from core-collapse events, and with potentially large fluxes.  However they are expected to be considerably rarer than core-collapse supernovae within an observable distance range.
-
-% \item ``Boosted'' dark matter?
+We note some other potential sources of signals in the tens-of-MeV range which may be observable in DUNE.  These include neutrinos from accretion disks~\cite{Caballero:2011dw} and black-hole/neutron star mergers~\cite{Caballero:2009ww}.  These will create spectra not unlike those from core-collapse events, and with potentially large fluxes.  However they are expected to be considerably rarer than core-collapse supernovae within an observable distance range.  There may also be signatures of dark-matter WIMP annihilations in the low-energy signal range~\cite{Rott:2012qb, Bernal:2012qh}.
 
 
-\section{Detector Requirements and Capabilities for Low-Energy Events}
+
+\section{Detector Requirements}
 \label{sec:physics-snblowe-detector-requirements}
 
-For supernova burst physics, the detector must be sensitive to energy depositions of at least 5 MeV.  It should also be capable of collecting information not only for a 10-kpc supernova, which would mean some thousands of events within 10 seconds, but also for a supernova at distances of less than 1 kpc, which would result in $10^5-10^6$  events over 10 seconds, with a large fraction within the first second.    The detectors should be able to self-trigger on the burst, which may require sufficiently good photon detection, and should be able to provide prompt event information. 
-The requirements for event reconstruction is that pointing back to the supernova should be limited primarily by event statistics rather than detector angular resolution.
-Energy and event time resolution must be sufficient to resolve interesting physics features of the burst.  Preliminary studies suggest that resolution measured by Icarus for low-energy events~\cite{Amoruso:2003sw} should be adequate, and that approximately millisecond event time resolution should be sufficient to resolve features such as the neutronization burst and the preceding short notch due to neutrino trapping in the $\nu_e$ spectrum (see the luminosity curve of Fig.~\ref{fig:garching}), given adequate statistics.   Preliminary background studies (see Fig.~\ref{fig:vicbg}) show that cosmogenic and radioactive contaminants are likely to be subdominant for a Galactic burst; however backgrounds still need to be better understood for solar and DSNB signals.
+For supernova burst physics, the detector must be able to detect and reconstruct as well as possible events in the range 5-100~MeV.  As for proton decay and atmospheric neutrinos, no beam trigger will be available; therefore there will be special triggering and DAQ requirements that take into account the short, intense nature of the burst, and the need for prompt propagation of information in a worldwide context.
+%    It should also be capable of collecting information not only for a 10-kpc supernova, which would mean some thousands of events within 10 seconds, but also for a supernova at distances of less than 1 kpc, which would result in $10^5-10^6$  events over 10 seconds, with a large fraction within the first second.    The detectors should be able to self-trigger on the burst, which may require sufficiently good photon detection, and should be able to provide prompt event information. 
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=12cm]{AllTheThings.pdf}
-\caption{
-All components of the background model used in a preliminary supernova background study, including radioactive decays (solid lines), cosmogenic neutron (dashed) and proton (dotted) fluxes.  The intrinsic background (independent of depth) is plotted in black.  Surface backgrounds are plotted in red, 800 feet of rock overburden in green, and 4850 feet in blue (color online). The rates are for 10 kton. } 
-\label{fig:vicbg}
-\end{center}
-\end{figure}
-\fixme{40 kt, typo in legend} 
+The DUNE Far Detector
+Requirements~\cite{lbnfdune-cdr-req} specific to supernova burst neutrinos are as follows:
 
+\begin{itemize}
 
+\item Far Detector Depth: The signal to background ratio shall be sufficiently large to identify the  burst ($<$100 seconds)  from a core-collapse supernova within 20~kpc (within the Milky Way). This will require a detector located at sufficient depth for cosmic-ray-related background, including spallation-induced events, to be sufficiently low.  Furthermore backgrounds from radioactivity or other sources must also be sufficiently low.  Preliminary studies~\cite{gehman} indicate that backgrounds at 4850 ft (including both cosmogenics and intrinsic radioactivity) will be sufficiently low, although more work is needed.
 
-Work is currently underway using the LArSoft simulation package
-to characterize low-energy
-response for realistic DUNE detector configurations.
-%Figure~\ref{fig:evdisplays} shows a sample \MeVadj{20} event in the DUNE
-%\SIadj{35}{t} prototype
-%\ktadj{10} 
-%geometry simulated with LArSoft. 
-So far,
-most studies have been done with the MicroBooNE geometry, with the
-results expected to be %largely
-generally applicable to the larger DUNE detectors.  For a preliminary
-understanding of achievable energy resolution, isotropic and uniform
-monoenergetic electrons with energies of 5-50~MeV (which should
-approximate the $\nu_e$-CC electron products) were simulated and
-reconstructed with the LArSoft
-package. 
-The charge of reconstructed hits on the collection plane was used to
-reconstruct the energy of the primary electrons.
-\footnote{Collection-plane hit charge gave the best resolution results compared to
-induction-plane and track-length-based reconstruction in this preliminary study; however improved reconstruction based on broader information could be possible in the future.}
-Figure~\ref{fig:lowe_res} shows the results of a resolution study (see caption).
-A correction to compensate for loss of electrons during drift,
-$Q_{collection}=Q_{production}\times e^{-T_{\rm drift} / T_{\rm
-    electron}}$ (where $T_{drift}$ is the drift time of the ionization
-electrons, and $T_{electron}$ is the electron lifetime), using Monte
-Carlo truth to evaluate $T_{\rm drift}$, improved resolution
-significantly.  This study indicated that photon time information will
-be valuable for low-energy event reconstruction.  Some of the
-resolution was determined to be due to imperfect hit-finding by the
-nominal reconstruction software.  A tuned hit-finding algorithm did
-somewhat better (Figure~\ref{fig:lowe_res}), and further
-improvements for reconstruction algorithms optimized for low-energy
-events are expected.
-%
-% \begin{figure}[!htb]
-% \begin{centering}
-%\includegraphics[height=2.5in]{snfig/15MeV_fixedvertexdir.pdf}
-% \includegraphics[width=0.9\textwidth]{snfig/elect20mev35tunzoom_mod.pdf}
-% %\includegraphics[width=0.4\textwidth,bb=0 -200 600 1000]{snfig/lbne_zoom.pdf}
-% %\includegraphics[width=0.84\textwidth]{snfig/elect20mev35tzoomcropped.pdf}
-% \caption[Typical \MeVadj{20} event in the DUNE
-%   \SIadj{35}{t} prototype geometry]{Raw event display of a simulated \MeVadj{20} event in the DUNE
-%   \SIadj{35}{t} prototype; the top panel shows the collection plane, and the
-%   lower two panels show the induction planes (with multiple images due
-%   to wire wrapping). The bottom panel shows a zoom of the collection plane image.
-%  }
-% \label{fig:evdisplays}
-% \end{centering}
+\item Far Detector Triggering and DAQ:  The far detector shall be capable of collecting information for a supernova burst within the Milky Way.  Events are expected within a time window of approximately 10 seconds, but possibly over an interval as long as several tens of seconds; a large fraction of the events are expected within approximately the first second of the burst.
+The data acquisition buffers shall be sufficiently large and the data acquisition system sufficiently robust to allow full capture of neutrino event information for a supernova as close as 0.1 kpc.
+At 10~kpc, one expects thousands of events within approximately 10 seconds, but a a supernova at a distance of less than 1~kpc would result in $10^5-10^7$  events over 10 seconds.    
+
+The far detector shall have high uptime ($>$90\%) with little event-by-event deadtime to allow the capture of low-probability astrophysical events that could occur at any time with no external trigger. 
+Supernova events are expected to occur a few times per century within the Milky Way galaxy. For any 10-year period, the probability of a supernova could be 20 to 30\%.  Capturing such an event at the same time as many of the other detectors around the Earth is very important.  
+
+The DUNE detector systems shall be configured to provide  information to other observatories on possible astrophysical events (such as a galactic supernova) in a short enough time to allow global coordination.   
+To obtain maximum scientific value out of a singular astronomical event, it is very important to inform all other observatories (including optical ones) immediately, so that they can begin observation of the evolution of the event. 
+
+\item Far Detector Event Reconstruction:   
+%For supernova burst physics, the detector must be sensitive to energy depositions of at least 5 MeV.
+The far detector shall be capable of collecting low energy ($<$\SI{100}{\MeV})  charged-current electron neutrino interactions on $^{40}$Ar nuclei that arrive in a short period of time. The final-state electron (or positron) shall be detected and its energy measured.   An energy threshold of 5 MeV or better is highly desirable; most supernova burst events are expected to have energy depositions in the range 5-10~MeV.
+Energy and event time resolution must be sufficient to resolve interesting physics features of the burst.  Preliminary studies suggest that resolution measured by Icarus for low-energy events~\cite{Amoruso:2003sw} should be adequate, and that approximately millisecond event time resolution should be sufficient to resolve features such as the neutronization burst and the preceding short notch due to neutrino trapping in the $\nu_e$ spectrum (see the luminosity curve of Fig.~\ref{fig:garching}), given adequate statistics.   
+%Preliminary background studies (see Fig.~\ref{fig:vicbg}) show that cosmogenic and radioactive contaminants are likely to be subdominant for a Galactic burst; however backgrounds still need to be better understood for solar and DSNB signals.
+%%Preliminary results~\cite{zepeng1,zepeng2,sinev1} have shown that the resolutions 
+%%will not differ too significantly from those in~\cite{Amoruso:2003sw}.
+% Also under study is the potential for tagging $\nu_e$-CC absorption
+% events ($\nu_e +{}^{40}{\rm Ar} \rightarrow e^- +{}^{40}{\rm
+%   K^*}$) using the cascade of deexcitation $\gamma$ rays (which Compton-scatter in the detector), which should
+% serve the dual purposes of rejecting background and isolating the CC
+% component of the signal.  Reconstructing these gammas also improves the neutrino energy measurement. 
+Detection of gamma ray photons from the final-state excited nucleus could lead to additional electronics requirements.  
+
+\end{itemize}
+
+% The requirements for event reconstruction is that pointing back to the supernova should be limited primarily by event statistics rather than detector angular resolution.
+% Energy and event time resolution must be sufficient to resolve interesting physics features of the burst.  Preliminary studies suggest that resolution measured by Icarus for low-energy events~\cite{Amoruso:2003sw} should be adequate, and that approximately millisecond event time resolution should be sufficient to resolve features such as the neutronization burst and the preceding short notch due to neutrino trapping in the $\nu_e$ spectrum (see the luminosity curve of Fig.~\ref{fig:garching}), given adequate statistics.   Preliminary background studies (see Fig.~\ref{fig:vicbg}) show that cosmogenic and radioactive contaminants are likely to be subdominant for a Galactic burst; however backgrounds still need to be better understood for solar and DSNB signals.
+
+% \begin{figure}[htbp]
+% \begin{center}
+% \includegraphics[width=12cm]{AllTheThings.pdf}
+% \caption{
+% All components of the background model used in a preliminary supernova background study, including radioactive decays (solid lines), cosmogenic neutron (dashed) and proton (dotted) fluxes.  The intrinsic background (independent of depth) is plotted in black.  Surface backgrounds are plotted in red, 800 feet of rock overburden in green, and 4850 feet in blue (color online). The rates are for 10 kton. } 
+% \label{fig:vicbg}
+% \end{center}
 % \end{figure}
-%
-\begin{figure}[!htb] %  figure placement: here, top, bottom, or page
- \centering
-\includegraphics[width=0.45\textwidth]{correction.pdf} 
-\includegraphics[width=0.45\textwidth]{hitfinder.pdf} 
-
- \caption[Comparisons of energy resolution]{Left: Comparison of energy
-   resolution (defined as $\sigma/E$, where $\sigma$ is the spread of
-   the collection-plane-charge-based event energy $E$ for a
-   monoenergetic electron), with and without electron-lifetime
-   correction, as a function of electron energy (assumptions: 3~ms drift time, 1.63~mm/$\mu$s drift velocity, and 2.5~m maximum drift length). The blue curve is the
-   energy resolution of isotropic and uniform electrons without
-   electron-lifetime correction. The red curve is the energy
-   resolution with electron-lifetime correction based on MC truth.
-   Right: Comparison of energy resolution before and after tuning the
-   reconstruction algorithm (for fixed position/direction electron
-   events).}\label{fig:lowe_res}
-\end{figure}
+% \fixme{40 kt, typo in legend} 
 
 
-%Preliminary
-%results show that energy resolutions 
-%for baseline detector parameters
-%will not differ too significantly from those in~\cite{Amoruso:2003sw}.
-Also under study is the potential for tagging $\nu_e$-CC absorption
-events ($\nu_e +{}^{40}{\rm Ar} \rightarrow e^- +{}^{40}{\rm
-  K^*}$) using the cascade of deexcitation $\gamma$ rays (which Compton-scatter in the detector), which should
-serve the dual purposes of rejecting background and isolating the CC
-component of the signal.  Reconstructing these gammas also improves the neutrino energy measurement. 
+
+% Work is currently underway using the LArSoft simulation package
+% to characterize low-energy
+% response for realistic DUNE detector configurations.
+% %Figure~\ref{fig:evdisplays} shows a sample \MeVadj{20} event in the DUNE
+% %\SIadj{35}{t} prototype
+% %\ktadj{10} 
+% %geometry simulated with LArSoft. 
+% So far,
+% most studies have been done with the MicroBooNE geometry, with the
+% results expected to be %largely
+% generally applicable to the larger DUNE detectors.  For a preliminary
+% understanding of achievable energy resolution, isotropic and uniform
+% monoenergetic electrons with energies of 5-50~MeV (which should
+% approximate the $\nu_e$-CC electron products) were simulated and
+% reconstructed with the LArSoft
+% package. 
+% The charge of reconstructed hits on the collection plane was used to
+% reconstruct the energy of the primary electrons.
+% \footnote{Collection-plane hit charge gave the best resolution results compared to
+% induction-plane and track-length-based reconstruction in this preliminary study; however improved reconstruction based on broader information could be possible in the future.}
+% Figure~\ref{fig:lowe_res} shows the results of a resolution study (see caption).
+% A correction to compensate for loss of electrons during drift,
+% $Q_{collection}=Q_{production}\times e^{-T_{\rm drift} / T_{\rm
+%     electron}}$ (where $T_{drift}$ is the drift time of the ionization
+% electrons, and $T_{electron}$ is the electron lifetime), using Monte
+% Carlo truth to evaluate $T_{\rm drift}$, improved resolution
+% significantly.  This study indicated that photon time information will
+% be valuable for low-energy event reconstruction.  Some of the
+% resolution was determined to be due to imperfect hit-finding by the
+% nominal reconstruction software.  A tuned hit-finding algorithm did
+% somewhat better (Figure~\ref{fig:lowe_res}), and further
+% improvements for reconstruction algorithms optimized for low-energy
+% events are expected.
+% %
+% % \begin{figure}[!htb]
+% % \begin{centering}
+% %\includegraphics[height=2.5in]{snfig/15MeV_fixedvertexdir.pdf}
+% % \includegraphics[width=0.9\textwidth]{snfig/elect20mev35tunzoom_mod.pdf}
+% % %\includegraphics[width=0.4\textwidth,bb=0 -200 600 1000]{snfig/lbne_zoom.pdf}
+% % %\includegraphics[width=0.84\textwidth]{snfig/elect20mev35tzoomcropped.pdf}
+% % \caption[Typical \MeVadj{20} event in the DUNE
+% %   \SIadj{35}{t} prototype geometry]{Raw event display of a simulated \MeVadj{20} event in the DUNE
+% %   \SIadj{35}{t} prototype; the top panel shows the collection plane, and the
+% %   lower two panels show the induction planes (with multiple images due
+% %   to wire wrapping). The bottom panel shows a zoom of the collection plane image.
+% %  }
+% % \label{fig:evdisplays}
+% % \end{centering}
+% % \end{figure}
+% %
+% \begin{figure}[!htb] %  figure placement: here, top, bottom, or page
+%  \centering
+% \includegraphics[width=0.45\textwidth]{correction.pdf} 
+% \includegraphics[width=0.45\textwidth]{hitfinder.pdf} 
+
+%  \caption[Comparisons of energy resolution]{Left: Comparison of energy
+%    resolution (defined as $\sigma/E$, where $\sigma$ is the spread of
+%    the collection-plane-charge-based event energy $E$ for a
+%    monoenergetic electron), with and without electron-lifetime
+%    correction, as a function of electron energy (assumptions: 3~ms drift time, 1.63~mm/$\mu$s drift velocity, and 2.5~m maximum drift length). The blue curve is the
+%    energy resolution of isotropic and uniform electrons without
+%    electron-lifetime correction. The red curve is the energy
+%    resolution with electron-lifetime correction based on MC truth.
+%    Right: Comparison of energy resolution before and after tuning the
+%    reconstruction algorithm (for fixed position/direction electron
+%    events).}\label{fig:lowe_res}
+% \end{figure}
 
 
+
+The other low-energy physics described in Sections~\ref{sec:physics-snblowe-other} typically requires similar event reconstruction capabilities as does supernova-burst physics; however background requirements are much more stringent (especially for DSNB).  Realistic background conditions in the few-tens-of-MeV range are not currently well understood.  
+These physics topics do not drive detector requirements, although it may still be possible for DUNE to address them if backgrounds can be kept sufficiently well under control.
