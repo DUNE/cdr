@@ -35,12 +35,11 @@ channels, two identical collection views, and the absence of inactive volume %de
 in the LAr volume. These advantages will be described in
 this chapter, and are covered in detail in \anxlbnob. \fixme{right annex? ask Dario}
 
-\begin{cdrtable}[Dual-phase (alternative) far detector performance parameters]{llll}{FD_req}{%Subset of 
-Performance parameters specific to the dual-phase far detector design}  
+\begin{cdrtable}[Dual-phase (alternative) far detector performance parameters]{llll}{FD_req}{Subset of performance parameters specific to the alternative far detector design.}  
 Parameter & Requirement & Achieved Elsewhere & Expected Performance \\ \toprowrule
 Gas phase gain & 20 & 200 & 20-100  \\ \colhline
-Electron Lifetime & 3~ms &  $>3$~ms 35-t prototype  & $>5$~ms \\ \colhline %membrane cryostat
-Minimal S/N after 12 m drift & 9:1 &  $>100$:1 & 12:1-60:1  \\ \colhline
+Electron Lifetime & 3~ms &  $>3$~ms 35-t membrane cryostat & $>5$~ms \\ \colhline
+Minimal S/N Ratio after 12 m drift & 9:1 &  $>100$:1 & 12:1-60:1  \\ \colhline
 \end{cdrtable}
 
 The alternative design is the %result 
@@ -134,11 +133,11 @@ at the bottom of the tank, 1~m below the cathode. % surface.
 The drift field is %closed 
 bordered at the top by the anode, which consists of a
 collection of %modules 
-devices for the charge readout called Charge Readout Planes 
+devices for the charge readout called Charge Readout Planes %%%%% Anne to here 5/13
 (CRPs). Each CRP is composed of several $0.5\times 0.5$-m$^2$ readout
 units and is independently suspended with stainless-steel ropes
 % end>>>>>>> Stashed changes
-%%%%%%%%%%     <<<<--------------------Anne to here 5/15
+%%%%%%%%%%
 linked to the top deck. This suspension system allows to adjust the
 CRP distance and parallelism with respect to the LAr surface. The
 electrical signals from the collected charges are then passed outside
@@ -202,37 +201,36 @@ particle beam (pion, muons, electrons).
 
 \section{Detector Configuration}
 
-The proposed dual-phase detector module %based on the dual-phase design,
-optimally exploits the cryostat volume % inner space foreseen for the DUNE cryostats
-(14(w)$\times$14.1(h)$\times$62(l)~m$^3$) with an active area \fixme{area of anode?} of
-(12$\times$60~m$^2$) and a drift length of 12~m, corresponding \fixme{to an active mass of?}
+The proposed detector module, based on the dual-phase design,
+optimally exploits the inner space foreseen for the DUNE cryostats
+(14(w)$\times$14.1(h)$\times$62(l)~m$^3$) with an active area of
+(12$\times$60~m$^2$) and a drift length of 12~m corresponding to
 12.096~kt of LAr (10.643~kt fiducial). The design is based on the
-20-kt LAGUNA-LBNO design study with a
+20~kt LAr LAGUNA-LBNO design study with a
 CRP unit size adapted to the dimensions on the active area. The
-cryostat height could be increased to achieve 15~m
-drift, resulting in an active mass of
-15.12~kt (13.444~kt fiducial).  This 15.1-kt 
+height of the DUNE cryostat could be increased in order to achieve 15~m
+drift. In that case a single detector would reach an active mass of
+15.12~kt (13.444~kt fiducial).  This 15.1~kt detector
 configuration, apart from the longer drift distance and field cage,
-would have the same characteristics of the 12.1-kt %baseline
+would have the same characteristics of the 12.1~kt baseline
 configuration, given that the covered active area is exactly the
 same. With these transverse dimensions every additional meter of drift
-length provides a 1-kt increase in the active mass \fixme{active not fiducial?}  at a moderate
+length provides 1~kt increase in the active mass at a moderate
 additional cost.
 
-The inner detector for the 12.1-kt active mass is built as a single
+The inner detector for the 12.1~kt active mass is built as a single
 active volume 60~m long, 12~m wide and 12~m high. The active volume (see
-Figures~\ref{fig:DP_det1} and~\ref{fig:DP_det2}) is surrounded
-by a vertical field cage made up of 60 rectangular tubular rings \fixme{round cross section, bent into
-rectangles, so the rings are not round but rectilinear?}
-(tube diameter 140~mm, vertical spacing 200~mm). \fixme{what is the vertical space for? I'm not getting a picture}
+Figure~\ref{fig:DP_det1} and Figure~\ref{fig:DP_det2}) is surrounded
+by a vertical field cage made by a set of 60 rectangular tubular rings
+(tube diameter 140~mm, vertical spacing 200~mm).
 \begin{cdrfigure}[Dual-phase detector 3D view]{DP_det1}{The DUNE dual-phase 
 detector with cathode, PMTs, field cage and anode plane with chimneys.}
 \includegraphics[width=\linewidth]{DUNE12_FC}
 \end{cdrfigure}
 
-\fixme{This was already said.} The cathode plane (on the bottom) is made by a reinforced frame, to
+The cathode plane (on the bottom) is made by a reinforced frame, to
 guarantee its planarity, filled by a tubular grid (not visible in
-Figure~\ref{fig:DP_det2}) to allow the optical transparency for the
+Figure~\ref{fig:DP_det2}), to allow the optical transparency for the
 scintillation light towards an array of 180 PMTs (1 per 4~m$^2$)
 located at the bottom of the vessel.
 \begin{cdrfigure}[Dual-phase detector 3D view (partially open)]{DP_det2}
@@ -240,7 +238,6 @@ located at the bottom of the vessel.
 \includegraphics[width=\linewidth]{DUNE12_open}
 \end{cdrfigure}
 
-\fixme{this is part of configuration?} 
 The ionization electrons in the liquid phase drift towards the CRPs
 (Charge Readout Planes) in a uniform electric field. The extraction of
 the electrons from the liquid to vapor phase is performed thanks to a
@@ -262,7 +259,6 @@ HV values are indicated for a drift field of 0.5~kV/cm in LAr.}
 \includegraphics[width=\linewidth]{CRP_gaps.png}
 \end{cdrfigure}
 
-\fixme{this is part of configuration?} 
 The anode plane, at the top of the active volume, is made by an array
 of 45 independent CRP modules, 3$\times$3~m$^2$ each, as shown in
 Figure~\ref{fig:CRP_unit1} and Figure~\ref{fig:CRP_unit2} Each CRP
@@ -278,7 +274,6 @@ for the insertion of the high voltage feedthrough.}
 \includegraphics[width=.5\linewidth]{DUNE12_CRP}
 \end{cdrfigure}
 
-\fixme{this is part of configuration?} 
 Signals in each CRP unit are collected via 3 signal feedthrough
 chimneys. Each chimney collects 640 readout channels and hosts at its
 bottom the front-end cards with the cryogenic electronics (ASIC
