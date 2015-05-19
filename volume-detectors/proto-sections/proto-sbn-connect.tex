@@ -1,36 +1,39 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\section{Connections to the Short-Baseline Program at Fermilab} 
-\label{sec:proto-sbn}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Connections to the Short-Baseline Program at Fermilab}
+\label{sec:sbn_connect}
 
-
-The prototyping plans made by LBNE were in turn a part of a larger
-LArTPC detector development program at Fermilab and elsewhere in the
-U.S., which are summarized in Chapter 7 of \anxlbnefd and fully
-described in the \textit{Integrated Plan for LArTPC Neutrino Detectors in the U.S}.
+The LArTPC prototyping plans initially made by LBNE were in turn a part of a larger LArTPC detector development program at Fermilab and elsewhere in the U.S.  These plans are summarized in Chapter 7 of \anxlbnefd and fully described in the \textit{Integrated Plan for LArTPC Neutrino Detectors in the U.S}, a report which was submitted to the DOE in 2009.  
 % reference is ?? FNAL Tech Report xxx??  LBNE:DocDB-2113
-This detector development plan has largely been fulfilled, with an
-endpoint represented by the experiments which comprise the
-short-baseline program at Fermilab on the Booster Neutrino Beamline :
-MicroBooNE, the Short-Baseline Near Detector, and ICARUS.
- % probably want a reference for each of those....  
-Each of these detectors shares some technical elements with each other and 
-the DUNE far detector prototypes, such as:
+The 2009 report outlined an R\&D program with the goal of demonstrating a scalable LArTPC far detector design for a long-baseline neutrino oscillation experiment.  
+
+The following list of the detector development components is taken from the Executive Summary of the 2009 report:
+\begin{itemize}
+   \item The Materials Test Stand (MTS) program, now in operation at Fermilab, addressing questions pertaining to maintenance of argon purity
+    \item Existing electronics test stands at Fermilab and BNL
+    \item The Liquid Argon Purity Demonstrator (LAPD) now being assembled at Fermilab
+    \item The ArgoNeuT prototype LArTPC, now running in the NuMI beam
+    \item The MicroBooNE experiment, proposed as a physics experiment that will advance our understanding of the LArTPC technology, now completing its conceptual design phase
+    \item A software development effort that is well integrated across present and planned LArTPC detectors
+    \item A membrane cryostat mechanical prototype to evaluate and gain experience with this technology
+    \item An installation and integration prototype for LBNE, to understand issues pertaining to detector assembly, particularly in an underground environment
+    \item A ~5\% scale electronics systems test to understand system-wide issues as well as individual component reliability
+    \item A calibration test stand that would consist of a small TPC to be exposed to a test beam for calibration studies, relevant for evaluation of physics sensitivities   
+\end{itemize}
+
+This detector development plan has largely been enacted.  The MTS is a standard tool used to assess any materials planned for use in LArTPCs.  LAPD operated successfully, showing the viability of a piston purge in place of evacuation to attain the desired argon purity.  The membrane cryostat mechanical prototype became the DUNE 35-ton, and repeated the demonstration of the piston purge in its Phase-1 operation.  ArgoNeuT collected quality data in the NuMI beam and helped spur the integrated reconstruction software development effort now known as LArSoft.  The proposed calibration test stand has become the LArIAT facility at Fermilab.  The development of cold electronics for LArTPCs continues, with a goal of incorporating most of the signal processing and formatting into analog and digital ASICs.  The installation and integration prototype for LBNE has evolved into the 35-ton Phase-2 and the single-phase CERN prototypes for DUNE described in this Chapter.
+ 
+Not all prototypes must be executed by DUNE in order for DUNE to benefit.  The strategy behind MicroBooNE - incorporate some detector development aspects in an experiment with goals to investigate short-baseline neutrino physics - expanded to include detectors upstream and downstream.  The Fermilab Short-baseline Program on the Booster Neutrino Beamline now consists of the Short-baseline Near Detector, MicroBooNE, and the ICARUS T-600; the program is fully described in a recent proposal~ \cite{SBN}.  There is significant overlap in the collaboration membership of DUNE and the three Short-baseline detectors.
+ 
+Each of the Short-baseline detectors shares some technical elements with each other and/or with the DUNE far detector prototypes. Elements such as :
 \begin{itemize}
 \item cryogenic system design
 \item argon purification techniques
 \item cold electronics
 \end{itemize}
-In other aspects however the detectors are different -- in the design
-details of the anode wire planes for example.  The Short-Baseline Near
-Detector is most similar to DUNE detectors, having adopted the 35-t
-APA-CPA-Field Cage design.
+In other aspects however the detectors are very different -- in the design details of the anode wire planes for example.  The Short-Baseline Near Detector is most similar to DUNE single-phase detectors, having adopted the 35-ton APA-CPA-Field Cage design, while the MicroBooNE TPC field cage follows the ICARUS design.  The cold electronics installed on the MicroBooNE TPC are an initial step in an ongoing program; the 35-ton and the Short-baseline Near Detector utilize subsequent steps in the cold electronics development.  While commissioning its cryogenics system, MicroBooNE conducted investigations of the voltage breakdown in high purity argon; the results prompted some design adjustments to the field cage adopted by the 35-ton Phase-2 and the Short-baseline Near Detector, demonstrating the sharing and feedback of technical developments.  
 
-The Fermilab LArTPC detector development program includes a
-calibration detector and reconstruction software development.  The
-planned calibration detector has become the Liquid Argon In A Test
-Beam program (LArIAT) which has recently begun operations in the Meson
-Center beamline.  The LArSoft software is a set of configurable
-packages designed to reconstruct the data from any liquid argon
-detector.  It is supported by the Fermilab Scientific Computing
-Division and has contributors from all of the operating and planned
-LArTPC experiments at Fermilab.
+Coordinated development of reconstruction software for LArTPC detectors is a major outcome of the 2009 \textit{Integrated Plan}.  LArSoft is fully supported by the Fermilab Scientific Computing Division and has contributors from all of the operating and planned LArTPC experiments at Fermilab.  Track and shower reconstruction methods, and particle identification techniques , are already shared between ArgoNeuT, MicroBooNE, LArIAT and the 35-ton.  Real data from these detectors is assisting DUNE simulation efforts.  The Short-baseline experiments, starting with MicroBooNE, will develop neutrino interaction classification techniques based on the details revealed by their fine-grained tracking capabilities, and are likely to exert a strong influence on DUNE oscillation analyses.
+
+
+
+ 

@@ -1,18 +1,20 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The ND Neutrino Measurements Prototyping Plan} 
+\section{Near Detector Prototypes}
+\label{sec:proto-nd}
+Near detector prototypes are planned for both the neutrino detector and beamline measurements systems.
+
+\subsection{Near Neutrino Detector Prototypes}
 \label{sec:proto-nd-nnd}
-
-
 The prototyping plan for the Fine-Grained Tracker (FGT) near neutrino
 detector (NND), as described in Section~\ref{cdrsec:detectors-nd-ref},
 involves the following major steps:
-\begin{itemize} 
+\begin{itemize}
 \item Straw Tube Detector Prototyping
 \item ECAL Prototyping
-\item MuID -- RPC Development 
+\item MuID -- RPC Development
 \item Dipole Magnet Studies
-\end{itemize} 
+\end{itemize}
 
 The schematics drawing of the FGT is given in
 Figure~\ref{fig:STT_schematic}. The prototyping activity for the
@@ -22,7 +24,7 @@ USA or other possible institutions.  The prototyping work is spread
 over a duration of three years. The present ongoing efforts in this
 direction are detailed below.
 
-\subsection{Straw Tube Tracking Detector} 
+\subsubsection{Straw Tube Tracking Detector}
 
 The Straw-Tube Tracking (STT) detector, in the proposed design,
 provides the central active tracking of the FGT and will use straws of
@@ -36,10 +38,9 @@ Section~\ref{cdrsec:detectors-nd-ref-fgt-stt}, but half the nominal
 length, i.e. 1.8~m. The major milestones in the STT prototyping
 (during the initial three years) are highlighted below.
 
-\subsubsection{Design and Fabrication of STT Prototype} 
-
+\textbf{\textit{Design and Fabrication of STT Prototype}} \\
 The three year STT R\&D and prototyping phase will start with the 3D
-design of a prototype module.  This will include optimizing 
+design of a prototype module.  This will include optimizing
 parameters from the prototype assembly point of view and
 establishing the mechanical structure and its strength using the FEM
 techniques. This process will be a self feeding system with inputs
@@ -49,14 +50,13 @@ undertaken. We plan to fabricate the STT prototype and to perform
 extensive tests both in the laboratory and by exposing it to particle
 beams at CERN.
 
-\begin{cdrfigure}[Basic GEANT4 Simulations of 1~cm Straws for the prototype plan] 
+\begin{cdrfigure}[Basic GEANT4 Simulations of 1~cm Straws for the prototype plan]
 {STT_SimulationG4}{Basic GEANT4 Simulations of 1~cm Straws for the prototype plan.}
 \includegraphics[width=0.6\textwidth]{STT_SimulationG4}
 \end{cdrfigure}
 
 
-\subsubsection{Design and prototyping of radiators and nuclear targets} 
-
+\textbf{ \textit{Design and prototyping of radiators and nuclear targets}} \\
 As described in Section~\ref{cdrsec:detectors-nd-ref-fgt-stt}, a key
 feature of the STT is the capability to integrate a series of
 different nuclear targets for (anti)neutrino interactions.  The main
@@ -70,8 +70,8 @@ discussed with vendors and we plan to produce a half-scale
 the assembly, the mechanical properties and the overall
 performance. We have developed a preliminary design for the
 pressurized Ar gas target (Figure~\ref{fig:STT_ArTargets}), based upon
-the use of 0.5-in diameter aluminum tubes.  
-\begin{cdrfigure}[Design of the target plane with pressurized Ar gas] 
+the use of 0.5-in diameter aluminum tubes.
+\begin{cdrfigure}[Design of the target plane with pressurized Ar gas]
 {STT_ArTargets}{Design of the target plane with pressurized Ar gas.}
 \includegraphics[width=0.6\textwidth]{STT_ArTargets}
 \end{cdrfigure}
@@ -81,8 +81,7 @@ and the possibility to use C-composite tubes.  Similarly, we plan to
 build small-scale prototypes of the Ca and C targets.
 
 
-\subsubsection{Anode Wire Studies} 
-
+\textbf{ \textit{Anode Wire Studies}} \\
 The sense wires used in the straw tubes were initially proposed to be
 30~$\mu$m diameter Tungsten-Gold plated, similarly to the established
 design of the COMPASS chambers. In order to minimize the material
@@ -96,14 +95,13 @@ characteristic. Figure~\ref{fig:STT_WireTensionTests} shows the
 tension measurements results for 20--30~$\mu$m wires using the induced
 resonance method.  The proposed tension limit on the sense wires is
 70~g.
-\begin{cdrfigure}[Wire tension measurement studies (20~$\mu$m and 30~$\mu$m)]           
+\begin{cdrfigure}[Wire tension measurement studies (20~$\mu$m and 30~$\mu$m)]
 {STT_WireTensionTests}{Wire Tension Measurement studies for 20~$\mu$m and 30~$\mu$m.}
 \includegraphics[width=1.0\textwidth]{STT_WireTensionTests}
 \end{cdrfigure}
 
 
-\subsubsection{Test Straw Chamber} 
-
+\textbf{ \textit{Test Straw Chamber}} \\
 A test chamber with 48 straws of the same dimensions as of FGT but
 with 1~m length is available for operational studies to understand
 the gas flow rates and for finalizing the pre-amplifier selection
@@ -112,15 +110,14 @@ operational pulse image with Ar+CO2 (80:20) gas taken with cosmic
 rays. The voltage versus amplitude for one of the straws is also shown
 in Figure~\ref{fig:STT_TestStrawChamber} to establish the QA/QC
 procedure for the fabricated straws.
-\begin{cdrfigure}[Pulse and voltage-amplitude for the test straw chamber]  
-{STT_TestStrawChamber}{Example of pulse from the test straw chamber (left) and 
+\begin{cdrfigure}[Pulse and voltage-amplitude for the test straw chamber]
+{STT_TestStrawChamber}{Example of pulse from the test straw chamber (left) and
 measurement of voltage vs. amplitude for one of the straws in the test chamber (right).}
 \includegraphics[width=1.0\textwidth]{STT_TestStrawChamber}
 \end{cdrfigure}
 
 
-\subsubsection{Front-end Electronics} 
-
+\textbf{ \textit{Front-end Electronics}} \\
 Some tests are going on for the prototype stage electronics selection
 for the signals to be read out.  A four channel pre-amplifier has been
 tested with the test chamber using a radioactive source and the signal
@@ -129,14 +126,13 @@ backend DAQ is still worked out and would follow the description as
 stated in Section~\ref{cdrsec:detectors-nd-ref-fgt-instrum}. At
 present both CAMAC and VME based DAQ is available. $\mu$TCA based fast
 DAQ has also been setup.
-\begin{cdrfigure}[Signal from single straw using the BARC preamp and source]  
-{STT_SignalPreAmp}{Signal from single straw using the BARC preamp and source.}  
+\begin{cdrfigure}[Signal from single straw using the BARC preamp and source]
+{STT_SignalPreAmp}{Signal from single straw using the BARC preamp and source.}
 \includegraphics[width=0.6\textwidth]{STT_SignalPreAmp}
 \end{cdrfigure}
 
 
-\subsubsection{Other Activities}
-
+\textbf{ \textit{Other Activities}} \\
 As part of the prototyping, 50 Straws of 1.8~m from Lamina
 Dielectrics Ltd., in UK, and 1~km of 30~$\mu$m anode wire from Luma
 Sweden has been procured. The Optical bench for the fabrication of the
@@ -151,8 +147,7 @@ a radioactive source. Wire stringing, straw gluing and other tooling
 setups to be established.
 
 
-\subsubsection{Design of the Full-scale STT Modules} 
- 
+\textbf{ \textit{Design of the Full-scale STT Modules}} \\
 We will optimize the final design of the STT modules based upon the
 results obtained from the STT prototype and from the other prototyping
 activities listed above. This task includes a detailed FEM analysis to
@@ -162,8 +157,7 @@ fabrication of the full scale STT detector.
 
 
 
-\subsection{ECAL Detector} 
-
+\subsubsection{ECAL Detector}
 
 The ECAL detector, as part of the FGT, will occupy the space outside
 the STT with $4\pi$ coverage.  The detailed description of this
@@ -173,7 +167,7 @@ Downstream-ECAL design.  The half-scale downstream ECAL prototype
 construction, which uses Pb as the absorber and extruded scintillator
 with embedded fiber as the active detector system, will involve the
 following steps:
-\begin{itemize} 
+\begin{itemize}
 \item Procure materials such as plastic scintillator bars, WLS fibers,
   SiPM, Pb sheets, etc.
 \item Setup Mechanism to ensure the quality of the scintillator bars,
@@ -186,14 +180,14 @@ following steps:
 \item Develop readout electronics for the prototype and setup a cosmic
   test stand with full DAQ
 \item Mechanical stability of the ECAL design is being worked out
-\end{itemize} 
+\end{itemize}
 
-The ECAL readout system is centered on a highly sensitive/high gain SiPM. The work to be undertaken 
+The ECAL readout system is centered on a highly sensitive/high gain SiPM. The work to be undertaken
 during the R\&D phase will include:
 \begin{itemize}
 \item Comparison of SiPMs from Hamamatru, AdvanSiD and SiPM developed in India by SCL
 \item Discussions are already on with all the vendors
-\end{itemize} 
+\end{itemize}
 
 For optimizing the ECAL detector geometry, an effort for GEANT4
 simulations of the ECAL has already been initiated. The geometry in
@@ -206,10 +200,10 @@ the present configuration.  Figure~\ref{fig:ECAL_SimulationG4} shows
 the longitudinal view of the electromagnetic shower in the downstream
 ECAL by 2~GeV photons. Figure~\ref{fig:ECAL_detail} shows the design
 of the Pb-scintillator assembly configuration for the ECAL.
-\begin{cdrfigure}[Longitudinal view of EM shower in 
-downstream ECAL by 2-GeV photons]  
-{ECAL_SimulationG4}{Longitudinal view of the electromagnetic shower in 
-the downstream ECAL by 2-GeV photons.}  
+\begin{cdrfigure}[Longitudinal view of the electromagnetic shower in
+the downstream ECAL by 2 GeV photons]
+{ECAL_SimulationG4}{Longitudinal view of the electromagnetic shower in
+the downstream ECAL by 2 GeV photons.}
 \includegraphics[width=0.6\textwidth]{ECAL_SimulationG4}
 \end{cdrfigure}
 
@@ -220,13 +214,13 @@ laboratory space of 12~m$\times$12~m is under consideration
 currently. Figure~\ref{fig:ECAL_LabIITG} shows the schematic diagram
 of the laboratory refurbishment plan for the ECAL R\&D and fabrication
 work.
-\begin{cdrfigure}[Laboratory refurbishment plan for ECAL R\&D and assembly]  
-{ECAL_LabIITG}{Laboratory refurbishment plan for the ECAL R\&D and assembly work.}  
+\begin{cdrfigure}[Laboratory refurbishment plan for ECAL R\&D and assembly]
+{ECAL_LabIITG}{Laboratory refurbishment plan for the ECAL R\&D and assembly work.}
 \includegraphics[width=0.6\textwidth]{ECAL_LabIITG}
 \end{cdrfigure}
 
 
-\subsection{Dipole Magnet Development} 
+\subsubsection{Dipole Magnet Development}
 
 The massive dipole magnet (refer to
 Section~\ref{cdrsec:detectors-nd-ref-fgt-magnet}) for the FGT will
@@ -247,9 +241,7 @@ closed system, access to the inner detector systems is under extensive
 study now.
 
 
-
-
-\subsection{MuID--RPC Detector}   
+\subsubsection{MuID--RPC Detector}
 
 
 Muons identification will done with the Resistive Plate Chamber
@@ -272,17 +264,19 @@ developed by taking inputs from the similar R\&D done for the INO-ICAL
 detector. The standard gases used in the RPC operations would need
 substitutions/replacement with more safe gases and an initiative in
 this direction will be taken up during the prototyping phase.
-\begin{cdrfigure}[RPC characteristics measured during the prototype development]  
-{RPC_PrototypeTests}{RPC characteristics measured during the prototype development.}  
+\begin{cdrfigure}[RPC characteristics measured during the prototype development]
+{RPC_PrototypeTests}{RPC characteristics measured during the prototype development.}
 \includegraphics[width=1.0\textwidth]{RPC_PrototypeTests}
 \end{cdrfigure}
 
 
 
-\section{The ND Beamline Measurements Prototyping Plan} 
+\subsection{Beamline Measurements Detectors Prototyping Plan}
 \label{sec:proto-nd-blm}
+This Section describes recent and ongoing prototyping efforts for the detectors described in Chapter~\ref{sec:detectors-nd-ref-blm}.
 
-\subsection{Prototype Development for the Cherenkov and Ionization Detectors}
+
+\subsubsection{Prototype Development for the Cherenkov and Ionization Detectors}
 \label{subsec:proto-blm-muon-cherenkov-proto}
 
 A prototype Cherenkov counter, along with associated fully automated
@@ -293,11 +287,11 @@ for ionization measurements have also been installed into the alcove.
 Figure~\ref{fig:Alcove2Cherenkov} shows the prototype detectors in
 NuMI alcove 2.
 \begin{cdrfigure}[Muon gas Cherenkov counter]{Alcove2Cherenkov}
-{A prototype muon gas Cherenkov detector for DUNE.  
-Muons travel through an L-shaped 4" Conflat pipe filled with a 
-pressurized gas. A flat mirror mirrors directs the optical photons 
-to a photo multiplier. The lower right inset shows the 20~bar MKS 
-pressure reading achieved by the Cherenkov gas system, and the inset 
+{A prototype muon gas Cherenkov detector for DUNE.
+Muons travel through an L-shaped 4" Conflat pipe filled with a
+pressurized gas. A flat mirror mirrors directs the optical photons
+to a photo multiplier. The lower right inset shows the 20~bar MKS
+pressure reading achieved by the Cherenkov gas system, and the inset
 on the upper right shows the CERN/Cividec diamond detectors mounted to the Cherenkov housing.}
 \includegraphics[width=6.in]{Alcove2Cherenkov}
 \end{cdrfigure}
@@ -322,17 +316,17 @@ window viewed by a photo multiplier tube.
 
 The prototype is now fully integrated into NuMI operations and
 real-time waveforms can be viewed online as shown in
-Figure~\ref{fig:MuonDetectorWaveforms}. 
+Figure~\ref{fig:MuonDetectorWaveforms}.
 \begin{cdrfigure}[Muon detector waveforms]{MuonDetectorWaveforms}
-{The realtime display of the muon detector prototypes in operation 
-on the NuMI beam line. The top two panels are the Cherenkov counter 
-and CERN diamond detector\cite{ref:CERNdiamond}, The signals are 
-transmitted through low-loss heliax cable, and then the waveform 
-is digitized at 2.5~GHz with a 12~bit dynamic range, and the 
-recorded onto disk storage for analysis. The signal from the 
-muons is contained in the short beam pulse "buckets" created 
-by the accelerator RF structure. The fast timing allows the 
-prompt muon signal to be easily separated from potential backgrounds 
+{The realtime display of the muon detector prototypes in operation
+on the NuMI beam line. The top two panels are the Cherenkov counter
+and CERN diamond detector\cite{ref:CERNdiamond}, The signals are
+transmitted through low-loss heliax cable, and then the waveform
+is digitized at 2.5~GHz with a 12~bit dynamic range, and the
+recorded onto disk storage for analysis. The signal from the
+muons is contained in the short beam pulse "buckets" created
+by the accelerator RF structure. The fast timing allows the
+prompt muon signal to be easily separated from potential backgrounds
 such as stopped muon decays, beta decays, and neutrons.}
 \includegraphics[width=5in]{MuonDetectorWaveforms}
 \end{cdrfigure}
@@ -348,17 +342,15 @@ bucket-by-bucket (individual proton pulses) comparison of the proton
 current onto the NuMI primary proton target, and the muons measured
 after the absorber with a 400~ps time resolution.
 
-
-
 \subsubsection{Prototype Development of the Stopped Muon Counters}
 
 Prototype development activity for the Michel-electron detectors will
 be divided into studies of the rate and radiation environment where
 the detectors will be located and development of the counters
-themselves. 
+themselves.
 
-The radiation environment will be studied both with Monte Carlo 
-simulations and by measurements from initial prototype detectors 
+The radiation environment will be studied both with Monte Carlo
+simulations and by measurements from initial prototype detectors
 in the NuMI muon alcoves\cite{ref:NuMIBeamMonitors}.
 The prototypes will be installed into the alcoves in 2016 and 2017.
 Studies will be performed to determine if the photon sensors
@@ -381,8 +373,7 @@ photon counters in the first few microseconds after the spill is
 over. A similar system was developed in the 1990s for the Brookhaven
 Muon (g-2) Experiment~\cite{ref:G2} .
 
-\subsection{Current Prototyping Activities}
-
+\textbf{ \textit{Current Prototyping Activities}} \\
 A second set of muon detectors, the final DUNE design, are being
 constructed at this time (2015). They are being installed directly
 behind the NuMI proton beam dump (muon alcove 1). The detectors will
@@ -395,3 +386,5 @@ hall. The higher radiation environment of alcove 1 will be more
 similar to the eventual DUNE installation. It will allow the DUNE muon
 detectors to be calibrated in the NuMI beam and ready for use in the
 DUNE beam.
+
+
