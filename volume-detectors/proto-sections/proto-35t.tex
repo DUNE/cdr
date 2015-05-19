@@ -19,7 +19,10 @@ Phase-2 is currently under construction and plans to take data in summer 2015.
 \subsection{35-t Phase-1}
 
 The 35-t membrane cryostat was built by a Japanese company, IHI\cite{bib:ihicorp},
-contracted by the LBNE project.  It was built in Fermilab's PC-4 facility where the Liquid Argon Purity
+contracted by the LBNE project.  
+Table~\ref{tab:35Tdimensions} lists the construction materials and the
+dimensions for the 35-t prototype; more information can be found in~\cite{bib:membcryo1573}.
+The prototype was built in Fermilab's PC-4 facility where the Liquid Argon Purity
 Demonstrator (LAPD)~\cite{bib:lapdP07005} is also located, which allowed for re-use of a large portion
  of the cryogenic-process equipment installed for LAPD.  The proximity and size (30 tons) of the LAPD
  vessel also offered the possibility using LAPD as a partial storage vessel for LAr if it ever
@@ -35,14 +38,12 @@ photograph of the completed cryostat.}
 \includegraphics[width=0.35\textwidth]{35TCryo}
 \end{cdrfigure}
 
-Table~\ref{tab:35Tdimensions} gives the details of the construction materials and the
-dimensions for the 35-t prototype.  More information can be found in reference~\cite{bib:membcryo1573}.
 The techniques of membrane cryostat construction were demonstrated to be suitable
 for high-purity LArTPC service.  In particular, welding of corrugated panels, removal of leak-checking dye
 penetrant and ammonia-activated leak-detecting paints, and post-construction-cleaning methods, were tested
 and found to be suitable.
 
-\begin{cdrtable}[35-t Details and Dimensions]{ll}{35Tdimensions}
+\begin{cdrtable}[35-t Materials and Dimensions]{ll}{35Tdimensions}
 {35-t Details and Dimensions}
 Parameter & Value \\ \toprowrule
 Cryostat Volume	&      29.16 m3\\ \colhline
@@ -57,7 +58,7 @@ Steel reinforced concrete	    &  0.3 m thick layer\\
 \end{cdrtable}
 
 As was demonstrated by LAPD, initial removal of impurities within the cryostat can be
-achieved by purging with gaseous argon. Accordingly, this "piston purge" procedure
+achieved by purging with gaseous argon. Accordingly, this 
 was adopted for the 35-t as well.   Figure~\ref{fig:35TPurge} graphically shows the
 first step of the purification process, removal of the ambient air.
 The initial state, $t=0$, reflects the initial values for oxygen, water and
@@ -70,18 +71,20 @@ nitrogen in the ``dry air'' state.
 
 Once the room-temperature, gas purge was no longer improving purity,
 the cooldown and LAr fill stage began.
-A gas/liquid spray method was used to cool down the cryostat.
+A gas/liquid spray method was used to cool the cryostat.
 This generated a turbulent mixing of cold gas in the cryostat and cooled the entire surface.
 The cooldown rate was maintained below the maximum specified by the cryostat manufacturer.
-Upon completion of the cooldown, LAr was transferred into the cryostat and recirculating
-purification was begun.
+Upon completion of the cooldown, LAr was transferred into the cryostat and %recirculating
+purification via recirculation was begun. \fixme{check edit}
 
 During recirculation and purification, dedicated purity monitors were used to measure electron lifetime, which can
 be translated into equivalent oxygen contamination levels.
 Figure~\ref{fig:35TElectronLifetime} shows the electron lifetime from the start of the
 LAr pump operation until the end of the Phase-1 run.
 In general, the electron lifetime improved as a function of pump
-on-time; there were also several events that spoiled the lifetime, but the DUNE electron lifetime
+on-time; despite %there were also 
+several events that spoiled the lifetime, %but 
+the DUNE electron lifetime
 specification (>1.4 ms) was easily achieved.
 
 \begin{cdrfigure}[35t Electron Lifetime]{35TElectronLifetime}{LAr electron lifetmes as measured by
@@ -90,17 +93,21 @@ are one week periods. Equivalent purity levels are shown as dashed horizontal li
 \includegraphics[width=0.7\textwidth]{35TElectronLifetime.pdf}
 \end{cdrfigure}
 
-The 35-t Phase-1 run successfully demonstrated that there is nothing innate to
-membrane cryostat technology that would prohibit achieving the stated goals of the
-DUNE Far Detector. In addition, experience gained in operating the 35-t system
-will inform future design decisions, e.g., the loss of purity when switching pumps is
-undesirable, and can likely be avoided by improved system design. Future system
-designs could also avoid coupling acoustical vibrations into the cryostat by choosing
-to locate the pumps externally, which would have the added benefit of facilitating
-maintenance and repair.  % moved up top
+The 35-t Phase-1 run successfully demonstrated that there is nothing %innate 
+inherent to
+membrane cryostat technology that would preclude achieving the stated goals of the
+DUNE far detector. In addition, experience gained in operating the 35-t system
+will inform future design decisions, e.g., finding an alternative to switching pumps, which
+causes loss of purity. \fixme{check edit} %when switching pumps is
+%undesirable, and can likely be avoided by improved system design. 
+Future system
+designs could also avoid the coupling of acoustical vibrations into the cryostat by %choosing to 
+locating the pumps externally; this would have the added benefit of facilitating
+maintenance and repair. 
 
 \subsection{35-t Phase-2}
-Phase-2 of the the 35-t prototype extends the scope to include a fully operational LArTPC and
+Phase-2 of the the 35-t prototype extends the program %scope   
+to include a fully operational LArTPC and
 photon detector in the previously built Phase-1 cryostat.
 Installation of the TPC into the cryostat is expected in mid-2015 with commissioning to follow
 after purge, cooldown and LAr fill.  Phase-2 operation is planned for a several-month-long
