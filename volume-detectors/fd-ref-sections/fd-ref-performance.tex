@@ -35,7 +35,7 @@ important performance parameters of the DUNE reference far detector. Included ar
 previous detector performance, and projected performance with references to relevant studies.  Notes:
 $^1$For a MIP at the CPA, minimum in all three views, for any track angle;
 $^2$Achieved for the collection view;
-$^3$In order for the fiducial volume to be known to $\pm 1\%$;
+$^3$In order for the fiducial volume to be known to $\pm 1\%$, the resolution performances are reported separately in the $x$, $y$, and $z$ directions, where $z$ points along the neutrino beam axis;
 $^4$For a sample of stopping muons;
 $^5$For electron stubs with $E>5$~MeV.
 } 
@@ -51,7 +51,7 @@ Charge Measurement & 15 MIP & & 15 MIP \\ \colhline
 % Two-Hit Resolution & 2~mm & & 2~mm \\ \colhline
 % Track-finding efficiency is expected to be high.  Needs study to connect it to physics performance
 %Track-Finding Efficiency\footnote{For tracks with $L>5$~cm} & $>98\%$ & & $>98\%$ \\ \colhline
-Vertex Position Resolution$^3$ & (2.5,2.5,2.5)~cm & & (0.5,0.8,2.0)~cm~\cite{Marshall:2013bda,Marshall:2012hh}\\ \colhline
+Vertex Position Resolution$^3$ & (2.5,2.5,2.5)~cm & & (1.1,1.4,1.7)~cm~\cite{Marshall:2013bda,Marshall:2012hh}\\ \colhline
 $e-\gamma$ separation $\epsilon_e$ & 0.9 & & 0.9 \\ \colhline
 $e-\gamma$ separation $\gamma$ rejection & 0.99 & & 0.99 \\ \colhline
 Multiple Scattering Resolution & & & \\
@@ -122,8 +122,8 @@ muons which accumulate at a rate of 0.259~Hz (see \anxrates), the
 laser calibration system and purity monitors will provide detailed
 time-dependent measurements of the electron lifetime.  This
 requirement is placed in order to meet the energy scale and resolution
-requirements for electrons, and to a lesser extent, other particles
-that rely on $dE/dx$ measurements to perform particle identification.
+requirements for electrons and to a lesser extent to meet the requirements
+of $dE/dx$-based particle identification algorithms.
 
 The dynamic range requirement is placed in order to detect, without ADC saturation, particle
 ionization densities from one MIP up to the last hit on a track before
@@ -208,7 +208,7 @@ showers between views.  More study is required in order to determine
 the needed two-hit resolution.
 
 It is expected that as the software tools improve and as measurements
-from MicroBooNE and other dedicated test-beam programs become
+from MicroBooNE and the dedicated test-beam programs become
 available the uncertainties on the projected performance will become
 smaller.
 
