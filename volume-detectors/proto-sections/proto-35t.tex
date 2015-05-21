@@ -43,8 +43,8 @@ for high-purity LArTPC service.  In particular, welding of corrugated panels, re
 penetrant and ammonia-activated leak-detecting paints, and post-construction-cleaning methods, were tested
 and found to be suitable.
 
-\begin{cdrtable}[35-t Materials and Dimensions]{ll}{35Tdimensions}
-{35-t Details and Dimensions}
+\begin{cdrtable}[35-t Prototype Materials and Dimensions]{ll}{35Tdimensions}
+{35-t Prototype Materials and Dimensions}
 Parameter & Value \\ \toprowrule
 Cryostat Volume	&      29.16 m3\\ \colhline
 Liquid argon total mass	 &     38.6 metric tons\\ \colhline
@@ -65,15 +65,16 @@ The initial state, $t=0$, reflects the initial values for oxygen, water and
 nitrogen in the ``dry air'' state.
 
 
-\begin{cdrfigure}[Gas Ar Purge and Recirculation]{35TPurge}{Gas phase of removing impurities in the 35-t. These quantities are being measured by various gas analyzers. The first stage of the purification is a process called the ``Piston Purge''.  The second stage is ``Recirculation with Filtering''. The gap between the two steps was due to troubleshooting a leak.}
+\begin{cdrfigure}[Gas Ar Purge and Recirculation]{35TPurge}{Progress of the gas argon purge as it removes impurities  from the 35-t. The shown quantities are measured by various gas analyzers. The first stage of the purification is a process called the ``Piston Purge''.  The second stage is ``Recirculation with Filtering.'' The gap between the two steps was due to troubleshooting a leak.}
 \includegraphics[width=0.8\textwidth]{35TPurgeAndRecirc}
 \end{cdrfigure}
 
 Once the room-temperature, gas purge was no longer improving purity,
-the cooldown and LAr fill stage began.
+the cooldown and LAr-fill stage began.
 A gas/liquid spray method was used to cool the cryostat.
 This generated a turbulent mixing of cold gas in the cryostat and cooled the entire surface.
-The cooldown rate was maintained below the maximum specified by the cryostat manufacturer.
+The cooldown rate was maintained within the limits %below the maximum 
+specified by the cryostat manufacturer.
 Upon completion of the cooldown, LAr was transferred into the cryostat and %recirculating
 purification via recirculation was begun. \fixme{check edit}
 
@@ -121,7 +122,7 @@ Figure~\ref{fig:35TTPC} shows a model of the TPC inside the cryostat and a trial
 the TPC done outside of the cyrostat.
 
 \begin{cdrfigure}[35-t with TPC]{35TTPC}{(left) Rendering of the
-35-t cryostat with TPC and photon detectors installed. %%%%%%%%%%%%%%%%%%
+35-t cryostat with TPC and photon detectors installed. 
 Note the position of the APA, which is asymmetrically located and
 splits the volume into two separate drift regions.
 The length of the longer one of these is close to what is proposed for the far detector.
@@ -131,6 +132,7 @@ The other has a shorter drift length due to lack of space.
 \includegraphics[width=0.55\textwidth]{35TTPC}
 \includegraphics[width=0.35\textwidth]{35TTrial}
 \end{cdrfigure}
+\fixme{in fig 9.4 the APA is not labeled; I guess we all know it's the purple plane; if I'm wrong, it needs labeling!}
 
 The Phase-2 prototype incorporates many of the design elements for the DUNE single-phase
 far detector described in previous sections of this document.
@@ -162,19 +164,18 @@ Triggerless-capable DAQ & \ref{sec:detectors-fd-ref-daq} & Take data using multi
 
 As can be seen from Table~\ref{tab:35TDesign}, successful tests of many of the new
 design features will require simulation, reconstruction and analysis of 35-t data.
-This will be performed using the LarSoft package, which is also used to simulate and
+This will be performed using the LArSoft package, which is also used to simulate and
 reconstruct data from ArgoNeuT, MicroBoone, and LArIAT.
 Reuse of software developed for those experiments will greatly facilitate 35-t developments,
-however, the novel hardware features of the 35t prototype necessitate new software developments
-as well.
-Among the required new software developments are:
+however, the novel hardware features of the 35-t prototype necessitate new software developments
+as well; among them
 \begin{itemize}
-\item{Code to divide the wrapped wires into as many as five individual linear segments.
+\item{code to divide the wrapped wires into as many as five individual linear segments.
 A hit on a single electronic channel can, in principle, be related to a
 signal on any of these segments.}
-\item{``Disambiguation'' code to identify which of the possible wire segments was actually responsible
+\item{``disambiguation'' code to identify which of the possible wire segments was actually responsible
 for the observed hit}
-\item{Code for determining the start time of the event ($t_0$). Since the 35-t prototype DAQ can
+\item{code for determining the start time of the event ($t_0$). Since the 35-t prototype DAQ can
 run ``triggerless,'' methods are needed for finding the $t_0$ in data. Information from the external
 scintillator paddles as well as the internal photon detectors can be used.}
 \item{Code for ``stitching'' together track segments observed in different tracking volumes.
@@ -183,16 +184,17 @@ effectively eight separate tracking volumes,
 which are treated as separate TPCs.}
 \end{itemize}
 
-With these simulation and reconstruction tools in hand, ``physics'' analysis of the data can be undertaken where
-both validation of new detector design elements and analysis of basic LArTPC performance are needed.
-Among the highest priority analysis tasks are:
+With these simulation and reconstruction tools in hand, ``physics'' analysis of the data can be undertaken
+in the areas of %both 
+validation of new detector design elements and analysis of basic LArTPC performance. % are needed.
+Among the highest-priority analysis tasks are:
 
 \begin{itemize}
-\item{Basic detector performance: signal/noise, purity measured with tracks, track direction resolution,
+\item{basic detector performance: signal/noise, purity measured with tracks, track direction resolution,
 photon detector light yield}
-\item{Measurement of distortions due to space charge and field non-uniformity}
-\item{Identification of different types of particles: muons, protons, neutrons, pions}
+\item{measurement of distortions due to space charge and field non-uniformity}
+\item{identification of different types of particles: muons, protons, neutrons, pions}
 \end{itemize}
 
-The results obtained by operating the 35-t Phase-2 prototype and the analysis of its data are expected
-to be very valuable in refining the CERN single-phase prototype design towards the first 10~kton DUNE far detector.
+The results obtained by operating and analyzing data from the 35-t Phase-2 prototype are expected
+to be very valuable in refining the CERN single-phase prototype design, in preparation for the first \ktadj{10} DUNE far detector module.
