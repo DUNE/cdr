@@ -21,7 +21,7 @@ tracker design]{STT_schematic}{A schematic drawing of the fine-grained tracker d
 \includegraphics[width=0.8\textwidth]{FGT_Overview}
 \end{cdrfigure}
 The design presented here meets the required performance for making precision measurements of 
-neutrino fluxes, cross sections, signal rates and background rates for the DUNE far detector. 
+neutrino fluxes, cross sections, signal and background rates for the DUNE far detector. 
 The DUNE ND is designed to fulfill the physics program described in Chapter 6 of CDR \volphys %Section~\ref{ch:physics-nd}, 
 as well as the DAE/DST Detailed Project Report\cite{DPR}. The most significant 
 requirements\cite{ND-REQ1,ND-REQ2} for the FGT include:  
@@ -50,12 +50,12 @@ requirements\cite{ND-REQ1,ND-REQ2} for the FGT include:
 \item $\pi/K/p$ identification by dE/dx in the entire tracking
   detector
 \item Identification of $\pi^0$ and $\gamma$ that can mimic
-  oscillation signals at the FD
+  $\nu_e$ signals at the far detector
 \item Use of a variety of nuclear targets, (C$_3$H$_6$)$_n$, Ar, Ca,
-  C, Fe, etc., to quantitate the impact of nuclear effects in
+  C, Fe, etc., to quantify the impact of nuclear effects in
   $\nu$($\bar \nu$)-nucleus cross sections
-\item Provide more than 10 times the unoscillated statistics expected
-  in a 40 kt FD on Ar target
+\item Provide more than 10 times the unoscillated statistics on Ar targets expected
+  in a 40-kt far detector
 %\item  identification and measurement of processes such as neutral current $\pi^0$ production that can mimic oscillation signals at the FD
 %\item comparability with measurements made in the FD
 %\item measurement of nuclear effects, including short-range correlations, two-body currents, pion absorption, initial-state interactions, 
@@ -106,25 +106,25 @@ CC$\mu$/CCe Rejection&0.01\% \\
 \subsubsection{Straw Tubes} 
 
 The Straw-Tube Tracking Detector (STT) at the center of the FGT 
-will be composed of straw tubes with an outer diameter of 1~cm, as well as 
+is composed of straw tubes with an outer diameter of 1~cm, as well as 
 radiators and targets that reside next to the straw tubes as shown in Figure~\ref{fig:STT_Detail}.
 \begin{cdrfigure}[A schematic drawing of the straw tube tracker]
 {STT_Detail}{A schematic drawing of the Straw-Tube Tracking Detector (STT) design.}
 \includegraphics[width=0.4\textwidth]{STT_Detail}
 \end{cdrfigure}
 
-The straw walls are made by wounding together a film of carbon loaded
+The straw walls are made by winding together a film of carbon loaded
 Kapton XC (inner) and a film of aluminum coated Kapton HN (outer), for
 a total thickness of about 70~$\mu$m.  Vertical (YY) and horizontal
-(XX) planes of straws will be alternated and arranged in modules, with
+(XX) planes of straws will alternate and be arranged in modules, with
 each module containing close-packed double straw layers of vertical
 and horizontal straws (XXYY).  Figure~\ref{fig:STT_Detail} shows a
 schematic drawing of an STT module with four straw-tube planes and
 radiators. Each XXYY module equipped with radiators is equivalent to
 $1.25 \times 10^{-2} X_0$, with a radiation length $X_0\sim$6~m. The
 momentum measurement requires that tracks are detected in at least 6
-straw layers. The staggered design of double layers, the average
-number of straw planes crossed by tracks, and the double-end readout
+straw layers. The staggered double layer design, high 
+number of straw planes and the double-end readout
 will contribute to the short track disambiguation.
 
 
@@ -157,7 +157,7 @@ straws per plane, 1344 straws per module --- and 80 modules. Both ends
 of the straw tubes will be read out, leading to a total number of
 215,040 electronics channels. The total mass of the STT, including
 targets and radiators, is approximately 8~t. Table~\ref{tab:STT_details} 
-summarizes the main parameters of the STT design.
+summarizes the main STT parameters.
 \begin{cdrtable}[Straw Tube Detector specifications]{ll}{STT_details}{Straw Tube Detector specifications}
 Item&Specification \\ \toprowrule
 Straw Tube Geometry & 1cm Diameter x 3.5m Long \\ \colhline
@@ -185,9 +185,9 @@ Fe Mass per Target Plane & 96.5 kg \\ \colhline
 Number of Modules with Fe Target Planes & 1 \\  
 %Water Mass per Target Plane & 95 kg \\
 \end{cdrtable}
-In addition to tracking the charged particles and measuring Transition Radiation (TR), 
-the STT readout provides dE/dx measurement to identify particles. 
-Figure~\ref{fig:PartID_dedx} provides a sample of pion, kaon, and proton identification via dE/dx in the STT.
+In addition to tracking charged particles and measuring Transition Radiation (TR), 
+the STT provides dE/dx measurement to identify particles. 
+Figure~\ref{fig:PartID_dedx} provides a sample of pions, kaons and protons identified via dE/dx in the STT.
 \begin{cdrfigure}[Simulated distributions of dE/dx for different particles in FGT]
 {PartID_dedx}{Simulated distributions of dE/dx for different particles in FGT.}
 \includegraphics[width=0.7\textwidth]{PartID_dedx}
@@ -215,13 +215,13 @@ and the DAE/DST Detailed Project Report\cite{DPR}.
 
 A set of different nuclear targets will be installed in front of the
 most upstream STT modules, which will not be equipped with radiators.
-The most important nuclear target is the argon target that constitutes
+The most important nuclear target is the argon target that matches
 the DUNE far detector.  This target will consist of planes of 0.5-inch
 diameter, 3.5-m-long aluminum tubes, with wall thickness 0.065-inch,
 filled with argon gas pressurized to 140~atm ($\rho = 0.233$), with
 sufficient Ar mass to provide $\sim$10 times the unoscillated
-statistics expected in a 40~t FD.  We are currently investigating the
-possibility to use C-composite tubes instead of Al to contain the
+statistics expected in a 40~t far detector.  We are currently investigating the
+possibility to use carbon-composite tubes instead of Al to contain the
 pressurized Ar gas.
 
 Relevant to argon, a crucial target is calcium which has the same
