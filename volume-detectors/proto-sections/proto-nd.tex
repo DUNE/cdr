@@ -45,7 +45,7 @@ length, i.e., 1.8~m. The major milestones in the STT prototyping
 The three-year STT R\&D and prototyping phase will start with the 3D
 design of a prototype module.  This will include optimizing
 parameters from the prototype assembly point of view and
-establishing its mechanical structure and strength using the FEM \fixme{FEM is not defined}
+establishing its mechanical structure and strength using the Finite Element Method (FEM) 
 techniques. This process will be a self-feeding system with inputs
 also from the GEANT detector simulations.
 Figure~\ref{fig:STT_SimulationG4} shows some of the ongoing work. 
@@ -74,12 +74,13 @@ discussed with vendors and %we plan
 it is planned to produce a half-scale
 (1.8~m$\times$1.8~m) prototype of the radiator targets to demonstrate
 the assembly, the mechanical properties and the overall
-performance as well as to
-further optimize the design of the tubes, including the tube diameter
-and the possibility to use C-composite tubes. 
+performance.
 A preliminary design has been developed for the
 pressurized Ar gas target (Figure~\ref{fig:STT_ArTargets}), based on
-the use of 0.5-in diameter aluminum tubes.
+the use of 0.5-in diameter stainless steel tubes.
+We plan to build prototypes of the pressurized Ar gas tubes to 
+optimize the design of the tubes, including the tube diameter
+and the possibility to use C-composite tubes. 
 \begin{cdrfigure}[Design of the target plane with pressurized Ar gas]
 {STT_ArTargets}{Design of the target plane with pressurized Ar gas.}
 \includegraphics[width=0.6\textwidth]{STT_ArTargets}
@@ -125,19 +126,18 @@ measurement of voltage vs. amplitude for one of the straws in the test chamber (
 
 
 %\textbf{ \textit{Front-end Electronics}} \\
-Some tests are going on for the prototype stage electronics selection
-for the signals to be read out.  \fixme{can't parse prev sentence} A four-channel preamplifier has been
+We are performing some tests of prototype electronics for the signal readout. 
+A four-channel preamplifier has been
 tested with the test chamber using a radioactive source, and the signal
 has been recorded as shown in Figure~\ref{fig:STT_SignalPreAmp}.  The
-back-end DAQ is still worked out \fixme{still being worked out?} and would follow the description 
+back-end DAQ is still being worked out and would follow the description 
 in Section~\ref{cdrsec:detectors-nd-ref-fgt-instrum}. At
-present both CAMAC- and VME-based DAQ is available. $\mu$TCA-based fast
-DAQ has also been setup. \fixme{some are available and some are set up?}
+present both CAMAC- and VME-based DAQ are available. In addition, a $\mu$TCA-based fast
+DAQ has also been setup. 
 \begin{cdrfigure}[Signal from single straw using the BARC preamp and source]
-{STT_SignalPreAmp}{Signal from single straw using the BARC preamp and source.}
+{STT_SignalPreAmp}{Signal from single straw using the BARC (Bhabha Atomic Research Center) preamp and source.}
 \includegraphics[width=0.6\textwidth]{STT_SignalPreAmp}
 \end{cdrfigure}
-\fixme{where is BARC described? I only see it in the figure}
 
 %\textbf{ \textit{Other Activities}} \\
 Other activities are in progress. As part of the prototyping, 50 straws of 1.8~m from Lamina
@@ -150,8 +150,7 @@ soon. Local industry and vendors have been identified for the
 manufacturing of nozzles, end-plugs, wire-spacers and steel
 balls. Local workshops are available to fabricate the mechanical
 structure to hold the straws in the prototype design and also to
-fabricate a test stand for efficiency and characteristic studies \fixme{for efficiency and for characteristic studies? or for
-studies of efficiency and characteristics?} with
+fabricate a test stand for studies of efficiency and characteristics with
 a radioactive source. Wire stringing, straw gluing and other tooling
 setups are still to be established.
 
@@ -159,17 +158,17 @@ setups are still to be established.
 %\textbf{ \textit{Design of the Full-scale STT Modules}} \\
 %We will optimize t
 The final design of the STT modules will be optimized based on the
-results obtained from the STT prototype and from the other prototyping
-activities listed above. \fixme{which?} This task includes a detailed FEM analysis to
+results obtained from the STT prototype and from all the related prototyping
+activities listed above. This task includes a detailed FEM analysis to
 assess the mechanical structure and the choice of the final
 materials. The final design is intended to be ready for the
-fabrication of the full-scale STT detector. \fixme{Is this last sentence needed?}
+fabrication of the full-scale STT detector. 
 
 
 
 \subsubsection{ECAL Detector}
 
-The ECAL detector, as part of the FGT, \fixme{part of or surrounding?} will occupy the space outside
+In FGT the ECAL detector will occupy the space outside
 the STT with $4\pi$ coverage.  The detailed description of this
 detector is given in Section~\ref{cdrsec:detectors-nd-ref-fgt-ecal}.
 The ECAL prototype will be a 2~m$\times$2~m module similar to the
@@ -221,8 +220,8 @@ the downstream ECAL by 2 GeV photons.}
 \includegraphics[width=0.6\textwidth]{ECAL_SimulationG4}
 \end{cdrfigure}
 
-For the construction of the prototype and final detector assembly \fixme{final prototype assembly? or assembly of
-actual detector?}  a
+For the construction of the prototype and for the assembly of the 
+actual detector a
 space of dimension 32~m$\times$12~m has been
 identified. Construction of a class 10,000 clean room covering a
 laboratory space of 12~m$\times$12~m is under consideration. %currently. 
@@ -238,15 +237,13 @@ work.
 \subsubsection{Dipole Magnet Development}
 
 The massive dipole magnet (Section~\ref{cdrsec:detectors-nd-ref-fgt-magnet}) for the FGT will
-play an exclusive \fixme{exclusive in what sense? Do you mean important?} role in the particle-momentum measurements,
-providing space for the MuID--RPC installations in the magnet steel
-and giving structural support to the FGT. 
-\fixme{Wait, a role in measurements or a role in structural support?}
+play a critical role since it will allow the particle-momentum measurements, will 
+provide space for the MuID--RPC installations in the magnet steel, 
+and will give structural support to the FGT. 
 The planned magnet prototype
 %envisaged prototype of the dipole magnet 
-includes development of the tooling and
-infrastructure to take up the engineering task. 
-\fixme{includes engineering development of the tooling and infrastructure?}
+includes the engineering development of the tooling and
+infrastructure. 
  % The, thus developed, infra-setup 
 that will be used to produce one C out of the total 8 Cs of the
 8.0-m long dipole.  The same C will be utilized in the final magnet
@@ -264,15 +261,14 @@ study. % now.
 \subsubsection{MuID--RPC Detector}
 
 Muon identification will done with the Resistive Plate Chamber (RPC)
-detectors made up of Bakelite electrodes.  The placeholders \fixme{attachment points?} for these
+detectors made up of Bakelite electrodes.  The mounting structure for these
 RPCs will be provided by the magnet steel (on sides and ends). %There has been an e
 Extensive R\&D has already been done for such detectors and 
 is being applied 
 %the experience gained so far is being extended 
 to the prototyping of the
-muon identifiers. The dimensions of the electrodes \fixme{what are the dims?} 
-make it 
-challenging to procure the raw material from industry, however a local \fixme{`local' in this section means India, I presume}
+muon identifiers. The size of the RPCs in FGT make it 
+challenging to procure the raw material from industry, however an Indian 
 industry has already been identified and a large 2.4-m$\times$1.2~m
 RPC prototype has been assembled (see
 Section~\ref{cdrsec:detectors-nd-ref-fgt-muonid}). The I-V
@@ -284,8 +280,9 @@ in ambient parameters, as the Bakelite is sensitive to such
 changes. Some of the measured quantities are shown in
 Figure~\ref{fig:RPC_PrototypeTests}.  The readout electronics is being
 developed with input from similar R\&D done for the INO-ICAL
-detector. \fixme{Could use reference} The gases standardly used in the RPC operations would need
-substitution/replacement with more safe gases \fixme{why?} and an initiative in
+detector~\cite{1748-0221-7-10-P10003}. The gases standardly used in the RPC operations would need
+substitution/replacement with more safe gases, due to the safety requirements for underground operation. 
+An initiative in
 this direction will be taken up during the prototyping phase.
 \begin{cdrfigure}[RPC characteristics measured during the prototype development]
 {RPC_PrototypeTests}{RPC characteristics measured during the prototype development.}
@@ -306,7 +303,7 @@ A prototype Cherenkov counter, along with associated fully automated
 gas systems, HV systems, and data acquisition system has been
 constructed and is undergoing testing in the NuMI neutrino beam's Muon
 Alcove 2. In addition, three diamond detectors~\cite{ref:CERNdiamond} (from CERN)
-for ionization measurements have also been installed into the alcove. \fixme{Raises question: what's a diamond detector?}
+for ionization measurements have also been installed into the alcove. 
 Figure~\ref{fig:Alcove2Cherenkov} shows the prototype detectors in
 NuMI Alcove 2.
 \begin{cdrfigure}[Muon gas Cherenkov counter]{Alcove2Cherenkov}
@@ -356,21 +353,21 @@ such as stopped-muon decays, beta decays, and neutrons.}
 \includegraphics[width=5in]{MuonDetectorWaveforms}
 \end{cdrfigure}
 The top panel shows the waveform from the Cherenkov counter at 2~atm
-gas pressure, that corresponds to a muon momentum threshold of
+gas pressure, which corresponds to a muon momentum threshold of
 3~GeV/c. The second panel shows the waveform from a 9~mm$\times$9~mm
 diamond detector mounted to the front flange of the Cherenkov radiator
-section as shown in the inset of Figure~\ref{fig:Alcove2Cherenkov}.
+section, as shown in the inset of Figure~\ref{fig:Alcove2Cherenkov}.
 
-The extracted NuMI proton beam, Resistive Wall Monitor (RWM) signal is
-also recorded with an identical digitizer. \fixme{can't parse prev sentence} That allows a direct,
+The extracted NuMI proton beam produces a signal in the Resistive Wall
+Monitor (RWM) that is recorded with an identical digitizer. This allows a direct,
 bucket-by-bucket (individual proton pulses) comparison of the proton
-current onto the NuMI primary proton target, and the muons measured
+current onto the NuMI primary proton target. The muons are measured
 after the absorber with a 400-ps time resolution.
 
 \subsubsection{Prototype Development of the Stopped-Muon Counters}
 
 Prototype development activity for the Michel-electron detectors will
-be divided into studies of (1) the rate \fixme{rate of what?} and the radiation environment where
+be divided into studies of (1) the rate of particles and the radiation environment where
 the detectors will be located, and (2) development of the counters
 themselves.
 
@@ -399,12 +396,15 @@ over. A similar system was developed in the 1990s for the Brookhaven
 Muon (g-2) Experiment~\cite{ref:G2} .
 
 %\textbf{ \textit{Current Prototyping Activities}} \\
-A second set of muon detectors, the final \fixme{really want to say `final'?} DUNE design, are being
+A second set of muon detectors, the final 
+%\fixme{really want to say `final'?i - yes} 
+DUNE design, are being
 constructed at this time (2015). They are being installed directly
 behind the NuMI proton beam dump (Muon Alcove 1), mounted on a movable stand which has undergone an engineering
 review at Fermilab. 
 %
 The entire setup, detectors and stand, will be
 suitable for use in the DUNE beam. The higher-radiation environment of Alcove 1 is more representative %similar 
-than Alcove 2 of the conditions in the eventual DUNE installation, and will allow \fixme{a more accurate?} calibration in the NuMI beam. The setup will be eventually transferred the DUNE Absorber Hall. 
-
+than Alcove 2 of the conditions in the eventual DUNE installation, and will 
+allow a more accurate calibration in the NuMI
+beam. The setup will be eventually transferred the DUNE Absorber Hall. 
