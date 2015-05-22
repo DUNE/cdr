@@ -5,19 +5,19 @@ The reference design for the DUNE far detector is designed to meet the
 performance requirements; however, the process of optimizing the
 design parameters is not complete.  Considerations of physics reach as
 well as cost, schedule and risk enter the process of optimizing the
-values for the far detector design parameters.  As this is a
-conceptual design and not a technical design, the detailed process of
+values for the far detector design parameters.  At this 
+conceptual design and not a technical design phase the detailed process of
 optimizing the far detector continues.  Furthermore, as the
 optimization process weighs different values against one another ---
 physics reach vs. cost, for example. The optimal choices depend both
 on prevailing boundary conditions and the relative values the DUNE
-Collaboration, the LBNF Facility, the host laboratory and the funding
+Collaboration, LBNF Facility, host laboratory and funding
 agencies assign to the input variables. The DUNE collaboration plans
-to exstablish a detector perforamnce optimization task force to review
+to exstablish a detector performance optimization task force to review
 various possible detector optimizations in light of the new
 collaboration and project organizations. This section briefly outlines
 the considerations and procedures that have been and will continue to
-be used to optimize these parameters: separately for the wire spacing,
+be used to optimize these parameters: wire spacing,
 APA dimensions, wire angle and maximum drift length.
 
 Ideally one would like to estimate the asymptotic far-future
@@ -43,38 +43,41 @@ structure and these are treated in turn below.
 The spacing between neighboring sense wires in the APA's is an optimizable parameter.  In principle
 it is freely adjustable for all three wire planes, though to minimize the anisotropy of the
 detector response, similar wire pitch should be chosen in all three planes.  The choice of
-a $\approx 5$~mm pitch is documented in Ref.~\cite{docdb-3407}.  The pitch of the
+a $\sim$5~mm pitch is documented in Ref.~\cite{docdb-3407}.  The pitch of the
 grid plane wires is less important as they are not instrumented,
 though the grid wires do shadow the optical detectors and so
 they should not be made too fine.
 
-The signal to noise ratio is expected to be proportional to the wire spacing, assuming that
-the noise on a channel is not impacted by the presence of nearby wires, and that the signal
-is divided among the available channels.  Thermal noise and uncorrelated electronics noise satisfies
-these conditions.  Coherent noise is a special case --- filters may be applied either online
-or offline to reduce its impact.  The signal-to-noise ratio requirement is set so that
-zero-suppression can function without elaborate noise filtering.  A high signal to noise 
-ratio has the added benefit
-of improving pattern-recognition performance, calorimetric PID performance, and $dE/dx$-based
-$e-\gamma$ separation.  A large signal to noise ratio is important in detecting sub-MIP signals,
-such as nuclear de-excitation photons, and it is 
-important when adding up the energy of hits on the edges of showers or on the ends of stubs initiated
-by supernova neutrino interactions.
-The signal to noise ratio is expected to be higher in the collection
-plane than in the two induction planes.  The need to deconvolute the bipolar
-signals while filtering noise in the induction planes means that the collection plane will
-be the most reliable in performing $dE/dx$ measurements, though for tracks that travel
-in a plane containing a collection wire and the electric field, the induction planes will
-be critical for recovering PID efficiency.  Reducing the spacing between wires will have an
-adverse impact on the detector performance parameters that depend on the signal to noise, 
-with the effect seen more prominently in the
-induction-plane data.
+The signal to noise ratio is expected to be proportional to the wire
+spacing, assuming that the noise on a channel is not impacted by the
+presence of nearby wires, and that the signal is divided among the
+available channels.  Thermal noise and uncorrelated electronics noise
+satisfies these conditions.  Coherent noise is a special case ---
+filters may be applied either online or offline to reduce its impact.
+The signal-to-noise ratio requirement is set so that zero-suppression
+can function without elaborate noise filtering.  A high signal to
+noise ratio has the added benefit of improving pattern-recognition
+performance, calorimetric PID performance and $dE/dx$-based
+$e-\gamma$ separation.  A large signal to noise ratio is important in
+detecting sub-MIP signals, such as nuclear de-excitation photons, and
+it is important when adding up the energy of hits on the edges of
+showers or on the ends of stubs initiated by supernova neutrino
+interactions.  The signal to noise ratio is expected to be higher in
+the collection plane than in the two induction planes.  The need to
+deconvolute the bipolar signals while filtering noise in the induction
+planes means that the collection plane will be the most reliable in
+performing $dE/dx$ measurements, though for tracks that travel in a
+plane containing a collection wire and the electric field, the
+induction planes will be critical for recovering PID efficiency.
+Reducing the spacing between wires will have an adverse impact on the
+detector performance parameters that depend on the signal to noise,
+with the effect seen more prominently in the induction-plane data.
 
 In a detector with fine wire pitch,
 one can of course approximate a coarser wire spacing by summing the responses on neighboring
 wires.  The random components of the noise will
-average with an RMS that grows as the square root of the number of wires instead of linearly,
-Instead of summing signals, a more optimal approach is to deconvolve the signal in both
+average with an RMS that grows as the square root of the number of wires instead of linearly.
+Instead of summing signals, a more optimized approach is to deconvolve the signal in both
 time and wire number, as diffusion and the field response of the detector will cause
 signals to be shared among neighboring wires.  If the diffusion characteristics are known,
 either a deconvolution may be attempted, or fits to expected distributions with known
@@ -117,7 +120,7 @@ in topological separation of NC events from CC-$\nu_e$ events in a detector with
 and a detector with 10~mm wire pitch~\cite{2008-hand-scan} showed no degradation in performance with
 the wider wire pitch.  Automated topological selection has yet to be developed, though it is
 anticipated that this finding will remain true for automated selection as well, given that the
-radiation length in liquid argon is typically $\approx 30$ times the typical wire spacing.
+radiation length in liquid argon is typically $\sim$30 times the typical wire spacing.
 
 To balance against the gains in physics is the increased cost of the electronics and
 online computing resources needed to read out the additional wires if a finer pitch is chosen.
@@ -199,10 +202,10 @@ angles.
 The length of the collection-plane wires is determined by the APA dimensions (or vice-versa),
 and the length of the induction-plane wires is determined by their angle and the APA
 dimensions.  The APA dimensions have other constraints on them, such as the need to transport
-them over the ground, lower them down the shaft, and handle them underground.  Long APA frames
+them over the ground, lower them down the shaft and handle them underground.  Long APA frames
 also suffer from stiffness issues and may require additional cost in order to procure the
 members of the required length and stiffness.  Longer wires have higher capacitance than shorter
-wires and thus have more noise.  Cold electronics is expected to have very low noise, and thus
+wires and thus have more noise.  Cold electronics is expected to have very low noise and thus
 this effect is not expected to be masked by electronics noise.  In order to meet the signal-to-noise
 requirement with a finer wire spacing, the wires may need to be made shorter.
 
@@ -242,4 +245,3 @@ near the CPA's.
 Sophisticated reconstruction and analysis algorithms can be used to recover resolution that
 is thus lost, but these are limited by noise.  Simulation studies in advance of CD-2 will
 study the impact of diffusion and noise on the particle reconstruction performance.
-
