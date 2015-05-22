@@ -97,7 +97,7 @@ The DUNE far detector will be built as four \ktadj{10} modules, which will
 come online over the course of several years, as described in Chapter~\ref{ch:project-overview}. 
 This staged program enables an early scientific output from DUNE, 
 initially focused on the observation of natural
-sources neutrinos, the searches for nucleon decays and the
+sources of neutrinos, searches for nucleon decays and 
 measurements of backgrounds. Soon afterwards, the LBNF neutrino
 beam at FNAL will commence operation sending neutrinos over the \kmadj{1300}
 baseline, commencing the LBL oscillation physics program with a beam power of up to \SI{1.2}\MW{}. 
@@ -151,7 +151,7 @@ with the following assumptions:
 It is assumed that the knowledge from the near detector can be
 retroactively applied to previous data sets, such that each
 improvement in the knowledge of systematic uncertainties~\footnote{A
-  detailed discussion of the systematic uncertainties assumed is in
+  detailed discussion of the systematic uncertainties assumed is presented in
   \volphys. For studies without a near detector an uncertainty of 10\%
   is assumed on the unoscillated flux at the far detector based on the
   current performance of the NuMI beam simulation, with uncertainties
@@ -198,7 +198,7 @@ ambiguous outcome is highly unlikely.
     \chi^2$ is plotted as a function of the unknown value of \deltacp
     for an exposure of \SI{300}\ktMWyr{} % ~kt-MW-yr 
     (left).  The minimum significance
-    --- the lowest point on the curve on the left - with which the mass
+    --- the lowest point on the curve on the left --- with which the mass
     hierarchy can be determined for all values of \deltacp as a
     function of years of running under the staging plan described in the text (right).
     The shaded region represents the range in sensitivity corresponding to
@@ -210,7 +210,7 @@ ambiguous outcome is highly unlikely.
 
 
 Figure~\ref{fig:mhexec} shows the evolution of the sensitivity to the MH determination as a function
-of year of operation, for the least favorable scenario, corresponding to the case in which the MH asymmetry is
+of years of operation, for the least favorable scenario, corresponding to the case in which the MH asymmetry is
 maximally offset by the leptonic CP asymmetry. For the reference design beam an exposure of \SI{400}\ktMWyr{}  
 (which corresponds to \num{8.5} years of operation) is required to distinguish
 between normal and inverted hierarchy with $|\Delta \chi^2| =
@@ -263,12 +263,17 @@ scenario.
 Figure~\ref{fig:execsummaryCP} shows, as a function of time, the
 expected sensitivity to CP violation expressed as the fraction of the
 range of \deltacp values observable with a significance of
-3$\sigma$. Also shown is the 1$\sigma$ resolution for \deltacp as a
+3$\sigma$. 
+\fixme{Carl A suggests: shows, as a function of time, the
+expected (something) sensitivity to CP violation for a 75\% range of \deltacp values observable.  Also
+shown...}
+Also shown is the 1$\sigma$ resolution for \deltacp as a
 function of time for $\delta_{\rm CP}=0$ (no CP violation) and
 $\delta_{\rm CP}=90^\circ$ (maximal CP violation). In both figures the staging scenario
 described above was assumed.  The exposure required to measure
 $\delta_{\rm CP} = 0 $ with a precision better than $10^\circ$ ranges
 from 290 to \SI{450}\ktMWyr{} depending on the beam design.
+
 %At this beam power, in a six-year run,
 %a \ktadj{10} far detector will be able to measure \deltacp to $\pm$
 %20$^\circ$ $-$ 30$^\circ$ (depending on its value), independent of
@@ -283,19 +288,20 @@ Table~\ref{tab:execosctable} summarizes the exposures needed to
 achieve specific oscillation physics milestones, calculated 
 for the current best fit values of the known neutrino mixing parameters. 
 Values for both the reference beam design and the optimized beamline design are shown.
-For example, to reach $5\sigma$ sensitivity for 75\% of the range of \deltacp, a
+For example, to reach $5\sigma$ sensitivity 
+\fixme{Carl A asks: $3\sigma$? Table says 3 sigma at 75\%}
+for 75\% of the range of \deltacp, a
 DUNE exposure in the range of \num{850} to \SI{1320}\ktMWyr{} is needed
 for the optimized and reference beamline designs. 
 Changes in the assumed value of
 $\theta_{23}$ impacts CP-violation and MH sensitivities the
-most (discussed in Volume \volphys) and can either reduce or increase the 
+most (discussed in \volphys) and can either reduce or increase the 
 discovery potential for CP violation. To reach this level of sensitivity 
 a highly-capable near neutrino detector is required to control systematic uncertainties at a level lower than
-the statistical uncertainties in the far detector needed to reach this
-level of sensitivity. No experiment can provide coverage at 100\% of
+the statistical uncertainties in the far detector. No experiment can provide coverage at 100\% of
 \deltacp values, since CP-violating effects vanish as $\mdeltacp\to 0$
 or $\pi$. Potential improvements in beamline geometry, focusing and target element designs
-that can significantly lower the exposure required for CP violation
+can significantly lower the exposure required for CP violation
 discovery potential.  Several such potential improvements are discussed
 in CDR \volphys and \vollbnf. 
  %
@@ -467,10 +473,12 @@ beam intensity of \num{1e20} %$1 \times 10^{20}$
 protons-on-target at \SI{120}{GeV}, the expected number of events per
 ton is \num{288000} (\num{96000}) %$\nu_\mu$ ($\overline{\nu}_\mu$)
 \numu (\anumu) charged current and \num{98000} (\num{43000}) neutral
-current interactions in the $\nu$ ($\overline\nu$) beam~\footnote{With PIP-II, the integrated protons-on-target per year is
+current interactions in the $\nu$ ($\overline\nu$) beam\footnote{With PIP-II, the integrated protons-on-target per year is
   expected to be around $1.1\times 10^{21}$ at \SI{120}\GeV. The mass
   of the Ar target in the DUNE ND is expected to be approximately
-  100~kg.}. These numbers correspond to \num{e5} neutrino interactions
+  100~kg.}. 
+  \fixme{Carl A says this should be \numu (\anumu)}
+  These numbers correspond to \num{e5} neutrino interactions
 on argon per year for the range of beam configurations and near detector
 designs under consideration.  Measurement of fluxes, cross sections
 and particle production over a large energy range of
