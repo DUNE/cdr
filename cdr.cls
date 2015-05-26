@@ -50,7 +50,7 @@
 % For abbrev/acronym lists
 \RequirePackage[intoc]{nomencl}
 \makenomenclature  % does this belong here or outside of the class?
-\renewcommand{\nomname}{Acronyms, Abbreviations and Units}
+\renewcommand{\nomname}{Acronyms, Abbreviations and Terms}
 \setlength{\nomlabelwidth}{0.2\textwidth}
 
 % Tighter control of floats.
