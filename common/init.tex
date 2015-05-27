@@ -22,28 +22,29 @@
 \end{center}
 
 
-\cleardoublepage
+%\cleardoublepage
 
 \pagestyle{plain} 
 
 \renewcommand{\familydefault}{\sfdefault}
 \renewcommand{\thepage}{\roman{page}}
 \setcounter{page}{1}
-\cleardoublepage
+%\clearpage
 
 \setcounter{tocdepth}{3}
 \textsf{\tableofcontents}
-\cleardoublepage
+%\clearpage
 
-%For acronym list to appear just after TOC
-\printnomenclature
-\cleardoublepage
 
 \textsf{\listoffigures}
-\cleardoublepage
+%\clearpage
 
 \textsf{\listoftables}
-\clearpage
+%\clearpage
+
+%For acronym list to appear just after TOC, TOF, TOT
+\printnomenclature
+%\clearpage
 
 \iffinal\else
 \textsf{\listoftodos}
