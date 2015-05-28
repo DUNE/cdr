@@ -37,15 +37,16 @@
 \textsf{\tableofcontents}
 \cleardoublepage
 
-%For acronym list to appear just after TOC
-\printnomenclature
-\cleardoublepage
 
 \textsf{\listoffigures}
 \cleardoublepage
 
 \textsf{\listoftables}
 \clearpage
+
+%For acronym list to appear just after TOC
+\printnomenclature
+\cleardoublepage
 
 \iffinal\else
 \textsf{\listoftodos}
@@ -66,7 +67,7 @@
 
 \fancyfoot{}
 \fancyfoot[RO]{\textsf{\footnotesize LBNF/DUNE Conceptual Design Report}}
-\fancyfoot[LE]{\textsf{\footnotesize \thevolumetitle}}
+\fancyfoot[LO]{\textsf{\footnotesize \thedoctitle}}
 \fancypagestyle{plain}{}
 
 \renewcommand{\headrule}{\vspace{-4mm}\color[gray]{0.5}{\rule{\headwidth}{0.5pt}}}
