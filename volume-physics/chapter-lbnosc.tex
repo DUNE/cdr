@@ -247,8 +247,8 @@ accelerator complex and the LBNF beamline of 56\%.
 Proton Momentum (GeV/c) & Expected Beam Power (MW) & Expected POT/year
 \\
 \toprowrule 
-120 & 1.2 & \num{1.1e21} \\
-80 & 1.07 & \num{1.47e21} \\
+120 & 1.2 & \num{1.1e21} \\ \colhline
+80 & 1.07 & \num{1.47e21} \\ \colhline
 60 & 1.03 & \num{1.89e21} \\
 \end{cdrtable}
 A conservative estimate of sensitivity is calculated using neutrino
@@ -275,12 +275,12 @@ beam design.
 \begin{cdrtable}[Beamline parameters for CDR reference and optimized designs]{lcc}{beamparam}{A comparison of the beamline parameters assumed for the CDR Reference Design flux and the Optimized Design flux used in the sensitivity calculations presented in this chapter.  Section~\ref{sec:physics-lbnosc-beam-req} provides the details.}
 Parameter & CDR Reference Design & Optimized Design\\
 \toprowrule 
- Proton Beam Energy & 80~GeV & 80~GeV \\ 
- Proton Beam Power & 1.07~MW & 1.07~MW\\
- Target & Graphite & Graphite \\
- Horn Current & 230~kA & 297~kA \\
- Horn Design & NuMI-style & Genetic Optimization \\ 
- Decay Pipe Length & 204~m & 250~m \\
+ Proton Beam Energy & 80~GeV & 80~GeV \\  \colhline
+ Proton Beam Power & 1.07~MW & 1.07~MW\\ \colhline
+ Target & Graphite & Graphite \\ \colhline
+ Horn Current & 230~kA & 297~kA \\ \colhline
+ Horn Design & NuMI-style & Genetic Optimization \\  \colhline
+ Decay Pipe Length & 204~m & 250~m \\ \colhline
  Decay Pipe Diameter & 4~m & 4~m\\
 \end{cdrtable}
 
@@ -371,12 +371,12 @@ of presentation.
 \begin{cdrtable}[Oscillation parameter values and relative uncertainties]{lcc}{oscpar_nufit}{Central value and relative uncertainty of neutrino oscillation parameters from a global fit~\cite{Gonzalez-Garcia:2014bfa} to neutrino oscillation data. Because the probability distributions are somewhat non-Gaussian (particularly for $\theta_{23}$), the relative uncertainty is computed using 1/6 of the 3$\sigma$ allowed range from the fit, rather than the 1$\sigma$ range.   For $\theta_{23}$ and $\Delta m^2_{31}$, the best-fit values and uncertainties depend on whether normal mass hierarchy (NH) or inverted mass hierarchy (IH) is assumed.}
 Parameter &    Central Value & Relative Uncertainty \\
 \toprowrule
-$\theta_{12}$ & 0.5843 & 2.3\% \\
-$\theta_{23}$ (NH) & 0.738  & 5.9\% \\
-$\theta_{23}$ (IH) & 0.864  & 4.9\% \\
-$\theta_{13}$ & 0.148  & 2.5\% \\
-$\Delta m^2_{21}$ & 7.5$\times10^{-5}$~eV$^2$ & 2.4\% \\
-$\Delta m^2_{31}$ (NH) & 2.457$\times10^{-3}$~eV$^2$ &  2.0\% \\
+$\theta_{12}$ & 0.5843 & 2.3\% \\ \colhline
+$\theta_{23}$ (NH) & 0.738  & 5.9\% \\ \colhline
+$\theta_{23}$ (IH) & 0.864  & 4.9\% \\ \colhline
+$\theta_{13}$ & 0.148  & 2.5\% \\ \colhline
+$\Delta m^2_{21}$ & 7.5$\times10^{-5}$~eV$^2$ & 2.4\% \\ \colhline
+$\Delta m^2_{31}$ (NH) & 2.457$\times10^{-3}$~eV$^2$ &  2.0\% \\ \colhline
 $\Delta m^2_{31}$ (IH) & -2.449$\times10^{-3}$~eV$^2$ &  1.9\% \\
 \end{cdrtable}
 
@@ -406,56 +406,56 @@ beam design and the optimized beam design.
 \begin{cdrtable}[\nue and \anue appearance rates]{lcc}{apprates}{\nue and \anue appearance rates: Integrated rate of selected $\nu_e$ CC-like events between 0.5 and 8.0~GeV assuming a \SI{150}~\ktMWyr{} exposure in the neutrino-beam mode and antineutrino-beam mode.  The signal rates are shown for both normal mass hierarchy (NH) and inverted mass hierarchy (IH), and all the background rates assume normal mass hierarchy.  All the rates assume $\mdeltacp = 0$, and the rates are shown for both the CDR reference beam design and the optimized beam as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
   & CDR Reference Design & Optimized Design\\
   \toprowrule
-  \toprowrule
+%  \toprowrule
  $\nu$ mode (\SI{150}~\ktMWyr{}) & & \\
- \toprowrule
+ \colhline % \toprowrule
  \nue Signal NH (IH) & 861 (495) & 945 (521)\\
  \anue Signal NH (IH) & 13 (26) & 10 (22)\\
- \toprowrule
+  \colhline
  Total Signal NH (IH) & 874 (521) & 955 (543) \\
- \toprowrule
+  \colhline %\toprowrule
  Beam $\nu_{e}+\bar{\nu}_{e}$ CC Bkgd & 159 & 204 \\
  NC Bkgd & 22 & 17 \\
  $\nu_{\tau}+\bar{\nu}_{\tau}$ CC Bkgd & 42 & 19 \\
  $\nu_{\mu}+\bar{\nu}_{\mu}$ CC Bkgd & 3 & 3 \\
- \toprowrule
+  \colhline
  Total Bkgd & 226 & 243 \\
  \toprowrule
- \toprowrule
+ %\toprowrule
  $\bar{\nu}$ mode (\SI{150}~\ktMWyr{}) & & \\
- \toprowrule
+ \colhline % \toprowrule
  \nue Signal NH (IH) & 61 (37) & 47 (28)\\
  \anue Signal NH (IH) & 167 (378) & 168 (436)\\
- \toprowrule
+  \colhline
  Total Signal NH (IH) & 228 (415) & 215 (464) \\
- \toprowrule
+  \colhline %\toprowrule
  Beam $\nu_{e}+\bar{\nu}_{e}$ CC Bkgd & 89 & 105 \\
  NC Bkgd & 12 & 9 \\
  $\nu_{\tau}+\bar{\nu}_{\tau}$ CC Bkgd & 23 & 11 \\
  $\nu_{\mu}+\bar{\nu}_{\mu}$ CC Bkgd & 2 & 2 \\
- \toprowrule
+  \colhline %\toprowrule
  Total Bkgd & 126 & 127 \\
 \end{cdrtable}
 
 \begin{cdrtable}[\numu and \anumu disappearance rates]{lcc}{disrates}{\numu and \anumu disappearance rates: Integrated rate of selected $\nu_{\mu}$ CC-like events between 0.5 and 20.0~GeV assuming a \SI{150}~\ktMWyr{} exposure in the neutrino-beam mode and antineutrino-beam mode.  The rates are shown for normal mass hierarchy and $\mdeltacp = 0$, and the rates are shown for both the CDR reference beam design and the optimized beam as described in Section~\ref{sec:physics-lbnosc-beam-req}.}
   & CDR Reference Design & Optimized Design\\
   \toprowrule
-  \toprowrule
+ % \toprowrule
  $\nu$ mode (\SI{150}~\ktMWyr{}) & & \\
- \toprowrule
+ \colhline %\toprowrule
  \numu Signal & 10842 & 7929 \\
- \toprowrule
+ \colhline %\toprowrule
   \anumu CC Bkgd & 958 & 511 \\
  NC Bkgd & 88 & 76 \\
  $\nu_{\tau}+\bar{\nu}_{\tau}$ CC Bkgd & 63 & 29 \\
 %  \toprowrule
 %  Total Bkgd & 1109 & 616 \\
  \toprowrule
- \toprowrule
+% \toprowrule
  $\bar{\nu}$ mode (\SI{150}~\ktMWyr{}) & & \\
- \toprowrule
+\colhline % \toprowrule
  \anumu Signal & 3754 & 2639 \\
- \toprowrule
+\colhline % \toprowrule
   \numu CC Bkgd & 2598 & 1525 \\
  NC Bkgd & 50 & 41 \\
  $\nu_{\tau}+\bar{\nu}_{\tau}$ CC Bkgd & 39 & 18 \\
@@ -796,7 +796,7 @@ the MH determination, it's not possible for any experiment to provide
 \begin{cdrtable}[Required exposure for a CP-violation measurement]{lcc}{cpv_requiredexposure}{The minimum exposure required to determine CP violation with a significance of 3$\sigma$ for 75\% of \deltacp values or 5$\sigma$ for 50\% of \deltacp values for the CDR reference beam design and the optimized beam design.}
  Significance & CDR Reference Design & Optimized Design\\
  \toprowrule
- 3$\sigma$ for 75\% of \deltacp values & \SI{1320}~\ktMWyr{} & \SI{850}~\ktMWyr{} \\
+ 3$\sigma$ for 75\% of \deltacp values & \SI{1320}~\ktMWyr{} & \SI{850}~\ktMWyr{} \\ \colhline 
  5$\sigma$ for 50\% of \deltacp values & \SI{810}~\ktMWyr{} & \SI{550}~\ktMWyr{}\\
 \end{cdrtable}
 

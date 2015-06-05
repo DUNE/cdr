@@ -1,18 +1,15 @@
-\begin{table}[!htb]
-\centering
-\caption[Interaction rates, $\nu$ mode, per ton
-for \SI{1e20}{\POT}, \SI{459}{\meter}, \SI{120}{\GeV}]{Estimated interaction rates on Ar (Carbon) in the neutrino (second column) and antineutrino (third column) beams per ton of detector 
+\begin{cdrtable}
+[Interaction rates, $\nu$ mode, per ton
+for \SI{1e20}{\POT}, \SI{459}{\meter}, \SI{120}{\GeV}]
+{lrr}{tab:rates}
+{Estimated interaction rates on Ar (Carbon) in the neutrino (second column) and antineutrino (third column) beams per ton of detector 
   for \SI{1e20}{\POT} at \SI{459}{\meter} assuming neutrino
   cross-section predictions from GENIE~\cite{GENIE} and a \GeVadj{120}
   proton beam using the optimized design (Section~\ref{sec:alternative-focusing-systems}).  Processes are defined at the initial neutrino
   interaction vertex and thus do not include final-state effects. These estimates do not
   include detector efficiencies or acceptance~\cite{DOCDB740,DOCDB783}. 
 }
-\label{tab:rates}
-\footnotesize{
-\begin{tabular}[!htbp]{$L^r^r}%rl}  %$
-\toprule
-\rowtitlestyle
+%\footnotesize{
 Production mode & $\nu_\mu$ Events  & $\overline\nu_\mu$ Events \\
 \rowtitlestyle
                 & on Ar (Carbon) & on Ar (Carbon)\\
@@ -40,12 +37,11 @@ NC elastic electron ($\nu_\mu e^- \rightarrow \nu_\mu e^-$
 or  $\overline{\nu}_\mu e^- \rightarrow \overline{\nu_\mu} e^-$)              & 27 (29)           & 19 (21) \\ \colhline
 Inverse Muon Decay ($\nu_\mu e \rightarrow \mu^- \nu_e$)                      & 15 (16)           & 0 (0) \\ \colhline
 Other                                                                         & 3,306 (3,326) & 509 (511) \\ 
-\toprule
-\rowtitlestyle
+\toprowrule
+%\rowtitlestyle
 Total CC                                                         & 288,475 (280,622) & 96,498 (101,695) \\ %81,340 \\
-\rowtitlestyle
+%\rowtitlestyle
 Total NC+CC                                                      & 386,271 (378,756) & 139,610 (145,483) \\%114,980 \\ 
-\bottomrule
-\end{tabular}
-}
-\end{table}
+%\bottomrule
+%}
+\end{cdrtable}

@@ -306,20 +306,14 @@ detector and surrounding rock, atmospheric neutrino interactions in the
 dectector, and reconstruction failures. Table~\ref{tab:pdkbkds} summarizes the
 results of those background studies.  All together, our estimates of total
 background events in the proton decay sample is less than 1 \SI{}{\Mtyr}.
-\begin{table}[!htbp]
-\caption[Background Summary for Nucleon Decay]
-        {Background sources and mitigation strategies or nucleon decay. }
-%        {rates (events per \SI{}{\Mtyr}) for nucleon decay 
-%         channels of interest for a large underground LArTPC~\cite{Bueno:2007um}, and 
-%         comparison with water Cherenkov detector capabilities.  
-%         The entries for the water Cherenkov capabilities are based 
-%         on experience with the \superk{} detector~\cite{kearns_isoups}.  
-%        }
-\begin{center}
-\begin{tabular}{$L^c^c} %$ 
-\toprule
-\rowtitlestyle
-Background Source & Mitigation Strategy  \\
+
+
+\begin{cdrtable}[Background Summary for Nucleon Decay]{lll}{tab:pdkbkds}
+{Background sources and mitigation strategies or nucleon decay}
+%\begin{center}
+%\begin{tabular}{$L^c^c} 
+%\toprule
+Background Source & Mitigation Strategy  \\ 
 \toprowrule
 Internal cosmic ray spallation      & Energy threshold \\ \colhline
 External cosmogenic & & \\
@@ -336,12 +330,10 @@ Atmospheric $\nu$ & $dE/dx$ discrimination, & \\
 with $\pi$ mis-ID & 236 MeV muon track \\
 \colhline
 Reconstruction pathologies & $dE/dx$ profiles vs track length \\
-\colhline
-\bottomrule
-\end{tabular}
-\end{center}
-\label{tab:pdkbkds}
-\end{table}
+%\end{tabular}
+%\end{center}
+%\label{tab:pdkbkds}
+\end{cdrtable}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\boldmath Summary of Expected Sensitivity to Key Nucleon Decay Modes}
@@ -463,25 +455,13 @@ are those where a final state muon exits the detector.  The number of events exp
 for each flavor and category is summarized in Table~\ref{tab:atmos_rates}.
 
 %
-\begin{table}[!htbp]
-\caption[Atmospheric-neutrino event rates]
-        {
-         Atmospheric-neutrino event rates including oscillations in \SI{350}{\ktyr} 
-         with a LArTPC, fully or partially contained in the detector fiducial volume. 
-        }
-\begin{center}
-\begin{tabular}{$L^c} %$ 
-\toprule
-\rowtitlestyle
+\begin{cdrtable}
+[Atmospheric-neutrino event rates]{lc}{tab:atmos_rates}{Atmospheric-neutrino event rates including oscillations in \SI{350}{\ktyr} with a LArTPC, fully or partially contained in the detector fiducial volume. }
 Sample   &  Event Rate \\ \toprowrule
 fully contained electron-like sample   &14,053 \\ \colhline
 fully contained muon-like sample       &20,853 \\ \colhline
-partially contained muon-like sample   & 6,871 \\ \colhline
-\bottomrule
-\end{tabular}
-\end{center}
-\label{tab:atmos_rates}
-\end{table}
+partially contained muon-like sample   & 6,871 \\ 
+\end{cdrtable}
 %
 
 Figure~\ref{fig:lovere} shows the expected L/E distribution for high-resolution muon-like 
