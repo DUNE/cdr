@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\section{The Data Acquisition (DAQ) System and Monitoring} 
+\section{Data Acquisition (DAQ) System and Monitoring} 
 \label{sec:detectors-fd-ref-daq}
 
 The scope of the DAQ and monitoring includes design, procurement,
@@ -24,18 +24,12 @@ fabrication, testing, delivery and installation. It is required to:
   histograms and monitor (and provide for offline use) historical
   status of measured detector parameters. 
 \end{itemize}
-%The design presented here   AH: this sounded too bold, somehow.
-This section outlines a conceptual design intended to meet the required performance for the DAQ
-for the DUNE far detector. 
-
-%  GB - No, what I am saying is subtly different, the reader has to think
-%  to get the subtlety (and is not missing out if they don't take the
-%  time to think \fixme{To reduce the deadtime of the overall DUNE detector sufficiently to meet the requirements... AH}
-To reduce considerably the times when none of the parts of DUNE are
-collecting data (particularly important for supernova detection); and
-to allow the designs of the DAQ in the different 10-kt sections to be
-entirely different if desired, the DUNE DAQ employs a decoupled 
-design. 
+This section outlines a conceptual design intended to meet the
+required performance for the DAQ for the DUNE far detector.  To reduce
+considerably the times when none of the DUNE far detector modules are collecting
+data (particularly important for supernova detection); and to allow
+the designs of the DAQ in the different 10-kt sections to be entirely
+different if desired, the DUNE DAQ employs a decoupled design.
 %\fixme{(but less coupled or more uncoupled to/from what? -AH, original phrasing: a less coupled design than has ever been used in data acquisition before is employed. } 
 % GB - I am trying to say the parts within the DAQ are less coupled
 % with each other
@@ -200,7 +194,7 @@ electronics.
 data collection functionality (buffering, matching event parts,
 synchronization, inter-process communication, etc.) in a modern
 design that facilitates the efficient use of multicore commodity
-computers running on the Linux computer farms.  The multi-core
+computers running on the Linux computer farms.  The multicore
 functionality is crucial in the high data-rate environment on DUNE.  
 The detector-specific
 code is supplied by DUNE groups (this is centered in the UK), along
@@ -348,20 +342,20 @@ potential supernova event candidate.
 
 
 At the 4850L, the data rate in the trigger is dominated by
-radioactivity from $^{39}$Ar and $^{85}$Kr.  The cosmic-rays that
+radioactivity from $^{39}$Ar and $^{85}$Kr.  The cosmic rays that
 occur about once per minute are the major source of events that should
 be collected on the data stream; the physics beam events, atmospheric
 netrinos and other candidate contained events are included in this
 data budget.  
 Table~\ref{tab:daqrefrates}) gives estimates of the
-rate of occurence of these events and the expected ``steady-state'' data rate
-(after the derandomisation provided by the buffering in the front-end
+rate of occurence of these events and the expected steady-state data rate
+(after the derandomization provided by the buffering in the front-end
 computers).  
 \begin{cdrtable}[Estimated data rates]{lcc}{daqrefrates}{Estimated data
     rates in the DAQ system}  %The third argument (reads {cc}) can use c, l, r or p{some length} % but please do not include lines like “|c|l|l|”. It CAN look like {cll} or {llp{3cm}}, for instance.
 Process & Rate (kHz/APA) & Data rate (MBytes/s) \\ \toprowrule
 Generic 2.3\,ms interval & 0.43 & 6,000\\ \colhline
-Cosmic ray muons (4850L) & $6\times 10^{-7}$ & $1\times 10^{-5}$ \\ \colhline
+Cosmic-ray muons (4850L) & $6\times 10^{-7}$ & $1\times 10^{-5}$ \\ \colhline
 Radioactivity & $\sim 64$ & 1.9 \\ \colhline
 Electronics noise (not common mode) & $\sim 1$ & 0.03 \\
 \end{cdrtable}

@@ -17,7 +17,7 @@ Section~\ref{sec:detectors-sc-physics-software-simulation-fd}
 and~\ref{sec:detectors-sc-physics-software-reconstruction-fd}, and in
 \anxreco.  Simulation and reconstruction studies are ongoing.  While
 many components are in place, a full end-to-end simulation,
-reconstruction and analysis chain does not yet exist Many
+reconstruction and analysis chain does not yet exist. Many
 of the numerical performance requirements are estimates.  Some of the
 numerical requirements correspond to achievements by ICARUS and
 ArgoNeuT, although these experiments differ somewhat from the DUNE far
@@ -91,18 +91,18 @@ electromagnetic pickup and acoustical vibrations of the wires among
 other sources, we would like sufficient contingency on the
 signal-to-noise ratio to ensure that the detector meets the
 programmatic physics requirements.  A value of 10:1 was achieved by
-ICARUS\cite{Antonello:2015zea,Antonello:2014eha}, and even higher
-values by Long Bo\cite{Bromberg:2015uia}, which benefits from the use
-of cold electronics as will the DUNE far detector, though Long Bo had
-much shorter wires than DUNE.
+ICARUS\cite{Antonello:2015zea,Antonello:2014eha} and even higher
+values were achieved by Long Bo\cite{Bromberg:2015uia}. Long Bo
+benefited from the use of cold electronics as will the DUNE far
+detector though it had much shorter wires.
 
 The electron lifetime requirement of 3~ms is placed in order to
 preserve the signal-to-noise ratio across the entire detector volume
 in the presence of noise sources that have not yet been foreseen.  A
 shorter lifetime also places demands on the dynamic range of the
-ADC's, as a sufficiently large gain will be necessary to see weak
+ADC's, as a sufficiently large gain will be necessary to detect weak
 signals at the CPA, while at the same time, strong signals near the
-APA's should be recorded without saturation if possible.  The
+APAs should be recorded without saturation if possible.  The
 calorimetric energy resolution of low-energy electrons is highly
 sensitive to the lifetime for electrons that do not record flashes in
 the photon-detection system.  The energy resolution is approximately
@@ -214,63 +214,52 @@ smaller.
 
 \subsection{Expected Performance for Low-Energy Events}\label{sec:detectors-fd-ref-perf-lowe}
 
-Low-energy (5--50~MeV) events require some special consideration.
-Electron-type neutrino interactions
-appearing close together in time is the signature for a supernova
-burst event.  A \MeVadj{5} electron is expected to hit four wires in the DUNE far
-detector, and given the signal-to-noise requirement above, it is
-anticipated that this signal will be easy to separate from noise with
-the required 90\% efficiency.  (Similarly, the photon-detection system
-is expected to see the energy from a proton-decay event resulting in a
-100~MeV kaon with high efficiency.)
+Low-energy (5--50~MeV) events require special consideration.
+Electron-type neutrino interactions appearing close together in time
+is the signature for a supernova burst event.  A \MeVadj{5} electron
+is expected to hit four wires in the DUNE far detector, and given the
+signal-to-noise requirement above, it is anticipated that this signal
+will be easy to separate from noise with the required 90\% efficiency.
+(Similarly, the photon-detection system is expected to detect the energy
+from a proton-decay event resulting in a 100~MeV kaon with high
+efficiency.)
 
-Work is currently underway using the LArSoft simulation package
-to characterize low-energy
-response for realistic DUNE detector configurations.
+Work is currently underway using the LArSoft simulation package to
+characterize low-energy response for realistic DUNE detector
+configurations.
 %Figure~\ref{fig:evdisplays} shows a sample \MeVadj{20} event in the DUNE
 %\SIadj{35}{t} prototype
 %\ktadj{10} 
 %geometry simulated with LArSoft. 
-So far,
-most studies have been done with the MicroBooNE geometry, with the
-results expected to be %largely
-generally applicable to the larger DUNE detectors.  For a preliminary
-understanding of achievable energy resolution, isotropic and uniform
-monoenergetic electrons with energies of 5--50~MeV (which should
-approximate the $\nu_e$-CC electron products) were simulated and
-reconstructed with the LArSoft
-package. 
-The charge of reconstructed hits on the collection plane was used to
-reconstruct the energy of the primary electrons.
-\footnote{Collection-plane hit charge gave the best resolution results compared to
-induction-plane and track-length-based reconstruction in this preliminary study; however improved reconstruction based on broader information could be possible in the future.}
-Figure~\ref{fig:lowe_res} shows the results of a resolution study (see caption).
-A correction to compensate for loss of electrons during drift,
-$Q_{collection}=Q_{production}\times e^{-T_{\rm drift} / T_{\rm
-    electron}}$ (where $T_{drift}$ is the drift time of the ionization
-electrons, and $T_{electron}$ is the electron lifetime), using Monte
+So far, most studies have been done with the MicroBooNE geometry, with
+the results expected to be generally applicable to the larger DUNE
+detectors.  For a preliminary understanding of achievable energy
+resolution, isotropic and uniform monoenergetic electrons with
+energies of 5--50~MeV (which should approximate the $\nu_e$CC
+electron products) were simulated and reconstructed with the LArSoft
+package.  The charge of reconstructed hits on the collection plane was
+used to reconstruct the energy of the primary electrons.
+\footnote{Collection-plane hit charge gave the best resolution results
+  compared to induction-plane and track-length-based reconstruction in
+  this preliminary study; however improved reconstruction based on
+  broader information could be possible in the future.}
+Figure~\ref{fig:lowe_res} shows the results of a resolution study (see
+caption).  A correction to compensate for loss of electrons during
+drift, $Q_{\rm collection}=Q_{\rm production}\times e^{-T_{\rm drift} / T_{\rm
+    electron}}$ (where $T_{\rm drift}$ is the drift time of the ionization
+electrons, and $T_{\rm electron}$ is the electron lifetime), using Monte
 Carlo truth to evaluate $T_{\rm drift}$, improved resolution
 significantly.  This study indicated that photon time information will
 be valuable for low-energy event reconstruction.  Some of the
 resolution was determined to be due to imperfect hit-finding by the
 nominal reconstruction software.  A tuned hit-finding algorithm did
-somewhat better (Figure~\ref{fig:lowe_res}), and further
-improvements for reconstruction algorithms optimized for low-energy
-events are expected.
-
-Also under study is the potential for tagging $\nu_e$-CC absorption
-events ($\nu_e +{}^{40}{\rm Ar} \rightarrow e^- +{}^{40}{\rm
-  K^*}$) using the cascade of deexcitation $\gamma$ rays (which Compton-scatter in the detector), which should
-serve the dual purposes of rejecting background and isolating the CC
-component of the supernova burst signal.  Reconstructing these gammas also improves the neutrino energy measurement. 
-
-
-
+somewhat better (Figure~\ref{fig:lowe_res}), and further improvements
+for reconstruction algorithms optimized for low-energy events are
+expected.
 \begin{figure}[!htb] %  figure placement: here, top, bottom, or page
  \centering
 \includegraphics[width=0.45\textwidth]{correction.pdf} 
 \includegraphics[width=0.45\textwidth]{hitfinder.pdf} 
-
  \caption[Comparisons of energy resolution]{Left: Comparison of energy
    resolution (defined as $\sigma/E$, where $\sigma$ is the spread of
    the collection-plane-charge-based event energy $E$ for a
@@ -283,5 +272,16 @@ component of the supernova burst signal.  Reconstructing these gammas also impro
    reconstruction algorithm (for fixed position/direction electron
    events).}\label{fig:lowe_res}
 \end{figure}
+
+Also under study is the potential for tagging $\nu_e$-CC absorption
+events ($\nu_e +{}^{40}{\rm Ar} \rightarrow e^- +{}^{40}{\rm K^*}$)
+using the cascade of deexcitation $\gamma$ rays (which Compton-scatter
+in the detector), which should serve the dual purposes of rejecting
+background and isolating the CC component of the supernova burst
+signal.  Reconstructing these gammas also improves the neutrino energy
+measurement.
+
+
+
 
 
