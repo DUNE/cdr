@@ -54,7 +54,7 @@ it is important when adding up the energy of hits on the edges of
 showers or on the ends of stubs initiated by supernova neutrino
 interactions.  The signal to noise ratio is expected to be higher in
 the collection plane than in the two induction planes.  The need to
-deconvolute the bipolar signals while filtering noise in the induction
+deconvolve the bipolar signals while filtering noise in the induction
 planes means that the collection plane will be the most reliable in
 performing $dE/dx$ measurements, though for tracks that travel in a
 plane containing a collection wire and the electric field, the
@@ -91,7 +91,7 @@ in few usable hits.  If no hits are useful, then the $dE/dx$ method
 cannot be used.  Reducing the spacing between wires in all three views
 increases the precision of the measurement of the initial part of the
 shower for $e-\gamma$ separation purposes.  The current study
-described in \anxreco however only uses the collection plane wires and
+described in \anxreco\ however only uses the collection plane wires and
 thus with a more optimal strategy, some of the efficiency that is lost
 with 5~mm wire spacing compared with 3~mm can be recovered by
 examining the other two views.
@@ -115,9 +115,9 @@ component of $\pi^0\rightarrow\gamma\gamma$ separation from electrons.
 Topological identification of two EM showers and their displacement
 from the primary vertex is expected to provide a factor of ten to
 twenty in NC background rejection while retaining at least 90\%
-efficiency for CC-$\nu_e$ events.  A hand-scan study comparing liquid
+efficiency for $\nu_e$CC events.  A hand-scan study comparing liquid
 argon TPC detector performance in topological separation of NC events
-from CC-$\nu_e$ events in a detector with 5~mm wire pitch and a
+from $\nu_e$CC events in a detector with 5~mm wire pitch and a
 detector with 10~mm wire pitch~\cite{2008-hand-scan} showed no
 degradation in performance with the wider wire pitch.  Automated
 topological selection has yet to be developed, though it is
@@ -129,7 +129,7 @@ To balance against the gains in physics is the increased cost of the
 electronics and online computing resources needed to read out the
 additional wires if a finer pitch is chosen.  A higher heat load in
 the liquid is anticipated from the additional cold electronics
-components.  Manufacturing the APA's is expected to take longer if
+components.  Manufacturing the APAs is expected to take longer if
 more wires are to be installed and wrapped.
 
 The spacing between the planes is customarily chosen to be similar to
@@ -143,7 +143,7 @@ signals.  Studies varying the spacing between the planes can be
 performed to estimate the impact on two-hit resolution in time.
 
 Future studies will include the estimation of the difference in
-performance of $dE/dx$-based $e-gamma$ separation for events in which
+performance of $dE/dx$-based $e-\gamma$ separation for events in which
 the showers are not identified topologically as candidates for having
 come from $\pi^0$ decay using automated tools.  Kinematic properties
 of the events such as the energies and angles of the photons will
@@ -166,38 +166,47 @@ wire charge was deposited corresponding to a measured hit on a
 channel.  The more times a wire wraps, the more choices arise for this
 ambiguity.
 
-Reconstruction of three-dimensional objects based on two-dimensional (channel number vs. time)
-data requires associating hits in one plane with those in another, or ideally, all three.
-If two wires only cross in one place, then there is no ambiguity once the hit is associated
-in two views.  Three are required if the wires cross more than once, to break the ambiguity
-of even isolated hits.
+Reconstruction of three-dimensional objects based on two-dimensional
+(channel number vs. time) data requires associating hits in one plane
+with those in another, or ideally, all three.  If two wires only cross
+in one place, then there is no ambiguity once the hit is associated in
+two views.  Three are required if the wires cross more than once, to
+break the ambiguity of even isolated hits.
 
-This association can most easily be done using the arrival time of the hits.  If the time of
-a hit is different from that of all other hits in the event, then the association is easy.
-In more complex cases, where dense showers produce many hits at similar drift distances,
-misassociation can happen.  If misassociation occurs, the wrong choice can be made for
-the discrete ambiguity, displacing a reconstructed charge deposition
-by multiple meters from its true location.  In the case that the $U$ and $V$ angles are the
-same and the number of times a wire wraps around an APA exceeds one, then even a single isolated
-hit can be ambiguous.  A small difference in the $U$ and $V$ angles breaks this ambiguity,
-though misassociation still occurs in events with multiple nearby hits close in time.
-Using clustering methods assists in obtaining the correct ambiguity choices for hits in
-dense environments.
+This association can most easily be done using the arrival time of the
+hits.  If the time of a hit is different from that of all other hits
+in the event, then the association is easy.  In more complex cases,
+where dense showers produce many hits at similar drift distances,
+misassociation can happen.  If misassociation occurs, the wrong choice
+can be made for the discrete ambiguity, displacing a reconstructed
+charge deposition by multiple meters from its true location.  In the
+case that the $U$ and $V$ angles are the same and the number of times
+a wire wraps around an APA exceeds one, then even a single isolated
+hit can be ambiguous.  A small difference in the $U$ and $V$ angles
+breaks this ambiguity, though misassociation still occurs in events
+with multiple nearby hits close in time.  Using clustering methods
+assists in obtaining the correct ambiguity choices for hits in dense
+environments.
 
-Reducing the wire angle reduces the number of crossings.  The angle chosen for the DUNE
-far detector reference design ensures that no induction wire crosses any collection wire
-more than once.  Misassociation of hits can still happen, though, in events with multiple
-hits simultaneously arriving.  Reducing the angle also makes the features in the views
-match each other more easily as their shapes will be more similar.
+Reducing the wire angle reduces the number of crossings.  The angle
+chosen for the DUNE far detector reference design ensures that no
+induction wire crosses any collection wire more than once.
+Misassociation of hits can still happen, though, in events with
+multiple hits simultaneously arriving.  Reducing the angle also makes
+the features in the views match each other more easily as their shapes
+will be more similar.
 
-On the other hand, reducing the wire angle worsens the resolution of three-dimensional
-reconstruction of hits in the vertical direction.  It also worsens the resolution on the
-measured separation between the primary vertex and photon conversion points, though as pointed
-out above, the radiation length is much longer than the wire spacing.  The number of hits
-available for $dE/dx$ separation of electrons from photons degrades for vertically-going
-showers if the wire angle is reduced.  
-A parametric study of a figure-of-merit based on the measurability of the two photon-conversion
-lengths as a function of the induction-plane wire angles is provided in~\cite{wire-orientation}.
+On the other hand, reducing the wire angle worsens the resolution of
+three-dimensional reconstruction of hits in the vertical direction.
+It also worsens the resolution on the measured separation between the
+primary vertex and photon conversion points, though as pointed out
+above, the radiation length is much longer than the wire spacing.  The
+number of hits available for $dE/dx$ separation of electrons from
+photons degrades for vertically-going showers if the wire angle is
+reduced.  A parametric study of a figure-of-merit based on the
+measurability of the two photon-conversion lengths as a function of
+the induction-plane wire angles is provided
+in~\cite{wire-orientation}.
 
 It was estimated that the loss in resolution from even a small fraction
 of hits mis-associated and placed meters away from their true
@@ -218,21 +227,27 @@ deviations in the parameters.
 
 \subsubsection{Wire Length}
 
-The length of the collection-plane wires is determined by the APA dimensions (or vice-versa),
-and the length of the induction-plane wires is determined by their angle and the APA
-dimensions.  The APA dimensions have other constraints on them, such as the need to transport
-them over the ground, lower them down the shaft and handle them underground.  Long APA frames
-also suffer from stiffness issues and may require additional cost in order to procure the
-members of the required length and stiffness.  Longer wires have higher capacitance than shorter
-wires and thus have more noise.  Cold electronics is expected to have very low noise and thus
-this effect is not expected to be masked by electronics noise.  In order to meet the signal-to-noise
-requirement with a finer wire spacing, the wires may need to be made shorter.
+The length of the collection-plane wires is determined by the APA
+dimensions (or vice-versa), and the length of the induction-plane
+wires is determined by their angle and the APA dimensions.  The APA
+dimensions have other constraints on them, such as the need to
+transport them over the ground, lower them down the shaft and handle
+them underground.  Long APA frames also suffer from stiffness issues
+and may require additional cost in order to procure the members of the
+required length and stiffness.  Longer wires have higher capacitance
+than shorter wires and thus have more noise.  Cold electronics is
+expected to have very low noise and thus this effect is not expected
+to be masked by electronics noise.  In order to meet the
+signal-to-noise requirement with a finer wire spacing, the wires may
+need to be made shorter.
 
-Longer wires also lower the cost of the detector, as fewer electronics channels and APA frames
-and winding time and materials are needed to instrument a given volume of liquid argon.
+Longer wires also lower the cost of the detector, as fewer electronics
+channels and APA frames and winding time and materials are needed to
+instrument a given volume of liquid argon.
 
-It is anticipated that much of the work needed to study the impact of the wire pitch will inform
-the wire length choice due to its impact on the signal to noise ratio.
+It is anticipated that much of the work needed to study the impact of
+the wire pitch will inform the wire length choice due to its impact on
+the signal to noise ratio.
 
 \subsubsection{Maximum Drift Length}
 
@@ -243,7 +258,7 @@ given channel, reducing the APA count and the channel count.  A longer
 drift length also increases the fraction of liquid argon that is
 fiducial.  Fiduciality cuts will need to be made around the APA planes
 to ensure containment and that the impact of dead argon inside the APA
-planes is minimized.  Fewer APA's reduces the amount of non-fiducial
+planes is minimized.  Fewer APAs reduces the amount of non-fiducial
 liquid argon.  The detector can be sized to have the desired fiducial
 volume, but it must be larger if the maximum drift length is smaller.
 
@@ -254,13 +269,15 @@ ratio with the electron lifetime requirement and the dynamic range
 requirement, given the drift length.  If the drift length were
 shorter, then the electron lifetime would be less critical.
 
-Increasing the drift length also degrades position resolution due to diffusion, where the
-spread of a drifting packet of charge increases proportional to the square root of the
-drift time.  Charge deposited near the APA's remains well measured, though charge deposited
-near the CPA's will suffer from both attenuation and diffusion, lowering the signal to noise
-ratio.  Small-signal detection efficiencies and PID performance may decrease for events
-near the CPA's.
+Increasing the drift length also degrades position resolution due to
+diffusion, where the spread of a drifting packet of charge increases
+proportional to the square root of the drift time.  Charge deposited
+near the APAs remains well measured, though charge deposited near the
+CPAs will suffer from both attenuation and diffusion, lowering the
+signal to noise ratio.  Small-signal detection efficiencies and PID
+performance may decrease for events near the CPAs.
 
-Sophisticated reconstruction and analysis algorithms can be used to recover resolution that
-is thus lost, but these are limited by noise.  Simulation studies in advance of CD-2 will
-study the impact of diffusion and noise on the particle reconstruction performance.
+Sophisticated reconstruction and analysis algorithms can be used to
+recover resolution that is thus lost, but these are limited by noise.
+Simulation studies in advance of CD-2 will study the impact of
+diffusion and noise on the particle reconstruction performance.
