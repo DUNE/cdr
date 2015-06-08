@@ -10,14 +10,9 @@
 \input{common/units.tex}
 \input{generated/parameters.tex}
 
-
-
-% Set the major title, consistently across all volumes
-%\renewcommand\thevolumetitle{Conceptual Design Report \\ \explong} <-- done in cdr.cls AH
-
 % Do this here to make use of the experiment name and title macro
 \hypersetup{
-    pdftitle={\expshort CDR \thevolumesubtitle},
+    pdftitle={\expshort CDR \thedocsubtitle},
     pdfauthor={\expshort Collaboration},
     final=true,
     colorlinks=false,
