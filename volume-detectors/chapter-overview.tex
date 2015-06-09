@@ -7,7 +7,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{About this Volume}
 
-The first part of \voldune of the CDR describes the strategies for
+The first part of \voldune{} of the CDR describes the strategies for
 implementing the near and far detectors
 (Chapter~\ref{ch:detectors-strategy}) and outlines the DUNE management
 structure (Chapter~\ref{ch:detectors-pm}). The next part describes the
@@ -68,8 +68,8 @@ effort. %At this stage, t
 A list of synergies
 between the reference and alternative designs has been identified and is
 summarized in Chapter~\ref{ch:detectors-synergy}. Common solutions for
-DAQ, electronics, HV feedthroughs, and so on, will pursued and
-implemented, independent of the details of the TPC design. The development of the two detector module designs is %a strengthand an added value 
+DAQ, electronics, HV feedthroughs, and so on, will be pursued and
+implemented, independent of the details of the TPC design choice. The development of the two detector module designs is %a strengthand an added value 
 a considerable advantage, and it is made possible by the %efforts of the international DUNE collaboration.
 convergence of previously separate international neutrino efforts into the DUNE Collaboration.
 
@@ -110,7 +110,8 @@ reference design, closer to the original ICARUS design, is currently
 being validated in the 35-t prototype LAr detector at Fermilab (see Section~\ref{sec:proto-35t}).  The
 novel alternative design approach has been proven on
 several small-scale prototypes, and a 20-t dual-phase
-prototype (WA105 3$\times$1$\times$1) is being constructed at CERN, intended for
+prototype %(WA105 3$\times$1$\times$1) 
+is being constructed at CERN, intended for
 operation in 2016.  Full-scale engineering prototypes will be
 assembled and commissioned at the CERN neutrino platform~\footnote{See CERN Bulletin article at \href{http://cds.cern.ch/journal/CERNBulletin/2014/51/News\%20Articles/1975980?ln=en}{http://cds.cern.ch/journal/CERNBulletin/2014/51/News\%20Articles/1975980?ln=en}.}; they are 
 expected to provide the ultimate validation of the engineered solutions
@@ -162,21 +163,37 @@ over the relatively long installation period of the experiment.
 \subsection{Near Detector Systems}
 \label{sec:intro-dune-near-det}
 
-The spectrum and flavor composition of the neutrino beam will be
-measured with high precision in order to reach the ultimate
-sensitivity for the long-baseline neutrino oscillation studies.  The
-separate measurements of the fluxes of neutrinos and antineutrinos requires a
-magnetized neutrino detector to charge-discriminate electrons and
-muons produced in the neutrino charged current interactions.  This is
-the primary role of the DUNE near detector; % system; 
-however, exposure
-to the intense neutrinos flux provides the opportunity to collect
-neutrino interaction data sets of unprecedented size for an extended
-science program.  The near detector will therefore provide an
+\fixme{Start with something like ``A few hundred meters downstream of the neutrino source, DUNE will install a near neutrino detector (NND) and 
+a Beamline Measurement System (BLM), collectively called the Near Detector Systems (NDS).''}
+
+The NDS will allow DUNE
+to reach the ultimate \fixme{`ultimate' or the required sensitivity for meeting physics reqs?}
+sensitivity for the long-baseline neutrino oscillation studies.
+The primary role of the neutrino detector is to
+measure the spectrum and flavor composition of the beam to high precision. This detector
+will be magnetized so that it can charge-discriminate electrons and
+muons produced in the neutrino charged current interactions; it will therefore be capable of making  
+separate measurements of the neutrino and antineutrino fluxes.  
+%
+%In order to reach the ultimate
+%sensitivity for the long-baseline neutrino oscillation studies, the neutrino detector will
+%measure the spectrum and flavor composition of the (neutrino beam to high precision.  
+%Separate measurements of the fluxes of neutrinos and antineutrinos requires a
+%magnetized neutrino detector to charge-discriminate electrons and
+%muons produced in the neutrino charged current interactions.  This is
+%the primary role of the DUNE near detector; % system; 
+%however, 
+
+In addition, exposure
+to the intense neutrino flux provides the opportunity to collect
+neutrino interaction data sets of unprecedented size, enabling an extended
+science program.  The near detector therefore provides an
 opportunity for a wealth of fundamental neutrino interaction
 measurements, which are an important part of the ancillary %secondary 
 scientific
-goals of the DUNE collaboration.  The reference design for the
+goals of the DUNE collaboration.  
+
+The reference design for the
 neutrino near detector (NND) design is the NOMAD-inspired fine-grained
 tracker (FGT) and is described in
 Chapter~\ref{ch:detectors-nd-ref}. The NND subsystems include a
@@ -184,9 +201,11 @@ central straw-tube tracker and an electromagnetic calorimeter embedded
 in a 0.4-T dipole field. The magnet yoke steel will be instrumented
 with muon identifiers.
 
-The near detector system will be complemented with a Beamline
-Measurement System (BLM) located in the region of the beam absorber at
-the downstream end of the decay region. BLM aims to measure the muon
-flux from hadron decay.  The BLM is intended to monitor the beam
+%The DUNE near neutrino detector %system 
+%will be complemented with a 
+The Beamline
+Measurement System (BLM), designed to measure the muon
+flux from hadron decay, is located in the region of the beam absorber at
+the downstream end of the decay region. It is intended to monitor the beam
 profile on a spill-by-spill basis and will operate for the life of
 the experiment.
