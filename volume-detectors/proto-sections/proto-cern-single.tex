@@ -11,13 +11,11 @@ single-phase LArTPC technology to a full 10-kt detector module.  It is
 intended to benchmark the operation of full-scale detector
 elements and perform measurements in a well characterized
 charged-particle beam --- an essential step.
-%
+
 The prototype will incorporate components with the same
 dimensions and features as those for the first 10-kt DUNE far detector
-module. % and its success will be a important milestone towards the DUNE far detector construction and operation.
+module.
 
-%The prototype detector and beam test serve two principal functions: 
-%The first is to serve as an 
 Besides validating the performance of the detector components,
 planning and constructing the CERN prototype will establish and
 commission production sites and test the installation procedure.
@@ -25,7 +23,6 @@ Further, before the beam test, many basic detector-performance
 parameters can be established with cosmic-ray muons.  These data will
 aid in identification of potentially problematic components, leading
 to future improvements and optimizations of the detector design.
-%
 Once it is exposed to a test beam of charged particles of different
 types and energies it will collect data that can be combined with
 results from LArIAT and the short-baseline program at Fermilab. Together
@@ -46,9 +43,6 @@ The following detector performance measurements are anticipated:
 \end{enumerate}
 
 
-%Many basic detector-performance parameters can be established with cosmic-ray muons; these results are critical to inform the production of the first 10~kton DUNE far detector components.  These data will aid in identification of potentially problematic components, leading to future improvements and optimizations of the detector design.
-%A well defined charged particle test beam can further enhance the detector performance measurements. In particular, the following checks are anticipated:
-
 The physics sensitivity of the DUNE experiment has so far been
 estimated based on detector performance characteristics published in
 the literature, simulation-based estimates and a variety of
@@ -61,8 +55,7 @@ accuracy and reliability of the DUNE physics-sensitivity projections.
 The collection of beam measurements will serve both as a calibration
 data set for tuning the MC simulations and as a reference data set for
 the future DUNE detector.
-%
-In order to make precise measurements, the DUNE  %prototype  (According to Mark, it's DUNE)
+In order to make precise measurements, the DUNE 
 detector will
 need to accurately identify and measure the energy of the particles
 produced in the neutrino interaction with argon, which will range from
@@ -82,9 +75,7 @@ the use of a charged-particle beam to
 \item measure performance of particle identification algorithms as
   function of energy for realistic detector conditions
 \item assess single-particle track calibration and reconstruction
-%		-- characterize performance of algorithms
-\item validate accuracy of MC simulations for relevant particle energy and orientation %ranges as well as directions 
-%  \item secondary hadron interactions in detector
+\item validate accuracy of MC simulations for relevant particle energy and orientation 
 \item study other topics with the collected data sets
  \begin{enumerate}
     \item pion interaction kinematics and cross sections
@@ -132,12 +123,10 @@ cathode and two drift volumes each with 3.6~m drift
 length. Figure~\ref{fig:CERN_single_TPC} shows a view of the CERN
 single-phase TPC along with the field cage and a view of the TPC
 within the cryostat.
-%
 \begin{cdrfigure}[Cutaway view]{CERN_single_TPC}{View of the CERN single-phase detector TPC (left) and inserted in the cryostat (right). }
 \includegraphics[width=0.40\textwidth]{CERN_single_TPC}
 \includegraphics[width=0.59\textwidth]{TPC-3D-section}
 \end{cdrfigure}
-%
 The TPC readout, photon-detection system, DAQ, slow control and
 monitoring, as well as the key issues of the installation procedure
 are described in corresponding sections of
@@ -153,27 +142,24 @@ dimensions of 7.8~m (tranverse)$\times$8.9~m (parallel)$\times$8.1~m
 (tranverse)$\times$11.7~m (parallel)$\times$10.9~m (height).
 
 The cryostat design is scaled up from the 35-t prototype
-cryostat~\cite{montanari_35ton}, described in
+cryostat\cite{bib:membcryo1573}, described in
 Section~\ref{sec:proto-35t}.  Unlike the 35-t cryostat, it uses a
-steel outer supporting structure with an inside metal liner.
-% to separate the insulation volume. \fixme{separate insulation layer from what?} 
-It is similar to the WA105 dual-phase prototype detector cryostat and to that for the Fermilab Short-Baseline Near Detector (SBND). 
-%\fixme{could use reference} 
-The support structure rests on I-beams to allow for air circulation
-underneath the cryostat; this maintains the temperature within the
-allowable limits.  A stainless-steel membrane contains the LAr within
-the cryostat. The pressure loading of the cryogenic liquid is
-transmitted through rigid foam insulation to the surrounding outer
-support structure. The membrane is corrugated to provide strain relief
-resulting from temperature-related expansion and contraction. The
-cryostat top cap consists of the same layers as the cryostat walls.
-%The vessel is completed with a top cap uses the same technology.
-%
-From the inside out, the layers include the stainless-steel primary
-membrane, intermediate insulation layers and vapor barrier; they all
-continue across the top of the detector providing a
-leak-tight seal.  The cryostat roof is a removable steel truss
-structure to which stiffened steel plates are welded from the
+steel outer supporting structure with an inside metal liner.  It is
+similar to the WA105 dual-phase prototype detector cryostat and to
+that for the Fermilab Short-Baseline Near Detector
+(SBND)\cite{bib:SBND}.  The support structure rests on I-beams to
+allow for air circulation underneath the cryostat; this maintains the
+temperature within the allowable limits.  A stainless-steel membrane
+contains the LAr within the cryostat. The pressure loading of the
+cryogenic liquid is transmitted through rigid foam insulation to the
+surrounding outer support structure. The membrane is corrugated to
+provide strain relief resulting from temperature-related expansion and
+contraction. The cryostat top cap consists of the same layers as the
+cryostat walls.  From the inside out, the layers include the
+stainless-steel primary membrane, intermediate insulation layers and
+vapor barrier; they all continue across the top of the detector
+providing a leak-tight seal.  The cryostat roof is a removable steel
+truss structure to which stiffened steel plates are welded from the
 underside. They form a flat vapor-barrier surface onto which the roof
 insulation attaches directly.
 
@@ -201,11 +187,10 @@ hatches have been closed.
 The main goals of the cryogenics system are to purge the cryostat
 prior to the start of the operations (with gaseous Ar in open and
 closed loops), cool the cryostat and fill it with LAr.  The LAr is
-continuously purified and the boil-off gaseous Ar is
-captured, recondensed and purified.
-%\fixme{capturing it can't maintain the purity, it can keep it from escaping so that can be reliquified...}  
-The design calls for a 10-ms electron lifetime (30 ppt
-O$_2$ equivalent), a quantity that is measured by the detector.
+continuously purified and the boil-off gaseous Ar is captured,
+recondensed and purified.  The design calls for a 10-ms electron
+lifetime (30 ppt O$_2$ equivalent), a quantity that is measured by the
+detector.
 
 The LAr-receiving facility includes a storage dewar and ambient
 vaporizer to deliver LAr and gaseous Ar to the cryostat. The LAr goes through
