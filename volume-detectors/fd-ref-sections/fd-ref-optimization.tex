@@ -64,23 +64,15 @@ spacing between wires will have an adverse impact on the detector
 performance parameters that depend on the signal to noise, with the
 effect seen more prominently in the induction-plane data.
 
-In a detector with fine wire pitch, one can approximate
-coarser wire spacing by summing the responses on neighboring wires.
-The random components of the noise will average with an RMS that grows 
-as the square root of the number of wires. 
-Instead of summing signals, a more optimized approach is to deconvolve
-the signal in both time and wire number, since 
-diffusion and the field
-response of the detector will cause signals to be shared among
-neighboring wires.  If the diffusion characteristics are known, it is possible to either attempt
-a deconvolution
-or perform fits with known smeared widths to expected distributions,
-thereby recovering some of the
-spatial resolution lost to diffusion, \fixme{where the recovery will be?} limited by noise.
-\fixme{check above edit; I think the fit is smeared not the distribution; was ambiguous}
-
 The main benefit of a finer wire pitch is the ability to obtain higher resolution
 measurements of the ionization density left by events in the detector.
+The spatial resolution in the plane perpendicular to the electric field
+is also affected by transverse diffusion of the drifting electrons.
+It can be argued that the wire spacing does not need to be much smaller than the typical
+width induced by diffusion, though deconvolution and/or fitting techniques
+that combine signals from nearby wires can recover some of the resolution lost
+to diffusion.  Noise may limit the amount of resolution gained using these techniques.
+
 The separation of electrons from photons using the $dE/dx$ measured in
 the initial part of an electromagnetic shower is described in
 \anxreco.  The first 2.5~cm of a shower is the most important, since 
@@ -111,8 +103,8 @@ recognition even if the wire pitch is large.
 
 The reconstruction of short tracks, such as low-energy protons ejected
 by the struck nucleus at the primary vertex of a neutrino scattering
-event, is improved with higher spatial resolution.  Finer wires also
-allows for a more precise measurement of the distances between the
+event, is improved with higher spatial resolution.  A reduced wire pitch also
+allows more precise measurements of the distances between the
 primary vertex and photon conversion points, which is the other
 component of $\pi^0\rightarrow\gamma\gamma$ separation from electrons.
 Topological identification of two EM showers and their displacement
@@ -144,27 +136,15 @@ the signals' ultimate sharpness.  These functions can be deconvolved,
 though deconvolution and noise filtering produces artifacts in the
 signals.  Studies varying the spacing between the planes can be
 performed to estimate the impact on two-hit time resolution.
-%%%%%%%%%%%  HERE!!!!!
 
-
-Future studies will estimate the difference in
-performance of $dE/dx$-based $e-\gamma$ separation for events in which
+Future studies will estimate the performance, as a function of the wire pitch,
+of the $dE/dx$-based $e-\gamma$ separation for events in which
 the showers are not identified topologically as candidates for having
-come from $\pi^0$ decay using automated tools.  
-\fixme{I can't parse this: is it the difference in the ability to identify (blah) using hand-scans versus
-automated tools? No, it's the diff betw dE/dx vs topo... Please clarify}
-Kinematic properties
-of the events, such as the energies and angles of the photons, will 
-correlate the performance of $dE/dx$-based separation and topological
-separation, so a full study using both techniques together will
-provide the most information.  Ideally an end-to-end analysis of
-neutrino scatters and the impact of particle mis-ID rates and
-detection efficiencies for short tracks can be propagated to the
-oscillation parameter sensitivities, but more realistically, the
-effect of changing the wire pitch will be most visible in the tracking
-and particle ID efficiencies.
-
-\fixme{It's not efficient for me to spend the time to try to parse the previous pgraph. Please clarify! Anne}
+come from $\pi^0$ decay using automated tools.   It is important to estimate the
+performance for this class of events separately 
+because the kinematic properties of the events will correlate
+the performance $dE/dx$-based separation and topological
+separation.  
 
 \subsubsection{Wire Angle}
 \label{v4:fd-ref-wireangle}
@@ -174,12 +154,6 @@ wires relative to the collection plane wires affects the physics
 performance of the detector.  Because the wires wrap from one side of
 each APA to the other, a discrete ambiguity is added to the
 continuous ambiguity of identifying where along the wire the charge was deposited.
-% of not knowing where along a wire charge was deposited  corresponding to a measured hit on a
-%channel.  The more times a wire wraps, the more choices arise for this
-%ambiguity.
-%Given a measured hit on a channel, it is not known at what point on the wire the charge was
-%deposited; he more times a wire wraps, the more choices arise for this
-%ambiguity.
 
 Reconstruction of 3D objects based on 2D data (channel number
 vs. time) requires associating hits in one view with those in at least
@@ -206,22 +180,18 @@ Reducing the wire angle reduces the number of crossings, but does not
 eliminate the possibility of misassociating hits in events with
 multiple hits simultaneously arriving.  
 Reducing the angle aligns the
-  shapes of features in the different views making it easier to
-  correlate them.
+shapes of features in the different views making it easier to
+correlate them.
 The angle chosen for the DUNE far detector
 reference design ensures that no induction wire crosses any collection
 wire more than once.
 
 On the other hand, reducing the wire angle worsens the resolution of
-3D reconstruction of hits in the vertical direction. \fixme{because the
-number of hits available for $dE/dx$ separation of electrons from
-photons degrades for vertically-going showers?}
+3D reconstruction of hits in the vertical direction. 
 It also worsens the resolution on the measured separation between the
 primary vertex and photon conversion points, though as pointed out
 above, the radiation length is much longer than the wire spacing.  
-\fixme{can you get rid of repetitive next sentence?} 
-The
-number of hits available for $dE/dx$ separation of electrons from
+The number of hits available for $dE/dx$ separation of electrons from
 photons degrades for vertically-going showers if the wire angle is
 reduced.  A parametric study of a figure-of-merit based on the
 measurability of the two photon-conversion lengths as a function of
@@ -233,8 +203,8 @@ of grossly misplaced hits %misassociated and placed meters away from their true 
 was worse than the resolution loss in one
 dimension\cite{docdb-8981}, though studies have yet to be performed
 to estimate the impact on event-detection efficiency,
-particle ID performance, and energy resolution are more tied to the
-final physics sensitivity of the DUNE far detector.  \fixme{can't parse previous sentence} 
+particle ID performance, and energy resolution, and thus the impact on the
+final physics sensitivity of the DUNE far detector.  
 Advances in algorithms to break ambiguities in complex environments can also allow
 for steeper wire angles.
 
@@ -268,35 +238,32 @@ the signal-to-noise ratio.
 
 \subsubsection{Maximum Drift Length}
 
-A longer drift length is advantageous for several reasons:
-\begin{itemize}
-\item It reduces detector cost (this is the driving consideration).
-\item It assigns more liquid argon to be read out per channel, reducing the APA count and the channel count.
-\item It increases the fraction of liquid argon that is fiducial. Fiduciality cuts need to be made around the APA planes to ensure containment and to minimize the impact of dead argon inside the APA
-planes; fewer APAs leads to fewer fiduciality cuts and thus to higher fiducial volume.
-\end{itemize}
+% 
+%A longer drift length is advantageous for several reasons:
+%\begin{itemize}
+%\item It reduces detector cost (this is the driving consideration).
+%\item It assigns more liquid argon to be read out per channel, reducing the APA count and the channel count.
+%\item It increases the fraction of liquid argon that is fiducial. Fiduciality cuts need to be made around the APA planes to ens%u%re containment and to minimize the impact of dead argon inside the APA
+%planes; fewer APAs leads to fewer fiduciality cuts and thus to higher fiducial volume.
+%\end{itemize}
+%{The above is intended to replace next pgraph; see what you think}
+% The paragraph below says it better, as the the first bullet is a consequence of the second and third bullets
+% and therefore isn't an independent reason.
 
-\fixme{The above is intended to replace next pgraph; see what you think}
 The maximum drift length is another parameter that is optimizable.  In
 this case, the driver for longer lengths is the cost of the detector.
 A longer drift length assigns more liquid argon to be read out by any
 given channel, reducing the APA count and the channel count.  A longer
 drift length also increases the fraction of liquid argon that is
-fiducial.  Fiduciality cuts will need to be made around the APA planes
-to ensure containment and that the impact of dead argon inside the APA
-planes is minimized.  Fewer APAs reduces the amount of non-fiducial
-liquid argon.  The detector can be sized to have the desired fiducial
-volume, but it must be larger if the maximum drift length is smaller.
+fiducial.  Fiduciality cuts will be made around the APA planes
+to ensure containment and to minimize the impact of dead argon inside the APA
+planes.  Reducing the APA count thus reduces the amount of non-fiducial
+liquid argon.  
 
-A longer drift length however increases the impact of the electron
-lifetime, 
-\fixme{increases the NEGATIVE impact of longer e lifetime?}
-as charge \fixme{electrons (only neg charge)} will attach on impurities as it drifts towards the
-anode plane.  This couples the requirement on the signal-to-noise
-ratio with the electron lifetime requirement and the dynamic range
-requirement, given the drift length.  If the drift length were
-shorter, then the electron lifetime would be less critical. \fixme{This makes it sound like
-you want a shorter e lifetime. It looks like we want greater than 3 ms, not less. Please clarify}
+A longer drift length however increases the detrimental impact of the electron
+lifetime, as electrons will attach on impurities as it drifts towards the
+anode plane.  The requirements on the signal-to-noise ratio, the electron lifetime,
+and the dynamic range are therefore coupled, once the drift length has been specified.
 
 Increasing the drift length also degrades position resolution due to
 diffusion, where the spread of a drifting packet of charge increases in
@@ -307,8 +274,6 @@ signal-to-noise ratio.  Small-signal detection efficiencies and PID
 performance may decrease for events near the CPAs.
 %
 Sophisticated reconstruction and analysis algorithms can be used to
-recover resolution that is thus lost, but these are limited by noise.\fixme{the algorithms are limited
-by noise? Or the final recovery of resolution is limited by noise?}
-Simulation studies in advance of CD-2 will
-address the impact of
+recover resolution that is thus lost, but the resolution may be limited by noise.
+Simulation studies in advance of CD-2 will address the impact of
 diffusion and noise on the particle reconstruction performance.
