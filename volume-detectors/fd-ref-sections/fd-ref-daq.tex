@@ -2,14 +2,15 @@
 \section{Data Acquisition (DAQ) System and Monitoring} 
 \label{sec:detectors-fd-ref-daq}
 
-The scope of the DAQ and monitoring includes design, procurement,
-fabrication, testing, delivery and installation. It is required to:
+The scope of the Data Acquisition (DAQ) system and monitoring includes design, procurement,
+fabrication, testing, delivery and installation of the components (as illustrated in Figure~\ref{fig:fddaqblock}). \fixme{Is this list of components accurate in this context?} The DAQ system is required to:
 \begin{itemize}
 \item collect data with a very high uptime (the goal is $>$99\%)
 \item collect beam neutrino, atmospheric neutrino and proton
   decay candidates (generally all interactions with total energy deposition
   above about 100~MeV) with a high resolution (smart or no
-  zero-suppression) with no dead-time.
+  zero-suppression) with no dead-time. \fixme{It would be nice to reference a section; `smart' suppression
+  is not mentioned in the S\%C chapter; zero supp is. How best to handle?}
 \item have the capability to collect interactions with total energy
   below 100~MeV with some
  low amount of zero-suppression loss.
@@ -24,17 +25,20 @@ fabrication, testing, delivery and installation. It is required to:
   histograms and monitor (and provide for offline use) historical
   status of measured detector parameters. 
 \end{itemize}
+\fixme{why do some say `have the capability' and others just say `collect' or whatever; is there a subtle difference
+that's important?}
+
 This section outlines a conceptual design intended to meet the
 required performance for the DAQ for the DUNE far detector.  To reduce
 considerably the times when none of the DUNE far detector modules are collecting
 data (particularly important for supernova detection); and to allow
-the designs of the DAQ in the different 10-kt sections to be entirely
+the designs of the DAQ in the different \ktadj{10} modules to be entirely
 different if desired, the DUNE DAQ employs a decoupled design.
 %\fixme{(but less coupled or more uncoupled to/from what? -AH, original phrasing: a less coupled design than has ever been used in data acquisition before is employed. } 
 % GB - I am trying to say the parts within the DAQ are less coupled
 % with each other
 The synchronization, triggering, data collection and run-state in the
-different 10-kt modules are completely independent in real time and
+different \ktadj{10} modules are completely independent in real time and
 are only coupled by processes running asynchronously (in the same fashion
 as a batch queue) in the hour or so after data collection (see section
 4.11 of \anxlbnefd).  This allows one %portion of the
@@ -60,7 +64,7 @@ Figure~\ref{fig:fddaqblock}.
  \&
  \& \node[boxa] (rce) {{\rm RCE}\\{\rm LArTPC data}\\{\rm processors}};
  \&
- \& \node[boxa] (trigfe) {{\rm Trigger}\\{\rm frontend}\\{\rm computers}};
+ \& \node[boxa] (trigfe) {{\rm Trigger}\\{\rm front-end}\\{\rm computers}};
  \& \node[boxa] (trigbe) {{\rm Software}\\{\rm trigger}\\{\rm farm}}; \\
 
 % 2nd row
@@ -75,7 +79,7 @@ Figure~\ref{fig:fddaqblock}.
  \&
  \& \node[boxa] (ssp) {{\rm SSP}\\{\rm Photodetector}\\{\rm digitizers}};
  \&
- \& \node[boxa] (datafe) {{\rm Data}\\{\rm frontend}\\{\rm computers}};
+ \& \node[boxa] (datafe) {{\rm Data}\\{\rm front-end}\\{\rm computers}};
  \& \node[boxa] (databe) {{\rm Full-data}\\{\rm collection}\\{\rm farm}}; \\
  };
 
@@ -126,11 +130,11 @@ To collect full detail of the
 most important events (deadtimeless detection of all those with energy
 deposition of 100~MeV and above), while avoiding tricky communication
 to flag neighboring channels to those that have large hits, a model is used
-in which the digitised data are collected twice from the initial data
+in which the digitized data are collected twice from the initial data
 storage that is associatated with each peice of hardware. 
 % GB - I can't think of anything better, unless we expand this section
 % a lot, which whould give it too much emphasis.  Ideally we DO want
-% to flag neighbouring channels to those with big hits, but it is
+% to flag neighboring channels to those with big hits, but it is
 % difficult because it would entail a big complicated network of
 % comunications between all the boards which is very tricky.
 %\fixme{Previous sentence not clear: you want to flag channels that have large hits and NOT flagneighboring channels?  What's the `tricky communication'?}
@@ -154,7 +158,7 @@ ring buffer on disk to allow later analysis of supernova candidates.
 {\bf LArTPC detector readout} The LArTPC signals are digitized in the
 cold in a
 continuous flash-ADC stream at 2~MHz, (not zero-suppressed) and
-serialized on 12,000 high-speed links per 10-kt module that exit the
+serialized on 12,000 high-speed links per \ktadj{10} module that exit the
 cryostat.
 % GB - agreed, lets just leave this stuff about costs out
 % (costed separately in the cold-electronics WBS). \fixme{Do we want to refer to costs here?
@@ -180,7 +184,7 @@ for improved supernova acquisition.
 processor (SSP) described in
 Section~\ref{sec:detectors-fd-ref-pd-refsystem}.  The additional
 buffering required for the separate trigger and data collection paths
-is implemented in the SSP frontend computers.
+is implemented in the SSP front-end computers.
 
 {\bf Computer farm} Both the LArTPC and photon detector data are
 received in commodity Linux computers, with no deadtime, from where
@@ -204,7 +208,7 @@ suitable for the ``collect-twice'' architecture envisioned for DUNE.
 
 {\bf Run Control and Slow Control software framework} manages the
 control, status display and status archival of the experiment.  It is
-based on the ICECube design.  This
+based on the ICECube design. \fixme{reference?} This
 exploits a combination of readily available, well-supported packages
 [message passing (zeroMQ), a web-framework (Django), databases (postgres)] 
 to give the shift operator a unified view of the status
@@ -215,8 +219,8 @@ programs.
 
 {\bf Timing system} To acomplish the software-based deadtimeless data
 acquisition in DUNE, it is necessary to synchronize the clock across
-all readout boards.  This is accomplished in two stages, the main
-cavern-wide distribution uses the design from the NO$\nu$A experiments
+all readout boards.  This is accomplished in two stages. The main
+cavern-wide distribution uses the design from the NO$\nu$A experiment,
 which distributes a 64-MHz clock, synchronization pulses and
 cable-delay correction on RJ45 cables.  The overall clock is
 synchronized using a GPS receiver and transferred from the surface
@@ -308,7 +312,7 @@ line.  This is long enough that in 99\% of the cases, a message will
 arrive from the Fermilab site to update the predicted time of a
 neutrino spill with the actual time in order that the detector can be
 triggered independently of any signals in the detector.  This
-operation has been used succesfully on MINOS for many years.  
+operation has been used successfully on MINOS for many years.  
 
 As shown in Figure~\ref{fig:fddaqtime}, prior to the trigger time and
 independently in each detector module, the detector readout assembles
@@ -316,37 +320,47 @@ packets of data corresponding to fixed time intervals and sends them
 to the trigger event builders.  Both the LArTPC readout and the SSP
 readout send zero-suppressed data, suitable for triggering, to a set
 of event-builder processes that run in parallel, each accepting all
-the data from the entire 10-kt module for a specific time interval and
+the data from the entire \ktadj{10} module for a specific time interval and
 performing trigger algorithms on them.  All time intervals are
 processed so that the trigger has no dead time.  The data from the LArTPC and SSP
 are also stored in ring buffers
   to await collection after an
 affirmative trigger decision --- in the case of the LArTPC, this data
-is not zero suppressed.  The data are built into events in a ``10kt-module
+is not zero-suppressed.  The data are built into events in a ``10kt-module
 file'' that is written to disk.  About an hour later, an offline process merges
-the data from the separate 10-kt module files and archives them at the host lab.
+the data from the separate \ktadj{10} module files and archives them at the host lab.
 
 To maximize data collection for a supernova, the continuous
 zero-suppressed trigger data is kept in a large buffer area on disk.
-Ways to collect data that are cropped more gently than the zero-suppressed 
-data stream during the extended period of a supernova are
-under study: The non-zero-suppressed ring buffers on the current
+%Ways to collect data that are cropped more gently than the zero-suppressed 
+%data stream during the extended period of a supernova are
+%under study: 
+During the extended period of this event, it is desirable to collect data that are cropped 
+more gently than is the zero-suppressed data stream; ways to do this are
+under study: \fixme{check edit; the sentence was a mouthful!}
+The non-zero-suppressed ring buffers on the current
 design of RCEs are
-sufficient for 0.4~s of buffering; the trigger farm can send
+sufficient for 0.4~s of buffering \fixme{is the preceding phrase one possible way? 
+It doesn't read that way}; the trigger farm can send
 instructions in the trigger messages to manage storage of data in
-these buffers during a supernova. Two possible extensions
+these buffers during a supernova. \fixme{and the preceding doesn't sound like a second possibility. This pgraph
+needs a little work.} Two possible extensions
 are (a) extend the memory to buffer longer, either on the RCEs or
 elsewhere in the aTCA crate, or (b) use the powerful intercommunications between
 RCEs to cause neighboring channels to be kept around the time of a
-potential supernova event candidate. 
+potential supernova event candidate. \fixme{what does it mean to keep a channel around the time of a candidate? Please clarify.}
 
 
 At the 4850L, the data rate in the trigger is dominated by
 radioactivity from $^{39}$Ar and $^{85}$Kr.  The cosmic rays that
 occur about once per minute are the major source of events that should
-be collected on the data stream; the physics beam events, atmospheric
-netrinos and other candidate contained events are included in this
-data budget.  
+be collected on the data stream; \fixme{that we want to collect on the data stream or that 
+are expected to be collected even though we don't want them? (I guess no. 2); please reword}
+ the physics beam events, atmospheric
+neutrinos and other candidate contained events \fixme{`Candidate contained
+event' seems awkward. Can we say `fully contained'? Or can we assume
+that any candidate event is contained and therefore can remove the word `contained'? } 
+are included in this data budget.  
 Table~\ref{tab:daqrefrates}) gives estimates of the
 rate of occurence of these events and the expected steady-state data rate
 (after the derandomization provided by the buffering in the front-end
@@ -362,16 +376,16 @@ Electronics noise (not common mode) & $\sim 1$ & 0.03 \\
 The requirements are met in this conceptual design by
 the very high throughput provided by modern off-the-shelf components 
 and the parallelism provided by artDAQ, which
-makes the design extendable to avoid bottolenecks.  The triggering
-allows the zero-suppression to be tuned to optimise for the final
+makes the design extendable to avoid bottlenecks.  The triggering
+allows the zero-suppression to be tuned to optimize for the final
 level of noise, while retaining the maximum level of information for
 the important physics events.
 
-This DAQ design is being prototyped for the 35-t tests in 2015, with
+This DAQ design is being prototyped for the 35-t tests in 2015 (see Section~\ref{sec:proto-35t-ph2}), with
 two COBs (containing 16 RCEs) and eight SSPs.  The artDAQ software
 toolkit is being used to implement the readout, event-building and
-triggering, although we are not implementing the ``collect-twice''
-model for the 35-t.
+triggering, although the ``collect-twice''
+model will not be implemented for the 35-t test.
 
 %Here is a sample table:
 %
