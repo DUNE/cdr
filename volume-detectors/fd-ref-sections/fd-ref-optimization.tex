@@ -171,7 +171,7 @@ misassociation can happen.  In this case, the discrete ambiguity makes
 it possible to displace a reconstructed charge deposition by multiple
 meters from its true location.  In the case that the $U$ and $V$
 angles are the same and the number of times a wire wraps around an APA
-exceeds one, then even a single isolated hit can be ambiguous.  A
+exceeds one, then even a single, isolated hit can be ambiguous.  A
 small difference in the $U$ and $V$ angles breaks this ambiguity,
 though misassociation still occurs in events with multiple nearby hits
 close in time.  The use of clustering methods assists in obtaining the
@@ -179,11 +179,12 @@ correct ambiguity choices for hits in dense environments.
 
 Reducing the wire angle reduces the number of crossings, but does not
 eliminate the possibility of misassociating hits in events with
-multiple hits simultaneously arriving.  Reducing the angle aligns the
-shapes of features in the different views making it easier to
-correlate them.  The angle chosen for the DUNE far detector reference
-design ensures that no induction wire crosses any collection wire more
-than once.
+multiple hits arriving simultaneously on their respective wires.
+Reducing the angle aligns the
+shapes of features in the different views making it easier to correlate them.
+The angle chosen for the DUNE far detector
+reference design ensures that no induction wire crosses any collection
+wire more than once.
 
 On the other hand, reducing the wire angle worsens the resolution of
 3D reconstruction of hits in the vertical direction. 
@@ -197,13 +198,16 @@ measurability of the two photon-conversion lengths as a function of
 the induction-plane wire angles is provided
 in\cite{wire-orientation}.
 
-It was estimated that the loss in resolution from even a small
-fraction of grossly misplaced hits was worse than the resolution loss
-in one dimension\cite{docdb-8981}, though studies have yet to be
-performed to estimate the impact on event-detection efficiency,
-particle ID performance and energy resolution, and thus the impact on
-the final physics sensitivity of the DUNE far detector.  Advances in
-algorithms to break ambiguities in complex environments can also allow
+The impact on the detector's physics sensitivity
+of a small number of hits that are reconstructed by many 
+meters from their true locations is estimated to be larger
+than that incurred by the degraded resolution of each hit in the vertical
+dimension\cite{docdb-8981}, though studies have yet to be performed
+to estimate the impact on event detection efficiency,
+particle ID performance, and energy resolution.  Hits with locations that are misreconstructed
+by large distances are not expected to contribute properly to energy sums and may cause pattern recognition
+failures, such as missing tracks or splitting of tracks into multiple pieces.
+Advances in algorithms to break ambiguities in complex environments can allow
 for steeper wire angles.
 
 The fact that the channel count must be an integer multiple of 128 in
