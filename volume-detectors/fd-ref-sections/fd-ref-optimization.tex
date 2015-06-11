@@ -22,7 +22,7 @@ briefly outlines the considerations and procedures that have been and
 will be used to optimize these parameters: the wire pitch, wire angle,
 wire length and maximum drift length.  The wire length, angle and
 pitch are directly related to the APA dimensions, as discussed in
-Section~\ref{sec:detectors-fd-ref-tpc}, and the APA dimensions are
+Section~\ref{sec:detectors-fd-ref-tpc} and the APA dimensions are
 constrained by the needs of manufacturing, storage, transport and
 assembly.
 
@@ -64,14 +64,16 @@ spacing between wires will have an adverse impact on the detector
 performance parameters that depend on the signal to noise, with the
 effect seen more prominently in the induction-plane data.
 
-The main benefit of a finer wire pitch is the ability to obtain higher resolution
-measurements of the ionization density left by events in the detector.
-The spatial resolution in the plane perpendicular to the electric field
-is also affected by transverse diffusion of the drifting electrons.
-It can be argued that the wire spacing does not need to be much smaller than the typical
-width induced by diffusion, though deconvolution and/or fitting techniques
-that combine signals from nearby wires can recover some of the resolution lost
-to diffusion.  Noise may limit the amount of resolution gained using these techniques.
+The main benefit of a finer wire pitch is the ability to obtain higher
+resolution measurements of the ionization density left by events in
+the detector.  The spatial resolution in the plane perpendicular to
+the electric field is also affected by transverse diffusion of the
+drifting electrons.  It can be argued that the wire spacing does not
+need to be much smaller than the typical width induced by diffusion,
+though deconvolution and/or fitting techniques that combine signals
+from nearby wires can recover some of the resolution lost to
+diffusion.  Noise may limit the amount of resolution gained using
+these techniques.
 
 The separation of electrons from photons using the $dE/dx$ measured in
 the initial part of an electromagnetic shower is described in
@@ -104,7 +106,7 @@ recognition even if the wire pitch is large.
 The reconstruction of short tracks, such as low-energy protons ejected
 by the struck nucleus at the primary vertex of a neutrino scattering
 event, is improved with higher spatial resolution.  A reduced wire pitch also
-allows more precise measurements of the distances between the
+allows more precise measurements of the distance between the
 primary vertex and photon conversion points, which is the other
 component of $\pi^0\rightarrow\gamma\gamma$ separation from electrons.
 Topological identification of two EM showers and their displacement
@@ -132,19 +134,18 @@ the spacing between the wires within the planes, though this, too, is
 an optimizable parameter.  Narrowing this spacing improves the
 sharpness of the signals (in time) in both the induction and
 collection planes, though electronics shaping and diffusion will limit
-the signals' ultimate sharpness.  These functions can be deconvolved,
-though deconvolution and noise filtering produces artifacts in the
+the ultimate signal sharpness.  These functions can be deconvolved,
+though deconvolution and noise filtering produce artifacts in the
 signals.  Studies varying the spacing between the planes can be
 performed to estimate the impact on two-hit time resolution.
 
-Future studies will estimate the performance, as a function of the wire pitch,
-of the $dE/dx$-based $e-\gamma$ separation for events in which
-the showers are not identified topologically as candidates for having
-come from $\pi^0$ decay using automated tools.   It is important to estimate the
-performance for this class of events separately 
-because the kinematic properties of the events will correlate
-the performance $dE/dx$-based separation and topological
-separation.  
+Future studies will estimate the performance, as a function of the
+wire pitch, of the $dE/dx$-based $e-\gamma$ separation for events in
+which the showers are not identified topologically as candidates for
+having come from $\pi^0$ decay using automated tools.  It is important
+to estimate the performance for this class of events separately
+because the kinematic properties of the events will correlate the
+performance $dE/dx$-based separation and topological separation.
 
 \subsubsection{Wire Angle}
 \label{v4:fd-ref-wireangle}
@@ -178,13 +179,11 @@ correct ambiguity choices for hits in dense environments.
 
 Reducing the wire angle reduces the number of crossings, but does not
 eliminate the possibility of misassociating hits in events with
-multiple hits simultaneously arriving.  
-Reducing the angle aligns the
+multiple hits simultaneously arriving.  Reducing the angle aligns the
 shapes of features in the different views making it easier to
-correlate them.
-The angle chosen for the DUNE far detector
-reference design ensures that no induction wire crosses any collection
-wire more than once.
+correlate them.  The angle chosen for the DUNE far detector reference
+design ensures that no induction wire crosses any collection wire more
+than once.
 
 On the other hand, reducing the wire angle worsens the resolution of
 3D reconstruction of hits in the vertical direction. 
@@ -196,16 +195,15 @@ photons degrades for vertically-going showers if the wire angle is
 reduced.  A parametric study of a figure-of-merit based on the
 measurability of the two photon-conversion lengths as a function of
 the induction-plane wire angles is provided
-in~\cite{wire-orientation}.
+in\cite{wire-orientation}.
 
-It was estimated that the loss in resolution from even a small fraction
-of grossly misplaced hits %misassociated and placed meters away from their true locations 
-was worse than the resolution loss in one
-dimension\cite{docdb-8981}, though studies have yet to be performed
-to estimate the impact on event-detection efficiency,
-particle ID performance, and energy resolution, and thus the impact on the
-final physics sensitivity of the DUNE far detector.  
-Advances in algorithms to break ambiguities in complex environments can also allow
+It was estimated that the loss in resolution from even a small
+fraction of grossly misplaced hits was worse than the resolution loss
+in one dimension\cite{docdb-8981}, though studies have yet to be
+performed to estimate the impact on event-detection efficiency,
+particle ID performance and energy resolution, and thus the impact on
+the final physics sensitivity of the DUNE far detector.  Advances in
+algorithms to break ambiguities in complex environments can also allow
 for steeper wire angles.
 
 The fact that the channel count must be an integer multiple of 128 in
@@ -218,7 +216,7 @@ deviations in the parameters.
 \subsubsection{Wire Length}
 
 The length of the collection-plane wires is determined by the APA
-dimensions (or vice-versa), and the length of the induction-plane
+dimensions (or vice-versa) and the length of the induction-plane
 wires is determined by their angle and the APA dimensions.  The APA
 dimensions are largely constrained by transport and handling needs as
 well as stiffness and production cost issues as they get larger.
@@ -250,12 +248,12 @@ the signal-to-noise ratio.
 % The paragraph below says it better, as the the first bullet is a consequence of the second and third bullets
 % and therefore isn't an independent reason.
 
-The maximum drift length is another parameter that is optimizable.  In
+The maximum drift length is another optimizable parameter.  In
 this case, the driver for longer lengths is the cost of the detector.
 A longer drift length assigns more liquid argon to be read out by any
 given channel, reducing the APA count and the channel count.  A longer
 drift length also increases the fraction of liquid argon that is
-fiducial.  Fiduciality cuts will be made around the APA planes
+fiducial.  Fiducial cuts will be made around the APA planes
 to ensure containment and to minimize the impact of dead argon inside the APA
 planes.  Reducing the APA count thus reduces the amount of non-fiducial
 liquid argon.  
@@ -266,14 +264,13 @@ anode plane.  Once the drift length has been specified, therefore, the requireme
 signal-to-noise ratio, the electron lifetime and the dynamic range are coupled.
 
 Increasing the drift length also degrades position resolution due to
-diffusion, where the spread of a drifting packet of charge increases in
-proportion to the square root of the drift time.  Charge deposited
+diffusion, where the spread of a drifting packet of charge increases
+in proportion to the square root of the drift time.  Charge deposited
 near the APAs remains well measured, though charge deposited near the
 CPAs will suffer from both attenuation and diffusion, lowering the
 signal-to-noise ratio.  Small-signal detection efficiencies and PID
-performance may decrease for events near the CPAs.
-%
-Sophisticated reconstruction and analysis algorithms can be used to
-recover resolution that is thus lost, but the resolution may be limited by noise.
-Simulation studies in advance of CD-2 will address the impact of
-diffusion and noise on the particle reconstruction performance.
+performance may decrease for events near the CPAs.  Sophisticated
+reconstruction and analysis algorithms can be used to recover
+resolution that is thus lost, but the resolution may be limited by
+noise.  Simulation studies in advance of CD-2 will address the impact
+of diffusion and noise on the particle reconstruction performance.
