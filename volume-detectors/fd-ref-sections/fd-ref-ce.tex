@@ -11,13 +11,13 @@ The TPC read-out electronics are mounted on the APA front-end
 These electronics are
 therefore referred to as the ``Cold Electronics'' (CE) subsystem.  The
 scope of the CE subsystem includes design, procurement,
-fabrication, testing, delivery and installation:
+fabrication, testing, delivery and installation of:
 \begin{itemize}
 \item front-end electronics cards installed on the APAs;
 \item signal feedthroughs mounted on the cryostat;
 \item power supplies and cabling.
 \end{itemize}
-The most significant requirements for the CE are to:
+The following are the most significant requirements for the CE:
 \begin{itemize}	
 \item minimize channel capacitance and noise
 \item minimize dissipated power per channel in the LAr
@@ -25,7 +25,7 @@ The most significant requirements for the CE are to:
 \item record the channel waveforms continuously without dead time
 \item provide sufficient precision and range to satisfy the Key Physics Parameters
 \item operate for the life of the facility without significant loss of function
-\item use only materials that are compatible with high-purity liquid argon and minimal natural radioactivity
+\item use only materials that are compatible with high-purity liquid argon and that have minimal natural radioactivity
 \end{itemize}
 
 The CE are implemented as ASIC chips using CMOS technology, which
@@ -46,7 +46,7 @@ The FE ASIC provides amplification
 and pulse shaping, while the ADC ASIC comprises a 12-bit digitizer and
 an 8:1 MUX stage with two pairs of serial readout lines in parallel.
 A Cold Digital Data (COLDATA) ASIC chip
-(Fig.~\ref{fig:elec_COLDATAfig}) mounted on each FEMB provides an
+(Figure~\ref{fig:elec_COLDATAfig}) mounted on each FEMB provides an
 additional MUX of 4:1 and is capable of driving the data at 1~Gb/s
 through 30~m of copper cable to the feedthrough and on to the DAQ.
 Tables~\ref{tab:DeviceCounts} and \ref{tab:KeyParameters} list the CE
@@ -56,7 +56,7 @@ device counts and key parameters.
 \includegraphics[width=0.70\linewidth]{elec_COLDATAfig.pdf}
 \end{cdrfigure}
 %\vskip -10pt % This prevents the last table from appearing in the PD section by pulling the figure up, which is easily accomodated.
-\begin{cdrtable}[Cold Electronics Device Counts]{lrrr}{DeviceCounts}{CE Device Counts}
+\begin{cdrtable}[Cold Electronics device counts]{lrrr}{DeviceCounts}{CE device counts}
  Parameter           & per FEMB& per APA& per 10~kt Detector\\ \toprowrule
  Channels            & 128    & 2560   & 384,000           \\ \colhline
  FE \& ADC ASIC Chips&   8    &  160   &  24,000           \\ \colhline
@@ -65,7 +65,7 @@ device counts and key parameters.
  Signals-Out         &   4    &   80   &  12,000           \\ \colhline
  APA                 & ---    &    1   &     150           \\
 \end{cdrtable}
-\begin{cdrtable}[Cold Electronics Key parameters]{ll}{KeyParameters}{CE Key parameters}
+\begin{cdrtable}[Cold Electronics key parameters]{ll}{KeyParameters}{CE key parameters}
  Parameter                &  Value                               \\ \toprowrule
  Signal-to-Noise (in LAr) &  9:1 for 1~$\mu$s peaking time       \\ \colhline
  MUX Level                &  32                                  \\ \colhline
@@ -97,7 +97,7 @@ It is worth noting that the FEMB, together with the FE and ADC ASIC
 chips, has already been prototyped and tested using a commercial FPGA
 to perform the role of the COLDATA ASIC, which is currently under
 development.  The 1-Gb/s data rate can be achieved with copper links
-and without zero suppression or data compression.
+and without zero-suppression or data compression.
 % is not high enough to require the use of optical fibers in the cold,
 % nor is there a need for zero suppression or data compression.
 This greatly reduces the complexity of the COLDATA ASIC, with a
@@ -117,6 +117,6 @@ Calorimeter of the NA48 experiment for 17 years of operation. Lifetime
 studies of CMOS cold electronics for DUNE have been carried out to
 understand the aging mechanism due to channel hot carrier
 effects\cite{Li:CELAr}.  The design of the analog front end and ADC
-ASICs in 180~nm CMOS technology follows these design rules to secure
+ASICs in 180-nm CMOS technology follows these design rules to secure
 lifetimes two orders of magnitude higher than the 30 years of
-experiment lifetime.
+experiment lifetime. \fixme{3000 years?}
