@@ -280,7 +280,7 @@ Parameter & CDR Reference Design & Optimized Design\\
  Target & Graphite & Graphite \\ \colhline
  Horn Current & 230~kA & 297~kA \\ \colhline
  Horn Design & NuMI-style & Genetic Optimization \\  \colhline
- Decay Pipe Length & 204~m & 250~m \\ \colhline
+ Decay Pipe Length & 204~m & 241~m \\ \colhline
  Decay Pipe Diameter & 4~m & 4~m\\
 \end{cdrtable}
 
@@ -1089,20 +1089,23 @@ the LBNO collaboration~\cite{Agarwalla:2014tca}, and considers 20
 beamline parameters governing the primary proton momentum, target
 dimensions, and horn shapes, positions and
 current. Figure~\ref{fig:beam_req_opthorn} shows the approximate shape
-and the 12 shape parameters (5 radial and 7 longitudinal dimensions) used for the
-optimization of the first focusing horn, while the second focusing
-horn is modeled as a NuMI-style horn, but allowed to rescale both in
-radial and longitudinal dimensions. The procedure yields horn size and
-shapes similar to those found by the LBNO collaboration. The first
-focusing horn is $\sim$5.5~m in length and $\sim$1.3~m in
+and the 12 shape parameters (5 radial and 7 longitudinal dimensions)
+used for the optimization of the first focusing horn, while the second
+focusing horn is modeled as a NuMI-style horn, but allowed to rescale
+both in radial and longitudinal dimensions. The procedure yields horn
+size and shapes similar to those found by the LBNO collaboration. The
+first focusing horn is $\sim$5.5~m in length and $\sim$1.3~m in
 diameter. This optimized beam configuration includes a second focusing
 horn that is 32\% longer and 7.8~m further downstream than that of the
 reference focusing design.  This option would require an increase both
 in length, by $\sim$9~m, and in width, by $\sim$60~cm, of the target
-chase in the reference design.
+chase in the reference design. The increase in target chase length can
+be compensated by a reduction in decay pipe length, so that the total
+length of the combined chase and decay pipe remains the same as in the
+reference design.
 Figure~\ref{fig:beam_req_focusing_comp} shows a comparison of fluxes
 for the reference, enhanced reference and optimized beam
-configurations. This optimized beam, with a decay pipe 204 m long and
+configurations. This optimized beam, with a decay pipe 195 m long and
 4~m in diameter, produces a muon neutrino flux that is 20\% greater
 than the nominal configuration at the first oscillation maximum
 (between 1.5 and 4~GeV), 53\% greater at the second oscillation
@@ -1120,7 +1123,7 @@ in progress.
 {beam_req_focusing_comp}{Neutrino mode muon 
     neutrino fluxes for several beam designs, including the 
     reference, the enhanced reference, and the optimized beam
-    described in section~\ref{sec:alternative-focusing-systems} (top). The total CC interaction rate per year at 1300km from the optimized focusing design with a 204m decay pipe, and the ratio to the reference beam design (bottom).  
+    described in section~\ref{sec:alternative-focusing-systems} (top). The total CC interaction rate per year at \SI{1300}{\km} from the optimized focusing design with a \SIadj{195}{\m} decay pipe, and the ratio to the reference beam design (bottom).  
     All beams use \GeVadj{80} protons.}
   \includegraphics[width=0.6\textwidth]{BeamOptCDR}
   \includegraphics[width=0.6\textwidth]{BeamOptCDR_Opt_204_80_Ref_204_80}
