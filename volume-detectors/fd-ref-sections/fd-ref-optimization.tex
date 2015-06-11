@@ -25,7 +25,7 @@ task force to review various possible detector optimizations in light
 of the new collaboration and project organizations.  This section
 briefly outlines the considerations and procedures that have been and
 will be used to optimize these parameters: the wire pitch, wire
-angle, wire length and  maximum drift length.  The %parameters of the 
+angle, wire length and  maximum drift length.  The 
 wire length, angle and pitch are directly related to the
 APA dimensions, as discussed in
 Section~\ref{sec:detectors-fd-ref-tpc}, and the APA dimensions are
@@ -39,11 +39,10 @@ The spacing between neighboring sense wires in the APAs is an
 optimizable parameter.  In principle it is freely adjustable for all
 three wire planes, though to minimize the anisotropy of the detector
 response, similar wire pitch should be chosen in all three planes.
-The choice of a $\sim$5~mm pitch is documented in~\cite{docdb-3407}.  
+The choice of a $\sim$5~mm pitch is documented in\cite{docdb-3407}.  
 The pitch of the grid plane wires is less
 important as they are not instrumented, though the grid wires do
 shadow the optical detectors and therefore should not be made with too fine a pitch.
-\fixme{check edit above - `too fine' meant too fine a pitch, right?}
 
 The signal-to-noise ratio is expected to be proportional to the wire
 spacing, assuming that the noise on a channel is not impacted by the
@@ -53,16 +52,13 @@ satisfy these conditions.  Coherent noise is a special case ---
 filters may be applied either online or offline to reduce its impact.
 
 The signal-to-noise ratio requirement is set so that zero-suppression
-can function without elaborate noise filtering.  A high signal-to-noise 
-ratio %has the added benefit of improving 
-improves pattern-recognition
-performance, calorimetric PID performance and $dE/dx$-based
-$e-\gamma$ separation.  %A large signal-to-noise ratio 
-It is also important %in
-for detecting sub-MIP signals, such as nuclear de-excitation photons, and
-it is important when adding up the energy of hits on the edges of
-showers or on the ends of stubs initiated by supernova neutrino
-interactions.  
+can function without elaborate noise filtering.  A high
+signal-to-noise ratio improves pattern-recognition performance,
+calorimetric PID performance and $dE/dx$-based $e-\gamma$ separation.
+It is also important for detecting sub-MIP signals, such as nuclear
+de-excitation photons, and it is important when adding up the energy
+of hits on the edges of showers or on the ends of stubs initiated by
+supernova neutrino interactions.
 
 The signal-to-noise ratio is expected to be higher in
 the collection plane than in the two induction planes.  The need to
@@ -78,15 +74,14 @@ with the effect seen more prominently in the induction-plane data.
 In a detector with fine wire pitch, one can of course approximate a
 coarser wire spacing by summing the responses on neighboring wires.
 The random components of the noise will average with an RMS that grows not linearly, but 
-as the square root of the number of wires. % instead of linearly.
+as the square root of the number of wires. 
 Instead of summing signals, a more optimized approach is to deconvolve
-the signal in both time and wire number, since %as 
+the signal in both time and wire number, since 
 diffusion and the field
 response of the detector will cause signals to be shared among
 neighboring wires.  If the diffusion characteristics are known, it is possible to either attempt
-a deconvolution %may be attempted 
+a deconvolution
 or perform fits with known smeared widths to expected distributions,
-% can be performed, 
 thereby recovering some of the
 spatial resolution lost to diffusion, \fixme{where the recovery will be?} limited by noise.
 \fixme{check above edit; I think the fit is smeared not the distribution; was ambiguous}
@@ -95,7 +90,7 @@ The main benefit of a finer wire pitch is the ability to obtain higher resolutio
 measurements of the ionization density left by events in the detector.
 The separation of electrons from photons using the $dE/dx$ measured in
 the initial part of an electromagnetic shower is described in
-\anxreco.  The first 2.5~cm of a shower is the most important, since %as
+\anxreco.  The first 2.5~cm of a shower is the most important, since 
 subsequent showering stages have not yet taken place, leaving one MIP
 for an electron and two for a photon conversion to two electrons,
 though sometimes the subsequent showering starts earlier.  As the
@@ -107,7 +102,7 @@ in few usable hits.  If no hits are useful, then the $dE/dx$ method
 cannot be used.  Reducing the spacing between wires in all three views
 increases the precision of the measurement of the initial part of the
 shower for $e-\gamma$ separation purposes.  The current study
-described in \anxreco\, however, only uses the collection plane wires; % and
+described in \anxreco\ only uses the collection plane wires; 
 thus with a more optimal strategy, some of the efficiency that is lost
 with 5-mm wire spacing compared with 3-mm spacing can be recovered by
 examining the other two views.
