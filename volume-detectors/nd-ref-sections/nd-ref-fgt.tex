@@ -173,7 +173,7 @@ Number of Straw Tube Modules & 80 \\ \colhline
 Number of Straw Tube Sub-Modules & 320 \\ \colhline
 Length of Straw Tube Wire & 376.3 km \\ \colhline
 Number of Electronics Channels & 215,040 \\ \colhline
-Number of Modules with Radiators & 70 \\ \colhline
+Number of Modules with Radiators & 75 \\ \colhline
 Radiator Thickness per Module & 3.6~cm \\ \colhline
 Radiator Mass per Module & 69.1 kg \\ \colhline
 Number of Modules with Nuclear Targets & 10 \\ \colhline
@@ -181,10 +181,10 @@ C Mass per Target Plane & 192 kg \\ \colhline
 Number of Modules with C Target Planes & 2 \\ \colhline 
 Ca Mass per Target Plane & 132 kg \\ \colhline  
 Number of Modules with Ca Target Planes & 1 \\ \colhline 
-Ar Target Geometry & 1.27~cm Diameter $\times$ 3.5~m long \\ \colhline
-Number of Ar Targets per Plane & 275 \\ \colhline
-Ar Mass per Target Plane & 15.5 kg \\ \colhline  
-Number of Modules with Ar Target Planes & 6 \\ \colhline
+Ar Target Geometry & 5.08~cm Diameter $\times$ 3.5~m long \\ \colhline
+Number of Ar Targets per Plane & 68 \\ \colhline
+Ar Mass per Target Plane & 112 kg \\ \colhline  
+Number of Modules with Ar Target Planes & 1 \\ \colhline
 Fe Mass per Target Plane & 96.5 kg \\ \colhline  
 Number of Modules with Fe Target Planes & 1 \\  
 %Water Mass per Target Plane & 95 kg \\
@@ -220,13 +220,23 @@ and the DAE/DST Detailed Project Report\cite{DPR}.
 A set of different nuclear targets will be installed in front of the
 most upstream STT modules, which will not be equipped with radiators.
 The most important nuclear target is the argon target that matches
-the DUNE far detector.  This target will consist of planes of 0.5-inch
-diameter, 3.5-m-long stainless steel tubes, with wall thickness 0.065-inch,
-filled with argon gas pressurized to 140~atm ($\rho = 0.233$), with
+the DUNE far detector.  
+This target will consist of planes of cylindrical tubes filled with 
+argon gas pressurized to 140~atm ($\rho = 0.233$), with
 sufficient Ar mass to provide $\sim$10 times the unoscillated
-statistics expected in a 40~t far detector.  We are currently investigating the
-possibility to use carbon-composite tubes instead of stainless steel to contain 
-the pressurized Ar gas.
+statistics expected in a \ktadj{40} far detector. The proof-of-concept design 
+consisted of 0.5-inch diameter, 3.5-m-long stainless steel tubes, 
+with wall thickness 0.065-inch. In order to minimize the mass of the 
+tube walls,  the use of a single plane of C-composite 
+tubes, of diameter 2 in and wall thickness 0.04 in, is being investigated.
+
+%This target will consist of planes of 0.5-inch
+%diameter, 3.5-m-long stainless steel tubes, with wall thickness 0.065-inch,
+%filled with argon gas pressurized to 140~atm ($\rho = 0.233$), with
+%sufficient Ar mass to provide $\sim$10 times the unoscillated
+%statistics expected in a 40~t far detector.  We are currently investigating the
+%possibility to use carbon-composite tubes instead of stainless steel to contain 
+%the pressurized Ar gas.
 
 Relevant to argon, a crucial target is calcium which has the same
 atomic weight ($A=40$) as argon but is isoscalar.  Since most nuclear
@@ -284,9 +294,10 @@ of layers of either 1.75-mm-thick (for the forward ECAL) or
 2.5-cm-wide by 10-mm-thick plastic scintillator bars, as shown in
 Figure~\ref{fig:ECAL_detail}.
 \begin{cdrfigure}[Schematic drawing of the ECAL]{ECAL_detail}
-{Schematic drawing of the ECAL, which is made up of alternating planes
+{Schematic drawing of the forward ECAL equipped with the front-end and back-end readout boards (left), 
+and a cross-section of one barrel ECAL module (right), showing the details of the assembly of alternating planes
 of plastic scintillator and Pb sheets.}
-\includegraphics[width=0.4\textwidth,angle=0]{ECAL_detail}
+\includegraphics[width=0.9\textwidth,angle=0]{ECAL_detail}
 \end{cdrfigure}
 The scintillator layers for the Forward and Backward ECAL alternate as
 XYXYXY..., while the scintillator layers for the Barrel ECAL are all
@@ -370,8 +381,10 @@ to 6~kA at 400~V. The water flow required for cooling is 20~l/s.
 Figure~\ref{fig:Magnet_Bfield} shows the $B$ field results obtained
 from detailed simulations performed at the Bhabha Atomic Research
 Center (BARC) in India.
-\begin{cdrfigure}[Magnetic field maps]{Magnet_Bfield}{Design of the dipole magnet and simulation of the 
-corresponding magnetic field at the Bhabha Atomic Research Center (BARC) in India.}  
+\begin{cdrfigure}[Magnetic field maps]{Magnet_Bfield}{Results from the detailed simulations of the 
+magnetic field in the dipole magnet performed at the Bhabha Atomic Research Center (BARC) in India. 
+The plots show the deviations (in percentage) from the nominal field in the (X,Y) plane (left plot)
+and along the beam axis (right plot).}  
 \includegraphics[width=\textwidth]{Magnet_Bfield} % [width=6in,angle=90] <-- was too small
 \end{cdrfigure}
 The magnet specifications are summarized in Table~\ref{tab:Magnet_specs}.
