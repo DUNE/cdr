@@ -9,9 +9,8 @@ numerical detector performance parameters needed to meet the
 requirements and the ability of the DUNE reference
 design far detector to achieve these performance parameters.  
 
-The
-expected performance of the reference design far detector is based on the measured
-performance of the ICARUS\cite{Amerio:2004ze} and
+The expected performance of the reference design far detector is based
+on the measured performance of the ICARUS\cite{Amerio:2004ze} and
 ArgoNeuT\cite{Anderson:2012vc} detectors, on scanned Monte Carlo
 events\cite{docdb-6954}, and on newer studies with automated
 reconstruction, which are described in
@@ -19,40 +18,30 @@ Sections~\ref{sec:detectors-sc-physics-software-simulation-fd}
 and~\ref{sec:detectors-sc-physics-software-reconstruction-fd}, and in
 \anxreco.  Simulation and reconstruction studies are ongoing.  While
 many components are in place, a full end-to-end simulation,
-reconstruction and analysis chain does not yet exist. Many
-of the numerical detector performance requirements are estimates; some of them
-%numerical requirements 
-correspond to achievements by ICARUS and
-ArgoNeuT, although these detectors %experiments 
-differ somewhat from the DUNE far
-detector.  Additional parameters will be calibrated using the data
-from LArIAT and the two CERN prototypes, the \cernsingleproto{} and
-the \cerndualproto.
+reconstruction and analysis chain does not yet exist. Many of the
+numerical detector performance requirements are estimates; some of
+them correspond to achievements by ICARUS and ArgoNeuT, although these
+detectors differ somewhat from the DUNE far detector.  Additional
+parameters will be calibrated using the data from LArIAT and the two
+CERN prototypes, the \cernsingleproto{} and the \cerndualproto.
 
-Table~\ref{tab:TPC-metric} lists the required performance values, achieved values (if any) and 
-the values expected from DUNE. The rest of this section describes each parameter and
-its connection to the detector design and physics goals.
-
-%The preliminary numerical %detector 
-%performance parameters are
-%listed in Table~\ref{tab:TPC-metric}.  The required performance values
-%are given, as well as achieved values (if any) and the expected DUNE
-%performance.  The rest of this section describes each parameter and
-%its connection to the detector design and physics goals.
-
+Table~\ref{tab:TPC-metric} lists the required performance values,
+achieved values (if any) and the values expected from DUNE. The rest
+of this section describes each parameter and its connection to the
+detector design and physics goals.
 \begin{cdrtable}[Preliminary Far Detector Performance Expectations]{llll}{TPC-metric}{Preliminary summary of the most 
-important performance parameters of the DUNE reference design far detector. 
-For each parameter, the table lists the required (reference) performance,  
-performance achieved by other detectors, and projected performance for DUNE. References are given. 
-%Included are the parameters, 
-%previous detector performance, and projected performance with references to relevant studies.  
-Notes:
+important performance parameters of the DUNE reference design far
+detector.  For each parameter, the table lists the required
+(reference) performance, performance achieved by other detectors and
+projected performance for DUNE. References are given.  
+Notes: 
 $^1$For a MIP at the CPA, minimum in all three views, for any track angle;
-$^2$Achieved for the collection view;
-$^3$In order for the fiducial volume to be known to $\pm 1\%$, the resolution performances are reported separately in the $x$, $y$, and $z$ directions, where $z$ points along the neutrino beam axis;
-$^4$For a sample of stopping muons;
-$^5$For electron stubs with $E>5$~MeV.
-} 
+$^2$Achieved for the collection view; 
+$^3$In order for the fiducial volume to be known to $\pm 1\%$, the resolution performances are
+reported separately in the $x$, $y$, and $z$ directions, where $z$
+points along the neutrino beam axis; 
+$^4$For a sample of stopping muons; 
+$^5$For electron stubs with $E>5$~MeV.  }
 %The third argument (reads {cc}) can use c, l, r or p{some length}  e.g. {clll} or {llp{3cm}}, for instance.
 Parameter & Reference Performance & Achieved Elsewhere & Expected Performance \\ \toprowrule
 Signal/Noise Ratio$^1$ & 9:1 & 10:1~\cite{Antonello:2015zea,Antonello:2014eha}$^2$ & 9:1 \\ \colhline
@@ -89,80 +78,70 @@ Stub-Finding Efficiency$^5$ & 90\% & & $>90\%$ \\
 The signal-to-noise ratio requirement is motivated by the need to
 detect weak signals in a large detector that has a low signal rate,
 while limiting the required output data volume.  It is set at 9:1 for
-a minimum-ionizing particle (MIP) in all three views, for any orientation of
-the track.  This ratio is required for all particles in the detector,
-specifically those ionizing the liquid argon close to the CPA, where
-the reattachment effects are greatest.  Since the strategy is to
-zero-suppress the data, it is important that the data volume from random
-excursions of the noise over the zero-suppression threshold %be 
-compose a
-vanishingly small fraction of all ADC samples, and that it preserve the detector's %while preserving the
-ability to detect sub-MIP signals (e.g., signals from nuclear
-de-excitation photons or isolated hits on the edges of
-electromagnetic showers).  Since the noise in the detector may vary by
-channel and by time, and in addition to thermal noise
-from the wires and the electronics,  may include coherent noise sources from
-electromagnetic pickup and acoustical vibrations of the wires, among
-other sources, %we would like 
-sufficient contingency on the
-signal-to-noise ratio is necessary to ensure that the detector meets the
-programmatic physics requirements. \fixme{What are `programmatic physics' requirements? Should be one or the other (I vote `physics')}  A value of 10:1 was achieved by
+a minimum-ionizing particle (MIP) in all three views, for any
+orientation of the track.  This ratio is required for all particles in
+the detector, specifically those ionizing the liquid argon close to
+the CPA, where the reattachment effects are greatest.  Since the
+strategy is to zero-suppress the data, it is important that the data
+volume from random excursions of the noise over the zero-suppression
+threshold compose a vanishingly small fraction of all ADC samples, and
+that it preserve the detector's ability to detect sub-MIP signals
+(e.g., signals from nuclear de-excitation photons or isolated hits on
+the edges of electromagnetic showers).  Since the noise in the
+detector may vary by channel and by time, and in addition to thermal
+noise from the wires and the electronics, may include coherent noise
+sources from electromagnetic pickup and acoustical vibrations of the
+wires, among other sources, sufficient contingency on the
+signal-to-noise ratio is necessary to ensure that the detector meets
+the physics requirements.  A value of 10:1 was achieved by
 ICARUS\cite{Antonello:2015zea,Antonello:2014eha} and even higher
-values were achieved by Long Bo\cite{Bromberg:2015uia}. Similar to the DUNE design, Long Bo
-%benefited from the use of 
-used cold electronics, % as will the DUNE far detector 
-although its wires were much shorter than those planned for DUNE.
+values were achieved by Long Bo\cite{Bromberg:2015uia}. Similar to the
+DUNE design, Long Bo used cold electronics, although its wires were
+much shorter than those planned for DUNE.
 
-The electron lifetime requirement %of 
-is set at 3~ms %is placed in order
- to
-preserve the signal-to-noise ratio across the entire detector volume
-in the presence of noise sources that are not yet foreseen.  A
-shorter lifetime also places demands on the dynamic range of the
-ADCs: the gain will need to be large enough
-%, as a sufficiently large gain will be necessary 
-to detect weak
-signals at the CPA, but small enough to record %while at the same time, 
-strong signals near the APAs %should be recorded 
-without saturation, if possible.  The
-calorimetric energy resolution of low-energy electrons is highly
-sensitive to the lifetime for electrons that do not record flashes in
-the photon-detection system.  The energy resolution is approximately
-20\% for electrons of energy below 50~MeV (see Section~\ref{sec:detectors-fd-ref-perf-lowe}) without corresponding
-photon flashes in a detector with a 2.5~m maximum drift length,
-assuming only an average correction is applied for the lifetime.  This
-resolution rapidly degrades for %lower 
-shorter lifetimes and longer drift
-lengths.  For a maximum drift length of 3.6~m and an electron lifetime
-of 1.5~ms, %the estimate is that 
-the energy resolution is estimated to degrade to
-44\%.  A lifetime of 3~ms is consistent with that achieved by the
-35-t prototype.  The ICARUS Collaboration has reported a much longer
-lifetime, $>$15~ms\cite{Antonello:2014eha}.
+The electron lifetime requirement is set at 3~ms to preserve the
+signal-to-noise ratio across the entire detector volume in the
+presence of noise sources that are not yet foreseen.  A shorter
+lifetime also places demands on the dynamic range of the ADCs: the
+gain will need to be large enough to detect weak signals at the CPA,
+but small enough to record strong signals near the APAs without
+saturation, if possible.  The calorimetric energy resolution of
+low-energy electrons is highly sensitive to the lifetime for electrons
+that do not record flashes in the photon-detection system.  The energy
+resolution is approximately 20\% for electrons of energy below 50~MeV
+(see Section~\ref{sec:detectors-fd-ref-perf-lowe}) without
+corresponding photon flashes in a detector with a 2.5~m maximum drift
+length, assuming only an average correction is applied for the
+lifetime.  This resolution rapidly degrades for shorter lifetimes and
+longer drift lengths.  For a maximum drift length of 3.6~m and an
+electron lifetime of 1.5~ms, the energy resolution is estimated to
+degrade to 44\%.  A lifetime of 3~ms is consistent with that achieved
+by the 35-t prototype.  The ICARUS Collaboration has reported a much
+longer lifetime, $>$15~ms\cite{Antonello:2014eha}.
 
 The charge loss due to lifetime effects is expected to be well
 measured in the DUNE far detector.  In addition to the cosmic-ray
 muons which accumulate at a rate of 0.259~Hz (see \anxrates), the
 laser calibration system and purity monitors will provide detailed
 time-dependent measurements of the electron lifetime.  This
-%requirement 
 limit is placed at 1\% in order to meet the energy-scale and resolution
 requirements for electrons, and to a lesser extent, to meet the requirements
 of $dE/dx$-based particle identification algorithms.
 
-The dynamic range requirement is placed at 15 MIP in order to detect, without ADC saturation, particle
-ionization densities from one MIP up to the last hit on a track before
-a particle stops.  The typical application is for protons, where data
-from ArgoNeuT show roughly a factor of 15 between the lowest-charge
-hit and the highest.  Nonetheless, particles also travel along wires
-and dense showers may require even more dynamic range before
-saturation.  The desire to measure sub-MIP signals also expands the
-desired dynamic range.  MicroBooNE set a requirement of 50 on the
-signal dynamic range\cite{microboonetdr}.  The dynamic range
-requirement is effectively a compound requirement on the noise level,
-electron lifetime and number of bits in the ADC.
+The dynamic range requirement is placed at 15 MIP in order to detect,
+without ADC saturation, particle ionization densities from one MIP up
+to the last hit on a track before a particle stops.  The typical
+application is for protons, where data from ArgoNeuT show roughly a
+factor of 15 between the lowest-charge hit and the highest.
+Nonetheless, particles also travel along wires and dense showers may
+require even more dynamic range before saturation.  The desire to
+measure sub-MIP signals also expands the desired dynamic range.
+MicroBooNE set a requirement of 50 on the signal dynamic
+range\cite{microboonetdr}.  The dynamic range requirement is
+effectively a compound requirement on the noise level, electron
+lifetime and number of bits in the ADC.
 
-The primary vertex position resolution requirement is intended %placed in order
+The primary vertex position resolution requirement is intended 
 to keep it from being a significant source of uncertainty on the
 fiducial volume determination, though this effect is mitigated if the
 resolution is well known.  The current resolution from PANDORA easily
@@ -197,8 +176,8 @@ though many will not be contained, though the distribution of
 deviations of the muon track from a straight line is a function of the
 muon momentum. \fixme{prev sentence very hard to parse; clarify} 
 The expected performance of $\pm$18\% on the muon
-momentum is \fixme{was?} achieved by ICARUS for a sample of stopping muons, where
-the momentum measured by multiple scattering can be \fixme{was?} compared against
+momentum was achieved by ICARUS for a sample of stopping muons, where
+the momentum measured by multiple scattering was  compared against
 that obtained from the range.  It is anticipated that the resolution
 will deteriorate for higher-energy muons because they scatter less.
 
@@ -242,7 +221,6 @@ smaller.
 
 Low-energy (5--50~MeV) events require special consideration.
 Electron-type neutrino interactions appearing close together in time
-%is 
 constitute the signature for a supernova burst event.  A \MeVadj{5} electron
 is expected to hit four wires in the DUNE far detector, and given the
 signal-to-noise requirement above, it is anticipated that this signal
