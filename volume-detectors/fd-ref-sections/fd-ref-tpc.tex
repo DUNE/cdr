@@ -10,15 +10,22 @@ design, procurement, fabrication, testing and delivery of anode plane
 assemblies (APAs), cathode plane assemblies (CPAs), the field cage and
 the high voltage system.
 
-\fixme{up front we need to clarify use of the word `plane.' 
-APA and CPA made up of planes of wires, right? Then APAs are tiled together in 2x25 sheets to form APA planes (different use of word) that extend the height and length of the entire TPC within a cryostat; CPAs same except 4x25. If I get confirmation on this, I will fix many of my own fixmes and remove use of word ``wall'' further down.}
-
 The TPC is an active detector element of each DUNE
 far detector module. It is located inside the cryostat vessel and is
-completely submerged in liquid argon at 88~K. The TPC consists of
-alternating anode plane assemblies (APAs) and cathode plane assemblies
-(CPAs), with field-cage modules enclosing the four open sides between
-the anode and cathode planes.  When proper bias voltages are applied
+completely submerged in liquid argon at 88~K. 
+%The TPC consists of
+%alternating anode plane assemblies (APAs) and cathode plane assemblies
+%(CPAs), with field-cage modules enclosing the four open sides between
+%the anode and cathode planes.  
+The TPC is constructed of modular elements called
+ anode plane assemblies (APAs),  cathode plane assemblies
+(CPAs), and field-cage modules. The APAs and CPAs are assemblies of
+wire planes, and they are tiled into alternating APA-CPA rows along the length of
+the cryostat. The resulting rows are called \textit{anode planes} and \textit{cathode planes}, respectively.
+(Note the different uses of the word \textit{plane}.)  Field-cage modules enclose the four open sides between
+the anode and cathode planes.  
+%
+When proper bias voltages are applied
 to the APAs and CPAs, a uniform electric field is created in the volume
 between the anode and cathode planes. A charged particle traversing
 this volume leaves a trail of ionization in the ultra-pure liquid
@@ -75,11 +82,12 @@ and field-cage modules. These are modular elements of a size optimized
 so as to simplify the manufacture, satisfy the commercial highway and
 underground transport requirements, and facilitate the handling and 
 %speedy 
-efficient installation in the cryostat.  Each element will be fully
+efficient installation in the cryostat.  
+APAs and CPAs 
+Each element will be fully
 tested in LN$_2$ (or LAr) at the assembly site, again at the far
 detector site before installation, and finally will be monitored
 continuously during and after installation to detect any failures.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \subsection{Anode Plane Assemblies (APA)}
@@ -93,7 +101,7 @@ From the outside in, the first wire layer is a shielding (grid) plane, next are
 two induction planes and the collection plane. 
 %
 The front-end electronics
-boards are mounted on one end of the wire  \fixme{APA?}
+boards are mounted on one end of the APA
 frame and protected by a
 metal enclosure.
 The APAs are 2.3~m wide, 6.3~m high, and 12~cm thick. The height is
@@ -115,12 +123,13 @@ compatible with that of the stainless steel frame.  The wires will be
 epoxied to fiberglass wire-bonding boards and then soldered to copper
 traces on the boards for electrical connections.
 
-Four planes of wires cover each side of an APA frame (the
-``wire frame'') \fixme{can we get rid of the term `wire frame'?} as shown in Figure~\ref{fig:tpc-wire-frame-xsect}.
+Four planes of wires cover each side of an APA frame as shown in Figure~\ref{fig:tpc-wire-frame-xsect}.
 
-\fixme{The APA wire wrapping scheme figure could use more detail in the caption. Why are the x-sec dimensions of
-the stainless steel frame important;  are the lines above and below them (on the right) the wire bonding boards? Maybe refer to Table~\ref{wire-parameters} for the wires. The image comes before the explanations.}
-\begin{cdrfigure}[Illustration of the APA wire wrapping scheme]{tpc-wire-frame-xsect}{Illustration of the APA wire wrapping scheme, and three cross sectional views.}
+\begin{cdrfigure}[Illustration of the APA wire wrapping scheme]{tpc-wire-frame-xsect}{Illustration of the APA wire wrapping scheme (left), and three cross sectional views (right). At left, small portions of the wires from the three signal planes are
+shown in color: magenta (U), green (V), blue (X). The fourth wire
+plane  (G) above these three, parallel with X, is present to improve the pulse shape
+on the U plane signals. At right, the placement of the wire planes relative to the stainless steel frame is shown for different locations
+on the APA. See Table~\ref{wire-parameters} for wire plane parameters.}
 \includegraphics[width=0.8\linewidth]{tpc_apa_cross_sections}
 \end{cdrfigure}
 These four planes of wires are labeled, in order from the outside in:
@@ -159,7 +168,7 @@ APA is 2560, for a total of 384,000 in each cryostat.
 The wires on the two induction planes (U and V) are wrapped in a
 helical pattern around the long edges of the wire frame
 (Figure~\ref{fig:tpc-wire-frame-xsect}a). This technique makes it
-possible to place readout electronics only at one short edge of a wire \fixme{APA frame? `wire frame' is confusing}
+possible to place readout electronics only at one short edge of an APA
 frame, and allows tiling of the APAs on the other three sides with
 minimal dead space ($\sim$1.3\% of active area).  Although wires on the %both 
 induction planes are sensitive to tracks on both sides of an APA,
@@ -191,15 +200,13 @@ The APAs facing the cryostat walls are sensitive on both sides, similar to
 voltage on their outer grid planes prevents any electrons drifting
 from the cryostat walls toward the sensing wires.  The electronics for
 the outer X wire plane can be eliminated to save cost.  Alternatively, %we can utilize 
-these double sided APAs can be utilized by adding another plane of cathode \fixme{same as CPA or not? if so, call it CPA, if not, be more descriptive}
-with a small negative bias between the cryostat wall and the APAs to
+these double-sided APAs can be utilized by adding another cathode plane
+with a small negative bias between the cryostat wall and the anode plane to
 form a very shallow veto region.
 
 %%%%%%%%%%%%%%%%
 \subsubsection{APA Frame}
 \label{subsec:fd-ref-apaframes}
-
-\fixme{does `wire plane' = `APA frame'?  Aha, looks like `yes'}
 
 At the nominal wire tension of 5~N, the total of \SI{3520} wires exerts a
 force of $\sim$7.0~kN/m on the short edges of the APA, and a
@@ -301,14 +308,14 @@ positioning systems on each side of the APA are made of commercial linear motion
 The wire tensioner is a self-contained unit that includes the wire
 spool.  It is designed so that correct wire tension is maintained,
 independent of the wire-feed rate and direction.  The APA,
-oriented with one of its long edges down, is held off
-the ground by a couple of posts.  \fixme{check edit; this isn't what the picture shows} There
+oriented horizontally in the device (with one of its long edges down), is held off
+the ground by a couple of posts.  \fixme{check edit} There
 are X-Y positioners on either side of the APA; the tensioner is moved
-across the face of the APA by one of these positioners --- unspooling
+across the face of the APA by one of these positioners, unspooling
 tensioned wire as it moves.  When the tensioner arrives at the edge of
-the APA it is passed across to the positioner on the other side of APA
+the APA it is passed across to the positioner on the other side of the APA
 while placing the wire into the appropriate slots of the edge
-boards. \fixme{at the edge of the board? what's an `edge board'?} In this way the entire layer of wire can be placed on the
+boards. \fixme{at the edge of the board?} In this way the entire layer of wire can be placed on the
 frame. 
 
 Although a large part of an entire plane of wires can be wound in one
@@ -326,20 +333,17 @@ abnormal tension will be replaced manually.
 \subsection{Cathode Plane Assemblies (CPAs)}
 \label{subsec:fd-ref-cpa}
 
-\fixme{CPA is assembly of indiv cathode planes, right? So to call the 4x25 set of CPAs a `plane' is confusing. } 
-
-There are two walls of Cathode Plane Assemblies (CPAs) %cathode planes 
-in each detector module.  Each wall is %plane is
+There are two cathode planes in each detector module.  Each cathode plane is 
 tiled from a four-unit-high by 25-unit-wide array of CPAs. Figure~\ref{fig:tpc-cathode-model} shows the
-building blocks of a cathode wall. %plane.  
-\begin{cdrfigure}[Conceptual design of CPA wall components ] %the cathode plane assembly]
-{tpc-cathode-model}{Conceptual design of the different CPA wall %cathode plane 
-components near a corner of a cathode wall.  Two flavors of CPAs (outer 
-and inner unit) are used to make up the entire cathode wall; %of a cathode plane, 
-the wall is terminated at %both 
-right and left ends by the end pieces (cyan colored).  A high voltage receptacle 
-(orange) connects with the HV feedthrough from the cryostat ceiling. An individual 
-CPA is roughly 2.3~m wide by 3~m tall.}
+building blocks of a cathode plane.  
+\begin{cdrfigure}[Conceptual design of cathode plane components ] 
+{tpc-cathode-model}{Conceptual design of the cathode plane 
+components near a corner.  Two flavors of CPAs (outer 
+and inner unit) are used to make up the entire cathode plane; all
+CPAs are roughly 2.3~m wide by 3~m tall. 
+The cathode plane is terminated at %both 
+right and left ends by the end pieces (cyan colored).  An HV receptacle 
+(orange) connects with the HV feedthrough from the cryostat ceiling. }
 \includegraphics[width=0.9\linewidth]{tpc_cpa_components}
 \end{cdrfigure}
 
@@ -353,7 +357,7 @@ versions: the outer CPAs (top and bottom rows ), and the inner CPAs
 (2$^{nd}$ and 3$^{rd}$ rows).  The inner CPAs use all rectangular tubes for the
 frame structure, while the outer CPAs use 5~cm OD round tubes on the
 outside edge of the CPA facing the floor or ceiling of the cryostat to
-minimize the surface electric field \fixme{magenta in the figure?}.  Two sets of field-shaping end
+minimize the surface electric field \fixme{magenta in Figure~\ref{fig:tpc-cathode-model} ?}.  Two sets of field-shaping end
 pieces are installed at the two ends (e.g., right and left) of a CPA wall to properly
 terminate the cathode wall with rounded edges.  All CPAs are suspended
 from the ceiling using G10 hangers under fiberglass rails to insulate
@@ -392,7 +396,7 @@ resistive structure.
 \subsection{Field Cage}
 \label{subsec:fd-ref-fieldcage}
 
-In the TPC, each pair of facing cathode and anode rows \fixme{oh boy, rows or walls?} forms an
+In the TPC, each pair of facing cathode and anode planes forms an
 electron-drift region. A field cage must completely surround the four
 open sides of this region to provide the necessary boundary conditions
 to ensure a uniform electric field within, unaffected by the presence
@@ -424,7 +428,7 @@ The resistor-divider network will be soldered directly onto the
 field-cage panels. Multiple resistors will be connected in parallel
 between any two taps of the divider, in order to provide fault
 tolerance. 
-\fixme{taps not defined; maybe readers will know, but I don't}
+\fixme{`taps' not defined; maybe readers will know, but I don't}
 One end of the divider chain is connected directly to the
 cathode, while the other end is connected to ground at the APA through
 resistors of the appropriate value.  %It is envisioned that 
@@ -465,7 +469,7 @@ across the gaps between conductors and therefore eliminates the high-field
 region near the conductor edges.  The challenge here is %how to
 ventilation of this field cage surface without significantly increasing the
 field at the edge of the perforations.  Another concept is to use
-roll-formed metal profiles as the field-cage electrodes supported by \fixme{and support them using?}
+roll-formed metal profiles as the field-cage electrodes supported by \fixme{and support them using}
 insulating beams.  These profiles have large edge radii; this makes
 their surface electric field relatively low, which in turn makes it possible
 to place them %be placed 
@@ -491,11 +495,11 @@ the reference design with PCBs.
 \subsection{High Voltage Components}  
 \label{subsec:fd-ref-hv}
    
-The two cathode planes \fixme{CPA walls?} are biased at $-$180~kV to provide the required
+The two cathode planes are biased at $-$180~kV to provide the required
 500~V/cm drift field. Each cathode plane will be powered by a
 dedicated HV power supply through an RC filter and feedthrough.
 
-The power supplies for the TPC cathode planes \fixme{CPA walls?} must be able to provide
+The power supplies for the cathode planes must be able to provide
 $-$200~kV at 1~mA current. The output voltage ripple must not
 introduce more than 10\% of the equivalent thermal noise from the
 front-end electronics.  The power supplies must be programmable to
