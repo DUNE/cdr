@@ -3,21 +3,20 @@
 \label{sec:detectors-fd-ref-perf}
 
 The physics requirements are described in \volphys,
-separately for the long-baseline oscillation, atmospheric, supernova
+for the long-baseline oscillation, atmospheric, supernova
 and nucleon decay physics programs.  This section outlines the
 numerical detector performance parameters needed to meet the
-requirements and the ability of the DUNE reference
-design far detector to achieve these performance parameters.  
+requirements and the ability of the far detector reference design
+to achieve these performance parameters.  
 
-The expected performance of the reference design far detector is based
+The expected performance of the far detector reference design is based
 on the measured performance of the ICARUS\cite{Amerio:2004ze} and
-ArgoNeuT\cite{Anderson:2012vc} detectors, on scanned Monte Carlo
-events\cite{docdb-6954}, and on newer studies with automated
+ArgoNeuT\cite{Anderson:2012vc} detectors, scanned Monte Carlo
+events\cite{docdb-6954} and newer studies with automated
 reconstruction, which are described in
-Sections~\ref{sec:detectors-sc-physics-software-simulation-fd}
-and~\ref{sec:detectors-sc-physics-software-reconstruction-fd}, and in
-\anxreco.  Simulation and reconstruction studies are ongoing.  While
-many components are in place, a full end-to-end simulation,
+Sections~\ref{sec:detectors-sc-physics-software-simulation-fd},~\ref{sec:detectors-sc-physics-software-reconstruction-fd}
+and in \anxreco.  Simulation and reconstruction studies are ongoing.
+While many components are in place, a full end-to-end simulation,
 reconstruction and analysis chain does not yet exist. Many of the
 numerical detector performance requirements are estimates; some of
 them correspond to achievements by ICARUS and ArgoNeuT, although these
@@ -33,15 +32,13 @@ detector design and physics goals.
 important performance parameters of the DUNE reference design far
 detector.  For each parameter, the table lists the required
 (reference) performance, performance achieved by other detectors and
-projected performance for DUNE. References are given.  
-Notes: 
-$^1$For a MIP at the CPA, minimum in all three views, for any track angle;
-$^2$Achieved for the collection view; 
-$^3$In order for the fiducial volume to be known to $\pm 1\%$, the resolution performances are
+projected performance for DUNE. References are given.  Notes: $^1$For
+a MIP at the CPA, minimum in all three views, for any track angle;
+$^2$Achieved for the collection view; $^3$In order for the fiducial
+volume to be known to $\pm 1\%$, the resolution performances are
 reported separately in the $x$, $y$, and $z$ directions, where $z$
-points along the neutrino beam axis; 
-$^4$For a sample of stopping muons; 
-$^5$For electron stubs with $E>5$~MeV.  }
+points along the neutrino beam axis; $^4$For a sample of stopping
+muons; $^5$For electron stubs with $E>5$~MeV.  }
 %The third argument (reads {cc}) can use c, l, r or p{some length}  e.g. {clll} or {llp{3cm}}, for instance.
 Parameter & Reference Performance & Achieved Elsewhere & Expected Performance \\ \toprowrule
 Signal/Noise Ratio$^1$ & 9:1 & 10:1~\cite{Antonello:2015zea,Antonello:2014eha}$^2$ & 9:1 \\ \colhline
@@ -146,7 +143,7 @@ to keep it from being a significant source of uncertainty on the
 fiducial volume determination, though this effect is mitigated if the
 resolution is well known.  The current resolution from PANDORA easily
 meets this requirement.  The axis along which the resolution is the
-weakest is that of the neutrino beam direction, and \fixme{therefore?} the asymmetry in the
+weakest is that of the neutrino beam direction and the asymmetry in the
 achieved resolution is not a result of detector anisotropy.   Tighter
 demands on the primary vertex position resolution will be made by
 topological selection of $\pi^0\rightarrow\gamma\gamma$ decays, which
@@ -155,14 +152,14 @@ vertex.
 
 In order to reduce the neutral-current background to $\nu_e$CC events
 by a factor of roughly 100, information from the $dE/dx$ of the
-initial $\approx 2.5$~cm of an electromagnetic shower must be combined
+initial $\sim$2.5~cm of an electromagnetic shower must be combined
 with the topological $\pi^0\rightarrow\gamma\gamma$
 selection\cite{docdb-6954}.  Current Monte Carlo studies indicate
 that, for showers with enough hits in the initial part to measure
 $dE/dx$, the performance of the ionization method is roughly 90\%
 electron efficiency with a 90\% rejection factor for single photons.
 A topological hand-scan indicates that a signal $\nu_e$CC signal
-efficiency of $\approx 80$\% with a 95\% rejection of neutral-current
+efficiency of $\sim$80\% with a 95\% rejection of neutral-current
 background can be obtained.  With optimizations to the $dE/dx$
 analysis and automating the pattern-recognition identification of
 $\pi^0$ decays by topology, it is anticipated that the requested level
@@ -171,22 +168,21 @@ of 99\% $\pi^0$ rejection can be obtained at 90\% signal efficiency.
 The momentum of muons in $\nu_\mu$CC events is an important ingredient
 in measuring the $\nu_\mu$ energy spectrum in the far detector, which
 is one of the inputs to the oscillation parameter fits.  Muons which
-stop in the detector volume will be well measured using their ranges,
-though many will not be contained, though the distribution of
-deviations of the muon track from a straight line is a function of the
-muon momentum. \fixme{prev sentence very hard to parse; clarify} 
-The expected performance of $\pm$18\% on the muon
-momentum was achieved by ICARUS for a sample of stopping muons, where
-the momentum measured by multiple scattering was  compared against
-that obtained from the range.  It is anticipated that the resolution
-will deteriorate for higher-energy muons because they scatter less.
+stop in the detector volume will be well measured using their range.
+For those that are not contained the distribution of deviations of the
+muon track from a straight line is a function of the muon momentum.
+The expected performance of $\pm$18\% on the muon momentum was
+achieved by ICARUS for a sample of stopping muons, where the momentum
+measured by multiple scattering was compared against that obtained
+from the range.  It is anticipated that the resolution will
+deteriorate for higher-energy muons because they scatter less.
 
 The requirements on the electron energy-scale uncertainty and the
 resolution are driven by the need to analyze the reconstructed $\nu_e$
 energy spectrum to extract oscillation parameters in the
 high-statistics phase of DUNE.  A fraction of the energy of an
 electromagnetic shower escapes in undetected low-energy photons that
-can be simulated, but \fixme{this fraction?} must be calibrated in data in order to give
+can be simulated, but this fraction must be calibrated in data in order to give
 confidence in the uncertainty.  An absolute energy scale will need to
 come from test-beam data --- LArIAT and the CERN prototypes, the
 \cernsingleproto{} and the \cerndualproto.  Analyzing
@@ -243,11 +239,10 @@ resolution, isotropic and uniform monoenergetic electrons with
 energies of 5--50~MeV (which should approximate the $\nu_e$CC
 electron products) were simulated and reconstructed with the LArSoft
 package.  The charge of reconstructed hits on the collection plane was
-used to reconstruct the energy of the primary electrons.
-\footnote{Collection-plane hit charge gave the best resolution results
+used to reconstruct the energy of the primary electrons.\footnote{Collection-plane hit charge gave the best resolution results
   compared to induction-plane and track-length-based reconstruction in
-  this preliminary study; however improved reconstruction based on
-  broader information could be possible in the future.}
+  this preliminary study; however, improved reconstruction based on
+  broader information should be possible.}
 Figure~\ref{fig:lowe_res} shows the results of a resolution study.  
 A correction to compensate for loss of electrons during
 drift, $Q_{\rm collection}=Q_{\rm production}\times e^{-T_{\rm drift} / T_{\rm
@@ -269,16 +264,17 @@ expected.
    resolution (defined as $\sigma/E$, where $\sigma$ is the spread of
    the collection-plane-charge-based event energy $E$ for a
    monoenergetic electron), with and without electron-lifetime
-   correction, as a function of electron energy (assumptions: 3~ms drift time, 1.63~mm/$\mu$s drift velocity, and 2.5~m maximum drift length). The blue curve is the
-   energy resolution of isotropic and uniform electrons without
-   electron-lifetime correction. The red curve is the energy
-   resolution with electron-lifetime correction based on MC truth.
-   Right: Comparison of energy resolution before and after tuning the
-   reconstruction algorithm (for fixed position/direction electron
-   events).}\label{fig:lowe_res}
+   correction, as a function of electron energy (assumptions: 3~ms
+   drift time, 1.63~mm/$\mu$s drift velocity, and 2.5~m maximum drift
+   length). The blue curve is the energy resolution of isotropic and
+   uniform electrons without electron-lifetime correction. The red
+   curve is the energy resolution with electron-lifetime correction
+   based on MC truth.  Right: Comparison of energy resolution before
+   and after tuning the reconstruction algorithm (for fixed
+   position/direction electron events).}\label{fig:lowe_res}
 \end{figure}
 
-Also under study is the potential for tagging $\nu_e$-CC absorption
+Also under study is the potential for tagging $\nu_e$CC absorption
 events ($\nu_e +{}^{40}{\rm Ar} \rightarrow e^- +{}^{40}{\rm K^*}$)
 using the cascade of de-excitation $\gamma$ rays (that Compton-scatter
 in the detector); this should serve the dual purposes of rejecting

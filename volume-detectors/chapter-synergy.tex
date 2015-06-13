@@ -3,47 +3,25 @@
 
 \section{Overview}
 
-\fixme{Should we start with something about `As discussed in Section~\ref{sec:detectors-strategy-FD}, 
-it is envisioned that as technology advances and 
-the performance of prototypes is established, the four detector modules, staged for sequential installation, 
-may implement different designs, in terms of both single- and dual-phase readout and advances in either
-technology as they become available. In this context, it is important to consider the synergies that DUNE can
-exploit as it refines the design of each module in turn.'}
+As discussed in Section~\ref{sec:detectors-strategy-FD}, two
+technologies for LArTPCs are being pursued. There are a number of
+synergies between these development efforts.
 
-Both the reference and alternative designs for the DUNE far detector are 
-liquid argon TPCs. The designs assume nearly identical cryostats (with some differences in the
-cryostat roof), in identical caverns and supported by identical
-cryogenic systems. The designs differ mostly in their
-approaches to collection and readout of the ionization signals. In the
-reference design, the ionization charge is measured by successive wire planes, two induction and
-one collection, all immersed in the LAr. In the
-alternative design, the charge is extracted from the liquid to the
-vapor and then amplified and finally collected on a 2D anode, providing two %perpendicular
-independent views. 
+Both the reference and alternative designs for the DUNE far detector
+are liquid argon TPCs. The designs assume nearly identical cryostats
+(with some differences in the cryostat roof), in identical caverns and
+supported by identical cryogenic systems. The designs differ mostly in
+their approaches to collection and readout of the ionization
+signals. In the reference design, the ionization charge is measured by
+successive wire planes, two induction and one collection, all immersed
+in the LAr. In the alternative design, the charge is extracted from
+the liquid to the vapor and then amplified and finally collected on a
+2D anode, providing two independent views.
 
-Different technical choices aside, an encouraging set of synergies emerges between the designs in the areas of: \fixme{list}
-
-\fixme{above is proposed rewrite of the following}
-The reference and the alternate designs for the far detector are both
-liquid argon TPCs hosted in identical caverns, with identical
-cryogenic systems and nearly identical cryostats (details of the
-cryostat roof are expected). They differ mostly in their
-approach to collection and readout of the ionization signals. In the
-reference design, this charge is measured by successive induction and
-readout wire plans and eventually collected on a wire plane. In the
-alternate design, the charge is extracted from the liquid to the
-vapor and then amplified and finally collected on two perpendicular
-independent views. While the detailed detector configurations are
-based on different technical choices, this basic fact leads to a large
-number of potential synergies.
-
-A list of synergies related to the following far detector subsystems
-follows:
-
-\fixme{start again here}
+A list of synergies between far detector subsystems designs follows:
 \begin{itemize}
 \item Interface with the cryogenics system
-\item Drift high voltage \fixme{I would just call it ``High Voltage''}
+\item High voltage 
 \item Photon detection
 \item Calibration
 \item Underground installation strategies
@@ -51,7 +29,6 @@ follows:
 \item Detector modeling and simulation
 \end{itemize}
 
-%In the following sections we will briefly discuss each of these items. <--- not needed
   
 
 
@@ -62,22 +39,10 @@ of several meters. In order to reach the required millisecond scale for
 electron lifetime, the electronegative impurities in the LAr must be
 maintained below the ppb level. The contamination will
 come primarily from impurities adsorbed onto the tank and detector element surfaces.
-Given that the detector modules will be housed in cryostats of the same design, built
-using the industrial LNG cryostat technology, and that the cryogenics system must
-be suitable for all the modules, the process of understanding these sources and minimizing them
-is to a great extent the same for all the modules, for either TPC design. \fixme{except for detector element sources; need to
-address? Or does `to a great extent' cover it?}
-
-\fixme{above is proposed rewrite of the following}
-Both designs are based on long drifts, of the order of several meters,
-of ionization electrons in liquid argon. These drifts require
-excellent purity of the liquid argon, with electronegative impurities
-much below the ppb level and electron lifetimes at the ms scale. In
-both designs, the detector will be hosted in the same cryostat built
-using the industrial LNG cryostat technology. The contamination will
-come from impurities adsorbed on the tank and detector surfaces. It is
-therefore important to understand these sources and minimize their
-impact on the detector.
+Given that the detector modules will be housed in cryostats of the same design,
+using the same industrial LNG cryostat technology and the same cryogenics systems,
+the process of understanding these sources and minimizing them
+is to a great extent the same for either TPC design:
 \begin{itemize}
 \item Electronegative contamination mitigation	
 \item Modeling contamination sources
@@ -91,12 +56,10 @@ impact on the detector.
 \item Installation spaces and cryogenics system needs	
 \end{itemize}
 
-%\subsection{Drift Electron Lifetime}  <-- can't have just one subsection in a section
-%\label{sec:detectors-synergy-lifetime}
+\subsection{Drift Electron Lifetime} 
+\label{sec:detectors-synergy-lifetime}
 
 
-\fixme{I don't think this next pgraph is needed; it's described elsewhere that the reason you need
-high purity is to get longer lifetime, etc.}
 For detecting interactions of beam neutrinos, the requirement for
 electron lifetime of $>$3~ms derives from the minimum signal to noise
 ratio (S/N$>$9) required for MIP signals on induction plane wires from
@@ -107,7 +70,6 @@ detector requirement is the same for both the single-phase reference
 design and the dual-phase alternate design.  As the argon purity goal
 is similar, work on contamination mitigation can be done jointly.
 
-\fixme{I'm not sure this next one is needed either; it's about progress, not the synergy itself}
 There is much experience in the community to justify confidence that
 high levels of argon purity can be achieved.  Careful design of gas
 ullage and the recirculation system is vital to avoid trapped pockets
@@ -126,24 +88,8 @@ Demonstrator (LAPD) acheived lifetimes above 14~ms without evacuating
 the cryostat and with a functioning TPC inside the
 cryostat.\cite{Bromberg:2015uia}
 
-
 The phase-1 run of the 35-t achieved a peak 3~ms electron lifetime;
-however, the purity was still improving when the run ended.  \fixme{I would start again here.} 
-The
-engineers and scientists from LBNF and both DUNE detector designs will
-work together to optimize the cryogenic design to achieve the required high purity. 
-In particular, work will proceed in understanding the sources of contamination in the ullage
-and how this contamination migrates to the liquid. It will be necessary to develop a
-fill procedure that preserves the purity of the incoming liquid.
-Several membrane cryostats will be designed and built
-over the next 10 years by a common engineering team: the
-1$\times$1$\times$3~m$^3$ dual phase prototype, Short Baseline
-Neutrino Detector (SBND), WA105, the Single-Phase CERN Prototype
-(SPCP) engineering prototype, as well as the first module of the DUNE far detector. 
-Each of
-these will benefit from lessons learned during construction of its predessors and will in turn inform its successors. 
-
-\fixme{See the above pgraph; proposed rewrite of following} The
+however, the purity was still improving when the run ended.  The
 engineers and scientists from LBNF and both DUNE detector options will
 work together to optimize the cryogenic design for high purity. Two
 examples are understanding the sources of contamination in the ullage
@@ -151,7 +97,7 @@ and how this contamination migrates to the liquid and developing a
 fill procedure that preserves the purity of the incoming liquid.
 There are several membrane cryostats that will be designed and built
 over the next 10 years by a common engineering team: the
-1$\times$1$\times$3~m$^3$ dual phase prototype, Short Baseline
+1$\times$1$\times$3~m$^3$ dual-phase prototype, Short Baseline
 Neutrino Detector (SBND), WA105, the Single-Phase CERN Prototype
 (SPCP) engineering prototype as well as the DUNE far detector. Each of
 these will learn from its predessors and inform its successors. Based
@@ -159,7 +105,6 @@ on existing measurements and extrapolations to the 10~kt design a 3~ms
 lifetime should be readily achievable.
 
 
-%\section{Drift High Voltage}
 \section{High Voltage}
 
 Both LArTPC designs require a large HV to
@@ -167,15 +112,7 @@ produce an electric field of the order of 500~V/cm in the drift
 volume.  They both thus require a HV generator, HV
 feedthoughs and a field cage to correctly shape the electric
 field. While these elements differ in the two designs, they present a common
-set of problems to solve. 
- 
-\fixme{above is proposed rewrite of the following}
-One of the feature of a liquid argon TPC is the need for a large HV to
-produce an electric field of the order of 500~V/cm in the drift
-volume.  In the two cases this requires then a HV generator, HV
-feed-though and a field cage to correctly shape the electric
-field. While far from being identical, this set of problems has a
-large number of commonalities for the two designs.
+set of problems to solve:
 \begin{itemize}
 \item Design rules for HV
 \item HV generation
@@ -188,21 +125,14 @@ large number of commonalities for the two designs.
  
 \section{Photon Detection}
 
-The photon detection in each of the two designs is quite different.
-Despite the dissimilarity between TPB-coated light guides instrumented with SiPMs 
-and large PMTs (also coated with TPB), several aspects of and techniques use in these systems can be
-further developed through a collaborative effort.  
-
-\fixme{above is proposed rewrite of the following}
-The photon detection uses very different concepts. For the reference
-design it is based on light guide bars with TPB coating and SiPMs.
-For the alternate design it is based on large PMTs coated with
-TPB. Nevertheless several aspects related to these subsystems can be
-further developed through a collaborative effort.  Moreover,
-techniques developed in one design could be used in the other design.
+The approaches to photon detection in the two designs is
+different.  The reference design uses TPB-coated light guides
+instrumented with SiPMs, whereas the alternate design uses large PMTs
+(also coated with TPB). Nevertheless, several aspects of and
+techniques used in the development of these systems have strong synergies:
 \begin{itemize}
 \item Requirements refinement and validation
-\item Development and evaluation of photon detectors \fixme{meaning either design might just adopt a new design?}
+\item Development and evaluation of photosensors
 \item Impact of background light
 \item  Surface reflectivity
 \item Photon detector calibration
@@ -215,15 +145,7 @@ The challenging requirement on systematic uncertainties calls for a
 robust program of calibration, which may include the use of calibration sources
 deployed in the detector, complementary external measurements
 and data-driven calibration procedures. It is expected that this effort
-allows for significant synergies between the two designs.
-
-
-\fixme{above is proposed rewrite of the following}
-The challenging requirement on systematic uncertainties calls for a
-full-fledged program of calibration, be it through calibration sources
-deployed in the detector, through complementary external measurements
-and through data-driven calibration procedures. We think this program
-allows for large synergies between the two designs.
+will have significant synergies between the two designs:
 \begin{itemize}
 \item Active volume
 \item Energy scale
@@ -236,30 +158,17 @@ allows for large synergies between the two designs.
 \section{Underground Installation Strategies}
 
 A fundamental aspect of the detector cost optimization is related to
-the development of a strategy for underground logistics and
-detector installation. Dimensioning of the components to be
-transported and assembled underground is a common issue where
-synergies exist. Strategies for and requirements on 
-implementing the clean rooms, additional tooling, and needs for temporary installations, such as scaffolding,
-also present opportunities for potential synergies.
-
-\fixme{And maybe safety considerations -- ESH is an area of synergy!}
-
-\fixme{above is proposed rewrite of the following}
-A fundamental aspect of the detector cost optimization is related to
-the development of an optimized strategy for underground logistics and
-detector installation. Dimensioning of the components to be
-transported and assembled underground is a common issue where
-synergies exist. Also at this level are the strategies for
-implementing the clean room. Additional tooling, such as scaffolding,
-are also a subject where common developments are expected to take
-place.
+the development of a strategy for underground logistics, safety and detector
+installation. Dimensioning of the components to be transported and
+assembled underground is a common issue where synergies
+exist. Strategies for and requirements on implementing the clean
+rooms, additional tooling and needs for temporary installations, such
+as scaffolding, also present opportunities for potential synergies.
 
 \section{Local Computing Infrastructure and DAQ}
 
-\fixme{no proposed rewrite, just minor edits}
-Once the electrical signals from the detector have been conditioned \fixme{I'm not used to this word in this context; check}
-(e.g., by front-end preamplifiers), the treatment of the digitized raw data and
+Once the electrical signals from the detector have been processed
+(e.g., by frontend preamplifiers), the treatment of the digitized raw data and
 their compression can be strongly unified and will therefore provide
 synergies. The online computing farm will have a very similar layout
 for both reference and alternative designs. The software triggering and
@@ -270,19 +179,10 @@ storage and transmission to offsite tier-centers will be common.
 
 \section{Detector Modeling and Simulation}
 
-Accurate and detailed detector modeling is required in order to provide a 
-basis for neutrino event simulation. It is important to develop simulations for both ionization 
-electrons and scintillation photons. The basis of the synergies in this area is
-the common detection medium of LAr.
-
-\fixme{above is proposed rewrite of the following}
-An important aspect of the far detector is a correct and detailed
-detector modelling to serve as the basis of the simulation of the
-signal (ionization electron and photons from argon scintillation)
-generated by neutrino interactions. The basis of these synergies is
-the fact that liquid argon serves as the TPC detection medium in both
-cases. Here the following synergies can be considered:
-
+Accurate and detailed detector modeling is required.  Simulations are
+needed for both ionization electrons and scintillation photons. The
+basis of the synergies in this area is the common detection medium of
+LAr:
 \begin{itemize}
 \item Charge generation and transport
 \item Charge diffusion and attenuation studies
@@ -292,16 +192,11 @@ cases. Here the following synergies can be considered:
 
 %\section{Further Steps}
 \section{Summary}
-A large set of possible synergies exists between the reference and alternative TPC
-designs. These synergies will be exploited and developed within the DUNE
-Collaboration and the LBNF team as the program of prototypes, demonstrators and other 
-development activities continues and as
-the detector modules and the accompanying facilities are constructed. The CERN neutrino
-platform, in particular, will provide an excellent opportunity for joint detector development.
+A large set of possible synergies exists between the reference and
+alternative TPC designs. These synergies will be exploited and
+developed within the DUNE Collaboration and the LBNF team as the
+program of prototypes, demonstrators and other development activities
+continues and as the detector modules and the accompanying facilities
+are constructed. The CERN neutrino platform, in particular, will
+provide an excellent opportunity for joint detector development.
 
-\fixme{above is proposed rewrite of the following}
-A large set of possible synergies  between the different TPC alternate
-designs exists and will be further developed within the DUNE
-collaboration.  The program of demonstrators in the CERN neutrino
-platform will provide an excellent platform for joint detector
-development.
