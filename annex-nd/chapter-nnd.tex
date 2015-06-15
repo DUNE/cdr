@@ -124,8 +124,8 @@ CC$\mu$/CCe Rejection&0.01\% \\
 Item&Requirement  \\ \toprowrule
 Inner Magnetic Volume & 4.5m x 4.5m x 8.0m  \\ \colhline
 Tracking Detector & 3.5m x 3.5m x 6.4m; 80 modules; 107,520 straws \\ \colhline
-Targets & 1.27-cm thick argon, water, and other nuclear targets \\ \colhline
-Transition Radiation Radiators & 3.6-cm thick radiators \\ \colhline
+Targets & 5.08-cm thick argon, and other nuclear targets \\ \colhline
+Transition Radiation Radiators & 9-mm thick radiators \\ \colhline
 ECAL & $X_0$ = 10 barrel, 10 backward, \& 20 forward; 26,112 scintillator bars \\ \colhline
 Dipole Magnet & 0.4T; 2.4 MW; 60 cm thick steel \\ \colhline
 Magnetic Field Uniformity & $<2\%$ magnetic field variation over inner volume \\ \colhline
@@ -138,44 +138,46 @@ MuID & 432 RPC modules interspersed between 20-cm thick layers of steel \\
 
 \subsection{Straw Tubes}
 
-The Straw-Tube Tracking Detector (STT) %is located 
-at the center of the FGT %and 
-will be composed of straw tubes with an outer diameter of 1~cm, as well as 
-radiators and targets that reside next to the straw tubes (see Figure~\ref{fig:STT_Detail}).
-Vertical (YY) and horizontal (XX) planes of straws will be alternated and 
-arranged in modules, with each module containing close-packed double straw layers 
-of vertical and horizontal straws (XXYY). 
-Figure~\ref{fig:STT_Detail} shows a schematic drawing of an STT module with four straw-tube planes and
-radiators. 
-An alternative design has also been considered; it calls for two planes of straws
-per module, XX, YY, and so on. It will have approximately the same number of
-total straw tubes in the tracker but twice as many modules. 
-%\fixme{Is there a schematic of it?; WCL: not at present}
-%; however, the number of modules will be doubled.
-%In what follows, 
+The Straw-Tube Tracking Detector (STT) at the center of the FGT
+is composed of straw tubes with an outer diameter of 1~cm, as well as
+radiators and targets that reside next to the straw tubes as shown in Figure~\ref{fig:STT_Detail}.
 
-The performance and the cost of the STT are expected to be similar 
-in both the reference (4-Planes/Module) and alternative (2-Planes/Module) designs.
- The straw tubes will be filled with a
-gas mixture of either 70\% Ar plus 30\% CO$_2$ (for modules with targets) or
-70\% Xe plus 30\% CO$_2$ (for modules with radiators). 
-%A carbon composite sheet ($< 250 \mu$m thick), 
-%as shown in Figure~\ref{STT_film}, 
-%will provide support for each plane of straws. 
-The dimensions of each module in the reference design will
-be approximately 350~cm $\times$ 350~cm $\times$ 8.0~cm, including 
-target or radiator planes and four straw planes. For ease of construction and
-transportation, each module is made up of six sub-modules, with dimensions of
-appproximately 350~cm $\times$ 117~cm $\times$ 2.0~cm. 
-The straw tubes in a single sub-module will be able to provide the tension 
-for the wires, however, a temporary sub-module carbon composite frame will 
-be employed for shipping. The sub-modules will be assembled %put together 
-into modules 
-at Fermilab, where each module will have a new carbon composite frame around 
-the perimeter of the module for support and will have an attached target or 
-radiator. Nominally, there will be 34 modules with targets and 46 modules 
-with radiators, still keeping the 
-average density of the STT at around 0.1 g/cm$^3$. 
+The straw walls are made by winding together a film of carbon loaded
+Kapton XC (inner) and a film of aluminum coated Kapton HN (outer), for
+a total thickness of about 70~$\mu$m. The anode wire is gold-plated
+tungsten with 20 $\mu m$ diameter.  Two consecutive layers of straws
+are staggered by a half-diameter, glued, and inserted into a
+carbon-fiber composite mechanical frame to form a single module.  One
+vertical (YY) and one horizontal (XX) module are then assembled
+together to form a double-module (XXYY) equipped with frontend
+electronic readout boards.  Figure~\ref{fig:STT_Detail} shows a
+schematic drawing of the STT module with four straw-tube planes and
+radiators. Each XXYY module equipped with radiators is equivalent to
+$1.45 \times 10^{-2} X_0$ (0.2$\times10^{-2} X_0$ without
+radiators), with a radiation length $X_0 \sim$5.5~m. The momentum
+measurement requires that tracks are detected in at least six straw
+layers. The staggered double layer design, high number of straw planes
+and double-end readout will contribute to resolving short track
+disambiguation.
+
+
+The straw tubes will be filled with a gas mixture of either 70\% Ar
+plus 30\% CO$_2$ (for modules with nuclear targets) or 70\% Xe plus 30\%
+CO$_2$ (for modules with radiators).  The dimensions of each double module in
+the reference design will be approximately
+350~cm$\times$350~cm$\times$8.0~cm, including a nuclear target or four radiator
+planes and four straw planes. For ease of construction and
+transportation, each double module is made up of two modules, with
+two straw layers and dimensions of appproximately 350~cm$\times$175~cm$\times$4.0~cm.  Each
+module will have a carbon composite frame around the perimeter for
+support and will have an attached target or radiator.
+
+
+The modularity of the STT provides for successive measurements using
+thin nuclear targets (thickness $< 0.1 X_0$), while the excellent
+angular and spatial resolution allows a clean separation of events
+originating in different target materials.
+
 
 
 \begin{cdrfigure}[A schematic drawing of a STT module]{STT_Detail}{A schematic drawing of a STT module with four straw-tube planes and
@@ -189,9 +191,10 @@ The STT will have a total of 107,520 straws  --- corresponding to 336 straws per
 and 80 modules. Both ends of the straw tubes will be read out, leading to a total
 number of electronics channels of 215,040. 
 The total mass of the STT, including targets and radiators, is approximately 8~t, 
-corresponding to an average density of 0.1. %\fixme{prev sentence already said}
-The thickness of the entire 6.4-m-long STT is almost two 
-radiation lengths. Specifications for the Straw Tube Detector are shown in Table~\ref{tab:STT_details}.
+corresponding to an average density of 0.1 g/cm$^3$. %\fixme{prev sentence already said}
+The thickness of the entire 6.4-m-long STT is $0.3 X_0$ without radiators and nuclear targets and 
+$\sim 1.3 X_0$ with all radiators and targets included. 
+Specifications for the Straw Tube Detector are shown in Table~\ref{tab:STT_details}.
 
 
 
@@ -199,24 +202,38 @@ radiation lengths. Specifications for the Straw Tube Detector are shown in Table
 
 \begin{cdrtable}[Straw Tube Detector specifications]{ll}{STT_details}{Straw Tube Detector specifications}
 Item&Specification \\ \toprowrule
-Straw Tube Geometry & 1cm Diameter x 3.5m Long \\ \colhline
+Straw Tube Geometry & 1~cm Diameter x 3.5~m Long \\ \colhline
 Number of Straw Tubes & 107,520 \\ \colhline
 Number of Straw Tubes per Plane & 336 \\ \colhline
 Number of Straw Tube Planes per Module & 4 \\ \colhline
-Number of Straw Tube Sub-Modules per Module & 6 \\ \colhline
+Number of Straw Tube Sub-Modules per Module & 4 \\ \colhline
 Number of Straw Tube Modules & 80 \\ \colhline
-Number of Straw Tube Sub-Modules & 480 \\ \colhline
+Number of Straw Tube Sub-Modules & 320 \\ \colhline
 Length of Straw Tube Wire & 376.3 km \\ \colhline
 Number of Electronics Channels & 215,040 \\ \colhline
-Number of Modules with Radiators & 46 \\ \colhline
-Radiator Thickness per Module & 3.6cm \\ \colhline
-Radiator Mass per Module & 108 kg \\ \colhline
-Number of Modules with Target Planes & 34 \\ \colhline
-Target Geometry & 1.27cm Diameter $\times$ 3.5m long \\ \colhline
-Number of Targets per Plane & 275 \\ \colhline
-Ar Mass per Target Plane & 15.5 kg \\ \colhline
-Water Mass per Target Plane & 95 kg \\
+Number of Modules with Radiators & 75 \\ \colhline
+Radiator Thickness per Module & 3.6~cm \\ \colhline
+Radiator Mass per Module & 69.1 kg \\ \colhline
+Number of Modules with Nuclear Targets & 10 \\ \colhline
+C Mass per Target Plane & 192 kg \\ \colhline
+Number of Modules with C Target Planes & 2 \\ \colhline
+Ca Mass per Target Plane & 132 kg \\ \colhline
+Number of Modules with Ca Target Planes & 1 \\ \colhline
+Ar Target Geometry & 5.08~cm Diameter $\times$ 3.5~m long \\ \colhline
+Number of Ar Targets per Plane & 68 \\ \colhline
+Ar Mass per Target Plane & 112 kg \\ \colhline
+Number of Modules with Ar Target Planes & 1 \\ \colhline
+Fe Mass per Target Plane & 96.5 kg \\ \colhline
+Number of Modules with Fe Target Planes & 1 \\
 \end{cdrtable}
+
+In addition to tracking charged particles and measuring Transition Radiation (TR),
+the STT provides dE/dx measurement to identify particles.
+Figure~\ref{fig:PartID_dedx} provides a sample of pions, kaons and protons identified via dE/dx in the STT.
+\begin{cdrfigure}[Simulated distributions of dE/dx for different particles in FGT]
+{PartID_dedx}{Simulated distributions of dE/dx for different particles in FGT.}
+\includegraphics[width=0.7\textwidth]{PartID_dedx}
+\end{cdrfigure}
 
 \subsection{Radiator Targets}
 
@@ -228,40 +245,67 @@ four radiators, where each radiator consists of
 foils alternating with 60 sheets of 125-$\mu$m tulle fabric spacers. 
 The mass of each radiator is $\sim27$ kg and the thickness is 
 $\sim9$ mm. 
-Thin graphite planes and/or carbon fiber foils can be added to some STT modules
-in order to have a total carbon target mass of about 0.5~t. (This is in addition to
-the carbon in the STT frames.) A statistical subtraction of events occurring
-on the pure carbon target from the ones in the polypropylene radiators will provide a measurement of
-antineutrino interactions on a free proton target, which can be used for flux determination and cross
-section measurements.
+The use of thin plastic foils
+regularly spaced allows the emission of transition radiation for
+electron/positron identification, which is detected by the Xe gas in
+the straws. The plastic radiators account for about 83\% of the mass of each STT module and
+also provide the main (anti)neutrino target.
 
-\subsection{Argon, Water, and Other Nuclear Targets}
+\subsection{Nuclear targets}
 
-Both argon
-and water will be implemented as target materials for neutrino interactions.
-The argon targets will measure neutrino interactions on the same material as the far detector, while
-H$_2$O and D$_2$O water targets can be used to determine, through subtraction, the
-neutrino fluxes off of ``free'' neutron targets. Antineutrino fluxes off of ``free''
-proton targets can be obtained, through subtraction, from C and CH$_2$ targets.
-The targets will be 
-positioned directly upstream of individual modules without radiators. 
-The targets, shown in 
-Figure~\ref{fig:STT_targets}, will consist of planes of 0.5-inch diameter, 3.5-m-long aluminum tubes filled
-either with water (H$_2$O or D$_2$O) or with argon gas pressurized to 140 atm ($\rho = 0.233$). 
-%There will be a total of 44 modules 
-%with argon targets and 20 modules with water targets. 
-We will place 273 tubes in each 
-plane, spaced 0.505-in apart. The tube wall thickness will depend on the fill material.
-%; 0.065-in for the 
-%pressurized Ar and 0.028-in for water. The water mass per plane is 95 kg 
-%(106 kg for D$_2$O), 
-%corresponding to a total water mass
-%(H$_2$O and D$_2$O) of 1.9 tonnes. 
-%while the argon mass per plane is 15.4 kg.
-%, corresponding to a total argon mass of 0.68 tonnes.
-Additional nuclear targets, such as Ca (same atomic weight as argon), C, stainless
-steel, and Pb, can also be used in
-the form of thin planes, to be positioned directly upstream of individual STT modules without radiators.
+A set of different nuclear targets will be installed in front of the
+most upstream STT modules, which will not be equipped with radiators.
+The most important nuclear target is the argon target that matches
+the DUNE far detector.
+
+This target will consist of planes of cylindrical tubes filled with
+argon gas pressurized to 140~atm ($\rho = 0.233$), with
+sufficient Ar mass to provide $\sim$10 times the unoscillated
+statistics expected in a 40~kt far detector. The proof of concept design
+consisted of 0.5-inch diameter, 3.5-m-long stainless steel tubes,
+with wall thickness 0.065-inch, as shown in Figure~\ref{fig:STT_targets}. 
+In order to minimize the mass of the
+tube walls, we are investigating the use of a single plane of C-composite
+tubes with 2-inch diameter and a wall thickness of 0.04-inch.
+
+Relevant to argon, a crucial target is calcium which has the same
+atomic weight ($A=40$) as argon but is isoscalar.  Since most nuclear
+effects depend on the atomic weight $A$, inclusive properties of
+(anti)neutrino interactions are expected to be the same for these two
+targets.  This fact will allow the use of both targets to model
+signal and backgrounds in the DUNE far detector (argon target), as
+well as to compare DUNE results for nuclear effects on argon with the
+extensive data on calcium from charged lepton scattering.
+
+An equally important nuclear target is carbon (graphite), which is
+essential in order to get (anti)neutrino interactions on free proton,
+through a statistical subtraction procedure from the main
+polypropylene target (C$_3$H$_6$)$_n$.  The availability of such a
+free-proton target will allow accurate flux determinations and cross
+section measurements, and, for the first time, a direct
+model-independent measurement of nuclear effects --- including both
+the primary and final-state interactions --- on the argon target
+relevant for the far detector oscillation analysis. The required
+carbon target mass is about 0.5~t (in addition to the carbon in the
+STT frames). The corresponding expected number of events on H target
+are $5.0 (1.5) \times 10^6 \pm 13(6.6) \times 10^3$ $\nu(\bar \nu)$
+CC, where the uncertainty is dominated by the subtraction procedure.
+
+A stainless steel target in the form of a single thin slab will
+provide service measurements of (anti)neutrino cross-sections for the
+INO experiment in India.
+
+Finally, cylindrical tubes similar to those used for the pressurized Ar gas can
+be filled with standard and heavy water (H$_2$O and D$_2$O). The
+statistical subtraction of H$_2$O from D$_2$O will result in a
+quasi-free neutron.
+
+Table~\ref{tab:STT_details} gives a reference configuration of the
+radiators and nuclear targets, listed according to their location from
+downstream to upstream.  The final configuartion of the nuclear
+targets will require detailed Geant4 simulations of FGT and
+corresonding physics sensitivity studies.
+
 
 
 \begin{cdrfigure}[Schematic drawing of the water or pressurized-argon targets]{STT_targets}{Schematic drawing of the water or pressurized-argon targets, 
@@ -304,7 +348,7 @@ for a total of 26,112 bars.
 
 The scintillator bars will be extruded with 
 holes in the middle of each bar. The
-holes will then be fitted with 0.7-mm-diameter Kuraray wavelength-shifting (WLS) fibers.
+holes will then be fitted with $\sim$ 1-mm-diameter Kuraray wavelength-shifting (WLS) fibers.
 The fibers will be read out by SiPM (silicon photomultiplier) photosensors at each end, making the number of 
 readout channels twice the number of scintillator bars 
 for a total of 52,224. The total mass of scintillator is 20.9~t, 
@@ -317,7 +361,7 @@ magnet, where there is very little gap between the Barrel ECAL and the Forward E
 
 \begin{cdrfigure}[Schematic drawing of the ECAL]{ECAL_detail}{Schematic drawing of the ECAL, which is made up of alternating planes
 of plastic scintillator and Pb sheets.}
-\includegraphics[width=5.0in,angle=0]{ECAL_detail}
+\includegraphics[width=5.0in,angle=0]{ECAL_detail2}
 \end{cdrfigure}
 
 
@@ -364,14 +408,14 @@ The magnet will have inner dimensions (inside the coils)
 magnet 
 %is modeled after the CERN 
 %UA1 magnet with 
-has four vertical Al coils, stacked horizontally, producing a horizontal magnetic 
+has four vertical copper coils, stacked horizontally, producing a horizontal magnetic 
 field. The return yoke will be divided into two halves along the 
 longitudinal center line to allow the magnet to be opened to service the
 detector inside, as shown in Figure~\ref{fig:STT_schematic}. 
 Each half yoke will be built
 from eight ``C'' (C-shaped) sections, and the thickness of the 
 magnet steel will be 60~cm, consisting of 6
-$\times$ 10-cm-thick plates. The magnet power requirement with Al coils is $\sim 2.4$~MW,
+$\times$ 10-cm-thick plates. The magnet power requirement with Cu coils is $\sim 2.4$~MW,
 corresponding to 6~kA at 400~V. The water flow required for cooling is 20~l/s.
 The Dipole Magnet specifications are shown in Table~\ref{tab:Magnet_specs}.
 
