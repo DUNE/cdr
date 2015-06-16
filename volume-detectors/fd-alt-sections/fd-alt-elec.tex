@@ -2,12 +2,27 @@
 \section{The Electronics, Chimneys and DAQ}
 \label{sec:detectors-fd-alt-elec}
 
+\fixme{Start with what are the components, how does the system work, briefly. Needs a short pgraph}
+
+\begin {itemize} 
+\item front-end amplifiers implemented as cryogenic CMOS ASICs
+\item digital electronics and DAQ
+\item microTCA standard and applications
+\item back-end and event builder
+\item timing distribution system
+\item chimneys
+\end{itemize}
+
+\subsection{R\&D and Motivation}
+\fixme{I added header. Anne}
+
 The LBNO 20--50-kt detector designs, developed in the LAGUNA-LBNO
 design study have channel counts in the range of 500,000 to 1,000,000.
 This large number has spawned extensive R\&D over the last few years
 into large-scale charge-readout solutions.  The solutions which have
-been developed provide high integration levels, significant cost
-reduction and performance improvement.
+been developed provide high integration levels, and significant cost
+reduction and performance improvement. \fixme{Add a sentence with the right
+number in it:} A DUNE far detector module of this design would have nnn channels.
 
 The R\&D activities (ongoing since 2006) have focused effort on two
 main areas:
@@ -26,9 +41,11 @@ and the DAQ.
 
 The design was driven by both cost and by the particular use of the
 electronics for the dual-phase readout, which implies larger signals
-from the detector and allows releasing some
+from the detector \fixme{relative to what?} and allows releasing some
 requirements. Section~\ref{sec:detectors-fd-alt-chg-readout} describes
-the charge readout system. In the dual-phase design, the ionization
+the charge readout system. \fixme{Why reference the charge readout (above) and 
+why repeat its description here? I suggest removing remainder
+of pgraph.} In the dual-phase design, the ionization
 electrons are collected by a segmented anode in the gas phase (GAr) at
 the top of the detector, the Charge Readout Plane (CRP). The anode
 sandwich incorporates the Large Electron Multipliers (LEM) which
@@ -45,13 +62,13 @@ of the anode strips, would have at unitary LEM gain a S/N ratio of
 overall S/N ratio of 140. The S/N ratio is boosted by the LEM gain and
 this releases the requirements on the preamplifier noise.
 
-The front-end amplifiers are implemented as cryogenic CMOS ASICs
+The electronics consist of front-end amplifiers that are implemented as cryogenic CMOS ASICs
 connected to the anode with 50-cm cables; they are completely
 accessible from the outside while remaining very low-noise. The
-amplifiers must be housed in separate volumes (called chimneys) that
+amplifiers must be housed in separate volumes that
 are completely distinct from the volume containing the pure LAr and
-gas argon. They can therefore be replaced as needed without
-contaminating the LAr inside the cryostat.
+gas argon in order to replace them as needed without
+contaminating the LAr inside the cryostat. These volumes are called chimneys.
 
 Flat, 2-m-long cables inside the chimneys connect the front-end cards
 to the digitization electronics, which is outside the cryostat, housed
@@ -60,26 +77,30 @@ cryogenic front-end is inside the cryostat but accessible and the
 digital electronics is external.  This provides risk mitigation and
 significant flexibility. The digitization units in the micro-TCA
 crates are synchronized with the White Rabbit time-distribution
-standard\cite{WR-standard} which was originally designed to achieve
+standard\cite{WR-standard}, which was originally designed to achieve
 sub-ns accuracy.
 %
 This built-in accuracy, while not a critical aspect of the system
 design, is much better than what is needed to align the 400-ns samples
 of the charge readout.  White Rabbit was adopted for its practical
 integration aspects and cost reduction; its timing accuracy is a
-bonus.  White Rabbit is also used in the LBNO design as an independent
-network for the trigger distribution. The light-readout digitization
+bonus.  \fixme{Do we need next sentence?} White Rabbit is also used in the LBNO design as an independent
+network for the trigger distribution. 
+
+The light-readout digitization
 electronics (see Section~\ref{sec:detectors-fd-alt-light}) is also
 implemented in micro-TCA and provides triggers from the
-photomultipliers which are distributed to the DAQ via the White Rabbit
+photomultipliers that are distributed to the DAQ via the White Rabbit
 network. Commercial high-bandwidth and high-computing-power back-end
 cards are used for event-building and are coupled to a farm for online
 processing, which is implemented for event filtering, data
-reconstruction, calibrations and data-quality assessment. Details on
-the system are given in the following.
+reconstruction, calibrations and data-quality assessment. %Details on
+%the system are given in the following.
 
 
-\subsection{Front-end cryogenic amplifiers}
+%%%%%%%%  end R\&D %%%%%%%
+
+\subsection{Front-end Cryogenic Amplifiers}
 In the framework of the R\&D related to LAGUNA-LBNO, since 2006,
 several generations of prototypes of ASIC 0.35~microns CMOS
 multi-channel preamplifier chips operating at cryogenic temperatures,
@@ -90,9 +111,10 @@ design implemented in WA105 these cables are just 50~cm long). On the
 other hand it allows reaching an optimal amplifier S/N ratio at a
 temperature around 110~K, which can be easily achieved in the GAr at
 the top of the cryostat. The other feature of this R\&D program is
-that the cryogenic front-end electronics, although at very short
-distance from the detectors in the CRP is perfectly accessible at any
-time without opening the cryostat. This is achieved by implementing
+that the cryogenic front-end electronics, although at a very short
+distance from the detectors in the CRP, is perfectly accessible at any
+time without opening the cryostat due to the use of chimneys (see Section~\ref
+This is achieved by implementing
 the front-end cards at the bottom of the ad-hoc designed chimneys
 which have two feedthroughs (a warm and a cold feedthrough). The cold
 feedthrough isolates the cards from the inner volume of the
@@ -196,7 +218,7 @@ chimney from the LAr vessel and has on its bottom side other
 connectors for the 50~cm flat cables which are used to connect the
 signals from the CRP.
 
-\subsection{Digital electronics and DAQ global architecture}
+\subsection{Digital Electronics and DAQ Global Architecture}
 
 The global DAQ system which is proposed for the dual-phase DUNE
 detector design is based on 2 industrial standards:
@@ -233,7 +255,7 @@ Grand-Master switch. This DAQ scheme is being implemented on the WA105
 demonstrator at CERN, additional details may be found
 in\cite{WA105_TDR}.
 
-\subsection{MicroTCA standard and applications}
+\subsection{MicroTCA Standard and Applications}
 
 The $\mu$TCA standard offers a very compact and easily scalable
 architecture to handle a large number of channels at low cost. The
@@ -327,7 +349,7 @@ of the full and final ADC chain in WA105.}
 \includegraphics[width=.5\linewidth]{fig-s4am.png}
 \end{cdrfigure}
 
-\subsection{Back-end and event builder}
+\subsection{Back-end and Event Builder}
 
 
 A network hierarchical structure is implemented where all crates are
@@ -360,7 +382,7 @@ procesing (FPGAs, CPUs, GPUs). This highly flexible feature is fully
 adapted to the requirements of the large DAQ systems, where conditions
 of filtering, event building etc may evolve with time.
  
-\subsection{Timing distribution system and White Rabbit standard}
+\subsection{Timing Distribution System and White Rabbit Standard}
 
 The idea for the clock distribution is to use a parallel, independent
 network from a GPS disciplined Master Clock down to each $\mu$TCA

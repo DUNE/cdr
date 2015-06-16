@@ -25,13 +25,15 @@ aid in identification of potentially problematic components, leading
 to future improvements and optimizations of the detector design.
 Once it is exposed to a test beam of charged particles of different
 types and energies it will collect data that can be combined with
-results from LArIAT and the short-baseline program at Fermilab. Together
+results from LArIAT and the short-baseline program at Fermilab. 
+\fixme{Is this supposed to be the SBND (detector, rather than  program)?}
+Together
 these measurements will be used to validate MC simulations, and they
 will serve as data input to DUNE sensitivity studies and allow
 validation and tuning of tools for event reconstruction and particle
 identification.
 The following detector performance measurements are anticipated:
- \begin{enumerate}
+ \begin{itemize}
  \item characterize performance of a full-scale TPC module
  \item study performance of the photon detection system
  \item test and evaluate the performance of detector calibration tools (e.g., the laser system)
@@ -40,7 +42,7 @@ The following detector performance measurements are anticipated:
   \item verify argon contamination levels and associated mitigation procedures
   \item develop and test installation procedures for full-scale detector components
   \item identify flaws and inefficiencies in the manufacturing process
-\end{enumerate}
+\end{itemize}
 
 
 The physics sensitivity of the DUNE experiment has so far been
@@ -90,8 +92,9 @@ realistic beam composition, particle energies and efficiency
 information.
 
 An invited technical proposal for the CERN single-phase detector and
-beam-test program\cite{CERN_single-phase_proposal} will be submitted
-to the CERN SPSC in June 2015. The plan includes a first beam run in
+beam-test program
+%\cite{CERN_single-phase_proposal} will be submitted
+to the CERN SPSC in June 2015. This proposal is \anxcernproto. The plan includes a first beam run in
 2018 before the long shutdown of the LHC. Experience gained from
 construction, installation and commissioning of this prototype, as
 well as performance tests with cosmic-ray data are expected to lead to
@@ -101,8 +104,8 @@ detector module(s).
 \subsection{Detector Configuration and Components}
 
 As mentioned above, the prototype detector components have 
-the same dimensions and features as those described in
-Section~\ref{ch:detectors-fd-ref}. This includes the TPC and photon
+the same dimensions and features as those of the far detector reference design described in
+Chapter~\ref{ch:detectors-fd-ref}. This includes the TPC and photon
 detector components, as well as their positioning and spacing within
 the cryostat.
 
@@ -115,9 +118,9 @@ energy.  The particle containment of hadronic showers initiated by
 charged pions or protons is a critical feature for calorimetric
 measurements. Simulation studies indicate that showers initiated by
 \GeVadj{10} primary pions and protons are contained within a volume
-measuring 6~m in the longitudinal and 5$\times$5~m$^2$ in the
+measuring 6~m in the longitudinal and 5 $\times$ 5~m$^2$ in the
 transverse directions. With the basic APA unit measuring
-6$\times$2.3~m$^2$, the arrangement identified as satisfying the
+6 $\times$ 2.3~m$^2$, the arrangement identified as satisfying the
 requirement consists of two times three APAs side-by-side, a central
 cathode and two drift volumes each with 3.6~m drift
 length. Figure~\ref{fig:CERN_single_TPC} shows a view of the CERN
@@ -135,11 +138,14 @@ Chapter~\ref{ch:detectors-fd-ref}.
 \subsubsection{Cryostat}
 
 The CERN prototype uses a membrane tank technology with internal
-dimensions of 7.8~m (tranverse)$\times$8.9~m (parallel)$\times$8.1~m
+dimensions of 7.8~m (tranverse) $\times$ 8.9~m (parallel) $\times$ 8.1~m
 (height).  It contains 725 tons of LAr, equivalent to about
-520~m$^3$. The active (fiducial) detector mass of LAr amounts to
+520~m$^3$. 
+\fixme{the multiplication comes to 562 m cubed, why the difference? The material of the
+detector components plus...? }
+The active (fiducial) detector mass of LAr amounts to
 400~tons (300~tons).  The external cryostat dimensions are 10.6~m
-(tranverse)$\times$11.7~m (parallel)$\times$10.9~m (height).
+(tranverse) $\times$ 11.7~m (parallel) $\times$ 10.9~m (height).
 
 The cryostat design is scaled up from the 35-t prototype
 cryostat\cite{bib:membcryo1573}, described in
@@ -185,9 +191,9 @@ hatches have been closed.
 \subsubsection{Cryogenics System}
 
 The main goals of the cryogenics system are to purge the cryostat
-prior to the start of the operations (with gaseous Ar in open and
+prior to the start of the operations (with argon gas in open and
 closed loops), cool the cryostat and fill it with LAr.  The LAr is
-continuously purified and the boil-off gaseous Ar is captured,
+continuously purified and the boil-off argon gas is captured,
 recondensed and purified.  The design calls for a 10-ms electron
 lifetime (30 ppt O$_2$ equivalent), a quantity that is measured by the
 detector.
@@ -195,7 +201,8 @@ detector.
 The LAr-receiving facility includes a storage dewar and ambient
 vaporizer to deliver LAr and gaseous Ar to the cryostat. The LAr goes through
 the LAr handling and purification system, whereas the gaseous Ar goes through
-the gaseous Ar purification system before entering the cryostat.  Studies are
+%the gaseous Ar 
+its own purification system before entering the cryostat.  Studies are
 ongoing to standardize the filtration scheme and select the optimal
 filter medium for both the prototype and future detectors.
 
@@ -206,5 +213,5 @@ The boil-off gas is recondensed and sent to the LAr
 purification system before re-entering the vessel.
 
 The proposed LAr cryogenics system is based on that of the 35-t
-prototype, MicroBooNE and Short-Baseline Near Detector,
+prototype, MicroBooNE and SBND, %Short-Baseline Near Detector,
 and the current plans for the DUNE single-phase far detector module.

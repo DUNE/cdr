@@ -14,8 +14,8 @@ cryostat alone (without detector elements), now called ``Phase-1,''
 was successfully completed in 2014.
 
 The second phase of 35-t prototype operations (Phase-2) includes
-installion and operatation of a small-scale, single-phase LArTPC and
-photon detector in this cryostat.  Phase-2 focuses on the performance
+installation and operation of a small-scale, single-phase LArTPC and
+photon detector in this cryostat, focusing on the performance
 of active detector elements within the LAr volume.  Phase-2 is
 currently under construction and plans to take data in summer 2015.
 
@@ -24,7 +24,8 @@ currently under construction and plans to take data in summer 2015.
 The 35-t membrane cryostat was built by the Japanese company IHI,
 contracted by the LBNE project.  
 Table~\ref{tab:35Tdimensions} lists the construction materials and
-dimensions; more information can be found in\cite{bib:membcryo1573}.
+dimensions; more information can be found in~\cite{bib:membcryo1573}.
+
 \begin{cdrtable}[35-t Prototype Materials and Dimensions]{ll}{35Tdimensions}
 {35-t Prototype Materials and Dimensions}
 Parameter & Value \\ \toprowrule
@@ -38,11 +39,12 @@ Secondary barrier system	   &   0.1 mm thick fiberglass\\ \colhline
 Vapor barrier	Normal	  &    1.2 mm thick carbon steel\\ \colhline
 Steel reinforced concrete	    &  0.3 m thick layer\\
 \end{cdrtable}
+
 The prototype was built in Fermilab's PC-4 facility near the Liquid
 Argon Purity Demonstrator (LAPD)~\cite{bib:lapdP07005} 
 allowing re-use of a large portion of the LAPD
-cryogenic-process equipment.  The proximity and
-size (30~tons) of the LAPD vessel offers the possibility using
+cryogenics-process equipment.  The proximity and
+size (30~t) of the LAPD vessel offers the possibility using
 LAPD as a partial storage vessel for LAr if it ever becomes necessary
 to empty the 35-t cryostat.
 
@@ -60,7 +62,7 @@ The techniques of membrane cryostat construction were demonstrated to
 be suitable for high-purity LArTPC operations.  In particular, welding of
 corrugated panels, removal of leak-checking dye penetrant and
 ammonia-activated leak-detecting paints and post-construction-cleaning
-methods, were tested and found to be suitable.
+methods were tested and found to be suitable.
 
 
 As was demonstrated by LAPD, initial removal of impurities within the
@@ -81,13 +83,13 @@ was maintained within the limits specified by the cryostat
 manufacturer.  Upon completion of the cooldown, LAr was transferred
 into the cryostat and purification via recirculation loop started.
 
-During recirculation and purification dedicated purity monitors were
+During recirculation and purification, dedicated purity monitors were
 used to measure electron lifetime, which can be translated into
 equivalent oxygen contamination levels.
 Figure~\ref{fig:35TElectronLifetime} shows the electron lifetime from
 the start of the LAr pump operation until the end of the Phase-1 run.
 In general, the electron lifetime improved as a function of pump
-on-time; despite several events that spoiled the lifetime
+on-time; despite several events that spoiled the lifetime, 
 electron lifetimes of $>$2~ms were routinely achieved.
 \begin{cdrfigure}[35t Electron Lifetime]{35TElectronLifetime}{LAr electron lifetmes as measured by
 Cryostat Purity Monitors. Significant events are annotated on the plot. Major divisions on horizontal axis
@@ -132,6 +134,7 @@ The Phase-2 prototype incorporates many novel DUNE single-phase far
 detector design elements as described in previous sections of this
 document and allows these to be tested in an operational TPC.  Some of
 the more important aspects are collected in Table~\ref{tab:35TDesign}.
+%
 \begin{cdrtable}[35-t Design Elements]{lcl}{35TDesign}{35-t Design Elements}
  Design Aspect& Section & How Tested\\ \toprowrule
 Modular APAs with wrapped wires & \ref{subsec:fd-ref-apa}&Build small-scale APA Modules with FD design\\
@@ -148,7 +151,7 @@ Cold Digital Electronics & \ref{sec:detectors-fd-ref-ce} & Measure noise perform
 Waveguide-style Photon Detector& \ref{sec:detectors-fd-ref-pd}&Install in APAs. Measure lightyield\\ \colhline
 Triggerless-capable DAQ & \ref{sec:detectors-fd-ref-daq} & Take data using multiple DAQ modes\\
 \end{cdrtable}
-
+%
 As can be seen from Table~\ref{tab:35TDesign}, successful tests of many of the new
 design features will require simulation, reconstruction and analysis of 35-t data.
 This will be performed using the LArSoft package, which is also used to simulate and
