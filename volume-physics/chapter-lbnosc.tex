@@ -302,7 +302,10 @@ is described in detail in~\cite{Adams:2013qkq}.  The Fast MC combines
 the simulated flux, the GENIE neutrino interaction
 generator~\cite{Andreopoulos:2009rq}, and a parameterized detector
 response that is used to simulate the reconstructed energy and
-momentum of each final-state particle.  The simulated energy
+momentum of each final-state particle. The detector response
+parameters used to determine the reconstructed quantities are
+summarized in Table~\ref{tab:fastmc_detectorinputs}.
+The simulated energy
 deposition of the particles in each interaction is then used to
 calculate reconstructed kinematic quantities (e.g., the neutrino
 energy). Event sample classifications ($\nu_e$ CC-like, $\nu_{\mu}$
@@ -320,6 +323,29 @@ Fast MC and used as inputs to GLoBES.  Figure~\ref{fig:eff} shows the
 analysis sample detection $\times$ selection efficiencies for the
 various signal and background modes used by GLoBES, also extracted
 from the Fast MC.
+
+\begin{cdrtable}[Fast MC Detector Response Summary]{lclc}{fastmc_detectorinputs}{Summary of the single-particle
+    far detector response used in the Fast MC. For some particles, the response depends upon behavior or
+    momentum, as noted in the table. If a muon or a pion that is mis-identified as a muon is
+    contained within the detector, the momentum is smeared based on track length.
+    Exiting particles are smeared based on the contained energy.
+    For neutrons with momentum <~1~GeV/c,
+    there is a 10\% probability that the particle will escape detection, so the reconstructed energy is
+    set to zero. For neutrons that are detected, the reconstructed energy is taken to be 60\%
+    of the deposited energy after smearing.}
+  Particle type & Detection & Energy/Momentum & Angular \\ \rowtitlestyle
+  & Threshold (KE) & Resolution & Resolution \\ \toprowrule
+  $\mu^{\pm}$ & 30 MeV & Contained track: track length  & 1$^\circ$\\
+              &        & Exiting track: 30\%            & \\ \colhline
+  $\pi^{\pm}$ & 100 MeV & $\mu$-like contained track:  track length & 1$^\circ$\\
+    &         & $\pi$-like contained track: 5\% & \\
+  &           & Showering or exiting: 30\% & \\ \colhline
+  e$^{\pm}$/$\gamma$ & 30 MeV & 2\% $\oplus$ 15\%/$\sqrt{E}$[GeV] & 1$^\circ$ \\ \colhline
+  p & 50 MeV & p<400 MeV/c: 10\% & 5$^\circ$ \\
+  &        & p>400 MeV/c: 5\% $\oplus$ 30\%/$\sqrt{E}$[GeV] & \\ \colhline
+  n & 50 MeV & 40\%/$\sqrt{E}$[GeV] & 5$^\circ$ \\ \colhline
+  other & 50 MeV & 5\% $\oplus$ 30\%/$\sqrt{E}$[GeV] & 5$^\circ$ \\ \colhline
+  \end{cdrtable}
 
 \begin{cdrfigure}[\nue and \anue True-to-reconstructed energy smearing matrices]{smearing_nue}{True-to-reconstructed energy smearing matrices for \nue (top), \numu (center) and \nutau (bottom) CC interactions extracted from the Fast MC and used as inputs to GLoBES.  Left: Used in the \nue appearance sample. Right: Used in the \numu disappearance samples}
  \includegraphics[width=0.4\textwidth]{LBNE_smear_plot2_nue_nominal_app.png}
