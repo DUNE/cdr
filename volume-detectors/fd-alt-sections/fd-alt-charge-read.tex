@@ -5,11 +5,11 @@
 In the dual-phase LArTPC concept, the ionization charge is first
 extracted into the argon gas phase using a 2-kV/cm electric field
 defined across the liquid-gas interface. %with
-The field is set up between a submersed extraction
+The field is applied between a submersed extraction
 grid (stainless steel wires tensioned in both $x$ and $y$
 directions) and the bottom of %. Once in the gas, the charge is amplified by 
 the Large Electron Multipliers (LEMs) in the gas, which are the charge amplifiers.
-The LEMs are printed circuit boards oriented horizontally with
+The LEMs are printed circuit boards oriented horizontally, with
 conductive layers (electrodes) on the top and bottom surfaces, and many holes drilled
 through. The holes form a micro-pattern structure within which the amplification occurs.  
 By applying voltages across the two
@@ -38,7 +38,7 @@ uniformity of gain to within $\sim$5\%.
  \end{cdrtable}
 
 The extraction grid, LEM and anode are assembled into three-layered ``sandwiches'' with precisely defined inter-stage distances and inter-alignment,  which are then connected together horizontally into
-modular units of area \num{9}m$^2$. These units are called Charge Readout Planes (CRPs).
+modular units of area \num{9}~m$^2$. These units are called Charge Readout Planes (CRPs).
 
 
 \fixme{above pgraph is edited version of the following}
@@ -53,8 +53,6 @@ Each CRP is an independent detector element that performs charge
 extraction, multiplication and collection, and has its own high
 voltage system and independent signal feedthroughs. The entire area of
 the LEM and anode in a CRP is active.
-
-\fixme{Is 50x50 the same for LBNO and DUNE?}
 The LEM and corresponding anode are pre-mounted in units of 50$\times$50~cm$^2$, called
 LEM/Anode Sandwich (LAS) modules, before being assembled with an extraction
 grid into a CRP. Each
@@ -64,7 +62,7 @@ connecting short flat cables to KEL connectors soldered onto the top
 sides of the anodes. The signals from the last anode in each %forming the
 strip chain are brought to feedthoughs
 mounted on the other side of the front-end electronics embedded inside
-dedicated signal-feedthrough chimneys using 50-cm long flat cables. \fixme{prev sentence
+dedicated signal-feedthrough chimneys using 50-cm-long flat cables. \fixme{prev sentence
 confusing. ``other side of FE'' we haven't talked yet about either side of FE}
 
 \fixme{I switched order of these two pgraphs}
@@ -80,6 +78,24 @@ independent signal and slow-control feedthroughs.
 Figure~\ref{fig:4_4CRP_FRONT} illustrates the 4$\times$4 m$^2$ CRP;
 its characteristics are summarized in Table~\ref{tab:crp_para}.
 
+%%%%  from old config section
+Each CRP unit is independently suspended by three stainless steel
+ropes. The vertical level of each CRP unit can then be automatically
+adjusted with respect to the LAr level via 3 suspension feedthroughs,
+electrically operated from outside. 
+This suspension
+system allows adjustment of the CRP distance and maintains the CRPs parallel to 
+the LAr surface. 
+Feedthrough chimneys are planned for the cathode HV connection, the
+CRPs suspension and level adjustment.
+A Slow Control feedthrough +
+chimney, one per CRP unit, is used for the signals readout for level
+meters and the temperature probes and to apply the HV bias on the two
+sides of the LEMs and on the extraction grid.
+Feedthrough chimneys are planned for  the monitoring instrumentation (level meters,
+temperature probes, strain gauges, etc.).
+
+%%%%
 
 \begin{cdrfigure}[Side and top views of the $4\times4$~m$^2$ CRP]{4_4CRP_FRONT}{Side and top views of the $4\times4$~m$^2$ CRP designed for LBNO (units in mm).}
  \includegraphics[width=\textwidth]{4_4_CRP_top-side-view}  
@@ -104,7 +120,8 @@ anode, given its readout pitch of 3.125~mm.
 
 The extraction grid consists of 100~$\mu$m diameter stainless steel
 wires tensioned in both $x$ and $y$ directions over the entire 4-m
-length of the CRP. They are soldered into groups of 32 on independent
+length/width of the CRP  with 3.125~mm
+pitch. They are soldered into groups of 32 on independent
 wire-tensioning pads oriented perpendicularly to the side of the CRP
 frame.  Each wire-tensioning pad consists of a printed circuit board
 (PCB) for HV-connection that is fixed very precisely to a mechanical 
@@ -117,12 +134,31 @@ prototypes.) The PCB is then mounted on the wire holder and the
 tension of the group of 32 wires can be precisely adjusted by pushing
 the holder against the CRP's FR4 frame with two screws.
 
+%%%% from old configuration section
+The wires, $\sim$3~m long in both $x$ and $y$ directions,
+have their sags minimized to $\sim$0.1~mm thanks to $x$ and $y$ oriented
+supporting comb blades
+\fixme{comb teeth?}  (see Figure~\ref{fig:Wires_comb}) inserted
+between anode planes of 1~m$\times$1~m size. The array of blades
+penetrates the liquid close to the surface and has the additional
+benefit of maintaining the liquid level flat. \fixme{I cannot figure out what this looks like or how
+it works.}
+%\begin{cdrfigure}[Wires hanging comb blade.]{Wires_comb}{Wires hanging comb blade.}
+\begin{cdrfigure}[Comb for hanging extraction grid wires]{Wires_comb}{Comb for hanging extraction grid wires}
+\includegraphics[width=.6\linewidth]{Wires_comb.png}
+\end{cdrfigure}
+%%%%
+
 The 4$\times$4~m$^2$ CRP has 5120 readout channels in total. The
 signals from the CRP are read out through eight signal feedthroughs
 (SFTs) %that host is  
 at the bottom of which the front-end electronics are mounted. The signal
 is transmitted to the DAQ system located on top, outside of the vessel.
 Each signal feedthrough groups 640 channels. 
+
+The 3$\times$3~m$^2$ DUNE CRP, is a down-sized version of the LBNO
+CRP; it has three signal feedthrough chimneys and 1920 readout
+channels.
 
 Three suspension
 feedthroughs are arranged as an equilateral triangle whose barycenter
@@ -136,9 +172,6 @@ visible.
 \includegraphics[width=0.8\textwidth]{4_4CRP_3D}  
 \end{cdrfigure}
 
-The 3$\times$3~m$^2$ DUNE CRP, is a down-sized version of the LBNO
-CRP, it has three signal feedthrough chimneys and 1920 readout
-channels.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -232,7 +265,7 @@ independent of the charged-particle tracks' azimuthal angle $\phi$
 
 \paragraph{The 50$\times$50~cm$^2$ LEM:}
 
-Each LEM is built from a 1-mm thick copper-clad epoxy PCB with
+Each LEM is built from a 1-mm-thick copper-clad epoxy PCB with
 500~$\mu$m diameter holes drilled through, surrounded by a
 40-$\mu$m dielectric rim. The holes are arranged in a honeycomb
 pattern with a pitch of 800~$\mu$m, resulting in about 200 holes per
@@ -245,11 +278,11 @@ ultra-pure argon vapor without the addition of a quenching gas.
 The amplification of the drifting charges in pure argon vapor at 87~K with
 LEMs has been extensively demonstrated on a chamber with
 10$\times$10~cm$^2$ area readout (see e.g.,
-References\cite{Badertscher:2008rf,Badertscher:2010fi}) as well as on
+\cite{Badertscher:2008rf,Badertscher:2010fi}) as well as on
 a larger device consisting of a 40$\times$80~cm$^2$
 readout\cite{Badertscher:2013wm}.  Both setups were successfully and
 stably operated at constant gains of at least 15, corresponding to
-S/N$\approx$60 for MIPs. Recent studies\cite{Cantini:2014xza}
+S/N $\approx$ 60 for MIPs. Recent studies\cite{Cantini:2014xza}
 systematically characterize the impact of the rim size, insulator
 thickness, hole diameter and hole layout on 10$\times$10~cm$^2$ area
 LEMs. The response in terms of maximal reachable gain and influence on
@@ -266,17 +299,17 @@ of at least $\sim$15 after a charging up period of about a day.
 
 \paragraph{LAS Assembly:}
 
-Figure~\ref{fig:LEM_metro} shows the LEM /anode sandwich (LAS).  A LAS is 
+Figure~\ref{fig:LEM_metro} shows the LEM/anode sandwich (LAS).  A LAS is 
 fixed together with 29 M2 PEEK screws, each containing a precisely
-machined 2-mm thick pillar to guarantee a constant inter-stage
-distance between LEM and the anode on the entire $50\times50$~cm$^2$
+machined 2-mm-thick pillar to guarantee a constant inter-stage
+distance between LEM and anode on the entire $50\times50$~cm$^2$
 area.  The dead zones caused by the supporting pillars and the two HV
 pins on the LEMs are minimized and make up less than 0.5\% of the
 total area. The inter-stage distance between the LEM and anode in the
 LAS has been measured at many points. The results are shown in
 Figure~\ref{fig:LEM_metro} and are described
-in\cite{EDMS_metro_lem_anode}. They indicate that the planarity is
-within the required tolerance of 2~mm$\pm$100~$\mu$m .
+in~\cite{EDMS_metro_lem_anode}. They indicate that the planarity is
+within the required tolerance of 2~mm $\pm$ 100~$\mu$m .
 \begin{cdrfigure}[LEM/anode sandwich metrology]{LEM_metro}{Close up pictures of the LEM/anode sandwich. The two
        bottom figures show a the measurement at the CERN metrology lab
        and a histogram illustrating the measured gap between the LEM

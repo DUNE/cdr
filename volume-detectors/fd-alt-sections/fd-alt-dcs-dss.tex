@@ -2,17 +2,35 @@
 \section{The Slow-Control System} 
 \label{sec:detectors-fd-alt-dcs}
 
-The slow-control system for the far detector is designed in order to
-monitor the detector operation conditions. Its design is part of a
+The slow-control system for the far detector is designed  to
+monitor the detector operation conditions, in particular, the following physical
+quantities inside the tank:
+\begin{itemize}
+ \item temperatures (with platinum resistors)
+ \item pressures (with commercial piezoelectric sensors)
+ \item LAr levels (with custom-made capacitive sensors and electronics)
+ \item deformations of materials (with resistive strain gauges)
+\end{itemize} 
+
+In addition, the slow-control system provides the hardware
+infrastructure needed to monitor traces of O$_2$, N$_2$ and H$_2$O
+impurities in the tank, to monitor and control the high- and
+low-voltage power supplies, heaters, lighting system and cryogenic
+video system. It will also interface to the cryogenic system and to
+the motorized system that adjusts the position of each Charge Readout
+Plane (CRP).
+
+
+The design of the slow-control system is part of a
 continued, progressive prototyping effort aimed at developing a
-control system dedicated to multi-kiloton LAr dual-phase detectors. It
+control system dedicated to multi-kilotonne LAr dual-phase detectors. It
 has been designed in the framework of the LAGUNA-LBNO design study and
-of the WA105 experiment. WA105 represents a first, fully engineered,
+ the WA105 experiment. WA105 represents a first, fully engineered,
 implementation of this design, which can be extrapolated to larger
-detector scales. The design profited as well of the successful example
+detector scales. The design also benefited from the successful example
 and the expertise developed in the context of the ArDM
 experiment\cite{Badertscher:2013ygt} which is currently operating a
-LAr TPC for dark matter searches in an underground laboratory (LSC,
+LArTPC for dark matter searches in an underground laboratory (LSC,
 Spain).
 
 The slow-control system introduces the use of National Instruments
@@ -26,22 +44,6 @@ provides fault tolerant power to the National Instrument controller and modules.
 \includegraphics[scale=0.4, angle=0]{rack_2.jpg}
 \end{cdrfigure}
 
-The slow-control system is designed to monitor the following physical
-quantities inside the tank:
-\begin{itemize}
- \item temperatures (with platinum resistors)
- \item pressures (with commercial piezoelectric sensors)
- \item LAr levels (with custom-made capacitive sensors and electronics)
- \item deformations of materials (with resistive strain gauges)
-\end{itemize} 
-
-In addition, the slow control system provides the hardware
-infrastructure needed to monitor traces of O$_2$, N$_2$ and H$_2$O
-impurities in the tank, to monitor and control the high- and
-low-voltage power supplies, heaters, lighting system and cryogenic
-video system. It will also interface to the cryogenic system and to
-the motorized system that adjusts the position of each Charge Readout
-Plane (CRP).
 
 The entire slow-control system of the WA105 demonstrator will be
 managed through a single LabView interface\cite{WA105_SREP} which
@@ -59,9 +61,9 @@ instrumentation can also be treated as independent. A complete list of
 the sensors planned for use in both the 3$\times$3 m$^2$ DUNE CRP
 module and and the 3$\times$1$\times$1~m$^3$ WA105 prototype is
 provided in Table~\ref{fig:sc_sensors}.
-\begin{cdrfigure}[Dual-phase slow control sensors.]{sc_sensors}
+\begin{cdrfigure}[Dual-phase slow control sensors]{sc_sensors}
 {List of the slow control sensors for the 3$\times$1$\times$1~m$^3$ WA105 prototype and far detectors CRP}
- \includegraphics[scale=0.6, angle=0]{sc_table.png} 
+ \includegraphics[scale=0.8, angle=0]{sc_table.png} 
  \end{cdrfigure}
 
 The number of sensors for the far detector CRP is extrapolated from

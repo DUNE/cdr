@@ -2,19 +2,7 @@
 \section{The Electronics, Chimneys and DAQ}
 \label{sec:detectors-fd-alt-elec}
 
-\fixme{Start with what are the components, how does the system work, briefly. Needs a short pgraph}
-
-\begin {itemize} 
-\item front-end amplifiers implemented as cryogenic CMOS ASICs
-\item digital electronics and DAQ
-\item microTCA standard and applications
-\item back-end and event builder
-\item timing distribution system
-\item chimneys
-\end{itemize}
-
-\subsection{R\&D and Motivation}
-\fixme{I added header. Anne}
+\fixme{still working on}
 
 The LBNO 20--50-kt detector designs, developed in the LAGUNA-LBNO
 design study have channel counts in the range of 500,000 to 1,000,000.
@@ -22,7 +10,7 @@ This large number has spawned extensive R\&D over the last few years
 into large-scale charge-readout solutions.  The solutions which have
 been developed provide high integration levels, and significant cost
 reduction and performance improvement. \fixme{Add a sentence with the right
-number in it:} A DUNE far detector module of this design would have nnn channels.
+number in it (nnn):} A DUNE far detector module of this design would have nnn channels.
 
 The R\&D activities (ongoing since 2006) have focused effort on two
 main areas:
@@ -41,7 +29,7 @@ and the DAQ.
 
 The design was driven by both cost and by the particular use of the
 electronics for the dual-phase readout, which implies larger signals
-from the detector \fixme{relative to what?} and allows releasing some
+from the detector \fixme{relative to single-phase?} and allows releasing some
 requirements. Section~\ref{sec:detectors-fd-alt-chg-readout} describes
 the charge readout system. \fixme{Why reference the charge readout (above) and 
 why repeat its description here? I suggest removing remainder
@@ -75,7 +63,9 @@ to the digitization electronics, which is outside the cryostat, housed
 in micro-TCA crates at the chimney exits.  In this solution the
 cryogenic front-end is inside the cryostat but accessible and the
 digital electronics is external.  This provides risk mitigation and
-significant flexibility. The digitization units in the micro-TCA
+significant flexibility. 
+
+The digitization units in the micro-TCA
 crates are synchronized with the White Rabbit time-distribution
 standard\cite{WR-standard}, which was originally designed to achieve
 sub-ns accuracy.
