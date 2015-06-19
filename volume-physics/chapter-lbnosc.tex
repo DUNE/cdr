@@ -562,15 +562,16 @@ Figure~\ref{fig:mh_nominal} shows the significance with which the MH
 can be determined as a function of the value of \deltacp, for an
 exposure of \SI{300}~\ktMWyr, which corresponds to seven years of data
 (3.5 years in neutrino mode plus 3.5 years in antineutrino mode) with
-a 40-kt detector and a 1.07-MW 80-GeV beam.  For this exposure, the MH is
-determined with a minimum significance of
+a 40-kt detector and a 1.07-MW 80-GeV beam.  For this exposure, the MH
+is determined with a minimum significance of
 $\sqrt{\overline{\Delta\chi^{2}}} = 5$ for 100\% of the \deltacp
 values for the optimized beam design and nearly 100\% of \deltacp
 values for the CDR reference beam design.
 Figure~\ref{fig:mh_exposure} shows the significance with which the MH
-can be determined for 100\% of \deltacp values as a function of
-exposure.  Minimum exposures of approximately \SI{400}~\ktMWyr{} and
-\SI{230}~\ktMWyr{} are required to determine the MH with a significance of
+can be determined for 0\% (most optimistic), 50\% and 100\% of
+\deltacp values as a function of exposure.  Minimum exposures of
+approximately \SI{400}~\ktMWyr{} and \SI{230}~\ktMWyr{} are required
+to determine the MH with a significance of
 $\sqrt{\overline{\Delta\chi^2}} = 5$ for 100\% of \deltacp values for
 the CDR reference beam design and the optimized beam design,
 respectively.
@@ -580,8 +581,8 @@ respectively.
  \includegraphics[width=0.49\textwidth]{mh_300ktmwyear_ih}
 \end{cdrfigure}
 
-\begin{cdrfigure}[Mass hierarchy sensitivity as a function of exposure]{mh_exposure}{The minimum significance with which the mass hierarchy can be determined for all values of \deltacp as a function of exposure.  The shaded region represents the range in sensitivity due to potential variations in the beam design. This plot assumes normal mass hierarchy. (The inverted hierarchy case is very similar.)}
- \includegraphics[width=0.7\textwidth]{mh_exp}
+\begin{cdrfigure}[Mass hierarchy sensitivity as a function of exposure]{mh_exposure}{The minimum significance with which the mass hierarchy can be determined for all values of \deltacp (100\%), 50\% and in the most optimistic scenario (0\%) as a function of exposure.  The two different shaded bands represents the different sensitivities due to variations in the beam design. This plot assumes normal mass hierarchy. (The inverted hierarchy case is very similar.) \fixme{this will be replaced with two figures one for each beam assumption}}
+ \includegraphics[width=0.7\textwidth]{mh_exp_varyfrac}
 \end{cdrfigure}
 % \fixme{We are considering an update to Fig~\ref{fig:mh_exposure} where we show CP coverage at 5sigma as a function of exposure, instead of the significance for a fixed CP coverage of 100\% (which is the current version).}
 
@@ -794,7 +795,7 @@ function of the value of \deltacp for an exposure of \SI{300}~\ktMWyr,
 which corresponds to seven years of data (3.5 years in neutrino mode
 plus 3.5 years in antineutrino mode) with a 40-kt detector and a
 1.07-MW 80-GeV beam.  Figure~\ref{fig:cpv_exposure} shows the significance
-with which CP violation can be determined for 50\% or 75\% of \deltacp
+with which CP violation can be determined for 25\%, 50\% or 75\% of \deltacp
 values as a function of exposure.
 Table~\ref{tab:cpv_requiredexposure} lists the minimum exposure
 required to determine CP violation with a significance of 5$\sigma$
@@ -813,9 +814,10 @@ the MH determination, it's not possible for any experiment to provide
  \includegraphics[width=0.49\textwidth]{cpv_300ktmwyear_ih}
 \end{cdrfigure}
 
-\begin{cdrfigure}[CP-violation sensitivity as a function of exposure]{cpv_exposure}{The significance with which CP violation can be determined for 50\% (left) or 75\% (right) of \deltacp values as a function of exposure.  The shaded region represents the range in sensitivity due to potential variations in the beam design. This plot assumes normal mass hierarchy.}
- \includegraphics[width=0.49\textwidth]{cpv50_exp}
- \includegraphics[width=0.49\textwidth]{cpv75_exp}
+\begin{cdrfigure}[CP-violation sensitivity as a function of exposure]{cpv_exposure}{The minimum significance with which CP violation can be determined for 25\%, 50\% and 75\%  of \deltacp values as a function of exposure.  The two different shaded bands represents the different sensitivities due to potential variations in the beam design. This plot assumes normal mass hierarchy. \fixme{This will be replaced with two figures for each beam design}}
+% \includegraphics[width=0.49\textwidth]{cpv50_exp}
+% \includegraphics[width=0.49\textwidth]{cpv75_exp}
+\includegraphics[width=0.7\textwidth]{cpv_exp_varyfrac}
 \end{cdrfigure}
 % \fixme{We are considering an update to Fig~\ref{fig:cpv_exposure} where we show CP coverage at 3sigma or 5sigma as a function of exposure, instead of the significance for a fixed CP coverage of 50\% and 75\% (which is the current version).}
 
@@ -1450,11 +1452,12 @@ neutrino oscillation physics include:
   antineutrino charged current beam events in sufficient numbers 
 %\fixme{sufficient to allow 
 %  identification of the  primary final-state charged electron (which leads to id of neutrino flavor as  e type)? Can this be clarified? (Anne - who else?)}
-within the fiducial volume of the detector to enable precision
-measurements of the parameters that govern $\nu_\mu \rightarrow \nu_e$
-oscillations. The neutrino flavor of the event will be identified by
-clearly identifying the primary final state charged electron. The
-total energy of the charged current event shall be measured.
+  within the fiducial volume of the detector to enable precision
+  measurements of the parameters that govern $\nu_\mu \rightarrow
+  \nu_e$ oscillations. The neutrino flavor of the event will be
+  identified by clearly identifying the primary final state charged
+  electron. The total energy of the charged current event shall be
+  measured.
 \item Muon Neutrino and Antineutrino Events: The FD shall be capable
   of identifying muon neutrino and antineutrino charged current beam
   events in sufficient numbers 
