@@ -278,7 +278,7 @@ distribution. Figure~\ref{fig:mTCA-features} provides a sketch of the
 backplane layout and its implementation in a particular shelf type selected in the design of the system.
 
 \begin{cdrfigure}[MicroTCA crate organization]{mTCA-features}
-{\small Left: global microTCA crate organization. AMC cards 
+{\small Left: global microTCA crate organization. AMCs 
 (providing basic ADC functions) are connected to the crate 
 controller or MCH which up-links the external systems. A dedicated 
 AMC for the clock receives dedicated signals (master clock, trigger 
@@ -302,7 +302,7 @@ standard, NATIVE-R9 from NAT for $\mu$TCA.4 standard. The cost of
 these items is quickly decreasing due to the fast pace of
 developments by the internet providers. These items all have redundant power
 supplies, redundant MCHs and offer different segmentations to connect
-the AMC boards.
+the AMCs.
 
 
 %\begin{cdrfigure}[General organization of AMC]{schroff-mTCA-4}{\small Left: general organization of AMC and $\mu$RTM boards in $\mu$TCA.4 standard. %Right: picture comparing $\mu$TCA.4 boards and a VME board.}
@@ -332,8 +332,8 @@ This readout scheme and hardware implementation have been validated for WA105 on
 Stratix 4 prototype board, shown in Figure~\ref{fig:AMC-bloc-diag}.
 
 
-\begin{cdrfigure}[Charge readout AMC board prototype]{AMC-bloc-diag}
-{\small Prototype of AMC board, using $\mu$TCA.1 standard, and hosting 
+\begin{cdrfigure}[Charge readout AMC prototype]{AMC-bloc-diag}
+{\small Prototype of AMC, using $\mu$TCA.1 standard, and hosting 
 64 ADC channels on a mezzanine board. This prototype is used as a validation 
 of the full and final ADC chain in WA105.}
 \includegraphics[width=.5\linewidth]{fig-s4am.png}
