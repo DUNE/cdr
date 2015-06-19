@@ -1,7 +1,7 @@
 % This should be \input first thing after \begin{document}
 
 
-\pagestyle{empty}
+\pagestyle{titlepage}
 
 \begin{center}
    {\Huge  \thedocsubtitle}  %Yes, I know title and subtitle are reversed!
@@ -22,18 +22,16 @@
   \today
     \vspace{15mm}
     
- \includegraphics[width=0.4\textwidth]{dunelogo_colorhoriz}
-
 \end{center}
 
-
-%\cleardoublepage
-
-\pagestyle{plain} 
+\clearpage
 
 \renewcommand{\familydefault}{\sfdefault}
 \renewcommand{\thepage}{\roman{page}}
-\setcounter{page}{1}
+\setcounter{page}{0}
+
+\pagestyle{plain} 
+
 %\clearpage
 
 \setcounter{tocdepth}{3}

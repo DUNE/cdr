@@ -1,7 +1,7 @@
 % This should be \input first thing after \begin{document}
 
 
-\pagestyle{empty}
+\pagestyle{titlepage}
 
 \begin{center}
   {\Huge  \thedoctitle}
@@ -18,14 +18,13 @@
   \today
 \end{center}
 
-
-\cleardoublepage
+\clearpage
 
 \pagestyle{plain} 
 
 \renewcommand{\familydefault}{\sfdefault}
 \renewcommand{\thepage}{\roman{page}}
-\setcounter{page}{1}
+\setcounter{page}{0}
 \cleardoublepage
 
 \setcounter{tocdepth}{3}
