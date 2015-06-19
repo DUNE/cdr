@@ -2,21 +2,20 @@
 \section{The Charge Readout System} 
 \label{sec:detectors-fd-alt-chg-readout}
 
-In the dual-phase LArTPC concept, the ionization charge is first
-extracted into the argon gas phase using a 2-kV/cm electric field
-defined across the liquid-gas interface. %with
-The field is applied between a submersed extraction
+In the dual-phase LArTPC concept, the ionization electrons are multiplied in avalanches 
+occurring inside detectors, the Large Electron Multipliers (LEMs), located in the argon gas 
+phase above the liquid argon level. The drift field of the TPC brings the electrons up to the liquid argon surface where they can  be   
+extracted into the gas using a 2-kV/cm electric field defined across the liquid-gas interface.
+This extraction field is applied between a submersed extraction
 grid (stainless steel wires tensioned in both $x$ and $y$
-directions) and the bottom of %. Once in the gas, the charge is amplified by 
-the Large Electron Multipliers (LEMs) in the gas, which are the charge amplifiers.
+directions) and the bottom side of the LEMs.
 The LEMs are printed circuit boards oriented horizontally, with
 conductive layers (electrodes) on the top and bottom surfaces, and many holes drilled
 through. The holes form a micro-pattern structure within which the amplification occurs.  
 By applying voltages across the two
 electrodes of the LEM, a 30-kV/cm electric field region is defined in the holes\cite{Bondar:2008yw}.
-%of the micro pattern structure of the LEM. 
 Electrons transiting these high electric field regions in the holes trigger Townsend multiplication in the
-pure argon gas. %contained 
+pure argon gas.
 
 
 The amplified charge is then collected and recorded on a 2D anode
@@ -41,31 +40,24 @@ The extraction grid, LEM and anode are assembled into three-layered ``sandwiches
 modular units of area \num{9}~m$^2$. These units are called Charge Readout Planes (CRPs).
 
 
-\fixme{above pgraph is edited version of the following}
-The three stages (extraction grid, LEM and anode) are assembled into
-multi-layered, sandwich-like modular units (\num{9}m$^2$ in area) with
-precisely defined inter-stage distances and inter-alignment; these
-modular units are called Charge Readout Planes (CRPs).
-   
 \subsection{The Charge Readout Plane (CRP)}
 
 Each CRP is an independent detector element that performs charge
 extraction, multiplication and collection, and has its own high
 voltage system and independent signal feedthroughs. The entire area of
 the LEM and anode in a CRP is active.
+
 The LEM and corresponding anode are pre-mounted in units of 50$\times$50~cm$^2$, called
 LEM/Anode Sandwich (LAS) modules, before being assembled with an extraction
 grid into a CRP. Each
 anode in a LAS is segmented in 50-cm long $x$ and $y$ strips . Adjacent LAS anodes
 are bridged together to form readout strips of the required length by
 connecting short flat cables to KEL connectors soldered onto the top
-sides of the anodes. The signals from the last anode in each %forming the
-strip chain are brought to feedthoughs
+sides of the anodes. The signals from the last anode in each 
+strip chain are brought to feedthroughs
 mounted on the other side of the front-end electronics embedded inside
-dedicated signal-feedthrough chimneys using 50-cm-long flat cables. \fixme{prev sentence
-confusing. ``other side of FE'' we haven't talked yet about either side of FE}
+dedicated signal-feedthrough chimneys using 50-cm-long flat cables.
 
-\fixme{I switched order of these two pgraphs}
 The LBNO 20-kt detector design (described in \anxlbnob) featured
 modularized CRPs of dimensions of 4$\times$4~m$^2$, with 2-m long
 anode strips. For the DUNE cryostat geometry, a size of 3$\times$3~m$^2$
@@ -73,29 +65,11 @@ with a strip length of 3~m is found to be optimal. The description in
 this section is based on the LBNO 4$\times$4~m$^2$ CRP.
 
 Each CRP is independently hung from the vessel deck through its three
-suspension feedthroughs. It has its own high voltage system and %its
+suspension feedthroughs. It has its own high voltage system and 
 independent signal and slow-control feedthroughs.
 Figure~\ref{fig:4_4CRP_FRONT} illustrates the 4$\times$4 m$^2$ CRP;
 its characteristics are summarized in Table~\ref{tab:crp_para}.
 
-%%%%  from old config section
-Each CRP unit is independently suspended by three stainless steel
-ropes. The vertical level of each CRP unit can then be automatically
-adjusted with respect to the LAr level via 3 suspension feedthroughs,
-electrically operated from outside. 
-This suspension
-system allows adjustment of the CRP distance and maintains the CRPs parallel to 
-the LAr surface. 
-Feedthrough chimneys are planned for the cathode HV connection, the
-CRPs suspension and level adjustment.
-A Slow Control feedthrough +
-chimney, one per CRP unit, is used for the signals readout for level
-meters and the temperature probes and to apply the HV bias on the two
-sides of the LEMs and on the extraction grid.
-Feedthrough chimneys are planned for  the monitoring instrumentation (level meters,
-temperature probes, strain gauges, etc.).
-
-%%%%
 
 \begin{cdrfigure}[Side and top views of the $4\times4$~m$^2$ CRP]{4_4CRP_FRONT}{Side and top views of the $4\times4$~m$^2$ CRP designed for LBNO (units in mm).}
  \includegraphics[width=\textwidth]{4_4_CRP_top-side-view}  
@@ -112,10 +86,10 @@ Number of channels & 5120\\
 
 The entire area of the LEM and anode is active, as noted earlier, and
 each adjacent 50$\times$50~cm$^2$ LAS module has a gap of only 0.5~mm.
-Therefore, the entire 4$\times$4~m$^2$ area of the CRP is %fully
-active; the 0.5-mm edge gaps %every 50~cm 
+Therefore, the 4$\times$4~m$^2$ area of the CRP is fully 
+active; the 0.5-mm edge gaps occurring every 50~cm
 do not interfere with the
-charge collection in the %3.125-mm readout pitch of the 
+charge collection in the  
 anode, given its readout pitch of 3.125~mm.
 
 The extraction grid consists of 100~$\mu$m diameter stainless steel
@@ -134,27 +108,23 @@ prototypes.) The PCB is then mounted on the wire holder and the
 tension of the group of 32 wires can be precisely adjusted by pushing
 the holder against the CRP's FR4 frame with two screws.
 
-%%%% from old configuration section
 The wires, $\sim$3~m long in both $x$ and $y$ directions,
 have their sags minimized to $\sim$0.1~mm thanks to $x$ and $y$ oriented
-supporting comb blades
-\fixme{comb teeth?}  (see Figure~\ref{fig:Wires_comb}) inserted
+supporting comb-teeth blades (see Figure~\ref{fig:Wires_comb}) inserted
 between anode planes of 1~m$\times$1~m size. The array of blades
-penetrates the liquid close to the surface and has the additional
-benefit of maintaining the liquid level flat. \fixme{I cannot figure out what this looks like or how
-it works.}
-%\begin{cdrfigure}[Wires hanging comb blade.]{Wires_comb}{Wires hanging comb blade.}
+penetrates the liquid surface and has the additional
+benefit of maintaining the liquid level still. 
+
 \begin{cdrfigure}[Comb for hanging extraction grid wires]{Wires_comb}{Comb for hanging extraction grid wires}
 \includegraphics[width=.6\linewidth]{Wires_comb.png}
 \end{cdrfigure}
-%%%%
 
 The 4$\times$4~m$^2$ CRP has 5120 readout channels in total. The
 signals from the CRP are read out through eight signal feedthroughs
-(SFTs) %that host is  
-at the bottom of which the front-end electronics are mounted. The signal
-is transmitted to the DAQ system located on top, outside of the vessel.
-Each signal feedthrough groups 640 channels. 
+(SFTs) chimneys
+at the bottom of which the front-end electronics cards are mounted. Amplified signals
+are transmitted to the DAQ system located on top, outside of the vessel.
+Each chimney groups 640 channels. 
 
 The 3$\times$3~m$^2$ DUNE CRP, is a down-sized version of the LBNO
 CRP; it has three signal feedthrough chimneys and 1920 readout
@@ -165,7 +135,7 @@ feedthroughs are arranged as an equilateral triangle whose barycenter
 coincides with that of the CRP; they suspend the CRP at the required
 position and precisely adjust the CRP level with respect to the liquid
 argon surface. Figure~\ref{fig:4_4CRP_3D} shows a 3D view of the CRP,
-where the chimneys for feedthroughs (discussed in 
+where the signal chimneys  (discussed in 
 Section~\ref{sec:detectors-fd-alt-elec}) and the stiffening frame are
 visible.
 \begin{cdrfigure}[3D view of the $4\times4$~m$^2$ CRP.]{4_4CRP_3D}{3D view of the $4\times4$~m$^2$ LBNO CRP.}
@@ -173,8 +143,6 @@ visible.
 \end{cdrfigure}
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The LEM/Anode Sandwich (LAS)}
 
 LAS modules, the CRP building blocks composed of 50$\times$50-cm$^2$ LEM-anode 
@@ -187,17 +155,7 @@ S/N ratio for the large-area readouts envisioned for use in giant
 dual-phase LArTPCs.  Figure~\ref{fig:LEM_anode} shows the LEMs and
 anodes.  This section summarizes key features of the LAS.
 
-%%%%%%%%%%%
-\fixme{above is edited version of the following}
-LAS modules have been extensively studied as part of the ongoing CERN
-WA105 prototyping efforts (see~\ref{sec:proto-cern-double}). The LEMs
-and the anodes are produced by a PCB manufacturing company called
-ELTOS\footnote{\url{www.eltos.it}}. Their designs are the outcome of
-intensive R\&D effort over the last few years, aimed at maximizing the
-S/N ratio for the large-area readouts foreseen for use in giant
-dual-phase LArTPCs.  Figure~\ref{fig:LEM_anode} shows the LEMs and
-anodes.  This section summarizes key features of the LAS.
-%%%%%%%%%%%
+
 \begin{cdrfigure}[Pictures of the LEM and anode along with microscope views]
 {LEM_anode}{Top: pictures of the LEM and anode along with microscope
   views. Bottom: close up of the LEM HV connectors and back view of the anode 
@@ -208,47 +166,30 @@ flat cables going to the signal feedthrough}
 
 
  \paragraph{The 50$\times$50~cm$^2$ anode:}
- \fixme{why use m instead of cm here? I replaced with cm for consistency}
 
 Each  50$\times$50~cm$^2$ anode is manufactured from a single multilayer Printed Circuit
-Board (PCB). The readout strips for both $x$ and $y$ views consist of
-%interconnected 
-gold-plated copper tracks %, corresponding to the
+Board (PCB). The readout strips for both $x$ and $y$ views consist of a pattern of
+gold-plated copper tracks 
 with a 3.125-mm readout pitch. The two views have superimposed track patterns
-that are %however 
-electrically insulated from one another. %This is possible by ensuring
-%the electrical continuity of a track, when crossing the one of the
-%perpendicular view, on the bottom layer of the PCB with 
-Tracks cross over and under each other using a system of
-vias between the two layers.
+that are  electrically insulated from one another. Electrical insulation in the points where
+the $x$ and $y$ tracks would superimpose is achieved by having tracks crossing
+over and under each other using a system of vias between the top and bottom layers of the PCB.
  
-%%%%%%%%%%%
-\fixme{above is edited version of the following pgraph}
-The anode is manufactured from a single multilayer Printed Circuit
-Board (PCB). The readout strips for both $x$ and $y$ views consist of
-interconnected gold-plated copper tracks, corresponding to the
-3.125-mm readout pitch. The two views have superimposed track patterns
-that are however electrically insulated. This is possible by ensuring
-the electrical continuity of a track, when crossing the one of the
-perpendicular view, on the bottom layer of the PCB with a system of
-vias connecting the two layers.
-%%%%%%%%%%%
-
-The design of the track patterns is such that both $x$ and $y$ views
+The design of the track patterns forming the strips is such that both $x$ and $y$ views
 collect the same amount of charge, independent of the angle of
 charged-particle tracks with respect to the readout strip
-orientation. This design has been optimized by testing various PCB
-layouts as described in~\cite{Cantini:2013yba}.  The layout and
-schematic of the anode are shown in Figure~\ref{fig:anode_sch}.
-\fixme{I don't understand why the pattern isn't a straight grid. It has little arms inbetween
-the tracks going off to nowhere.}
+orientation. The tracks pattern should then ensure a uniform and isotropic coverage of the strip surface while 
+minimizing the strip capacitance. These criteria have driven a thorough design optimization.  
+Various PCB layouts were tested in order the achieve the best performance, as described in~\cite{Cantini:2013yba}. 
+The final layout and schematic of the anode are shown in Figure~\ref{fig:anode_sch}. 
+
 \begin{cdrfigure}[The 2D anode]{anode_sch}
-{The 2D anode (left) and its schematic showing the  interconnections 
-between both views (right). One view is filled  in red and the other in white.}
+{The 2D anode (left) and its schematic showing the  interconnections  ensuring continuity within each view while preserving insulation
+with respect to the perpendicular view  (right). One view is filled  in red and the other in white.}
 \includegraphics[scale=0.2]{anode_pcb} \hspace{0.2cm} \includegraphics[scale=0.2]{anode_sch}
 \end{cdrfigure}
 
-As part of this optimization, the electrical capacitance of the
+As result of this optimization, the electrical capacitance of the
 readout strips has been limited to only 150~pF/m, which translates
 into an electronic noise of about $\sim$1000 electrons for a 2-m readout
 length.  Figure~\ref{fig:anode_res} (right) shows that the

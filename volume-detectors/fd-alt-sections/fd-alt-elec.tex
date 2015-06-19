@@ -8,10 +8,11 @@
 The LBNO 20--50-kt detector designs, developed in the LAGUNA-LBNO
 design study have channel counts in the range of 500,000 to 1,000,000.
 This large number has spawned extensive R\&D over the last few years
-into large-scale charge-readout solutions.  The solutions that have
-been developed provide high integration levels, and significant cost
-reduction and performance improvement. \fixme{Add a sentence with the right
-number in it (nnn):} A DUNE far detector module of this design would have nnn channels.
+into large-scale charge-readout solutions optimized for double-phase detectors.  
+The solutions that have been developed provide high integration levels, and significant cost
+reduction and performance improvement. They can be fully adopted for
+the DUNE far detector double-phase alternate design, which  foresees
+153600 channels for each 10-kt far detector module.
 
 The R\&D activities (ongoing since 2006) have focused effort on two
 main areas:
@@ -30,7 +31,7 @@ and the DAQ.
 
 The LAGUNA-LBNO design was driven both by cost and by the particular use of the
 electronics for the dual-phase readout, which implies larger signals
-from the detector \fixme{relative to single-phase?}, effectively eliminating requirements on noise. % and allows releasing some requirements. 
+from the detector relative to single-phase, effectively releasing requirements on noise. 
 Section~\ref{sec:detectors-fd-alt-chg-readout} describes
 the charge readout system.  Recall that the Large Electron Multipliers (LEMs) 
 amplify the ionization charges by at least a factor 20, and that by 
@@ -41,7 +42,7 @@ The front-end amplifier connected to the anode, given the capacitance
 of the anode strips, would have a S/N ratio of 14 at unitary LEM gain. 
 Considering a minimal LEM gain of 20, the amplifier provides an
 overall S/N ratio of 140. The S/N ratio is boosted by the LEM gain, thus 
-eliminating the requirements on the preamplifier noise.
+implying less stringent requirements on the preamplifier noise.
 
 The electronics consists of front-end amplifiers that are implemented as cryogenic CMOS ASICs
 connected to the anode with 50-cm cables; they are completely
@@ -52,10 +53,10 @@ in order to replace them as needed without
 contaminating the pure argon inside the cryostat. These volumes are called chimneys.
 
 Flat, 2-m-long cables inside each chimney connect front-end cards
-to digitization electronics, housed in microTCA ($\mu$TCA) crates at the chimney exits, outside the cryostat.
+to digitization electronics, housed in microTCA ($\mu$TCA)  crates \cite{mTCA-standard} at the chimney exits, outside the cryostat.
 This design provides a way to maintain the front-end at cryogenic temperatures but keep
 it accessible, and maintain the digital electronics externally, at room temperature.
- This provides risk mitigation and significant flexibility. \fixme{Do we need a reference for $\mu$TCA?}
+ This provides risk mitigation and significant flexibility.
 
 The digitization units in the $\mu$TCA
 crates are synchronized with the White Rabbit (WR) time-distribution
@@ -65,9 +66,8 @@ sub-ns accuracy.
 This built-in accuracy, while not a critical aspect of the system
 design, is much better than what is needed to align the 400-ns samples
 of the charge readout.  WR was adopted for its practical
-integration aspects and for cost reduction; its timing accuracy is a
-bonus.  \fixme{Do we need next sentence? I would say keep it only if you can add something like ``A similar use 
-may be possible in DUNE.''} WR is also used in the LBNO design as an independent
+integration aspects and for cost reduction; its very high timing accuracy is a
+bonus.  WR is also used in this design as a dedicated network
 network for the trigger distribution. 
 
 The light-readout digitization
@@ -79,9 +79,7 @@ network.
 Commercial high-bandwidth and high-computing-power back-end
 cards are used for event-building and are coupled to a farm for online
 processing, which is implemented for event filtering, data
-reconstruction, calibrations and data-quality assessment. %Details on
-%the system are given in the following.
-
+reconstruction, calibrations and data-quality assessment.
 
 
 \subsection{Front-end Cryogenic Amplifiers and Chimneys}
@@ -95,7 +93,7 @@ capacitance for the connection to the detector. It also makes it possible to rea
  an optimal amplifier S/N ratio at a
 temperature around 110~K, which can be easily achieved in the GAr at
 the top of the cryostat. 
-%The other feature of this R\&D program is
+
 
 Another significant feature of the design is the ad-hoc designed chimneys, which 
 enable the front-end electronics to remain a very short
@@ -104,34 +102,13 @@ opening the cryostat.
 Chimneys are
 separate, insulated, cylindrical volumes that penetrate the cryostat top, 
 their lower half immersed in GAr, their upper half outside the tank at room temperature.
-The front-end electronics are installed inside the chimneys near the bottom. 
+The front-end electronics cards are installed inside the chimneys near the bottom. 
 The chimneys are filled with inert gas and have a cooling
 system to keep the electronics at the optimal temperature.  A cold feedthrough at
 the bottom of each chimney isolates the cards from the inner volume of the
 vessel and allows connection from the anode to the electronics;
 a warm feedthrough (FT) at the top allows connection to the digitization electronics 
 on the outside.
-
-\fixme{above 2 pgraphs are rewrite of following 1 pgraph %% old
-In the framework of the R\&D related to LAGUNA-LBNO, since 2006,
-several generations of prototypes of ASIC 0.35~microns CMOS
-multi-channel preamplifier chips operating at cryogenic temperatures,
-have been developed. On one hand this implementation provides the
-advantage of shortening the length of the cables and the associated
-capacitance for the connection to the detector (in the dual-phase
-design implemented in WA105 these cables are just 50~cm long). On the
-other hand it allows reaching an optimal amplifier S/N ratio at a
-temperature around 110~K, which can be easily achieved in the GAr at
-the top of the cryostat. The other feature of this R\&D program is
-that the cryogenic front-end electronics, although at a very short
-distance from the detectors in the CRP, is perfectly accessible at any
-time without opening the cryostat due to the use of chimneys (see Section~\ref
-This is achieved by implementing
-the front-end cards at the bottom of the ad-hoc designed chimneys
-which have two FTs (a warm and a cold FT). The cold
-FT isolates the cards from the inner volume of the
-vessel. The chimneys are filled with inert gas and have a cooling
-system to keep the electronics at the optimal temperature. } %%
 
 The first ASIC versions were designed principally for the readout of
 charge from collection and induction wire planes, and could also handle
@@ -146,19 +123,6 @@ will collect a maximum 40~MIP. The design of the dual-phase cryogenic ASIC
 is based on a LEM minimal gain of 20, which corresponds to
 1200~fC for this maximal signal.
 
-\fixme{above  pgraph is rewrite of following 1 pgraph %% old
-The first ASIC versions were generally designed for the readout of
-charges from collection and induction wire planes, dealing also with
-bipolar signals. Since 2012 some specific versions for the dual-phase
-were produced in order to match the dynamic range of the signals
-coming from the two collection views of the anode PCB after LEM
-amplification. In this scheme, each collection view is instrumented
-with strips of 3.125~mm pitch and 3~m length (150~pF/m capacitance),
-as foreseen in the WA105 experiment. With a 3.125~mm strips pitch,
-simulations of electromagnetic showers predict that a single channel
-may collect up to 40~MIP. The design of the dual-phase cryogenic ASIC
-is currently based on a LEM minimal gain of 20 which corresponds to
-1200~fC for this maximal signal of 40~MIP.} %%
 
 Two versions of the dual-phase ASIC chips have been produced
 for WA105, both with 16 readout channels. The first version has a
@@ -214,7 +178,7 @@ be about 11.5~W per chimney. This heat source is minor with respect
 to the heat conduction from the flat cables going to the digitization
 electronics and from the walls of the chimney. The front-end cards are
 kept at low temperature by a cooling system installed at the bottom of
-chimney %and compensating 
+chimney 
 that compensates for this overall heat flow. The front-end
 electronics is coupled to the DAQ system, described in Section~\ref{sec:fd-alt-elec-daq},
 that is based on 12-bit ADCs, matching the needed dynamic
@@ -244,44 +208,26 @@ the bottom of the chimney. This FT completely isolates the
 chimney from the LAr vessel. Connectors are mounted on the bottom of the FT 
 for the 50~cm flat cables coming from the CRPs.
 
-\subsection{Digital Electronics and DAQ Global Architecture}
+\subsection{Digital Electronics and DAQ architecture}
 \label{sec:fd-alt-elec-daq}
 
-\fixme{why call it `global', there's been discussion about using that for the whole experiment, far and near detectors}
 
-The global DAQ system  proposed for the dual-phase DUNE
+The DAQ system  proposed for the dual-phase DUNE
 detector design is based on two industrial standards:
 \begin{itemize}
 \item MicroTCA ($\mu$TCA) standard for the distributed data network\cite{mTCA-standard}
 \item White Rabbit (WR) standard for the distributed clock network\cite{WR-standard}
 \end{itemize}
 
-Electrical signals transit via 10GbE network (L1) data connections
-from the front-end electronics ASICs up through the 
-signal chimney feedthroughs to the DAQ. 
-Digitization boards based on the $\mu$TCA standard collect the signals. 
+The analog electrical signals from the front-end electronics ASICs transit through the signal chimneys up to the
+digitization boards in the $\mu$TCA crates (DAQ L1).
 The backplane of each $\mu$TCA crate (a \textit{shelf}) is connected through a 10GbE up-link
-to the next level (L2). The L2 directly connects the $\mu$TCA crates
+to the next level (DAQ L2). The L2 directly connects the $\mu$TCA crates
 to FPGA-based high-performance back-end processing boards. 
 The design calls for a lossless transmission scheme all the way down to the
 back-end processing board, which applies all filtering algorithms and
 does the event building. The Huffman lossless algorithm is easy to
 implement and typically provides a factor  of 10 compression on LAr events.
-
-
-\fixme{above  pgraph is rewrite of following 1 pgraph %% old
-The global DAQ scheme foresees that electrical signals transit from
-the front-end electronics ASICs through the signal chimneys. The
-signals are then collected by digitization boards in the $\mu$TCA
-standard which offers data connections through a 10GbE network
-(L1). Each $\mu$TCA crate (shelf) is connected through a 10GbE up-link
-to the next level (L2). The L2 directly connects the micro-TCA crates
-to high performance, FPGA based, back-end processing boards for event
-building. A lossless transmission scheme is foreseen down to the
-back-end processing board which applies all filtering algorithms and
-the event building. The Huffman lossless algorithm is of easy
-implementation and provides a typical factor 10 compression on liquid
-argon events.}
 
 Recorded data are sent to a local storage level where Object Storage
 Servers (OSS) and MetaData Servers (MDS) are connected with the 
@@ -289,7 +235,7 @@ event-building workstations via a 10/40-GbE network (Ethernet or
 InfiniBand). In parallel, signals from a high-stability common clock and time
 synchronization signals are distributed (using the WR standard) 
 to the L1 digitization cards, through a dedicated, deterministic
-network. This happens together with the trigger time-stamp signals,
+network. The WR network is also used to transmit the trigger time-stamp signals,
 which can be generated either by the PMTs' readout electronics or by
 additional sources, e.g., for WA105 operation in the charged particle beam, 
 the beam trigger counters. The clock is derived
@@ -297,21 +243,6 @@ from a Master Clock generator connected to the WR
 Grand-Master switch. WA105 will implement this DAQ scheme, and 
 additional details may be found in~\cite{WA105_TDR}.
 
-\fixme{above  pgraph is rewrite of following 1 pgraph %% old
-Recorded data are sent to a local storage level where Object Storage
-Servers (OSS) and MetaData Servers (MDS) are connected with the event
-building workstations via a 10/40GbE network (Ethernet or
-InfiniBand). In parallel, a high stability common clock and time
-synchronization signals are distributed to L1 digitization cards,
-using the WR standard, through a dedicated, deterministic
-network, together with the trigger time-stamp signals. The trigger
-signals can be generated by the PMTs readout electronics or by
-additional sources, as the beam trigger counters in the case of the
-WA105 operation on the charged particle beam. The clock is derived
-from a Master Clock generator connected to the WR
-Grand-Master switch. This DAQ scheme is being implemented on the WA105
-demonstrator at CERN, additional details may be found
-in\cite{WA105_TDR}.} 
 
 \subsection{MicroTCA Standard and Applications}
 
@@ -329,35 +260,12 @@ serial links; they are arranged in a variety of topologies to support a
 variety of protocols, including Ethernet 1GbE or 10GbE, PCI Express, SRIO,
 etc. Use of Ethernet-based solutions is proposed for both data
 and clock distribution, through the $\mu$TCA backplanes. This choice
-obviously optimizes the connections between the various nodes of the
-system. \fixme{what is a node of the system? A channel or a shelf?}
+obviously optimizes the connections between the various components of the system.
  Constraints imposed on the data transfer bandwidth point towards use of 
 the 10GbE protocol. For the
-clock distribution, dedicated lanes must be defined by the user. The $\mu$TCA
-standard also offers so-called \textit{clock} lanes, which distribute all boards
-within the crate \fixme{distribute clock signals to boards?} and which may be used for any type of signal.
-
-\fixme{above  pgraph is rewrite of following 1 pgraph%% old
-The $\mu$TCA standard offers a very compact and easily scalable
-architecture to handle a large number of channels at low cost. The
-$\mu$TCA or related standards --- such as ATCA or xTCA --- are now
-well known in the HEP community and have been integrated in various
-designs at CERN (LHC upgrades), DESY, etc.  $\mu$TCA fulfills
-requirements of the telecommunication industry and offers the
-possibility to interconnect distributed applications while offering a
-standard, compact and robust form factor with simplified power supply
-management, cooling and internal clocks distribution. The backplane in
-a $\mu$TCA crate (so-called $\mu$TCA shelf) is based on high speed
-serial links arranged in various possible topology to support a large
-variety of protocols: Ethernet 1GbE or 10GbE, PCI Express, SRIO
-etc. The proposal is to use Ethernet-based solutions, both for data
-and clock distribution, through the $\mu$TCA backplanes. This choice
-obviously optimizes the connections between the various nodes of the
-system. Constraints on the data transfer bandwidth impose to employ
-the 10GbE protocol, which is defined in the $\mu$TCA standard. For the
-clock distribution, dedicated lanes must be defined by the user. The
-standard offers so-called clock lanes which distribute all boards
-within the crate and which may be used for any particular signal.} 
+clock distribution, dedicated lanes on the backplane must be defined by the user. The $\mu$TCA
+standard also offers so-called \textit{clock} lanes, which distribute the timing signals to all boards
+hosted in the crate and which may be used for any type of signal.
 
 The signal digitization boards plugged into a $\mu$TCA shelf are
 called Advanced Mezzanine Cards (AMCs)\cite{picmg-2006}. Each AMC
@@ -367,20 +275,7 @@ allowing the AMCs to communicate with each other or with external
 systems through an up-link access. The MCH manages both the 10GbE
 uplink and the WR bi-directional clock
 distribution. Figure~\ref{fig:mTCA-features} provides a sketch of the
-backplane layout and its implementation in one retained shelf
-reference. \fixme{no idea what a ``retained shelf reference'' is}
-
-\fixme{above  pgraph is rewrite of following 1 pgraph:  %% old
-The signals digitization boards plugged into a $\mu$TCA shelf are
-called Advanced Mezzanine Card (AMC)\cite{picmg-2006}. Each AMC board
-is connected to one or two MicroTCA Carrier Hub (MCH) boards through
-the backplane serial links. The MCH provides a central switch function
-allowing each AMC to communicate with each other or towards external
-systems, through an up-link access. The MCH manages both the 10GbE
-uplink and the WR bi-directional clock
-distribution. Figure~\ref{fig:mTCA-features} provides a sketch of the
-backplane layout and its implementation in one retained shelf
-reference.} %%
+backplane layout and its implementation in a particular shelf type selected in the design of the system.
 
 \begin{cdrfigure}[MicroTCA crate organization]{mTCA-features}
 {\small Left: global microTCA crate organization. AMC cards 
@@ -401,8 +296,7 @@ is connected to each signal chimney, reading out 640 channels corresponding to 1
 
 %To increase the channels density one may profit of a different $\mu$TCA standard: $\mu$TCA.4. This standard offers the possibility to connect the AMCs hosted in a crate from both the front and rear sides (Figure~\ref{fig:schroff-mTCA-4}). The front card, still called AMC, is connected to the backplane of the shelf, while the read card, so-called $\mu$RTM (Rear Transition Module) is only connected to the AMC. This standard allows to double the number of connections per slot, at the cost of a slightly asymmetric design for the 2 boards. 
 
-Many references exist on the market for these various types of
-shelf: \fixme{I'm not sure I understand the preceding phrase}
+Many types of  $\mu$TCA shef are available on the market, e.g.
 11850-015 8U from Schroff for $\mu$TCA.1
 standard, NATIVE-R9 from NAT for $\mu$TCA.4 standard. The cost of
 these items is quickly decreasing due to the fast pace of
@@ -433,31 +327,10 @@ occurs, the samples written in the memory can be treated with
 compression algorithms (such as Huffman or RLE) or zero-suppression
 (if required) and transmitted over the network until the end of the
 drift window, which closes the event. These operations are managed by a
-third FPGA, which sends the data on \fixme{to? from? I don't understand `on'} the backplane.  This readout
-scheme and hardware implementation have been validated for WA105 on a
+third FPGA, which sends the data on the shelf backplane in order that they can be transmitted to L2.  
+This readout scheme and hardware implementation have been validated for WA105 on a
 Stratix 4 prototype board, shown in Figure~\ref{fig:AMC-bloc-diag}.
 
-\fixme{above  pgraph is rewrite of following 1 pgraph %% old
-The advantage of this architecture is to limit the DAQ electronics
-developments to the AMC boards only. The AMC will basically provide
-the functionalities for the digitization, data formatting and
-compression, event time-stamping and data transfer through the
-backplane. For WA105, the AMC is a double-size module (also compatible
-with $\mu$TCA.4 standard) with a single input connector and a 10GbE
-link to the backplane. The input stage performs the 64 channels
-digitization through eight 8-channel, 14-bit ADC chips readout at a
-2.5~MHz frequency. The ADC readout sequence is controlled by 2 FPGAs
-which make the data available on a double port memory. Readout of the
-data is performed continuously and they are stored in a local
-buffer. The recorded samples, corresponding to a drift window, are
-selected in coincidence with the received trigger. When a trigger
-occurs, the samples written in the memory, can be treated with
-compression algorithms (such as Huffman or RLE) or zero-suppression
-(if required) and transmitted over the network until the end of the
-drift window which closes the event. These operations are managed by a
-third FPGA, which sends the data on the backplane.  This readout
-scheme and hardware implementation have been validated for WA105 on a
-Stratix 4 prototype board, shown in Figure~\ref{fig:AMC-bloc-diag}.}
 
 \begin{cdrfigure}[Charge readout AMC board prototype]{AMC-bloc-diag}
 {\small Prototype of AMC board, using $\mu$TCA.1 standard, and hosting 
@@ -509,7 +382,7 @@ on a combination of Synchronous Ethernet (Sync-E) and Precision Time
 Protocol (PTP, IEEE1588), where the Ethernet clock is generated by a
 GPS-disciplined clock. At the level of each shelf, this high-accuracy
 clock is made available to each AMC through dedicated lines off
-the backplane. As discussed before, the $\mu$TCA standard will accommodate
+the backplane. As discussed before, the $\mu$TCA standard accommodates
 special lanes for clock transmission. The trigger signals
 (time-stamps) are encoded and sent through this dedicated WR network
 which has enough bandwidth for this transmission without interfering
@@ -521,34 +394,16 @@ stringent. The goal is to provide a nanosecond synchronization at the
 level of all L1 elements. This goal is typically achievable with the
 WR standard\cite{WR-standard}.
 
-The idea for the clock distribution is to use a parallel, independent
-network from a GPS-disciplined Master Clock down to each $\mu$TCA
-shelf, through specific switches. Technically the WR standard is based
-on a combination of Synchronous Ethernet (Sync-E) and Precision Time
-Protocol (PTP, IEEE1588), where the Ethernet clock is generated by a
-GPS disciplined clock. At the level of each shelf, this high accuracy
-clock is made available to each AMC through dedicated lines of
-the backplane. As discussed, the $\mu$TCA standard %foresees special lanes for clock transmission. 
-requires dedicated lanes defined by the user. The trigger signals
-(time-stamps) are encoded and sent through this dedicated WR network,
-which has enough bandwidth for this transmission without interfering
-with the PTP synchronization signals. The requirements on the
-synchronization for the charge readout are quite loose since the
-typical readout frequency is of the order of a few MHz. The
-requirements for the PMT readout, on the contrary, are more
-stringent. The goal is to provide nanosecond synchronization at the
-level of all L1 elements, which is typically achievable with the
-White Rabbit (WR) standard\cite{WR-standard}.
 
-The WR provides an extension to the Ethernet network with features such as Gigabit data
-transfers and accurate synchronization. %among its different elements. 
+The WR provides an extension to the Ethernet network with Gb/s data
+transfer speed and allows for accurate synchronization among the different
+network nodes. 
 It provides a common clock for the physical layer in the entire
 network, allowing sub-nanosecond synchronization accuracy and 20-ps
 jitter time. The WR network is designed to host up to thousands of
 nodes and to support distance ranges of 10~km using fiber cables. It
-ensures that all the Ethernet frames sent are delivered %at least 
-after no more than a fixed delay 
-\fixme{edit ok?} (controlled latency). The order of the frames should be
+ensures that all the Ethernet frames sent are delivered
+after no more than a fixed delay  (controlled latency). The order of the frames should be
 preserved.  A typical application scheme is displayed
 in Figure~\ref{fig:WR_elements}.
 \begin{cdrfigure}[White Rabbit network organization]{WR_elements}
@@ -557,22 +412,15 @@ in Figure~\ref{fig:WR_elements}.
 \includegraphics[width=.3\linewidth]{fig-WRS-rview.png}
 \end{cdrfigure}
 
-The WR application in the $\mu$TCA standard is currently engineered %targeted  for the moment, 
-to easily interconnect %different 
-$\mu$TCA cards. % between them. 
-The \fixme{standalone WR?} switch
+The WR application in the $\mu$TCA standard is currently engineered 
+to easily interconnect $\mu$TCA cards.  The WR  switch
 can therefore be connected directly to its different nodes in the same
-rack to facilitate %improve 
-maintenance and limit the space occupied. %occupancy. 
+rack to facilitate 
+maintenance and limit the space occupied. 
 The implementation scheme is based on the integration of a WR mezzanine board on the MCH
 of each shelf. 
-In the future %it may be very powerful to have 
-a full integration of the WR
-within the $\mu$TCA DAQ system would be very powerful. %For the moment, the implementation
-%scheme is based on the integration of a WR mezzanine board on the MCH
-%of each shelf. 
-This development is in progress for the WA105
-demonstrator (on a MHC produced by the company NAT); other companies
-producing the MCH and the WR slave show clear interest in this integration development.
-%, with clear interest  and collaboration by the companies producing the MCH and the
-%WR slave to be integrated.
+In the future  a full integration of the WR within the $\mu$TCA DAQ system would be very powerful. 
+The current WR implementation scheme is based on the integration of a WR mezzanine board on the MCH of each shelf. 
+The development of this WR MCH is in progress for the WA105
+demonstrator (on a MHC produced by the company NAT); the companies
+producing the MCH and the WR slave to be integrated show clear interest in this development.
