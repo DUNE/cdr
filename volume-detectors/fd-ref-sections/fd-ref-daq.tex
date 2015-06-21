@@ -11,10 +11,10 @@ fabrication, testing, delivery and installation of the components (as illustrate
   above about 100~MeV) with a high resolution (smart or no
   zero-suppression) with no dead-time. \fixme{It would be nice to reference a section; `smart' suppression
   is not mentioned in the S\%C chapter; zero supp is. How best to handle?}
-\item have the capability to collect interactions with total energy
+\item collect interactions with total energy
   below 100~MeV with some
  low amount of zero-suppression loss.
-\item have the ability to trigger at the time of the beam pulses,
+\item trigger at the time of the beam pulses,
   irrespective of how little energy is deposited in the detector.
 \item collect data with the most favorable zero-suppression possible over a
   period of $>$10~s (supernova trigger)
@@ -25,8 +25,6 @@ fabrication, testing, delivery and installation of the components (as illustrate
   histograms and monitor (and provide for offline use) historical
   status of measured detector parameters. 
 \end{itemize}
-\fixme{why do some say `have the capability' and others just say `collect' or whatever; is there a subtle difference
-that's important?}
 
 This section outlines a conceptual design intended to meet the
 required performance for the DAQ for the DUNE far detector.  To reduce
@@ -208,7 +206,7 @@ suitable for the ``collect-twice'' architecture envisioned for DUNE.
 
 {\bf Run Control and Slow Control software framework} manages the
 control, status display and status archival of the experiment.  It is
-based on the ICECube design. \fixme{reference?} This
+based on the design of the DAQ of the ICECube experiment\cite{Abbasi:2008aa}. This
 exploits a combination of readily available, well-supported packages
 [message passing (zeroMQ), a web-framework (Django), databases (postgres)] 
 to give the shift operator a unified view of the status
@@ -336,30 +334,24 @@ zero-suppressed trigger data is kept in a large buffer area on disk.
 %data stream during the extended period of a supernova are
 %under study: 
 During the extended period of this event, it is desirable to collect data that are cropped 
-more gently than is the zero-suppressed data stream; ways to do this are
-under study: \fixme{check edit; the sentence was a mouthful!}
+more gently than the zero-suppressed data stream. %; ways to do this are under study: 
 The non-zero-suppressed ring buffers on the current
 design of RCEs are
-sufficient for 0.4~s of buffering \fixme{is the preceding phrase one possible way? 
-It doesn't read that way}; the trigger farm can send
+sufficient for 0.4~s of buffering; during a supernova, the trigger farm can 
+send
 instructions in the trigger messages to manage storage of data in
-these buffers during a supernova. \fixme{and the preceding doesn't sound like a second possibility. This pgraph
-needs a little work.} Two possible extensions
+these buffers.  Two possible extensions to this method
 are (a) extend the memory to buffer longer, either on the RCEs or
-elsewhere in the aTCA crate, or (b) use the powerful intercommunications between
-RCEs to cause neighboring channels to be kept around the time of a
-potential supernova event candidate. \fixme{what does it mean to keep a channel around the time of a candidate? Please clarify.}
+elsewhere in the aTCA crate, or (b) use the powerful intercommunications between RCEs to ensure that  information read from neighboring channels around the time of a
+potential supernova event candidate is kept.
 
 
-At the 4850L, the data rate in the trigger is dominated by
+At the 4850L, the data rate in the trigger is dominated by the unwanted 
 radioactivity from $^{39}$Ar and $^{85}$Kr.  The cosmic rays that
-occur about once per minute are the major source of events that should
-be collected on the data stream; \fixme{that we want to collect on the data stream or that 
-are expected to be collected even though we don't want them? (I guess no. 2); please reword}
+occur about once per minute, on the other hand, are the major source of events that should
+be collected on the data stream; 
  the physics beam events, atmospheric
-neutrinos and other candidate contained events \fixme{`Candidate contained
-event' seems awkward. Can we say `fully contained'? Or can we assume
-that any candidate event is contained and therefore can remove the word `contained'? } 
+neutrinos and other candidate events 
 are included in this data budget.  
 Table~\ref{tab:daqrefrates}) gives estimates of the
 rate of occurence of these events and the expected steady-state data rate
