@@ -264,4 +264,5 @@
 \linenumbers
 \fi
 
-
+%add TOC, TOF, TOT, Ref to TOC (show up in PDF sidebar for easy navigation)
+\RequirePackage{tocbibind}
