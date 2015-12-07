@@ -132,7 +132,9 @@ modes, the nucleon decay program at DUNE will be a broad effort.
 Many other allowed modes of proton or bound neutron into 
 antilepton plus meson that also conserve $B-L$ have been identified.  
 Other modes that conserve $B+L$, or that decay only into leptons, have also been 
-hypothesized.  While these are less well motivated theoretically, opportunistic 
+hypothesized.  
+In addition to nucleon decay, another promising way of probing baryon number violation in DUNE is through the search for the spontaneous conversion of neutrons into antineutrons in the nuclear environment. % added 7dec2015 m.sorel
+While these are less well motivated theoretically, opportunistic 
 experimental searches cost little and could have a large payoff.
 
 Figure~\ref{fig:PDK-limits-theory} shows a comparison of experimental
@@ -306,11 +308,15 @@ of possible backgrounds, including those arising from cosmic ray interactions in
 detector and surrounding rock, atmospheric neutrino interactions in the
 dectector, and reconstruction failures. Table~\ref{tab:pdkbkds} summarizes the
 results of those background studies.  All together, our estimates of total
-background events in the proton decay sample is less than 1 \SI{}{\Mtyr}.
+background events in the %proton decay 
+$p\to K^+\overline{\nu}$ sample is less than 1 \SI{}{\Mtyr}.
+
+%  -(M.Sorel) p.4.67, in Tab.4.2 caption: “background sources and mitigation strategies for the p -> K+ nubar search in DUNE”. right now table may be misunderstood as generic to any proton decay mode. this decay mode should be specified in main text as well, when mention is made to an expected background of less than 1 per Mton*yr (other proton decay modes would have much larger backgrounds)
+% AEH added this to lines 311 above and 319 below - as of 12/7/15
 
 
 \begin{cdrtable}[Background summary for nucleon decay]{lll}{pdkbkds}
-{Background sources and mitigation strategies or nucleon decay}
+{Background sources and mitigation strategies for the $p\to K^+\overline{\nu}$ search in DUNE}
 %\begin{center}
 %\begin{tabular}{$L^c^c} 
 %\toprule
@@ -566,7 +572,7 @@ Atmospheric neutrinos provide a window into a range of new physics scenarios, an
 on CPT violation~\cite{Kostelecky:2003cr}, 
 non-standard interactions~\cite{Chatterjee:2014gxa}, mass-varying neutrinos~\cite{Abe:2008zza}, 
 sterile neutrinos~\cite{Abe:2014gda}, and
-Lorentz invarance violation~\cite{Kostelecky:2011gq}.
+Lorentz invariance violation~\cite{Kostelecky:2011gq}.
 
 \section{Indirect Search for WIMPs at the DUNE Far Detector}
 
@@ -601,13 +607,16 @@ follows:
   shown that a depth of 4850 ft is sufficient to reduce these
   backgrounds to negligible levels.
 
+% - p.4-72: statement that Fig.4.4 shows that 10-kt DUNE detector can exceed SK limit on p -> K+ nubar in two years is incorrect. From the figure, the necessary exsposure is more like 50 kt*yr
+% Maury says: change "two years" to "five years". Done AEH 12/7/15
+
 \item Far Detector Mass: The far-detector fiducial size multiplied by
   the duration of operation [expressed in kiloton-years] shall be
   sufficient to yield a scientifically competitive result on proton
-  decay. As Figure~\ref{fig:kdklimit} shows, a 10~kt detector can
+  decay. As Figure~\ref{fig:kdklimit} shows, a \ktadj{10} detector can
   exceed the existing Super-Kamiokande limits for the $p\rightarrow
-  K^+ + \bar{\nu}$ nucleon decay channel in two years, and the full 40
-  kt scope in much less than that.  For atmospheric neutrinos, a
+  K^+ + \bar{\nu}$ nucleon decay channel in five years, and the full \ktadj{40} 
+  scope in much less than that.  For atmospheric neutrinos, a
   detector mass of 40 kt will achieve a mass hierarchy determination
   of better than 3$\sigma$ in 10 years.
 
@@ -623,7 +632,8 @@ follows:
 
 \item Far Detector Particle ID: It is required that the separation
   of $K^+$'s and $\pi^+$'s in the Far Detector be good enough to leak
-  much less than one event into the proton decay sample.  Unlike the
+  much less than one event into the %proton decay (per M.Sorel, changed 12/7/15)
+  $p\to K^+\overline{\nu}$ sample.  Unlike the
   long-baseline physics, proton decay is a rare-process search and
   therefore small tails from (for example) atmospheric neutrino
   interactions creating $\pi^+$s that are mis-identified could be very
