@@ -269,3 +269,7 @@
 
 % Use to include authorlist in PDF format
 \usepackage{pdfpages}
+
+%for \lesssim symbol
+\usepackage{amsfonts}
+\usepackage{amssymb}
