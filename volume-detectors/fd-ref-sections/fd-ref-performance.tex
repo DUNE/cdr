@@ -52,7 +52,7 @@ Charge Measurement & 15 MIP & & 15 MIP \\ \colhline
 % Track-finding efficiency is expected to be high.  Needs study to connect it to physics performance
 %Track-Finding Efficiency\footnote{For tracks with $L>5$~cm} & $>98\%$ & & $>98\%$ \\ \colhline
 Vertex Position Resolution$^3$ & (2.5,2.5,2.5)~cm & & (1.1,1.4,1.7)~cm~\cite{Marshall:2013bda,Marshall:2012hh}\\ \colhline
-$e-\gamma$ separation $\epsilon_e$ & 0.9 & & 0.9 \\ \colhline
+$e-\gamma$ separation $\epsilon_e$ & 0.90 & & 0.90 \\ \colhline
 $e-\gamma$ separation $\gamma$ rejection & 0.99 & & 0.99 \\ \colhline
 Multiple Scattering Resolution & & & \\
 on muon momentum$^4$ & $\sim$18\% & $\sim$18\%~\cite{gibinmuon,Ankowski:2006ts} & $\sim$18\% \\ \colhline
@@ -73,7 +73,7 @@ Stub-Finding Efficiency$^5$ & 90\% & & $>90\%$ \\
 
 
 The signal-to-noise ratio requirement is motivated by the need to
-detect weak signals in a large detector that has a low signal rate,
+detect small signals in a large detector that has a low signal rate,
 while limiting the required output data volume.  It is set at 9:1 for
 a minimum-ionizing particle (MIP) in all three views, for any
 orientation of the track.  This ratio is required for all particles in
@@ -167,7 +167,7 @@ of 99\% $\pi^0$ rejection can be obtained at 90\% signal efficiency.
 
 The momentum of muons in $\nu_\mu$CC events is an important ingredient
 in measuring the $\nu_\mu$ energy spectrum in the far detector, which
-is one of the inputs to the oscillation parameter fits.  Muons which
+is one of the inputs to the oscillation parameter fits.  Muons that
 stop in the detector volume will be well measured using their range.
 For those that are not contained the distribution of deviations of the
 muon track from a straight line is a function of the muon momentum.
@@ -189,7 +189,7 @@ come from test-beam data --- LArIAT and the CERN prototypes, the
 $\pi^0\rightarrow\gamma\gamma$ decays in ICARUS\cite{ICARUS-pizero}
 gives an achieved $\pm 2.2$\% uncertainty on the electromagnetic
 energy scale.  The same data also constrain the energy resolution.
-The proposed data sets from the test-beam experiments will easily
+The proposed data sets from the test-beam experiments will 
 measure these, though the results will need to be extrapolated to the
 DUNE far detector geometry and readout details using a full
 simulation.  Similarly, the detector response to hadrons --- protons,
@@ -239,10 +239,11 @@ resolution, isotropic and uniform monoenergetic electrons with
 energies of 5--50~MeV (which should approximate the $\nu_e$CC
 electron products) were simulated and reconstructed with the LArSoft
 package.  The charge of reconstructed hits on the collection plane was
-used to reconstruct the energy of the primary electrons.\footnote{Collection-plane hit charge gave the best resolution results
-  compared to induction-plane and track-length-based reconstruction in
-  this preliminary study; however, improved reconstruction based on
-  broader information should be possible.}
+used to reconstruct the energy of the primary electrons. (Compared to induction-plane 
+and track-length-based reconstruction in
+ this preliminary study, collection-plane hit charge gave the best resolution results;
+ however, improved reconstruction based on
+  broader information should be possible.)
 Figure~\ref{fig:lowe_res} shows the results of a resolution study.  
 A correction to compensate for loss of electrons during
 drift, $Q_{\rm collection}=Q_{\rm production}\times e^{-T_{\rm drift} / T_{\rm
