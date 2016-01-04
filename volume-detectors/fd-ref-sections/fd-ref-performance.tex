@@ -38,13 +38,13 @@ $^2$Achieved for the collection view; $^3$In order for the fiducial
 volume to be known to $\pm 1\%$, the resolution performances are
 reported separately in the $x$, $y$, and $z$ directions, where $z$
 points along the neutrino beam axis; $^4$For a sample of stopping
-muons; $^5$For electron stubs with $E>5$~MeV.  }
+muons; $^5$For short electron tracks (stubs) with $E>5$~MeV.  }
 %The third argument (reads {cc}) can use c, l, r or p{some length}  e.g. {clll} or {llp{3cm}}, for instance.
 Parameter & Reference Performance & Achieved Elsewhere & Expected Performance \\ \toprowrule
 Signal/Noise Ratio$^1$ & 9:1 & 10:1~\cite{Antonello:2015zea,Antonello:2014eha}$^2$ & 9:1 \\ \colhline
 Electron Lifetime & 3~ms & $>15$~ms~\cite{Antonello:2014eha} & $>3$~ms \\ \colhline
 Uncertainty on Charge & & & \\
-Loss due to Lifetime  &   $<1\%$  & $<1\%$~\cite{Antonello:2014eha} & $<1\%$ \\ \colhline
+Loss due to Lifetime  &   $<5\%$  & $<1\%$~\cite{Antonello:2014eha} & $<1\%$ \\ \colhline
 Dynamic Range of Hit & & & \\
 Charge Measurement & 15 MIP & & 15 MIP \\ \colhline
 % two-hit resolution needs more study.  And likely a different resolution along the drift axis than in the other two directions
@@ -118,7 +118,7 @@ longer lifetime, $>$15~ms\cite{Antonello:2014eha}.
 
 The charge loss due to lifetime effects is expected to be well
 measured in the DUNE far detector.  In addition to the cosmic-ray
-muons which accumulate at a rate of 0.259~Hz (see \anxrates), the
+muons which accumulate at a rate of 0.26~Hz (see \anxrates), the
 laser calibration system and purity monitors will provide detailed
 time-dependent measurements of the electron lifetime.  This
 limit is placed at 1\% in order to meet the energy-scale and resolution
@@ -141,7 +141,8 @@ lifetime and number of bits in the ADC.
 The primary vertex position resolution requirement is intended 
 to keep it from being a significant source of uncertainty on the
 fiducial volume determination, though this effect is mitigated if the
-resolution is well known.  The current resolution from PANDORA easily
+resolution is well known.  The current resolution from PANDORA, 
+a pattern recognition program developed at Cambridge, easily
 meets this requirement.  The axis along which the resolution is the
 weakest is that of the neutrino beam direction and the asymmetry in the
 achieved resolution is not a result of detector anisotropy.   Tighter
@@ -158,7 +159,7 @@ selection\cite{docdb-6954}.  Current Monte Carlo studies indicate
 that, for showers with enough hits in the initial part to measure
 $dE/dx$, the performance of the ionization method is roughly 90\%
 electron efficiency with a 90\% rejection factor for single photons.
-A topological hand-scan indicates that a signal $\nu_e$CC signal
+A topological hand-scan indicates that a $\nu_e$CC signal
 efficiency of $\sim$80\% with a 95\% rejection of neutral-current
 background can be obtained.  With optimizations to the $dE/dx$
 analysis and automating the pattern-recognition identification of
