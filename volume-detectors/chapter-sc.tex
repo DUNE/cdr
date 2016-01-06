@@ -162,45 +162,19 @@ values) based on a LArSoft Monte Carlo simulation of GeV-scale events
 suggests a zero-suppressed and uncompressed event size of
 $\sim$\beameventsize.  After compression this event size is expected
 to reduce to $\sim$\beameventsizecompressed.  This particular simulation
-employed a less-than-optimal \fixme{could we say ``preliminary''?} schema for packing data and it is
-expected that with optimization these sizes can be further reduced.
+employed a less-than-optimal schema for packing data and it is
+expected that these sizes can be further reduced.
 
 Some of the driving ZS and full-stream (FS) annual
-data volumes are summarized in Table~\ref{tab:sc-zs-summary}. It is
-important to note that the numbers in the row characterizing $^{39}$Ar
-are given for information only and do not represent the DUNE estimates of
-actual data to be committed to mass storage.
-Once DAQ-level rejection of isolated $^{39}$Ar decay events is invoked,
-a residual amount of data is accepted when the decay is accidentally
-coincident with beam-$\nu$ activity.
-\fixme{Would it be correct (and clearer) to reverse the two previous sentences like this: Regarding the 
+data volumes are summarized in Table~\ref{tab:sc-zs-summary}.  Regarding the 
 numbers in the row characterizing $^{39}$Ar, once DAQ-level rejection of isolated $^{39}$Ar decay 
 events is invoked, a residual amount of data is accepted when the decay is accidentally
 coincident with beam-$\nu$ activity. These numbers are therefore given for information only and do not 
-represent the DUNE estimates of actual data to be committed to mass storage.}
+represent the DUNE estimates of actual data to be committed to mass storage.
 The data required to record this background is reduced to 3\% of the
 ``with-beam-$\nu$'' estimate of table~\ref{tab:sc-zs-summary} and is
 thus negligible, being an order of magnitude smaller than the data
 associated with the beam neutrino interactions themselves.
-
-%%%% I think this simply restates our simple assumption that isolated
-%%%% 39Ar can be killed by the DAQ.
-%%%%  The "high threshold" approach makes people nervous, so I don't
-%%%%  think we need to invoke it.
-% There is a range of possible approaches to data volume reduction in
-% real time without losing much of information due to low-amplitude
-% signals, which may be important for more precise particle
-% identification or in search for unusual signatures that may exist due
-% to new phenomena. For example, implementation of the ``trigger
-% stream'' in the DAQ system (see~\ref{sec:detectors-fd-ref-daq})
-% allows to trigger on event candidates using
-% ``high threshold'', while capturing data in the potential event
-% without applying any threshold at all. In that case, one can estimate
-% the total size of the TPC data to be collected annually by multiplying
-% the predicted number of beam neutrino interactions per year (estimated
-% here to be \beamrate) by the full stream event size quoted above
-% (\dunefsreadoutsize).  This results in an estimate of
-% \beamdatayearfs of this type of data per year.
 
 
 \input{volume-detectors/generated/zs-volume-summary}
