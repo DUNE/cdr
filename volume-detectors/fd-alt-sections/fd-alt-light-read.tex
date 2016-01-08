@@ -5,7 +5,7 @@
 The light-readout system developed in the LAGUNA-LBNO design study
 detects the scintillation light using 8-inch cryogenic
 PMTs (Hamamatsu R5912-02mod) with TPB coating. The PMTs
-are placed about 1~m below the cathode.  The application of the TPB
+are placed about 1\,m below the cathode.  The application of the TPB
 coating can be done at the level of the glass itself or on a
 transparent plate mounted over the photocathode surface. The WA105
 demonstrator will use 36 PMTs R5912-02mod (1/m$^2$ of
@@ -25,7 +25,7 @@ R\&D program PMm2 \cite{PMM2-1, PMM2-2}, for the instrumentation of
 giant water Cherenkov detectors. The signal
 digitization is performed by grouping the PMTs in arrays
 of 16. Each PMT array is read out by an ASIC chip in AMS
-SiGe 0.35~$\mu$m technology. The ASIC, which is called PARISROC
+SiGe 0.35\,$\mu$m technology. The ASIC, which is called PARISROC
 (PMT ARrray Integrated in Si-Ge Read Out
 Chip)\cite{Parisroc}, provides a complete readout system for
 triggerless data acquisition. The solution developed by this program
@@ -55,11 +55,11 @@ compensate for the relative PMT gain differences when
 powered by a single high voltage. The preamplifier is followed by a
 slow channel for the charge measurement in parallel with a fast
 channel for the trigger output. The slow channel includes a variable
-(50--200~ns) slow shaper followed by an analog memory with depth of 2
-to provide a linear charge measurement up to 50~pC; this charge is
+(50--200\,ns) slow shaper followed by an analog memory with depth of 2
+to provide a linear charge measurement up to 50\,pC; this charge is
 then converted by a 10-bit Wilkinson ADC. The fast channel is composed
-of a fast shaper (15~ns) followed by a low offset discriminator to
-auto-trigger down to 10~fC. This auto-trigger feature makes the PMT
+of a fast shaper (15\,ns) followed by a low offset discriminator to
+auto-trigger down to 10\,fC. This auto-trigger feature makes the PMT
 array completely independent of the other PMT arrays. The
 threshold is loaded by an internal 10-bit DAC common to the 16
 channels.
@@ -109,12 +109,12 @@ Figure~\ref{fig:DAQ_LRO}).
 
 The PARISROC chip provides the timestamp at nanosecond precision and
 generates the trigger. In parallel, an ADC AD9249 continuously
-digitizes all channels independently at 65~MSPS with 14 bits. The FPGA
+digitizes all channels independently at 65\,MSPS with 14 bits. The FPGA
 Stratix IV from the Bittware S4AM card controls and programs the ADC
 and PARISROC. It also receives the data coming from both PARISROC and
 ADC and controls which information is passed through the network to
 store for analysis.  The charge digitization of the light signals is
-performed at 14~bits in samples of 15~ns. Considering a 5-$\mu$s
+performed at 14\,bits in samples of 15\,ns. Considering a 5-$\mu$s
 light-signal duration, the digitization will produce more than 300
 samples. With this amount of data it is possible to measure not only
 the total charge generated but also the shape of the signal and the
@@ -126,5 +126,5 @@ With this light readout architecture and the White Rabbit
 time-distribution system, it is possible to achieve 1-ns accuracy at
 the level of trigger generation for the $t0$ and timestamping of the
 events. This trigger is sent to the general DAQ and the event
-builder. Since the charge-readout system of the TPC runs at 2.5~MHz,
-the minimal time unit in the reconstruction of the drift is 400~ns.
+builder. Since the charge-readout system of the TPC runs at 2.5\,MHz,
+the minimal time unit in the reconstruction of the drift is 400\,ns.

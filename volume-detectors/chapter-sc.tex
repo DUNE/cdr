@@ -18,7 +18,7 @@ DUNE collaboration and across the LBNF/DUNE project.
 
 %\subsection{Overview}
 There are many factors that influence the
-data to be collected and processed in DUNE, e.g., rates, volume, etc.  \anxrates
+data to be collected and processed in DUNE, e.g., rates, volume, etc.  Reference~\cite{cdr-annex-rates} 
 contains information on both the reference and alternative
 designs for the far detector.
 
@@ -75,7 +75,7 @@ burst event.
 
 The characteristic time scale for such a supernova neutrino burst data
 capture will be $\sim$\SI{10}{\second}.  Given the large amount of
-data arriving within this time period (see the Annex) and practical
+data arriving within this time period (see~\cite{cdr-annex-rates}) and practical
 limits on the bandwidth of the connection between the RCE data
 processors and front-end computers in the DAQ, 
 the buffer in the data processor will not have
@@ -129,7 +129,7 @@ addressed.) A few basic assumptions have been made.
 \end{itemize}
 
 \subsubsection{Far Detector LArTPC Parameters}
-The basic parameters presented below are also listed in \anxrates.
+The basic parameters presented below are also listed in~\cite{cdr-annex-rates}.
 \begin{itemize}
 \item TPC channel count: \dunenumberchannels (i.e., four times the
   \daqchannelspermodule channel count for each \tpcmodulemass module)
@@ -316,22 +316,19 @@ Buffers will be provided for the DAQ systems to
 \subsubsection{Data Management}
 \label{sec:detectors-sc-infrastructure-computing-model-data-mgt}
 
-Data will be placed into mass storage at Fermilab. As
-described above, additional copies (replicas) will be distributed to
-other properly equipped computing centers. % possessing sufficient resources.  
-A given %single additional copy 
-replica does not %necessarily 
-need to reside in its entirety at
-a single data center; the replicas can be ``striped'' across multiple %a few
-data centers if that becomes optimal at the time %of implementation of
-the Computing Model is implemented. For example, consideration is given to both
-Brookhaven National Laboratory and NERSC as candidates for the
-placement of extra replicas. \fixme{This is an example of distribution, not striping.}
+Data will be placed into mass storage at Fermilab. As described
+above, additional copies (replicas) will be distributed to other
+properly equipped computing centers. For example, consideration is
+given to both Brookhaven National Laboratory and NERSC as candidates
+for the placement of extra replicas. A given replica does not need to
+reside in its entirety at a single data center; the replicas can be
+``striped'' across multiple data centers if that becomes optimal at
+the time the Computing Model is implemented.
 
 Recent progress in network and storage technologies have made possible
 \textit{federation of storage} across multiple member-institution data centers. % located at member institutions. 
 In this approach, data can be effectively shared
-and utilized via the network (``data in the Cloud''). \fixme{This is separate from the distribution/sharing of replicas?}
+and utilized via the network (``data in the grid''). 
 
 %One example of an advanced federated system of this type is XRootD.
 For data distribution, DUNE will use a combination of managed data movement between
@@ -351,7 +348,7 @@ dual-phase technology) are listed in Chapter 2 of~\cite{cdr-annex-rates}. The re
 The Photon Detector readout channel count is 720 (i.e., four times the 180
           channel count for each 10-kt module).
 
-According to some estimates listed in the Annex~\cite{cdr-annex-rates}, the ``Full Stream''
+According to some estimates listed in~\cite{cdr-annex-rates}, the ``Full Stream''
 readout will produce 16.09~GB of data for each candidate event. This is
 about 65\% of the data volume in one readout cycle of the reference
 design.  Although signal processing strategies may be implemented
@@ -364,7 +361,7 @@ reference design.
 
 This section summarizes the %A longer description of the 
 current status of the near detector
-simulation and reconstruction, described in detail in \anxreco. % with an abbreviated summary here.
+simulation and reconstruction, described in detail in~\cite{cdr-annex-reco}. % with an abbreviated summary here.
 
 Two approaches are being  pursued for the simulation of
 the DUNE near detector.  The first is a fast Monte Carlo based on
@@ -396,7 +393,7 @@ in the straw tube tracker, as simulated using GEANT4.
 
 This section summarizes %Longer descriptions of 
 the single-phase and dual-phase far detector
-simulations and reconstruction, described in detail in \anxreco. % with an abbreviated summary here.
+simulations and reconstruction, described in detail in~\cite{cdr-annex-reco}. % with an abbreviated summary here.
 
 %\subsection{Simulation}
 %\label{sec:detectors-sc-physics-software-simulation}

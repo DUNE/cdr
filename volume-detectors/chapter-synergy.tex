@@ -9,7 +9,7 @@ synergies between these development efforts.
 
 Both the reference and alternative designs for the DUNE far detector
 are liquid argon TPCs. The designs assume nearly identical cryostats
-(with some differences in the cryostat roof), in identical caverns and
+(with some differences in the cryostat roof) installed in identical chambers and
 supported by identical cryogenic systems. The designs differ mostly in
 their approaches to collection and readout of the ionization
 signals. In the reference design, the ionization charge is measured by
@@ -18,9 +18,10 @@ in the LAr. In the alternative design, the charge is extracted from
 the liquid to the vapor and then amplified and finally collected on a
 2D anode, providing two independent views.
 
-A list of synergies between far detector subsystems designs includes
+%A list of synergies between far detector subsystems designs includes
+Several of the far detector subsystems offer great potential for synergy between the reference and alternative designs, including the
 \begin{itemize}
-\item Interface with the cryogenics system,
+\item Interface to the cryogenics system,
 \item High voltage, 
 \item Photon detection,
 \item Calibration,
@@ -29,10 +30,7 @@ A list of synergies between far detector subsystems designs includes
 \item Detector modeling and simulation.
 \end{itemize}
 
-  
-
-
-\section{Interface with the Cryogenics System}
+\section{Interface to the Cryogenics System}
 
 In both designs, ionization electrons have drift lengths on the order
 of several meters. In order to reach the required millisecond scale for
@@ -42,7 +40,8 @@ come primarily from impurities adsorbed onto the tank and detector element surfa
 Given that the detector modules will be housed in cryostats of the same design,
 using the same industrial LNG cryostat technology and the same cryogenics systems,
 the process of understanding these sources and minimizing them
-is to a great extent the same for either TPC design. This leads to potential synergies in the areas of
+is to a great extent the same for either TPC design. This leads to %potential 
+expected synergies in the areas of
 \begin{itemize}
 \item Electronegative contamination mitigation, 
 \item Modeling contamination sources,
@@ -61,11 +60,11 @@ is to a great extent the same for either TPC design. This leads to potential syn
 
 
 For detecting interactions of beam neutrinos, the requirement for
-electron lifetime of $>$3~ms derives from the minimum signal to noise
-ratio (S/N$>$9) required for MIP signals on induction plane wires from
+electron lifetime of $>$\,3\,ms derives from the minimum signal to noise
+ratio (S/N$\,>\,$9) required for MIP signals on induction plane wires from
 interactions near the cathode to be above the zero suppression
 thresholds.  Initial studies of energy resolution for supernova physics
-also requires an electron lifetime above 3~ms.  The 3~ms lifetime
+also requires an electron lifetime above 3\,ms.  The 3\,ms lifetime
 detector requirement is the same for both the single-phase reference
 design and the dual-phase alternate design.  As the argon purity goal
 is similar, work on contamination mitigation can be done jointly.
@@ -74,7 +73,7 @@ There is much experience in the community to justify confidence that
 high levels of argon purity can be achieved.  Careful design of gas
 ullage and the recirculation system is vital to avoid trapped pockets
 of gas and to minimize the mixing of the gas and the liquid at the
-interface.  ICARUS achieved a lifetime above 15~ms after modification of
+interface.  ICARUS achieved a lifetime above 15\,ms after modification of
 the cryosystem to extend the lifecycle of the recirculation
 pump.\cite{Antonello:2014eha} The materials test stand (MTS) at Fermilab has
 demonstrated that contaminants in the liquid argon originate from
@@ -84,11 +83,11 @@ materials immersed in the liquid argon are not a source of
 contamination.\cite{andrewsNIM} The MTS has measured the
 contamination rate for many materials and is available for
 continued testing of additional materials.  The Liquid Argon Purity
-Demonstrator (LAPD) acheived lifetimes above 14~ms without evacuating
+Demonstrator (LAPD) acheived lifetimes above 14\,ms without evacuating
 the cryostat and with a functioning TPC inside the
 cryostat.\cite{Bromberg:2015uia}
 
-The phase-1 run of the 35-t achieved a peak 3~ms electron lifetime;
+The phase-1 run of the 35-t achieved a peak 3\,ms electron lifetime;
 however, the purity was still improving when the run ended.  The
 engineers and scientists from LBNF and both DUNE detector options will
 work together to optimize the cryogenic design for high purity. Two
@@ -97,18 +96,18 @@ and how this contamination migrates to the liquid and developing a
 fill procedure that preserves the purity of the incoming liquid.
 There are several membrane cryostats that will be designed and built
 over the next 10 years by a common engineering team: the
-1$\times$1$\times$3~m$^3$ dual-phase prototype, Short Baseline
+1$\times$1$\times$3\,m$^3$ dual-phase prototype, Short Baseline
 Neutrino Detector (SBND), WA105, the Single-Phase CERN Prototype
 (SPCP) engineering prototype as well as the DUNE far detector. Each of
 these will learn from its predessors and inform its successors. Based
-on existing measurements and extrapolations to the 10~kt design a 3~ms
+on existing measurements and extrapolations to the \ktadj{10} design a 3\,ms
 lifetime should be readily achievable.
 
 
 \section{High Voltage}
 
 Both LArTPC designs require a large HV to
-produce an electric field of the order of 500~V/cm in the drift
+produce an electric field of the order of 500\,V/cm in the drift
 volume.  They both thus require a HV generator, HV
 feedthoughs and a field cage to correctly shape the electric
 field. While these elements differ in the two designs, they present a common
@@ -160,21 +159,21 @@ will have significant synergies between the two designs, including
 A fundamental aspect of the detector cost optimization is related to
 the development of a strategy for underground logistics, safety and detector
 installation. Dimensioning of the components to be transported and
-assembled underground is a common issue where synergies
-exist. Strategies for and requirements on implementing the clean
+assembled underground is a common issue, affording concomitant synergies. 
+Strategies for and requirements on implementing the clean
 rooms, additional tooling and needs for temporary installations, such
 as scaffolding, also present opportunities for potential synergies.
 
 \section{Local Computing Infrastructure and DAQ}
 
 Once the electrical signals from the detector have been processed
-(e.g., by frontend preamplifiers), the treatment of the digitized raw data and
+(e.g., by front-end preamplifiers), the treatment of the digitized raw data and
 their compression can be strongly unified and will therefore provide
 synergies. The online computing farm will have a very similar layout
 for both reference and alternative designs. The software triggering and
 filtering algorithms will be based on similar local computing
 architectures, offering strong synergies. Finally, the local data
-storage and transmission to offsite tier-centers will be common.
+storage and transmission to offsite tier centers will be common.
 
 
 \section{Detector Modeling and Simulation}
@@ -195,7 +194,7 @@ LAr provides a basis for synergies in this area that include
 \section{Summary}
 A large set of possible synergies exists between the reference and
 alternative TPC designs. These synergies will be exploited and
-developed within the DUNE Collaboration and the LBNF team as the
+developed within the DUNE collaboration and the LBNF team as the
 program of prototypes, demonstrators and other development activities
 continues and as the detector modules and the accompanying facilities
 are constructed. The CERN neutrino platform, in particular, will

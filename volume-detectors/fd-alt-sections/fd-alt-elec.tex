@@ -17,15 +17,15 @@ the DUNE far detector double-phase alternate design, which  foresees
 The R\&D activities (ongoing since 2006) have focused effort on two
 main areas:
 \begin {itemize} 
-\item{development of cold front-end ASIC electronics}
+\item{development of cold front-end ASIC electronics, and}
 \item{development of low-cost, largely scalable data 
-acquisition systems (DAQ) based on modern telecommunications technologies}
+acquisition systems (DAQ) based on modern telecommunications technologies.}
 \end{itemize}
 
 One of the goals of the WA105 6$\times$6$\times$6~m$^3$ demonstrator,
 a LArTPC with \num{7680} charge-readout channels described in Section~\ref{sec:proto-cern-double}, is to test the
 large-scale readout system developed in the LAGUNA-LBNO design
-study. \anxdualtdr{} and~\cite{WA105_SREP} provide detailed descriptions
+study. \anxdualtdr{}~\cite{WA105_TDR} and~\cite{WA105_SREP} provide detailed descriptions
 of the charge-readout electronics, including the cold front-end ASICs
 and the DAQ.
 
@@ -358,7 +358,7 @@ This kind of board is used for massive data processing in many fields
 processing with reduced power consumption (it dissipates only 10\% of the power
 dissipated by an equivalent CPU for a comparable number of
 operations). This particular board has two QSFP+ cages to bring the
-data directly to the FPGA for the lowest possible latency. Upto 8$\times$10GbE
+data directly to the FPGA for the lowest possible latency. Up to 8$\times$10GbE
 links without data loss are available per board.  The board performs
 further data processing, filtering and transmission to the highest
 level for storage. This type of board is widely used and the present
@@ -384,7 +384,7 @@ GPS-disciplined clock. At the level of each shelf, this high-accuracy
 clock is made available to each AMC through dedicated lines off
 the backplane. As discussed before, the $\mu$TCA standard accommodates
 special lanes for clock transmission. The trigger signals
-(time-stamps) are encoded and sent through this dedicated WR network
+(time stamps) are encoded and sent through this dedicated WR network
 which has enough bandwidth for this transmission without interfering
 with the PTP synchronization signals. The requirements on the
 synchronization for the charge readout are quite loose since the
@@ -401,7 +401,7 @@ network nodes.
 It provides a common clock for the physical layer in the entire
 network, allowing sub-nanosecond synchronization accuracy and 20-ps
 jitter time. The WR network is designed to host up to thousands of
-nodes and to support distance ranges of 10~km using fiber cables. It
+nodes and to support distance ranges around 10~km using fiber cables. It
 ensures that all the Ethernet frames sent are delivered
 after no more than a fixed delay  (controlled latency). The order of the frames should be
 preserved.  A typical application scheme is displayed

@@ -15,7 +15,7 @@ ArgoNeuT\cite{Anderson:2012vc} detectors, scanned Monte Carlo
 events\cite{docdb-6954} and newer studies with automated
 reconstruction, which are described in
 Sections~\ref{sec:detectors-sc-physics-software-simulation-fd},~\ref{sec:detectors-sc-physics-software-reconstruction-fd}
-and in \anxreco.  Simulation and reconstruction studies are ongoing.
+and in \anxreco~\cite{cdr-annex-reco}.  Simulation and reconstruction studies are ongoing.
 While many components are in place, a full end-to-end simulation,
 reconstruction and analysis chain does not yet exist. Many of the
 numerical detector performance requirements are estimates; some of
@@ -30,40 +30,40 @@ of this section describes each parameter and its connection to the
 detector design and physics goals.
 \begin{cdrtable}[Preliminary far detector performance expectations]{llll}{TPC-metric}{Preliminary summary of the most 
 important performance parameters of the DUNE reference design far
-detector.  For each parameter, the table lists the required
-(reference) performance, performance achieved by other detectors and
+detector.  For each parameter, the table lists the 
+performance requirement, performance achieved by other detectors and
 projected performance for DUNE. References are given.  Notes: $^1$For
 a MIP at the CPA, minimum in all three views, for any track angle;
 $^2$Achieved for the collection view; $^3$In order for the fiducial
 volume to be known to $\pm 1\%$, the resolution performances are
 reported separately in the $x$, $y$, and $z$ directions, where $z$
 points along the neutrino beam axis; $^4$For a sample of stopping
-muons; $^5$For short electron tracks (stubs) with $E>5$~MeV.  }
+muons; $^5$For short electron tracks (stubs) with $E>5$\,MeV.  }
 %The third argument (reads {cc}) can use c, l, r or p{some length}  e.g. {clll} or {llp{3cm}}, for instance.
-Parameter & Reference Performance & Achieved Elsewhere & Expected Performance \\ \toprowrule
-Signal/Noise Ratio$^1$ & 9:1 & 10:1~\cite{Antonello:2015zea,Antonello:2014eha}$^2$ & 9:1 \\ \colhline
-Electron Lifetime & 3~ms & $>15$~ms~\cite{Antonello:2014eha} & $>3$~ms \\ \colhline
+Parameter & Requirement & Achieved Elsewhere & Expected Performance \\ \toprowrule
+Signal/Noise Ratio$^1$ & $9:1$ & $10:1$~\cite{Antonello:2015zea,Antonello:2014eha}$^2$ & $9:1$ \\ \colhline
+Electron Lifetime & $3\,$ms & $>15$\,ms~\cite{Antonello:2014eha} & $>3$\,ms \\ \colhline
 Uncertainty on Charge & & & \\
 Loss due to Lifetime  &   $<5\%$  & $<1\%$~\cite{Antonello:2014eha} & $<1\%$ \\ \colhline
 Dynamic Range of Hit & & & \\
-Charge Measurement & 15 MIP & & 15 MIP \\ \colhline
+Charge Measurement & $15$\,MIP & & $15$\,MIP \\ \colhline
 % two-hit resolution needs more study.  And likely a different resolution along the drift axis than in the other two directions
 % Two-Hit Resolution & 2~mm & & 2~mm \\ \colhline
 % Track-finding efficiency is expected to be high.  Needs study to connect it to physics performance
 %Track-Finding Efficiency\footnote{For tracks with $L>5$~cm} & $>98\%$ & & $>98\%$ \\ \colhline
-Vertex Position Resolution$^3$ & (2.5,2.5,2.5)~cm & & (1.1,1.4,1.7)~cm~\cite{Marshall:2013bda,Marshall:2012hh}\\ \colhline
-$e-\gamma$ separation $\epsilon_e$ & >0.9 & & 0.90 \\ \colhline
-$e-\gamma$ separation $\gamma$ rejection & >0.9 & & 0.99 \\ \colhline
+Vertex Position Resolution$^3$ & (2.5,2.5,2.5)\,cm & & (1.1,1.4,1.7)\,cm~\cite{Marshall:2013bda,Marshall:2012hh}\\ \colhline
+$e-\gamma$ separation $\epsilon_e$ & $>0.9$ & & 0.9 \\ \colhline
+$e-\gamma$ separation $\gamma$ rejection & $>0.9$ & & 0.99 \\ \colhline
 Multiple Scattering Resolution & & & \\
-on muon momentum$^4$ & $\sim$18\% & $\sim$18\%~\cite{gibinmuon,Ankowski:2006ts} & $\sim$18\% \\ \colhline
+on muon momentum$^4$ & $\sim18\%$ & $\sim18\%$~\cite{gibinmuon,Ankowski:2006ts} & $\sim18\%$ \\ \colhline
 % electron energy scale uncertainty requirement from LBNE DocDB 8741
 Electron Energy Scale & & & From LArIAT \\
-Uncertainty & 5\% & 2.2\%\cite{ICARUS-pizero} &  and CERN Prototype \\ \colhline
+Uncertainty & $\sim5\%$ & $\sim2.2\%$\cite{ICARUS-pizero} &  and CERN Prototype \\ \colhline
 Electron Energy Resolution & $0.15/\sqrt{E{\rm (MeV)}}$ &$0.33/\sqrt{E{\rm (MeV)}}$  \cite{ICARUS-pizero} & From LArIAT \\
  & $\oplus 1\%$ &  +1\% & and CERN Prototype \\ \colhline
 Energy Resolution for & & & From LArIAT\\
-Stopping Hadrons & <10\% & & and CERN Prototype \\ \colhline
-Stub-Finding Efficiency$^5$ & >90\% & & $>90\%$ \\ 
+Stopping Hadrons & $<10\%$ & & and CERN Prototype \\ \colhline
+Stub-Finding Efficiency$^5$ & $>90\%$ & & $>90\%$ \\ 
 %Stub Arrival Time Resolution & 0.1~ms & & \\
 %Efficiency for & & & \\
 %finding $t_0$ for & & & \\
@@ -96,7 +96,7 @@ values were achieved by Long Bo\cite{Bromberg:2015uia}. Similar to the
 DUNE design, Long Bo used cold electronics, although its wires were
 much shorter than those planned for DUNE.
 
-The electron lifetime requirement is set at 3~ms to preserve the
+The electron lifetime requirement is set at 3\,ms to preserve the
 signal-to-noise ratio across the entire detector volume in the
 presence of noise sources that are not yet foreseen.  A shorter
 lifetime also places demands on the dynamic range of the ADCs: the
@@ -105,20 +105,20 @@ but small enough to record strong signals near the APAs without
 saturation, if possible.  The calorimetric energy resolution of
 low-energy electrons is highly sensitive to the lifetime for electrons
 that do not record flashes in the photon-detection system.  The energy
-resolution is approximately 20\% for electrons of energy below 50~MeV
+resolution is approximately 20\% for electrons of energy below 50\,MeV
 (see Section~\ref{sec:detectors-fd-ref-perf-lowe}) without
-corresponding photon flashes in a detector with a 2.5~m maximum drift
+corresponding photon flashes in a detector with a 2.5-m maximum drift
 length, assuming only an average correction is applied for the
 lifetime.  This resolution rapidly degrades for shorter lifetimes and
-longer drift lengths.  For a maximum drift length of 3.6~m and an
-electron lifetime of 1.5~ms, the energy resolution is estimated to
-degrade to 44\%.  A lifetime of 3~ms is consistent with that achieved
+longer drift lengths.  For a maximum drift length of 3.6\,m and an
+electron lifetime of 1.5\,ms, the energy resolution is estimated to
+degrade to 44\%.  A lifetime of 3\,ms is consistent with that achieved
 by the 35-t prototype.  The ICARUS Collaboration has reported a much
-longer lifetime, $>$15~ms\cite{Antonello:2014eha}.
+longer lifetime, $>$15\,ms\cite{Antonello:2014eha}.
 
 The charge loss due to lifetime effects is expected to be well
 measured in the DUNE far detector.  In addition to the cosmic-ray
-muons which accumulate at a rate of 0.26~Hz (see \anxrates), the
+muons which accumulate at a rate of 0.26\,Hz (see \anxrates~\cite{cdr-annex-rates}), the
 laser calibration system and purity monitors will provide detailed
 time-dependent measurements of the electron lifetime.  This
 limit is placed at 1\% in order to meet the energy-scale and resolution
@@ -153,7 +153,7 @@ vertex.
 
 In order to reduce the neutral-current background to $\nu_e$CC events
 by a factor of roughly 100, information from the $dE/dx$ of the
-initial $\sim$2.5~cm of an electromagnetic shower must be combined
+initial $\sim$2.5\,cm of an electromagnetic shower must be combined
 with the topological $\pi^0\rightarrow\gamma\gamma$
 selection\cite{docdb-6954}.  Current Monte Carlo studies indicate
 that, for showers with enough hits in the initial part to measure
@@ -200,7 +200,7 @@ by LArIAT and the CERN prototypes.
 
 Absent from the list is a requirement on the two-hit resolution.  In the
 direction parallel to the drift field, this resolution is expected to
-be very good, of the order of 2~mm, given existing ArgoNeuT data and
+be very good, of the order of 2\,mm, given existing ArgoNeuT data and
 simulations.  The resolution in the other two dimensions is governed
 by the wire spacing.  Separation of hits is important for pattern
 recognition, for counting tracks near the primary vertex (which is
@@ -216,7 +216,7 @@ smaller.
 
 \subsection{Expected Performance for Low-Energy Events}\label{sec:detectors-fd-ref-perf-lowe}
 
-Low-energy (5--50~MeV) events require special consideration.
+Low-energy (5--50\,MeV) events require special consideration.
 Electron-type neutrino interactions appearing close together in time
 constitute the signature for a supernova burst event.  A \MeVadj{5} electron
 is expected to hit four wires in the DUNE far detector, and given the
@@ -237,7 +237,7 @@ So far, most studies have been done with the MicroBooNE geometry, with
 the results expected to be generally applicable to the larger DUNE
 detector.  For a preliminary understanding of achievable energy
 resolution, isotropic and uniform monoenergetic electrons with
-energies of 5--50~MeV (which should approximate the $\nu_e$CC
+energies of 5--50\,MeV (which should approximate the $\nu_e$CC
 electron products) were simulated and reconstructed with the LArSoft
 package.  The charge of reconstructed hits on the collection plane was
 used to reconstruct the energy of the primary electrons. (Compared to induction-plane 
@@ -266,8 +266,8 @@ expected.
    resolution (defined as $\sigma/E$, where $\sigma$ is the spread of
    the collection-plane-charge-based event energy $E$ for a
    monoenergetic electron), with and without electron-lifetime
-   correction, as a function of electron energy (assumptions: 3~ms
-   drift time, 1.63~mm/$\mu$s drift velocity, and 2.5~m maximum drift
+   correction, as a function of electron energy (assumptions: 3\,ms
+   drift time, 1.63\,mm/$\mu$s drift velocity, and 2.5\,m maximum drift
    length). The blue curve is the energy resolution of isotropic and
    uniform electrons without electron-lifetime correction. The red
    curve is the energy resolution with electron-lifetime correction
