@@ -1,0 +1,115 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{$\mathcal{O}(n)$}]\begingroup of order $n$\nomeqref {0}
+		\nompageref{1}
+  \item [{$M_{\odot}$}]\begingroup solar mass\nomeqref {0}
+		\nompageref{1}
+  \item [{3D}]\begingroup 3 dimensional (also 1D, 2D, etc.)\nomeqref {0}
+		\nompageref{1}
+  \item [{\ktMWyr}]\begingroup exposure, expressed in kilotonnes $\times$ megawatts $\times$ years, based on 56\% beam uptime and efficiency\nomeqref {0}
+		\nompageref{1}
+  \item [{\ktyr}]\begingroup exposure (without beam), expressed in kilotonnes times years\nomeqref {0}
+		\nompageref{1}
+  \item [{BR}]\begingroup branching ratio\nomeqref {0}\nompageref{1}
+  \item [{C.L.}]\begingroup confidence level\nomeqref {0}\nompageref{1}
+  \item [{CC}]\begingroup charged current (interaction)\nomeqref {0}
+		\nompageref{1}
+  \item [{CDR}]\begingroup Conceptual Design Report\nomeqref {0}
+		\nompageref{1}
+  \item [{CF}]\begingroup Conventional Facilities\nomeqref {0}
+		\nompageref{1}
+  \item [{CKM}]\begingroup (CKM matrix) Cabibbo-Kobayashi-Maskawa matrix, also known as quark mixing matrix\nomeqref {0}
+		\nompageref{1}
+  \item [{CP}]\begingroup product of charge and parity transformations\nomeqref {0}
+		\nompageref{1}
+  \item [{CPT}]\begingroup product of charge, parity and time-reversal transformations\nomeqref {0}
+		\nompageref{1}
+  \item [{CPV}]\begingroup violation of charge and parity symmetry\nomeqref {0}
+		\nompageref{1}
+  \item [{DAQ}]\begingroup data acquisition\nomeqref {0}\nompageref{1}
+  \item [{DIS}]\begingroup deep inelastic scattering\nomeqref {0}
+		\nompageref{1}
+  \item [{DM}]\begingroup dark matter\nomeqref {0}\nompageref{1}
+  \item [{DOE}]\begingroup U.S. Department of Energy\nomeqref {0}
+		\nompageref{1}
+  \item [{DSNB}]\begingroup Diffuse Supernova Neutrino Background\nomeqref {0}
+		\nompageref{1}
+  \item [{DUNE}]\begingroup Deep Underground Neutrino Experiment\nomeqref {0}
+		\nompageref{1}
+  \item [{ESH}]\begingroup Environment, Safety and Health\nomeqref {0}
+		\nompageref{1}
+  \item [{eV}]\begingroup electron volt, unit of energy (also keV, MeV, GeV, etc.)\nomeqref {0}
+		\nompageref{1}
+  \item [{FD}]\begingroup far detector\nomeqref {0}\nompageref{1}
+  \item [{FGT}]\begingroup Fine-Grained Tracker\nomeqref {0}
+		\nompageref{1}
+  \item [{FSCF}]\begingroup far site conventional facilities\nomeqref {0}
+		\nompageref{1}
+  \item [{FSI}]\begingroup final-state interactions\nomeqref {0}
+		\nompageref{1}
+  \item [{GEANT4}]\begingroup GEometry ANd Tracking, a platform for the simulation of the passage of particles through matter using Monte Carlo methods\nomeqref {0}
+		\nompageref{1}
+  \item [{GENIE}]\begingroup Generates Events for Neutrino Interaction Experiments (an object-oriented neutrino Monte Carlo generator)\nomeqref {0}
+		\nompageref{1}
+  \item [{GLoBES}]\begingroup General Long-Baseline Experiment Simulator (software package)\nomeqref {0}
+		\nompageref{1}
+  \item [{GUT}]\begingroup grand unified theory\nomeqref {0}
+		\nompageref{1}
+  \item [{L}]\begingroup level, indicates depth in feet underground at the far site, e.g., 4850L\nomeqref {0}
+		\nompageref{1}
+  \item [{L/E}]\begingroup length-to-energy ratio\nomeqref {0}
+		\nompageref{1}
+  \item [{LAr}]\begingroup liquid argon\nomeqref {0}\nompageref{1}
+  \item [{LArTPC}]\begingroup liquid argon time-projection chamber\nomeqref {0}
+		\nompageref{1}
+  \item [{LBL}]\begingroup long-baseline (physics)\nomeqref {0}
+		\nompageref{1}
+  \item [{LBNF}]\begingroup Long-Baseline Neutrino Facility\nomeqref {0}
+		\nompageref{1}
+  \item [{LRI}]\begingroup long-range interactions\nomeqref {0}
+		\nompageref{1}
+  \item [{MC}]\begingroup Monte Carlo (detector simulation methods)\nomeqref {0}
+		\nompageref{1}
+  \item [{MH}]\begingroup mass hierarchy\nomeqref {0}\nompageref{1}
+  \item [{MI}]\begingroup Main Injector (at Fermilab)\nomeqref {0}
+		\nompageref{1}
+  \item [{MSW}]\begingroup Mikheyev-Smirnov-Wolfenstein (effect)\nomeqref {0}
+		\nompageref{1}
+  \item [{NC}]\begingroup neutral current (interaction)\nomeqref {0}
+		\nompageref{1}
+  \item [{ND}]\begingroup near neutrino detector\nomeqref {0}
+		\nompageref{1}
+  \item [{NDS}]\begingroup Near Detector Systems; refers to the collection of detector systems at the near site \nomeqref {0}
+		\nompageref{1}
+  \item [{near detector}]\begingroup except in Volume 4 Chapter 7, \textit{near detector} refers to the \textit{neutrino} detector system in the NDS\nomeqref {0}
+		\nompageref{1}
+  \item [{NH}]\begingroup normal (mass) hierarchy\nomeqref {0}
+		\nompageref{1}
+  \item [{NSCF}]\begingroup near site conventional facilities\nomeqref {0}
+		\nompageref{1}
+  \item [{NSI}]\begingroup nonstandard interactions\nomeqref {0}
+		\nompageref{1}
+  \item [{octant}]\begingroup any of the eight parts into which 4$\pi$ is divided by three mutually perpendicular axes; the range of the PMNS angles is $0$ to $\pi/2$, which spans only two of the eight octants\nomeqref {0}
+		\nompageref{1}
+  \item [{PMNS}]\begingroup (PMNS matrix) Pontecorvo-Maki-Nakagawa-Sakata matrix, also known as the lepton or neutrino mixing matrix\nomeqref {0}
+		\nompageref{1}
+  \item [{POT}]\begingroup protons on target\nomeqref {0}\nompageref{1}
+  \item [{QA}]\begingroup quality assurance\nomeqref {0}\nompageref{1}
+  \item [{QE}]\begingroup quasi-elastic (interaction)\nomeqref {0}
+		\nompageref{1}
+  \item [{SM}]\begingroup Standard Model of particle physics\nomeqref {0}
+		\nompageref{1}
+  \item [{SME}]\begingroup Standard-Model Extension\nomeqref {0}
+		\nompageref{1}
+  \item [{SUSY}]\begingroup supersymmetry\nomeqref {0}\nompageref{1}
+  \item [{t}]\begingroup metric ton, written \textit{tonne} (also kt)\nomeqref {0}
+		\nompageref{1}
+  \item [{tonne}]\begingroup metric ton\nomeqref {0}\nompageref{1}
+  \item [{TPC}]\begingroup time-projection chamber (not used as `total project cost' in the CDR)\nomeqref {0}
+		\nompageref{1}
+  \item [{WIMP}]\begingroup weakly-interacting massive particle\nomeqref {0}
+		\nompageref{1}
+
+\end{thenomenclature}

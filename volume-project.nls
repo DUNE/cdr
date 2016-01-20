@@ -1,0 +1,96 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{$\mathcal{O}(n)$}]\begingroup of order $n$\nomeqref {0}
+		\nompageref{1}
+  \item [{3D}]\begingroup 3 dimensional (also 1D, 2D, etc.)\nomeqref {0}
+		\nompageref{1}
+  \item [{\ktMWyr}]\begingroup exposure, expressed in kilotonnes $\times$ megawatts $\times$ years, based on 56\% beam uptime and efficiency\nomeqref {0}
+		\nompageref{1}
+  \item [{\ktyr}]\begingroup exposure (without beam), expressed in kilotonnes times years\nomeqref {0}
+		\nompageref{1}
+  \item [{APA}]\begingroup anode plane assembly\nomeqref {0}
+		\nompageref{1}
+  \item [{BLM}]\begingroup (in Volume 4) beamline measurement (system); (in Volume 3) beam loss monitor\nomeqref {0}
+		\nompageref{1}
+  \item [{C.L.}]\begingroup confidence level\nomeqref {0}\nompageref{1}
+  \item [{CDR}]\begingroup Conceptual Design Report\nomeqref {0}
+		\nompageref{1}
+  \item [{CF}]\begingroup Conventional Facilities\nomeqref {0}
+		\nompageref{1}
+  \item [{CKM}]\begingroup (CKM matrix) Cabibbo-Kobayashi-Maskawa matrix, also known as quark mixing matrix\nomeqref {0}
+		\nompageref{1}
+  \item [{CP}]\begingroup product of charge and parity transformations\nomeqref {0}
+		\nompageref{1}
+  \item [{CPA}]\begingroup cathode plane assembly\nomeqref {0}
+		\nompageref{1}
+  \item [{CPT}]\begingroup product of charge, parity and time-reversal transformations\nomeqref {0}
+		\nompageref{1}
+  \item [{CPV}]\begingroup violation of charge and parity symmetry\nomeqref {0}
+		\nompageref{1}
+  \item [{DAQ}]\begingroup data acquisition\nomeqref {0}\nompageref{1}
+  \item [{DOE}]\begingroup U.S. Department of Energy\nomeqref {0}
+		\nompageref{1}
+  \item [{DUNE}]\begingroup Deep Underground Neutrino Experiment\nomeqref {0}
+		\nompageref{1}
+  \item [{ECAL}]\begingroup electromagnetic calorimeter\nomeqref {0}
+		\nompageref{1}
+  \item [{ESH}]\begingroup Environment, Safety and Health\nomeqref {0}
+		\nompageref{1}
+  \item [{eV}]\begingroup electron volt, unit of energy (also keV, MeV, GeV, etc.)\nomeqref {0}
+		\nompageref{1}
+  \item [{FD}]\begingroup far detector\nomeqref {0}\nompageref{1}
+  \item [{FGT}]\begingroup Fine-Grained Tracker\nomeqref {0}
+		\nompageref{1}
+  \item [{FSCF}]\begingroup far site conventional facilities\nomeqref {0}
+		\nompageref{1}
+  \item [{GAr}]\begingroup gaseous argon\nomeqref {0}\nompageref{1}
+  \item [{GUT}]\begingroup grand unified theory\nomeqref {0}
+		\nompageref{1}
+  \item [{HV}]\begingroup high voltage\nomeqref {0}\nompageref{1}
+  \item [{L}]\begingroup level, indicates depth in feet underground at the far site, e.g., 4850L\nomeqref {0}
+		\nompageref{1}
+  \item [{L1, L2, ...}]\begingroup WBS level within the LBNF and DUNE Projects, where the overall Project is L1\nomeqref {0}
+		\nompageref{1}
+  \item [{LAr}]\begingroup liquid argon\nomeqref {0}\nompageref{1}
+  \item [{LArTPC}]\begingroup liquid argon time-projection chamber\nomeqref {0}
+		\nompageref{1}
+  \item [{LBL}]\begingroup long-baseline (physics)\nomeqref {0}
+		\nompageref{1}
+  \item [{LBNF}]\begingroup Long-Baseline Neutrino Facility\nomeqref {0}
+		\nompageref{1}
+  \item [{MH}]\begingroup mass hierarchy\nomeqref {0}\nompageref{1}
+  \item [{MI}]\begingroup Main Injector (at Fermilab)\nomeqref {0}
+		\nompageref{1}
+  \item [{MOU}]\begingroup memorandum of understanding\nomeqref {0}
+		\nompageref{1}
+  \item [{ND}]\begingroup near neutrino detector\nomeqref {0}
+		\nompageref{1}
+  \item [{NDS}]\begingroup Near Detector Systems; refers to the collection of detector systems at the near site \nomeqref {0}
+		\nompageref{1}
+  \item [{near detector}]\begingroup except in Volume 4 Chapter 7, \textit{near detector} refers to the \textit{neutrino} detector system in the NDS\nomeqref {0}
+		\nompageref{1}
+  \item [{NSCF}]\begingroup near site conventional facilities\nomeqref {0}
+		\nompageref{1}
+  \item [{octant}]\begingroup any of the eight parts into which 4$\pi$ is divided by three mutually perpendicular axes; the range of the PMNS angles is $0$ to $\pi/2$, which spans only two of the eight octants\nomeqref {0}
+		\nompageref{1}
+  \item [{PIP-II(III)}]\begingroup Proton Improvement Plan (II or III)\nomeqref {0}
+		\nompageref{1}
+  \item [{PMNS}]\begingroup (PMNS matrix) Pontecorvo-Maki-Nakagawa-Sakata matrix, also known as the lepton or neutrino mixing matrix\nomeqref {0}
+		\nompageref{1}
+  \item [{POT}]\begingroup protons on target\nomeqref {0}\nompageref{1}
+  \item [{QA}]\begingroup quality assurance\nomeqref {0}\nompageref{1}
+  \item [{SDSTA}]\begingroup South Dakota Science and Technology Authority\nomeqref {0}
+		\nompageref{1}
+  \item [{SM}]\begingroup Standard Model of particle physics\nomeqref {0}
+		\nompageref{1}
+  \item [{t}]\begingroup metric ton, written \textit{tonne} (also kt)\nomeqref {0}
+		\nompageref{1}
+  \item [{tonne}]\begingroup metric ton\nomeqref {0}\nompageref{1}
+  \item [{TPC}]\begingroup time-projection chamber (not used as `total project cost' in the CDR)\nomeqref {0}
+		\nompageref{1}
+  \item [{WBS}]\begingroup Work Breakdown Structure\nomeqref {0}
+		\nompageref{1}
+
+\end{thenomenclature}

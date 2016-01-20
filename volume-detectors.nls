@@ -1,0 +1,145 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{$\mathcal{O}(n)$}]\begingroup of order $n$\nomeqref {0}
+		\nompageref{1}
+  \item [{3D}]\begingroup 3 dimensional (also 1D, 2D, etc.)\nomeqref {0}
+		\nompageref{1}
+  \item [{\ktMWyr}]\begingroup exposure, expressed in kilotonnes $\times$ megawatts $\times$ years, based on 56\% beam uptime and efficiency\nomeqref {0}
+		\nompageref{1}
+  \item [{\ktyr}]\begingroup exposure (without beam), expressed in kilotonnes times years\nomeqref {0}
+		\nompageref{1}
+  \item [{APA}]\begingroup anode plane assembly\nomeqref {0}
+		\nompageref{1}
+  \item [{BLM}]\begingroup (in Volume 4) beamline measurement (system); (in Volume 3) beam loss monitor\nomeqref {0}
+		\nompageref{1}
+  \item [{CC}]\begingroup charged current (interaction)\nomeqref {0}
+		\nompageref{1}
+  \item [{CDR}]\begingroup Conceptual Design Report\nomeqref {0}
+		\nompageref{1}
+  \item [{CE}]\begingroup Cold Electronics\nomeqref {0}\nompageref{1}
+  \item [{CF}]\begingroup Conventional Facilities\nomeqref {0}
+		\nompageref{1}
+  \item [{COB}]\begingroup cluster on-board (motherboards)\nomeqref {0}
+		\nompageref{1}
+  \item [{CP}]\begingroup product of charge and parity transformations\nomeqref {0}
+		\nompageref{1}
+  \item [{CPA}]\begingroup cathode plane assembly\nomeqref {0}
+		\nompageref{1}
+  \item [{CPT}]\begingroup product of charge, parity and time-reversal transformations\nomeqref {0}
+		\nompageref{1}
+  \item [{CPV}]\begingroup violation of charge and parity symmetry\nomeqref {0}
+		\nompageref{1}
+  \item [{CRP}]\begingroup Charge-Readout Planes \nomeqref {0}
+		\nompageref{1}
+  \item [{DAQ}]\begingroup data acquisition\nomeqref {0}\nompageref{1}
+  \item [{DIS}]\begingroup deep inelastic scattering\nomeqref {0}
+		\nompageref{1}
+  \item [{DOE}]\begingroup U.S. Department of Energy\nomeqref {0}
+		\nompageref{1}
+  \item [{DRAM}]\begingroup dynamic random access memory\nomeqref {0}
+		\nompageref{1}
+  \item [{DUNE}]\begingroup Deep Underground Neutrino Experiment\nomeqref {0}
+		\nompageref{1}
+  \item [{ECAL}]\begingroup electromagnetic calorimeter\nomeqref {0}
+		\nompageref{1}
+  \item [{ESH}]\begingroup Environment, Safety and Health\nomeqref {0}
+		\nompageref{1}
+  \item [{eV}]\begingroup electron volt, unit of energy (also keV, MeV, GeV, etc.)\nomeqref {0}
+		\nompageref{1}
+  \item [{FD}]\begingroup far detector\nomeqref {0}\nompageref{1}
+  \item [{FE}]\begingroup front end (electronics)\nomeqref {0}
+		\nompageref{1}
+  \item [{FGT}]\begingroup Fine-Grained Tracker\nomeqref {0}
+		\nompageref{1}
+  \item [{FPGA}]\begingroup field programmable gate array\nomeqref {0}
+		\nompageref{1}
+  \item [{FS}]\begingroup full stream (data volumes)\nomeqref {0}
+		\nompageref{1}
+  \item [{FSCF}]\begingroup far site conventional facilities\nomeqref {0}
+		\nompageref{1}
+  \item [{FSI}]\begingroup final-state interactions\nomeqref {0}
+		\nompageref{1}
+  \item [{GAr}]\begingroup gaseous argon\nomeqref {0}\nompageref{1}
+  \item [{GEANT4}]\begingroup GEometry ANd Tracking, a platform for the simulation of the passage of particles through matter using Monte Carlo methods\nomeqref {0}
+		\nompageref{1}
+  \item [{GENIE}]\begingroup Generates Events for Neutrino Interaction Experiments (an object-oriented neutrino Monte Carlo generator)\nomeqref {0}
+		\nompageref{1}
+  \item [{GUT}]\begingroup grand unified theory\nomeqref {0}
+		\nompageref{1}
+  \item [{HV}]\begingroup high voltage\nomeqref {0}\nompageref{1}
+  \item [{L}]\begingroup level, indicates depth in feet underground at the far site, e.g., 4850L\nomeqref {0}
+		\nompageref{1}
+  \item [{LAr}]\begingroup liquid argon\nomeqref {0}\nompageref{1}
+  \item [{LArTPC}]\begingroup liquid argon time-projection chamber\nomeqref {0}
+		\nompageref{1}
+  \item [{LBL}]\begingroup long-baseline (physics)\nomeqref {0}
+		\nompageref{1}
+  \item [{LBNF}]\begingroup Long-Baseline Neutrino Facility\nomeqref {0}
+		\nompageref{1}
+  \item [{LEM}]\begingroup Large Electron Multiplier\nomeqref {0}
+		\nompageref{1}
+  \item [{LNG}]\begingroup liquefied natural gas\nomeqref {0}
+		\nompageref{1}
+  \item [{MC}]\begingroup Monte Carlo (detector simulation methods)\nomeqref {0}
+		\nompageref{1}
+  \item [{MH}]\begingroup mass hierarchy\nomeqref {0}\nompageref{1}
+  \item [{MI}]\begingroup Main Injector (at Fermilab)\nomeqref {0}
+		\nompageref{1}
+  \item [{MIP}]\begingroup minimum ionizing particle\nomeqref {0}
+		\nompageref{1}
+  \item [{MTS}]\begingroup Materials Test Stand\nomeqref {0}
+		\nompageref{1}
+  \item [{MuID}]\begingroup muon identifier (detector)\nomeqref {0}
+		\nompageref{1}
+  \item [{ND}]\begingroup near neutrino detector\nomeqref {0}
+		\nompageref{1}
+  \item [{NDS}]\begingroup Near Detector Systems; refers to the collection of detector systems at the near site \nomeqref {0}
+		\nompageref{1}
+  \item [{near detector}]\begingroup except in Volume 4 Chapter 7, \textit{near detector} refers to the \textit{neutrino} detector system in the NDS\nomeqref {0}
+		\nompageref{1}
+  \item [{NND}]\begingroup (used only in Volume 4 Chapter 7) near neutrino detector, same as ND\nomeqref {0}
+		\nompageref{1}
+  \item [{NSCF}]\begingroup near site conventional facilities\nomeqref {0}
+		\nompageref{1}
+  \item [{PD}]\begingroup photon detection (system)\nomeqref {0}
+		\nompageref{1}
+  \item [{PMT}]\begingroup photomultiplier tube\nomeqref {0}
+		\nompageref{1}
+  \item [{POT}]\begingroup protons on target\nomeqref {0}\nompageref{1}
+  \item [{PPM/PPB/PPT}]\begingroup parts per million/billion/trillion\nomeqref {0}
+		\nompageref{1}
+  \item [{QA}]\begingroup quality assurance\nomeqref {0}\nompageref{1}
+  \item [{QE}]\begingroup quasi-elastic (interaction)\nomeqref {0}
+		\nompageref{1}
+  \item [{RCE}]\begingroup reconfigurable computing element\nomeqref {0}
+		\nompageref{1}
+  \item [{RIO}]\begingroup reconfigurable input output\nomeqref {0}
+		\nompageref{1}
+  \item [{RPC}]\begingroup resistive plate chamber\nomeqref {0}
+		\nompageref{1}
+  \item [{S/N}]\begingroup signal-to-noise (ratio)\nomeqref {0}
+		\nompageref{1}
+  \item [{SBN}]\begingroup Short-Baseline Neutrino program (at Fermilab)\nomeqref {0}
+		\nompageref{1}
+  \item [{SiPM}]\begingroup silicon photomultiplier\nomeqref {0}
+		\nompageref{1}
+  \item [{SM}]\begingroup Standard Model of particle physics\nomeqref {0}
+		\nompageref{1}
+  \item [{SSP}]\begingroup SiPM signal processor\nomeqref {0}
+		\nompageref{1}
+  \item [{STT}]\begingroup straw tube tracker\nomeqref {0}
+		\nompageref{1}
+  \item [{t}]\begingroup metric ton, written \textit{tonne} (also kt)\nomeqref {0}
+		\nompageref{1}
+  \item [{tonne}]\begingroup metric ton\nomeqref {0}\nompageref{1}
+  \item [{TPC}]\begingroup time-projection chamber (not used as `total project cost' in the CDR)\nomeqref {0}
+		\nompageref{1}
+  \item [{TR}]\begingroup transition radiation\nomeqref {0}
+		\nompageref{1}
+  \item [{WLS}]\begingroup wavelength shifting\nomeqref {0}
+		\nompageref{1}
+  \item [{ZS}]\begingroup zero suppression\nomeqref {0}\nompageref{1}
+
+\end{thenomenclature}
