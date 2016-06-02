@@ -1,9 +1,0 @@
-#!/bin/sh
-pdflatex $1
-pdflatex $1
-bibtex $1
-pdflatex $1
-pdflatex $1
-makeindex $1.nlo -s nomencl.ist -o $1.nls
-pdflatex $1
-pdflatex $1

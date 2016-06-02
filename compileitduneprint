@@ -1,9 +1,0 @@
-#!/bin/sh
-pdflatex "\def\isfinal{1} \input{$1}"
-pdflatex "\def\isfinal{1} \input{$1}"
-bibtex $1
-pdflatex "\def\isfinal{1} \input{$1}"
-pdflatex "\def\isfinal{1} \input{$1}"
-makeindex $1.nlo -s nomencl.ist -o $1.nls
-pdflatex "\def\isfinal{1} \input{$1}"
-pdflatex "\def\isfinal{1} \input{$1}"
